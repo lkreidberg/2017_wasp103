@@ -1,11 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
-from astropy.modeling.blackbody import blackbody_lambda
 import pyfits
 from astropy import units as u
 
-plt.figure()
+def blackbody(l,T): 
+	h = 6.626e-34   #J/s
+	c = 3.0e8       #m/s
+	k = 1.4e-23     #J/K
+	return 2*h*c**2/(l**5*(np.exp(h*c/(l*k*T))-1))
+
 gs = gridspec.GridSpec(4, 3, hspace=0.05, wspace=0.25)
 
 #Brown dwarf spectra
@@ -23,22 +27,45 @@ gs = gridspec.GridSpec(4, 3, hspace=0.05, wspace=0.25)
 path = "BD_spectra/"
 files = ["2MASSJ13204427p0409045_spec_app.txt", "2MASPJ0345432p254023_spec_app.txt", "2MASSJ03205965p1854233_spec_app.txt", "2MASSJ00034227m2822410_spec_app.txt"]
 
+w = np.linspace(0.3, 10, 100)*1.e-6
+#T = 3130.
+"""T = 2000.
+flux = blackbody(w, T)
+plt.plot(w*1e6, flux/1.e6*np.pi)
+plt.gca().set_yscale('log')
+plt.gca().set_xscale('log')
+plt.show()"""
+
+Ts = [1918., 2212., 2585., 2873.]
+
 for i, f in enumerate(files):
 
     ax = plt.subplot(gs[i,0])
 
-    wavelengths = [1, 2] * u.micron
-    temperature = 2000 * u.K
-    flux = blackbody_lambda(wavelengths, temperature)
-    plt.plot(wavelengths, flux)
+    w = np.linspace(0.5, 2, 100)*1.e-6
+    T = Ts[i]
+    flux = blackbody(w, T)
+    plt.plot(w*1e6, flux/1.e6*np.pi)
+    plt.plot(w*1e6, flux/1.e6*np.pi, color = 'w', linewidth=0., label = f[5:13])
 
     d = np.genfromtxt(path + f)
-    plt.plot(d[:,0], d[:,1])
-    plt.xlim(1,2)
+    plt.plot(d[:,0], d[:,1]*1.e21)
+
+    plt.plot(d[:,0], d[:,1]*1.e21, linewidth = 0., label = str(Ts[i])+ " K")
+    plt.legend(loc = 'lower right', handlelength = 0., frameon=False, fontsize=9)
+#    plt.gca().text(1, 1, str(Ts[i]))	#doesn't work bc it goes on last frame
+
+    ax.set_yscale('log')
+    plt.ylabel("W/m$^2$/$\mu$m")
+
+    plt.xlim(0.5,2)
+    if i != 3: plt.gca().set_xticks([])
+    if i == 3: plt.xlabel("Wavelength (microns)")
+    if i == 0 : plt.title("Brown dwarfs")	
 
 
-"""#Directly imaged spectra
-2M1207 A     2500  100 3.5  0.5 2640
+#Directly imaged spectra
+"""2M1207 A     2500  100 3.5  0.5 2640
 OTS 44          1700  100 3.5  0.5 2300
 KPNO Tau 4      1700  100 3.5  0.5 2300
 2M0141          1800  200 4.5  0.5 2200
@@ -57,13 +84,28 @@ TWA22 B         3000  100 4.5  0.5 3064"""
 
 path = "DI_spectra/"
 files = ["L0_R2000_ABPicb_J_0.025_norm_master_spectrum.fits", "M8.5_R2000_2M1207A_SINFONIspeclib_JHK.fits", "M6_R2000_TWA8B.fits", "M5_R1200_TWA11C.fits"]
+name = ["L0", " M8.5", "M6", "M5"]
 
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,1])
     p = pyfits.open(path + f)
     d = p[0].data 
+    if i>1: d = d.T
     plt.plot(d[:,0], d[:,1])
-    plt.xlim(1,2)
+    plt.plot(d[:,0], d[:,1], linewidth = 0., label = name[i])
 
+    if i == 0: 
+	p = pyfits.open(path + "L0_R2000_ABPicb_H+K_0.025_final_spectrum.fits")
+	d = p[0].data 
+        plt.plot(d[:,0], d[:,1])
 
+    plt.legend(loc = 'lower left', handlelength = 0., frameon=False, fontsize=9)
+
+    plt.xlim(0.5,2)
+    plt.gca().set_yticks([])
+    if i != 3: plt.gca().set_xticks([])
+    if i == 3: plt.xlabel("Wavelength (microns)")
+    if i == 0: plt.title("Imaged planets")
+
+plt.savefig("comparison.pdf")
 plt.show()
