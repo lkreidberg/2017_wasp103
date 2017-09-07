@@ -4,7 +4,7 @@
 #
 #Target name		Reference
 #AB Pic b		Bonnefoy et al. 2010, 2014
-#1RXS1609b		Lafrenière et al. 2008, 2010
+#1RXS1609b		Lafrenière et al. 2008, 2010	1800K
 #G196-3B		Allers et al. 2013
 #CD-352722B		Wahhaj et al. 2011
 #2MJ0219b		Artigau et al. 2014

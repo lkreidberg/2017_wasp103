@@ -16,6 +16,10 @@ gs = gridspec.GridSpec(3, 3, hspace=0.1, wspace=0.3)
 ylo = [0, 5, 12]
 yhi = [6, 15, 33]
 
+#bbcolor = "#d9544d"	#light red
+bbcolor = "#75bbfd"
+mcolor = "#3c4142"
+
 #WASP-103b spectra
 path = "W103_spectra/"
 Ts = [1911., 2408., 2921.] 
@@ -73,11 +77,11 @@ for i, f in enumerate(files):
 2817 +- 59  2MASSJ03510004m0052452_spec_app.txt
 2873 +- 75  2MASSJ00034227m2822410_spec_app.txt"""
 
-path = "BD_spectra_original/"
-files = ["2MASSJ13204427p0409045_spec_app.txt", "LHS2924_spec_app.txt", "2MASSJ00034227m2822410_spec_app.txt"]
+path = "BD_spectra/"
+files = ["For_Laura1320+0409 (L3:) SED.txt", "For_Laura1428+3310 (M9) SED.txt", "For_Laura0003-2822 (M7.5) SED.txt"]
 names = ["1320+0409", "1428+3310", "0003-2822"]
 
-Ts = [1918., 2275., 2873.]
+Ts = [1875., 2276., 2889.]
 distance = np.array([30.96, 11.01, 38.91])			#parsecs
 radius = np.array([1.01, 1.06, 1.32])				#jupiter radii
 unit_conversion = (distance/radius)**2*1.863e17*10.		#(r/d)^2 in dimensionless units *10 to get in W/m^2/micron from ergs/A/cm^2/s
@@ -102,7 +106,7 @@ for i, f in enumerate(files):
     #plt.ylabel("W/m$^2$/$\mu$m")
 
     plt.xlim(1.0,1.8)
-    plt.ylim(ylo[i], yhi[i])
+    #plt.ylim(ylo[i], yhi[i])
 
     if i != 3: plt.gca().set_xticks([])
     if i == 3: plt.xlabel("Wavelength (microns)")
@@ -153,5 +157,5 @@ for i, f in enumerate(files):
     if i == 0: plt.title("Imaged planets")
 
 #plt.tight_layout()
-plt.savefig("comparison_original.pdf")
+plt.savefig("comparison_new.pdf")
 #plt.show()
