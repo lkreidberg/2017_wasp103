@@ -45,7 +45,7 @@ def initialize_params(spider_params):
     spider_params.inc= 82.33            # Inclination [degrees]
     spider_params.ecc= 0.0              # Eccentricity
     spider_params.w= 90                 # Argument of periastron
-    spider_params.rp= 0.1594            # Planet to star radius ratio
+    spider_params.rp= 0.111            # Planet to star radius ratio
     spider_params.a= 4.855              # Semi-major axis scaled by stellar radius
     spider_params.p_u1= 0               # Planetary limb darkening parameter
     spider_params.p_u2= 0               # Planetary limb darkening parameter
