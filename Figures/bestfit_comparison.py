@@ -29,7 +29,7 @@ models = ["spherical", "zhang", "hotspot_t"]
 path = "Ch2_best_fits/"
 bestfits = ["2017-09-14_18:26-spherical/", "2017-09-15_11:42-zhang/", "2017-09-15_11:45-hotspot/"]
 waverange = [4.0e-6, 5.0e-6]                    #Spitzer Ch 2
-colors = ['red', 'orange', '#0485d1'] 
+colors = ['red', 'orange', 'blue'] 
 grays = ['0.7', '0.5', '0.6']
 labels = ["Spherical harmonics", "Kinematic", "Two temperature"]
 
@@ -38,7 +38,7 @@ nbins = len(phasebins) - 1
 dilution =  0.1587                  #spitzer ch 2
 #dilution = 0.1712                   #spitzer ch 1
 
-plt.figure(figsize = (8,4))
+plt.figure(figsize = (6,4))
 for i, model in enumerate(models):
     spider_params = sp.ModelParams(brightness_model=model)
     spider_params = initialize_params(spider_params)
@@ -91,10 +91,11 @@ for i, model in enumerate(models):
     #plt.plot(bin_average, (bindata-1.)*1e3*(1.+dilution), linestyle='none', marker = '.', color = colors[i])
     plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution), label = labels[i], color = colors[i])
 
-plt.legend(loc = 'upper left', frameon=False)
+plt.legend(loc = 'upper left', frameon=False, fontsize=12)
 plt.xlabel("Orbital phase")
 plt.ylabel("Planet-to-star flux (ppt)")
-plt.ylim(-0.7, 7)
+plt.ylim(-0.7, 8)
+plt.xlim(0,1)
 #plt.show()
 plt.tight_layout()
 plt.savefig("bestfit_comparison.pdf") 
