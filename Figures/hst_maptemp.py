@@ -59,7 +59,7 @@ labels = ["Spherical harmonics", "Kinematic", "Two temperature"]
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #Spitzer Ch 2
 
-plt.figure(figsize = (6,6))
+fig =plt.figure(figsize = (6,6))
 
 for i, model in enumerate(models):
     spider_params = sp.ModelParams(brightness_model=model)
@@ -121,17 +121,17 @@ for i, model in enumerate(models):
             fluxes += [row]
     
     fluxes = np.array(fluxes)
-    if model == "spherical": fluxes = convert_to_T(fluxes*np.pi)
+    if model == "spherical": fluxes = convert_to_T(fluxes*np.pi*np.sqrt(2))
 
-    vmax = 4000. 
-    vmin = 10.
+    vmax = 4000.
+    vmin = 0.
 
     print "model, Tmin, Tmax = ", model, fluxes.min(), fluxes.max()
 	
     plt.subplot(311+i)
 
     #plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.YlOrRd_r, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
-    plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.plasma, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
+    im = plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.plasma, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
 
     plt.gca().text(-170, 50, labels[i], bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=12)
 
@@ -141,7 +141,11 @@ for i, model in enumerate(models):
     else: plt.xticks([])
     if i == 1: plt.ylabel("Latitude (degrees)")	
 
-    #if i == 1: plt.colorbar()
+
+fig.subplots_adjust(right=0.75)
+cbar_ax = fig.add_axes([0.8, 0.25, 0.05, 0.5])
+cb = fig.colorbar(im, cax=cbar_ax)
+cb.set_label("Temperature (Kelvin)")
 
 plt.savefig('hst_maptemp.pdf')
 
