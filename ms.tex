@@ -85,32 +85,31 @@ WASP-103b is a short-period hot Jupiter.
 
 
 \section{Introduction} \label{sec:intro}
-Planets are inherently 3D objects. Short period, tidally locked planets are intensely irradiated on the day side, which can lead to dramatic
+It is a truism to say that planets are three-dimensional objects, but worth exploring the specific challenges. Short period, tidally locked planets are intensely irradiated on the day side, which can lead to dramatic
 
 The challenge is to reveal this structure at great distances, when we cannot spatially resolve the photosphere of the planet.
 
 Phase curves! 
 
 \section{Observations and Data Reduction}
-We observed two full-orbit phase curves of WASP-103b with \HST/WFC3 and one each with \Spitzer/IRAC at 3.6 and 4.5 $\mu$m. We also reduced two additional WFC3 secondary eclipse observations from \HST Program 13660 (PI: M. Zhao).
+We observed two full-orbit phase curves of WASP-103b with \HST/WFC3 and one each with \Spitzer/IRAC at 3.6 and 4.5 $\mu$m. We also reduced two additional WFC3 secondary eclipse observations from \HST\ Program 13660 (PI: M. Zhao).
 
 \subsection{\HST/WFC3}
-The \emph{HST} observations consisted of two visits on 26-27 February and 2-3 August 2015. Each visit was 15 orbits in duration and spanned 23 hours. We took a direct image of the star with the F126N filter at the beginning of each orbit to determine the wavelength solution zero-point. The remainder of the orbit consisted of time-series spectroscopy with the G141 grism ($1.1 - 1.7$ $\mu$m) and the 256 x 256 pixel subarray. We used the SPARS10/NSAMP = 15 read-out mode, which has an exposure time of 103 seconds. To optimize the duty cycle of the observations, we used the spatial scan observing mode with a scan rate of 0.03"/s, alternating between forward and backward scanning on the detector. The scan height was 25 pixels and the peak counts were 35k photoelectrons per pixel. We collected a total of 18 spatial scan exposures per orbit.  The two eclipses observations from Program 13660 had a similar observing setup.  
+The \HST\ observations consisted of two visits on 26-27 February and 2-3 August 2015. Each visit was 15 orbits in duration and spanned 23 hours. We took a direct image of the star with the F126N filter at the beginning of each orbit to determine the wavelength solution zero-point. The remainder of the orbit consisted of time-series spectroscopy with the G141 grism ($1.1 - 1.7$ $\mu$m) and the 256 x 256 pixel subarray. We used the SPARS10/NSAMP = 15 read-out mode, which has an exposure time of 103 seconds. To optimize the duty cycle of the observations, we used the spatial scan observing mode with a scan rate of 0.03"/s, alternating between forward and backward scanning on the detector. The scan height was 25 pixels and the peak counts were 35k photoelectrons per pixel. We collected a total of 18 spatial scan exposures per orbit.  The two eclipses observations from Program 13660 had a similar observing setup.  
 
-We reduced the data from both programs using a custom pipeline developed for past analyses of WFC3 data \citep[for details see][]{kreidberg14a, kreidberg14b, kreidberg15a}. Briefly, we use the optimal extraction algorithm of \cite{horne86} to extract each up-the-ramp sample (or ``stripe") separately. The stripes are then summed to create the final spectrum. For each stripe, the extraction window is 24 pixels high and centered on the stripe midpoint. We estimate the background from the median of a region of the detector that is uncontaminated by the target spectrum (rows 5-50). The typical background counts are low (10-15 photoelctrons per pixel, roughly 0.03\% of the peak counts from the target star). We note that the extracted spectrum includes flux from a nearby star, which is separated from WASP-103 by less than two pixels \citep[0.2"][]{wollert15}. We account for the contaminating flux later in the analysis. 
-
+We reduced the data from both programs using a custom pipeline developed for past analyses of WFC3 data \citep[for details see][]{kreidberg14a, kreidberg14b, kreidberg15a}. Briefly, we use the optimal extraction algorithm of \cite{horne86} to extract each up-the-ramp sample (or ``stripe") separately. The stripes are then summed to create the final spectrum. For each stripe, the extraction window is 24 pixels high and centered on the stripe midpoint. We estimate the background from the median of a region of the detector that is uncontaminated by the target spectrum (rows 5-50). The typical background counts are low (10-15 photoelctrons per pixel, roughly 0.03\% of the peak counts from the target star). We note that the extracted spectrum includes flux from a nearby star, which is separated from WASP-103 by less than two pixels \citep[0.2";][]{wollert15}. We account for the contaminating flux later in the analysis. 
 
 \subsection{\Spitzer}
-he \emph{Spitzer} observations had the following setup. Each phase curve observation consisted of 30 hours of time series photometry, which covered a full orbital revolution of the planet. The observations were timed to contain two eclipses with three hours of baseline on either side. We used 12 s exposures to maximize the duty cycle without saturating the detector. The dominant systematic in high-precision Spitzer time series is the intrapixel effect (variations in flux caused by imprecise pointing). To minimize this effect, we used PCRS peak-up to improve the pointing accuracy. We began each observations with a 30-minute position settling period, followed by three Astronomical Observation Requests (AORs) of equal duration. At the beginning of each AOR, the telescope was repointed to position the target in the ``sweet spot" of the detector.
+The \Spitzer\ observations had the following setup. Each phase curve observation consisted of 30 hours of time series photometry, which covered a full orbital revolution of the planet. The observations were timed to contain two eclipses with three hours of baseline on either side. We used 12 s exposures to maximize the duty cycle without saturating the detector. The data volume is relatively low for this exposure time, so we read out the full array. To minimize the intrapixel effect (variations in flux caused by imprecise pointing), we did not dither and also used PCRS peak-up to improve the pointing accuracy. We began each observations with a 30-minute position settling period, followed by three Astronomical Observation Requests (AORs) of equal duration. At the beginning of each AOR, the telescope was repointed to position the target in the ``sweet spot" of the detector.
 
-We reduced the data using the POET pipeline and fit the systematics with the BLISS mapping technique \citep{stevenson12}. This technique creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. In addition to the intrapixel sensitivity map, we fit the data for a linear trend in time and used the same transit, eclipse, and phase variation model as in Equation%\;\ref{eq:model}.
-
-We tested the light curve fits for time-correlated noise by calculating the root mean square (rms) of the fit for a range of bin sizes. For white noise, the rms should decrease as the square root of the number of points in the bin. The 4.5 $\mu$m phase curve data follow this trend; however, the 3.6 $\mu$m data have larger than expected rms at large bin sizes. The time-correlated noise is also noticeable in the residuals to the light curve fit %(Figure\;\ref{fig:w103_spitzer}). 
-To account for additional uncertainty due to the correlated noise in this channel, we use the wavelet technique of \cite{carter09}.
-
+The data were reduced with the POET pipeline \citep{stevenson12}. We performed aperture photometry with an aperture size of 2.75 pixels (chosen from a grid of apertures between 2 and 4 pixels to minimize the residual noise in the light curve fits). We masked pixels that were flagged in the bad pixel mask provided in the ancillary data for the observations. The target centroid was determined with a two-dimensional Gaussian fit.  We estimated and subtracted the background from an annulus with a radius of 7 to 15 pixels from the centroid. As for the \HST\ observations, the contaminating flux from the nearby star is included in the final photometry and corrected in the light curve fits.
 
 \section{Light Curve Fits}
 which orbits/data
+
+\subsection{Phase-Resolved Spectra}
+
+\subsection{Comparison of Thermal Phase Variation Models}
 
 The raw data exhibit time-dependent systematic trends typically seen in WFC3 light curves, which we correct using a systematics model of the form:
 
@@ -129,13 +128,20 @@ F(t) = F_\mathrm{sys}(t)\left[T(t) + (E(t) - 1)(1 + A\cos(2\pi(t - \theta)/P))\r
 
 \noindent where $T(t)$ is a transit model, $E(t)$ is an eclipse model, $P$ is the planet orbital period, and $A$ and $\theta$ are free parameters to fit the amplitude and offset for the thermal phase variation. The free parameters for the transit and eclipse model are the planet-to-star radius ratio $r_p/r_s$, the planet-to-star flux ratio $f_p/f_s$, and a linear limb darkening parameter. The eclipse model is normalized such that the flux during eclipse is 1 and out of eclipse is $f_p/f_s$, and the transit model is normalized to unity out of transit. The planet's orbital parameters are poorly constrained by the WFC3 light curve due to incomplete phase coverage, so we fix the inclination to $i = 84.54^\circ$, the semi-major axis to stellar radius $a/R_s  = 2.925$, based on the best fit to the \emph{Spitzer} Channel 2 light curve (described below).  We use the orbital period $P = 0.925545613$ day, and time of inferior conjunction $t_0 = 2456836.2964455$ from \cite{southworth15}.  All free parameters were assumed to have a common value for both \emph{HST} visits, with the exception of $c$, $v_1$ and $v_2$, which were allowed to vary between visits. We explored adding an additional cosine term to model the thermal phase variation, but the additional degrees of freedom are not justified according to the Bayesian Information Criterion (BIC). The transit and eclipse models were calculated with the \texttt{batman} package \citep{kreidberg15a}. %Figure\;\ref{fig:w103_hst} shows the fitted broadband phase curve.
 
+and fit the systematics with the BLISS mapping technique \citep{stevenson12}. This technique creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. In addition to the intrapixel sensitivity map, we fit the data for a linear trend in time and used the same transit, eclipse, and phase variation model as in Equation%\;\ref{eq:model}.
+
+
 \section{Composition of the Atmosphere}
 
 \subsection{Retrieval}
 
+\section{Comparison with GCMs}
+
+\section{Comparison with Brown Dwarfs and Directly Imaged Planets}
+
 
 \acknowledgments
-We thank a lot of people. Caroline Morley, Thomas Beatty, Ming Zhao, Kim Star Cartier.
+We thank a lot of people. Caroline Morley, Thomas Beatty, Ming Zhao, Kim Star Cartier, Hannah Diamond-Lowe, Nick Cowan (make him a coauthor?)
 
 \bibliographystyle{aasjournal}
 \bibliography{ms.bib}
