@@ -156,4 +156,5 @@ for i, f in enumerate(files):
 
 #plt.tight_layout()
 plt.savefig("comparison_original.pdf")
+plt.savefig("comparison_original.png")
 #plt.show()
