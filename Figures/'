@@ -7,7 +7,7 @@ import pickle
 #from lc_fit import Model, LightCurveData
 
 mpl.rcParams['font.sans-serif'] = 'Arial'
-mpl.rcParams['font.size'] = 12
+mpl.rcParams['font.size'] = 14
 mpl.rcParams['lines.linewidth'] = 1.4
 
 
@@ -29,7 +29,7 @@ models = ["spherical", "zhang", "hotspot_t"]
 path = "Ch2_best_fits/"
 bestfits = ["2017-09-14_18:26-spherical/", "2017-09-15_11:42-zhang/", "2017-09-15_11:45-hotspot/"]
 waverange = [4.0e-6, 5.0e-6]                    #Spitzer Ch 2
-colors = ['orange', 'red', 'blue'] 
+colors = ['red', 'orange', 'blue'] 
 grays = ['0.7', '0.5', '0.6']
 labels = ["Spherical harmonics", "Kinematic", "Two temperature"]
 
@@ -38,8 +38,7 @@ nbins = len(phasebins) - 1
 dilution =  0.1587                  #spitzer ch 2
 #dilution = 0.1712                   #spitzer ch 1
 
-#plt.figure(figsize = (6,4))
-plt.figure(figsize = (3.5,2.2))
+plt.figure(figsize = (6,4))
 for i, model in enumerate(models):
     spider_params = sp.ModelParams(brightness_model=model)
     spider_params = initialize_params(spider_params)
@@ -88,16 +87,14 @@ for i, model in enumerate(models):
                     binbestfit[j-1]=  np.mean(bestfit[ind])
                     bin_average[j-1] = (phasebins[j-1]+phasebins[j])/2.
 
-    if i==1:
-        plt.errorbar(bin_average, (bindata-1.)*1e3*(1.+dilution), yerr = binsigma*1e3, linestyle='none', marker = '.', color = colors[i], ecolor = 'k', zorder = 10)
-        #plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution), label = labels[i], color = colors[i])
-        plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution), label = labels[i], color = 'k') 
+    plt.errorbar(bin_average, (bindata-1.)*1e3*(1.+dilution), yerr = binsigma*1e3, linestyle='none', marker = '.', color = colors[i], ecolor = 'k', zorder = 10)
+    #plt.plot(bin_average, (bindata-1.)*1e3*(1.+dilution), linestyle='none', marker = '.', color = colors[i])
+    plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution), label = labels[i], color = colors[i])
 
-#plt.legend(loc = 'upper left', frameon=False, fontsize=12)
+plt.legend(loc = 'upper left', frameon=False, fontsize=12)
 plt.xlabel("Orbital phase")
 plt.ylabel("Planet-to-star flux (ppt)")
-#plt.ylim(-0.7, 8)
-plt.ylim(-0.7, 6)
+plt.ylim(-0.7, 8)
 plt.xlim(0,1)
 #plt.show()
 plt.tight_layout()

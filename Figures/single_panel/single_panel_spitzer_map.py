@@ -6,7 +6,7 @@ import matplotlib as mpl
 import spiderman as sp
 
 mpl.rcParams['font.sans-serif'] = 'Arial'
-mpl.rcParams['font.size'] = 14
+mpl.rcParams['font.size'] = 12
 mpl.rcParams['lines.linewidth'] = 1.4
 
 #return blackbody spectral radiance as a function of wavelength lambda (in m) and temperature T (Kelvin)
@@ -57,7 +57,7 @@ labels = ["Spherical harmonics", "Kinematic", "Two temperature"]
 path = "Ch2_best_fits/"
 waverange = [4.0e-6, 5.0e-6]                    #Spitzer Ch 2
 
-plt.figure(figsize = (6,6))
+plt.figure(figsize = (4,2))
 
 for i, model in enumerate(models):
     spider_params = sp.ModelParams(brightness_model=model)
@@ -114,24 +114,23 @@ for i, model in enumerate(models):
     if model == "spherical": fluxes = convert_to_T(fluxes*np.pi)
 
     vmax = 4000. 
-    vmin = 10.
-
+    vmin = 1500.  
     print "model, Tmin, Tmax = ", model, fluxes.min(), fluxes.max()
 	
-    plt.subplot(311+i)
+    #plt.subplot(311+i)
 
-    #plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.YlOrRd_r, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
-    plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.plasma, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
+    if i==1: plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.plasma, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
 
-    plt.gca().text(-170, 50, labels[i], bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=12)
 
-    if i == 2: 
+    if i == 1: 
 	plt.xticks([-180, -120,  -60,  0, 60, 120, 180])
 	plt.xlabel("Longitude (degrees)")
-    else: plt.xticks([])
-    if i == 1: plt.ylabel("Latitude (degrees)")	
+        plt.ylabel("Latitude (degrees)")	
 
-    #if i == 1: plt.colorbar()
+    if i == 1: 
+        cb = plt.colorbar()
+        cb.set_label("Temperature (Kelvin)")
 
-plt.savefig('spitzer_maptemp.pdf')
+plt.tight_layout()
+plt.savefig('spitzer_panel.pdf')
 
