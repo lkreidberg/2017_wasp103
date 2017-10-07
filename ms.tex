@@ -101,20 +101,66 @@ In this paper we present \HST\ and \Spitzer\ phase curve observations of WASP-10
 The structure of the paper is as follows:
 
 \section{Observations and Data Reduction}
-We observed two full-orbit phase curves of WASP-103b with \HST/WFC3 and one each with \Spitzer/IRAC at 3.6 and 4.5 $\mu$m. We also reduced two additional WFC3 secondary eclipse observations from \HST\ Program 13660 (PI: M. Zhao).
+We observed two full-orbit phase curves of WASP-103b with \HST/WFC3 and one each with \Spitzer/IRAC at 3.6 and 4.5 $\mu$m (from HST Program 14050 and Spitzer Program 11099). We also reduced two \HST/WFC3 secondary eclipse observations of WASP-103b from \HST\ Program 13660 (PI: M. Zhao).
 
 \subsection{\HST/WFC3}
-The \HST\ observations consisted of two visits on 26-27 February and 2-3 August 2015. Each visit was 15 orbits in duration and spanned 23 hours. We took a direct image of the star with the F126N filter at the beginning of each orbit to determine the wavelength solution zero-point. The remainder of the orbit consisted of time-series spectroscopy with the G141 grism ($1.1 - 1.7$ $\mu$m) and the 256 x 256 pixel subarray. We used the SPARS10/NSAMP = 15 read-out mode, which has an exposure time of 103 seconds. To optimize the duty cycle of the observations, we used the spatial scan observing mode with a scan rate of 0.03"/s, alternating between forward and backward scanning on the detector. The scan height was 25 pixels and the peak counts were 35k photoelectrons per pixel. We collected a total of 18 spatial scan exposures per orbit.  The two eclipses observations from Program 13660 had a similar observing setup.  
+The \HST\ phase curve observations consisted of two visits on 26-27 February and 2-3 August 2015. Each visit was 15 orbits in duration and spanned 23 hours. We took a direct image of the star with the F126N filter at the beginning of each orbit to determine the wavelength solution zero-point. The remainder of the orbit consisted of time-series spectroscopy with the G141 grism ($1.1 - 1.7$ $\mu$m) and the 256 x 256 pixel subarray. We used the SPARS10/NSAMP = 15 read-out mode, which has an exposure time of 103 seconds. To optimize the duty cycle of the observations, we used the spatial scan observing mode with a scan rate of 0.03"/s, alternating between forward and backward scanning on the detector. The scan height was 25 pixels and the peak counts were 35k photoelectrons per pixel. We collected a total of 18 spatial scan exposures per orbit.  The two eclipse observations from Program 13660 had a similar observing setup.  
 
-We reduced the data from both programs using a custom pipeline developed for past analyses of WFC3 data \citep[for details see][]{kreidberg14a, kreidberg14b, kreidberg15a}. Briefly, we use the optimal extraction algorithm of \cite{horne86} to extract each up-the-ramp sample (or ``stripe") separately. The stripes are then summed to create the final spectrum. For each stripe, the extraction window is 24 pixels high and centered on the stripe midpoint. We estimate the background from the median of a region of the detector that is uncontaminated by the target spectrum (rows 5-50). The typical background counts are low (10-15 photoelctrons per pixel, roughly 0.03\% of the peak counts from the target star). We note that the extracted spectrum includes flux from a nearby star, which is separated from WASP-103 by less than two pixels \citep[0.2";][]{wollert15}. We account for the contaminating flux later in the analysis. 
+We reduced the data from both programs using a custom pipeline developed for past analyses of WFC3 data \citep[for details see][]{kreidberg14a, kreidberg14b, kreidberg15a}. Briefly, we use the optimal extraction algorithm of \cite{horne86} to extract each up-the-ramp sample (or ``stripe") separately. The stripes are then summed to create the final spectrum. For each stripe, the extraction window is 24 pixels high and centered on the stripe midpoint. We estimate the background from the median of a region of the detector that is uncontaminated by the target spectrum (rows 5-50). The typical background counts are low (10-15 photoelectrons per pixel, roughly 0.03\% of the peak counts from the target star). We note that the extracted spectrum includes flux from a nearby star, which is separated from WASP-103 by less than two pixels \citep[0.2";][]{wollert15}. Our extracted spectrum includes flux from this star, which we account for later in the analysis. 
 
 \subsection{\Spitzer}
-The \Spitzer\ observations had the following setup. Each phase curve observation consisted of 30 hours of time series photometry, which covered a full orbital revolution of the planet. The observations were timed to contain two eclipses with three hours of baseline on either side. We used 12 s exposures to maximize the duty cycle without saturating the detector. The data volume is relatively low for this exposure time, so we read out the full array. To minimize the intrapixel effect (variations in flux caused by imprecise pointing), we did not dither and also used PCRS peak-up to improve the pointing accuracy. We began each observations with a 30-minute position settling period, followed by three Astronomical Observation Requests (AORs) of equal duration. At the beginning of each AOR, the telescope was repointed to position the target in the ``sweet spot" of the detector.
+The \Spitzer\ observations had the following setup. Each phase curve observation consisted of 30 hours of time series photometry, beginning three hours prior to one secondary eclipse and ending three hours after a second eclipse.  We used 12 s exposures to maximize the duty cycle without saturating the detector. The data volume is relatively low for this exposure time, so we read out the full array. To minimize the intrapixel effect (variations in flux caused by imprecise pointing), we did not dither and also used PCRS peak-up to improve the pointing accuracy. We began each observations with a 30-minute position settling period, followed by three Astronomical Observation Requests (AORs) of equal duration. At the beginning of each AOR, the telescope was repointed to position the target in the ``sweet spot" of the detector.
 
-The data were reduced with the POET pipeline \citep{stevenson12}. We performed aperture photometry with an aperture size of 2.75 pixels (chosen from a grid of apertures between 2 and 4 pixels to minimize the residual noise in the light curve fits). We masked pixels that were flagged in the bad pixel mask provided in the ancillary data for the observations. The target centroid was determined with a two-dimensional Gaussian fit.  We estimated and subtracted the background from an annulus with a radius of 7 to 15 pixels from the centroid. As for the \HST\ observations, the contaminating flux from the nearby star is included in the final photometry and corrected in the light curve fits.
+The data were reduced with the POET pipeline \citep{stevenson12}. We performed aperture photometry with an aperture size of 2.75 pixels (chosen from a grid of apertures between 2 and 4 pixels to minimize the residual noise in the light curve fits). We masked pixels that were flagged in the bad pixel mask provided in the ancillary data for the observations. The target centroid was determined with a two-dimensional Gaussian fit.  We estimated and subtracted the background from an annulus with a radius of 7 to 15 pixels from the centroid. As for the \HST\ observations, the contaminating flux from the nearby star is included in the final photometry and corrected later in the light curve fits.
 
 
 \subsection{Photometric Monitoring}
+We monitored WASP-103's photometric variability over 158 nights during 2014 - 2016 with the Tennessee State University Celestron 14-inch (C14) automated imaging telescope (AIT), located at Fairborn Observatory in southern Arizona \citep[see, e.g.,][]{h1999, ehf2003}.  The observations of WASP-103 were made in the Cousins R passband with an SBIG STL-1001E CCD camera.  Each observation consisted of 4--10 consecutive exposures on WASP-103 along with several dozen comparison stars in the same field. The individual consecutive frames were co-added and reduced to differential magnitudes (i.e., WASP-103 minus the mean brightness of the six best comparison stars). The nightly observations were corrected for bias, flat-fielding, pier-side offset, and differential atmospheric extinction.  
+
+The photometric analyses are summarized for each observing season in Table\,\ref{tab:photometry}.  The standard deviation of WASP-103's brightness in each season is given in column~4.  The mean of the three standard deviations is 0.0058~mag, which is very comparable to the mean standard deviation of the six comparison stars (0.0055~mag).  To maximize the possibility of detection WASP-103's rotation, we normalized the photometry such that each observing season has the same mean, thereby removing long-term variability in WASP-103 and/or the comparison stars. We performed a periodogram analysis of the normalized dataset. Figure\,\ref{fig:photometry} shows the frequency spectrum and the phase curve computed with the best frequency, respectively.  We also performed a least-squares fit to the data to determine the best fit sine curve. The best fit period is 6.814 days, which agrees closely with the estimated stellar rotation period of 6.855 days \citep{getal2014}.  The variability amplitude is 0.005~mag, which has FIXME impact on our analysis here.
+
+%The apparent low amplitude variability is likely due to rotational modulation in the visibility of weak, magnetic surface features \citep[see, e.g.,][]{hfh1995}.
+
+%This implies there can be very little night-to-night variability in WASP-103. The three seasonal mean brightness values given in column 5 scatter about their grand mean with a standard deviation of 0.0036 mag, but we note that the most discrepant mean is from the third season, for which we have only partial coverage. Therefore, our results do not completely rule out low-level, year-to-year variability of 0.001~mag or so.
+
+%We performed periodogram analyses of the individual observing seasons and the complete dataset and found no significant periodicity.  To maximize the possibility of detecting a rotation signal in WASP-103, we normalized the dataset by adding a constant offset to the second and third observing seasons to have the same mean as the first. 
+%To first order, this removes possible long-term variability in WASP-103 and/or the comparison stars as well as any uncorrected, long-term systemmatic effects.  It is the normalized data that are plotted in the top panel of Fig.~1.
+
+
+%We performed a least-squares fit to the data with a sine curve with trial frequencies between 0.005 and 0.95 c/d, corresponding to periods between one and 200 days. The goodness of fit at each frequency is measured as the reduction factor in the variance of the original data.  The result suggests low-amplitude brightness variability in WASP-103 with a period near 6.814 days. 
+
+
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{Figures/photometry.eps}
+\caption{$Top$: The normalized nightly Cousins $R$ band photometric dataset for WASP-103, acquired with the C14 automated imaging telescope at Fairborn Observatory. Vertical dashed lines denote separate observing seasons. Gaps are due to target visibility and the Arizona monsoon season (July - September). $Middle$: The frequency spectrum of the normalized dataset suggests low-amplitude variability with a period of 6.814~days. $Bottom$: The normalized dataset phased to the 6.814-day period, which we interpret as the stellar rotation period. A least-squares sine fit to the 6.814-day rotation period gives a peak-to-peak amplitude of just 0.005~mag.}
+\label{fig:photometry}
+\end{figure}
+
+\begin{deluxetable}{ccccc}
+	%\tabletypesize{\small}
+	\tablenum{1}
+	\tablewidth{0pt}
+	\tablecaption{Summary of Photometric Observations of WASP-103}
+	\tablehead{
+		\colhead{Observing} & \colhead{} & \colhead{Date Range} &
+		\colhead{Sigma} & \colhead{Seasonal Mean}  \\
+
+		\colhead{Season} & \colhead{$N_{obs}$} & \colhead{(HJD $-$ 2,400,000)} &
+		\colhead{(mag)} & \colhead{(mag)}}%   \\
+
+	%	\colhead{(1)} & \colhead{(2)} & \colhead{(3)} &
+	%	\colhead{(4)} & \colhead{(5)}  
+	\startdata
+	   2014   &  59 & 56722--56972 & 0.0057 & $0.9546\pm0.0007$  \\
+	   2015   &  73 & 57028--57335 & 0.0062 & $0.9549\pm0.0007$  \\
+	   2016   &  26 & 57385--57451 & 0.0055 & $0.9485\pm0.0011$  \\
+	\enddata
+	\label{tab:photometry}
+\end{deluxetable}
+
+
+\subsection{Retrieval}
+
 
 \section{Light Curve Fits}
 which orbits/data
