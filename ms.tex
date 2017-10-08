@@ -20,7 +20,7 @@
 
 \begin{document}
 
-\title{Phase Curves of WASP-103b}
+\title{Global Climate of the Ultra-Hot Jupiter WASP-103b from \HST\ and Spitzer Phase Curve Observations}
 
 \correspondingauthor{Laura Kreidberg}
 \email{laura.kreidberg@cfa.harvard.edu}
@@ -96,7 +96,11 @@ In parallel with these observations, there have been major advances in the theor
 In addition to GCMs, work on the inverse problem Cowan - how to get maps, . SPIDERMAN, an open-source Python package designed to take any temperature or brightness map of a planet and output the corresponding phase curve, so that we can readily connect GCMs to phase curve observations.  
 
 
+
+
 In this paper we present \HST\ and \Spitzer\ phase curve observations of WASP-103b, a hot Jupiter with a mass of X, radius of Y, period of Z (cite discovery paper). These properties are similar to WASP-43b, except that WASP-103b has a much (FIXME vs FIXME K) thanks to its hot F?? star host. By comparing the phase curves of these two planets, we can test the effect of irradiation on the climate of the planet.
+
+Talk about other WFC3 papers (Star Cartier, etc)
 
 The structure of the paper is as follows:
 
@@ -140,13 +144,13 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 	%\tabletypesize{\small}
 	\tablenum{1}
 	\tablewidth{0pt}
-	\tablecaption{Summary of Photometric Observations of WASP-103}
+	\tablecaption{Photometric Observations of WASP-103}
 	\tablehead{
 		\colhead{Observing} & \colhead{} & \colhead{Date Range} &
-		\colhead{Sigma} & \colhead{Seasonal Mean}  \\
+	\colhead{Sigma} & \colhead{Seasonal Mean} }% \\
 
-		\colhead{Season} & \colhead{$N_{obs}$} & \colhead{(HJD $-$ 2,400,000)} &
-		\colhead{(mag)} & \colhead{(mag)}}%   \\
+%		\colhead{Season} & \colhead{$N_{obs}$} & \colhead{(HJD $-$ 2,400,000)} &
+%		\colhead{(mag)} & \colhead{(mag)}}%   \\
 
 	%	\colhead{(1)} & \colhead{(2)} & \colhead{(3)} &
 	%	\colhead{(4)} & \colhead{(5)}  
@@ -159,17 +163,25 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 \end{deluxetable}
 
 
-\subsection{Retrieval}
-
 
 \section{Light Curve Fits}
-which orbits/data
+We fit the \HST\ and \Spitzer\ phase curves independently. For each light curve fit, we used a two-component model:
+ one component models the physical signal (the planet's thermal phase variation) and the other models the instrument systematics. 
+
+\subsection{Physical Model}
+We explored several different models for the planet's thermal phase variation. 
+
+two-temperature model, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$. also temperature map generated with spherical harmonics, the most general.  Physically-motivated kinematic model from \cite{zhang16}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$). The kinematic model makes several simplifying assumptions (e.g, that the wind speed and direction are constant), but it reproduces GCM simulations fairly well.  
+
+We also fit a sine curve. 
+
+\subsubsection{Ellipsoidal Variations and Doppler Beaming}
 ellipsoidal variations/doppler beaming
 
-\subsection{Phase-Resolved Spectra}
+\subsection{Systematics Models}
+Both the \HST\ and \Spitzer\ phase curves have systematic noise caused by variations in the sensitivity of the instrument over time. For the WFC3 data, the dominant systematic is an orbit-long exponential trend due to charge traps filling up over successive exposures \citep{zhu17}. For \Spitzer\, the intrapixel sensitivity effect is the primary source of noise. The detector's pixels do not have uniform sensitivity, so slight changes in telescope pointing cause the recorded flux to vary. 
 
-\subsection{Comparison of Thermal Phase Variation Models}
-
+\subsubsection{\HST\ Systematics}
 The raw data exhibit time-dependent systematic trends typically seen in WFC3 light curves, which we correct using a systematics model of the form:
 
 \begin{equation}
@@ -187,7 +199,19 @@ F(t) = F_\mathrm{sys}(t)\left[T(t) + (E(t) - 1)(1 + A\cos(2\pi(t - \theta)/P))\r
 
 \noindent where $T(t)$ is a transit model, $E(t)$ is an eclipse model, $P$ is the planet orbital period, and $A$ and $\theta$ are free parameters to fit the amplitude and offset for the thermal phase variation. The free parameters for the transit and eclipse model are the planet-to-star radius ratio $r_p/r_s$, the planet-to-star flux ratio $f_p/f_s$, and a linear limb darkening parameter. The eclipse model is normalized such that the flux during eclipse is 1 and out of eclipse is $f_p/f_s$, and the transit model is normalized to unity out of transit. The planet's orbital parameters are poorly constrained by the WFC3 light curve due to incomplete phase coverage, so we fix the inclination to $i = 84.54^\circ$, the semi-major axis to stellar radius $a/R_s  = 2.925$, based on the best fit to the \emph{Spitzer} Channel 2 light curve (described below).  We use the orbital period $P = 0.925545613$ day, and time of inferior conjunction $t_0 = 2456836.2964455$ from \cite{southworth15}.  All free parameters were assumed to have a common value for both \emph{HST} visits, with the exception of $c$, $v_1$ and $v_2$, which were allowed to vary between visits. We explored adding an additional cosine term to model the thermal phase variation, but the additional degrees of freedom are not justified according to the Bayesian Information Criterion (BIC). The transit and eclipse models were calculated with the \texttt{batman} package \citep{kreidberg15a}. %Figure\;\ref{fig:w103_hst} shows the fitted broadband phase curve.
 
+
+\subsubsection{\Spitzer\ Systematics}
 and fit the systematics with the BLISS mapping technique \citep{stevenson12}. This technique creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. In addition to the intrapixel sensitivity map, we fit the data for a linear trend in time and used the same transit, eclipse, and phase variation model as in Equation%\;\ref{eq:model}.
+
+which orbits/data
+
+
+
+\subsection{Phase-Resolved Spectra}
+
+\subsection{Comparison of Thermal Phase Variation Models}
+
+
 
 
 \section{Composition of the Atmosphere}
