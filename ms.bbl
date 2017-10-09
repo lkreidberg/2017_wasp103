@@ -2,6 +2,13 @@
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\href{#1}{#1}}
 
+\bibitem[{{Gillon} {et~al.}(2014){Gillon}, {Anderson}, {Collier-Cameron},
+  {Delrez}, {Hellier}, {Jehin}, {Lendl}, {Maxted}, {Pepe}, {Pollacco},
+  {Queloz}, {S{\'e}gransan}, {Smith}, {Smalley}, {Southworth}, {Triaud},
+  {Udry}, {Van Grootel}, \& {West}}]{gillon14}
+{Gillon}, M., {Anderson}, D.~R., {Collier-Cameron}, A., {et~al.} 2014, \aap,
+  562, L3
+
 \bibitem[{{Horne}(1986)}]{horne86}
 {Horne}, K. 1986, \pasp, 98, 609
 
@@ -19,6 +26,11 @@
   {Charbonneau}, {McCullough}, {Seager}, {Burrows}, {Henry}, {Williamson},
   {Kataria}, \& {Homeier}}]{kreidberg14b}
 ---. 2014{\natexlab{b}}, \apjl, 793, L27
+
+\bibitem[{{Kreidberg} {et~al.}(2015){Kreidberg}, {Line}, {Bean}, {Stevenson},
+  {D{\'e}sert}, {Madhusudhan}, {Fortney}, {Barstow}, {Henry}, {Williamson}, \&
+  {Showman}}]{kreidberg15b}
+{Kreidberg}, L., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2015, \apj, 814, 66
 
 \bibitem[{{Southworth} {et~al.}(2015){Southworth}, {Mancini}, {Ciceri},
   {Budaj}, {Dominik}, {Figuera Jaimes}, {Haugb{\o}lle}, {J{\o}rgensen},

@@ -13,49 +13,49 @@ Warning--I didn't find a database entry for "stevenson???"
 Warning--I didn't find a database entry for "h1999"
 Warning--I didn't find a database entry for "ehf2003"
 Warning--I didn't find a database entry for "getal2014"
-Warning--I didn't find a database entry for "FIXME"
 Warning--I didn't find a database entry for "zhang16"
+Warning--I didn't find a database entry for "FIXME"
 Warning--I didn't find a database entry for "zhu17"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 7 entries,
+You've used 9 entries,
             3222 wiz_defined-function locations,
-            722 strings with 6599 characters,
-and the built_in function-call counts, 3391 in all, are:
-= -- 232
-> -- 306
+            736 strings with 7480 characters,
+and the built_in function-call counts, 4501 in all, are:
+= -- 300
+> -- 430
 < -- 3
-+ -- 100
-- -- 105
-* -- 318
-:= -- 653
-add.period$ -- 7
-call.type$ -- 7
-change.case$ -- 29
-chr.to.int$ -- 6
-cite$ -- 7
-duplicate$ -- 122
-empty$ -- 198
-format.name$ -- 115
-if$ -- 666
++ -- 140
+- -- 149
+* -- 434
+:= -- 873
+add.period$ -- 9
+call.type$ -- 9
+change.case$ -- 37
+chr.to.int$ -- 8
+cite$ -- 9
+duplicate$ -- 158
+empty$ -- 252
+format.name$ -- 161
+if$ -- 878
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 7
-newline$ -- 26
-num.names$ -- 28
-pop$ -- 42
+missing$ -- 9
+newline$ -- 32
+num.names$ -- 36
+pop$ -- 54
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 37
 quote$ -- 0
-skip$ -- 97
+skip$ -- 123
 stack$ -- 0
-substring$ -- 122
+substring$ -- 150
 swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 63
+type$ -- 81
 warning$ -- 0
-while$ -- 24
+while$ -- 30
 width$ -- 0
-write$ -- 74
+write$ -- 94
 (There was 1 error message)
