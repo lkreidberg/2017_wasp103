@@ -15,12 +15,12 @@
 %\accepted{\today}
 \submitjournal{ApJ}
 
-\shorttitle{Phase Curves of WASP-103b}
+\shorttitle{Phase Curves of WASP-103\lowercase{b}}
 \shortauthors{Kreidberg et al.}
 
 \begin{document}
 
-\title{Global Climate of the Ultra-Hot Jupiter WASP-103b from \HST\ and Spitzer Phase Curve Observations}
+\title{Global Climate of the Ultra-Hot Jupiter WASP-103\lowercase{b} from \HST\ and Spitzer Phase Curve Observations}
 
 \correspondingauthor{Laura Kreidberg}
 \email{laura.kreidberg@cfa.harvard.edu}
@@ -163,13 +163,13 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 \end{deluxetable}
 
 
-
 \section{Light Curve Fits}
-We fit the \HST\ and \Spitzer\ phase curves independently. For each light curve fit, we used a two-component model:
- one component models the physical signal (the planet's thermal phase variation) and the other models the instrument systematics. 
+We fit a two-component model to the full-orbit phase curves. One component models the planet signal (the thermal phase variation and transit), and the other component is a systematics model for changes in the instrument sensitivity. For each light curve, we fit the physical and systematic component simultaneously. 
 
-\subsection{Physical Model}
-We explored several different models for the planet's thermal phase variation. 
+\subsection{Thermal Phase Variation Models}
+We explored several different models for the planet's thermal phase variation. The simplest model was a sine curve, which has been used for many past analyses of exoplanet phase curves \citep[e.g.]{FIXME}. 
+
+We also fit climate maps using the open-source Python package \texttt{SPIDERMAN}. This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and outputs a the thermal phase curve. The code is optimized to calculate   
 
 two-temperature model, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$. also temperature map generated with spherical harmonics, the most general.  Physically-motivated kinematic model from \cite{zhang16}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$). The kinematic model makes several simplifying assumptions (e.g, that the wind speed and direction are constant), but it reproduces GCM simulations fairly well.  
 
@@ -177,6 +177,12 @@ We also fit a sine curve.
 
 \subsubsection{Ellipsoidal Variations and Doppler Beaming}
 ellipsoidal variations/doppler beaming
+
+\begin{figure*}
+\includegraphics[width = 1.0\textwidth]{Figures/phase_curves.pdf}
+\caption{WASP-103b phase curve observations from \HST/WFC3 (top) and \Spitzer/IRAC (middle and bottom). For clarity, the data are phase-folded on the planet's orbital period and binned in 30 uniformly spaced bins between 0 and 1. The left column shows the phase curves with systematic noise removed (black points) compared to the best fit model (black line). The shading denotes the  1\,$\sigma$ confidence interval on the best fit. We include the transits in the fit, but they are not displayed in this figure. The right-hand column shows the binned residuals for the best-fit light curve.}
+\label{fig:phasecurves}
+\end{figure*}
 
 \subsection{Systematics Models}
 Both the \HST\ and \Spitzer\ phase curves have systematic noise caused by variations in the sensitivity of the instrument over time. For the WFC3 data, the dominant systematic is an orbit-long exponential trend due to charge traps filling up over successive exposures \citep{zhu17}. For \Spitzer\, the intrapixel sensitivity effect is the primary source of noise. The detector's pixels do not have uniform sensitivity, so slight changes in telescope pointing cause the recorded flux to vary. 
@@ -206,8 +212,12 @@ and fit the systematics with the BLISS mapping technique \citep{stevenson12}. Th
 which orbits/data
 
 
+\section{Results}
 
 \subsection{Phase-Resolved Spectra}
+After fitting
+
+We note that the phase-resolved spectra do not significantly change based on which model we assume for the  
 
 \subsection{Comparison of Thermal Phase Variation Models}
 

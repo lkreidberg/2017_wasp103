@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 OCT 2017 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 OCT 2017 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -526,10 +526,10 @@ Package natbib Warning: Citation `getal2014' on page 4 undefined on input line
 124.
 
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-07 12:30:01
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-07 13:01:13
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
@@ -549,56 +549,67 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 138--139
 
 [4 <./Figures/photometry-eps-converted-to.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 174.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 169.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 174.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 169.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
+Package natbib Warning: Citation `FIXME' on page 5 undefined on input line 170.
+
+
+
 Package natbib Warning: Citation `zhang16' on page 5 undefined on input line 17
-6.
+4.
+
+<Figures/phase_curves.pdf, id=69, 542.025pt x 289.08pt>
+File: Figures/phase_curves.pdf Graphic file (type pdf)
+
+<use Figures/phase_curves.pdf>
+Package pdftex.def Info: Figures/phase_curves.pdf used on input line 182.
+(pdftex.def)             Requested size: 513.11743pt x 273.67166pt.
 
 
-Package natbib Warning: Citation `zhu17' on page 5 undefined on input line 184.
+Package natbib Warning: Citation `zhu17' on page 5 undefined on input line 188.
 
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 187--188
+Underfull \hbox (badness 1389) in paragraph at lines 191--192
 []\OT1/cmr/m/n/10 The raw data ex-hibit time-dependent sys-tem-atic
  []
 
 
-Overfull \hbox (9.3299pt too wide) detected at line 200
+Overfull \hbox (9.3299pt too wide) detected at line 204
 []\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = \OML
 /cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) [][][]
  []
 
 [5]
-Overfull \hbox (0.70622pt too wide) in paragraph at lines 229--230
+Overfull \hbox (0.70622pt too wide) in paragraph at lines 237--238
 \OT1/cmr/m/n/10 Beatty, Ming Zhao, Kim Star Cartier, Han-nah Diamond-
  []
 
-(./ms.bbl) [6]
+(./ms.bbl) [6 <./Figures/phase_curves.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 234.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 242.
 (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 234.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 234.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 242.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 242.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8766 strings out of 492995
- 121627 string characters out of 6132704
- 261463 words of memory out of 5000000
- 12182 multiletter control sequences out of 15000+600000
+ 8782 strings out of 492995
+ 121895 string characters out of 6132704
+ 262530 words of memory out of 5000000
+ 12195 multiletter control sequences out of 15000+600000
  15267 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,10n,37p,1550b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -623,10 +634,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (6 pages, 518960 bytes).
+Output written on ms.pdf (6 pages, 600956 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 153 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

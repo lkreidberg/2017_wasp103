@@ -6,6 +6,7 @@ import matplotlib.gridspec as gridspec
 from pylab import *
 from matplotlib import rc
 import spiderman_lc
+import transit_lc
 from lc_fit import Model, LightCurveData
 
 rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
@@ -13,16 +14,18 @@ rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
 def quantile(x, q):
         return np.percentile(x, 100. * q)
 
-gs = gridspec.GridSpec(3, 2, hspace=0.0, wspace = 0.0)
+plt.figure(figsize = (7.5,4))
+
+gs = gridspec.GridSpec(3, 2, hspace=0.1, wspace = 0.05)
 
 # plots HST white light phase curve
 bestfits = ["/Users/lkreidberg/Desktop/Projects/Observations/HST/WASP103_HST_all/PHYSICAL_MODEL_WHITE_MCMC/bestfit_white.pic"]
 mcmcs =  ["/Users/lkreidberg/Desktop/Projects/Observations/HST/WASP103_HST_all/PHYSICAL_MODEL_WHITE_MCMC/mcmc_out_white.npy"]
 
-phasebins = np.linspace(0., 1., 40)
+phasebins = np.linspace(0., 1., 30)
 nbins = len(phasebins) - 1
 
-every_N = 10000
+every_N = 1000
 
 for ii, f in enumerate(bestfits):
 	ax = plt.subplot(gs[ii, 0])
@@ -37,8 +40,8 @@ for ii, f in enumerate(bestfits):
 	t0 = 2457080.64041702 
 	t = np.linspace(t0, t0+ per, 1000)
 	models = np.zeros((len(t), mcmc.shape[0]))
-	for i in range(len(mcmc)): models[:, i] = spiderman_lc.lc(t, 0.115, T_s[i], 1.1e-6, 1.7e-6, xi[i], T_n[i], delta_T[i], 0., True)
-	print "hard coding in rp and wavelength for spiderman model"
+	for i in range(len(mcmc)): models[:, i] = spiderman_lc.lc(t, np.median(rp), T_s[i], 1.1e-6, 1.7e-6, xi[i], T_n[i], delta_T[i], 0., True)*transit_lc.lc(t, np.median(rp))
+	#print "hard coding in rp and wavelength for spiderman model"
 
 	phase = (t-t0)/per - np.floor((t-t0)/per)		
 	
@@ -80,9 +83,13 @@ for ii, f in enumerate(bestfits):
 	ax.xaxis.set_major_locator(FixedLocator(np.array([0.1, 0.3, 0.5, 0.7, 0.9])))
 	ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
 	ax.set_xticklabels([])
+
+	ax.yaxis.set_major_locator(FixedLocator(np.array([0., 0.5, 1, 1.5])))
+
 	plt.ylim(-0.2, 1.7)
 	plt.xlim(0,1)
 
+	ax.text(0.03, 1.0, 'HST/WFC3\n1.1 - 1.7 $\mu$m', fontsize=10)
 
 	#Plot RESIDUALS 	#
 	#########################
@@ -98,11 +105,12 @@ for ii, f in enumerate(bestfits):
 	ax.set_yticklabels([-0.1, 0, 0.1])
 	
 	ax.xaxis.set_major_locator(FixedLocator(np.array([0.1, 0.3, 0.5, 0.7, 0.9])))
-	ax.set_xticklabels([0.1, 0.3, 0.5, 0.7, 0.9])
+	#ax.set_xticklabels([0.1, 0.3, 0.5, 0.7, 0.9])
+	ax.set_xticklabels([])
 	ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
 	
 	ax.yaxis.tick_right()
-	plt.xlabel("Orbital phase")
+	plt.xlabel("Orbital phase", fontsize=12)
 
 
 #plot Spitzer phase curves
@@ -113,11 +121,12 @@ mcmc_output = ["/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_
 
 colors = ['orange', 'red']
 
-phasebins = np.linspace(0., 1., 50)
+phasebins = np.linspace(0., 1., 30)
 nbins = len(phasebins) - 1
 dilution = np.array([0.1712, 0.1587])
+l1 = np.array([3.15e-6, 4.0e-6])
+l2 = np.array([3.95e-6, 5.0e-6])
 
-every_N = 10000
 
 for ii, f in enumerate(bestfits):
 	ax = plt.subplot(gs[ii+1, 0])
@@ -132,8 +141,8 @@ for ii, f in enumerate(bestfits):
 	phase = (t-t0)/per - np.floor((t-t0)/per)		
 
 	models = np.zeros((len(t), mcmc.shape[0]))
-	for i in range(len(mcmc)): models[:, i] = spiderman_lc.lc(t, 0.115, T_s[i], 3.15e-6, 3.95e-6, xi[i], T_n[i], delta_T[i], dilution[ii], True)
-	print "hard coding in rp for spiderman model"
+	for i in range(len(mcmc)): models[:, i] = spiderman_lc.lc(t, np.median(rp), T_s[i], l1[ii], l2[ii], xi[i], T_n[i], delta_T[i], dilution[ii], True)*transit_lc.lc(t, np.median(rp))
+	#print "hard coding in rp for spiderman model"
 
 	plt.fill_between(phase, (np.apply_along_axis(quantile, 0, models.T, 0.16)-1.)*1e3, (np.apply_along_axis(quantile, 0, models.T, 0.84) - 1.)*1e3, linewidth=0., alpha=0.5, color=colors[ii])
 
@@ -169,11 +178,14 @@ for ii, f in enumerate(bestfits):
 	
 	if ii ==0: 
 		plt.ylabel("Planet-to-star flux (ppt)", fontsize = 12, labelpad = 10)
+		ax.set_xticklabels([])
+		ax.text(0.03, 3.8, 'Spitzer Ch 1\n3.6 $\mu$m', fontsize=10)
 	if ii == 1: 
-		plt.xlabel("Orbital phase")
+		plt.xlabel("Orbital phase", fontsize=12)
 		ax.xaxis.set_major_locator(FixedLocator(np.array([0.1, 0.3, 0.5, 0.7, 0.9])))
 		ax.set_xticklabels([0.1, 0.3, 0.5, 0.7, 0.9])
 		ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
+		ax.text(0.03, 3.8, 'Spitzer Ch 2\n4.5 $\mu$m', fontsize=10)
 
 
 	#Plot RESIDUALS 	#
@@ -195,9 +207,10 @@ for ii, f in enumerate(bestfits):
 	ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
 	
 	if ii == 0: 
+		ax.set_xticklabels([])
 		plt.ylabel("Residuals (ppt)", fontsize = 12, labelpad = 10)
 		ax.yaxis.set_label_position("right")
-	if ii == 1: plt.xlabel("Orbital phase")
+	if ii == 1: plt.xlabel("Orbital phase", fontsize=12)
 
 
 plt.savefig("phase_curves.pdf")
