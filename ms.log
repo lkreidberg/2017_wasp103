@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 OCT 2017 17:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 OCT 2017 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -547,53 +547,55 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 138--139
 [][] 
  []
 
-[4 <./Figures/photometry-eps-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 169.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+ [4 <./Figures/photometry-eps-converted-to.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 168.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 169.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 168.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Package natbib Warning: Citation `zhang16' on page 5 undefined on input line 18
-0.
+Package natbib Warning: Citation `zhang16' on page 5 undefined on input line 17
+8.
 
 
-Package natbib Warning: Citation `FIXME' on page 5 undefined on input line 182.
+Package natbib Warning: Citation `FIXME' on page 5 undefined on input line 178.
 
 
 
-Underfull \hbox (badness 1325) in paragraph at lines 184--185
+Underfull \hbox (badness 1325) in paragraph at lines 181--182
 []\OT1/cmr/m/n/10 In ad-di-tion to the chang-ing tem-per-a-ture of the
  []
 
-<Figures/phase_curves.pdf, id=74, 542.025pt x 289.08pt>
+<Figures/phase_curves.pdf, id=75, 542.025pt x 289.08pt>
 File: Figures/phase_curves.pdf Graphic file (type pdf)
 
 <use Figures/phase_curves.pdf>
-Package pdftex.def Info: Figures/phase_curves.pdf used on input line 187.
+Package pdftex.def Info: Figures/phase_curves.pdf used on input line 185.
 (pdftex.def)             Requested size: 513.11743pt x 273.67166pt.
 
 
-Package natbib Warning: Citation `zhu17' on page 5 undefined on input line 193.
+Package natbib Warning: Citation `zhu17' on page 5 undefined on input line 191.
 
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 196--197
-[]\OT1/cmr/m/n/10 The raw data ex-hibit time-dependent sys-tem-atic
- []
-
-
-Overfull \hbox (9.3299pt too wide) detected at line 209
-[]\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = \OML
-/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) [][][]
- []
 
 [5]
-Overfull \hbox (0.70622pt too wide) in paragraph at lines 246--247
+Overfull \hbox (54.72163pt too wide) in paragraph at lines 227--228
+[]\OT1/cmr/m/n/10 cite Trem-blin et al. 2017 ? (https://arxiv.org/pdf/1710.0264
+0.pdf) 
+ []
+
+
+Overfull \hbox (0.70622pt too wide) in paragraph at lines 232--233
 \OT1/cmr/m/n/10 Beatty, Ming Zhao, Kim Star Cartier, Han-nah Diamond-
  []
 
@@ -601,23 +603,23 @@ Overfull \hbox (0.70622pt too wide) in paragraph at lines 246--247
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 237.
 (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 251.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 237.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 237.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8793 strings out of 492995
- 122066 string characters out of 6132704
- 263920 words of memory out of 5000000
- 12203 multiletter control sequences out of 15000+600000
+ 8810 strings out of 492995
+ 122366 string characters out of 6132704
+ 262931 words of memory out of 5000000
+ 12217 multiletter control sequences out of 15000+600000
  15267 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,10n,37p,1224b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,10n,37p,1446b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
@@ -639,10 +641,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (7 pages, 602410 bytes).
+Output written on ms.pdf (7 pages, 602347 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 258 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  43 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -96,8 +96,6 @@ In parallel with these observations, there have been major advances in the theor
 In addition to GCMs, work on the inverse problem Cowan - how to get maps, . SPIDERMAN, an open-source Python package designed to take any temperature or brightness map of a planet and output the corresponding phase curve, so that we can readily connect GCMs to phase curve observations.  
 
 
-
-
 In this paper we present \HST\ and \Spitzer\ phase curve observations of WASP-103b, a hot Jupiter with a mass of X, radius of Y, period of Z (cite discovery paper). These properties are similar to WASP-43b, except that WASP-103b has a much (FIXME vs FIXME K) thanks to its hot F?? star host. By comparing the phase curves of these two planets, we can test the effect of irradiation on the climate of the planet.
 
 Talk about other WFC3 papers (Star Cartier, etc)
@@ -164,23 +162,22 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 
 
 \section{Light Curve Fits}
-We fit a two-component model to the full-orbit phase curves. One component models the astrophysical signal (the planet's thermal phase variation and transit), and the other component models the systematic noise introduced by changes in the instrument sensitivity. For each light curve, we fit the physical and systematic components simultaneously. 
+We fit a two-component model to the full-orbit phase curves. One component models the astrophysical signal (the planet's thermal phase variation and transit), and the other component models the systematic noise introduced by changes in instrument sensitivity over time. For each light curve, we fit the physical and systematic components simultaneously. For the \HST\ data, where we observed two light curves, we constrain the physical parameters to be the same for both, but allow some of the systematics parameters to vary (see \S\,\ref{sec:hst_sys}).
 
 \subsection{Astrophysical Signal}
 We assume the astrophysical signal $F_\mathrm{physical}(t)$ has the following form:
-
 \begin{equation}
 	F_\mathrm{physical}(t) = T(t) \times P(t) \times E(t)
 \end{equation}
+where $T(t)$ is the transit model, $P(t)$ is the thermal phase variation, and $E(t)$ is ellipsoidal variation (change in the apparent radius of the planet with orbital phase due to tidal distortion).
 
-where $T(t)$ is the transit model, $P(t)$ is the thermal phase variation, and $E(t)$ is the ellipsoidal variation. 
+We calculate the transit model with the \texttt{batman} package \citep{kreidberg15a}. The free parameters are the planet radius $r_p$, orbital inclination $i$, the ratio of semi-major axis to stellar radius $a/R_s$, and a linear stellar limb darkening parameter $u$.  We fixed the orbital period to $P = 0.925545613$ day and time of inferior conjunction to $t_0 = 2456836.2964455$, based on estimates from \cite{southworth15}.  We found that the system parameters were poorly constrained for the \HST/WFC3 phase curve (due to incomplete phase coverage) and \Spitzer\ Channel 1 phase curve (due to correlated noise), so for those light curves we fixed the the inclination to $i = 84.54^\circ$ and the semi-major axis to stellar radius $a/R_s  = 2.925$, based on the best fit to the \emph{Spitzer} Channel 2 light curve. 
 
-The transit model is calculated with the \texttt{batman} package \citep{kreidberg15a}. The free parameters for the transit fit are the planet radius $r_p$, orbital inclination $i$, the ratio of semi-major axis to stellar radius $a/R_s$, and a linear stellar limb darkening parameter $u$.  We fixed the orbital period $P = 0.925545613$ day and time of inferior conjunction $t_0 = 2456836.2964455$, based on \cite{southworth15}.  We found that the system parameters were poorly constrained for the \HST/WFC3 phase curve (due to incomplete phase coverage) and \Spitzer\ Channel 1 phase curve (due to correlated noise), so we fixed the the inclination to $i = 84.54^\circ$ and the semi-major axis to stellar radius $a/R_s  = 2.925$, based on the best fit to the \emph{Spitzer} Channel 2 light curve.
-
-We explored several different models for the planet's thermal phase variation $P(t)$, using climate maps from the open-source Python package \texttt{SPIDERMAN}. This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and generate the corresponding thermal phase curve over a specified wavelength range. We tested three different maps:  a two-temperature map, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$; a map generated with spherical harmonics; and the physically-motivated kinematic model from \cite{zhang16}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$). These models each have different strengths. The kinematic model incorporates the most prior knowledge of physics, and even though it makes several simplifying assumptions (e.g, that the wind speed and direction are constant), it reproduces GCM simulations fairly well.   The spherical harmonics map is the most flexible and makes the fewest assumptions about the true climate. The two-temperature model is the simplest and has the fewest free parameters.  
-For comparison, we also fit the phase variation with a sinusoid, which has been used for many past analyses of exoplanet phase curves \citep[e.g.]{FIXME}.  We found FIXME.
+We explored several different models for the planet's thermal phase variation $P(t)$, using climate maps from the open-source Python package \texttt{SPIDERMAN}. This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and generate the corresponding thermal phase curve over a specified wavelength range. We tested three different maps:  a two-temperature map, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$; a map generated with spherical harmonics; and the physically-motivated kinematic model from \cite{zhang16}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$). These models each have different strengths. The kinematic model incorporates the most prior knowledge of physics, and even though it makes several simplifying assumptions (e.g, that the wind speed and direction are constant), it reproduces GCM simulations fairly well.   The spherical harmonics map is the most flexible and makes the fewest assumptions about the true climate. The two-temperature model is the simplest and has the fewest free parameters.  In addition to these maps, we also fit the phase variation with a sinusoid, which has been used for many past analyses of exoplanet phase curves \citep[e.g.]{FIXME}.  
+%We explored adding an additional sine term to model the thermal phase variation, but the additional degrees of freedom are not justified according to the Bayesian Information Criterion (BIC). 
 
 In addition to the changing temperature of the planet's surface, the visible surface area also is expected to change as a function of orbital phase.  WASP-103b is so close to its host star that it is likely tidally distorted and partially filling its Roche lobe \citep{gillon14}, which introduces ellipsoidal variations $E(t)$ in the light curve.  Our light curves are not precise enough to detect the ellipsoidal variability, but we include a model prediction $E(t)$ to avoid introducing any bias in the thermal phase variation. We predict $E(t)$ using FIXME. FIXME doppler beaming?
+
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/phase_curves.pdf}
@@ -189,57 +186,45 @@ In addition to the changing temperature of the planet's surface, the visible sur
 \end{figure*}
 
 \subsection{Systematics}
-Both the \HST\ and \Spitzer\ phase curves have systematic noise caused by variations in the sensitivity of the instrument over time. For the WFC3 data, the dominant systematic is an orbit-long exponential trend due to charge traps filling up over successive exposures \citep{zhu17}. For \Spitzer\, the intrapixel sensitivity effect is the primary source of noise. The detector's pixels do not have uniform sensitivity, so slight changes in telescope pointing cause the recorded flux to vary. 
+Both the \HST\ and \Spitzer\ phase curves have systematic noise caused by variations in the sensitivity of the instrument over time. For the \HST/WFC3 data, the dominant systematic is an orbit-long exponential trend due to charge traps filling up over successive exposures \citep{zhu17}. For \Spitzer\, the primary source of noise is the intrapixel sensitivity effect. The detector's pixels do not have uniform sensitivity, so slight changes in telescope pointing cause the recorded flux to vary. 
 
 \subsubsection{\HST\ Systematics}
-The raw data exhibit time-dependent systematic trends typically seen in WFC3 light curves, which we correct using a systematics model of the form:
-
+\label{sec:hst_sys}
+We fit for the WFC3 systematics using an analytic model of the form:
 \begin{equation}
  F_\mathrm{sys}(t) = (c\,S(t) + v_1\,t_\mathrm{v} + v_2\,t_\mathrm{v})(1 - \exp(-a\,t_\mathrm{orb} - b))
 \end{equation}
+where $t_\mathrm{v}$ is time elapsed since the first exposure in a visit and $t_\mathrm{orb}$ is time since the first exposure in an orbit. $S(t)$ is a scale factor equal to 1 for exposures with spatial scanning in the forward direction and $s$ for reverse scans. In the fit, $c$, $v_1$, $v_2$, $a$, $b$, and $s$ are free parameters. The first orbit in each visit shows larger systematic trends than subsequent orbits, so we exclude these data in our final analysis \citep[a common practice; see e.g.][]{kreidberg14a}. FIXME: what other orbits did we exclude? did we drop the first exposure?
 
-\noindent where $t_\mathrm{v}$ is time elapsed since the first exposure in a visit and $t_\mathrm{orb}$ is time since the first exposure in an orbit. $S(t)$ is a scale factor equal to 1 for exposures with spatial scanning in the forward direction and $s$ for reverse scans. In the fit, $c$, $v_1$, $v_2$, $a$, $b$, and $s$ are free parameters. The first orbit in each visit shows larger systematic trends than subsequent orbits, so we exclude these data in our final analysis \citep[a common practice; see e.g.][]{kreidberg14a}.
-
-We fit the systematics model simultaneously with the physical parameters for the system. The complete model is
-
-\begin{equation}
-F(t) = F_\mathrm{sys}(t)\left[T(t) + (E(t) - 1)(1 + A\cos(2\pi(t - \theta)/P))\right]
-\label{eq:model}
-\end{equation}
-
-\noindent where $T(t)$ is a transit model, $E(t)$ is an eclipse model, $P$ is the planet orbital period, and $A$ and $\theta$ are free parameters to fit the amplitude and offset for the thermal phase variation. The free parameters for the transit and eclipse model are the planet-to-star radius ratio $r_p/r_s$, the planet-to-star flux ratio $f_p/f_s$, and a linear limb darkening parameter. The eclipse model is normalized such that the flux during eclipse is 1 and out of eclipse is $f_p/f_s$, and the transit model is normalized to unity out of transit. 
-
-
-
-All free parameters were assumed to have a common value for both \emph{HST} visits, with the exception of $c$, $v_1$ and $v_2$, which were allowed to vary between visits. We explored adding an additional cosine term to model the thermal phase variation, but the additional degrees of freedom are not justified according to the Bayesian Information Criterion (BIC). The transit and eclipse models were calculated with the \texttt{batman} package \citep{kreidberg15a}. %Figure\;\ref{fig:w103_hst} shows the fitted broadband phase curve.
+All free parameters were assumed to have a common value for both \emph{HST} visits, with the exception of $c$, $v_1$ and $v_2$, which were allowed to vary between visits. 
 
 
 \subsubsection{\Spitzer\ Systematics}
-and fit the systematics with the BLISS mapping technique \citep{stevenson12}. This technique creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. In addition to the intrapixel sensitivity map, we fit the data for a linear trend in time and used the same transit, eclipse, and phase variation model as in Equation%\;\ref{eq:model}.
-
-which orbits/data
-
-
+We fit the \Spitzer\ systematics with the BLISS mapping technique \citep{stevenson12}. This technique creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. In addition to the intrapixel sensitivity map, we fit the data for a linear trend in time. 
 \section{Results}
+We achieved
 
 \subsection{Phase-Resolved Spectra}
-After fitting
+We used the best-fit phase curves (with systematics removed) to generate phase-resolved emission spectra. We binned each phase curve in FIXME evenly spaced intervals between phase FIXME and FIXME. In each phase bin, we estimated the planet-to-star flux by taking the mean value of the data points in the bin. To estimate the uncertainty, we took the standard deviation of the points in the bin and added it in quadrature to the standard deviation of the data points during secondary eclipse (phase FIXME to FIXME). This procedure accounts for the uncertainty in the baseline stellar flux (which we measure during secondary eclipse).
+
+To estimate the dayside planet-to-star flux, we did FIXME.
 
 We note that the phase-resolved spectra do not significantly change based on which model we assume for the  
 
 \subsection{Comparison of Thermal Phase Variation Models}
+All four of the thermal phase variation models we consider (two-temperature, kinematic, spherical harmonics, and sinusoid) provide good fits to the observed phase curves. Table FIXME summarized the goodness of fit
 
 
+\section{Retrieval}
 
-
-\section{Composition of the Atmosphere}
-
-\subsection{Retrieval}
+\subsection{Bond Albedo}
 
 \section{Comparison with GCMs}
 
 \section{Comparison with Brown Dwarfs and Directly Imaged Planets}
+cite Tremblin et al. 2017 ? (https://arxiv.org/pdf/1710.02640.pdf)
 
+\section{Discussion and Conclusions}
 
 \acknowledgments
 We thank a lot of people. Caroline Morley, Thomas Beatty, Ming Zhao, Kim Star Cartier, Hannah Diamond-Lowe, Nick Cowan (make him a coauthor?)
