@@ -3,7 +3,6 @@ from astropy.io import ascii
 import matplotlib.gridspec as gridspec
 from pylab import *
 from matplotlib import rc
-import spiderman_lc
 import transit_lc
 import seaborn as sns
 from lc_fit import Model, LightCurveData

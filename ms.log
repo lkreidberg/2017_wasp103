@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  17 OCT 2017 12:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  17 OCT 2017 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -526,16 +526,16 @@ Package natbib Warning: Citation `getal2014' on page 4 undefined on input line
 122.
 
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-09 09:57:43
+(epstopdf)                    date: 2017-10-07 12:30:01
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-09 09:57:43
+(epstopdf)                    date: 2017-10-07 13:01:13
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
 (epstopdf)             \includegraphics on input line 136.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/photometry-eps-converted-to.pdf, id=55, 538.01pt x 696.6025pt>
+<Figures/photometry-eps-converted-to.pdf, id=56, 538.01pt x 696.6025pt>
 File: Figures/photometry-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/photometry-eps-converted-to.pdf>
@@ -569,11 +569,15 @@ Package natbib Warning: Citation `zhang16' on page 5 undefined on input line 17
 6.
 
 
+Package natbib Warning: Citation `zhang16' on page 5 undefined on input line 17
+6.
+
+
 Underfull \hbox (badness 1325) in paragraph at lines 179--180
 []\OT1/cmr/m/n/10 In ad-di-tion to the chang-ing tem-per-a-ture of the
  []
 
-<Figures/ellipsoidal.pdf, id=77, 433.62pt x 216.81pt>
+<Figures/ellipsoidal.pdf, id=78, 433.62pt x 216.81pt>
 File: Figures/ellipsoidal.pdf Graphic file (type pdf)
 
 <use Figures/ellipsoidal.pdf>
@@ -589,7 +593,7 @@ Package natbib Warning: Citation `zhu17' on page 5 undefined on input line 192.
 
 
 [5 <./Figures/ellipsoidal.pdf>]
-<Figures/systematics.pdf, id=131, 361.35pt x 505.89pt>
+<Figures/systematics.pdf, id=134, 361.35pt x 505.89pt>
 File: Figures/systematics.pdf Graphic file (type pdf)
 
 <use Figures/systematics.pdf>
@@ -600,7 +604,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 208--209
 [][] 
  []
 
-<Figures/phase_curves.pdf, id=132, 542.025pt x 289.08pt>
+<Figures/phase_curves.pdf, id=135, 542.025pt x 289.08pt>
 File: Figures/phase_curves.pdf Graphic file (type pdf)
 
 <use Figures/phase_curves.pdf>
@@ -617,7 +621,7 @@ Overfull \hbox (0.70622pt too wide) in paragraph at lines 246--247
 \OT1/cmr/m/n/10 Beatty, Ming Zhao, Kim Star Cartier, Han-nah Diamond-
  []
 
-(./ms.bbl) [7 <./Figures/phase_curves.pdf>]
+(./ms.bbl [7 <./Figures/phase_curves.pdf>]) [8]
 
 Package natbib Warning: There were undefined citations.
 
@@ -632,12 +636,12 @@ LaTeX Warning: There were undefined references.
  ) 
 Here is how much of TeX's memory you used:
  8834 strings out of 492995
- 122818 string characters out of 6132704
+ 122816 string characters out of 6132704
  260129 words of memory out of 5000000
- 12235 multiletter control sequences out of 15000+600000
+ 12234 multiletter control sequences out of 15000+600000
  15267 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,10n,37p,1434b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,10n,37p,1474b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
@@ -659,10 +663,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (7 pages, 656974 bytes).
+Output written on ms.pdf (8 pages, 659334 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
+ 359 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

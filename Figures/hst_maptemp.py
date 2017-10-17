@@ -36,7 +36,9 @@ def convert_to_T(flux):
 		for j in range(n):
 			relative = flux[i,j]
 			if relative > 0: T[i,j] = get_T(relative)
-			else: T[i,j] = 0.
+			else: 
+                                print relative
+                                T[i,j] = 0.
 	return T
 
 def initialize_params(spider_params):
