@@ -114,7 +114,7 @@ for i, model in enumerate(models):
     if model == "spherical": fluxes = convert_to_T(fluxes*np.pi)
 
     vmax = 4000. 
-    vmin = 10.
+    vmin = 1000.
 
     print "model, Tmin, Tmax = ", model, fluxes.min(), fluxes.max()
 	

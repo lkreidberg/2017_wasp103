@@ -13,9 +13,10 @@ mpl.rcParams['lines.linewidth'] = 1.4
 models = ["spherical", "zhang", "hotspot_t"]
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #WFC3
-colors = ['red', 'orange', 'blue'] 
+colors = ['#02ccfe', '#ff7855', 'blue'] 
 grays = ['0.7', '0.5', '0.6']
 labels = ["Spherical harmonics", "Kinematic", "Two temperature"] 
+linestyle = ['-', '-.', ':']
 
 phasebins = np.linspace(0., 1., 50)
 nbins = len(phasebins) - 1
@@ -54,9 +55,9 @@ for i, model in enumerate(models):
 			binbestfit[j-1]=  np.mean(bestfit[ind])
 			bin_average[j-1] = (phasebins[j-1]+phasebins[j])/2.
 
-	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, linestyle='none', marker = '.', color = colors[i], ecolor = 'k', zorder = 10)
+	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, linestyle='none', marker = '.', color = colors[i], ecolor = 'k', zorder = 10, alpha = 0.8)
 
-        plt.plot(phase, (bestfit-1.)*1e3*dilution, color = colors[i], label = labels[i])
+        plt.plot(phase, (bestfit-1.)*1e3*dilution, color = colors[i], label = labels[i], alpha = 1.0, linestyle = linestyle[i])
 
 
 plt.legend(loc = 'upper left', frameon=False, fontsize=12)
