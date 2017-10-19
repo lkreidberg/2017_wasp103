@@ -2,53 +2,88 @@ import numpy as np
 import matplotlib.pyplot as plt
 from lc_fit_nospiderman import Model, LightCurveData
 import pickle
+import glob, os
+import matplotlib.gridspec as gridspec
+
+# COMPUTE ROOT-MEAN-SQUARE AND STANDARD ERROR OF DATA FOR VARIOUS BIN SIZES
+def computeRMS(data, maxnbins=None, binstep=1, isrmserr=False):
+    #data    = fit.normresiduals
+    #maxnbin = maximum # of bins
+    #binstep = Bin step size
+
+    # bin data into multiple bin sizes
+    npts    = data.size
+    if maxnbins is None:
+        maxnbins = npts/12.
+    binsz   = np.arange(1, maxnbins+binstep, step=binstep)
+    nbins   = np.zeros(binsz.size)
+    rms     = np.zeros(binsz.size)
+    rmserr  = np.zeros(binsz.size)
+    for i in range(binsz.size):
+        nbins[i] = int(np.floor(data.size/binsz[i]))
+        bindata   = np.zeros(int(nbins[i]), dtype=float)
+        # bin data
+        # ADDED INTEGER CONVERSION, mh 01/21/12
+        for j in range(int(nbins[i])):
+            bindata[j] = data[int(j*binsz[i]):int((j+1)*binsz[i])].mean()
+        # get rms
+        rms[i]    = np.sqrt(np.mean(bindata**2))
+        rmserr[i] = rms[i]/np.sqrt(2.*int(nbins[i]))
+    # expected for white noise (WINN 2008, PONT 2006)
+    stderr = (data.std()/np.sqrt(binsz))*np.sqrt(nbins/(nbins - 1.))
+    if isrmserr == True:
+        return rms, stderr, binsz, rmserr
+    else:
+        return rms, stderr, binsz
+
+
+# Compute standard error
+def computeStdErr(datastd, datasize, binsz):
+    #datastd  = fit.normresiduals.std()
+    #datasize = fit.normresiduals.size
+    #binsz    = array of bins
+
+    nbins   = np.zeros(binsz.size)
+    for i in range(binsz.size):
+        nbins[i] = int(np.floor(datasize/binsz[i]))
+    stderr = (datastd/np.sqrt(binsz))*np.sqrt(nbins/(nbins - 1.))
+    return stderr
+
 
 path = './WFC3_best_fits/spec_fits/'
-bestfits = ['bestfit_1.18.pic']
+files = glob.glob(os.path.join(path, "*.pic"))
 
-for ii, f in enumerate(bestfits):
-    p = pickle.load(open(path + f, 'rb'))
+plt.figure(figsize=(5,7))
+
+gs = gridspec.GridSpec(4, 3) 
+ncol = 3
+
+for ii, f in enumerate(files):
+    ax = plt.subplot(gs[int(np.floor(ii/ncol)), ii%ncol])
+
+    p = pickle.load(open(f, 'rb'))
     d, m, par = p[0], p[1], p[2] 
     
     ind = d.err < 9.0e7                     #indices of outliers
+    resid = m.resid[ind]
+    resid = resid[0:452]			#just phase curve data
+ 
+    rms, stderr, binsz, rmserr = computeRMS(resid, maxnbins = None, binstep = 1, isrmserr = True)
 
-    err = d.err[ind]/d.flux[ind]            #normalized per point uncertainty 
-    phase = m.phase[ind]
-    data_corr = m.data_corr[ind]
-    bestfit = m.bestfit[ind]
+    normfactor = stderr[0]
+    plt.loglog(binsz, rms/normfactor, color='black', lw=1.5, label='Fit RMS')    # our noise
+    plt.loglog(binsz, stderr/normfactor, color='red', ls='-', lw=2, label='Std. Err.') # expected noise
+    plt.xlim(0, binsz[-1]*2)
+    plt.ylim(stderr[-1]/normfactor/2., stderr[0]/normfactor*2.)
+    plt.text(10, 1, str(d.wavelength) + " $\mu$m")
 
-    nexp = len(phase)
-    """binsz = np.arange(5, 100, 1)
-    rms = np.zeros_like(binsz)
+    #plt.xlabel("Bin Size", fontsize=14)
+    #plt.ylabel("Normalized RMS", fontsize=14)
 
-    for k, n in enumerate(binsz):
-        nbins = int(nexp/n)
-        resid = np.zeros(nbins)
-        for i in range(nbins):
-            ind1, ind2 = i*n, (i+1)*n
-            resid[i] = np.mean(data_corr[ind1:ind2]) - np.mean(bestfit[ind1:ind2])
 
-        rms[k] = np.sqrt(np.mean((resid)**2))*1e6
+#add Spitzer
 
-    plt.plot(binsz, rms, color = 'r')
-    nbins = nexp/binsz
-    #plt.errorbar(binsz, rms, rms/np.sqrt(2*nbins), fmt = '.k')"""
 
-    nbins = np.arange(5, 100, 10)
-    rms = np.zeros_like(nbins)
 
-    for k, nbin in enumerate(nbins):
-        resid = np.zeros(nbin)
-        for i in range(nbin):
-            ppb = int(nexp/nbin)
-            ind1, ind2 = i*ppb, (i+1)*ppb
-            resid[i] = np.mean(data_corr[ind1:ind2]) - np.mean(bestfit[ind1:ind2])
-            
-        rms[k] = np.sqrt(np.mean((resid)**2))*1e6
-
-    plt.plot(nbins, rms, color = 'r')
-
-    plt.gca().set_xscale('log')
-    plt.gca().set_yscale('log')
-
+plt.tight_layout()
 plt.show()
