@@ -55,7 +55,7 @@ files = glob.glob(os.path.join(path, "*.pic"))
 
 plt.figure(figsize=(5,7))
 
-gs = gridspec.GridSpec(4, 3) 
+gs = gridspec.GridSpec(4, 3, hspace = 0.2, wspace=0.25) 
 ncol = 3
 
 for ii, f in enumerate(files):
@@ -72,7 +72,10 @@ for ii, f in enumerate(files):
 
     normfactor = stderr[0]
     plt.loglog(binsz, rms/normfactor, color='black', lw=1.5, label='Fit RMS')    # our noise
-    plt.loglog(binsz, stderr/normfactor, color='red', ls='-', lw=2, label='Std. Err.') # expected noise
+    plt.loglog(binsz, stderr/normfactor, color='blue', ls='-', lw=2, label='Std. Err.') # expected noise
+
+    plt.gca().set_yticks([1, 0.1])
+
     plt.xlim(0, binsz[-1]*2)
     plt.ylim(stderr[-1]/normfactor/2., stderr[0]/normfactor*2.)
     plt.text(10, 1, str(d.wavelength) + " $\mu$m")
@@ -82,8 +85,23 @@ for ii, f in enumerate(files):
 
 
 #add Spitzer
+files = ['Ch2_best_fits/2017-10-19_16:16-zhang/bestfit.pic']
+waves = [3.6, 4.5]
+colors = ['orange', 'red']
+
+for i, f in enumerate(files):
+    ax = plt.subplot(gs[int(np.floor((10+i)/ncol)), (10+i)%ncol])
+
+    p = pickle.load(open(f, "rb"))
+    rms, stderr, binsz = p[17], p[18], p[19]
+
+    normfactor = stderr[0]
+    plt.loglog(binsz, rms/normfactor, color='black', lw=1.5, label='Fit RMS')    # our noise
+    plt.loglog(binsz, stderr/normfactor, color='orange', ls='-', lw=2, label='Std. Err.') # expected noise
+    plt.xlim(0, binsz[-1]*2)
+    plt.ylim(stderr[-1]/normfactor/2., stderr[0]/normfactor*2.)
+    plt.text(10, 1, str(waves[i]) + " $\mu$m")
 
 
-
-plt.tight_layout()
+#plt.tight_layout()
 plt.show()
