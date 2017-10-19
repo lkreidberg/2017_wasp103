@@ -17,38 +17,38 @@ for ii, f in enumerate(bestfits):
     data_corr = m.data_corr[ind]
     bestfit = m.bestfit[ind]
 
-    """ind = np.argsort(phase)
-    err, phase, data_corr, bestfit = err[ind], phase[ind], data_corr[ind], bestfit[ind] #sorts by phase
+    nexp = len(phase)
+    """binsz = np.arange(5, 100, 1)
+    rms = np.zeros_like(binsz)
 
-    bins = np.arange(10, 100, 2)
-    for nbins in bins:
-        phasebins = np.linspace(0., 1., nbins)
-
-        bindata = np.zeros(nbins)
-        binsigma = np.zeros(nbins)
-        binbestfit = np.zeros(nbins)
-        bin_average = np.zeros(nbins)
-
-        for j in range(1, len(phasebins)):
-            ind = (phase >= phasebins[j-1]) & (phase < phasebins[j])
-            if sum(ind)>0:
-                bindata[j-1] = sum(data_corr[ind]/err[ind]**2)/sum(1/err[ind]**2)
-                binsigma[j-1] = np.sqrt(1/sum(1/err[ind]**2))
-                binbestfit[j-1]=  np.mean(bestfit[ind])
-                bin_average[j-1] = (phasebins[j-1]+phasebins[j])/2.
-
-        print nbins, np.mean(binsigma)"""
-
-    nexp = 636 
-    nperbin = np.arange(10, 60)
-
-    for n in nperbin:
+    for k, n in enumerate(binsz):
         nbins = int(nexp/n)
-        binsigma = np.zeros(nbins)
+        resid = np.zeros(nbins)
         for i in range(nbins):
-            binsigma[i] = np.sqrt(1/sum(1/err[i*n:(i+1)*n]**2))
+            ind1, ind2 = i*n, (i+1)*n
+            resid[i] = np.mean(data_corr[ind1:ind2]) - np.mean(bestfit[ind1:ind2])
 
-        print n, np.mean(binsigma)
+        rms[k] = np.sqrt(np.mean((resid)**2))*1e6
 
+    plt.plot(binsz, rms, color = 'r')
+    nbins = nexp/binsz
+    #plt.errorbar(binsz, rms, rms/np.sqrt(2*nbins), fmt = '.k')"""
 
+    nbins = np.arange(5, 100, 10)
+    rms = np.zeros_like(nbins)
 
+    for k, nbin in enumerate(nbins):
+        resid = np.zeros(nbin)
+        for i in range(nbin):
+            ppb = int(nexp/nbin)
+            ind1, ind2 = i*ppb, (i+1)*ppb
+            resid[i] = np.mean(data_corr[ind1:ind2]) - np.mean(bestfit[ind1:ind2])
+            
+        rms[k] = np.sqrt(np.mean((resid)**2))*1e6
+
+    plt.plot(nbins, rms, color = 'r')
+
+    plt.gca().set_xscale('log')
+    plt.gca().set_yscale('log')
+
+plt.show()
