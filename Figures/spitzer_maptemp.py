@@ -52,48 +52,72 @@ def initialize_params(spider_params):
     spider_params.T_s = 6110.		# Temperature of the star
     return spider_params
 
-models = ["spherical", "zhang", "hotspot_t"]
-labels = ["Spherical harmonics", "Kinematic", "Two temperature"]
-path = "Ch2_best_fits/"
-waverange = [4.0e-6, 5.0e-6]                    #Spitzer Ch 2
+models = ['zhang', 'hotspot_t', "spherical"] 
+labels = ["Kinematic", "Two Temperature", "Spherical harmonics"] 
 
 plt.figure(figsize = (6,6))
+channel = 1
 
 for i, model in enumerate(models):
-    spider_params = sp.ModelParams(brightness_model=model)
+    spider_params = sp.ModelParams(brightness_model=model, thermal = True)
     spider_params = initialize_params(spider_params)
-    spider_params.l1 = waverange[0]
-    spider_params.l2 = waverange[1]
+    if channel == 2: 
+	#spider_params.filter = '/Users/lkreidberg/Desktop/Util/Throughput/spitzer_irac_ch2_electrons_per_energy.txt'
+	spider_params.filter = '/Users/lkreidberg/Desktop/Util/Throughput/spitzer_irac_ch2.txt'
+	spider_params.l1 = 3.9e-6
+	spider_params.l2 = 5.1e-6
+    elif channel == 1: 
+	#spider_params.filter = '/Users/lkreidberg/Desktop/Util/Throughput/spitzer_irac_ch1_electrons_per_energy.txt'
+	spider_params.filter = '/Users/lkreidberg/Desktop/Util/Throughput/spitzer_irac_ch1.txt'
+	spider_params.l1 = 3.0e-6
+	spider_params.l2 = 4.1e-6
+
+    #print "still using filters that assume SPIDERMAN doesn't correct to units of energy -- update when you update spiderman"
 
     if model == "zhang":
-	spider_params.xi= 1.2925e-1       	# Ratio of radiative to advective timescale
-        spider_params.T_n= 1694.		# Temperature of nightside
-        spider_params.delta_T= 2511.		# Day-night temperature contrast
+	if channel == 2:
+		spider_params.xi= 1.3169e-1       	# Ratio of radiative to advective timescale
+		spider_params.T_n= 1719.		# Temperature of nightside
+		spider_params.delta_T= 2571.		# Day-night temperature contrast
+	elif channel == 1:
+		spider_params.xi= 3.6976e-1       	# Ratio of radiative to advective timescale
+		spider_params.T_n= 1952.		# Temperature of nightside
+		spider_params.delta_T= 1857.		# Day-night temperature contrast
 
     elif model == "spherical":
-        spider_params.degree=2
-        spider_params.la0 = 0
-        spider_params.lo0 = 0
-        spider_params.sph = [3.124e-3, 1.0001e-4, 0.0, 1.888e-3]
+	if channel == 2:
+		spider_params.degree=2
+		spider_params.la0 = 0
+		spider_params.lo0 = 0
+		spider_params.sph = [7.382e+3, 1.4242e+2, 0.0, 2.583e+3]
+	elif channel == 1:
+		spider_params.degree=2
+		spider_params.la0 = 0
+		spider_params.lo0 = 0
+		spider_params.sph = [7.418e+3, 2.6109e+2, 0.0, 1.907e+3]
 
     elif model == "hotspot_t":
-	spider_params.la0 = 0.
-	spider_params.lo0 = 0.
-	spider_params.size = 90.
-	spider_params.spot_T = 3238.
-	spider_params.p_T = 1363.
+	if channel == 2:
+		spider_params.la0 = 0.
+		spider_params.lo0 = 0.
+		spider_params.size = 90.
+		spider_params.spot_T = 3305.
+		spider_params.p_T = 1380.
+	elif channel ==1:
+		spider_params.la0 = 0.
+		spider_params.lo0 = 0.
+		spider_params.size = 90.
+		spider_params.spot_T = 3039.
+		spider_params.p_T = 1427.
         
     else:
         print "model not supported"
 
-    t= spider_params.t0 + np.linspace(0, + spider_params.per,100)
-    lc = spider_params.lightcurve(t)
-    #print model
-    #spider_params.square_plot()
-    #plt.show()
+    #t= spider_params.t0 + np.linspace(0, + spider_params.per,100)
+    #lc = spider_params.lightcurve(t)
 
-    nla, nlo = 100, 100 
-    #nla, nlo = 20, 20 
+    #nla, nlo = 100, 100 
+    nla, nlo = 20, 20 
 
     las = np.linspace(-np.pi/2,np.pi/2,nla)
     los = np.linspace(-np.pi,np.pi,nlo)
@@ -111,7 +135,7 @@ for i, model in enumerate(models):
             fluxes += [row]
     
     fluxes = np.array(fluxes)
-    if model == "spherical": fluxes = convert_to_T(fluxes*np.pi)
+    #if model == "spherical": fluxes = convert_to_T(fluxes*np.pi)
 
     vmax = 4000. 
     vmin = 1000.
