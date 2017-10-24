@@ -29,12 +29,11 @@ for i, model in enumerate(models):
 
 #Temperatures:
 #HST:
-#model, Tmin, Tmax =  zhang 1942.83470024 3884.44683954
-#model, Tmin, Tmax =  hotspot_t 0.0 2860.2228932
-#model, Tmin, Tmax =  spherical 1232.97287197 3213.68213304
-
-wfc3_tmin = [1943, 0, 1233]
-wfc3_tmax = [3884, 2860, 3214]
+#model, Tmin, Tmax =  zhang 1955.79103244 3910.35135096
+#model, Tmin, Tmax =  hotspot_t 0.0 2837.28405252
+#model, Tmin, Tmax =  spherical 1211.72127487 3190.7163225
+wfc3_tmin = [1955, 0, 1212]
+wfc3_tmax = [3910, 2837, 3190]
 
 #Spitzer Ch 2
 #model, Tmin, Tmax =  zhang 1719.0 4257.78308959
