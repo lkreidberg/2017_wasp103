@@ -80,8 +80,12 @@ for ii, f in enumerate(files):
     rms, stderr, binsz, rmserr = computeRMS(resid, maxnbins = None, binstep = 1, isrmserr = True)
 
     normfactor = stderr[0]
+    #normfactor = m.rms_predicted
+
     plt.loglog(binsz, rms/normfactor, color='black', lw=1.5, label='Fit RMS')    # our noise
     plt.loglog(binsz, stderr/normfactor, color='blue', ls='-', lw=2, label='Std. Err.') # expected noise
+
+    #plt.axhline(m.rms_predicted/normfactor, linestyle = 'dashed')
 
     plt.gca().set_xticks([1, 10])
     plt.gca().set_xticklabels([1, 10])
