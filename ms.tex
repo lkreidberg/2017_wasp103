@@ -42,16 +42,20 @@ Cambridge, MA 02138}
 \affiliation{Arizona State University}
 \nocollaboration
 
+\author{Kevin B. Stevenson}
+\affiliation{Space Telescope Science Institute}
+\nocollaboration
+
+\author{Tom Louden}
+\affiliation{University of Warwick}
+\nocollaboration
+
 \author{Mick\"{a}el Bonnefoy}
 \affiliation{Universit\'{e} Grenoble Alpes}
 \nocollaboration
 
 \author{Jacqueline K. Faherty}
 \affiliation{American Museum of Natural History}
-\nocollaboration
-
-\author{Kevin B. Stevenson}
-\affiliation{Space Telescope Science Institute}
 \nocollaboration
 
 \author{Gregory L. Henry}
@@ -213,14 +217,22 @@ We fit the \Spitzer\ systematics with the BLISS mapping technique \citep{stevens
 \section{Results}
 We achieved good quality fits!
 
-\begin{deluxetable}{ccccccc}
+\begin{deluxetable}{lllllll}
 \tablecolumns{7}
 \tablewidth{0pt}:
 \tablecaption{Model Comparison \label{table:models}}
 \tablehead{
-\colhead{X} & \colhead{X} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\chi^2$} & \colhead{$\Delta$ AIC} & \colhead{$\Delta$ BIC}}
+\colhead{Data Set} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\chi^2$} & \colhead{$\Delta$ AIC} & \colhead{$\Delta$ BIC}}
 \startdata
-"Ch 1" & "m1" & 0 & 0 &  1 & 1 & 1 \\
+WFC3 & Sph. Harmonics & 1212 & 3190 & 949.6 & 0.0 & 0.0 \\
+\, & Kinematic & 1955 & 3910 & 961.6 & 12.0 & 12.0 \\
+\, & Two Temp. & 0 & 2837 & 999.4 & 47.7 & 43.3 \\
+Ch 1 & Sph. Harmonics & 1277 & 3442 & 0.9 & 0.0 & 0.0 \\
+\, & Kinematic & 1952 & 3672 & 0.9 & 34.3 & 34.3 \\
+\, & Two Temp. & 1427 & 3039 & 0.9 & 10.7 & 17.6 \\
+Ch 2 & Sph. Harmonics & 930 & 3775 & 1.1 & 0.0 & 3.1 \\
+\, & Kinematic & 1719 & 4257 & 1.1 & 14.35 & 17.41 \\
+\, & Two Temp. & 1380 & 3305 & 1.1 & 23.9 & 0.0 \\
 \enddata
 \vspace{-0.8cm}
 \tablecomments{comments}
