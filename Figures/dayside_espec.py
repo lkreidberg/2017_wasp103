@@ -10,8 +10,10 @@ from matplotlib import rc
 import spiderman_lc
 from matplotlib import ticker
 import seaborn as sns
+from astropy.convolution import Gaussian1DKernel, convolve
+g = Gaussian1DKernel(stddev=20)
 
-sns.set_context("talk", font_scale=1.0)
+sns.set_context("paper", font_scale=1.0)
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
@@ -38,6 +40,8 @@ def best_fit_bb(w, y, e, rprs):
 	#get stellar spectrum
 	star = np.genfromtxt("wasp103_sed_fluxes.out")
 	star_bb = np.interp(w, star[:,0], star[:,1])*1.e24/(w*np.pi*4.)
+        #Tstar = 6110.
+        #star_bb = blackbody(w*1.0e-6, Tstar)
 	outliers = 0.
 
 	for T in Ts:
@@ -47,6 +51,7 @@ def best_fit_bb(w, y, e, rprs):
 			chibest, Tbest, outliers = chi2, T, (y-model)/e
 	waves_hires = np.linspace(1.0, 5.0, 100)
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
+	#star_bb_hires = blackbody(waves_hires*1.0e-6, Tstar) 
 	#print "Best fit blackbody temp, chisq, and outliers: ", Tbest, chibest/(len(e)-1), outliers
 	print "Best fit blackbody temp: ", Tbest
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
@@ -175,7 +180,9 @@ fp_err[i] = np.sqrt(sig1**2 + sig2**2)
 
 ######################################################################################
 # PLOT
-plt.errorbar(waves, (fpfs-1.)*1e3, yerr = fp_err*1.e3, fmt = '.k', zorder=1000)
+plt.figure(figsize = (4,3))
+
+plt.errorbar(waves, (fpfs-1.)*1e3, yerr = fp_err*1.e3, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
 
 outfile = open("espec_dayside.txt", "w")
 for i in range(len(waves)): print>>outfile, "{0:0.3f}".format(waves[i]), "\t", "{0:0.3e}".format(fpfs[i] - 1.), "{0:0.3e}".format(fp_err[i])
@@ -186,25 +193,32 @@ rprs = 0.115
 #fp_err[8] = 1000.
 wave_hires, model_hires = best_fit_bb(waves, fpfs-1., fp_err, rprs)
 model_hires *= 1.e3
-plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
+plt.plot(wave_hires, model_hires, color='0.5', label='blackbody', linestyle = 'dashed', zorder = -20)
 	
 
-scale = 1.1 
+
+#fits from Mike
+wl,y_low_2sig, y_low_1sig, y_median, y_high_1sig, y_high_2sig=pickle.load(open("Retrieval/WASP103b_DAYSIDE_NOMINAL_spec.pic", "rb"))
+plt.fill_between(wl[::-1], convolve(y_low_2sig, g), convolve(y_high_2sig,g), color = 'orange', alpha = 0.5, zorder = -11)
+plt.fill_between(wl[::-1], convolve(y_low_1sig, g), convolve(y_high_1sig,g), color = 'orange', alpha = 0.5, zorder = -10)
+plt.plot(wl[::-1], convolve(y_median, g), zorder = -9, label = 'best fit')
+
+#scale = 1.1 
 #w, f = rs.spectrum(0.5, "all", "TiO-NoClouds-Drag1.dat")
 #plt.plot(w, f*1.e3*scale, color='#d3494e', linestyle='dashed', label= 'GCM with TiO')
 
 #ch2_band = rs.spectrum(0.5, 'Spitzer2', "NoTiO-NoClouds.dat")
 #plt.errorbar(4.5, ch2_band*1.e03, xerr = [0.5], color = "#d3494e", marker = 's')
 
-plt.legend(loc =2, frameon=True)
+plt.legend(loc = 'lower right', frameon=True)
 
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Wavelength (microns)")
 
-plt.gca().set_yscale('log')
-plt.gca().set_xscale('log', basex=2)
+#plt.gca().set_yscale('log')
+#plt.gca().set_xscale('log', basex=2)
 	
-ax = plt.gca()
+"""ax = plt.gca()
 ax.xaxis.set_major_locator(FixedLocator(np.array([1,2,4])))
 ax.xaxis.set_minor_locator(FixedLocator(np.array([1.1, 1.2, 1.3,  1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.2, 2.4, 2.6,  2.8, 3.0, 3.2,3.4, 3.6, 3.8, 4.4, 4.8])))
 ax.set_xticklabels([1, 2, 4])
@@ -213,17 +227,18 @@ ax.xaxis.set_minor_formatter(ticker.NullFormatter())
 
 ax.yaxis.set_major_locator(FixedLocator(np.array([1,2,3,4,5])))
 ax.set_yticklabels(["1", "2", "3", "4", "5"])
-ax.yaxis.set_minor_formatter(ticker.NullFormatter())
+ax.yaxis.set_minor_formatter(ticker.NullFormatter())"""
 
 
-plt.xlim(1.0, 5.0)
+plt.xlim(1.1, 1.7)
 
-ymin, ymax = 1, 6
+ymin, ymax = 1.2, 2
 plt.ylim(ymin, ymax)
 
 
 print "ERRORS & WARNINGS"
 print "hard coding rprs for calculating best fit bb - is this right?"
 print "hard coding dilution in spitzer bandpass - are we also supposed to do this for WFC3?"
+plt.tight_layout()
 plt.savefig("dayside_spectrum.pdf")
 #plt.show()

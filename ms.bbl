@@ -32,8 +32,13 @@
   {Showman}}]{kreidberg15b}
 {Kreidberg}, L., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2015, \apj, 814, 66
 
-\bibitem[{{Leconte} {et~al.}(2011){Leconte}, {Lai}, \& {Chabrier}}]{leconte11}
-{Leconte}, J., {Lai}, D., \& {Chabrier}, G. 2011, \aap, 528, A41
+\bibitem[{{Leconte} {et~al.}(2011{\natexlab{a}}){Leconte}, {Lai}, \&
+  {Chabrier}}]{leconte11b}
+{Leconte}, J., {Lai}, D., \& {Chabrier}, G. 2011{\natexlab{a}}, \aap, 536, C1
+
+\bibitem[{{Leconte} {et~al.}(2011{\natexlab{b}}){Leconte}, {Lai}, \&
+  {Chabrier}}]{leconte11a}
+---. 2011{\natexlab{b}}, \aap, 528, A41
 
 \bibitem[{{Long} {et~al.}(2015){Long}, {Baggett}, \& {MacKenty}}]{long15}
 {Long}, K.~S., {Baggett}, S.~M., \& {MacKenty}, J.~W. 2015, {Persistence in the
