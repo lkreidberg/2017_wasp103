@@ -13,7 +13,7 @@ import seaborn as sns
 from astropy.convolution import Gaussian1DKernel, convolve
 g = Gaussian1DKernel(stddev=20)
 
-sns.set_context("paper", font_scale=1.0)
+sns.set_context("paper", font_scale=1.2)
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
@@ -32,10 +32,6 @@ def best_fit_bb(w, y, e, rprs):
 	Tbest = 0.	
 	Tstar = 6110.
 	w = np.array(w)
-
-	#w, y, e = w[0:10], y[0:10], e[0:10]
-	#w, y, e = w[11], y[11], e[11]
-	#print "just fitting WFC3 data"
 
 	#get stellar spectrum
 	star = np.genfromtxt("wasp103_sed_fluxes.out")
@@ -82,15 +78,9 @@ for i, f in enumerate(files):
 	nvisit = 4
 	T_s, xi, T_n, delta_T, per, t0, eclipse =  par[d.par_order['T_s']*nvisit], par[d.par_order['xi']*nvisit], par[d.par_order['T_n']*nvisit], \
 		par[d.par_order['delta_T']*nvisit], par[d.par_order['per']*nvisit], par[d.par_order['t0']*nvisit], False
-	bestfit = np.array(spiderman_lc.lc(d.time, 0.115, T_s, d.l1, d.l2, xi, T_n, delta_T, d.dilution, eclipse))
+	bestfit = np.array(spiderman_lc.lc(d.time, 0.1127, T_s, d.l1, d.l2, xi, T_n, delta_T, d.dilution, eclipse))
 	bestfit = bestfit[ind]
 
-	#print d.wavelength, T_n, delta_T
-
-	#t_eclipse = np.linspace(0.45, 0.55, 100)*per + t0
-	#bestfit_eclipse = np.array(spiderman_lc.lc(t_eclipse, 0.115, T_s, d.l1, d.l2, xi, T_n, delta_T, eclipse))
-	#LK note: this only makes a difference of 3 ppm
-	
 	#calculates uncertainty for in-eclipse points
 	ind1 = (phase>=0.46)&(phase<=0.55)
 	sig1 = np.sqrt(np.sum(err[ind1]**2)/sum(ind1)**2)
@@ -116,7 +106,7 @@ phase[ind] -= 1.0
 
 T_s, xi, T_n, delta_T = bestpar[21], bestpar[24], bestpar[25], bestpar[26]
 eclipse = False
-bestfit = np.array(spiderman_lc.lc(t, 0.115, T_s, 3.15e-6, 3.95e-6, xi, T_n, delta_T, dilution[i], eclipse))
+bestfit = np.array(spiderman_lc.lc(t, 0.1127, T_s, 3.15e-6, 3.95e-6, xi, T_n, delta_T, dilution[i], eclipse))
 
 
 #calculates uncertainty for in-eclipse points
@@ -171,7 +161,7 @@ sig2 = np.sqrt(np.sum(err[~ind1]**2)/sum(~ind1)**2)
 T_s, xi, T_n, delta_T = bestpar[21], bestpar[24], bestpar[25], bestpar[26]			#for lin rmap
 #T_s, xi, T_n, delta_T = bestpar[22], bestpar[25], bestpar[26], bestpar[27]			#for quad ramp
 eclipse = False
-bestfit = np.array(spiderman_lc.lc(t, 0.115, T_s, 4.e-6, 5.e-6, xi, T_n, delta_T, dilution[i], eclipse))
+bestfit = np.array(spiderman_lc.lc(t, 0.1127, T_s, 4.e-6, 5.e-6, xi, T_n, delta_T, dilution[i], eclipse))
 
 fpfs[i] = np.mean(bestfit[ind1])
 
@@ -188,9 +178,7 @@ outfile = open("espec_dayside.txt", "w")
 for i in range(len(waves)): print>>outfile, "{0:0.3f}".format(waves[i]), "\t", "{0:0.3e}".format(fpfs[i] - 1.), "{0:0.3e}".format(fp_err[i])
 outfile.close()
 
-rprs = 0.115
-#fp_err[5] = 1000.
-#fp_err[8] = 1000.
+rprs = 0.1127
 wave_hires, model_hires = best_fit_bb(waves, fpfs-1., fp_err, rprs)
 model_hires *= 1.e3
 plt.plot(wave_hires, model_hires, color='0.5', label='blackbody', linestyle = 'dashed', zorder = -20)
@@ -210,30 +198,28 @@ plt.plot(wl[::-1], convolve(y_median, g), zorder = -9, label = 'best fit')
 #ch2_band = rs.spectrum(0.5, 'Spitzer2', "NoTiO-NoClouds.dat")
 #plt.errorbar(4.5, ch2_band*1.e03, xerr = [0.5], color = "#d3494e", marker = 's')
 
-plt.legend(loc = 'lower right', frameon=True)
+plt.legend(loc = 'lower right', frameon=True, fontsize = 11)
 
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Wavelength (microns)")
 
-#plt.gca().set_yscale('log')
-#plt.gca().set_xscale('log', basex=2)
-	
-"""ax = plt.gca()
-ax.xaxis.set_major_locator(FixedLocator(np.array([1,2,4])))
-ax.xaxis.set_minor_locator(FixedLocator(np.array([1.1, 1.2, 1.3,  1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.2, 2.4, 2.6,  2.8, 3.0, 3.2,3.4, 3.6, 3.8, 4.4, 4.8])))
-ax.set_xticklabels([1, 2, 4])
-ax.xaxis.set_minor_formatter(ticker.NullFormatter())
-
-
-ax.yaxis.set_major_locator(FixedLocator(np.array([1,2,3,4,5])))
-ax.set_yticklabels(["1", "2", "3", "4", "5"])
-ax.yaxis.set_minor_formatter(ticker.NullFormatter())"""
-
-
 plt.xlim(1.1, 1.7)
-
 ymin, ymax = 1.2, 2
 plt.ylim(ymin, ymax)
+
+
+a = plt.axes([.23, .62, .2, .28]) 
+wl,y_low_2sig, y_low_1sig, y_median, y_high_1sig, y_high_2sig=pickle.load(open("Retrieval/WASP103b_DAYSIDE_NOMINAL_spec.pic", "rb"))
+plt.fill_between(wl[::-1], convolve(y_low_2sig, g), convolve(y_high_2sig,g), color = 'orange', alpha = 0.5, zorder = -11)
+plt.fill_between(wl[::-1], convolve(y_low_1sig, g), convolve(y_high_1sig,g), color = 'orange', alpha = 0.5, zorder = -10)
+plt.plot(wl[::-1], convolve(y_median, g), zorder = -9, label = 'best fit')
+
+plt.plot(wave_hires, model_hires, color='0.5', label='blackbody', linestyle = 'dashed', zorder = -20)
+
+plt.errorbar(waves, (fpfs-1.)*1e3, yerr = fp_err*1.e3, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
+
+plt.xlim(3, 5)
+plt.ylim(3.5,7)
 
 
 print "ERRORS & WARNINGS"
