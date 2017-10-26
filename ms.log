@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 OCT 2017 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 OCT 2017 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,10 +525,10 @@ Package natbib Warning: Citation `getal2014' on page 4 undefined on input line
 126.
 
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-07 12:30:01
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-07 13:01:13
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
