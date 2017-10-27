@@ -39,11 +39,11 @@ wfc3_tmin = np.array([1980, 0, 1214])
 wfc3_tmax = np.array([3958, 2887, 3251])
 
 #Spitzer Ch 2
-#model, Tmin, Tmax =  zhang 1719.0 4257.78308959
-#model, Tmin, Tmax =  hotspot_t 1380.0 3305.0e
-#model, Tmin, Tmax =  spherical 930.545006798 3775.38559767
-ch2_tmin = np.array([1719, 1380, 930])
-ch2_tmax = np.array([4257, 3305, 3775])
+#model, Tmin, Tmax =  zhang 1703.0 4276.80767467
+#model, Tmin, Tmax =  hotspot_t 1361.0 3311.0
+#model, Tmin, Tmax =  spherical 902.401726015 3786.1376002
+ch2_tmin = np.array([1703, 1361, 902])
+ch2_tmax = np.array([4276, 3311, 3786])
 
 #Spitzer Ch 1
 #model, Tmin, Tmax =  zhang 1955.0 3675.62794318

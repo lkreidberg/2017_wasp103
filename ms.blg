@@ -14,50 +14,51 @@ Warning--I didn't find a database entry for "h1999"
 Warning--I didn't find a database entry for "ehf2003"
 Warning--I didn't find a database entry for "getal2014"
 Warning--I didn't find a database entry for "louden17"
+Warning--I didn't find a database entry for "husser13"
 Warning--I didn't find a database entry for "zhang16"
 Warning--I didn't find a database entry for "cartier16"
 Warning--I didn't find a database entry for "zhu17"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty institution in long15
-You've used 11 entries,
+You've used 12 entries,
             3222 wiz_defined-function locations,
-            746 strings with 7589 characters,
-and the built_in function-call counts, 5163 in all, are:
-= -- 375
-> -- 446
+            754 strings with 8071 characters,
+and the built_in function-call counts, 5770 in all, are:
+= -- 409
+> -- 520
 < -- 3
-+ -- 147
-- -- 156
-* -- 477
-:= -- 980
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 52
-chr.to.int$ -- 9
-cite$ -- 12
-duplicate$ -- 194
-empty$ -- 307
-format.name$ -- 170
-if$ -- 1018
++ -- 171
+- -- 182
+* -- 543
+:= -- 1102
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 56
+chr.to.int$ -- 10
+cite$ -- 13
+duplicate$ -- 212
+empty$ -- 334
+format.name$ -- 197
+if$ -- 1132
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 38
-num.names$ -- 44
-pop$ -- 75
+missing$ -- 11
+newline$ -- 41
+num.names$ -- 48
+pop$ -- 81
 preamble$ -- 1
-purify$ -- 51
+purify$ -- 55
 quote$ -- 0
-skip$ -- 143
+skip$ -- 156
 stack$ -- 0
-substring$ -- 174
+substring$ -- 188
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 99
+type$ -- 108
 warning$ -- 1
-while$ -- 38
+while$ -- 41
 width$ -- 0
-write$ -- 114
+write$ -- 124
 (There was 1 error message)

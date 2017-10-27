@@ -56,7 +56,7 @@ models = ['zhang', 'hotspot_t', "spherical"]
 labels = ["Kinematic", "Two Temperature", "Spherical harmonics"] 
 
 plt.figure(figsize = (6,6))
-channel = 1
+channel = 2
 
 for i, model in enumerate(models):
     spider_params = sp.ModelParams(brightness_model=model, thermal = True)
@@ -76,9 +76,9 @@ for i, model in enumerate(models):
 
     if model == "zhang":
 	if channel == 2:
-		spider_params.xi= 1.3169e-1       	# Ratio of radiative to advective timescale
-		spider_params.T_n= 1719.		# Temperature of nightside
-		spider_params.delta_T= 2571.		# Day-night temperature contrast
+		spider_params.xi= 1.2977e-1       	# Ratio of radiative to advective timescale
+		spider_params.T_n= 1703.		# Temperature of nightside
+		spider_params.delta_T= 2606.		# Day-night temperature contrast
 	elif channel == 1:
 		spider_params.xi= 3.6969e-1       	# Ratio of radiative to advective timescale
 		spider_params.T_n= 1955.		# Temperature of nightside
@@ -89,7 +89,7 @@ for i, model in enumerate(models):
 		spider_params.degree=2
 		spider_params.la0 = 0
 		spider_params.lo0 = 0
-		spider_params.sph = [7.382e+3, 1.4242e+2, 0.0, 2.583e+3]
+		spider_params.sph = [7.354e+3, 1.4627e+2, 0.0, 2.618e+3]
 	elif channel == 1:
 		spider_params.degree=2
 		spider_params.la0 = 0
@@ -101,8 +101,8 @@ for i, model in enumerate(models):
 		spider_params.la0 = 0.
 		spider_params.lo0 = 0.
 		spider_params.size = 90.
-		spider_params.spot_T = 3305.
-		spider_params.p_T = 1380.
+		spider_params.spot_T = 3311.
+		spider_params.p_T = 1361.
 	elif channel ==1:
 		spider_params.la0 = 0.
 		spider_params.lo0 = 0.

@@ -1,2 +1,5 @@
-- rerun fits with actual stellar spectrum (not blackbody)
-- make giant table of phase-resolved spectra and dilution factor 
+ -  figures from Vivien's data
+T/P profiles (Vivien, Mike, and JFort)
+correctly normalized BD and planet spectra
+composition and albedo from Mike
+detection significance of thermal inversion as a function of phase

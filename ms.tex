@@ -166,14 +166,14 @@ We assume the measured astrophysical signal $F_\mathrm{physical}$ has the follow
 \end{equation}
 where $T(\lambda, t)$ is the transit model (the fraction of the stellar disk that is visible at time $t$), $F_p/F_s(\lambda, t)$ is the disk-integrated planet-to-star flux, and $c$ is a correction factor for companion star dilution and the planet's tidal distortion. 
 
-We calculated the transit model $T(t)$ with the \texttt{batman} package \citep{kreidberg15a}. Many of the physical parameters are tightly constrained by \cite{southworth15}, so we fixed the orbital period, time of inferior conjunction, orbital inclination, and ratio of semi-major axis to stellar radius to the previously published values ($P = 0.925545613$ day, $t_0 = 2456836.2964455 \mathrm{BJD_{TDB}}$, $i = 87.3^\circ$, and $a/R_s = 2.999$). As a test, we fit for these parameters with the Spitzer Channel 2 light curve, which has the best phase coverage and least systematic noise of the three data sets. We found that the transit parameters are consistent with the \cite{southworth15} results, so we proceeded with the remainder of the analysis holding those parameters fixed.  The free parameters for the transit model were the transit depth $r_p$ and a linear limb darkening parameter $u$. 
+We calculated the transit model $T(t)$ with the \texttt{batman} package \citep{kreidberg15a}. Many of the physical parameters are tightly constrained by \cite{southworth15}, so we fixed the orbital period, time of inferior conjunction, orbital inclination, and ratio of semi-major axis to stellar radius to the previously published values ($P = 0.925545613$ day, $t_0 = 2456836.2964455\,\mathrm{BJD_{TDB}}$, $i = 87.3^\circ$, and $a/R_s = 2.999$). As a test, we fit for these parameters with the Spitzer Channel 2 light curve, which has the best phase coverage and least systematic noise of the three data sets. We found that the transit parameters are consistent with the \cite{southworth15} results, so we proceeded with the remainder of the analysis holding those parameters fixed.  The free parameters for the transit model were the transit depth $r_p$ and a linear limb darkening parameter $u$. 
 
 We calculated the planet-to-star flux $F_p/F_s$ with the \texttt{SPIDERMAN} package \citep{louden17}.  This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and generate the corresponding flux ratio for an observation at time $t$. In our fit, we calculated the stellar flux with a PHOENIX model \citep{husser13} interpolated to an effective temperature of $6110\,\mathrm{K}$ \citep{gillon14}.  We tested three different maps: a two-temperature map, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$; a map generated with spherical harmonics; and the physically-motivated kinematic model from \cite{zhang16}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$). 
 
 %We assume the stellar flux $F_s(\lambda)$ is a $6110\,\mathrm{K}$ blackbody \citep{gillon14}.  (FIXME - use a PHOENIX model instead). 
 We scaled the planet-to-star flux by a correction factor $c$ to account for dilution from the companion star and ellipsoidal variability due to the planet's tidal distortion. The correction factor took the form: 
 \begin{equation}
-	c(\lambda, t) = (1 + \alpha(\lambda))A(t)
+	c(\lambda, t) = [1 + \alpha(\lambda)]A(t)
 \end{equation}
 where $\alpha(\lambda)$ is the additional fractional flux from the companion star and $A(t)$ is the sky-projected area of the planet. We estimated $\alpha(\lambda)$ based on the best fit spectral energy distribution from \cite{cartier16}. The companion star contributes FIXME percent of the flux at FIXME $\mu$m.  We calculated $A(t)$ using the analytic formula from \cite{leconte11b}, equation B.9, which computes the projected area of a triaxial ellipsoid. We estimated the ellipsoid properties using Table B.3 of \cite{leconte11a}, assuming the planet radius is 1.5 $R_\mathrm{Jup}$ and age is 5 Gyr. The predicted ellipsoidal variability is shown in Figure\,\ref{fig:ellipsoidal}. At quadrature, the projected radius is $8\%$ larger than at phase zero (mid-transit). %FIXME: say this doesn't matter.
 %In addition to temperature, the planet's visible surface area $[R(t)]^2$ is also expected to vary with orbital phase due to tidal distortion \citep{gillon14}. In the observed light curve, changes in planet radius are degenerate with changes in temperature. 
@@ -186,13 +186,19 @@ where $\alpha(\lambda)$ is the additional fractional flux from the companion sta
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/ellipsoidal.pdf}
-\caption{Projected area of the planet as a function of orbital phase, normalized to unity at phase zero. The area variation was predicted analytically using the model from \citep{leconte11b}.}
+\caption{Projected area of the planet as a function of orbital phase, normalized to unity at phase zero. The area variation was predicted analytically using the model from \cite{leconte11b}.}
 \label{fig:ellipsoidal}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{Figures/systematics.pdf}
+\caption{Raw light curves for WASP-103b observed with \HST/WFC3 (top panel) and \Spitzer/IRAC (bottom two panels). The data points are indicated with black dots. The \HST\ data are unbinned, and the Spitzer data are binned in time segments of FIXME minutes with error bars indicating the bin standard deviation. The colored lines show the best fit models, which include the astrophysical signal and instrument systematics. The gray lines indicate the contribution from the instrument systematics alone (which would be observed for a source with constant brightness and no planet). For visual clarity, we corrected the \HST\ data for the upstream-downstream effect, separated the four visits by adding a flux offset, and zoomed in on the phase variation, so the transits are not displayed in the panel.}
+\label{fig:systematics}
 \end{figure}
 
 
 \subsection{Systematics}
-Both the \HST\ and \Spitzer\ phase curves have systematic noise caused by variations in the sensitivity of the instrument over time. For the \HST/WFC3 data, the dominant systematic is an orbit-long exponential trend due to charge traps filling up over successive exposures \citep{long15, zhu17}. For \Spitzer\, the primary source of noise is the intrapixel sensitivity effect. The detector's pixels do not have uniform sensitivity, so slight changes in telescope pointing cause the recorded flux to vary. 
+Both the \HST\ and \Spitzer\ phase curves have systematic noise caused by variations in the sensitivity of the instrument over time. For the \HST/WFC3 data, the dominant systematic is an orbit-long exponential trend due to charge traps filling up over successive exposures \citep{long15, zhu17}. For \Spitzer\, the primary source of noise is the intrapixel sensitivity effect. The detector's pixels do not have uniform sensitivity, so slight changes in telescope pointing cause the recorded flux to vary. In Figure\,\ref{fig:systematics}, we show the raw light curves before systematic noise was removed. The systematics have comparable amplitude to the thermal phase variation signal, so they must be carefully corrected to recover the underlying planet-to-star flux. 
 
 \subsubsection{\HST\ Systematics}
 \label{sec:hst_sys}
@@ -205,17 +211,27 @@ where $t_\mathrm{v}$ is time elapsed since the first exposure in a visit and $t_
 Some segments of the data exhibit stronger systematics than others, so we exclude these data in our final analysis. We drop the first orbit from every visit and the first exposure from every orbit \citep[following common practice; see e.g.][]{kreidberg14a}.  We also discard exposures from the last half of orbit 15 from the phase curve observations, which were taken in staring mode to enable a gyro bias update. Since we observed two phase curves, we have complete orbital phase coverage the planet despite discarding some data.
 
 \subsubsection{\Spitzer\ Systematics}
-We fit the \Spitzer\ systematics with the BLISS mapping technique \citep{stevenson12}. This technique creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. In addition to the intrapixel sensitivity map, we fit the data for a linear trend in time. 
+We fit the \Spitzer\ systematics with the POET pipeline using the BLISS mapping technique \citep{stevenson12}. This approach creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. The sensitivity map is determined by bilinear interpolation over a grid of knots centered on the stellar flux. Each knot's sensitivity is calculated from the residuals to the light curve fit: the higher the flux values for data points near a given knot, the higher the detector sensitivity is at that position.  To avoid overfitting, we chose the grid scale such that bilinear interpolation performed better than nearest neighbor interpolation. For the $3.6\,\mu$m data, the grid scale was 0.008 pixel in both $x$ and $y$. For $4.5\,\mu$m, the scale was 0.022 pixel.  
 
-\begin{figure}
-\includegraphics[width = 0.5\textwidth]{Figures/systematics.pdf}
-\caption{Raw light curves for WASP-103b observed with \HST/WFC3 (top panel) and \Spitzer/IRAC (bottom two panels). The data points are indicated with black dots. The \HST\ data are unbinned, and the Spitzer data are binned in time segments of FIXME minutes with error bars indicating the bin standard deviation. The colored lines show the best fit models, which include the astrophysical signal and instrument systematics. The gray lines indicate the contribution from the instrument systematics alone (which would be observed for a source with constant brightness and no planet). For visual clarity, we corrected the \HST\ data for the upstream-downstream effect, separated the four visits by adding a flux offset, and zoomed in on the phase variation, so the transits are not displayed in the panel.}
-\label{fig:systematics}
-\end{figure}
+In addition to the intrapixel sensitivity variation, we fit the data for a linear trend in time. We tested a quadratic trend but did not find significant evidence for the additional model complexity based on the Bayesisan information criterion (BIC). 
 
+
+\begin{figure*}
+\includegraphics[width = 1.0\textwidth]{Figures/phase_curves.pdf}
+\caption{WASP-103b phase curve observations from \HST/WFC3 (top) and \Spitzer/IRAC (middle and bottom). For clarity, the data are phase-folded on the planet's orbital period and binned in 30 uniformly spaced bins between 0 and 1. The left column shows the phase curves with systematic noise removed (black points) compared to the best fit model (black line). The shading denotes the  1\,$\sigma$ confidence interval on the best fit. We include the transits in the fit, but they are not displayed in this figure. The right-hand column shows the binned residuals for the best-fit light curve.}
+\label{fig:phasecurves}
+\end{figure*}
 
 \section{Results}
-We achieved good quality fits!
+The fitted light curves are shown in Figure\,\ref{fig:phasecurves}. This figure shows results from the kinematic model for the thermal phase variation and has instrument systematics removed.  The peak planet-to-star flux ranges from 1.5 parts-per-thousand (ppt) in the WFC3 bandpass to 5 ppt in \Spitzer Channel 2.  The planet flux changes significantly with orbital phase in all three of the data sets, suggesting a strong gradient from dayside to nightside temperature. The peak brightness occurs near phase 0.5.
+
+\subsection{Goodness of Fit}
+We performed a number of tests of the quality of the light curve fits. First, we calculated the root-mean-square (rms) of the fit residuals and compared it to the expectations for photon noise alone.
+
+Second, we tested whether the rms decreases white noise bin size.  Figure\,\ref{fig:rms} shows the binned residuals compared to expectations for white noise (uncorrelated in time).
+
+Third, we calculated $\chi^2$, AIC, BIC.
+
 
 \begin{deluxetable*}{llllllllllll}
 \tablecolumns{12}
@@ -254,9 +270,9 @@ WFC3 & Sph. Harmonics & 1214 & 3251 & 1.5 & 0.0 & 0.0 \\
 Ch 1 & Sph. Harmonics & 1280 & 3444 & 0.9 & 0.0 & 0.0 \\
 \, & Kinematic & 1955 & 3675 & 0.9 & 34.3 & 34.3 \\
 \, & Two Temp. & 1429 & 3041 & 0.9 & 10.7 & 17.6 \\
-Ch 2 & Sph. Harmonics & 930 & 3775 & 1.1 & 0.0 & 3.1 \\
-\, & Kinematic & 1719 & 4257 & 1.1 & 14.35 & 17.41 \\
-\, & Two Temp. & 1380 & 3305 & 1.1 & 23.9 & 0.0 \\
+Ch 2 & Sph. Harmonics & 902 & 3786 & 1.1 & 0.0 & 3.1 \\
+\, & Kinematic & 1703 & 4276 & 1.1 & 14.35 & 17.41 \\
+\, & Two Temp. & 1361 & 3311 & 1.1 & 23.9 & 0.0 \\
 \enddata
 \vspace{-0.8cm}
 \tablecomments{comments}
@@ -267,12 +283,6 @@ Ch 2 & Sph. Harmonics & 930 & 3775 & 1.1 & 0.0 & 3.1 \\
 \caption{Root mean square (rms) variability in the light curves as a function of bin size (black lines) compared to the expected rms from photon noise (colored lines). The central wavelength of the light curve is indicated in the upper right corner of each panel. With the exception of the \Spitzer\ 3.6 $\mu$m channel, the rms for the light curves bins down in agreement with predictions from the photon noise.}
 \label{fig:rms}
 \end{figure}
-
-\begin{figure*}
-\includegraphics[width = 1.0\textwidth]{Figures/phase_curves.pdf}
-\caption{WASP-103b phase curve observations from \HST/WFC3 (top) and \Spitzer/IRAC (middle and bottom). For clarity, the data are phase-folded on the planet's orbital period and binned in 30 uniformly spaced bins between 0 and 1. The left column shows the phase curves with systematic noise removed (black points) compared to the best fit model (black line). The shading denotes the  1\,$\sigma$ confidence interval on the best fit. We include the transits in the fit, but they are not displayed in this figure. The right-hand column shows the binned residuals for the best-fit light curve.}
-\label{fig:phasecurves}
-\end{figure*}
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/dayside_spectrum.pdf}
@@ -286,13 +296,6 @@ Ch 2 & Sph. Harmonics & 930 & 3775 & 1.1 & 0.0 & 3.1 \\
 \label{fig:spectra}
 \end{figure*}
 
-\subsection{Phase-Resolved Spectra}
-We used the best-fit phase curves (with systematics removed) to generate phase-resolved emission spectra. We binned each phase curve in FIXME evenly spaced intervals between phase FIXME and FIXME. In each phase bin, we estimated the planet-to-star flux by taking the mean value of the data points in the bin. To estimate the uncertainty, we took the standard deviation of the points in the bin and added it in quadrature to the standard deviation of the data points during secondary eclipse (phase FIXME to FIXME). This procedure accounts for the uncertainty in the baseline stellar flux (which we measure during secondary eclipse).
-
-To estimate the dayside planet-to-star flux, we did FIXME.
-
-We note that the phase-resolved spectra do not significantly change based on which model we assume for the  
-
 \subsection{Comparison of Thermal Phase Variation Models}
 %These models each have different strengths: the kinematic model incorporates the most prior knowledge of physics, and even though it makes several simplifying assumptions (e.g, that the wind speed and direction are constant), it closely reproduces GCM simulations over a wide parameter space \citep{zhang16}.   The spherical harmonics map is the most flexible and makes the fewest assumptions about the true climate. The two-temperature model is the simplest and easiest to compare to one-dimensional models of the dayside, which assume a uniform temperature/pressure profile.  In all cases, we assumed that the planet is tidally locked, such that each orbital revolution corresponds to one complete rotation on its spin axis. %In addition to these maps, we also fit the phase variation with a sinusoid, which has been used for many past analyses of exoplanet phase curves (FIXME).
 All four of the thermal phase variation models we consider (two-temperature, kinematic, spherical harmonics, and sinusoid) provide good fits to the observed phase curves. Table FIXME summarized the goodness of fit
@@ -304,6 +307,13 @@ All four of the thermal phase variation models we consider (two-temperature, kin
 \end{figure*}
 
 \subsection{Hotspot Offset}
+
+\subsection{Phase-Resolved Spectra}
+We used the best-fit phase curves (with systematics removed) to generate phase-resolved emission spectra. We binned each phase curve in FIXME evenly spaced intervals between phase FIXME and FIXME. In each phase bin, we estimated the planet-to-star flux by taking the mean value of the data points in the bin. To estimate the uncertainty, we took the standard deviation of the points in the bin and added it in quadrature to the standard deviation of the data points during secondary eclipse (phase FIXME to FIXME). This procedure accounts for the uncertainty in the baseline stellar flux (which we measure during secondary eclipse).
+
+To estimate the dayside planet-to-star flux, we did FIXME.
+
+We note that the phase-resolved spectra do not significantly change based on which model we assume for the  
 
 \section{Retrieval}
 
