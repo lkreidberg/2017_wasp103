@@ -168,7 +168,7 @@ where $T(\lambda, t)$ is the transit model (the fraction of the stellar disk tha
 
 We calculated the transit model $T(t)$ with the \texttt{batman} package \citep{kreidberg15a}. Many of the physical parameters are tightly constrained by \cite{southworth15}, so we fixed the orbital period, time of inferior conjunction, orbital inclination, and ratio of semi-major axis to stellar radius to the previously published values ($P = 0.925545613$ day, $t_0 = 2456836.2964455 \mathrm{BJD_{TDB}}$, $i = 87.3^\circ$, and $a/R_s = 2.999$). As a test, we fit for these parameters with the Spitzer Channel 2 light curve, which has the best phase coverage and least systematic noise of the three data sets. We found that the transit parameters are consistent with the \cite{southworth15} results, so we proceeded with the remainder of the analysis holding those parameters fixed.  The free parameters for the transit model were the transit depth $r_p$ and a linear limb darkening parameter $u$. 
 
-We calculated the planet-to-star flux $F_p/F_s$ with the \texttt{SPIDERMAN} package \citep{louden17}.  This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and generate the corresponding flux ratio for an observation at time $t$. In our fit, we assumed the star is a FIXME PHOENIX model.  We tested three different maps: a two-temperature map, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$; a map generated with spherical harmonics; and the physically-motivated kinematic model from \cite{zhang16}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$). 
+We calculated the planet-to-star flux $F_p/F_s$ with the \texttt{SPIDERMAN} package \citep{louden17}.  This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and generate the corresponding flux ratio for an observation at time $t$. In our fit, we calculated the stellar flux with a PHOENIX model \citep{husser13} interpolated to an effective temperature of $6110\,\mathrm{K}$ \citep{gillon14}.  We tested three different maps: a two-temperature map, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$; a map generated with spherical harmonics; and the physically-motivated kinematic model from \cite{zhang16}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$). 
 
 %We assume the stellar flux $F_s(\lambda)$ is a $6110\,\mathrm{K}$ blackbody \citep{gillon14}.  (FIXME - use a PHOENIX model instead). 
 We scaled the planet-to-star flux by a correction factor $c$ to account for dilution from the companion star and ellipsoidal variability due to the planet's tidal distortion. The correction factor took the form: 
@@ -246,14 +246,14 @@ We achieved good quality fits!
 \tablewidth{0pt}:
 \tablecaption{Model Comparison \label{table:models}}
 \tablehead{
-\colhead{Data Set} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\chi^2$} & \colhead{$\Delta$ AIC} & \colhead{$\Delta$ BIC}}
+\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\chi^2$} & \colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
 \startdata
-WFC3 & Sph. Harmonics & 1212 & 3190 & 949.6 & 0.0 & 0.0 \\
-\, & Kinematic & 1955 & 3910 & 961.6 & 12.0 & 12.0 \\
-\, & Two Temp. & 0 & 2837 & 999.4 & 47.7 & 43.3 \\
-Ch 1 & Sph. Harmonics & 1277 & 3442 & 0.9 & 0.0 & 0.0 \\
-\, & Kinematic & 1952 & 3672 & 0.9 & 34.3 & 34.3 \\
-\, & Two Temp. & 1427 & 3039 & 0.9 & 10.7 & 17.6 \\
+WFC3 & Sph. Harmonics & 1214 & 3251 & 1.5 & 0.0 & 0.0 \\
+\, & Kinematic & 1980 & 3958 & 1.6 & 11.8 & 11.8 \\
+\, & Two Temp. & 0 & 2887 & 1.6 & 47.7 & 43.2 \\
+Ch 1 & Sph. Harmonics & 1280 & 3444 & 0.9 & 0.0 & 0.0 \\
+\, & Kinematic & 1955 & 3675 & 0.9 & 34.3 & 34.3 \\
+\, & Two Temp. & 1429 & 3041 & 0.9 & 10.7 & 17.6 \\
 Ch 2 & Sph. Harmonics & 930 & 3775 & 1.1 & 0.0 & 3.1 \\
 \, & Kinematic & 1719 & 4257 & 1.1 & 14.35 & 17.41 \\
 \, & Two Temp. & 1380 & 3305 & 1.1 & 23.9 & 0.0 \\

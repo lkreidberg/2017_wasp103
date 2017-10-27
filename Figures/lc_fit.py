@@ -8,7 +8,7 @@ import glob
 import os
 from astropy.io import ascii
 import getopt
-#import seaborn as sns
+import seaborn as sns
 import matplotlib
 import matplotlib.cm as cm
 from datetime import datetime
@@ -19,9 +19,9 @@ import batman
 import pickle
 import spiderman
 
-#sns.set_context("talk")
-#sns.set_style("white")
-#sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
+sns.set_context("talk")
+sns.set_style("white")
+sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 matplotlib.rcParams.update({'lines.markeredgewidth':0.3})
 matplotlib.rcParams.update({'axes.formatter.useoffset':False})
 
@@ -134,8 +134,8 @@ class LightCurveData:
 				else: nfree_param += nvisit
 		nfree_param -= 2	#subtracts 2 because we're fixing v2 at 0 for zhao data
 
-		#zhao_data = pickle.load(open("zhao_data_pickles_10bins/zhao_data_"+"{0:0.3f}".format(wavelength)+".p", "rb"))
-		zhao_data = pickle.load(open("zhao_data_pickles_white/zhao_data_white.p", "rb"))
+		if flags['fit-white']: zhao_data = pickle.load(open("zhao_data_pickles_white/zhao_data_white.p", "rb"))
+		else: zhao_data = pickle.load(open("zhao_data_pickles_6bins/zhao_data_"+"{0:0.3f}".format(wavelength)+".p", "rb"))
 		print "choosing zhao pickles by hand; make sure you specified the right file"
 		print "specifying prior on T_n and delta_T_cloud by hand - indices could be wrong later!"
 
@@ -162,7 +162,9 @@ class LightCurveData:
 		else:
 			self.l1 = (self.wavelength - 0.0225)*1.0e-6	#specific to 12 bins!
 			self.l2 = (self.wavelength + 0.0225)*1.0e-6
+		self.stellar_grid = spiderman.stellar_grid.gen_grid(self.l1, self.l2)
 		print "specifying l1 and l2 by hand - FIXME"
+		print "setting rp by hand in spiderman functions"
 		self.all_sys = None
 		self.prior = format_prior_for_mcmc(obs_par, fit_par)
 
@@ -208,6 +210,15 @@ class FormatParams:
 		self.p_u1 = params[data.par_order['p_u1']*data.nvisit:(1 + data.par_order['p_u1'])*data.nvisit]
 		self.p_u2 = params[data.par_order['p_u2']*data.nvisit:(1 + data.par_order['p_u2'])*data.nvisit]
 		self.delta_T_cloud = params[data.par_order['delta_T_cloud']*data.nvisit:(1 + data.par_order['delta_T_cloud'])*data.nvisit]
+		self.la0 = params[data.par_order['la0']*data.nvisit:(1 + data.par_order['la0'])*data.nvisit]
+		self.lo0 = params[data.par_order['lo0']*data.nvisit:(1 + data.par_order['lo0'])*data.nvisit]
+		self.size = params[data.par_order['size']*data.nvisit:(1 + data.par_order['size'])*data.nvisit]
+		self.spot_T = params[data.par_order['spot_T']*data.nvisit:(1 + data.par_order['spot_T'])*data.nvisit]
+		self.p_T = params[data.par_order['p_T']*data.nvisit:(1 + data.par_order['p_T'])*data.nvisit]
+		self.sph0 = params[data.par_order['sph0']*data.nvisit:(1 + data.par_order['sph0'])*data.nvisit]
+		self.sph1 = params[data.par_order['sph1']*data.nvisit:(1 + data.par_order['sph1'])*data.nvisit]
+		self.sph2 = params[data.par_order['sph2']*data.nvisit:(1 + data.par_order['sph2'])*data.nvisit]
+		self.sph3 = params[data.par_order['sph3']*data.nvisit:(1 + data.par_order['sph3'])*data.nvisit]
 
 def PrintParams(m, data): 
 	print "per\t", m.params[data.par_order['per']*data.nvisit:(1 + data.par_order['per'])*data.nvisit]
@@ -240,6 +251,15 @@ def PrintParams(m, data):
  	print "p_u1\t", m.params[data.par_order['p_u1']*data.nvisit:(1 + data.par_order['p_u1'])*data.nvisit]
  	print "p_u2\t", m.params[data.par_order['p_u2']*data.nvisit:(1 + data.par_order['p_u2'])*data.nvisit]
  	print "delta_T_cloud\t", m.params[data.par_order['delta_T_cloud']*data.nvisit:(1 + data.par_order['delta_T_cloud'])*data.nvisit]
+ 	print "la0\t", m.params[data.par_order['la0']*data.nvisit:(1 + data.par_order['la0'])*data.nvisit]
+ 	print "lo0\t", m.params[data.par_order['lo0']*data.nvisit:(1 + data.par_order['lo0'])*data.nvisit]
+ 	print "size\t", m.params[data.par_order['size']*data.nvisit:(1 + data.par_order['size'])*data.nvisit]
+ 	print "spot_T\t", m.params[data.par_order['spot_T']*data.nvisit:(1 + data.par_order['spot_T'])*data.nvisit]
+ 	print "p_T\t", m.params[data.par_order['p_T']*data.nvisit:(1 + data.par_order['p_T'])*data.nvisit]
+ 	print "sph0\t", m.params[data.par_order['sph0']*data.nvisit:(1 + data.par_order['sph0'])*data.nvisit]
+ 	print "sph1\t", m.params[data.par_order['sph1']*data.nvisit:(1 + data.par_order['sph1'])*data.nvisit]
+ 	print "sph2\t", m.params[data.par_order['sph2']*data.nvisit:(1 + data.par_order['sph2'])*data.nvisit]
+ 	print "sph3\t", m.params[data.par_order['sph3']*data.nvisit:(1 + data.par_order['sph3'])*data.nvisit]
 
 class Model:
 	"""
@@ -278,16 +298,21 @@ class Model:
 				#print "LK: need to correct for dilution here"
 			elif data.lc_type == "physical_model":
  				self.transit_model[ind] = get_tlc(data.time[ind], p, data, i) 
- 				self.phase_model[ind] = get_spidermanlc(data.time[ind], p, data, i)
+ 				#self.phase_model[ind] = get_spidermanzhang(data.time[ind], p, data, i, data.stellar_grid)
+ 				#self.phase_model[ind] = get_spidermanspherical(data.time[ind], p, data, i, data.stellar_grid)
+ 				self.phase_model[ind] = get_spidermanhotspot(data.time[ind], p, data, i, data.stellar_grid)
+				print "choosing spiderman model by hand here2"
  				#self.lc[ind] = (self.transit_model[ind]-1.0) + self.phase_model[ind]
  				self.lc[ind] = (self.transit_model[ind]-1.0) + (self.phase_model[ind]-1.)/(1. + data.dilution) + 1.
-				self.bestfit[ind] = self.phase_model[ind]
+				self.bestfit[ind] = self.lc[ind]
  			else: assert False, "Unknown option; supported light curve types are 'transit', 'eclipse', 'phase_curve' and 'physical_model'"
 
 			if flags['divide-white'] == False:
 				S = np.ones_like(self.transit_model[ind])+p.scale[i]*data.scan_direction[ind]
 				D = np.ones_like(self.transit_model[ind])+p.r3[i]*data.t_delay[ind]
-				self.all_sys[ind] = data.flux[ind]/self.lc[ind]
+				#self.all_sys[ind] = data.flux[ind]/self.lc[ind]
+				#self.all_sys[ind]  = (p.c[i]*S + p.v[i]*data.t_vis[ind] + p.v2[i]*data.t_vis[ind]**2)*(1.0-np.exp((-p.r1[i]*data.t_orb[ind]-p.r2[i]-D)))
+				self.all_sys[ind]  = (p.c[i] + p.v[i]*data.t_vis[ind] + p.v2[i]*data.t_vis[ind]**2)*(1.0-np.exp((-p.r1[i]*data.t_orb[ind]-p.r2[i]-D)))
 				self.lc[ind] *= (p.c[i]*S + p.v[i]*data.t_vis[ind] + p.v2[i]*data.t_vis[ind]**2)*(1.0-np.exp((-p.r1[i]*data.t_orb[ind]-p.r2[i]-D)))
 				self.data_corr[ind] = data.flux[ind]/((p.c[i]*S + p.v[i]*data.t_vis[ind] + p.v2[i]*data.t_vis[ind]**2)*(1.0-np.exp(-p.r1[i]*data.t_orb[ind]-p.r2[i]-D)))
 				self.sys[ind] = p.c[i]+ p.v[i]*data.t_vis[ind] + p.v2[i]*data.t_vis[ind]**2
@@ -308,8 +333,9 @@ class Model:
 def plot(params, data, flags, obs_par, plot_sys=False):
 	p = FormatParams(params, data)
 	m = Model(params,data, flags)
-	#sns.set_palette("muted")
-	#palette = sns.color_palette("muted", m.data.nvisit)
+	sns.set_palette("muted")
+	palette = sns.color_palette("muted", m.data.nvisit)
+	plt.clf()
 	if plot_sys==False:
 		for i in range(m.data.nvisit):
 			ind = m.data.vis_num == i
@@ -341,7 +367,10 @@ def plot(params, data, flags, obs_par, plot_sys=False):
 			print "need to add dilution here"
 		elif data.lc_type == "physical_model":
  			transit_model_hr = get_tlc(t_hr, p, data, 0) 
- 			physical_model_hr = get_spidermanlc(t_hr, p, data, 0)
+ 			#physical_model_hr = get_spidermanzhang(t_hr, p, data, 0, data.stellar_grid)
+ 			#physical_model_hr = get_spidermanspherical(t_hr, p, data, 0, data.stellar_grid)
+ 			physical_model_hr = get_spidermanhotspot(t_hr, p, data, 0, data.stellar_grid)
+			print "choosing spiderman model by hand here1"
  			#lc_hr = (transit_model_hr-1.0) + physical_model_hr
  			lc_hr = (np.array(transit_model_hr)-1.0) + (np.array(physical_model_hr) - 1.)/(1.+data.dilution) + 1.
  		else: assert False, "Unknown option; supported light curve types are 'transit', 'eclipse', 'phase_curve' and 'physical_model'"
@@ -373,6 +402,10 @@ def plot(params, data, flags, obs_par, plot_sys=False):
 		plt.xlabel("Orbital phase")
 		plt.xlim((phase_hr.min(), phase_hr.max()))
 		if obs_par['lc_type'] == 'transit': plt.xlim(-0.2, 0.2)
+
+		if flags['output']: 
+			figname =  "fit" + "{0:0.2f}".format(data.wavelength) + ".png"
+			plt.savefig(figname)
 		plt.show()
 
 	elif plot_sys == True:
@@ -487,6 +520,7 @@ def proj_area(phi, inc):
         n = 1.005
         qn = kn*(1.- n/5.)      #n 
 
+
         alpha1 = 2.5*qn*R0**3/(p*r**3)
         alpha2 = -1.25*qn*R0**3/(p*r**3)
         alpha3 = alpha2
@@ -495,10 +529,11 @@ def proj_area(phi, inc):
         a2 = R0*(1+alpha2)
         a3 = R0*(1+alpha3)
 
+        #plt.plot(phi, np.sqrt(a3**2*np.sin(inc)**2*(a1**2*np.sin(phi)**2+a2**2*np.cos(phi)**2)+ a1**2*a2**2*np.cos(inc)**2)/(a2*a3), '.k')
+	#plt.show()
         return  np.sqrt(a3**2*np.sin(inc)**2*(a1**2*np.sin(phi)**2+a2**2*np.cos(phi)**2)+ a1**2*a2**2*np.cos(inc)**2)/(a2*a3)
 
-def get_spidermanlc(t, p, data, v_num):
-		
+def get_spidermanzhang(t, p, data, v_num, stellar_grid):
         web_p = spiderman.ModelParams(brightness_model =  'zhang') 
         
         web_p.n_layers = 5
@@ -509,7 +544,7 @@ def get_spidermanlc(t, p, data, v_num):
         web_p.ecc = p.ecc[v_num]
         web_p.w = p.w[v_num] 
         #web_p.rp = p.rp[v_num] 
-        web_p.rp = 0.115
+        web_p.rp = 0.1127
         web_p.a = p.a[v_num] 
         web_p.p_u1 = p.p_u1[v_num] 
         web_p.p_u2 = p.p_u2[v_num]
@@ -522,7 +557,7 @@ def get_spidermanlc(t, p, data, v_num):
 	web_p.delta_T_cloud = p.delta_T_cloud[v_num]
 	web_p.thermal = True
 
-        lc = spiderman.web.lightcurve(t, web_p)
+        lc = spiderman.web.lightcurve(t, web_p, stellar_grid = stellar_grid)
 
 	phs = (t - p.t0[v_num])/p.per[v_num]
 	phs -= np.round(phs)
@@ -531,6 +566,73 @@ def get_spidermanlc(t, p, data, v_num):
 	#print np.max(rprs2), np.min(rprs2)
 	return (np.array(lc) - 1.0)*rprs2 + 1.
 
+def get_spidermanspherical(t, p, data, v_num, stellar_grid):
+        web_p = spiderman.ModelParams(brightness_model =  'spherical', thermal = True) 
+        
+        web_p.n_layers = 5
+        web_p.t0 = p.t0[v_num] 
+        web_p.per = p.per[v_num]
+        web_p.a_abs = p.a_abs[v_num]
+        web_p.inc = p.inc[v_num]
+        web_p.ecc = p.ecc[v_num]
+        web_p.w = p.w[v_num] 
+        #web_p.rp = p.rp[v_num] 
+        web_p.rp = 0.1127
+        web_p.a = p.a[v_num] 
+        web_p.p_u1 = p.p_u1[v_num] 
+        web_p.p_u2 = p.p_u2[v_num]
+        web_p.T_s = p.T_s[v_num]
+        web_p.l1 = data.l1
+        web_p.l2 = data.l2
+	web_p.degree = 2
+	web_p.la0 = p.la0[v_num]
+	web_p.lo0 = p.lo0[v_num]
+	sph0 = p.sph0[v_num]
+	sph1 = p.sph1[v_num]
+	sph2 = p.sph2[v_num]
+	sph3 = p.sph3[v_num]
+	web_p.sph = [sph0, sph1, sph2, sph3]
+
+        lc = spiderman.web.lightcurve(t, web_p, stellar_grid = stellar_grid)
+
+	phs = (t - p.t0[v_num])/p.per[v_num]
+	phs -= np.round(phs)
+	rprs2 = proj_area(phs*2.*np.pi, p.inc[v_num]*np.pi/180.)
+
+	return (np.array(lc) - 1.0)*rprs2 + 1.
+
+def get_spidermanhotspot(t, p, data, v_num, stellar_grid): 
+        web_p = spiderman.ModelParams(brightness_model =  'hotspot_t') 
+        
+        web_p.n_layers = 5
+        web_p.t0 = p.t0[v_num] 
+        web_p.per = p.per[v_num]
+        web_p.a_abs = p.a_abs[v_num]
+        web_p.inc = p.inc[v_num]
+        web_p.ecc = p.ecc[v_num]
+        web_p.w = p.w[v_num] 
+        #web_p.rp = p.rp[v_num] 
+        web_p.rp = 0.1127
+        web_p.a = p.a[v_num] 
+        web_p.p_u1 = p.p_u1[v_num] 
+        web_p.p_u2 = p.p_u2[v_num]
+        web_p.T_s = p.T_s[v_num]
+        web_p.l1 = data.l1
+        web_p.l2 = data.l2
+	web_p.la0 = p.la0[v_num]
+	web_p.lo0 = p.lo0[v_num]
+	web_p.size = p.size[v_num]
+	web_p.spot_T = p.spot_T[v_num]
+	web_p.p_T = p.p_T[v_num]
+	web_p.thermal = True
+		
+        lc = spiderman.web.lightcurve(t, web_p, stellar_grid = stellar_grid)
+
+	phs = (t - p.t0[v_num])/p.per[v_num]
+	phs -= np.round(phs)
+	rprs2 = proj_area(phs*2.*np.pi, p.inc[v_num]*np.pi/180.)
+
+	return (np.array(lc) - 1.0)*rprs2 + 1.
 
 def residuals(params, data, flags, fjac=None):					
 	return [0, Model(params, data, flags).resid/data.err]
@@ -591,7 +693,7 @@ def least_sq_fit(file_name, obs_par, fit_par, data, flags):
 
 		edepth = m.params[data.par_order['fp']*nvisit]
 		edeptherr = m.perror[data.par_order['fp']*nvisit]
-		pickle.dump([data.wavelength, model.phase, model.data_corr, data.err/data.flux, model.resid/data.flux, edepth, edeptherr], open("fcorr"+"{0:0.2f}".format(data.wavelength)+".p", "wb"))
+		pickle.dump([data.wavelength, model.phase, model.data_corr, data.err/data.flux, model.resid/data.flux, edepth, edeptherr, model.lc, data.flux, data.vis_num], open("fcorr"+"{0:0.2f}".format(data.wavelength)+".p", "wb"))
 		pickle.dump([data, model, m.params], open("bestfit_"+"{0:0.2f}".format(data.wavelength)+".pic", "wb"),-1)
 
 	if flags['verbose']: 
@@ -705,7 +807,7 @@ def mcmc_fit(file_name, obs_par, fit_par, flags):
 	#sampler.run_mcmc(pos,200)
 	#sampler.run_mcmc(pos,5000)
 
-	nsteps = 7000
+	nsteps = 6000
 	#nsteps = 3000
 	for i, result in enumerate(sampler.sample(pos, iterations=nsteps)):
 		#if i%100==0: print "% complete:", float(i)/float(nsteps) 
@@ -714,6 +816,10 @@ def mcmc_fit(file_name, obs_par, fit_par, flags):
 		#	GR
 
 	samples = sampler.chain[:, 4000:, :].reshape((-1, ndim))
+	#samples_firsthalf = sampler.chain[:, 4000:5000, :].reshape((-1, ndim))
+	#samples_secondhalf = sampler.chain[:, 5000:6000, :].reshape((-1, ndim))
+	
+
 	#samples = sampler.chain[:, 600:, :].reshape((-1, ndim))
 
 	mcmc_output(samples, params, obs_par, fit_par, data, sampler.chain)

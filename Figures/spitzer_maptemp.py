@@ -80,8 +80,8 @@ for i, model in enumerate(models):
 		spider_params.T_n= 1719.		# Temperature of nightside
 		spider_params.delta_T= 2571.		# Day-night temperature contrast
 	elif channel == 1:
-		spider_params.xi= 3.6976e-1       	# Ratio of radiative to advective timescale
-		spider_params.T_n= 1952.		# Temperature of nightside
+		spider_params.xi= 3.6969e-1       	# Ratio of radiative to advective timescale
+		spider_params.T_n= 1955.		# Temperature of nightside
 		spider_params.delta_T= 1857.		# Day-night temperature contrast
 
     elif model == "spherical":
@@ -94,7 +94,7 @@ for i, model in enumerate(models):
 		spider_params.degree=2
 		spider_params.la0 = 0
 		spider_params.lo0 = 0
-		spider_params.sph = [7.418e+3, 2.6109e+2, 0.0, 1.907e+3]
+		spider_params.sph = [7.427e+3, 2.6104e+2, 0.0, 1.906e+3]
 
     elif model == "hotspot_t":
 	if channel == 2:
@@ -107,8 +107,8 @@ for i, model in enumerate(models):
 		spider_params.la0 = 0.
 		spider_params.lo0 = 0.
 		spider_params.size = 90.
-		spider_params.spot_T = 3039.
-		spider_params.p_T = 1427.
+		spider_params.spot_T = 3041.
+		spider_params.p_T = 1429.
         
     else:
         print "model not supported"
