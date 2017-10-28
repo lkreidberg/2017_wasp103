@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ms.aux
 The style file: aasjournal.bst
 Database file #1: msNotes.bib
@@ -14,51 +14,49 @@ Warning--I didn't find a database entry for "h1999"
 Warning--I didn't find a database entry for "ehf2003"
 Warning--I didn't find a database entry for "getal2014"
 Warning--I didn't find a database entry for "louden17"
-Warning--I didn't find a database entry for "husser13"
 Warning--I didn't find a database entry for "zhang16"
-Warning--I didn't find a database entry for "cartier16"
 Warning--I didn't find a database entry for "zhu17"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty institution in long15
-You've used 12 entries,
+You've used 14 entries,
             3222 wiz_defined-function locations,
-            754 strings with 8071 characters,
-and the built_in function-call counts, 5770 in all, are:
-= -- 409
-> -- 520
+            769 strings with 8669 characters,
+and the built_in function-call counts, 6840 in all, are:
+= -- 489
+> -- 623
 < -- 3
-+ -- 171
-- -- 182
-* -- 543
-:= -- 1102
-add.period$ -- 12
-call.type$ -- 12
-change.case$ -- 56
-chr.to.int$ -- 10
-cite$ -- 13
-duplicate$ -- 212
-empty$ -- 334
-format.name$ -- 197
-if$ -- 1132
++ -- 206
+- -- 221
+* -- 645
+:= -- 1307
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 70
+chr.to.int$ -- 12
+cite$ -- 15
+duplicate$ -- 248
+empty$ -- 388
+format.name$ -- 237
+if$ -- 1339
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 11
-newline$ -- 41
-num.names$ -- 48
-pop$ -- 81
+missing$ -- 13
+newline$ -- 47
+num.names$ -- 56
+pop$ -- 99
 preamble$ -- 1
-purify$ -- 55
+purify$ -- 69
 quote$ -- 0
-skip$ -- 156
+skip$ -- 182
 stack$ -- 0
-substring$ -- 188
+substring$ -- 216
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 126
 warning$ -- 1
-while$ -- 41
+while$ -- 48
 width$ -- 0
-write$ -- 124
+write$ -- 144
 (There was 1 error message)

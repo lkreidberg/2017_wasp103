@@ -2,6 +2,11 @@
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\href{#1}{#1}}
 
+\bibitem[{{Cartier} {et~al.}(2017){Cartier}, {Beatty}, {Zhao}, {Line}, {Ngo},
+  {Mawet}, {Stassun}, {Wright}, {Kreidberg}, {Fortney}, \&
+  {Knutson}}]{cartier17}
+{Cartier}, K.~M.~S., {Beatty}, T.~G., {Zhao}, M., {et~al.} 2017, \aj, 153, 34
+
 \bibitem[{{Gillon} {et~al.}(2014){Gillon}, {Anderson}, {Collier-Cameron},
   {Delrez}, {Hellier}, {Jehin}, {Lendl}, {Maxted}, {Pepe}, {Pollacco},
   {Queloz}, {S{\'e}gransan}, {Smith}, {Smalley}, {Southworth}, {Triaud},
@@ -11,6 +16,11 @@
 
 \bibitem[{{Horne}(1986)}]{horne86}
 {Horne}, K. 1986, \pasp, 98, 609
+
+\bibitem[{{Husser} {et~al.}(2013){Husser}, {Wende-von Berg}, {Dreizler},
+  {Homeier}, {Reiners}, {Barman}, \& {Hauschildt}}]{husser13}
+{Husser}, T.-O., {Wende-von Berg}, S., {Dreizler}, S., {et~al.} 2013, \aap,
+  553, A6
 
 \bibitem[{{Kreidberg}(2015)}]{kreidberg15a}
 {Kreidberg}, L. 2015, \pasp, 127, 1161
