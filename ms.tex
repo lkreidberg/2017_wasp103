@@ -227,9 +227,10 @@ The fitted light curves are shown in Figure\,\ref{fig:phasecurves}. This figure 
 \subsection{Goodness of Fit}
 We performed several tests of the quality of the light curve fits.  First we predicted the level of scatter in the light curves based on photon and read noise, then compared this value to the root-mean-square (rms) of the fit residuals. The fit rms was within FIXME percent of the expected noise level in the WFC3 spectroscopic light curves and \Spitzer\ Channel 2 (expected rms of 450 and FIXME ppm). The 
 
-Second, we tested whether the fit rms decreases as expected when the light curve in binned in time.  If the noise is ``white" (uncorrelated in time), the residuals are expected to decrease by a factor of $\sqrt{N}$, where $N$ is the number of points in a bin. Figure\,\ref{fig:rms} shows the binned residuals compared to expectations for white noise. The \HST/WFC3 and \Spitzer\ Channel 2 light curves agree well with expectations, whereas \Spitzer\ Channel 1 shows higher noise than expected as bin size increases. This test confirms the existence of time-correlated noise in the Channel 1 light curve that can be seen by eye in the residuals in Figure\,\ref{fig:phasecurves}. Both \Spitzer\ channels use the same detector, but Channel 1 data are more susceptible to time-correlated noise because the the point spread function is narrower at shorter wavelengths, making intrapixel sensitivity variations more pronounced.
+Second, we tested whether the fit rms decreases as expected when the light curve in binned in time.  If the noise is ``white" (uncorrelated in time), the residuals are expected to decrease by a factor of $\sqrt{N}$, where $N$ is the number of points in a bin. Figure\,\ref{fig:rms} shows the binned residuals compared to expectations for white noise. The \HST/WFC3 and \Spitzer\ Channel 2 light curves agree well with expectations, whereas \Spitzer\ Channel 1 shows higher noise than expected as bin size increases. This test confirms the presence of time-correlated noise in the Channel 1 light curve that can be seen by eye in the residuals in Figure\,\ref{fig:phasecurves}. Both \Spitzer\ channels use the same detector, but Channel 1 data are more susceptible to time-correlated noise because the the point spread function is narrower at shorter wavelengths, making intrapixel sensitivity variations more pronounced.
 
-Third, we calculated several goodness of fit statistics. $\chi^2$, AIC, BIC.
+The reduced $\chi^2$ values for the fits are near unity. FIXME when you have them all.
+%Third, we calculated several goodness of fit statistics. $\chi^2$, AIC, BIC.
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/rms.pdf}
@@ -237,27 +238,26 @@ Third, we calculated several goodness of fit statistics. $\chi^2$, AIC, BIC.
 \label{fig:rms}
 \end{figure}
 
-\begin{deluxetable}{lllllll}
-\tablecolumns{7}
-\tablewidth{0pt}:
-\tablecaption{Model Comparison \label{table:models}}
-\tablehead{
-\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\chi^2$} & \colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
-\startdata
-WFC3 & Harmonics & 1214 & 3251 & 1.5 & 0.0 & 0.0 \\
-\, & Kinematic & 1980 & 3958 & 1.6 & 11.8 & 11.8 \\
-\, & Two Temp. & 0 & 2887 & 1.6 & 47.7 & 43.2 \\
-Ch 1 & Harmonics & 1280 & 3444 & 0.9 & 0.0 & 0.0 \\
-\, & Kinematic & 1955 & 3675 & 0.9 & 34.3 & 34.3 \\
-\, & Two Temp. & 1429 & 3041 & 0.9 & 10.7 & 17.6 \\
-Ch 2 & Harmonics & 902 & 3786 & 1.1 & 0.0 & 3.1 \\
-\, & Kinematic & 1703 & 4276 & 1.1 & 14.35 & 17.41 \\
-\, & Two Temp. & 1361 & 3311 & 1.1 & 23.9 & 0.0 \\
-\enddata
-\vspace{-0.8cm}
-\tablecomments{comments}
-\end{deluxetable}
-
+\begin{deluxetable}{llllll}
+	\tablecolumns{6}
+	\tablewidth{0pt}:
+	\tablecaption{Model Comparison \label{table:model_comparison}}
+	\tablehead{
+	\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
+		\startdata
+		WFC3 & Sph. Harmonics & 1214 & 3251 & 0.0 & 0.0 \\
+		\, & Kinematic & 1980 & 3958 & 11.8 & 11.8 \\
+		\, & Two Temp. & 0 & 2887 & 47.7 & 43.2 \\
+		Ch 1 & Sph. Harmonics & 1280 & 3444 & 0.0 & 0.0 \\
+		\, & Kinematic & 1955 & 3675 & 34.3 & 34.3 \\
+		\, & Two Temp. & 1429 & 3041 & 10.7 & 17.6 \\
+		Ch 2 & Sph. Harmonics & 902 & 3786 & 0.0 & 3.1 \\
+		\, & Kinematic & 1703 & 4276 & 14.35 & 17.41 \\
+		\, & Two Temp. & 1361 & 3311 & 23.9 & 0.0 \\
+		\enddata
+		\vspace{-0.8cm}
+		\tablecomments{comments}
+	\end{deluxetable}
 
 \subsection{Phase-Resolved Spectra}
 We used the best-fit phase curves (with systematics removed) to generate phase-resolved emission spectra.  Since our model does not fit eclipse depth as a free parameter, we estimated the dayside emission spectrum as follows. We used \texttt{SPIDERMAN}'s eclipse\_depth method to calculate the average planet-to-star flux for the best-fit model during secondary eclipse.  To estimate uncertainties, we took the standard deviation of the residuals of the in-eclipse data points, then added this value in quadrature to the standard deviation of the residuals of the out-of-eclipse data.  This summed error accounts for the uncertainty in the baseline flux.
@@ -312,8 +312,13 @@ To test that the phase-resolved spectra are robust to different approaches for f
 \subsection{Comparison of Thermal Phase Variation Models}
 We compared four different models for the thermal phase variation: a sinusoid and three temperature maps. The sinusoid has been the most widely used model for thermal phase variation in previous analyses of thermal phase curves \citep{FIXME} and directly fits the phase variation amplitude and offset from the substellar point. Fitting temperature maps (two-temperature, kinematic, and spherical harmonics) is a new approach enabled by the \texttt{SPIDERMAN} package.  The three maps each have different strengths: the kinematic model incorporates the most prior knowledge of physics, and even though it makes several simplifying assumptions (e.g, that the wind speed and direction are constant), it closely reproduces GCM simulations over a wide parameter space \citep{zhang16}.   The spherical harmonics map is the most flexible and makes the fewest assumptions about the true climate. The two-temperature model is the simplest and easiest to compare to one-dimensional models of the dayside, which assume a uniform temperature/pressure profile.  
 
-All of the models provide good fits to the observed phase curves. Table\,\ref{tab:model_comparison} summarized the goodness of fit according to the reduced $\chi^2$, Bayesian information criterion (BIC), and Aikike information criterion (AIC). These metrics for assessing fit quality are . The AIC penalizes model complexity relatively LESS? than the BIC. 
-Spherical harmonics provide the best fit most of the time.
+All of the models provide reasonable fits to the data, but they yield signficantly different temperature maps. Table\,\ref{tab:model_comparison} lists the minimum and maximum temperatures for the best fit models to the WFC3 broadband and two Spitzer phase curves. We also list the Bayesian information criterion (BIC) and Aikike information criterion (AIC) values for the fits. Both of these statistics are an approximation of the Bayesian evidence for a given model, but the BIC penalizes model complexity relatively more than the AIC \citep{kass95}. 
+
+Spherical harmonics generally provide the best fit according to the AIC and BIC. 
+
+
+While the spherical harmonics model generally produces the best fits according to both the BIC and the AIC,
+
 
 The kinematic model overpredicts the nightside flux. Model is not very flexible because nightside flux is assumed to be constant.
 The two temperature model overpredicts the flux at quadrature and underpredicts the dayside.
