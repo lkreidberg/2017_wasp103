@@ -241,30 +241,33 @@ The reduced $\chi^2$ values for the fits are near unity. FIXME when you have the
 \begin{deluxetable}{llllll}
 	\tablecolumns{6}
 	\tablewidth{0pt}:
-	\tablecaption{Model Comparison \label{table:model_comparison}}
+	\tablecaption{Model Comparison \label{table:models}}
 	\tablehead{
 	\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
 		\startdata
 		WFC3 & Sph. Harmonics & 1214 & 3251 & 0.0 & 0.0 \\
 		\, & Kinematic & 1980 & 3958 & 11.8 & 11.8 \\
 		\, & Two Temp. & 0 & 2887 & 47.7 & 43.2 \\
-		Ch 1 & Sph. Harmonics & 1280 & 3444 & 0.0 & 0.0 \\
-		\, & Kinematic & 1955 & 3675 & 34.3 & 34.3 \\
-		\, & Two Temp. & 1429 & 3041 & 10.7 & 17.6 \\
-		Ch 2 & Sph. Harmonics & 902 & 3786 & 0.0 & 3.1 \\
-		\, & Kinematic & 1703 & 4276 & 14.35 & 17.41 \\
-		\, & Two Temp. & 1361 & 3311 & 23.9 & 0.0 \\
+		\, & Sinusoid & -- & -- & 17.7 & 13.2 \\
+		Ch 1 & Sph. Harmonics & 1280 & 3444 & 48.0 & 0.0 \\
+		\, & Kinematic & 1955 & 3675 & 82.3 & 34.3 \\
+		\, & Two Temp. & 1429 & 3041 & 58.7 & 17.6 \\
+		\, & Sinusoid & -- & -- & 0.0 & 98.4 \\
+		Ch 2 & Sph. Harmonics & 902 & 3786 & 2.2 & 3.1 \\
+		\, & Kinematic & 1703 & 4276 & 16.55 & 17.41 \\
+		\, & Two Temp. & 1361 & 3311 & 26.1 & 0.0 \\
+		\, & Sinusoid & -- & -- & 0.0 & 49.6 \\
 		\enddata
 		\vspace{-0.8cm}
 		\tablecomments{comments}
-	\end{deluxetable}
+\end{deluxetable}
 
 \subsection{Phase-Resolved Spectra}
 We used the best-fit phase curves (with systematics removed) to generate phase-resolved emission spectra.  Since our model does not fit eclipse depth as a free parameter, we estimated the dayside emission spectrum as follows. We used \texttt{SPIDERMAN}'s eclipse\_depth method to calculate the average planet-to-star flux for the best-fit model during secondary eclipse.  To estimate uncertainties, we took the standard deviation of the residuals of the in-eclipse data points, then added this value in quadrature to the standard deviation of the residuals of the out-of-eclipse data.  This summed error accounts for the uncertainty in the baseline flux.
 
 For the other orbital phases, we binned the light curve (with systematics removed) in eight intervals of about 0.1 in orbital phase, with endpoints at phases $0.06, 0.15, 0.25, 0.35, 0.44$ and $0.56, 0.65, 0.75, 0.85, 0.94$. These endpoints were chosen to ensure that there is no contribution from in-transit or in-eclipse data.  In each phase bin, we estimated the planet-to-star flux from the mean value of the data points in the bin. To estimate the uncertainty, we took the standard deviation of the points in the bin and added it in quadrature to the standard deviation of the data points during secondary eclipse (phase $0.46-0.54$). This sum accounts for the uncertainty in the stellar flux (measured during secondary eclipse). The phase-resolved emission spectra are shown in Figure\,\ref{fig:spectra} and listed in Table\,\ref{table:spectra}.
 
-To test that the phase-resolved spectra are robust to different approaches for fitting the data, we compared the spectra for all four of the thermal phase variation models (sinusoid, kinematic, spherical harmonics, and two temperature). We found that the choice of model does not significantly change the results.  The emission spectra are insensitive to the models because they are estimated directly from the data (after systematics have been removed). Since systematic noise is not strongly correlated with the thermal phase variation, the systematics-divided data are nearly identical for all the models.  This point is illustrated in Figure\,\ref{fig:model_comparison} for the broadband WFC3 light curve. In most phase bins, the planet-to-star flux agrees well within one sigma for all the models. 
+To test that the phase-resolved spectra are robust to different approaches for fitting the data, we compared the spectra for all four of the thermal phase variation models (sinusoid, kinematic, spherical harmonics, and two temperature). We found that the choice of model does not significantly change the results.  The emission spectra are insensitive to the models because they are estimated directly from the data (after systematics have been removed). Since systematic noise is not strongly correlated with the thermal phase variation, the systematics-divided data are nearly identical for all the models.  This point is illustrated in Figure\,\ref{fig:model_comparison} for the broadband WFC3 light curve. In most phase bins, the planet-to-star flux agrees to well within one sigma for all the models. 
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/emission_spectra.pdf}
@@ -312,23 +315,31 @@ To test that the phase-resolved spectra are robust to different approaches for f
 \subsection{Comparison of Thermal Phase Variation Models}
 We compared four different models for the thermal phase variation: a sinusoid and three temperature maps. The sinusoid has been the most widely used model for thermal phase variation in previous analyses of thermal phase curves \citep{FIXME} and directly fits the phase variation amplitude and offset from the substellar point. Fitting temperature maps (two-temperature, kinematic, and spherical harmonics) is a new approach enabled by the \texttt{SPIDERMAN} package.  The three maps each have different strengths: the kinematic model incorporates the most prior knowledge of physics, and even though it makes several simplifying assumptions (e.g, that the wind speed and direction are constant), it closely reproduces GCM simulations over a wide parameter space \citep{zhang16}.   The spherical harmonics map is the most flexible and makes the fewest assumptions about the true climate. The two-temperature model is the simplest and easiest to compare to one-dimensional models of the dayside, which assume a uniform temperature/pressure profile.  
 
-All of the models provide reasonable fits to the data, but they yield signficantly different temperature maps. Table\,\ref{tab:model_comparison} lists the minimum and maximum temperatures for the best fit models to the WFC3 broadband and two Spitzer phase curves. We also list the Bayesian information criterion (BIC) and Aikike information criterion (AIC) values for the fits. Both of these statistics are an approximation of the Bayesian evidence for a given model, but the BIC penalizes model complexity relatively more than the AIC \citep{kass95}. 
+All of the models provide reasonable fits to the data, with $\chi^2_\nu$ near unity, but they yield significantly different temperature maps. Table\,\ref{tab:model_comparison} lists the minimum and maximum temperatures for the best fit models to the WFC3 broadband and two Spitzer phase curves. We also list the Bayesian information criterion (BIC) and Aikike information criterion (AIC) values for the fits \citep[a $\Delta$BIC value greater than 10 constitutes strong evidence against a given model;][]{kass95}.
 
-Spherical harmonics generally provide the best fit according to the AIC and BIC. 
+%Both of these statistics are an approximation of the Bayesian evidence for a given model, but the BIC penalizes model complexity relatively more than the AIC \citep{kass95}. 
+
+The best fit model is either a sinusoid or spherical harmonics, depending on which criterion is used for model selection. The BIC generally favors the simpler spherical harmonics model because it penalizes model complexity relatively more than the AIC \citep{kass95}. The sinusoid has eight free parameters (amplitude, phase offset, eclipse duration, ingress/egress duration, and midpoint and depth for each of two eclipses), whereas the spherical harmonics model has four (for degree two).  The kinematic and two temperature models tend to perform significantly worse ($\Delta$BIC and $\Delta$AIC greater than 10).  As illustrated in Figure\,\ref{fig:model_comparison}, the kinematic model overpredicts the nightside flux, whereas the two temperature model overpredicts the flux at quadrature and underpredicts the dayside. 
+%The spherical harmonics model is strongly favored for most of the data sets according to the AIC and BIC. It has slightly more free parameters than the other models (four, versus three for the kinematic model and two for the two-temperature model). 
+
+We compared the planet's minimum and maximum temperature for the three climate maps by computing the temperatures over a $100\times100$ grid in latitude and longitude. The kinematic model has the hottest dayside temperature and the two-temperature model has the smallest. The differences in peak temperature for the models we consider ranges from $630\,\mathrm{K}$ for \Spitzer\ Channel 1 to $1070\,\mathrm{K}$ for the broadband WFC3 light curve. The minimum nightside temperature is also model-dependent: for the WFC3 data, the two-temperature model predicts a nightside temperature of zero Kelvin, whereas the best fit kinematic model has a nightside temperature of $1980\,\mathrm{K}$. %For the WFC3 data, the peak temperature ranges from $2890$ to $3960$ K, and the minimum ranges from $0$ to $1980$ K.  
+
+These differences arise because the kinematic model allows a steep temperature gradient on the dayside, so the substellar point is much hotter than the terminator, whereas the two temperature map imposes a constant dayside temperature.  The spherical harmonics model has an intermediate temperature gradient, and fits the data the best. However, this model may not be physically realistic: on the nightside, it produces higher temperatures at the poles than at the equator, contrary to predictions from GCM (FIXME define?) simulations. 
+
+The typical uncertainty is FIXME (run MCMC, say the systematic range is larger than the error bars). 
 
 
-While the spherical harmonics model generally produces the best fits according to both the BIC and the AIC,
-
-
-The kinematic model overpredicts the nightside flux. Model is not very flexible because nightside flux is assumed to be constant.
-The two temperature model overpredicts the flux at quadrature and underpredicts the dayside.
-
-What is the difference in min/max temperature?
+%The spherical harmonics model fits better according to the BIC and the AIC; however, it yields higher temperatures at the poles than at the equator, which does not agree with predictions from GCM simulations \citep{FIXME}. 
 
 \subsection{Hotspot Offset}
-
+The location of peak brightness of the phase curve is a proxy for the efficiency of thermal reradiation to space and relative to heat transport by advection (the radiative-to-advective timescale). The faster the reradiation, the less heat can be redistributed to the nightside. We compared the measured hotspot offset for the different models and found FIXME.
 
 \section{Retrieval}
+We performed an atmospheric retrieval to determine the composition and thermal structure of the atmosphere of WASP-103b. We used the CHIMERA retrieval suite \citep{FIXME}, as well as. Briefly, the CHIMERA model fits for the atmospheric metallicity and carbon-to-oxygen ratio, assuming the atmosphere is in thermochemical equilibrium. The temperature-pressure profile is FIXME. We included opacity from the dominant absorbing species expected at the temperatures and pressures on WASP-103b, including FIXME. Previous analyses of emission spectra of the hottest planets have not included Hminus opacity, but we find that it has a significant effect on our results. 
+
+We also performed a simple grid search where we varied X.  
+
+\subsection{Thermal Inversion}
 
 \subsection{Bond Albedo}
 

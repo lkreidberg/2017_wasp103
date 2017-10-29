@@ -17,11 +17,12 @@ Warning--I didn't find a database entry for "louden17"
 Warning--I didn't find a database entry for "zhang16"
 Warning--I didn't find a database entry for "zhu17"
 Warning--I didn't find a database entry for "FIXME"
+Warning--I didn't find a database entry for "kass95"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty institution in long15
 You've used 14 entries,
             3222 wiz_defined-function locations,
-            771 strings with 8679 characters,
+            772 strings with 8685 characters,
 and the built_in function-call counts, 6840 in all, are:
 = -- 489
 > -- 623
