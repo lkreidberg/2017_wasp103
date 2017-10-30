@@ -20,8 +20,8 @@ def proj_area(phi, inc):
         return  np.sqrt(a3**2*np.sin(inc)**2*(a1**2*np.sin(phi)**2+a2**2*np.cos(phi)**2)+ a1**2*a2**2*np.cos(inc)**2)/(a2*a3)
 
 
-def lc(t, rp, T_s, l1, l2, xi, T_n, delta_T, dilution, eclipse):
-	web_p = spiderman.ModelParams(brightness_model =  'zhang') 
+def lc(t, rp, T_s, l1, l2, sph, dilution, eclipse, stellar_grid):
+	web_p = spiderman.ModelParams(brightness_model =  'spherical', thermal = True) 
 
 	web_p.n_layers = 5
 	#web_p.t0 = 0. 
@@ -38,17 +38,17 @@ def lc(t, rp, T_s, l1, l2, xi, T_n, delta_T, dilution, eclipse):
 	web_p.T_s = T_s 
 	web_p.l1 = l1 
 	web_p.l2 = l2 
-	web_p.xi = xi 
-	web_p.T_n = T_n 
-	web_p.delta_T = delta_T
-	web_p.delta_T_cloud = 0.
-	web_p.thermal = True
-        web_p.dilution = dilution
 	web_p.eclipse = eclipse
+	web_p.degree = 2
+        web_p.la0 = 0. 
+        web_p.lo0 = 0. 
+	web_p.sph = sph
+
+	print web_p.T_s, web_p.sph
 
 	phs = (t - web_p.t0)/web_p.per
 	phs -= np.round(phs)
 	rprs2 = proj_area(phs*2.*np.pi, web_p.inc*np.pi/180.)
-	lc = spiderman.web.lightcurve(t, web_p)
+	lc = spiderman.web.lightcurve(t, web_p, stellar_grid = stellar_grid)
 	
 	return (np.array(lc) - 1.0)*rprs2 + 1.
