@@ -61,7 +61,35 @@ for ii, f in enumerate(bestfits):
 			bin_average[j-1] = (phasebins[j-1]+phasebins[j])/2.
 
 	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, fmt = '.k')
-	plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'k', label = 'best fit')
+	#plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'k', label = 'best fit', zorder=20, linewidth = 1.0)
+
+	##### plot mcmc
+	mcmc = np.load(mcmcs[ii])
+	mcmc = mcmc[::every_N]
+	rp, sph0, sph1, sph2, sph3 = mcmc[:,0], np.median(mcmc[:, 16]), 0., np.median(mcmc[:, 17]), np.median(mcmc[:, 18])
+	sph = [sph0, sph1, sph2, sph3]
+
+	
+	l1, l2 = d.l1, d.l2
+	stellar_grid = spiderman.stellar_grid.gen_grid(l1,l2,logg=4.5)
+
+	per =  0.925545613
+	t0 = 2457080.64041702 
+	t = np.linspace(t0, t0+ per, 1000)
+	models = np.zeros((len(t), mcmc.shape[0]))
+	for i in range(len(mcmc)): 
+		rp, sph0, sph1, sph2, sph3 = mcmc[i,0], mcmc[i, 16], 0., mcmc[i, 17], mcmc[i, 18]
+		sph = [sph0, sph1, sph2, sph3]
+		print sph
+		models[:, i] = spiderman_spherical.lc(t, np.median(rp), 6110., l1, l2, sph, 0., True, stellar_grid)*transit_lc.lc(t, np.median(rp))
+	#print "hard coding in rp and wavelength for spiderman model"
+
+	phase = (t-t0)/per - np.floor((t-t0)/per)		
+	plt.fill_between(phase, (np.apply_along_axis(quantile, 0, models.T, 0.84)-1.)*1e3*dilution, (np.apply_along_axis(quantile, 0, models.T, 0.16) - 1.)*1e3*dilution, alpha=0.3, color='blue')
+	print (np.apply_along_axis(quantile, 0, models.T, 0.16)-1.)*1e3*dilution - (np.apply_along_axis(quantile, 0, models.T, 0.84) - 1.)*1e3*dilution 
+	plt.plot(phase, (np.apply_along_axis(quantile, 0, models.T, 0.5)-1.)*1e3*dilution, color = 'r', linewidth = 0.5)
+
+	#formatting
 
 	ax.xaxis.set_major_locator(FixedLocator(np.array([0.1, 0.3, 0.5, 0.7, 0.9])))
 	ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
@@ -94,29 +122,6 @@ for ii, f in enumerate(bestfits):
 	
 	ax.yaxis.tick_right()
 	plt.xlabel("Orbital phase", fontsize=12)
-
-	##### plot mcmc
-	mcmc = np.load(mcmcs[ii])
-	mcmc = mcmc[::every_N]
-	rp, sph0, sph1, sph2, sph3 = mcmc[:,0], np.median(mcmc[:, 16]), 0., np.median(mcmc[:, 17]), np.median(mcmc[:, 18])
-	sph = [sph0, sph1, sph2, sph3]
-
-	print "sph0, sph1, sph2, sph3", np.median(sph0), np.median(sph1), np.median(sph2), np.median(sph3)
-	
-	l1, l2 = d.l1, d.l2
-	print "l1, l2", l1, l2
-	stellar_grid = spiderman.stellar_grid.gen_grid(l1,l2,logg=4.5)
-
-	per =  0.925545613
-	t0 = 2457080.64041702 
-	t = np.linspace(t0, t0+ per, 1000)
-	models = np.zeros((len(t), mcmc.shape[0]))
-	for i in range(len(mcmc)): models[:, i] = spiderman_spherical.lc(t, np.median(rp), 6110., l1, l2, sph, 0., True, stellar_grid)*transit_lc.lc(t, np.median(rp))
-	#print "hard coding in rp and wavelength for spiderman model"
-
-	phase = (t-t0)/per - np.floor((t-t0)/per)		
-	plt.fill_between(phase, (np.apply_along_axis(quantile, 0, models.T, 0.16)-1.)*1e3*dilution, (np.apply_along_axis(quantile, 0, models.T, 0.84) - 1.)*1e3*dilution, linewidth=0., alpha=0.3, color='blue')
-
 
 #plot Spitzer phase curves
 

@@ -44,8 +44,6 @@ def lc(t, rp, T_s, l1, l2, sph, dilution, eclipse, stellar_grid):
         web_p.lo0 = 0. 
 	web_p.sph = sph
 
-	print web_p.T_s, web_p.sph
-
 	phs = (t - web_p.t0)/web_p.per
 	phs -= np.round(phs)
 	rprs2 = proj_area(phs*2.*np.pi, web_p.inc*np.pi/180.)
