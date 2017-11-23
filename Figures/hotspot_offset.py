@@ -38,15 +38,20 @@ fp/fs
 1.62 0.00079819272904 7.93724011269e-05"""
 #not corrected for companion dilution
 
+#Spitzer
+#getting in units of degrees
+# sincos2: c1a*cos(2*pi*(IND(x,i)-c1o)/p) + c2a*cos(4*pi*(IND(x,i)-c2o)/p) + s1a*sin(2*pi*(IND(x,i)-s1o)/p) + s2a*sin(4*pi*(IND(x,i)-s2o)/p) + c
+#code outpus c1o in units of DAYS
+
 
 #Ch 1
 #nighthawk:fit-02-26-mcmc_singlesine
 1.84589958e-03   2.37261751e-04 #(half) amplitude
-1.46311670e-01   1.17483920e-02	#offset (rad)
-	8.4 +/- 0.7
+1.46311670e-01   1.17483920e-02	#offset (days!!!)
 	#this fit includes correlated noise prescription of Carter/Winn (free gamma, red noise, white noise)
 
+#/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch2/analysis/run/fgc_old/ap2750715/fit_phase_curve/final_fit_01-19/results.txt
 #Ch2
  1.99246840e-03   9.92072517e-05]                       #half amplitude	(no dilution)
- [  5.32092593e-01   6.94087997e-03]			#offset (rad)	
-30.5 +/- 0.40
+ [  5.32092593e-01   6.94087997e-03]			#offset (days!!!)	
+12.4 +/- 2.7 						#(check if this is right direction!)
