@@ -6,6 +6,7 @@ from matplotlib import rc
 import transit_lc
 import seaborn as sns
 from lc_fit import Model, LightCurveData
+import os, glob
 sns.set_context("talk", font_scale = 1.0)
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
@@ -40,6 +41,8 @@ for ii, f in enumerate(bestfits):
 	allsys = m.lc[ind]	
 	t = d.time[ind]
 	visit_sys = m.all_sys[ind]
+
+	print "WFC3 white: obs, exp rms (ppm)", np.std(m.resid[ind]/d.flux[ind])*1e6, np.sqrt(1./np.median(d.flux[ind]))*1e6
 
 	scan = np.ones_like(phase)
 	scan[d.scan_direction == 0] = 1. + par[d.par_order['scale']*d.nvisit]
@@ -114,6 +117,8 @@ for ii, f in enumerate(bestfits):
 	plt.plot(abscissa - abscissa[0], sys*fluxconv[ii], color= '0.7', zorder=-10)
 	plt.plot(abscissa - abscissa[0], bestfit*fluxconv[ii], color = colors[ii], alpha = alpha)
 	plt.errorbar(abscissauc - abscissa[0], binfluxuc*fluxconv[ii], binstduc*fluxconv[ii], fmt = '.k', markersize = ms)
+#	print (abscissa[1] - abscissa[0])*24.*60.	#time between exposures
+	print "rms obs, exp (ppm)", 1.0e6*np.std((binfluxuc - bestfit)/binfluxuc), 1.e6/np.sqrt(np.median(binfluxuc*fluxconv[ii]))
 
 	plt.text(0.8, 0.986*np.median(binfluxuc), observation[ii])
 
@@ -136,4 +141,18 @@ for ii, f in enumerate(bestfits):
 
 plt.tight_layout()
 plt.savefig("systematics.pdf")
-plt.show()
+#plt.show()
+
+#calculates rms for WFC3 spectroscopic best fits
+path = "./WFC3_best_fits/spec_fits/"
+files = glob.glob(os.path.join(path, "*"))	
+for f in files: 
+	p = pickle.load(open(f, 'rb'))
+        d, m, par = p[0], p[1], p[2]            #stores data,  model, and best fit parameters into d, m, & par
+
+        dilution = d.dilution + 1.
+
+        ind = d.err < 9.0e7                     #indices of outliers
+
+        print "WFC3 spec: obs, exp rms (ppm)", d.wavelength, m.rms, 1.0e6*np.sqrt(np.mean((d.err[ind]/d.flux[ind])**2)),  m.rms/(1.0e6*np.sqrt(np.mean((d.err[ind]/d.flux[ind])**2)))
+
