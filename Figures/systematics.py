@@ -15,7 +15,9 @@ rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
 gs = gridspec.GridSpec(3, 1, height_ratios =[1,1, 1],  hspace=0.00)
 
 # plots HST white light phase curve
-bestfits = ["./WFC3_best_fits/bestfit_zhang_allsys.pic"]
+bestfits = ["./WFC3_best_fits/old_white_fits/bestfit_zhang_allsys.pic"]
+#bestfits = ["./WFC3_best_fits/bestfit_zhang_allsys.pic"]
+#bestfits = ["./WFC3_best_fits/bestfit_zhang.pic"]
 
 alpha = 0.7
 ms = 5
@@ -69,6 +71,9 @@ for ii, f in enumerate(bestfits):
 	p8, = ax.plot(t[ind] - (t[ind])[0], d.flux[ind]*scan[ind] + offset, '.k', markersize = ms)
 
 	plt.text(1.0, 6.71e7, "HST/\nWFC3") 
+	plt.gca().set_yticks(np.array([6.72e7, 6.75e7, 6.78e7, 6.81e7]))
+	plt.gca().set_yticklabels(np.array(["6.72e7", "6.75e7", "6.78e7", "6.81e7"]))
+
 
 plt.gca().set_xlabel([])
 plt.gca().set_xticks([])
@@ -80,6 +85,13 @@ plt.legend([(p1, p2), p0], ["Best fit", "systematics only"], frameon=True)
 #plot Spitzer phase curves
 colors = ['orange', 'red']
 observation = ['Spitzer Ch. 1', 'Spitzer Ch. 2']
+
+fluxconv = [306.126, 266.648]
+#calculated from Jonathan Fraine's code https://github.com/exowanderer/ExoplanetTSO/blob/master/ExoplanetTSO_Auxiliary.py
+"""fluxConv  = testheader['FLUXCONV']
+expTime   = testheader['EXPTIME']
+gain      = testheader['GAIN']
+fluxConversion = expTime*gain / fluxConv"""
 
 bestfits = ["Ch1_best_fits/2017-10-11_20:25-zhang/bestfit.pic", "Ch2_best_fits/2017-10-11_20:24-zhang/bestfit.pic"]
 
@@ -99,14 +111,23 @@ for ii, f in enumerate(bestfits):
 	abscissa = p[15]
 	sys = p[16]
 
-	plt.plot(abscissa - abscissa[0], sys, color= '0.7', zorder=-10)
-	plt.plot(abscissa - abscissa[0], bestfit, color = colors[ii], alpha = alpha)
-	plt.errorbar(abscissauc - abscissa[0], binfluxuc, binstduc, fmt = '.k', markersize = ms)
+	plt.plot(abscissa - abscissa[0], sys*fluxconv[ii], color= '0.7', zorder=-10)
+	plt.plot(abscissa - abscissa[0], bestfit*fluxconv[ii], color = colors[ii], alpha = alpha)
+	plt.errorbar(abscissauc - abscissa[0], binfluxuc*fluxconv[ii], binstduc*fluxconv[ii], fmt = '.k', markersize = ms)
 
 	plt.text(0.8, 0.986*np.median(binfluxuc), observation[ii])
 
 	plt.xlim(-0.1, 1.3)
 	
+	plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0))
+	plt.ticklabel_format(useOffset = False)
+	if ii == 1: 
+		plt.gca().set_yticks(np.array([2.41e6, 2.43e6, 2.45e6]))
+		plt.gca().set_yticklabels(["2.41e6", "2.43e6", "2.45e6"])
+	else:
+		plt.gca().set_yticks(np.array([4.46e6, 4.50e6, 4.54e6]))
+		plt.gca().set_yticklabels(np.array(["4.46e6", "4.50e6", "4.54e6"]))
+
 	if ii == 1: plt.xlabel("Time since first exposure (days)")
 	if ii == 0: 
 		plt.ylabel("Photoelectrons (+ constant)")

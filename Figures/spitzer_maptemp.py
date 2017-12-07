@@ -72,7 +72,6 @@ for i, model in enumerate(models):
 	spider_params.l1 = 3.0e-6
 	spider_params.l2 = 4.1e-6
 
-    #print "still using filters that assume SPIDERMAN doesn't correct to units of energy -- update when you update spiderman"
 
     if model == "zhang":
 	if channel == 2:
@@ -95,6 +94,7 @@ for i, model in enumerate(models):
 		spider_params.la0 = 0
 		spider_params.lo0 = 0
 		spider_params.sph = [7.427e+3, 2.6104e+2, 0.0, 1.906e+3]
+		#spider_params.sph = [2.37e3, 1.66e2, 0., 6.066e2]
 
     elif model == "hotspot_t":
 	if channel == 2:
@@ -137,8 +137,8 @@ for i, model in enumerate(models):
     fluxes = np.array(fluxes)
     #if model == "spherical": fluxes = convert_to_T(fluxes*np.pi)
 
-    vmax = 4000. 
-    vmin = 1000.
+    vmax = 12000. 
+    vmin = 0.
 
     print "model, Tmin, Tmax = ", model, fluxes.min(), fluxes.max()
 	

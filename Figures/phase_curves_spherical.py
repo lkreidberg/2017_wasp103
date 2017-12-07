@@ -125,7 +125,7 @@ for ii, f in enumerate(bestfits):
 
 #plot Spitzer phase curves
 
-"""bestfits = ["/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch1/analysis/run/fgc_old/ap2500715/fit_phase_curve/2017-01-08_17:01-physical_model/bestfit.pic", "/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch2/analysis/run/fgc_old/ap2750715/fit_phase_curve/2017-01-06_15:28-physical_model/bestfit.pic"]
+bestfits = ["/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch1/analysis/run/fgc/ap2500715/fit_phase_curve/2017-10-27_11:56-spherical/bestfit.pic", "/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch2/analysis/run/fgc/ap2750715/fit_phase_curve/2017-10-27_16:34-spherical/bestfit.pic"]
 
 mcmc_output = ["/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch1/analysis/run/fgc_old/ap2500715/fit_phase_curve/2017-01-08_17:01-physical_model/d-WA103bo11-allparams-trq1lnphysicalbliRN.npy", "/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch2/analysis/run/fgc_old/ap2750715/fit_phase_curve/2017-01-06_15:28-physical_model/d-WA103bo21-allparams-trq1lnphysicalbli.npy"]
 
@@ -140,21 +140,21 @@ l2 = np.array([3.95e-6, 5.0e-6])
 
 for ii, f in enumerate(bestfits):
 	ax = plt.subplot(gs[ii+1, 0])
-	mcmc = np.load(mcmc_output[ii]).T[::every_N]
-	rp, T_s, xi, T_n, delta_T = mcmc[:,1], mcmc[:, 21], mcmc[:, 24], mcmc[:, 25], mcmc[:, 26]
+	#mcmc = np.load(mcmc_output[ii]).T[::every_N]
+	#rp, T_s, xi, T_n, delta_T = mcmc[:,1], mcmc[:, 21], mcmc[:, 24], mcmc[:, 25], mcmc[:, 26]
 
-	print "rp, xi, T_n, delta_T", np.median(rp), np.median(xi), np.median(T_n), np.median(delta_T)
+	#print "rp, xi, T_n, delta_T", np.median(rp), np.median(xi), np.median(T_n), np.median(delta_T)
 
 	per =  0.92555
 	t0 = 2457080.64041702 
 	t = np.linspace(t0, t0+ per, 1000)
 	phase = (t-t0)/per - np.floor((t-t0)/per)		
 
-	models = np.zeros((len(t), mcmc.shape[0]))
-	for i in range(len(mcmc)): models[:, i] = spiderman_spherical.lc(t, np.median(rp), T_s[i], l1[ii], l2[ii], xi[i], T_n[i], delta_T[i], dilution[ii], True)*transit_lc.lc(t, np.median(rp))
-	#print "hard coding in rp for spiderman model"
+	#models = np.zeros((len(t), mcmc.shape[0]))
+	#for i in range(len(mcmc)): models[:, i] = spiderman_spherical.lc(t, np.median(rp), 6110., l1, l2, sph, 0., True, stellar_grid)*transit_lc.lc(t, np.median(rp))
+	##print "hard coding in rp for spiderman model"
 
-	plt.fill_between(phase, (np.apply_along_axis(quantile, 0, models.T, 0.16)-1.)*1e3*(1+dilution[ii]), (np.apply_along_axis(quantile, 0, models.T, 0.84) - 1.)*1e3*(1+dilution[ii]), linewidth=0., alpha=0.5, color=colors[ii])
+	#plt.fill_between(phase, (np.apply_along_axis(quantile, 0, models.T, 0.16)-1.)*1e3*(1+dilution[ii]), (np.apply_along_axis(quantile, 0, models.T, 0.84) - 1.)*1e3*(1+dilution[ii]), linewidth=0., alpha=0.5, color=colors[ii])
 
 	p = pickle.load(open(f, 'rb'))
 	data_corr = p[1] 
@@ -220,7 +220,8 @@ for ii, f in enumerate(bestfits):
 		ax.set_xticklabels([])
 		plt.ylabel("Residuals (ppt)", fontsize = 12, labelpad = 10)
 		ax.yaxis.set_label_position("right")
-	if ii == 1: plt.xlabel("Orbital phase", fontsize=12)"""
+	if ii == 1: plt.xlabel("Orbital phase", fontsize=12)
 
 
 plt.savefig("phase_curves_spherical.pdf")
+plt.show()

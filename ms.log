@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 NOV 2017 12:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 DEC 2017 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,13 +617,13 @@ t-ics with the POET
 
 pdfTeX warning: pdflatex (file ./Figures/systematics.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
->] <Figures/phase_curves.pdf, id=215, 542.025pt x 289.08pt>
+>] <Figures/phase_curves.pdf, id=214, 542.025pt x 289.08pt>
 File: Figures/phase_curves.pdf Graphic file (type pdf)
 
 <use Figures/phase_curves.pdf>
 Package pdftex.def Info: Figures/phase_curves.pdf used on input line 219.
 (pdftex.def)             Requested size: 513.11743pt x 273.67166pt.
- <Figures/rms.pdf, id=219, 361.35pt x 433.62pt>
+ <Figures/rms.pdf, id=218, 361.35pt x 433.62pt>
 File: Figures/rms.pdf Graphic file (type pdf)
 
 <use Figures/rms.pdf>
@@ -634,14 +634,14 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 236--237
 [][] 
  []
 
-[7] <Figures/emission_spectra.pdf, id=237, 1011.78pt x 361.35pt>
+[7] <Figures/emission_spectra.pdf, id=236, 1011.78pt x 361.35pt>
 File: Figures/emission_spectra.pdf Graphic file (type pdf)
 
 <use Figures/emission_spectra.pdf>
 Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 273.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
-<Figures/hst_model_comparison.pdf, id=238, 722.7pt x 240.65909pt>
+<Figures/hst_model_comparison.pdf, id=237, 722.7pt x 240.65909pt>
 File: Figures/hst_model_comparison.pdf Graphic file (type pdf)
 
 <use Figures/hst_model_comparison.pdf>
@@ -649,7 +649,7 @@ Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 27
 9.
 (pdftex.def)             Requested size: 513.11743pt x 170.86914pt.
 
-<Figures/dayside_spectrum.pdf, id=239, 289.08pt x 216.81pt>
+<Figures/dayside_spectrum.pdf, id=238, 289.08pt x 216.81pt>
 File: Figures/dayside_spectrum.pdf Graphic file (type pdf)
 
 <use Figures/dayside_spectrum.pdf>
@@ -757,9 +757,9 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (11 pages, 1970371 bytes).
+Output written on ms.pdf (11 pages, 1963792 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
+ 625 PDF objects out of 1000 (max. 8388607)
  283 compressed objects within 3 object streams
  65 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
