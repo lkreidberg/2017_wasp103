@@ -120,7 +120,7 @@ for ii, f in enumerate(bestfits):
 #	print (abscissa[1] - abscissa[0])*24.*60.	#time between exposures
 	print "rms obs, exp (ppm)", 1.0e6*np.std((binfluxuc - bestfit)/binfluxuc), 1.e6/np.sqrt(np.median(binfluxuc*fluxconv[ii]))
 
-	plt.text(0.8, 0.986*np.median(binfluxuc), observation[ii])
+	plt.text(0.8, 0.986*np.median(binfluxuc)*fluxconv[ii], observation[ii])
 
 	plt.xlim(-0.1, 1.3)
 	

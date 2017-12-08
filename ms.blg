@@ -4,7 +4,11 @@ The top-level auxiliary file: ms.aux
 The style file: aasjournal.bst
 Database file #1: msNotes.bib
 Database file #2: ms.bib.bib
-Repeated entry---line 3415 of file ms.bib.bib
+Repeated entry---line 3355 of file ms.bib.bib
+ : @article{carter09
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3397 of file ms.bib.bib
  : @article{stevenson12
  :                     ,
 I'm skipping whatever remains of this entry
@@ -20,45 +24,46 @@ Warning--I didn't find a database entry for "FIXME"
 Warning--I didn't find a database entry for "kass95"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty institution in long15
-You've used 14 entries,
+Warning--empty institution in mccullough12
+You've used 16 entries,
             3222 wiz_defined-function locations,
-            772 strings with 8685 characters,
-and the built_in function-call counts, 6840 in all, are:
-= -- 489
-> -- 623
-< -- 3
-+ -- 206
-- -- 221
-* -- 645
-:= -- 1307
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 70
-chr.to.int$ -- 12
-cite$ -- 15
-duplicate$ -- 248
-empty$ -- 388
-format.name$ -- 237
-if$ -- 1339
+            783 strings with 9005 characters,
+and the built_in function-call counts, 7588 in all, are:
+= -- 556
+> -- 667
+< -- 5
++ -- 220
+- -- 235
+* -- 700
+:= -- 1441
+add.period$ -- 16
+call.type$ -- 16
+change.case$ -- 81
+chr.to.int$ -- 14
+cite$ -- 18
+duplicate$ -- 284
+empty$ -- 442
+format.name$ -- 259
+if$ -- 1492
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 47
-num.names$ -- 56
-pop$ -- 99
+missing$ -- 14
+newline$ -- 53
+num.names$ -- 64
+pop$ -- 117
 preamble$ -- 1
-purify$ -- 69
+purify$ -- 79
 quote$ -- 0
-skip$ -- 182
+skip$ -- 205
 stack$ -- 0
-substring$ -- 216
+substring$ -- 237
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 126
-warning$ -- 1
-while$ -- 48
+type$ -- 144
+warning$ -- 2
+while$ -- 55
 width$ -- 0
-write$ -- 144
-(There was 1 error message)
+write$ -- 164
+(There were 2 error messages)

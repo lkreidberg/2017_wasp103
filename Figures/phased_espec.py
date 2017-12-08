@@ -49,6 +49,8 @@ def best_fit_bb(w, y, e, rprs):
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
+GCM = np.genfromtxt("GCM_From_Vivien/GCMmodels/SpectralPC-Phi-Solar-NoClouds-NEW-OPA-NEW-PT.dat", delimiter = ",")
+
 path  = "WFC3_best_fits/spec_fits/"		#zhang model
 files = glob.glob(os.path.join(path, "bestfit*.pic"))		
 
@@ -209,6 +211,8 @@ for i in range(1, k):
 		wave_hires, model_hires = best_fit_bb(waves, (spectra[:,i-1,0]-1.)*(1+np.array(dilution)), spectra[:,i-1,1], rprs)
 		model_hires *= 1.e3
 		plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
+
+                plt.plot(GCM[:,0], GCM[:,1]*1e3, color = 'r')
 	
 
 	if col==0: plt.ylabel("Planet-to-star flux (ppt)")
