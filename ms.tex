@@ -20,7 +20,7 @@
 
 \begin{document}
 
-\title{Global Climate of the Ultra-Hot Jupiter WASP-103\lowercase{b} from \HST\ and Spitzer Phase Curve Observations}
+\title{Global Climate and Atmosphere Composition of the Ultra-Hot Jupiter WASP-103\lowercase{b} from \HST\ and Spitzer Phase Curve Observations}
 
 \correspondingauthor{Laura Kreidberg}
 \email{laura.kreidberg@cfa.harvard.edu}
@@ -343,14 +343,19 @@ The typical uncertainty is FIXME (run MCMC, say the systematic range is larger t
 \subsection{Hotspot Offset}
 The location of peak brightness of the phase curve is a proxy for the efficiency of thermal reradiation to space and relative to heat transport by advection (the radiative-to-advective timescale). The faster the reradiation, the less heat can be redistributed to the nightside. We compared the measured hotspot offset for the different models and found FIXME.
 
-\section{Retrieval}
-We performed an atmospheric retrieval to determine the composition and thermal structure of the atmosphere of WASP-103b. We used the CHIMERA retrieval suite \citep{FIXME}, as well as. Briefly, the CHIMERA model fits for the atmospheric metallicity and carbon-to-oxygen ratio, assuming the atmosphere is in thermochemical equilibrium. The temperature-pressure profile is FIXME. We included opacity from the dominant absorbing species expected at the temperatures and pressures on WASP-103b, including FIXME. Previous analyses of emission spectra of the hottest planets have not included Hminus opacity, but we find that it has a significant effect on our results. 
+\section{Atmospheric Composition}
+Since the phase-resolved spectra are consistent with blackbodies (except for the Spitzer 4.5 $\mu$m broadband photometry point), we opted for a simple grid-based retrieval of the planet's atmospheric properties, similar to the grid search used in Mansfield et al. and Arcangeli et al. (in prep). We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities, carbon-to-oxygen ratios (C/O), and stellar irradiation (\textbf{Mike: elaborate}). The forward models compute self-consistent, radiative-convective temperature-pressure (T-P) profiles, and the molecular abundances are calculated in each atmospheric layer assuming thermochemical equilibrium.  We included opacity from the major absorbers expected for a hot Jupiter atmosphere (FIXME: Mike, what molecules are included?). Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is expected because water dissociates (FIXME: what temperatures?).  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13} (FIXME: elaborate).
 
-We also performed a simple grid search where we varied X.  
+The best fit atmospheric metallicity is FIXME and 
+The 68\% confidence interval for a  
 
-\subsection{Thermal Inversion}
 
-\subsection{Bond Albedo}
+When we do not include H- opacity, FIXME what happens?
+
+\subsection{Climate}
+Heat redistribution, Bond albedo, inversions
+
+%\subsection{Bond Albedo}
 
 \section{Comparison with GCMs}
 
@@ -366,6 +371,11 @@ We also performed a simple grid search where we varied X.
 cite Tremblin et al. 2017 ? (https://arxiv.org/pdf/1710.02640.pdf)
 
 \section{Discussion and Conclusions}
+One-dimensional retrieval is probably wrong, since we showed the dayside may have a large temperature gradient -> should work on this in the future.
+
+H- is important.
+
+How does composition compare to other HJs.
 
 \acknowledgments
 We thank a lot of people. Caroline Morley, Thomas Beatty, Ming Zhao, Kim Star Cartier, Hannah Diamond-Lowe, Nick Cowan (make him a coauthor?)

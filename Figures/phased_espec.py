@@ -43,7 +43,9 @@ def best_fit_bb(w, y, e, rprs):
 			chibest, Tbest = chi2, T
 	waves_hires = np.linspace(1.0, 5.0, 100)
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
+
 	outfile = open("temperatures.txt", "a")
+	print "T, chi2", Tbest, chibest/(len(y) - 1)
 	print>>outfile,  Tbest
 	outfile.close()
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
