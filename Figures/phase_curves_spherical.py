@@ -15,13 +15,14 @@ rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
 def quantile(x, q):
         return np.percentile(x, 100. * q)
 
-plt.figure(figsize = (7.5,4))
+plt.figure(figsize = (7.5,4.5))
 
 gs = gridspec.GridSpec(3, 2, hspace=0.1, wspace = 0.05)
 
 # plots HST white light phase curve
-bestfits = ["/Users/lkreidberg/Desktop/Projects/Observations/HST/WASP103_HST_all/SPHERICAL_MCMC/bestfit_1.23.pic"]
-mcmcs =  ["/Users/lkreidberg/Desktop/Projects/Observations/HST/WASP103_HST_all/SPHERICAL_MCMC/flatchain1_2017_10_27_22:36:091.225.npy"]
+#bestfits = ["/Users/lkreidberg/Desktop/Projects/Observations/HST/WASP103_HST_all/SPHERICAL_MCMC/bestfit_1.23.pic"]
+bestfits = ["./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"]
+#mcmcs =  ["/Users/lkreidberg/Desktop/Projects/Observations/HST/WASP103_HST_all/SPHERICAL_MCMC/flatchain1_2017_10_27_22:36:091.225.npy"]
 
 phasebins = np.linspace(0., 1., 30)
 nbins = len(phasebins) - 1
@@ -62,9 +63,10 @@ for ii, f in enumerate(bestfits):
 
 	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, fmt = '.k')
 	#plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'k', label = 'best fit', zorder=20, linewidth = 1.0)
+	plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'b', label = 'best fit', zorder=-1) 
 
 	##### plot mcmc
-	mcmc = np.load(mcmcs[ii])
+	"""mcmc = np.load(mcmcs[ii])
 	mcmc = mcmc[::every_N]
 	rp, sph0, sph1, sph2, sph3 = mcmc[:,0], np.median(mcmc[:, 16]), 0., np.median(mcmc[:, 17]), np.median(mcmc[:, 18])
 	sph = [sph0, sph1, sph2, sph3]
@@ -87,7 +89,7 @@ for ii, f in enumerate(bestfits):
 	phase = (t-t0)/per - np.floor((t-t0)/per)		
 	plt.fill_between(phase, (np.apply_along_axis(quantile, 0, models.T, 0.84)-1.)*1e3*dilution, (np.apply_along_axis(quantile, 0, models.T, 0.16) - 1.)*1e3*dilution, alpha=0.3, color='blue')
 	print (np.apply_along_axis(quantile, 0, models.T, 0.16)-1.)*1e3*dilution - (np.apply_along_axis(quantile, 0, models.T, 0.84) - 1.)*1e3*dilution 
-	plt.plot(phase, (np.apply_along_axis(quantile, 0, models.T, 0.5)-1.)*1e3*dilution, color = 'r', linewidth = 0.5)
+	plt.plot(phase, (np.apply_along_axis(quantile, 0, models.T, 0.5)-1.)*1e3*dilution, color = 'r', linewidth = 0.5)"""
 
 	#formatting
 
@@ -125,7 +127,8 @@ for ii, f in enumerate(bestfits):
 
 #plot Spitzer phase curves
 
-bestfits = ["/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch1/analysis/run/fgc/ap2500715/fit_phase_curve/2017-10-27_11:56-spherical/bestfit.pic", "/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch2/analysis/run/fgc/ap2750715/fit_phase_curve/2017-10-27_16:34-spherical/bestfit.pic"]
+#bestfits = ["/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch1/analysis/run/fgc/ap2500715/fit_phase_curve/2017-10-27_11:56-spherical/bestfit.pic", "/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch2/analysis/run/fgc/ap2750715/fit_phase_curve/2017-10-27_16:34-spherical/bestfit.pic"]
+bestfits = ["./Ch1_best_fits/2017-10-27_11:56-spherical/bestfit.pic", "./Ch2_best_fits/2017-10-27_16:34-spherical/bestfit.pic"]
 
 mcmc_output = ["/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch1/analysis/run/fgc_old/ap2500715/fit_phase_curve/2017-01-08_17:01-physical_model/d-WA103bo11-allparams-trq1lnphysicalbliRN.npy", "/Users/lkreidberg/Desktop/Projects/Observations/Spitzer/WASP103_11099/Ch2/analysis/run/fgc_old/ap2750715/fit_phase_curve/2017-01-06_15:28-physical_model/d-WA103bo21-allparams-trq1lnphysicalbli.npy"]
 
@@ -179,7 +182,8 @@ for ii, f in enumerate(bestfits):
 	print "phase, err", bin_average[0:5], binsigma[0:5]
 
 	plt.errorbar(bin_average, (bindata-1.)*1e3*(1.+dilution[ii]), yerr = binsigma*1e3, fmt = '.k')
-	plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution[ii]), color = 'k', label = 'best fit')
+	#plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution[ii]), color = 'k', label = 'best fit')
+	plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution[ii]), color = colors[ii], label = 'best fit')
 
 
 	ax.set_xticklabels([])
@@ -222,6 +226,6 @@ for ii, f in enumerate(bestfits):
 		ax.yaxis.set_label_position("right")
 	if ii == 1: plt.xlabel("Orbital phase", fontsize=12)
 
-
+#plt.tight_layout()
 plt.savefig("phase_curves_spherical.pdf")
 plt.show()

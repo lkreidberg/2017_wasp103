@@ -45,13 +45,15 @@ def best_fit_bb(w, y, e, rprs):
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
 
 	outfile = open("temperatures.txt", "a")
-	print "T, chi2", Tbest, chibest/(len(y) - 1)
+	#print "T, chi2", Tbest, chibest/(len(y) - 1)
 	print>>outfile,  Tbest
 	outfile.close()
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
-GCM = np.genfromtxt("GCM_From_Vivien/GCMmodels/SpectralPC-Phi-Solar-NoClouds-NEW-OPA-NEW-PT.dat", delimiter = ",")
+##GCM = np.genfromtxt("GCM_From_Vivien/GCMmodels/SpectralPC-Phi-Solar-NoClouds-NEW-OPA-NEW-PT.dat", delimiter = ",")
+#GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-NEW-OPA-NEW-PT.dat", delimiter = ",")
+GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
 
 path  = "WFC3_best_fits/spec_fits/"		#zhang model
 files = glob.glob(os.path.join(path, "bestfit*.pic"))		
@@ -187,6 +189,7 @@ gs = gridspec.GridSpec(2, ncol)
 
 k = len(phasebins)
 row = 0
+counter = 1
 for i in range(1, k):
 	phase = (phasebins[i]+ phasebins[i-1])/2.
 
@@ -209,18 +212,24 @@ for i in range(1, k):
 		#plt.plot(w, f*1.e3, color='#d3494e', linestyle='dashed', label= 'TiO-NoClouds')
 
 		rprs = 0.1127
-		print "phase", phase
+		#print "phase", phase
 		wave_hires, model_hires = best_fit_bb(waves, (spectra[:,i-1,0]-1.)*(1+np.array(dilution)), spectra[:,i-1,1], rprs)
 		model_hires *= 1.e3
 		plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
 
-                plt.plot(GCM[:,0], GCM[:,1]*1e3, color = 'r')
+                if counter < 5: 
+                    plt.plot(GCM[:,0], GCM[:,counter]*1e3, color = 'r')
+                    print counter, phase
+                else: 
+                    plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = 'GCM')
+                    print counter + 1, phase
+                counter += 1
 	
 
 	if col==0: plt.ylabel("Planet-to-star flux (ppt)")
 	if row ==1: plt.xlabel("Wavelength (microns)")
 
-	if (col==3)&(row==1): plt.legend(loc=4)		#legend
+	if (col==3)&(row==1): plt.legend(loc=4, frameon=True)		#legend
 
 	plt.gca().set_yscale('log')
 	plt.gca().set_xscale('log', basex=2)

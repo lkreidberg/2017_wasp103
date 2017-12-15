@@ -208,6 +208,16 @@ ymin, ymax = 1.2, 2
 plt.ylim(ymin, ymax)
 
 
+
+#plots Cartier spectrum
+s = np.genfromtxt("cartier_dayside_spec.txt")
+plt.errorbar(s[:,0], s[:,1]/1.e3, s[:,3]/1.e3, fmt = 'xk')
+
+#plots LK spectrum
+s = np.genfromtxt("kreidberg13360_dayside_spec.txt")
+plt.errorbar(s[:,0], s[:,1], s[:,2], fmt = 'xr')
+
+
 a = plt.axes([.23, .62, .2, .28]) 
 wl,y_low_2sig, y_low_1sig, y_median, y_high_1sig, y_high_2sig=pickle.load(open("Retrieval/WASP103b_DAYSIDE_NOMINAL_spec.pic", "rb"))
 plt.fill_between(wl[::-1], convolve(y_low_2sig, g), convolve(y_high_2sig,g), color = 'orange', alpha = 0.5, zorder = -11)
@@ -217,6 +227,8 @@ plt.plot(wl[::-1], convolve(y_median, g), zorder = -9, label = 'best fit')
 plt.plot(wave_hires, model_hires, color='0.5', label='blackbody', linestyle = 'dashed', zorder = -20)
 
 plt.errorbar(waves, (fpfs-1.)*1e3, yerr = fp_err*1.e3, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
+#print (fpfs-1.)*1.e3
+#print fp_err*1e3
 
 plt.xlim(3, 5)
 plt.ylim(3.5,7)
@@ -227,4 +239,4 @@ print "hard coding rprs for calculating best fit bb - is this right?"
 print "hard coding dilution in spitzer bandpass - are we also supposed to do this for WFC3?"
 plt.tight_layout()
 plt.savefig("dayside_spectrum.pdf")
-#plt.show()
+plt.show()
