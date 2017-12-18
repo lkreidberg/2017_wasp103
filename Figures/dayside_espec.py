@@ -33,6 +33,8 @@ def best_fit_bb(w, y, e, rprs):
 	Tstar = 6110.
 	w = np.array(w)
 
+#	w, y, e, = w[0:10], y[0:10], e[0:10]
+
 	#get stellar spectrum
 	star = np.genfromtxt("wasp103_sed_fluxes.out")
 	star_bb = np.interp(w, star[:,0], star[:,1])*1.e24/(w*np.pi*4.)
@@ -49,7 +51,7 @@ def best_fit_bb(w, y, e, rprs):
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
 	#star_bb_hires = blackbody(waves_hires*1.0e-6, Tstar) 
 	#print "Best fit blackbody temp, chisq, and outliers: ", Tbest, chibest/(len(e)-1), outliers
-	print "Best fit blackbody temp: ", Tbest
+	print "Best fit blackbody temp, chi2: ", Tbest, chibest/(len(y) - 1.)
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
@@ -88,6 +90,8 @@ for i, f in enumerate(files):
 
 	fpfs[i] = np.mean(bestfit[ind1])
 	fp_err[i] = np.sqrt(sig1**2 + sig2**2)
+
+print dilution
 
 i+= 1
 #add Spitzer Ch 1
@@ -184,12 +188,15 @@ model_hires *= 1.e3
 plt.plot(wave_hires, model_hires, color='0.5', label='blackbody', linestyle = 'dashed', zorder = -20)
 	
 
-
 #fits from Mike
-wl,y_low_2sig, y_low_1sig, y_median, y_high_1sig, y_high_2sig=pickle.load(open("Retrieval/WASP103b_DAYSIDE_NOMINAL_spec.pic", "rb"))
-plt.fill_between(wl[::-1], convolve(y_low_2sig, g), convolve(y_high_2sig,g), color = 'orange', alpha = 0.5, zorder = -11)
-plt.fill_between(wl[::-1], convolve(y_low_1sig, g), convolve(y_high_1sig,g), color = 'orange', alpha = 0.5, zorder = -10)
-plt.plot(wl[::-1], convolve(y_median, g), zorder = -9, label = 'best fit')
+#wl,y_low_2sig, y_low_1sig, y_median, y_high_1sig, y_high_2sig=pickle.load(open("Retrieval/WASP103b_DAYSIDE_NOMINAL_spec.pic", "rb"))
+data_wl, data, data_err,  best_fit_binned,  wl_hi,  y_hi_best, spec_arr, Tarr, P, samples = pickle.load(open("Mike_models/WASP-103b_grid_DAYSIDE_output.pic"))
+
+#plt.fill_between(wl[::-1], convolve(y_low_2sig, g), convolve(y_high_2sig,g), color = 'orange', alpha = 0.5, zorder = -11)
+#plt.fill_between(wl[::-1], convolve(y_low_1sig, g), convolve(y_high_1sig,g), color = 'orange', alpha = 0.5, zorder = -10)
+#plt.plot(wl[::-1], convolve(y_median, g), zorder = -9, label = 'best fit')
+
+plt.plot(wl_hi, y_hi_best, zorder = -9, label = 'best fit')
 
 #scale = 1.1 
 #w, f = rs.spectrum(0.5, "all", "TiO-NoClouds-Drag1.dat")
@@ -207,19 +214,17 @@ plt.xlim(1.1, 1.7)
 ymin, ymax = 1.2, 2
 plt.ylim(ymin, ymax)
 
-
-
 #plots Cartier spectrum
-s = np.genfromtxt("cartier_dayside_spec.txt")
+"""s = np.genfromtxt("cartier_dayside_spec.txt")
 plt.errorbar(s[:,0], s[:,1]/1.e3, s[:,3]/1.e3, fmt = 'xk')
 
 #plots LK spectrum
 s = np.genfromtxt("kreidberg13360_dayside_spec.txt")
-plt.errorbar(s[:,0], s[:,1], s[:,2], fmt = 'xr')
-
+plt.errorbar(s[:,0], s[:,1], s[:,2], fmt = 'xr')"""
 
 a = plt.axes([.23, .62, .2, .28]) 
 wl,y_low_2sig, y_low_1sig, y_median, y_high_1sig, y_high_2sig=pickle.load(open("Retrieval/WASP103b_DAYSIDE_NOMINAL_spec.pic", "rb"))
+#wl,y_low_2sig, y_low_1sig, y_median, y_high_1sig, y_high_2sig=pickle.load(open("Mike_models/WASP-103b_grid_DAYSIDE_output.pic", "rb"))
 plt.fill_between(wl[::-1], convolve(y_low_2sig, g), convolve(y_high_2sig,g), color = 'orange', alpha = 0.5, zorder = -11)
 plt.fill_between(wl[::-1], convolve(y_low_1sig, g), convolve(y_high_1sig,g), color = 'orange', alpha = 0.5, zorder = -10)
 plt.plot(wl[::-1], convolve(y_median, g), zorder = -9, label = 'best fit')

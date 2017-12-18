@@ -278,6 +278,8 @@ For the other orbital phases, we binned the light curve (with systematics remove
 
 To test that the phase-resolved spectra are robust to different approaches for fitting the data, we compared the spectra for all four of the thermal phase variation models (sinusoid, kinematic, spherical harmonics, and two temperature). We found that the choice of model does not significantly change the results.  The emission spectra are insensitive to the models because they are estimated directly from the data (after systematics have been removed). Since systematic noise is not strongly correlated with the astrophysical signal, the systematics-divided data are nearly identical for all the models.  This point is illustrated in Figure\,\ref{fig:model_comparison} for the broadband WFC3 light curve. In most phase bins, the planet-to-star flux agrees to well within one sigma for all the models. 
 
+Over the WFC3 bandpass, the phase-resolved spectra are featureless and consistent with blackbodies (with best fit $\chi^2_\nu$ ranging from $0.5-1.3$). However, the \Spitzer\ data, particularly at 4.5 $\mu$m, are discrepant with the best fit blackbody by $3-5\,\sigma$ at most orbital phases, indicating the presence of infrared molecular absorption or emission features. We investigate possible atmospheric compositions and temperature structures in \S\,\ref{sec:composition}. 
+
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/emission_spectra.pdf}
 \caption{Phase-resolved emission spectra.}
@@ -343,14 +345,28 @@ The typical uncertainty is FIXME (run MCMC, say the systematic range is larger t
 \subsection{Hotspot Offset}
 The location of peak brightness of the phase curve is a proxy for the efficiency of thermal reradiation to space and relative to heat transport by advection (the radiative-to-advective timescale). The faster the reradiation, the less heat can be redistributed to the nightside. We compared the measured hotspot offset for the different models and found FIXME.
 
-\section{Atmospheric Composition}
-Since the phase-resolved spectra are consistent with blackbodies (except for the Spitzer 4.5 $\mu$m broadband photometry point), we opted for a simple grid-based retrieval of the planet's atmospheric properties, similar to the grid search used in Mansfield et al. and Arcangeli et al. (in prep). We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities, carbon-to-oxygen ratios (C/O), and stellar irradiation (\textbf{Mike: elaborate}). The forward models compute self-consistent, radiative-convective temperature-pressure (T-P) profiles, and the molecular abundances are calculated in each atmospheric layer assuming thermochemical equilibrium.  We included opacity from the major absorbers expected for a hot Jupiter atmosphere (FIXME: Mike, what molecules are included?). Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is expected because water dissociates (FIXME: what temperatures?).  We Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13} (FIXME: elaborate).
+\subsection{Clouds?}
 
-The best fit atmospheric metallicity is FIXME and 
-The 68\% confidence interval for a  
+\section{Retrieved Atmospheric Composition and Thermal Structure}
+\label{sec:composition}
+Since the phase-resolved spectra do not show spectrally resolved molecular features, we opted for a simple grid-based retrieval of the planet's atmospheric properties, similar to the grid search used in Mansfield et al. and Arcangeli et al. (in prep). We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities, carbon-to-oxygen ratios (C/O), and stellar irradiation (\textbf{Mike: elaborate}). The forward models compute self-consistent, radiative-convective temperature-pressure (T-P) profiles, and the molecular abundances are calculated in each atmospheric layer assuming thermochemical equilibrium.  We included opacity from the major absorbers expected for a hot Jupiter atmosphere, including H$_2$O, CO, CO$_2$, TiO, and VO (\textbf{Mike: what others?}). Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is expected because water dissociates at temperatures .  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13}, and interpolated in the grid to calculate the likelihood at each model step. We retrieved the composition for dayside emission spectrum and at FIXME phases
+
+\subsection{Dayside}
+We show the retrieved metallicity and C/O in Figure\,\ref{fig:composition}. The best fit metallicity is $23^{+29}_{-13}\times$ solar, somewhat higher than expected based on Jupiter's metal enrichment \citep[$3-5\times$ solar][]{wong04} and the trend toward decreasing metallicity with increasing planet mass observed for the Solar System and exoplanets \cite[e.g.][]{kreidberg14}.  However, planet population synthesis models predict some scatter in atmospheric metallicity. Planets near WASP-103b's mass ($1.5\,M_\mathrm{Jup}$) are expected to have metallicities ranging from $1-10\times$ solar \citep{mordasini16}. Our result for WASP-103b lies on the upper end of this range, and may be indicative of intrinsic scatter in the mass-atmospheric metallicity relation. 
+
+The retrieved C/O is consistent with solar, with a $1\sigma$ confidence interval of $0.54 - 0.85$. We infer an upper limit on C/O of 0.9 at $3\,\sigma$ confidence, driven by the fact that the atmospheric chemistry is expected to change dramatically when C/O exceeds unity. For a carbon-rich composition, the equilibrium abundance of methane relative to CO increases by orders of magnitude compared to an oxygen-rich  composition \citep[e.g.][]{madhusudhan11}. The \Spitzer\ eclipse depths are sensitive to the relative abundance of these species, so we can confidently rule out a carbon-rich composition in spite of the lack of spectrally resolved features.  
+Thermal structure.
+
+We note that an important caveat for our results is that the best fit model is not a perfect fit to the data (with $\chi_\nu = 1.77$), so the uncertainties produced by the MCMC may be underestimated. Furthermore, the inferred C/O and metallicity are highly sensitive to the large planet-to-star flux at \Spitzer $4.5\mu$m, which is the worst fit data point. (With this point removed, the fit quality is significantly improved: $\chi_\nu = 1.17$).  The dominant absorbing species over the $4.5\,\mu$m bandpass is CO, so to fit this point the model tends to favor super-solar metallicities and C/O. Given that the result is driven by a single photometric band and there are no resolved molecular features to constrain the absorbers that are present or the temperature-pressure profile, we caution against over-interpreting these results until wider spectral coverage is available.
+
+Figure\,\ref{fig:TP} shows the retrieved temperature pressure profiles for the dayside. They exhibit a 
 
 
-When we do not include H- opacity, FIXME what happens?
+As a test of our modeling approach, we also performed a retrieval in which the T/P profile was allowed to vary. 
+No H- ?
+
+\subsection{Other Orbital Phases}
+We also modeled the 
 
 \subsection{Climate}
 Heat redistribution, Bond albedo, inversions

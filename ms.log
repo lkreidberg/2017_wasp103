@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 DEC 2017 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 DEC 2017 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,81 +639,81 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 245--246
 [][] 
  []
 
-[7] <Figures/emission_spectra.pdf, id=241, 1011.78pt x 361.35pt>
+[7] <Figures/emission_spectra.pdf, id=242, 1011.78pt x 361.35pt>
 File: Figures/emission_spectra.pdf Graphic file (type pdf)
 
 <use Figures/emission_spectra.pdf>
-Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 282.
+Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 284.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
-<Figures/hst_model_comparison.pdf, id=242, 722.7pt x 240.65909pt>
+<Figures/hst_model_comparison.pdf, id=243, 722.7pt x 240.65909pt>
 File: Figures/hst_model_comparison.pdf Graphic file (type pdf)
 
 <use Figures/hst_model_comparison.pdf>
-Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 28
-8.
+Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 29
+0.
 (pdftex.def)             Requested size: 513.11743pt x 170.86914pt.
 
-<Figures/dayside_spectrum.pdf, id=243, 289.08pt x 216.81pt>
+<Figures/dayside_spectrum.pdf, id=244, 289.08pt x 216.81pt>
 File: Figures/dayside_spectrum.pdf Graphic file (type pdf)
 
 <use Figures/dayside_spectrum.pdf>
-Package pdftex.def Info: Figures/dayside_spectrum.pdf used on input line 318.
+Package pdftex.def Info: Figures/dayside_spectrum.pdf used on input line 320.
 (pdftex.def)             Requested size: 256.55872pt x 192.42766pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 318--319
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 320--321
 [][] 
  []
 
 
-Package natbib Warning: Citation `FIXME' on page 8 undefined on input line 325.
+Package natbib Warning: Citation `FIXME' on page 8 undefined on input line 327.
 
 
 
 Package natbib Warning: Citation `zhang16' on page 8 undefined on input line 32
-5.
+7.
 
 [8 <./Figures/phase_curves.pdf>]
 
 LaTeX Warning: Reference `tab:model_comparison' on page 9 undefined on input li
-ne 327.
+ne 329.
 
 
-Package natbib Warning: Citation `kass95' on page 9 undefined on input line 327
+Package natbib Warning: Citation `kass95' on page 9 undefined on input line 329
 .
 
 
-Package natbib Warning: Citation `kass95' on page 9 undefined on input line 331
+Package natbib Warning: Citation `kass95' on page 9 undefined on input line 333
 .
 
 [9]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 345.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 339.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 345.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 339.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Underfull \hbox (badness 2035) in paragraph at lines 347--348
-\OT1/cmr/m/n/10 mod-els com-pute self-consistent, radiative-convective
+Underfull \hbox (badness 1210) in paragraph at lines 352--353
+\OT1/cmr/m/n/10 convective temperature-pressure (T-P) pro-files, and
  []
 
 
-Overfull \hbox (54.72163pt too wide) in paragraph at lines 371--372
-[]\OT1/cmr/m/n/10 cite Trem-blin et al. 2017 ? (https://arxiv.org/pdf/1710.0264
-0.pdf) 
- []
+LaTeX Warning: Reference `fig:composition' on page 10 undefined on input line 3
+55.
 
 
-Overfull \hbox (0.70622pt too wide) in paragraph at lines 381--382
-\OT1/cmr/m/n/10 Beatty, Ming Zhao, Kim Star Cartier, Han-nah Diamond-
- []
+Package natbib Warning: Citation `kreidberg14' on page 10 undefined on input li
+ne 355.
 
-(./ms.bbl [10 <./Figures/rms.pdf>] [11 <./Figures/emission_spectra.pdf> <./Figu
-res/hst_model_comparison.pdf
+[10 <./Figures/rms.pdf>]
+
+LaTeX Warning: Reference `fig:TP' on page 11 undefined on input line 362.
+
+[11 <./Figures/emission_spectra.pdf> <./Figures/hst_model_comparison.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/hst_model_comparison.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
@@ -721,27 +721,38 @@ on: multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Figures/dayside_spectrum.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
->]) [12]
+>]
+Overfull \hbox (54.72163pt too wide) in paragraph at lines 388--389
+[]\OT1/cmr/m/n/10 cite Trem-blin et al. 2017 ? (https://arxiv.org/pdf/1710.0264
+0.pdf) 
+ []
+
+
+Overfull \hbox (0.70622pt too wide) in paragraph at lines 403--404
+\OT1/cmr/m/n/10 Beatty, Ming Zhao, Kim Star Cartier, Han-nah Diamond-
+ []
+
+(./ms.bbl) [12]
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
 (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 386.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 408.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 408.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8927 strings out of 492995
- 124385 string characters out of 6132704
- 280785 words of memory out of 5000000
- 12303 multiletter control sequences out of 15000+600000
+ 8950 strings out of 492995
+ 124748 string characters out of 6132704
+ 281392 words of memory out of 5000000
+ 12320 multiletter control sequences out of 15000+600000
  15267 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,12n,37p,1363b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,12n,37p,1395b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
@@ -763,10 +774,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (12 pages, 1982843 bytes).
+Output written on ms.pdf (12 pages, 1360669 bytes).
 PDF statistics:
- 639 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
+ 658 PDF objects out of 1000 (max. 8388607)
+ 311 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

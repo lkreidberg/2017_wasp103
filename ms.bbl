@@ -63,9 +63,21 @@
   WFC3 IR Detector: an Improved Model Incorporating the Effects of Exposure
   Time}, Tech. rep.
 
+\bibitem[{{Madhusudhan} {et~al.}(2011){Madhusudhan}, {Harrington}, {Stevenson},
+  {Nymeyer}, {Campo}, {Wheatley}, {Deming}, {Blecic}, {Hardy}, {Lust},
+  {Anderson}, {Collier-Cameron}, {Britt}, {Bowman}, {Hebb}, {Hellier},
+  {Maxted}, {Pollacco}, \& {West}}]{madhusudhan11}
+{Madhusudhan}, N., {Harrington}, J., {Stevenson}, K.~B., {et~al.} 2011, \nat,
+  469, 64
+
 \bibitem[{{McCullough} \& {MacKenty}(2012)}]{mccullough12}
 {McCullough}, P., \& {MacKenty}, J. 2012, {Considerations for using Spatial
   Scans with WFC3}, Tech. rep.
+
+\bibitem[{{Mordasini} {et~al.}(2016){Mordasini}, {van Boekel}, {Molli{\`e}re},
+  {Henning}, \& {Benneke}}]{mordasini16}
+{Mordasini}, C., {van Boekel}, R., {Molli{\`e}re}, P., {Henning}, T., \&
+  {Benneke}, B. 2016, \apj, 832, 41
 
 \bibitem[{{Southworth} {et~al.}(2015){Southworth}, {Mancini}, {Ciceri},
   {Budaj}, {Dominik}, {Figuera Jaimes}, {Haugb{\o}lle}, {J{\o}rgensen},
@@ -83,5 +95,10 @@
 
 \bibitem[{{W{\"o}llert} \& {Brandner}(2015)}]{wollert15}
 {W{\"o}llert}, M., \& {Brandner}, W. 2015, \aap, 579, A129
+
+\bibitem[{{Wong} {et~al.}(2004){Wong}, {Mahaffy}, {Atreya}, {Niemann}, \&
+  {Owen}}]{wong04}
+{Wong}, M.~H., {Mahaffy}, P.~R., {Atreya}, S.~K., {Niemann}, H.~B., \& {Owen},
+  T.~C. 2004, \icarus, 171, 153
 
 \end{thebibliography}
