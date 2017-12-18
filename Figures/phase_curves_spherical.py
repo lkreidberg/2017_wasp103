@@ -45,6 +45,8 @@ for ii, f in enumerate(bestfits):
 	data_corr = m.data_corr[ind]
 	bestfit = m.bestfit[ind]
 
+        print dilution
+
 	ind = np.argsort(phase)
 	err, phase, data_corr, bestfit = err[ind], phase[ind], data_corr[ind], bestfit[ind] #sorts by phase
 	
