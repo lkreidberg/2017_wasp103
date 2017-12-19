@@ -91,7 +91,6 @@ for i, f in enumerate(files):
 	fpfs[i] = np.mean(bestfit[ind1])
 	fp_err[i] = np.sqrt(sig1**2 + sig2**2)
 
-print dilution
 
 i+= 1
 #add Spitzer Ch 1
