@@ -30,7 +30,7 @@ def best_fit_bb(w, y, e, rprs):
 
 	w = np.array(w)
 
-#	w, y, e = w[0:10], y[0:10], e[0:10]
+	w, y, e = w[0:10], y[0:10], e[0:10]
 #	w, y, e = w[10], y[10], e[10]
 #	w, y, e = w[11], y[11], e[11]
 
@@ -47,7 +47,7 @@ def best_fit_bb(w, y, e, rprs):
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
 
 	outfile = open("temperatures.txt", "a")
-	print "T, chi2", Tbest, chibest/(len(y) - 1), resid
+	print "T, chi2", Tbest, chibest/(len(y) - 1)#, resid
 	print>>outfile,  Tbest
 	outfile.close()
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2

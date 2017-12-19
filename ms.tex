@@ -278,7 +278,6 @@ For the other orbital phases, we binned the light curve (with systematics remove
 
 To test that the phase-resolved spectra are robust to different approaches for fitting the data, we compared the spectra for all four of the thermal phase variation models (sinusoid, kinematic, spherical harmonics, and two temperature). We found that the choice of model does not significantly change the results.  The emission spectra are insensitive to the models because they are estimated directly from the data (after systematics have been removed). Since systematic noise is not strongly correlated with the astrophysical signal, the systematics-divided data are nearly identical for all the models.  This point is illustrated in Figure\,\ref{fig:model_comparison} for the broadband WFC3 light curve. In most phase bins, the planet-to-star flux agrees to well within one sigma for all the models. 
 
-Over the WFC3 bandpass, the phase-resolved spectra are featureless and consistent with blackbodies (with best fit $\chi^2_\nu$ ranging from $0.5-1.3$). However, the \Spitzer\ data, particularly at 4.5 $\mu$m, are discrepant with the best fit blackbody by $3-5\,\sigma$ at most orbital phases, indicating the presence of infrared molecular absorption or emission features. We investigate possible atmospheric compositions and temperature structures in \S\,\ref{sec:composition}. 
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/emission_spectra.pdf}
@@ -342,13 +341,27 @@ The typical uncertainty is FIXME (run MCMC, say the systematic range is larger t
 
 %The spherical harmonics model fits better according to the BIC and the AIC; however, it yields higher temperatures at the poles than at the equator, which does not agree with predictions from GCM simulations \citep{FIXME}. 
 
+%\section{Analysis}
+%In this section we describe the interpretation of the data using simple blackbody models, a 1-D grid-based retrieval, and 3-D general circulation models (GCMs).
+
 \subsection{Hotspot Offset}
 The location of peak brightness of the phase curve is a proxy for the efficiency of thermal reradiation to space and relative to heat transport by advection (the radiative-to-advective timescale). The faster the reradiation, the less heat can be redistributed to the nightside. We compared the measured hotspot offset for the different models and found FIXME.
 
 \subsection{Clouds?}
 
-\section{Retrieval of Atmospheric Composition and Thermal Structure}
+
+\section{Atmospheric Composition and Thermal Structure}
 \label{sec:composition}
+To interpret the phase-resolved spectra, we performed two model fits. First, we modeled the planet flux as a simple blackbody to estimate the dayside brightness temperature and test for significant absorption or emission features. We then performed a more sophisticated grid-based retrieval to evaluate the atmospheric composition and thermal structure. 
+
+\subsection{Blackbody Fits}
+A blackbody is the simplest model for the planet's thermal emission and provide a useful first evaluation of the atmospheric properties. The best fit blackbodies are shown in Figures \ref{fig:spectra} and \ref{fig:dayside}. This model performs well for some orbital phases, with $\chi^2_\nu$ ranging from 0.9 to 1.1 for phases $\phi = 0.1, 0.7, \mathrm{and} 0.8$. At other phases the blackbody model is a poorer fit, particularly to the \Spitzer\ data. For most of the eastern hemisphere to just past the substellar point (phases $0.2 - 0.6$), the \Spitzer\ eclipse depths are larger than predicted for the best fit blackbody, suggesting the presence of an emission feature. On the nightside (phase $0.9$), the \Spitzer\ $4.5\,\mu$m eclipse depth is \emph{smaller} than predicted, suggesting an absorption feature. These differences hint at changing thermal structure with longitude in the atmosphere.
+
+We also fit blackbody models to the WFC3 data only, and found that they provide an excellent fit at all phases except the dayside. The $\chi^2_\nu$ values range from 0.5 to 1.4, with a median of 0.9. On the other hand, the dayside spectrum is inconsistent with a blackbody ($chi^2_\nu$ = 5.0). (FIXME: what features are there?).  The dayside spectrum has higher signal-to-noise than the other phases thanks to the two secondary eclipse observations from \citep{cartier17}, so it is not surprising that a more complex model is required.  In Table\,\ref{tab:depths} we report the best fit temperatures for the WFC3 data blackbody fits.
+
+%Over the WFC3 bandpass, the phase-resolved spectra are featureless and consistent with blackbodies (with best fit $\chi^2_\nu$ ranging from $0.5-1.3$). However, the \Spitzer\ data, particularly at 4.5 $\mu$m, are discrepant with the best fit blackbody by $3-5\,\sigma$ at most orbital phases, indicating the presence of infrared molecular absorption or emission features. We investigate possible atmospheric compositions and temperature structures in \S\,\ref{sec:composition}. 
+
+\subsection{Grid-Based Retrieval}
 Since the phase-resolved spectra do not show spectrally resolved molecular features, we opted for a simple grid-based fit to the planet's atmospheric properties, similar to the grid search used in Mansfield et al. and Arcangeli et al. (in prep). We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities, carbon-to-oxygen ratios (C/O), and stellar irradiation. The stellar spectrum is scaled in intensity over the grid to model the unknown heat redistribution for the planet; i.e., a lower dayside irradiation is equivalent to more efficient heat transport to the nightside. 
 
 At each point in the grid, we compute forward models to determine self-consistent, radiative-convective temperature-pressure (T-P) profiles. We determine the molecular abundances in each atmospheric layer assuming thermochemical equilibrium.  We include opacity from the major absorbers expected for a hot Jupiter atmosphere, including H$_2$O, CO, CO$_2$, TiO, and VO (\textbf{Mike: what others?}). Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is expected because water dissociates at dayisde photospheric temperature and pressure (3000 K, 0.1 bar).  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13}, and interpolated in the grid to calculate the likelihood at each model step. We retrieved the composition for dayside emission spectrum and at FIXME phases
@@ -359,7 +372,7 @@ At each point in the grid, we compute forward models to determine self-consisten
 \label{fig:composition}
 \end{figure}
 
-\subsection{Dayside}
+\subsubsection{Dayside}
 The main characteristics of the dayside emission spectrum are: (1) it is blackbody-like at WFC3 wavelengths, and (2) in the \Spitzer\ bands, the planet-to-star flux is significantly higher than predicted for the best fit blackbody, indicating an emission feature.  The best fit spectrum reproduces these data fairly well, with $\chi^2_\nu$ = 1.77. The WFC3 and Spitzer $3.6\,\mu$m points are fit better ($\chi^2_\nu$  = 1.17 for these data alone), but the $4.5\,\mu$m point is in tension with the model at FIXME $\sigma$.  The best fit model has a moderately enhanced metallicity ($23\times$ solar), carbon-to-oxygen equal to 0.76, poor heat redistribution, and a thermal inversion (temperature increasing with altitude).
 
 Figure\,\ref{fig:opacities} show the opacity contributions of key absorbers for the best fit.  In the optical (which we do not observe directly), there is strong absorption by TiO/VO, which heats the upper atmosphere and causes a thermal inversion.  In the near-infrared, the dominant absorbers are H$_2$O and H-.  The observed spectrum is featureless at these wavelengths, due to a combination of factors: water is partially dissociated in the photosphere, leading to a drop in abundance of FIXME.  It also produces H- opacity (single H atoms bind with free electrons), which dominates spectral features from H$_2$O at wavelengths shorter than FIXME $\mu$m.  Water is also an efficient coolant, so lower water abundance leads to a more isothermal photosphere and weakens the features even more.  Taken together, all these factors conspire to produce a nearly featureless spectrum from $1.1 - 1.7\,\mu$m. Finally, in the infrared the dominant absorber is CO, which produces the emission feature at \Spitzer\ wavelengths.  
@@ -373,15 +386,15 @@ We infer a heat redistribution $f = 0.4^{+0.03}_{-0.02}$. The $f$ parameter is a
 We note that an important caveat for our results is that the best fit model is not a perfect fit to the data (with $\chi_\nu = 1.77$), so the uncertainties produced by the MCMC may be underestimated. Furthermore, the inferred C/O and metallicity are highly sensitive to the planet-to-star flux at \Spitzer\ $4.5\mu$m, which is the worst fit data point. To fit this data point, the model favors super-solar metallicities and C/O, which drive up the CO abundance (the dominant absorber at $4.5\,\mu$m). Given that the result hinges on a single photometric band and there are no spectrally resolved molecular features to constrain the temperature-pressure profile or which absorbers are present, we caution against over-interpreting these results until wider spectral coverage is available.
 %As a test of our modeling approach, we also performed a retrieval in which the T/P profile was allowed to vary. 
 
-\subsection{Other Orbital Phases}
-We also modeled the 
+\subsubsection{Other Orbital Phases}
+We also fit the nightside spectrum with the grid-based retrieval. 
 
 \subsection{Climate}
 Heat redistribution, Bond albedo, inversions
 
 %\subsection{Bond Albedo}
 
-\section{Comparison with GCMs}
+\subsection{Comparison with GCMs}
 To explore the three-dimensional effects of atmospheric dynamics, we ran several GCM models to compare with the measured phase-resolved spectra. We used the SPARC
 
 %\begin{figure}
@@ -390,7 +403,6 @@ To explore the three-dimensional effects of atmospheric dynamics, we ran several
 %\label{fig:dayside}
 %\end{figure}
 
-\section{Comparison of T/P Profiles}
 
 \section{Comparison with Brown Dwarfs and Directly Imaged Planets}
 cite Tremblin et al. 2017 ? (https://arxiv.org/pdf/1710.02640.pdf)

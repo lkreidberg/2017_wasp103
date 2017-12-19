@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 DEC 2017 12:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 DEC 2017 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,10 +525,10 @@ Package natbib Warning: Citation `getal2014' on page 4 undefined on input line
 126.
 
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-07 12:30:01
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-07 13:01:13
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
@@ -639,88 +639,86 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 245--246
 [][] 
  []
 
-[7] <Figures/emission_spectra.pdf, id=242, 1011.78pt x 361.35pt>
+[7] <Figures/emission_spectra.pdf, id=241, 1011.78pt x 361.35pt>
 File: Figures/emission_spectra.pdf Graphic file (type pdf)
 
 <use Figures/emission_spectra.pdf>
-Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 284.
+Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 283.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
-<Figures/hst_model_comparison.pdf, id=243, 722.7pt x 240.65909pt>
+<Figures/hst_model_comparison.pdf, id=242, 722.7pt x 240.65909pt>
 File: Figures/hst_model_comparison.pdf Graphic file (type pdf)
 
 <use Figures/hst_model_comparison.pdf>
-Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 29
-0.
+Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 28
+9.
 (pdftex.def)             Requested size: 513.11743pt x 170.86914pt.
 
-<Figures/dayside_spectrum.pdf, id=244, 289.08pt x 216.81pt>
+<Figures/dayside_spectrum.pdf, id=243, 289.08pt x 216.81pt>
 File: Figures/dayside_spectrum.pdf Graphic file (type pdf)
 
 <use Figures/dayside_spectrum.pdf>
-Package pdftex.def Info: Figures/dayside_spectrum.pdf used on input line 320.
+Package pdftex.def Info: Figures/dayside_spectrum.pdf used on input line 319.
 (pdftex.def)             Requested size: 256.55872pt x 192.42766pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 320--321
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 319--320
 [][] 
  []
 
 
-Package natbib Warning: Citation `FIXME' on page 8 undefined on input line 327.
+Package natbib Warning: Citation `FIXME' on page 8 undefined on input line 326.
 
 
 
 Package natbib Warning: Citation `zhang16' on page 8 undefined on input line 32
-7.
+6.
 
 [8 <./Figures/phase_curves.pdf>]
 
 LaTeX Warning: Reference `tab:model_comparison' on page 9 undefined on input li
-ne 329.
+ne 328.
 
 
-Package natbib Warning: Citation `kass95' on page 9 undefined on input line 329
+Package natbib Warning: Citation `kass95' on page 9 undefined on input line 328
 .
 
 
-Package natbib Warning: Citation `kass95' on page 9 undefined on input line 333
+Package natbib Warning: Citation `kass95' on page 9 undefined on input line 332
 .
 
 [9]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 339.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 349.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 339.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 349.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 354--355
+LaTeX Warning: Reference `tab:depths' on page 10 undefined on input line 360.
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 367--368
 \OT1/cmr/m/n/10 els to de-ter-mine self-consistent, radiative-convective
  []
 
-
-<Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf, id=320, 549.25201pt x 549.2
+[10 <./Figures/rms.pdf>]
+<Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf, id=371, 549.25201pt x 549.2
 5201pt>
 File: Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf Graphic file (type pdf)
 
  <use Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf>
 Package pdftex.def Info: Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf used
- on input line 357.
+ on input line 370.
 (pdftex.def)             Requested size: 256.55872pt x 256.5561pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 357--358
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 370--371
 [][] 
  []
 
-
-LaTeX Warning: Reference `fig:opacities' on page 10 undefined on input line 365
-.
-
-[10 <./Figures/rms.pdf>] [11 <./Figures/emission_spectra.pdf> <./Figures/hst_mo
-del_comparison.pdf
+[11 <./Figures/emission_spectra.pdf> <./Figures/hst_model_comparison.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/hst_model_comparison.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
@@ -730,30 +728,34 @@ pdfTeX warning: pdflatex (file ./Figures/dayside_spectrum.pdf): PDF inclusion:
 multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 368.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 378.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 368.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 378.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Overfull \hbox (54.72163pt too wide) in paragraph at lines 396--397
+LaTeX Warning: Reference `fig:opacities' on page 12 undefined on input line 378
+.
+
+[12 <./Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf>]
+Overfull \hbox (54.72163pt too wide) in paragraph at lines 408--409
 []\OT1/cmr/m/n/10 cite Trem-blin et al. 2017 ? (https://arxiv.org/pdf/1710.0264
 0.pdf) 
  []
 
 
-Package natbib Warning: Citation `arcangeli18' on page 12 undefined on input li
-ne 411.
+Package natbib Warning: Citation `arcangeli18' on page 13 undefined on input li
+ne 423.
 
 
-Package natbib Warning: Citation `mansfield18' on page 12 undefined on input li
-ne 411.
+Package natbib Warning: Citation `mansfield18' on page 13 undefined on input li
+ne 423.
 
-[12 <./Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf>]
-Overfull \hbox (0.70622pt too wide) in paragraph at lines 414--415
+
+Overfull \hbox (0.70622pt too wide) in paragraph at lines 426--427
 \OT1/cmr/m/n/10 Beatty, Ming Zhao, Kim Star Cartier, Han-nah Diamond-
  []
 
@@ -761,20 +763,20 @@ Overfull \hbox (0.70622pt too wide) in paragraph at lines 414--415
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 419.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 431.
 (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 419.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 419.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 431.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 431.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8967 strings out of 492995
- 125176 string characters out of 6132704
- 281657 words of memory out of 5000000
- 12332 multiletter control sequences out of 15000+600000
+ 8970 strings out of 492995
+ 125232 string characters out of 6132704
+ 280606 words of memory out of 5000000
+ 12334 multiletter control sequences out of 15000+600000
  15267 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,12n,37p,1363b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -799,10 +801,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (13 pages, 1403943 bytes).
+Output written on ms.pdf (13 pages, 1407525 bytes).
 PDF statistics:
- 731 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
- 78 named destinations out of 1000 (max. 500000)
+ 736 PDF objects out of 1000 (max. 8388607)
+ 351 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

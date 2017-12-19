@@ -33,7 +33,7 @@ def best_fit_bb(w, y, e, rprs):
 	Tstar = 6110.
 	w = np.array(w)
 
-#	w, y, e, = w[0:10], y[0:10], e[0:10]
+	w, y, e, = w[0:10], y[0:10], e[0:10]
 
 	#get stellar spectrum
 	star = np.genfromtxt("wasp103_sed_fluxes.out")
@@ -49,7 +49,6 @@ def best_fit_bb(w, y, e, rprs):
 			chibest, Tbest, outliers = chi2, T, (y-model)/e
 	waves_hires = np.linspace(1.0, 5.0, 100)
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
-	#star_bb_hires = blackbody(waves_hires*1.0e-6, Tstar) 
 	#print "Best fit blackbody temp, chisq, and outliers: ", Tbest, chibest/(len(e)-1), outliers
 	print "Best fit blackbody temp, chi2: ", Tbest, chibest/(len(y) - 1.)
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
@@ -70,7 +69,6 @@ for i, f in enumerate(files):
 	
 	waves.append(d.wavelength)
 	dilution.append(d.dilution)
-
 
 	ind = d.err < 9.0e7			#indices of outliers
 	
@@ -238,9 +236,8 @@ plt.xlim(3, 5)
 plt.ylim(3.5,7)
 
 
-print "ERRORS & WARNINGS"
-print "hard coding rprs for calculating best fit bb - is this right?"
-print "hard coding dilution in spitzer bandpass - are we also supposed to do this for WFC3?"
+print "NOTE:"
+print "you are hard coding rprs for calculating best fit bb"
 plt.tight_layout()
 plt.savefig("dayside_spectrum.pdf")
 plt.show()
