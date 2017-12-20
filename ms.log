@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 DEC 2017 10:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 DEC 2017 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -728,10 +728,10 @@ pdfTeX warning: pdflatex (file ./Figures/dayside_spectrum.pdf): PDF inclusion:
 multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 378.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 377.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 378.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 377.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -752,21 +752,21 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 393--394
  []
 
 
-Overfull \hbox (54.72163pt too wide) in paragraph at lines 417--418
+Overfull \hbox (54.72163pt too wide) in paragraph at lines 420--421
 []\OT1/cmr/m/n/10 cite Trem-blin et al. 2017 ? (https://arxiv.org/pdf/1710.0264
 0.pdf) 
  []
 
 
 Package natbib Warning: Citation `arcangeli18' on page 13 undefined on input li
-ne 432.
+ne 435.
 
 
 Package natbib Warning: Citation `mansfield18' on page 13 undefined on input li
-ne 432.
+ne 435.
 
 
-Overfull \hbox (0.70622pt too wide) in paragraph at lines 435--436
+Overfull \hbox (0.70622pt too wide) in paragraph at lines 438--439
 \OT1/cmr/m/n/10 Beatty, Ming Zhao, Kim Star Cartier, Han-nah Diamond-
  []
 
@@ -774,23 +774,23 @@ Overfull \hbox (0.70622pt too wide) in paragraph at lines 435--436
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 443.
 (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 440.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 443.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 443.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8978 strings out of 492995
- 125337 string characters out of 6132704
- 280638 words of memory out of 5000000
+ 8977 strings out of 492995
+ 125323 string characters out of 6132704
+ 280836 words of memory out of 5000000
  12339 multiletter control sequences out of 15000+600000
  15267 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,12n,37p,1363b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,12n,37p,1363b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
@@ -812,10 +812,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (14 pages, 1431070 bytes).
+Output written on ms.pdf (14 pages, 1432321 bytes).
 PDF statistics:
- 779 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 81 named destinations out of 1000 (max. 500000)
+ 778 PDF objects out of 1000 (max. 8388607)
+ 361 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
