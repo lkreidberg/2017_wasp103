@@ -33,7 +33,7 @@ def best_fit_bb(w, y, e, rprs):
 	Tstar = 6110.
 	w = np.array(w)
 
-	w, y, e, = w[0:10], y[0:10], e[0:10]
+	#w, y, e, = w[0:10], y[0:10], e[0:10]
 
 	#get stellar spectrum
 	star = np.genfromtxt("wasp103_sed_fluxes.out")

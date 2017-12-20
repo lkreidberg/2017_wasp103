@@ -70,6 +70,13 @@ fig =plt.figure(figsize = (10,3.33))
 gs = gridspec.GridSpec(3, 5, width_ratios = [3, 0.1, 1,1,0.1], height_ratios = [1,1, 0.01]) 
 ncol = 2
 
+#cmap = plt.cm.afmhot
+#cmap = plt.cm.plasma
+#cmap = plt.cm.magma
+#cmap = plt.cm.viridis
+#cmap = plt.cm.Purples_r
+cmap = plt.cm.inferno
+
 for i, model in enumerate(models):	
     row, col = int(np.floor(i/ncol)), i%ncol
     col += 2
@@ -115,7 +122,7 @@ for i, model in enumerate(models):
     lc = spider_params.lightcurve(t)
 
     nla, nlo = 100, 100 
-    #nla, nlo = 20, 20 
+    #nla, nlo = 10, 10 
 
     las = np.linspace(-np.pi/2,np.pi/2,nla)
     los = np.linspace(-np.pi,np.pi,nlo)
@@ -130,6 +137,7 @@ for i, model in enumerate(models):
                             line += [flux[0]]
                     else:
                             line += [flux[1]]
+#			    print la, lo, flux[1]
             fluxes += [line]
     
     fluxes = np.array(fluxes)
@@ -141,7 +149,7 @@ for i, model in enumerate(models):
     print "model, Tmin, Tmax = ", model, fluxes.min(), fluxes.max()
 	
 
-    im = plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.afmhot, alpha=0.8, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
+    im = plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=cmap, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
 
     plt.gca().text(-160, 60, labels[i], bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=10) 
     plt.xticks([-180, -90,  0, 90, 180])
@@ -151,7 +159,24 @@ for i, model in enumerate(models):
     if row == 1: plt.xlabel("Longitude (deg)")
     if row == 0: plt.gca().set_xticklabels([])
 
+#plots GCM
+GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-NEW-OPA-nit-1036800.dat", delimiter = ",")
+ax = plt.subplot(gs[1,3])
+Pref = 0.11542					#reference pressure in bars
+ind = GCM[:,3] == Pref
+lat, lon = GCM[ind,1], GCM[ind,2]
+Ts = GCM[ind,4]
 
+fluxes = np.reshape(Ts, (-1, 30))
+im = plt.imshow(fluxes.T, aspect='auto', interpolation='bilinear', cmap=cmap, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
+plt.gca().text(-160, 60, "GCM", bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=10) 
+plt.xticks([-180, -90,  0, 90, 180])
+plt.gca().set_yticklabels([])
+plt.xlabel("Longitude (deg)")
+
+
+
+#formatting
 ax = plt.subplot(gs[0:2, 4])
 plt.gca().set_visible(False)
 cb = fig.colorbar(im, alpha = 0.8, aspect = 30, fraction = 1) 
@@ -219,3 +244,4 @@ plt.xlim(0,1)
 
 plt.savefig('hst_model_comparison.pdf')
 
+plt.show()

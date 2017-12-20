@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 DEC 2017 11:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 DEC 2017 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,10 +525,10 @@ Package natbib Warning: Citation `getal2014' on page 4 undefined on input line
 126.
 
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-07 12:30:01
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-07 13:01:13
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
@@ -741,7 +741,7 @@ LaTeX Warning: Reference `fig:opacities' on page 12 undefined on input line 378
 .
 
 [12 <./Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf>]
-<Figures/TP.pdf, id=637, 289.08pt x 216.81pt>
+<Figures/TP.pdf, id=643, 289.08pt x 216.81pt>
 File: Figures/TP.pdf Graphic file (type pdf)
  <use Figures/TP.pdf>
 Package pdftex.def Info: Figures/TP.pdf used on input line 393.
@@ -812,10 +812,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ms.pdf (14 pages, 1432321 bytes).
+Output written on ms.pdf (14 pages, 1445846 bytes).
 PDF statistics:
- 778 PDF objects out of 1000 (max. 8388607)
- 361 compressed objects within 4 object streams
+ 784 PDF objects out of 1000 (max. 8388607)
+ 363 compressed objects within 4 object streams
  80 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

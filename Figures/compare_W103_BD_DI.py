@@ -112,49 +112,39 @@ for i, f in enumerate(files):
 
 
 #Directly imaged spectra
-"""2M1207 A     2500  100 3.5  0.5 2640
-OTS 44          1700  100 3.5  0.5 2300
-KPNO Tau 4      1700  100 3.5  0.5 2300
-2M0141          1800  200 4.5  0.5 2200
-TWA 5B          2500  100 4.0  0.5 2570
-Cha 1109        1800  100 4.0  0.5 2300
-Gl 417 B        1800  100 5.0  0.5 1660
-AB Pic b        1800  200 4.5  0.5 2200
-CT Cha b        2600  100 3.5  0.5 2700
-DH Tau B        2400  100 3.5  0.5 2350
-GSC8047 B       2200  100 4.0  0.5 2300
-USco CTIO 108B  2300  100 4.0  0.5 2300
-HR7329 B        2600  100 . . . 2570
-2M0345          2400  100 5.0  0.5 2230
-TWA22 A         3000  100 4.5  0.5 3125
-TWA22 B         3000  100 4.5  0.5 3064"""
+"""1RXSJ160929.1-210524b   L2gamma  1800K
+ABPicB  L0gamma 1700K
+CD-352722B      L3      1800K
+GSC08047-00232B M9.5    2200K
+HIP78530B       M9.5    2800K
+2MASS J1610-1913B       M9      2400K
+PZTelB  M7      2700K
+TWA11C  M5      3100K
+TWA22A  M5      3000K
+TWA22B  M5.5 2900K
+USCOCTIO108B    M9.5    2300K"""
 
-path = "DI_spectra/"
-files = ["L0_R2000_ABPicb_J_0.025_norm_master_spectrum.fits", "M8.5_R2000_2M1207A_SINFONIspeclib_JHK.fits", "M5_R1200_TWA11C.fits"]
-name = ["L0", " M8.5", "M5"]
 
+path = "Direct_Image_Spectra/"
+files = ["1RXSJ160929.1-210524b_Kreidberg.txt", "J1610-1913B_Kreidberg.txt", "TWA22A_Kreidberg.txt"]
+name = ["1RXS", "J1610", "TWA22A"]
+
+guess = 1.e6
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,2])
-    p = pyfits.open(path + f)
-    d = p[0].data 
-    if i>1: d = d.T
-    plt.plot(d[:,0], d[:,1])
-    plt.plot(d[:,0], d[:,1], linewidth = 0., label = name[i])
+    d = np.genfromtxt(path + f)
+    plt.plot(d[:,0], d[:,1]*1.863e17*1.e2/guess)
+    plt.plot(d[:,0], d[:,1]*1.863e17*1.e2/guess, 'w', linewidth=0., label = name[i])
 
-    if i == 0: 
-	p = pyfits.open(path + "L0_R2000_ABPicb_H+K_0.025_final_spectrum.fits")
-	d = p[0].data 
-        plt.plot(d[:,0], d[:,1])
+    plt.legend(loc = 'upper right', handlelength = 0., frameon=False, fontsize=9)
 
-    plt.legend(loc = 'lower left', handlelength = 0., frameon=False, fontsize=9)
-
+    if i == 2: plt.ylim(ylo[i], yhi[i])
     plt.xlim(1.0,1.8)
-    plt.gca().set_yticks([])
+    #plt.gca().set_yticks([])
     if i != 3: plt.gca().set_xticks([])
     if i == 3: plt.xlabel("Wavelength (microns)")
     if i == 0: plt.title("Imaged planets")
 
 #plt.tight_layout()
-plt.savefig("comparison_original.pdf")
-plt.savefig("comparison_original.png")
+plt.savefig("compare_W103_BD_DI.pdf")
 #plt.show()
