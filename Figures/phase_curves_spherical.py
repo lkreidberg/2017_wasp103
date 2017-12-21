@@ -191,9 +191,14 @@ for ii, f in enumerate(bestfits):
 	ax.set_xticklabels([])
 	plt.ylim(-1, 6.)
 	plt.xlim(0,1)
+        
+        ax.set_yticks([0, 2, 4, 6])
+        ax.yaxis.set_minor_locator(FixedLocator(np.array([1, 3, 5])))
 	
 	if ii ==0: 
-		plt.ylabel("Planet-to-star flux (ppt)", fontsize = 12, labelpad = 10)
+		plt.ylabel("Planet-to-star flux (ppt)", fontsize = 12, labelpad = 12)
+                ax.xaxis.set_major_locator(FixedLocator(np.array([0.1, 0.3, 0.5, 0.7, 0.9])))
+                ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
 		ax.set_xticklabels([])
 		ax.text(0.03, 3.8, 'Spitzer Ch 1\n3.6 $\mu$m', fontsize=10)
 	if ii == 1: 

@@ -145,7 +145,8 @@ for ii in range(1,len(bins)-1):
 	ind = (t>bins[ii-1])&(t < bins[ii])
 	binned_resid[ii] = np.mean(resid[ind]) 
 	sigma = np.sqrt(np.sum(err[ind]**2)/sum(ind)**2)
-#print "sr, sw", np.sqrt(np.std(binned_resid[1::])**2 -  sigma**2), sigma
+print "sr, sw", np.sqrt(np.std(binned_resid[1::])**2 -  sigma**2), sigma
+print "sr/sw", np.sqrt(np.std(binned_resid[1::])**2 -  sigma**2)/sigma
 # s^2 = sw^2 + sr^2
 sr = np.sqrt(np.std(binned_resid[1::])**2 -  sigma**2)
 

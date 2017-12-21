@@ -12,60 +12,57 @@ Repeated entry---line 3397 of file ms.bib.bib
  : @article{stevenson12
  :                     ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 3620 of file ms.bib.bib
+ : @article{zhou17
+ :                ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "knutson??"
 Warning--I didn't find a database entry for "stevenson???"
-Warning--I didn't find a database entry for "h1999"
-Warning--I didn't find a database entry for "ehf2003"
 Warning--I didn't find a database entry for "getal2014"
-Warning--I didn't find a database entry for "louden17"
-Warning--I didn't find a database entry for "zhang16"
-Warning--I didn't find a database entry for "zhu17"
-Warning--I didn't find a database entry for "FIXME"
-Warning--I didn't find a database entry for "kass95"
 Warning--I didn't find a database entry for "arcangeli18"
 Warning--I didn't find a database entry for "mansfield18"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty institution in long15
 Warning--empty institution in mccullough12
-You've used 22 entries,
+You've used 31 entries,
             3222 wiz_defined-function locations,
-            829 strings with 10678 characters,
-and the built_in function-call counts, 10599 in all, are:
-= -- 788
-> -- 937
-< -- 6
-+ -- 310
-- -- 337
-* -- 978
-:= -- 2002
-add.period$ -- 22
-call.type$ -- 22
-change.case$ -- 117
-chr.to.int$ -- 20
-cite$ -- 24
-duplicate$ -- 392
-empty$ -- 607
-format.name$ -- 365
-if$ -- 2087
+            889 strings with 12651 characters,
+and the built_in function-call counts, 14559 in all, are:
+= -- 1120
+> -- 1223
+< -- 11
++ -- 405
+- -- 438
+* -- 1305
+:= -- 2724
+add.period$ -- 32
+call.type$ -- 31
+change.case$ -- 168
+chr.to.int$ -- 29
+cite$ -- 33
+duplicate$ -- 553
+empty$ -- 858
+format.name$ -- 485
+if$ -- 2890
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 20
-newline$ -- 71
-num.names$ -- 88
-pop$ -- 167
+missing$ -- 29
+newline$ -- 99
+num.names$ -- 124
+pop$ -- 240
 preamble$ -- 1
-purify$ -- 115
+purify$ -- 166
 quote$ -- 0
-skip$ -- 285
+skip$ -- 407
 stack$ -- 0
-substring$ -- 330
+substring$ -- 473
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
+type$ -- 279
 warning$ -- 2
-while$ -- 77
+while$ -- 111
 width$ -- 0
-write$ -- 224
-(There were 2 error messages)
+write$ -- 316
+(There were 3 error messages)

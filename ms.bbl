@@ -10,6 +10,9 @@
   {Knutson}}]{cartier17}
 {Cartier}, K.~M.~S., {Beatty}, T.~G., {Zhao}, M., {et~al.} 2017, \aj, 153, 34
 
+\bibitem[{{Cowan} \& {Agol}(2008)}]{cowan08}
+{Cowan}, N.~B., \& {Agol}, E. 2008, \apjl, 678, L129
+
 \bibitem[{{Foreman-Mackey} {et~al.}(2013){Foreman-Mackey}, {Hogg}, {Lang}, \&
   {Goodman}}]{foremanmackey13}
 {Foreman-Mackey}, D., {Hogg}, D.~W., {Lang}, D., \& {Goodman}, J. 2013, \pasp,
@@ -22,6 +25,9 @@
 {Gillon}, M., {Anderson}, D.~R., {Collier-Cameron}, A., {et~al.} 2014, \aap,
   562, L3
 
+\bibitem[{{Henry}(1999)}]{henry99}
+{Henry}, G.~W. 1999, \pasp, 111, 845
+
 \bibitem[{{Horne}(1986)}]{horne86}
 {Horne}, K. 1986, \pasp, 98, 609
 
@@ -29,6 +35,17 @@
   {Homeier}, {Reiners}, {Barman}, \& {Hauschildt}}]{husser13}
 {Husser}, T.-O., {Wende-von Berg}, S., {Dreizler}, S., {et~al.} 2013, \aap,
   553, A6
+
+\bibitem[{Kass \& Raftery(1995)}]{kass95}
+Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
+  Association, 90, 773.
+\newblock
+  \url{http://amstat.tandfonline.com/doi/abs/10.1080/01621459.1995.10476572}
+
+\bibitem[{{Knutson} {et~al.}(2009){Knutson}, {Charbonneau}, {Cowan}, {Fortney},
+  {Showman}, {Agol}, \& {Henry}}]{knutson09}
+{Knutson}, H.~A., {Charbonneau}, D., {Cowan}, N.~B., {et~al.} 2009, \apj, 703,
+  769
 
 \bibitem[{{Komacek} \& {Showman}(2016)}]{komacek16}
 {Komacek}, T.~D., \& {Showman}, A.~P. 2016, \apj, 821, 16
@@ -70,6 +87,9 @@
   WFC3 IR Detector: an Improved Model Incorporating the Effects of Exposure
   Time}, Tech. rep.
 
+\bibitem[{{Louden} \& {Kreidberg}(2017)}]{louden17}
+{Louden}, T., \& {Kreidberg}, L. 2017, ArXiv e-prints, arXiv:1711.00494
+
 \bibitem[{{Madhusudhan} {et~al.}(2011){Madhusudhan}, {Harrington}, {Stevenson},
   {Nymeyer}, {Campo}, {Wheatley}, {Deming}, {Blecic}, {Hardy}, {Lust},
   {Anderson}, {Collier-Cameron}, {Britt}, {Bowman}, {Hebb}, {Hellier},
@@ -86,6 +106,9 @@
 {Mordasini}, C., {van Boekel}, R., {Molli{\`e}re}, P., {Henning}, T., \&
   {Benneke}, B. 2016, \apj, 832, 41
 
+\bibitem[{{Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{pont06}
+{Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, \mnras, 373, 231
+
 \bibitem[{{Southworth} {et~al.}(2015){Southworth}, {Mancini}, {Ciceri},
   {Budaj}, {Dominik}, {Figuera Jaimes}, {Haugb{\o}lle}, {J{\o}rgensen},
   {Popovas}, {Rabus}, {Rahvar}, {von Essen}, {Schmidt}, {Wertz}, {Alsubai},
@@ -100,6 +123,13 @@
 {Stevenson}, K.~B., {Harrington}, J., {Fortney}, J.~J., {et~al.} 2012, \apj,
   754, 136
 
+\bibitem[{{Stevenson} {et~al.}(2014){Stevenson}, {D{\'e}sert}, {Line}, {Bean},
+  {Fortney}, {Showman}, {Kataria}, {Kreidberg}, {McCullough}, {Henry},
+  {Charbonneau}, {Burrows}, {Seager}, {Madhusudhan}, {Williamson}, \&
+  {Homeier}}]{stevenson14}
+{Stevenson}, K.~B., {D{\'e}sert}, J.-M., {Line}, M.~R., {et~al.} 2014, Science,
+  346, 838
+
 \bibitem[{{W{\"o}llert} \& {Brandner}(2015)}]{wollert15}
 {W{\"o}llert}, M., \& {Brandner}, W. 2015, \aap, 579, A129
 
@@ -107,5 +137,11 @@
   {Owen}}]{wong04}
 {Wong}, M.~H., {Mahaffy}, P.~R., {Atreya}, S.~K., {Niemann}, H.~B., \& {Owen},
   T.~C. 2004, \icarus, 171, 153
+
+\bibitem[{{Zhang} \& {Showman}(2017)}]{zhang17}
+{Zhang}, X., \& {Showman}, A.~P. 2017, \apj, 836, 73
+
+\bibitem[{{Zhou} {et~al.}(2017){Zhou}, {Apai}, {Lew}, \& {Schneider}}]{zhou17}
+{Zhou}, Y., {Apai}, D., {Lew}, B.~W.~P., \& {Schneider}, G. 2017, \aj, 153, 243
 
 \end{thebibliography}
