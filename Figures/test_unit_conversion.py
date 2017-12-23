@@ -6,7 +6,7 @@ from astropy import modeling
 def rescale(data, model):
     ind = data == 0
     data = np.ma.array(data, mask = ind)
-    scale = np.linspace(0.01, 10, 1000.)
+    scale = np.linspace(0.01, 10, 100.)
     chi2best, scalebest = 1.e10, -1.
     for s in scale:
         chi2 = np.sum((data - model*s)**2)
@@ -17,14 +17,12 @@ def rescale(data, model):
 
 
 gs = gridspec.GridSpec(3, 3, hspace=0.1, wspace=0.3)
-
-ylo = [0, 5, 12]
-yhi = [6, 15, 33]
+C = 1.e10                               #normalization constant for plotting
 
 #WASP-103b spectra
 path = "W103_spectra/"
-Ts = [1911., 2408., 2921.] 
-#Ts = [1911., 2408., 2021.] 
+#Ts = [1911., 2408., 2921.] 
+Ts = [1922., 2408., 2982.]
 files = ["phase_0.10_wfc3.txt", "phase_0.25_wfc3.txt", "phase_0.5_wfc3.txt"]
 
 star = np.genfromtxt(path+"wasp103_sed_fluxes.out")
@@ -38,16 +36,12 @@ labels = ["nightside", "quadrature", "dayside"]
 for i, f in enumerate(files):
 	ax = plt.subplot(gs[i,0])
 
-	w = np.linspace(1.0, 1.8, 100)*1.e-6
-	T = Ts[i]
-
 	d = np.genfromtxt(path+files[i]) 
-	w = d[:,0]
-	fs = np.interp(w, star_wave, star_flux)
+        fs = np.interp(d[:,0], star_wave, star_flux)
 	fp = d[:,1]*fs
 	fp_err = d[:,2]*fs
 	
-	plt.errorbar(w, fp, yerr = fp_err, fmt = '.k', zorder=100)
+        plt.errorbar(d[:,0], fp*C, yerr = fp_err*C, fmt = '.k', zorder=100)
 	
     	#plt.plot(w, fp, linewidth = 0., label = str(Ts[i])+ " K")
 
@@ -55,30 +49,21 @@ for i, f in enumerate(files):
         bb = modeling.blackbody.blackbody_lambda(w*1.e4, Ts[i])       #wavelength in angstroms
         bb = bb*4.*np.pi*1.e4*w        #multiplies by 4 pi steradians * 10000. angstroms/micron * micron
         scale = 1.2533e19  #(10 pc/jupiter radius)^2
-        plt.plot(w, bb/scale/np.pi)
+        blackbody =  bb/scale/np.pi
+
+        model = np.interp(d[:,0], w, blackbody)
+        plt.plot(w, blackbody*rescale(fp,model)*C, color = '0.5', linestyle = 'dotted')
 
 	plt.legend(loc = 'upper right', handlelength = 0., frameon=False, fontsize=9)
 
-	plt.ylabel("erg/s/cm$^2$")
+        if i == 1: plt.ylabel("erg/s/cm$^2$ [$\\times10^{-10}$]")
 	plt.xlim(1.0,1.8)
-	#plt.ylim(ylo[i], yhi[i])
+	#plt.ylim(0.5*np.min(blackbody.value), 1.7*np.max(blackbody.value))
 
-	if i != 3: plt.gca().set_xticks([])
-	if i == 3: plt.xlabel("Wavelength (microns)")
+	if i != 2: plt.gca().set_xticklabels([])
 	if i == 0 : plt.title("WASP-103b")	
 
 #Brown dwarf spectra
-"""temp object
-1918 +- 72  2MASSJ13204427p0409045_spec_app.txt
-1988 +- 75  2MASSIJ2104149m103736_spec_app.txt
-1995 +- 77  2MASSWJ1506544p132106_spec_app.txt
-2212 +- 55  2MASPJ0345432p254023_spec_app.txt
-2275 +- 56  LHS2924_spec_app.txt
-2585 +- 46  2MASSJ03205965p1854233_spec_app.txt
-2658 +- 121 LHS2021_spec_app.txt
-2817 +- 59  2MASSJ03510004m0052452_spec_app.txt
-2873 +- 75  2MASSJ00034227m2822410_spec_app.txt"""
-
 
 path = "BD_spectra/"
 files = ["For_Laura1320+0409 (L3:) SED.txt", "0428-2253 (L0.5) SED.txt", "For_Laura0003-2822 (M7.5) SED.txt"]
@@ -96,10 +81,10 @@ for i, f in enumerate(files):
     w = np.linspace(1, 2, 10)
     bb = modeling.blackbody.blackbody_lambda(w*1.e4, Ts[i])       #wavelength in angstroms
     bb = bb*4.*np.pi*1.e4*w        #multiplies by 4 pi steradians * 10000. angstroms/micron * micron
-    plt.plot(w, bb*normalization[i]/np.pi)
+    plt.plot(w, bb*normalization[i]/np.pi*C, color = '0.5', linestyle = 'dotted')
 
     d = np.genfromtxt(path + f)
-    plt.plot(d[:,0], d[:,1]*1e4*d[:,0])             #original flux in ergs/cm^2/s/Angstrom (so multiply by wavelength in angstroms)
+    plt.plot(d[:,0], d[:,1]*1e4*d[:,0]*C, color = 'k')             #original flux in ergs/cm^2/s/Angstrom (so multiply by wavelength in angstroms)
 
     #plt.plot(d[:,0], d[:,1], linewidth = 0., label = str(Ts[i])+ " K")
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False, fontsize=9)
@@ -109,9 +94,8 @@ for i, f in enumerate(files):
     plt.xlim(1.0,1.8)
     #plt.ylim(ylo[i], yhi[i])
 
-    if i != 3: plt.gca().set_xticks([])
-    if i == 3: plt.xlabel("Wavelength (microns)")
-    #if i == 1: plt.gca().set_yticks([5, 10, 15])
+    if i != 2: plt.gca().set_xticks([])
+    if i == 2: plt.xlabel("Wavelength (microns)")
     if i == 0 : plt.title("Brown dwarfs")	
 
 #Directly imaged spectra
@@ -137,6 +121,8 @@ guess = 1.e6
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,2])
     d = np.genfromtxt(path + f)
+    ind = (d[:,0]>1.1)&(d[:,0]<1.7)
+    d = d[ind]
     data = d[:,1]*1.e3*d[:,0]
     
     w = np.linspace(1, 2, 20)
@@ -145,16 +131,13 @@ for i, f in enumerate(files):
     normalization = 1.2533e19*np.pi             #(10 pc/jupiter radius)^2
     bb = bb/normalization
     model = np.interp(d[:,0], w, bb)
-    plt.plot(w, bb*rescale(data, model)) 
+    plt.plot(w, bb*rescale(data, model)*C, color = '0.5', linestyle = 'dotted') 
 
-    plt.plot(d[:,0], data)
+    plt.plot(d[:,0], data*C, color = 'k')
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False, fontsize=9)
 
-    #if i == 2: plt.ylim(ylo[i], yhi[i])
     plt.xlim(1.0,1.8)
-    #plt.gca().set_yticks([])
-    if i != 3: plt.gca().set_xticks([])
-    if i == 3: plt.xlabel("Wavelength (microns)")
+    if i != 2: plt.gca().set_xticks([])
     if i == 0: plt.title("Imaged planets")
 
 #plt.tight_layout()
