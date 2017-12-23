@@ -3,6 +3,19 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from astropy import modeling
 
+def rescale(data, model):
+    ind = data == 0
+    data = np.ma.array(data, mask = ind)
+    scale = np.linspace(0.01, 10, 1000.)
+    chi2best, scalebest = 1.e10, -1.
+    for s in scale:
+        chi2 = np.sum((data - model*s)**2)
+        if chi2 < chi2best:
+                chi2best = chi2
+                scalebest = s
+    return scalebest
+
+
 gs = gridspec.GridSpec(3, 3, hspace=0.1, wspace=0.3)
 
 ylo = [0, 5, 12]
@@ -11,6 +24,7 @@ yhi = [6, 15, 33]
 #WASP-103b spectra
 path = "W103_spectra/"
 Ts = [1911., 2408., 2921.] 
+#Ts = [1911., 2408., 2021.] 
 files = ["phase_0.10_wfc3.txt", "phase_0.25_wfc3.txt", "phase_0.5_wfc3.txt"]
 
 star = np.genfromtxt(path+"wasp103_sed_fluxes.out")
@@ -37,12 +51,11 @@ for i, f in enumerate(files):
 	
     	#plt.plot(w, fp, linewidth = 0., label = str(Ts[i])+ " K")
 
-        w = np.linspace(1, 2, 10)
-        flux = modeling.blackbody.blackbody_lambda(w*1.e4, Ts[i])       #wavelength in angstroms
-        flux = flux*4.*np.pi*1.e4*w        #multiplies by 4 pi steradians * 10000. angstroms/micron * micron
-        scale = 1.863e19  #(10 pc/jupiter radius)^2
-        print "have to scale by correct planet radius"
-        plt.plot(w, flux/scale)
+        w = np.linspace(1, 2, 20)
+        bb = modeling.blackbody.blackbody_lambda(w*1.e4, Ts[i])       #wavelength in angstroms
+        bb = bb*4.*np.pi*1.e4*w        #multiplies by 4 pi steradians * 10000. angstroms/micron * micron
+        scale = 1.2533e19  #(10 pc/jupiter radius)^2
+        plt.plot(w, bb/scale/np.pi)
 
 	plt.legend(loc = 'upper right', handlelength = 0., frameon=False, fontsize=9)
 
@@ -66,29 +79,24 @@ for i, f in enumerate(files):
 2817 +- 59  2MASSJ03510004m0052452_spec_app.txt
 2873 +- 75  2MASSJ00034227m2822410_spec_app.txt"""
 
-#original spectra
-#path = "BD_spectra_original/"
-#files = ["2MASSJ13204427p0409045_spec_app.txt", "LHS2924_spec_app.txt", "2MASSJ00034227m2822410_spec_app.txt"]
-#names = ["1320+0409", "1428+3310", "0003-2822"]
 
 path = "BD_spectra/"
 files = ["For_Laura1320+0409 (L3:) SED.txt", "0428-2253 (L0.5) SED.txt", "For_Laura0003-2822 (M7.5) SED.txt"]
 names = ["1320+0409", "0024-0158", "0003-2822"]
+Ts = [1875., 2429., 2889.]
+distance = np.array([30.96, 25.99,38.91])
+radius = np.array([1.01, 1.1,  1.33])
 
-#Ts = [1918., 2275., 2873.]
-#distance = np.array([30.96, 11.01, 38.91])			#parsecs
-#radius = np.array([1.01, 1.06, 1.32])				#jupiter radii
-#unit_conversion = (distance/radius)**2*1.863e17*10.		#(r/d)^2 in dimensionless units *10 to get in W/m^2/micron from ergs/A/cm^2/s
+normalization = radius**2*5.368e-20     #radius*(1 rjup/10 pc)**2        
 
 for i, f in enumerate(files):
 
     ax = plt.subplot(gs[i,1])
 
-    w = np.linspace(1.0, 1.8, 100)*1.e-6
-    """T = Ts[i]
-    flux = blackbody(w, T)/scale
-    plt.plot(w*1e6, flux)
-    plt.plot(w*1e6, flux, color = 'w', linewidth=0., label = names[i])"""
+    w = np.linspace(1, 2, 10)
+    bb = modeling.blackbody.blackbody_lambda(w*1.e4, Ts[i])       #wavelength in angstroms
+    bb = bb*4.*np.pi*1.e4*w        #multiplies by 4 pi steradians * 10000. angstroms/micron * micron
+    plt.plot(w, bb*normalization[i]/np.pi)
 
     d = np.genfromtxt(path + f)
     plt.plot(d[:,0], d[:,1]*1e4*d[:,0])             #original flux in ergs/cm^2/s/Angstrom (so multiply by wavelength in angstroms)
@@ -97,7 +105,6 @@ for i, f in enumerate(files):
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False, fontsize=9)
 #    plt.gca().text(1, 1, str(Ts[i]))	#doesn't work bc it goes on last frame
 
-    #plt.ylabel("W/m$^2$/$\mu$m")
 
     plt.xlim(1.0,1.8)
     #plt.ylim(ylo[i], yhi[i])
@@ -124,14 +131,23 @@ USCOCTIO108B    M9.5    2300K"""
 path = "Direct_Image_Spectra/"
 files = ["1RXSJ160929.1-210524b_Kreidberg.txt", "J1610-1913B_Kreidberg.txt", "TWA22A_Kreidberg.txt"]
 name = ["1RXS", "J1610", "TWA22A"]
+Ts = [1800., 2400., 3000.] 
 
 guess = 1.e6
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,2])
     d = np.genfromtxt(path + f)
-    #plt.plot(d[:,0], d[:,1]*1.863e17*1.e2/guess)
-    plt.plot(d[:,0], d[:,1]*1.e3*d[:,0])
+    data = d[:,1]*1.e3*d[:,0]
+    
+    w = np.linspace(1, 2, 20)
+    bb = modeling.blackbody.blackbody_lambda(w*1.e4, Ts[i])       #wavelength in angstroms
+    bb = bb*4.*np.pi*1.e4*w                     #multiplies by 4 pi steradians * 10000. angstroms/micron * micron
+    normalization = 1.2533e19*np.pi             #(10 pc/jupiter radius)^2
+    bb = bb/normalization
+    model = np.interp(d[:,0], w, bb)
+    plt.plot(w, bb*rescale(data, model)) 
 
+    plt.plot(d[:,0], data)
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False, fontsize=9)
 
     #if i == 2: plt.ylim(ylo[i], yhi[i])
@@ -142,4 +158,5 @@ for i, f in enumerate(files):
     if i == 0: plt.title("Imaged planets")
 
 #plt.tight_layout()
-plt.show()
+plt.savefig("test_unit_conversion.pdf")
+#plt.show()
