@@ -3,11 +3,23 @@ import numpy as np
 import os, glob
 from lc_fit import Model, LightCurveData
 import pickle
+import seaborn as sns
+from scipy.interpolate import interp1d
+
+sns.set_context("paper")
+sns.set_style("white")
+sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
 gcm_path = "./Vivien_models2"
 gcms = glob.glob(os.path.join(gcm_path, "PC*PT.dat"))
 
-labels = ["NoTiO", "Drag1", "Drag2", "Drag3", "Met0.5", "TiO"]
+labels = ["$\\tau_\mathrm{drag} = 10^4$ s", "$\\tau_\mathrm{drag} = 10^3$ s", "[Fe/H] = 0.5", "nominal GCM"]
+
+plt.figure(figsize = (4, 2.5))
+
+#colors = ["#be0119", "#f97306", "#04d9ff", "#0165fc"]
+colors = ["#be0119", "#f97306", "#6dedfd", "#0165fc"]
+ls = [":", "--", "-.", "-"]
 
 
 def proj_area(phi, inc):
@@ -32,16 +44,25 @@ def proj_area(phi, inc):
 
 inc = 1.523
 
-plt.subplot(211)
 #plot gcms
 for i, g in enumerate(gcms):
     print g,
     model = np.genfromtxt(g, delimiter = ',') 
     phi = model[:,0]/360.*2.*np.pi
     area = proj_area(phi, inc)
-    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3, label = labels[i])
-    print (np.max(model[:,5]) - np.min(model[:,1]))*1e3
-    
+    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, label = labels[i], color = colors[i], linestyle = ls[i])
+    ind = model[:,5] == np.max(model[:,5])
+
+    x, y = model[:,0]/360. + 0.5, model[:,5]
+    f = interp1d(x, y, kind = 'cubic')
+    xnew = np.linspace(0, 1, 1000)
+    ynew = f(xnew)
+    ind = ynew == np.max(ynew)
+    offset = xnew[ind]
+    print "hotspot offset", (offset - 0.5)*360.
+
+    #print "hotspot offset", model[ind,0]/360 + 0.5
+    #print (np.max(model[:,5]) - np.min(model[:,1]))*1e3
 
 
 f = "./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"
@@ -56,53 +77,20 @@ phase = m.phase[ind]
 data_corr = m.data_corr[ind]
 bestfit = m.bestfit[ind]
 
-
 ind = np.argsort(phase)
 err, phase, data_corr, bestfit = err[ind], phase[ind], data_corr[ind], bestfit[ind] #sorts by phase
 
-plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'k', label = 'best fit')
+plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2', label = 'best fit')
 
-plt.legend(loc = 'upper right')
-plt.ylim(0., 2)
-plt.ylabel("fp/fs")
+plt.xlim(0, 1.1)
+plt.ylim(-0.1, 1.8)
+plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Phase")
-plt.title("No ellipsoidal correction")
 
-
-plt.subplot(212)
-#plot gcms
-for i, g in enumerate(gcms):
-    print g,
-    model = np.genfromtxt(g, delimiter = ',') 
-    phi = model[:,0]/360.*2.*np.pi
-    area = proj_area(phi, inc)
-    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, label = labels[i])
-    print (np.max(model[:,5]) - np.min(model[:,1]))*1e3
-
-
-f = "./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"
-p = pickle.load(open(f, 'rb'))
-d, m, par = p[0], p[1], p[2]		#stores data,  model, and best fit parameters into d, m, & par
-dilution = d.dilution + 1.
-
-ind = d.err < 9.0e7			#indices of outliers
-
-err = d.err[ind]/d.flux[ind]		#normalized per point uncertainty 
-phase = m.phase[ind]
-data_corr = m.data_corr[ind]
-bestfit = m.bestfit[ind]
-
-
-ind = np.argsort(phase)
-err, phase, data_corr, bestfit = err[ind], phase[ind], data_corr[ind], bestfit[ind] #sorts by phase
-
-plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'k', label = 'best fit')
-plt.ylim(0., 2)
-plt.ylabel("fp/fs")
-plt.xlabel("Phase")
-plt.legend(loc = 'upper right')
-plt.title("Ellipsoidal correction")
+ax = plt.gca()
+handles, labels = ax.get_legend_handles_labels()
+ax.legend(handles[::-1], labels[::-1], loc='upper right')
 
 plt.tight_layout()
 plt.savefig("gcm_comparison.pdf")
-plt.show()
+#plt.show()

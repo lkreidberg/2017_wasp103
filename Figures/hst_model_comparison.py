@@ -189,7 +189,7 @@ cb.set_label("Temperature (Kelvin)")
 models = ["spherical", "hotspot_t", 'zhang']
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #WFC3
-colors = ['#02ccfe', 'blue', '#ff7855'] 
+colors = ['#02ccfe', 'purple', '#ff7855'] 
 grays = ['0.7', '0.5', '0.6']
 labels = ["Sph. harmonics",  "Two temp.", "Kinematic"] 
 #linestyle = ['-', '-.', ':']

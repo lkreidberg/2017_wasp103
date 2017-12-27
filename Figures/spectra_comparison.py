@@ -4,7 +4,7 @@ import matplotlib.gridspec as gridspec
 from astropy import modeling
 import seaborn as sns
 
-sns.set_context("talk")
+sns.set_context("paper")
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
@@ -48,9 +48,10 @@ star_flux = star[:,1]	                        #[ergs/s/cm^2]
 star_flux = star_flux*(470/10.)**2		#convert to absolute flux (10 pc)
 
 labels = ["nightside", "quadrature", "dayside"]
-ylo = [0., 0.9, 3.]
-yhi = [1.1, 2.3, 4.3]
+ylo = [0., 0.9, 2.8]
+yhi = [1.15, 2.3, 4.3]
 
+plt.figure(figsize = (7.5, 3.5))
 #data_w, data, data_err; C; model_w, model
 
 for i, f in enumerate(files):
@@ -113,7 +114,7 @@ for i, f in enumerate(files):
     plt.xlim(1.0,1.75)
     plt.ylim(ylo[i], yhi[i])
 
-    if i != 2: plt.gca().set_xticks([])
+    if i != 2: plt.gca().set_xticklabels([])
     if i == 2: plt.xlabel("Wavelength (microns)")
     if i == 0 : plt.title("Brown dwarfs")	
 
@@ -148,7 +149,7 @@ for i, f in enumerate(files):
     plt.xlim(1.0,1.75)
     plt.ylim(ylo[i], yhi[i])
 
-    if i != 2: plt.gca().set_xticks([])
+    if i != 2: plt.gca().set_xticklabels([])
     if i == 0: plt.title("Imaged planets")
 
 #plt.tight_layout()

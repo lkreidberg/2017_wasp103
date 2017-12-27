@@ -407,7 +407,21 @@ This agreement is an encouraging sanity check; however, there are several model 
 %\subsection{Bond Albedo}
 
 \subsection{Comparison with GCMs}
-To explore the three-dimensional effects of atmospheric dynamics, we ran several GCM models to compare with the measured phase-resolved spectra. 
+To explore the three-dimensional effects of atmospheric dynamics, we ran several GCM models to compare with the measured phase-resolved spectra. (\textbf{Vivien: paragraph describing GCM}).
+
+Figure\,\ref{fig:gcmcomparison} shows GCM predictions compared to the best fit model to the WFC3 phase curve. The WFC3 bandpass is near the peak of the planet's thermal emission, so it provides a good test of whether the GCM reproduces the properties of the planet.  Our nominal model was a cloud-free, solar composition atmosphere with TiO/VO opacity and no added drag. This model qualitatively reproduces some features of the data, such as the large day-night temperature contrast; however, it predicts a larger offset in peak brightness from the substellar point than we observe. 
+
+To achieve a better fit to the data, we varied the nominal model parameters. We tested models with enhanced metallicity ([Fe/H] = 0.5), no TiO/VO, and added atmospheric drag.  Lorentz drag can occur in the hottest exoplanet atmospheres, which may be partially ionized and coupled to the background magnetic field. We parameterized the drag (\textbf{Vivien: how did you model drag?}), with timescales were $\tau_\mathrm{drag} = 10^3, 10^4$ and $10^6$ s. 
+
+The models with added drag more closely reproduce the small hotspot offset that is observed. The main effect of drag is to slow down advection of heat to the nightside, which shifts the peak brightness closer to the substellar point.  The best fit WFC3 phase curve has a hotspot offset of FIXME. The drag models have offsets of $0.2$ and $2.3$ degrees for $\tau_\mathrm{drag} = 10^3$ and $10^4$ s, compared to $15$ degrees for the nominal GCM.  The drag models also provide a good match to the observed dayside flux, for drag timescales in the range $\tau_\mathrm{drag} = 10^3 - 10^4$ s.  However, the drag models underestimate the flux at longitudes away from the substellar point, predicting a flux FIXME less than what is observed. \textbf{Vivien: are these fast drag timescales even reasonable?}).
+
+Water dissociation!
+
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{Figures/gcm_comparison.pdf}
+\caption{GCM predictions (colored lines) compared to the best fit model for the WFC3 white light phase curve (black line). The nominal model is solar composition, cloud-free, with TiO/VO opacity and no drag. The models are multiplied by the predicted ellipsoidal variability of the planet.}
+\label{fig:gcmcomparison}
+\end{figure}
 
 %\begin{figure}
 %	\includegraphics[width = 1.0\textwidth]{WASP-103b-Solar-NoClouds-Photo-abundances-Water-CO-4.5microns-smooth.pdf}
@@ -422,6 +436,12 @@ WASP-103b is so highly irradiated that its photospheric temperature ($2000 - 300
 Sample of directly imaged planets
 
 cite Tremblin et al. 2017 ? (https://arxiv.org/pdf/1710.02640.pdf)
+
+\begin{figure*}
+\includegraphics[width = 1.0\textwidth]{Figures/spectra_comparison.pdf}
+\caption{Spectra for WASP-103b (left column) compared to brown dwarfs (middle) and directly imaged companions (right). The WASP-103b spectra are from the nightside (phase 0.1, top row), quadrature (phase 0.25, middle) and the dayside (phase 0.5, bottom). Each row shows spectra from objects of comparable temperature. The dotted gray line corresponds to the best fit blackbody. Effective temperatures are listed in the upper right corners.}
+\label{fig:planetstarcomparison}
+\end{figure*}
 
 \section{Discussion and Conclusions}
 One-dimensional retrieval is probably wrong, since we showed the dayside may have a large temperature gradient -> should work on this in the future.
