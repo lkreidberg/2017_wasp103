@@ -49,7 +49,7 @@ star_flux = star_flux*(470/10.)**2		#convert to absolute flux (10 pc)
 
 labels = ["nightside", "quadrature", "dayside"]
 ylo = [0., 0.9, 3.]
-yhi = [1.1, 2.2, 4.3]
+yhi = [1.1, 2.3, 4.3]
 
 #data_w, data, data_err; C; model_w, model
 
@@ -89,7 +89,7 @@ Ts = [1875, 2429, 2889]
 distance = np.array([30.96, 25.99,38.91])
 radius = np.array([1.01, 1.1,  1.33])
 ylo = [0.05, 0.6, 2.0]
-yhi = [0.5, 1.4, 4.1]
+yhi = [0.5, 1.45, 4.1]
 
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,1])
@@ -124,7 +124,7 @@ files = ["1RXSJ160929.1-210524b_Kreidberg.txt", "J1610-1913B_Kreidberg.txt", "TW
 name = ["1RXS", "J1610", "TWA22A"]
 Ts = [1800, 2400, 3000] 
 ylo = [0., 11., 11.]
-yhi = [1.1, 23., 22.]
+yhi = [1.3, 23., 22.]
 
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,2])
