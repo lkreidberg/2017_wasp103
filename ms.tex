@@ -291,7 +291,7 @@ To test that the phase-resolved spectra are robust to different approaches for f
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/hst_model_comparison.pdf}
-\caption{Left: fits to the broadband WFC3 phase curve. Right: best fit temperature maps.}
+\caption{\textbf{Left:} fits to the broadband WFC3 phase curve compared to a GCM. The colored lines correspond to different temperature maps fit to the data, and the dashed gray line is from the $\tau_\mathrm{drag} = 10^3$ GCM. We also show the planet-to-star flux corresponding to each map (points). The planet-to-star flux is model-dependent due to slight degeneracies with the instrument systematic model.  \textbf{Right:} temperature maps from the best fit models and the GCM at 0.1 bar.}
 \label{fig:model_comparison}
 \end{figure*}
 
@@ -365,7 +365,7 @@ We also fit blackbody models to the WFC3 data only, and found that they provide 
 \subsection{Grid-Based Retrieval}
 Since the phase-resolved spectra do not show spectrally resolved molecular features, we opted for a simple grid-based fit to the planet's atmospheric properties, similar to the grid search used in Mansfield et al. and Arcangeli et al. (in prep). We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities, carbon-to-oxygen ratios (C/O), and stellar irradiation. The stellar spectrum is scaled in intensity over the grid to model the unknown heat redistribution for the planet; i.e., a lower dayside irradiation is equivalent to more efficient heat transport to the nightside. 
 
-At each point in the grid, we compute forward models to determine self-consistent, radiative-convective temperature-pressure (T-P) profiles. We determine the molecular abundances in each atmospheric layer assuming thermochemical equilibrium.  We include opacity from the major absorbers expected for a hot Jupiter atmosphere, including H$_2$O, CO, CO$_2$, TiO, and VO (\textbf{Mike: what others?}). Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is expected because water dissociates at dayisde photospheric temperature and pressure (3000 K, 0.1 bar).  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13}, and interpolated in the grid to calculate the likelihood at each model step. We fit this model to the dayside and nightside emission spectra (phases $\phi = 0.5$ and $0.1$). 
+At each point in the grid, we compute forward models to determine self-consistent, radiative-convective temperature-pressure (T-P) profiles. We determine the molecular abundances in each atmospheric layer assuming thermochemical equilibrium.  We include opacity from the major absorbers expected for a hot Jupiter atmosphere, including H$_2$O, CO, CO$_2$, TiO, and VO (\textbf{Mike: what others?}). Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is expected because water dissociates at dayside photospheric temperature and pressure (3000 K, 0.1 bar).  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13}, and interpolated in the grid to calculate the likelihood at each model step. We fit this model to the dayside and nightside emission spectra (phases $\phi = 0.5$ and $0.1$). 
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf}
@@ -409,13 +409,20 @@ This agreement is an encouraging sanity check; however, there are several model 
 \subsection{Comparison with GCMs}
 To explore the three-dimensional effects of atmospheric dynamics, we ran several GCM models to compare with the measured phase-resolved spectra. (\textbf{Vivien: paragraph describing GCM}).
 
+
 Figure\,\ref{fig:gcmcomparison} shows GCM predictions compared to the best fit model to the WFC3 phase curve. The WFC3 bandpass is near the peak of the planet's thermal emission, so it provides a good test of whether the GCM reproduces the properties of the planet.  Our nominal model was a cloud-free, solar composition atmosphere with TiO/VO opacity and no added drag. This model qualitatively reproduces some features of the data, such as the large day-night temperature contrast; however, it predicts a larger offset in peak brightness from the substellar point than we observe. 
 
 To achieve a better fit to the data, we varied the nominal model parameters. We tested models with enhanced metallicity ([Fe/H] = 0.5), no TiO/VO, and added atmospheric drag.  Lorentz drag can occur in the hottest exoplanet atmospheres, which may be partially ionized and coupled to the background magnetic field. We parameterized the drag (\textbf{Vivien: how did you model drag?}), with timescales were $\tau_\mathrm{drag} = 10^3, 10^4$ and $10^6$ s. 
 
-The models with added drag more closely reproduce the small hotspot offset that is observed. The main effect of drag is to slow down advection of heat to the nightside, which shifts the peak brightness closer to the substellar point.  The best fit WFC3 phase curve has a hotspot offset of FIXME. The drag models have offsets of $0.2$ and $2.3$ degrees for $\tau_\mathrm{drag} = 10^3$ and $10^4$ s, compared to $15$ degrees for the nominal GCM.  The drag models also provide a good match to the observed dayside flux, for drag timescales in the range $\tau_\mathrm{drag} = 10^3 - 10^4$ s.  However, the drag models underestimate the flux at longitudes away from the substellar point, predicting a flux FIXME less than what is observed. \textbf{Vivien: are these fast drag timescales even reasonable?}).
+The models with added drag more closely reproduce the small hotspot offset that is observed. The main effect of drag is to slow down advection of heat to the nightside, which shifts the peak brightness closer to the substellar point.  The best fit WFC3 phase curve has a hotspot offset of FIXME. The drag models have offsets of $0.2$ and $2.3$ degrees for $\tau_\mathrm{drag} = 10^3$ and $10^4$ s, compared to $15$ degrees for the nominal GCM.  The drag models also provide a good match to the observed dayside flux, for drag timescales in the range $\tau_\mathrm{drag} = 10^3 - 10^4$ s.  However, the drag models underestimate the flux at longitudes away from the substellar point, predicting 20\% less flux than is observed at quadrature. \textbf{Vivien: are these fast drag timescales even reasonable?}).
 
-Water dissociation!
+We also compared the GCM output to the temperature maps retrieved with \texttt{spiderman}. Figure\,\ref{fig:model_comparison} shows the 0.1 bar temperature map for the $\tau_\mathrm{drag} = 10^3$ GCM compared to the best it models. The GCM has a minimum and maximum temperature of $920$ and $3360$ K, which is most comparable to the fit from the spherical harmonic model.  The GCM nightside temperatures are around $300$ K cooler than the spherical harmonics fit, 
+
+. The polar regions are the most discrepant, with temperatures are about $1000$ K cooler in the GCM than the spherical harmonics model.
+
+The GCMs also provide insight into what molecules are present in which parts of the atmosphere. As discussed in \S\,\ref{sec:composition}, water dissociation and H- opacity are needed to explain the dayside emission spectrum. Figure\,\ref{fig:gcmcomposition} shows the photospheric abundances of H$_2$O and H- compared to the predicted temperature for the $\tau_\mathrm{drag} = 10^3$ GCM. The water abundance drops by $\sim10$ at the substellar point, and the H- opacity increases by $\sim100$. 
+
+\textbf{Vivien: did you run a cloudy model?}
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/gcm_comparison.pdf}
@@ -423,11 +430,11 @@ Water dissociation!
 \label{fig:gcmcomparison}
 \end{figure}
 
-%\begin{figure}
-%	\includegraphics[width = 1.0\textwidth]{WASP-103b-Solar-NoClouds-Photo-abundances-Water-CO-4.5microns-smooth.pdf}
-%\caption{Water.}
-%\label{fig:dayside}
-%\end{figure}
+\begin{figure*}
+	\includegraphics[width = 1.0\textwidth]{Figures/GCM_abundances.eps}
+\caption{Abundances of key molecular species for different viewing geometries, from the $\tau_\mathrm{drag} = 10^3$ GCM.}
+\label{fig:GCMabundance}
+\end{figure*}
 
 
 \section{Comparison with Brown Dwarfs and Directly Imaged Planets}

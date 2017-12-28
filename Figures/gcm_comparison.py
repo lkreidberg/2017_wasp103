@@ -51,7 +51,9 @@ for i, g in enumerate(gcms):
     phi = model[:,0]/360.*2.*np.pi
     area = proj_area(phi, inc)
     plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, label = labels[i], color = colors[i], linestyle = ls[i])
-    ind = model[:,5] == np.max(model[:,5])
+    plt.plot(model[:,0]/360. +1.5, model[:,5]*1e3*area, color = colors[i], linestyle = ls[i])
+
+    print "model quadrature", np.interp(0.25, model[:,0]/360. +0.5, model[:,5]*1e3*area) 
 
     x, y = model[:,0]/360. + 0.5, model[:,5]
     f = interp1d(x, y, kind = 'cubic')
@@ -59,10 +61,8 @@ for i, g in enumerate(gcms):
     ynew = f(xnew)
     ind = ynew == np.max(ynew)
     offset = xnew[ind]
-    print "hotspot offset", (offset - 0.5)*360.
+    #print "hotspot offset", (offset - 0.5)*360.
 
-    #print "hotspot offset", model[ind,0]/360 + 0.5
-    #print (np.max(model[:,5]) - np.min(model[:,1]))*1e3
 
 
 f = "./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"
@@ -81,6 +81,9 @@ ind = np.argsort(phase)
 err, phase, data_corr, bestfit = err[ind], phase[ind], data_corr[ind], bestfit[ind] #sorts by phase
 
 plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2', label = 'best fit')
+plt.plot(phase + 1., (bestfit-1.)*1e3*dilution, color = '0.2') 
+
+print "quadrature best fit", np.interp(0.25, phase, (bestfit - 1.)*1e3*dilution)
 
 plt.xlim(0, 1.1)
 plt.ylim(-0.1, 1.8)

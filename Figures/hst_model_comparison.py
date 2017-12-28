@@ -15,6 +15,25 @@ sns.set_context("notebook", font_scale = 1.0)
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"out", "ytick.direction":"out"})
 
+def proj_area(phi, inc):
+        R0 = 1.07e8             #planet radius in m
+        p = 0.00117             # planet-to-star mass ratio
+        r = 2.9695e9            #orbital separation in m
+        kn = 0.653              #from table B5 of Leconte et al. 2011
+        n = 1.005
+        qn = kn*(1.- n/5.)      #n 
+
+
+        alpha1 = 2.5*qn*R0**3/(p*r**3)
+        alpha2 = -1.25*qn*R0**3/(p*r**3)
+        alpha3 = alpha2
+
+        a1 = R0*(1+alpha1)
+        a2 = R0*(1+alpha2)
+        a3 = R0*(1+alpha3)
+
+        return  np.sqrt(a3**2*np.sin(inc)**2*(a1**2*np.sin(phi)**2+a2**2*np.cos(phi)**2)+ a1**2*a2**2*np.cos(inc)**2)/(a2*a3)
+
 
 #return blackbody spectral radiance as a function of wavelength lambda (in m) and temperature T (Kelvin)
 def bb(l, T):
@@ -141,7 +160,7 @@ for i, model in enumerate(models):
             fluxes += [line]
     
     fluxes = np.array(fluxes)
-    #if model == "spherical": fluxes = convert_to_T(fluxes*np.pi*np.sqrt(2))
+    if model == "spherical": fluxes = fluxes/np.pi 
 
     vmax = 3900.
     vmin = 0.
@@ -160,7 +179,8 @@ for i, model in enumerate(models):
     if row == 0: plt.gca().set_xticklabels([])
 
 #plots GCM
-GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-NEW-OPA-nit-1036800.dat", delimiter = ",")
+#GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-NEW-OPA-nit-1036800.dat", delimiter = ",")
+GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-Drag3-NEW-OPA-nit-1036800.dat", delimiter = ",")
 ax = plt.subplot(gs[1,3])
 Pref = 0.11542					#reference pressure in bars
 ind = GCM[:,3] == Pref
@@ -168,6 +188,7 @@ lat, lon = GCM[ind,1], GCM[ind,2]
 Ts = GCM[ind,4]
 
 fluxes = np.reshape(Ts, (-1, 30))
+print "max, min T", np.max(Ts), np.min(Ts)
 im = plt.imshow(fluxes.T, aspect='auto', interpolation='bilinear', cmap=cmap, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
 plt.gca().text(-160, 60, "GCM", bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=10) 
 plt.xticks([-180, -90,  0, 90, 180])
@@ -231,9 +252,22 @@ for i, model in enumerate(models):
 			binbestfit[j-1]=  np.mean(bestfit[ind])
 			bin_average[j-1] = (phasebins[j-1]+phasebins[j])/2.
 
-	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, linestyle='none', marker = '.', color = colors[i], ecolor = 'k', zorder = 10, alpha = 0.8)
+	#plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, linestyle='none', marker = '.', color = colors[i], ecolor = 'k', zorder = 10, alpha = 0.8)
+	plt.plot(bin_average, (bindata-1.)*1e3*dilution,  linestyle = 'none', marker ='.', color = colors[i], zorder = 10, alpha = 0.8)
 
         plt.plot(phase, (bestfit-1.)*1e3*dilution, color = colors[i], label = labels[i], alpha = 1.0, linestyle = linestyle[i])
+
+
+#plot GCM
+inc = 1.523
+gcms = ["./Vivien_models2/PC-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat"]
+#plot gcms
+for i, g in enumerate(gcms):
+    model = np.genfromtxt(g, delimiter = ',') 
+    phi = model[:,0]/360.*2.*np.pi
+    area = proj_area(phi, inc)
+    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, label = "GCM", color = '0.7', zorder = -20, linestyle = '--') 
+
 
 plt.title("WFC3 broadband phase curve")
 plt.legend(loc = 'upper left', frameon=False, fontsize=11)
