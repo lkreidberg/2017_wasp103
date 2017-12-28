@@ -2,6 +2,7 @@ import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import os, glob
+import pickle
 from lc_fit import Model, LightCurveData
 
 
@@ -132,22 +133,26 @@ for j in range(1, len(phasebins)):
 	spectra[i, j-1, 1] = np.sqrt(sig1**2 + sig2**2)		#quadrature add uncertainties from baseline and bin 
 
 n = len(dilution)
+data_wl, data, data_err,  best_fit_binned,  wl_hi,  y_hi_best, spec_arr, Tarr, P, samples = pickle.load(open("Mike_models/WASP-103b_grid_DAYSIDE_output.pic"))
 
-print "\\begin{deluxetable*}{llllllllllll}"
+print "\\begin{deluxetable*}{lllllllllll}"
 #\tabletypesize{\footnotesize} 
-print "\\tablecolumns{12}"
+print "\\tablecolumns{11}"
 print "\\tablewidth{0pt}:"
 print "\\tablecaption{Phase-Resolved Emission Spectra \label{table:spectra}}"
 print "\\tablehead{"
-print "\colhead{$\lambda$} & \colhead{Dilution} & \colhead{0.1} & \colhead{0.2} & \colhead{0.3} & \colhead{0.4} & \colhead{0.6} & \colhead{0.7} & \colhead{0.8} & \colhead{0.9} & \colhead{X} & \colhead{Y}}"
+print "\colhead{$\lambda$} & \colhead{Dilution} & \colhead{$\phi = 0.1$} & \colhead{$\phi = 0.2$} & \colhead{$\phi = 0.3$} & \colhead{$\phi = 0.4$} & \colhead{$\phi = 0.5$} & \colhead{$\phi = 0.6$} & \colhead{$\phi = 0.7$} & \colhead{$\phi = 0.8$} & \colhead{$\phi = 0.9$}}"
 print "\startdata"
 
 for j in range(len(dilution)):
 	print waves[j], "&", "{0:0.2f}".format(dilution[j]), "&",
 	for i in range(1, len(phasebins)):
-		if i < len(phasebins)-1: print "$", "{0:0d}".format(int((spectra[j, i-1,0]-1)*(1+dilution[j])*1e6)), "\\pm", "{0:0d}".format(int(spectra[j,i-1,1]*1e6)), "$", "&", 
-		else: print "$", "{0:0d}".format(int((spectra[j, i-1,0]-1)*(1+dilution[j])*1e6)), "\\pm", "{0:0d}".format(int(spectra[j,i-1,1]*1e6)), "$", "\\\\",
-		
+#                print "i, n = ", i, len(phasebins) - 1
+		if i < 5: print  "$", "{0:0d}".format(int((spectra[j, i-1,0]-1)*(1+dilution[j])*1e6)), "\\pm", "{0:0d}".format(int(spectra[j,i-1,1]*1e6)), "$", "&", 
+		elif (i==5) : print  "$", "{0:0d}".format(int(data[j]*1e6)), "\\pm", "{0:0d}".format(int(data_err[j]*1e6)), "$", "&", 
+		elif (i>6)&(i < (len(phasebins)-1)) : print  "$", "{0:0d}".format(int((spectra[j, i-1,0]-1)*(1+dilution[j])*1e6)), "\\pm", "{0:0d}".format(int(spectra[j,i-1,1]*1e6)), "$", "&", 
+		elif (i == len(phasebins)-1): print  "$", "{0:0d}".format(int((spectra[j, i-1,0]-1)*(1+dilution[j])*1e6)), "\\pm", "{0:0d}".format(int(spectra[j,i-1,1]*1e6)), "$", "\\\\",
+               # else: print "HEYOOOO BUG"
 	print ""
 
 print "\enddata"

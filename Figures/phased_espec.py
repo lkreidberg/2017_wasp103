@@ -22,7 +22,7 @@ def blackbody(l,T):
         return 2*h*c**2/(l**5*(np.exp(h*c/(l*k*T))-1))                 #[W/sr/m^3]
 
 def best_fit_bb(w, y, e, rprs):
-	Ts = np.linspace(300, 3600, 300)
+	Ts = np.linspace(1900, 3600, 10000)
 	chibest = 10000.
 	Tbest = 0.	
 	Tstar = 6110.
@@ -37,17 +37,23 @@ def best_fit_bb(w, y, e, rprs):
 	#get stellar spectrum
 	star = np.genfromtxt("wasp103_sed_fluxes.out")
 	star_bb = np.interp(w, star[:,0], star[:,1])*1.e24/(w*np.pi*4.)
+        chis = []
 
 	for T in Ts:
 		model = blackbody(w*1.0e-6, T)/star_bb*rprs**2
 		chi2 = np.sum((y - model)**2/e**2)
+                chis.append(chi2)
 		if chi2 < chibest: 
 			chibest, Tbest, resid = chi2, T, (y - model)/e
 	waves_hires = np.linspace(1.0, 5.0, 100)
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
 
 	outfile = open("temperatures.txt", "a")
-	print "T, chi2", Tbest, chibest/(len(y) - 1)#, resid
+
+        idx = (np.abs(chis-(chibest+1.))).argmin()
+        onesigma = Tbest - Ts[idx]
+       # print "T, chi2", Tbest, "+/-", onesigma, chibest/(len(y) - 1)#, resid
+        print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
 	print>>outfile,  Tbest
 	outfile.close()
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
@@ -222,10 +228,12 @@ for i in range(1, k):
 
                 if counter < 5: 
                     plt.plot(GCM[:,0], GCM[:,counter]*1e3, color = 'r')
-                    print counter, phase
+                    #print counter, phase
+                    print phase
                 else: 
                     plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = 'GCM')
-                    print counter + 1, phase
+                    #print counter + 1, phase
+                    print phase
                 counter += 1
 	
 

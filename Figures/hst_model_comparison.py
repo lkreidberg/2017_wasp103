@@ -80,8 +80,8 @@ def initialize_params(spider_params):
     spider_params.T_s = 6110.		# Temperature of the star
     return spider_params
 
-models = ["spherical", "zhang", "hotspot_t"]
-labels = ["Sph. harmonics", "Kinematic", "Two temp."] 
+models = ["hotspot_t", "zhang", "spherical"]
+labels = ["Two temp.", "Kinematic", "Sph. harmonics"] 
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #Spitzer Ch 2
 
@@ -207,12 +207,12 @@ cb.set_label("Temperature (Kelvin)")
 # plot best fits	      #
 ###############################
 
-models = ["spherical", "hotspot_t", 'zhang']
+#models = ["hotspot_t", "zhang", "spherical"]
+#labels = ["Two temp.", "Kinematic", "Sph. harmonics"] 
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #WFC3
-colors = ['#02ccfe', 'purple', '#ff7855'] 
+colors = ['#82cafc', '#ff7855', 'purple'] 
 grays = ['0.7', '0.5', '0.6']
-labels = ["Sph. harmonics",  "Two temp.", "Kinematic"] 
 #linestyle = ['-', '-.', ':']
 linestyle = ['-', '-', '-']
 
@@ -271,6 +271,16 @@ for i, g in enumerate(gcms):
 
 plt.title("WFC3 broadband phase curve")
 plt.legend(loc = 'upper left', frameon=False, fontsize=11)
+
+ax = plt.gca()
+handles,labels = ax.get_legend_handles_labels()
+
+handles = [handles[2], handles[1], handles[0], handles[3]]
+labels = [labels[2], labels[1], labels[0], labels[3]]
+
+ax.legend(handles,labels,loc='upper left', frameon = False, fontsize = 11)
+
+
 plt.xlabel("Orbital phase")
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.ylim(-0.2, 2)

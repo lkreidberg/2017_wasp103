@@ -27,7 +27,7 @@ def blackbody(l,T):
         return 2*h*c**2/(l**5*(np.exp(h*c/(l*k*T))-1))                 #[W/sr/m^3]
 
 def best_fit_bb(w, y, e, rprs):
-	Ts = np.linspace(300, 3600, 300)
+	Ts = np.linspace(2900., 3100, 100)
 	chibest = 10000.
 	Tbest = 0.	
 	Tstar = 6110.
@@ -41,35 +41,33 @@ def best_fit_bb(w, y, e, rprs):
         #Tstar = 6110.
         #star_bb = blackbody(w*1.0e-6, Tstar)
 	outliers = 0.
+        chis = []
 
 	for T in Ts:
 		model = blackbody(w*1.0e-6, T)/star_bb*rprs**2
 		chi2 = np.sum((y - model)**2/e**2)
+                chis.append(chi2)
 		if chi2 < chibest: 
 			chibest, Tbest, outliers = chi2, T, (y-model)/e
 	waves_hires = np.linspace(1.0, 5.0, 100)
 	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
 	#print "Best fit blackbody temp, chisq, and outliers: ", Tbest, chibest/(len(e)-1), outliers
-	print "Best fit blackbody temp, chi2: ", Tbest, chibest/(len(y) - 1.)
-	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
+        #find 1-sigma confidence
+        idx = (np.abs(chis-(chibest+1.))).argmin()
+        """plt.clf()
+        plt.plot(Ts, chis)
+        plt.axhline(chibest)
+        plt.axhline(chibest+1)
+        plt.show()"""
+        onesigma = Tbest - Ts[idx]
+	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.)
+	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
 ######################################################################################
 # PLOT
 plt.figure(figsize = (4,3))
-
-"""plt.errorbar(waves, (fpfs-1.)*1e3, yerr = fp_err*1.e3, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
-
-outfile = open("espec_dayside.txt", "w")
-for i in range(len(waves)): print>>outfile, "{0:0.3f}".format(waves[i]), "\t", "{0:0.3e}".format(fpfs[i] - 1.), "{0:0.3e}".format(fp_err[i])
-outfile.close()
-
-rprs = 0.1127
-wave_hires, model_hires = best_fit_bb(waves, fpfs-1., fp_err, rprs)
-model_hires *= 1.e3
-plt.plot(wave_hires, model_hires, color='0.5', label='blackbody', linestyle = 'dashed', zorder = -20)"""
-	
 
 #fits from Mike
 data_wl, data, data_err,  best_fit_binned,  wl_hi,  y_hi_best, spec_arr, Tarr, P, samples = pickle.load(open("Mike_models/WASP-103b_grid_DAYSIDE_output.pic"))
@@ -77,7 +75,6 @@ data_wl, data, data_err,  best_fit_binned,  wl_hi,  y_hi_best, spec_arr, Tarr, P
 print "wavelength, residual from best fit:"
 for i in range(len(data_wl)):
     print data_wl[i], (data[i] - best_fit_binned[i])/data_err[i]
-
 
 plt.errorbar(data_wl, data*1e3, yerr = data_err*1.e3, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
 
@@ -88,9 +85,14 @@ for i in range(len(wl_hi)): y_minus1sig[i] = np.percentile(spec_arr[:,i], 16)
 for i in range(len(wl_hi)): y_plus1sig[i] = np.percentile(spec_arr[:,i], 84)
 
 plt.fill_between(wl_hi, y_minus1sig*1e3, y_plus1sig*1e3, color = 'orange', alpha = 0.5, zorder=-11)
-plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit')
+plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit 1-D model')
 
-plt.legend(loc = 'lower right', frameon=True, fontsize = 11)
+#get best fit blackbody
+rprs = 0.1127
+wave_bb, bb = best_fit_bb(data_wl, data, data_err, rprs)
+plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody")
+
+plt.legend(loc = 'lower right', frameon=True, fontsize = 10)
 
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Wavelength (microns)")
@@ -109,9 +111,10 @@ plt.errorbar(s[:,0], s[:,1], s[:,2], fmt = 'xr')"""
 
 a = plt.axes([.23, .62, .2, .28]) 
 
-plt.errorbar(data_wl, data*1e3, yerr = data_err*1.e3, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
+plt.errorbar(data_wl, data*1e3, yerr = data_err*1.e3, xerr = 0.5, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
 plt.fill_between(wl_hi, y_minus1sig*1e3, y_plus1sig*1e3, color = 'orange', alpha = 0.5, zorder=-11)
 plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit')
+plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10)
 
 plt.xlim(3, 5)
 plt.ylim(3.5,7)
