@@ -8,6 +8,12 @@ sns.set_context("paper")
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
+def weighted_mean(data, err):                #calculates the weighted mean for data points data with variances err
+        weights = 1.0/err
+        mu = np.sum(data*weights)/np.sum(weights)
+        var = 1.0/np.sum(weights)
+        return [mu, var]                #returns weighted mean and variance
+
 def get_blackbody_model(model_w, data_w, data, T):
     unit_conversion = 1.2533e19                                        #(10 pc/jupiter radius)^2
 
@@ -36,6 +42,8 @@ gs = gridspec.GridSpec(3, 3, hspace=0.1, wspace=0.3)
 #plotting parameters
 C = 1.e10                                               #normalization constant for plotting
 model_w = np.linspace(1, 1.75, 20)
+#l1, l2, l3, l4 = 1.15, 1.35, 1.4, 1.55
+l1, l2, l3, l4 = 1.3, 1.34, 1.51, 1.55
 
 #WASP-103b spectra
 path = "W103_spectra/"
@@ -54,6 +62,7 @@ yhi = [1.15, 2.3, 4.3]
 plt.figure(figsize = (7.5, 3.5))
 #data_w, data, data_err; C; model_w, model
 
+print "W103b"
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,0])
 
@@ -70,6 +79,8 @@ for i, f in enumerate(files):
     #fit blackbody model
     model = get_blackbody_model(model_w, data_w, data, Ts[i])
     plt.plot(model_w, model*C, color = '0.5', linestyle = 'dotted', zorder  = -1)
+    plt.fill_betweenx(np.linspace(ylo[i], yhi[i], 3), l1, l2, color = '0.9', zorder = -20)
+    plt.fill_betweenx(np.linspace(ylo[i], yhi[i], 3), l3, l4, color = '0.9', zorder = -20)
 
     #labels and axes
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False)
@@ -80,6 +91,12 @@ for i, f in enumerate(files):
 
     if i != 2: plt.gca().set_xticklabels([])
     if i == 0 : plt.title("WASP-103b")	
+
+    ind1 = (data_w > l1)&(data_w < l2)
+    ind2 = (data_w > l3)&(data_w < l4)
+    B, B_err = weighted_mean(data[ind1], data_err[ind1])
+    A, A_err  = weighted_mean(data[ind2], data_err[ind2])
+    print "amplitude", '{0:0.4f}'.format((B - A)/B), '{0:0.4f}'.format(np.abs(A/B)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
 
 #Brown dwarf spectra
 
@@ -92,6 +109,7 @@ radius = np.array([1.01, 1.1,  1.33])
 ylo = [0.05, 0.6, 2.0]
 yhi = [0.5, 1.45, 4.1]
 
+print "BD"
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,1])
 
@@ -102,12 +120,15 @@ for i, f in enumerate(files):
 
     data_w = d[:,0]
     data =  d[:,1]*1e4*d[:,0]
+    data_err = d[:,2]*1e4*d[:,0]
     plt.plot(data_w, data*C, color = 'k')             #original flux in ergs/cm^2/s/Angstrom (so multiply by wavelength in angstroms)
     plt.plot(data_w, data*C, linewidth = 0., label = str(Ts[i])+ " K")
 
     #fit blackbody model
     model = get_blackbody_model(model_w, data_w, data, Ts[i])
     plt.plot(model_w, model*C, color = '0.5', linestyle = 'dotted', zorder  = -1)
+    plt.fill_betweenx(np.linspace(ylo[i], yhi[i], 3), l1, l2, color = '0.9', zorder = -20)
+    plt.fill_betweenx(np.linspace(ylo[i], yhi[i], 3), l3, l4, color = '0.9', zorder = -20)
 
     #labels and axes
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False)
@@ -118,6 +139,12 @@ for i, f in enumerate(files):
     if i == 2: plt.xlabel("Wavelength (microns)")
     if i == 0 : plt.title("Brown dwarfs")	
 
+    ind1 = (data_w > l1)&(data_w < l2)
+    ind2 = (data_w > l3)&(data_w < l4)
+    B, B_err = weighted_mean(data[ind1], data_err[ind1])
+    A, A_err  = weighted_mean(data[ind2], data_err[ind2])
+    print "amplitude", '{0:0.4f}'.format((B - A)/B), '{0:0.4f}'.format(np.abs(A/B)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
+
 #Directly imaged spectra
 
 path = "Direct_Image_Spectra/"
@@ -127,6 +154,7 @@ Ts = [1800, 2400, 3000]
 ylo = [0., 11., 11.]
 yhi = [1.3, 23., 22.]
 
+print "DI"
 for i, f in enumerate(files):
     ax = plt.subplot(gs[i,2])
 
@@ -134,6 +162,7 @@ for i, f in enumerate(files):
     ind = (d[:,0]>1.1)&(d[:,0]<1.7)
     d = d[ind]
     data = d[:,1]*1.e3*d[:,0]
+    data_err = d[:,2]*1.e3*d[:,0]
     data_w = d[:,0]
     
     plt.plot(data_w, data*C, color = 'k')
@@ -142,6 +171,8 @@ for i, f in enumerate(files):
     model = get_blackbody_model(model_w, data_w, data, Ts[i])
     plt.plot(model_w, model*C, color = '0.5', linestyle = 'dotted', zorder  = -1)
     plt.plot(data_w, data*C, linewidth = 0., label = str(Ts[i])+ " K")
+    plt.fill_betweenx(np.linspace(ylo[i], yhi[i], 3), l1, l2, color = '0.9', zorder = -20)
+    plt.fill_betweenx(np.linspace(ylo[i], yhi[i], 3), l3, l4, color = '0.9', zorder = -20)
 
     #labels and axes
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False)
@@ -150,7 +181,13 @@ for i, f in enumerate(files):
     plt.ylim(ylo[i], yhi[i])
 
     if i != 2: plt.gca().set_xticklabels([])
-    if i == 0: plt.title("Imaged planets")
+    if i == 0: plt.title("Imaged companions")
+
+    ind1 = (data_w > l1)&(data_w < l2)
+    ind2 = (data_w > l3)&(data_w < l4)
+    B, B_err = weighted_mean(data[ind1], data_err[ind1])
+    A, A_err  = weighted_mean(data[ind2], data_err[ind2])
+    print "amplitude", '{0:0.4f}'.format((B - A)/B), '{0:0.4f}'.format(np.abs(A/B)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
 
 #plt.tight_layout()
 plt.savefig("spectra_comparison.pdf")
