@@ -9,6 +9,7 @@
 \newcommand{\HST}{\project{HST}}
 \newcommand{\Spitzer}{\project{Spitzer}}
 
+
 %% Reintroduced the \received and \accepted commands from AASTeX v5.2
 %\received{July 1, 2016}
 %\revised{September 27, 2016}
@@ -398,6 +399,16 @@ The main characteristics of the dayside emission spectrum are: (1) it is blackbo
 
 Figure\,\ref{fig:opacities} shows the opacity contributions of key absorbers for the best fit.  In the optical (which we do not observe directly), there is strong absorption by TiO/VO.  In the near-infrared, the dominant absorbers are H$_2$O and H-.  The observed spectrum is featureless at these wavelengths, due to a combination of factors: water is partially dissociated in the photosphere, leading to a drop in abundance of FIXME.  It also produces H- opacity (single H atoms bind with free electrons), which dominates spectral features from H$_2$O at wavelengths shorter than FIXME $\mu$m.  Water is also an efficient coolant, so lower water abundance leads to a more isothermal photosphere and weakens the features even more.  Taken together, all these factors conspire to produce a nearly featureless spectrum from $1.1 - 1.7\,\mu$m. Finally, in the infrared the dominant absorber is CO, which produces the emission feature at \Spitzer\ wavelengths.  
 
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{Figures/xsec_FULL.pdf}
+\caption{Opacities.}
+\label{fig:opacities}
+\end{figure}
+
+\subsubsection{Dayside Spectrum}
+
+
+
 The TiO/VO absorption heats the upper atmosphere, resulting in a thermal inversion. Figure\,\ref{fig:TP} shows a selection of 100 randomly selected dayside T-P profiles. The profiles are nearly isothermal over a pressure range of $1-10^{-2}$ bars, with a median temperature near 2900 Kelvin. The temperature increases over $10^{-2} - 10^{-3}$ bars to 3500 Kelvin, and then begins to decrease again at pressures below $10^{-3}$ bar. (\textbf{Mike: what are the contribution functions?}). 
 
 
@@ -459,11 +470,13 @@ The GCMs also provide insight into what molecules are present in which parts of 
 
 
 \section{Comparison with Brown Dwarfs and Directly Imaged Companions}
-WASP-103b is so highly irradiated that its photospheric temperature ($2000 - 3000$ K) is comparable to that of low mass stars. However, the planet's other properties (surface gravity, rotation rate, irradiation) are different. To explore the effects of varying these parameters, we compared the spectra of WASP-103b to brown dwarfs and young directly imaged companions. 
+WASP-103b is so highly irradiated that its photospheric temperature ($2000 - 3000$ K) is comparable to that of low mass stars. However, the planet's other properties (surface gravity, rotation rate, irradiation) are different. To explore the effects of varying these parameters, we compared the spectra of WASP-103b to brown dwarfs and young directly imaged companions. The object properties are summarized in Table\,\ref{tab:sources}.
 
 We selected spectra from WASP-103b at three orbital phases: dayside ($\phi = 0.5$), quadrature ($\phi = 0.25$), and nightside ($\phi = 0.1$), and compared them to sources with comparable effective temperature. Figure\,\ref{fig:planetstarcomparison} shows the flux-calibrated spectra (assuming a distance of 10 pc).
 
-The directly imaged spectra are taken from \cite{2008ApJ...689L.153L}, \cite{2010ApJ...719..497L}, \cite{2010A&A...512A..52B}, \cite{2011ApJ...729..139W} , \cite{2014A&A...562A.127B}, \cite{2011ApJ...730...42L}, \cite{2013ApJ...773...63A}, \cite{2016A&A...587A..56M}, \cite{2013ApJ...772...79A}, and \cite{2008ApJ...673L.185B}. They are calibrated\footnote{Apart for PZ Tel B whose flux calibration is detailed in \cite{2016A&A...587A..56M}.}in absolute flux using published H-band photometry \citep{2008ApJ...689L.153L, 2014A&A...562A.127B, 2011ApJ...729..139W, 2005A&A...430.1027C, 2011ApJ...730...42L, 2013ApJ...773...63A, 2003tmc..book.....C,2009A&A...506..799B} and distances \cite{2016A&A...595A...1G, 2007A&A...474..653V, 1999AJ....117..354D, 1999AJ....117.2381P}, a flux-calibrated spectrum of Vega \citep{1985A&A...151..399M, 1985IAUS..111..225H}, and the corresponding filter passbands.  The brown dwarf spectra \textbf{Jackie: describe catalog of brown dwarf spectra and flux calibration}.
+%TWA 22A - Bonnefoy+2014 (Bonnefoy 09), RXS - Lafren 08,10 (H magfrom Lafren 08), J1610 - Aller+13
+%dist: teixeira08, 
+The directly imaged spectra are taken from \cite{wahhaj11, aller13, bonnefoy14}. They are calibrated in absolute flux using published H-band photometry \citep{wahhaj11, bonnefoy09, aller13} and distances \citep{gaia16}, a flux-calibrated spectrum of Vega \citep{1985A&A...151..399M, 1985IAUS..111..225H}, and the corresponding filter passbands.  The brown dwarf spectra \textbf{Jackie: describe catalog of brown dwarf spectra and flux calibration}.
 
 The main spectral feature over the wavelength range we consider is water. To quantitatively compare the water feature amplitude for different objects, we define an amplitude $A = (R_\mathrm{1.3} - R_\mathrm{1.5})/F_\mathrm{1.3}$, where $F_\mathrm{X}$ is the average flux in a wavelength bin $0.1\,\mu$m wide centered on a wavelength $X$, and $R_\mathrm{X}$ is the bin-averaged residual from the best fit blackbody. These intervals were chosen such that all of the data have complete spectral coverage over the bin. 
 
@@ -481,26 +494,28 @@ cite Tremblin et al. 2017 ? (https://arxiv.org/pdf/1710.02640.pdf)
 \label{fig:planetstarcomparison}
 \end{figure*}
 
-\begin{deluxetable*}{llllll}
+\begin{deluxetable*}{llCCCC}
 	\tablecolumns{6}
 	\tablewidth{0pt}:
-	\tablecaption{Water feature amplitude \label{table:h2o_amp}}
+	\tablecaption{Source Properties \label{table:sources}}
 	\tablehead{
-	\colhead{\,} & \colhead{Object} & \colhead{$T_\mathrm{eff}$} & \colhead{logg} & \colhead{Wide Amp} & \colhead{Narrow Amp}}
+	\colhead{\,} & \colhead{Object} & \colhead{$T_\mathrm{eff}$} & \colhead{logg} & \colhead{H$_2$O A$_1$} & \colhead{H$_2$O A$_2$}}
 		\startdata
-		Hot Jupiter & W103b night & $ 1922 \pm 0 $ & $ 3.2 \pm 0.04 $ & $ 0.1572 \pm 0.1523 $ & $ 0.1572 \pm 0.1523 $ \\
-		\, & W103b quadrature & $ 2408 \pm 0 $ & $ 3.2 \pm 0.04 $ & $ -0.0898 \pm 0.0691 $ & $ -0.0898 \pm 0.0691 $ \\
-		\, & W103b dayside & $ 2982 \pm 0 $ & $ 3.2 \pm 0.04 $ & $ 0.0722 \pm 0.0124 $ & $ 0.0722 \pm 0.0124 $ \\
-		Brown Dwarf & 1320+0409 & $ 1875 \pm 70 $ & $ 5.19 \pm 0.16 $ & $ 0.1407 \pm 0.0005 $ & $ 0.1407 \pm 0.0005 $ \\
-		\, & 0428-2253 & $ 2429 \pm 80 $ & $ 5.22 \pm 0.09 $ & $ 0.1112 \pm 0.0001 $ & $ 0.1112 \pm 0.0001 $ \\
-		\, & 0003-2822 & $ 2889 \pm 80 $ & $ 5.18 \pm 0.04 $ & $ 0.2242 \pm 0.0001 $ & $ 0.2242 \pm 0.0001 $ \\
-		Imaged Companion & 1RXSJ160929.1 & $ 1800 \pm 0 $ & $ 0 \pm 0 $ & $ 0.0 \pm 0.0 $ & $ 0.0 \pm 0.0 $ \\
-		\, & J1610-1913B & $ 2400 \pm 0 $ & $ 0 \pm 0 $ & $ 0.2648 \pm 0.0002 $ & $ 0.2648 \pm 0.0002 $ \\
-		\, & TWA22A & $ 3000 \pm 0 $ & $ 0 \pm 0 $ & $ 0.0 \pm 0.0 $ & $ 0.0 \pm 0.0 $ \\
+		Hot Jupiter & W103b night & 1922 \pm 40 & 3.2 \pm 0.04 & 0.07 \pm 1.8\mathrm{e}-01 & -0.00 \pm 1.6\mathrm{e}-01 \\
+		\, & W103b quadrature & 2408 \pm 20 & 3.2 \pm 0.04 & -0.14 \pm 7.8\mathrm{e}-02 & -0.01 \pm 6.7\mathrm{e}-02 \\
+		\, & W103b dayside & 2982 \pm 10 & 3.2 \pm 0.04 & 0.04 \pm 1.4\mathrm{e}-02 & 0.15 \pm 1.2\mathrm{e}-02 \\
+		Brown Dwarf & 2MASS J1320+0409 & 1875 \pm 70 & 5.19 \pm 0.16 & 0.21 \pm 6.3\mathrm{e}-04 & -0.06 \pm 5.0\mathrm{e}-04 \\
+		\, & 2MASS J0428-2253 & 2429 \pm 80 & 5.22 \pm 0.09 & 0.16 \pm 1.2\mathrm{e}-04 & -0.03 \pm 1.0\mathrm{e}-04 \\
+		\, & 2MASS J0003-2822 & 2889 \pm 80 & 5.18 \pm 0.04 & 0.26 \pm 1.3\mathrm{e}-04 & 0.10 \pm 1.1\mathrm{e}-04 \\
+		Imaged Companion & CD-35 2722\tablenotemark{3} & 1800 \pm 100 & 4.5 \pm 0.5 & - & 0.15 \pm 1.0\mathrm{e}-05 \\
+		\, & USco 1610-1913B\tablenotemark{2} & 2400 \pm 150 & - & 0.27 \pm 2.0\mathrm{e}-04 & 0.19 \pm 2.2\mathrm{e}-04 \\
+		\, & TWA 22A\tablenotemark{3} & 3000 \pm 100 & 4.5 \pm 0.5 & - & 0.29 \pm 2.0\mathrm{e}-05 \\
 		\enddata
-		\vspace{-0.8cm}
-		\tablecomments{comments}
+	\tablenotetext{1}{\cite{wahhaj11}}
+	\tablenotetext{2}{\cite{aller13}}
+	\tablenotetext{3}{\cite{bonnefoy14}}
 	\end{deluxetable*}
+
 
 \section{Discussion and Conclusions}
 One-dimensional retrieval is probably wrong, since we showed the dayside may have a large temperature gradient -> should work on this in the future.

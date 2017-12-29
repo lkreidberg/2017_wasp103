@@ -22,48 +22,47 @@ Warning--I didn't find a database entry for "getal2014"
 Warning--I didn't find a database entry for "arcangeli18"
 Warning--I didn't find a database entry for "mansfield18"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--empty publisher in 2003tmc..book.....C
 Warning--empty institution in long15
 Warning--empty institution in mccullough12
-You've used 50 entries,
+You've used 38 entries,
             3222 wiz_defined-function locations,
-            1035 strings with 20025 characters,
-and the built_in function-call counts, 25199 in all, are:
-= -- 1859
-> -- 2283
-< -- 16
-+ -- 760
-- -- 821
-* -- 2334
-:= -- 4738
-add.period$ -- 51
-call.type$ -- 50
-change.case$ -- 284
-chr.to.int$ -- 48
-cite$ -- 53
-duplicate$ -- 903
-empty$ -- 1415
-format.name$ -- 886
-if$ -- 4963
+            938 strings with 14999 characters,
+and the built_in function-call counts, 18421 in all, are:
+= -- 1397
+> -- 1585
+< -- 13
++ -- 525
+- -- 570
+* -- 1675
+:= -- 3445
+add.period$ -- 39
+call.type$ -- 38
+change.case$ -- 207
+chr.to.int$ -- 36
+cite$ -- 40
+duplicate$ -- 689
+empty$ -- 1070
+format.name$ -- 622
+if$ -- 3653
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 47
-newline$ -- 156
-num.names$ -- 201
-pop$ -- 405
+missing$ -- 35
+newline$ -- 120
+num.names$ -- 153
+pop$ -- 297
 preamble$ -- 1
-purify$ -- 282
+purify$ -- 205
 quote$ -- 0
-skip$ -- 682
+skip$ -- 514
 stack$ -- 0
-substring$ -- 807
+substring$ -- 607
 swap$ -- 14
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 447
-warning$ -- 3
-while$ -- 181
+type$ -- 342
+warning$ -- 2
+while$ -- 137
 width$ -- 0
-write$ -- 505
+write$ -- 386
 (There were 3 error messages)
