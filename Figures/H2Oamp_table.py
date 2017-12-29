@@ -8,7 +8,7 @@ amp2 = h2o_amp2[:,0]
 amp2_e = h2o_amp2[:,1]
 
 
-names = ["W103b night", "W103b quadrature", "W103b dayside", "2MASS J1320+0409", "2MASS J0428-2253", "2MASS J0003-2822", "CD-35 2722\\tablenotemark{3}", "USco 1610-1913B\\tablenotemark{2}", "TWA 22A\\tablenotemark{3}"]
+names = ["W103b night", "W103b quadrature", "W103b dayside", "2MASS J1320+0409", "2MASS J0428-2253", "2MASS J0003-2822", "CD-35 2722\\tablenotemark{1}", "USco 1610-1913B\\tablenotemark{2}", "TWA 22A\\tablenotemark{3}"]
 
 
 objects = ["Hot Jupiter", "\,", "\,", "Brown Dwarf", "\,", "\,", "Imaged Companion", "\,", "\,"]

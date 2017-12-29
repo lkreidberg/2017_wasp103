@@ -90,20 +90,32 @@ WASP-103b is a short-period hot Jupiter.
 
 
 \section{Introduction} \label{sec:intro}
-The planets and moons of the Solar System possess a rich variety of -- weather, temperature var
+The planets and moons of the Solar System are complex systems, with differences in climate and atmospheric composition. 
 
-It is a truism to say that planets are round.  The. And yet planets' roundness gives rise to a host of complications:  atmospheric circulation, variable , gradients in chemistry, cloud formation and evaporation, and time-dependent phenomena (weather).
+Tidally locked exoplanets are an extreme example of this variation, with a hot, continuously irradiated dayside and a much colder nightside.
 
-It is a challenge is to reveal this structure at great distances, when we cannot spatially resolve the photosphere of the planet.  Most observations of exoplanet atmospheres are sensitive to a single isolated region  -- either the terminator, for transmission spectroscopy, or the disk-integrated dayside, for emission spectroscopy.  The solution to this problem is to observe phase curves of tidally-locked planets, which monitor the brightness of the planet over its entire orbit. As the orbital phase changes, the observer 
+a wide range of climate, weather, topography, atmospheres mediating the exchange of radiation 
 
-The first phase curve was observed with \Spitzer\ for the hot Jupiter HD 189733b by \citep{knutson??}, and was followed by FIXME more (with IRAC). Several trends emerged from these measurements, including eastward shifted hotspots (which suggest super-rotating equatorial jets), larger day-night temperature contrast for shorter period planets (ref), . The first spectroscopic phase curve was measured with Hubble's Wide Field Camera 3 (WFC3) by \citep{stevenson???} for the hot Jupiter WASP-43b. Found low albedo, offset hotspot, water visible at other phases, 
+%It is a truism to say that planets are round.  The. And yet planets' roundness gives rise to a host of complications:  atmospheric circulation, variable , gradients in chemistry, cloud formation and evaporation, and time-dependent phenomena (weather).
+
+It is a challenge is to reveal this structure for exoplanets at great distances, when we cannot spatially resolve the photosphere.  Most observations of exoplanet atmospheres use techniques that are sensitive to one average region  -- either the terminator, for transmission spectroscopy, or the disk-integrated dayside, for emission spectroscopy.  
+
+The solution to this problem is to observe phase curves of tidally-locked planets, which monitor the brightness of the planet over its entire orbit. As the orbital phase changes, the observer 
+
+The first phase curve was observed with \Spitzer\ for the hot Jupiter HD 189733b by \citep{knutson07}, which revealed a modest day-night temperature contrast of 300 Kelvin
+
+and was followed by FIXME more (with IRAC). Several trends emerged from these measurements, including eastward shifted hotspots (which suggest super-rotating equatorial jets), larger day-night temperature contrast for shorter period planets (ref), . The first spectroscopic phase curve was measured with Hubble's Wide Field Camera 3 (WFC3) by \citep{stevenson???} for the hot Jupiter WASP-43b. Found low albedo, offset hotspot, water visible at other phases, 
 
 In parallel with these observations, there have been major advances in the theory of exoplanet atmospheres in three-dimensions. Global circulation models (GCMs) are now capable of self-consistent radiative transfer and atmospheric dynamics (refs) and are beginning to include clouds (refs?). 
 
 In addition to GCMs, work on the inverse problem Cowan - how to get maps, . SPIDERMAN, an open-source Python package designed to take any temperature or brightness map of a planet and output the corresponding phase curve, so that we can readily connect GCMs to phase curve observations.  
 
+Thermal emission spectra of other super-hot Jupiters
 
-In this paper we present \HST\ and \Spitzer\ phase curve observations of WASP-103b, a hot Jupiter with a mass of X, radius of Y, period of Z (cite discovery paper). These properties are similar to WASP-43b, except that WASP-103b has a much (FIXME vs FIXME K) thanks to its hot F?? star host. By comparing the phase curves of these two planets, we can test the effect of irradiation on the climate of the planet.
+WASP-103b is an ideal candidate for phase curve observations, with an orbital period of just FIXME hours \citep{gillon14}. Its equilibrium temperature is FIXME K, . The atmosphere of WASP-103b has been characterized with transmission and emission spectroscopy \citep{southworth16, cartier17, lendl17}. The thermal emission spectrum is featureless 
+
+In this paper we present the spectroscopic phase curve observations of WASP-103b. Our data observed with \HST/WFC3  
+%, a hot Jupiter with a mass of X, radius of Y, period of Z (cite discovery paper). These properties are similar to WASP-43b, except that WASP-103b has a much (FIXME vs FIXME K) thanks to its hot F?? star host. By comparing the phase curves of these two planets, we can test the effect of irradiation on the climate of the planet.
 
 Talk about other WFC3 papers (Star Cartier, etc)
 
@@ -480,13 +492,6 @@ The directly imaged spectra are taken from \cite{wahhaj11, aller13, bonnefoy14}.
 
 The main spectral feature over the wavelength range we consider is water. To quantitatively compare the water feature amplitude for different objects, we define an amplitude $A = (R_\mathrm{1.3} - R_\mathrm{1.5})/F_\mathrm{1.3}$, where $F_\mathrm{X}$ is the average flux in a wavelength bin $0.1\,\mu$m wide centered on a wavelength $X$, and $R_\mathrm{X}$ is the bin-averaged residual from the best fit blackbody. These intervals were chosen such that all of the data have complete spectral coverage over the bin. 
 
-%DI companions: 1RXSJ160929.1-210524b, J1610-1913B, TWA22A
-%Age, logg, teff
-%WASP-103b - logg = 3.2 
-
-
-
-cite Tremblin et al. 2017 ? (https://arxiv.org/pdf/1710.02640.pdf)
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/spectra_comparison.pdf}
@@ -507,7 +512,7 @@ cite Tremblin et al. 2017 ? (https://arxiv.org/pdf/1710.02640.pdf)
 		Brown Dwarf & 2MASS J1320+0409 & 1875 \pm 70 & 5.19 \pm 0.16 & 0.21 \pm 6.3\mathrm{e}-04 & -0.06 \pm 5.0\mathrm{e}-04 \\
 		\, & 2MASS J0428-2253 & 2429 \pm 80 & 5.22 \pm 0.09 & 0.16 \pm 1.2\mathrm{e}-04 & -0.03 \pm 1.0\mathrm{e}-04 \\
 		\, & 2MASS J0003-2822 & 2889 \pm 80 & 5.18 \pm 0.04 & 0.26 \pm 1.3\mathrm{e}-04 & 0.10 \pm 1.1\mathrm{e}-04 \\
-		Imaged Companion & CD-35 2722\tablenotemark{3} & 1800 \pm 100 & 4.5 \pm 0.5 & - & 0.15 \pm 1.0\mathrm{e}-05 \\
+		Imaged Companion & CD-35 2722\tablenotemark{1} & 1800 \pm 100 & 4.5 \pm 0.5 & - & 0.15 \pm 1.0\mathrm{e}-05 \\
 		\, & USco 1610-1913B\tablenotemark{2} & 2400 \pm 150 & - & 0.27 \pm 2.0\mathrm{e}-04 & 0.19 \pm 2.2\mathrm{e}-04 \\
 		\, & TWA 22A\tablenotemark{3} & 3000 \pm 100 & 4.5 \pm 0.5 & - & 0.29 \pm 2.0\mathrm{e}-05 \\
 		\enddata
