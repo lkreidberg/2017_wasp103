@@ -42,8 +42,8 @@ gs = gridspec.GridSpec(3, 3, hspace=0.1, wspace=0.3)
 #plotting parameters
 C = 1.e10                                               #normalization constant for plotting
 model_w = np.linspace(1, 1.75, 20)
-#l1, l2, l3, l4 = 1.3, 1.34, 1.51, 1.55
-l1, l2, l3, l4 = 1.15, 1.32, 1.36, 1.55
+l1, l2, l3, l4 = 1.2, 1.34, 1.49, 1.65
+#l1, l2, l3, l4 = 1.15, 1.3, 1.35, 1.55
 
 #WASP-103b spectra
 path = "W103_spectra/"
@@ -100,8 +100,8 @@ for i, f in enumerate(files):
     A, A_err = weighted_mean(data[ind1], data_err[ind1])
     B, B_err  = weighted_mean(data[ind2], data_err[ind2])
     modelmeanA, modelmeanB = np.mean(model[ind1_m]), np.mean(model[ind2_m])
-    A, B = A - modelmeanA.value, B - modelmeanB.value
-    print "amplitude", '{0:0.4f}'.format((A - B)/A), '{0:0.4f}'.format(np.abs(B/A)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
+    #A, B = A - modelmeanA.value, B - modelmeanB.value
+    print '{0:0.4f}'.format((A - B)/A), '{0:0.4f}'.format(np.abs(B/A)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
 
 #Brown dwarf spectra
 
@@ -152,8 +152,8 @@ for i, f in enumerate(files):
     A, A_err = weighted_mean(data[ind1], data_err[ind1])
     B, B_err  = weighted_mean(data[ind2], data_err[ind2])
     modelmeanA, modelmeanB = np.mean(model[ind1_m]), np.mean(model[ind2_m])
-    A, B = A - modelmeanA.value, B - modelmeanB.value
-    print "amplitude", '{0:0.4f}'.format((A - B)/A), '{0:0.4f}'.format(np.abs(B/A)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
+    #A, B = A - modelmeanA.value, B - modelmeanB.value
+    print '{0:0.4f}'.format((A - B)/A), '{0:0.4f}'.format(np.abs(B/A)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
 
 #Directly imaged spectra
 
@@ -201,8 +201,8 @@ for i, f in enumerate(files):
     A, A_err = weighted_mean(data[ind1], data_err[ind1])
     B, B_err  = weighted_mean(data[ind2], data_err[ind2])
     modelmeanA, modelmeanB = np.mean(model[ind1_m]), np.mean(model[ind2_m])
-    A, B = A - modelmeanA.value, B - modelmeanB.value
-    print "amplitude", '{0:0.4f}'.format((A - B)/A), '{0:0.4f}'.format(np.abs(B/A)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
+    #A, B = A - modelmeanA.value, B - modelmeanB.value
+    print '{0:0.4f}'.format((A - B)/A), '{0:0.4f}'.format(np.abs(B/A)*np.sqrt((A_err/A)**2 + (B_err/B)**2))
 
 #plt.tight_layout()
 plt.savefig("spectra_comparison.pdf")
