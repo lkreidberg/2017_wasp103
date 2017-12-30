@@ -26,6 +26,11 @@
 \bibitem[{{Cowan} \& {Agol}(2008)}]{cowan08}
 {Cowan}, N.~B., \& {Agol}, E. 2008, \apjl, 678, L129
 
+\bibitem[{{Esteves} {et~al.}(2015){Esteves}, {De Mooij}, \&
+  {Jayawardhana}}]{esteves15}
+{Esteves}, L.~J., {De Mooij}, E.~J.~W., \& {Jayawardhana}, R. 2015, \apj, 804,
+  150
+
 \bibitem[{{Foreman-Mackey} {et~al.}(2013){Foreman-Mackey}, {Hogg}, {Lang}, \&
   {Goodman}}]{foremanmackey13}
 {Foreman-Mackey}, D., {Hogg}, D.~W., {Lang}, D., \& {Goodman}, J. 2013, \pasp,
@@ -65,6 +70,10 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   Association, 90, 773.
 \newblock
   \url{http://amstat.tandfonline.com/doi/abs/10.1080/01621459.1995.10476572}
+
+\bibitem[{{Kataria} {et~al.}(2016){Kataria}, {Sing}, {Lewis}, {Visscher},
+  {Showman}, {Fortney}, \& {Marley}}]{kataria16}
+{Kataria}, T., {Sing}, D.~K., {Lewis}, N.~K., {et~al.} 2016, \apj, 821, 9
 
 \bibitem[{{Knutson} {et~al.}(2009){Knutson}, {Charbonneau}, {Cowan}, {Fortney},
   {Showman}, {Agol}, \& {Henry}}]{knutson09}
@@ -107,6 +116,10 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Chabrier}}]{leconte11a}
 ---. 2011{\natexlab{b}}, \aap, 528, A41
 
+\bibitem[{{Lendl} {et~al.}(2017){Lendl}, {Cubillos}, {Hagelberg}, {M{\"u}ller},
+  {Juvan}, \& {Fossati}}]{lendl17}
+{Lendl}, M., {Cubillos}, P.~E., {Hagelberg}, J., {et~al.} 2017, \aap, 606, A18
+
 \bibitem[{{Line} {et~al.}(2016){Line}, {Stevenson}, {Bean}, {Desert},
   {Fortney}, {Kreidberg}, {Madhusudhan}, {Showman}, \& {Diamond-Lowe}}]{line16}
 {Line}, M.~R., {Stevenson}, K.~B., {Bean}, J., {et~al.} 2016, \aj, 152, 203
@@ -140,8 +153,23 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Mountain}, C.~M., {Selby}, M.~J., {Leggett}, S.~K., {Blackwell}, D.~E., \&
   {Petford}, A.~D. 1985, \aap, 151, 399
 
+\bibitem[{{Parmentier} \& {Crossfield}(2017)}]{parmentier17}
+{Parmentier}, V., \& {Crossfield}, I. 2017, ArXiv e-prints, arXiv:1711.07696
+
+\bibitem[{{Parmentier} {et~al.}(2016){Parmentier}, {Fortney}, {Showman},
+  {Morley}, \& {Marley}}]{parmentier16}
+{Parmentier}, V., {Fortney}, J.~J., {Showman}, A.~P., {Morley}, C., \&
+  {Marley}, M.~S. 2016, \apj, 828, 22
+
 \bibitem[{{Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{pont06}
 {Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, \mnras, 373, 231
+
+\bibitem[{{Showman} {et~al.}(2009){Showman}, {Fortney}, {Lian}, {Marley},
+  {Freedman}, {Knutson}, \& {Charbonneau}}]{showman09}
+{Showman}, A.~P., {Fortney}, J.~J., {Lian}, Y., {et~al.} 2009, \apj, 699, 564
+
+\bibitem[{{Southworth} \& {Evans}(2016)}]{southworth16}
+{Southworth}, J., \& {Evans}, D.~F. 2016, \mnras, 463, 37
 
 \bibitem[{{Southworth} {et~al.}(2015){Southworth}, {Mancini}, {Ciceri},
   {Budaj}, {Dominik}, {Figuera Jaimes}, {Haugb{\o}lle}, {J{\o}rgensen},

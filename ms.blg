@@ -16,52 +16,55 @@ Repeated entry---line 3620 of file ms.bib.bib
  : @article{zhou17
  :                ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "stevenson???"
+Repeated entry---line 4099 of file ms.bib.bib
+ : @article{cartier17
+ :                   ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "getal2014"
 Warning--I didn't find a database entry for "arcangeli18"
 Warning--I didn't find a database entry for "mansfield18"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty institution in long15
 Warning--empty institution in mccullough12
-You've used 39 entries,
+You've used 46 entries,
             3222 wiz_defined-function locations,
-            944 strings with 15281 characters,
-and the built_in function-call counts, 18909 in all, are:
-= -- 1432
-> -- 1629
-< -- 13
-+ -- 539
-- -- 586
-* -- 1722
-:= -- 3538
-add.period$ -- 40
-call.type$ -- 39
-change.case$ -- 211
-chr.to.int$ -- 37
-cite$ -- 41
-duplicate$ -- 707
-empty$ -- 1098
-format.name$ -- 639
-if$ -- 3750
+            987 strings with 16875 characters,
+and the built_in function-call counts, 22291 in all, are:
+= -- 1717
+> -- 1903
+< -- 15
++ -- 634
+- -- 691
+* -- 2012
+:= -- 4160
+add.period$ -- 47
+call.type$ -- 46
+change.case$ -- 264
+chr.to.int$ -- 44
+cite$ -- 48
+duplicate$ -- 834
+empty$ -- 1289
+format.name$ -- 752
+if$ -- 4420
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 36
-newline$ -- 123
-num.names$ -- 157
-pop$ -- 304
+missing$ -- 43
+newline$ -- 144
+num.names$ -- 185
+pop$ -- 375
 preamble$ -- 1
-purify$ -- 209
+purify$ -- 262
 quote$ -- 0
-skip$ -- 527
+skip$ -- 617
 stack$ -- 0
-substring$ -- 624
+substring$ -- 721
 swap$ -- 14
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 351
+type$ -- 414
 warning$ -- 2
-while$ -- 140
+while$ -- 167
 width$ -- 0
-write$ -- 396
-(There were 3 error messages)
+write$ -- 466
+(There were 4 error messages)

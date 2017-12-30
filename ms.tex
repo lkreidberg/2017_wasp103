@@ -8,6 +8,7 @@
 \newcommand{\JWST}{\project{JWST}}
 \newcommand{\HST}{\project{HST}}
 \newcommand{\Spitzer}{\project{Spitzer}}
+\newcommand{\Kepler}{\project{Kepler}}
 
 
 %% Reintroduced the \received and \accepted commands from AASTeX v5.2
@@ -83,43 +84,29 @@ Cambridge, MA 02138}
 \affiliation{University of Amsterdam}
 
 \begin{abstract}
-WASP-103b is a short-period hot Jupiter.
+	We present thermal phase curve measurements for the hot Jupiter WASP-103b observed with \emph{Hubble}/Wide Field Camera 3 and \emph{Spitzer}/IRAC. The dayside planet-to-star flux ranges from FIXME to FIXME at $1.1 - 4.5\,\mu$m.  The phase curves are symmetric and large amplitude, indicative of poor heat redistribution. We fit the phase curves with the SPIDERMAN package to determine the brightness distribution in the photosphere, and find the peak dayside temperature ranges from FIXME to FIXME depending on model.  We also generate phase-resolved spectra, which are consistent with blackbody models for the planet's emission at near-infrared wavelengths, but show strong emission features in the \Spitzer\ bands. We attribute these features to CO emission and a thermal inversion. The retrieved atmospheric composition is more metal-enriched than other hot Jupiters (FIXME). The carbon-to-oxygen ratio is consistent with solar composition. The absence of water features is due to BLAH. We compare the phase curves to general circulation models and find that atmospheric drag is required.  We also compare the spectra to brown dwarfs and young directly imaged companions and find that the water features are significantly diminished in amplitude. power of phase curve observations to elucidate the three-dimensional structure of exoplanet atmospheres.
 \end{abstract}
 
 \keywords{planets and satellites: individual (WASP-107b), planets and satellites: atmospheres}
 
 
 \section{Introduction} \label{sec:intro}
-The planets and moons of the Solar System are complex systems, with differences in climate and atmospheric composition. 
+Planets are round, rotating, and irradiated on one hemisphere at a time -- all of which contribute to rich spatial structure in their climate and atmospheric composition.  Short period, tidally locked planets are an extreme example, with hot, continuously illuminated daysides. This asymmetry is expected to produce large gradients in temperature, chemistry, and cloud coverage with longitude \citep{showman09, kataria16, parmentier16}. 
 
-Tidally locked exoplanets are an extreme example of this variation, with a hot, continuously irradiated dayside and a much colder nightside.
+Extrasolar planets are so distant that they are not spatially resolved, so the only way to reveal this variation is to measure a phase curve. Phase curve observations consist of continuous monitoring of the planet-to-star flux ratio over a complete orbital revolution of the planet, which exposes different longitudes at each orbital phase.  The first phase curve was observed with \Spitzer\ for the hot Jupiter HD 189733b by \citep{knutson07}, followed by additional \Spitzer\ observations for about a dozen more systems \citep{parmentier17}.  \Kepler\ enabled the first measurements of phase curves at optical wavelengths \citep[e.g.]{esteves15}. \cite{stevenson14} observed the first \emph{spectroscopic} phase curve for WASP-43b with \emph{Hubble}/Wide Field Camera 3 (\HST/WFC3) in the near-infrared. These observations had fairly good agreement with 3D GCM predictions, eastward-shifted peak brightness and more efficient heat redistribution for cooler planets. 
+FIXME: say after Spitzer that results agree with GCM. Elaborate after esteves15 that the optical phase curves are sensitive to clouds. 
 
-a wide range of climate, weather, topography, atmospheres mediating the exchange of radiation 
+In this paper we present spectroscopic phase curve observations of the hot Jupiter WASP-103b. This planet is an ideal target for thermal phase curve observations, with an orbital period of 22 hours and an equilibrium temperature of 2500 K \citep{gillon14}. The dayside thermal emission of WASP-103b was detected by \cite{cartier17}
 
-%It is a truism to say that planets are round.  The. And yet planets' roundness gives rise to a host of complications:  atmospheric circulation, variable , gradients in chemistry, cloud formation and evaporation, and time-dependent phenomena (weather).
-
-It is a challenge is to reveal this structure for exoplanets at great distances, when we cannot spatially resolve the photosphere.  Most observations of exoplanet atmospheres use techniques that are sensitive to one average region  -- either the terminator, for transmission spectroscopy, or the disk-integrated dayside, for emission spectroscopy.  
-
-The solution to this problem is to observe phase curves of tidally-locked planets, which monitor the brightness of the planet over its entire orbit. As the orbital phase changes, the observer 
-
-The first phase curve was observed with \Spitzer\ for the hot Jupiter HD 189733b by \citep{knutson07}, which revealed a modest day-night temperature contrast of 300 Kelvin
-
-and was followed by FIXME more (with IRAC). Several trends emerged from these measurements, including eastward shifted hotspots (which suggest super-rotating equatorial jets), larger day-night temperature contrast for shorter period planets (ref), . The first spectroscopic phase curve was measured with Hubble's Wide Field Camera 3 (WFC3) by \citep{stevenson???} for the hot Jupiter WASP-43b. Found low albedo, offset hotspot, water visible at other phases, 
-
-In parallel with these observations, there have been major advances in the theory of exoplanet atmospheres in three-dimensions. Global circulation models (GCMs) are now capable of self-consistent radiative transfer and atmospheric dynamics (refs) and are beginning to include clouds (refs?). 
-
-In addition to GCMs, work on the inverse problem Cowan - how to get maps, . SPIDERMAN, an open-source Python package designed to take any temperature or brightness map of a planet and output the corresponding phase curve, so that we can readily connect GCMs to phase curve observations.  
+	spin-orbit alignment: 2016ApJ...823...29A
 
 Thermal emission spectra of other super-hot Jupiters
 
-WASP-103b is an ideal candidate for phase curve observations, with an orbital period of just FIXME hours \citep{gillon14}. Its equilibrium temperature is FIXME K, . The atmosphere of WASP-103b has been characterized with transmission and emission spectroscopy \citep{southworth16, cartier17, lendl17}. The thermal emission spectrum is featureless 
+The atmosphere of WASP-103b has been characterized with transmission and emission spectroscopy \citep{southworth16, cartier17, lendl17}. The thermal emission spectrum is featureless 
 
-In this paper we present the spectroscopic phase curve observations of WASP-103b. Our data observed with \HST/WFC3  
 %, a hot Jupiter with a mass of X, radius of Y, period of Z (cite discovery paper). These properties are similar to WASP-43b, except that WASP-103b has a much (FIXME vs FIXME K) thanks to its hot F?? star host. By comparing the phase curves of these two planets, we can test the effect of irradiation on the climate of the planet.
 
-Talk about other WFC3 papers (Star Cartier, etc)
 
-The structure of the paper is as follows:
 
 \section{Observations and Data Reduction}
 We observed two full-orbit phase curves of WASP-103b with \HST/WFC3 and one each with \Spitzer/IRAC at 3.6 and 4.5 $\mu$m (from HST Program 14050 and Spitzer Program 11099). We also reduced two \HST/WFC3 secondary eclipse observations of WASP-103b from \HST\ Program 13660 (PI: M. Zhao).
@@ -534,7 +521,7 @@ Cite Feng et al. 2016.
 
 H- is important.
 
-How does composition compare to other HJs.
+How does composition compare to other HJs (esp W43b)
 The spectrum is similar to observations of several other ultra-hot Jupiters \citep[][]{arcangeli18, mansfield18}, but qualitatively different from slightly cooler planets, which show water absorption features in the near-infared \citep[e.g.][]{kreidberg14b, line16}.  
 
 \acknowledgments
