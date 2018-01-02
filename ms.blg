@@ -4,67 +4,76 @@ The top-level auxiliary file: ms.aux
 The style file: aasjournal.bst
 Database file #1: msNotes.bib
 Database file #2: ms.bib.bib
-Repeated entry---line 3355 of file ms.bib.bib
+Repeated entry---line 1719 of file ms.bib.bib
+ : @article{evans16
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3381 of file ms.bib.bib
  : @article{carter09
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3397 of file ms.bib.bib
+Repeated entry---line 3423 of file ms.bib.bib
  : @article{stevenson12
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3620 of file ms.bib.bib
+Repeated entry---line 3646 of file ms.bib.bib
  : @article{zhou17
  :                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4099 of file ms.bib.bib
+Repeated entry---line 4125 of file ms.bib.bib
  : @article{cartier17
  :                   ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "getal2014"
+Repeated entry---line 4238 of file ms.bib.bib
+ : @article{southworth16
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "crossfield12"
+Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "arcangeli18"
 Warning--I didn't find a database entry for "mansfield18"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty institution in long15
 Warning--empty institution in mccullough12
-You've used 46 entries,
+You've used 55 entries,
             3222 wiz_defined-function locations,
-            987 strings with 16875 characters,
-and the built_in function-call counts, 22291 in all, are:
-= -- 1717
-> -- 1903
+            1049 strings with 19719 characters,
+and the built_in function-call counts, 27252 in all, are:
+= -- 2087
+> -- 2380
 < -- 15
-+ -- 634
-- -- 691
-* -- 2012
-:= -- 4160
-add.period$ -- 47
-call.type$ -- 46
-change.case$ -- 264
-chr.to.int$ -- 44
-cite$ -- 48
-duplicate$ -- 834
-empty$ -- 1289
-format.name$ -- 752
-if$ -- 4420
-int.to.chr$ -- 3
++ -- 798
+- -- 874
+* -- 2495
+:= -- 5097
+add.period$ -- 56
+call.type$ -- 55
+change.case$ -- 327
+chr.to.int$ -- 51
+cite$ -- 57
+duplicate$ -- 996
+empty$ -- 1539
+format.name$ -- 936
+if$ -- 5384
+int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 43
-newline$ -- 144
-num.names$ -- 185
-pop$ -- 375
+missing$ -- 52
+newline$ -- 171
+num.names$ -- 221
+pop$ -- 457
 preamble$ -- 1
-purify$ -- 262
+purify$ -- 325
 quote$ -- 0
-skip$ -- 617
+skip$ -- 734
 stack$ -- 0
-substring$ -- 721
-swap$ -- 14
+substring$ -- 868
+swap$ -- 18
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 414
+type$ -- 495
 warning$ -- 2
-while$ -- 167
+while$ -- 199
 width$ -- 0
-write$ -- 466
-(There were 4 error messages)
+write$ -- 556
+(There were 6 error messages)

@@ -6,6 +6,22 @@
   {Hodapp}, {Kaiser}, {Magnier}, \& {Price}}]{aller13}
 {Aller}, K.~M., {Kraus}, A.~L., {Liu}, M.~C., {et~al.} 2013, \apj, 773, 63
 
+\bibitem[{{Armstrong} {et~al.}(2016){Armstrong}, {de Mooij}, {Barstow},
+  {Osborn}, {Blake}, \& {Saniee}}]{armstrong16}
+{Armstrong}, D.~J., {de Mooij}, E., {Barstow}, J., {et~al.} 2016, Nature
+  Astronomy, 1, 0004
+
+\bibitem[{{Beatty} {et~al.}(2017{\natexlab{a}}){Beatty}, {Madhusudhan},
+  {Pogge}, {Chung}, {Bierlya}, {Gaudi}, \& {Latham}}]{beatty17a}
+{Beatty}, T.~G., {Madhusudhan}, N., {Pogge}, R., {et~al.} 2017{\natexlab{a}},
+  \aj, 154, 242
+
+\bibitem[{{Beatty} {et~al.}(2017{\natexlab{b}}){Beatty}, {Madhusudhan},
+  {Tsiaras}, {Zhao}, {Gilliland}, {Knutson}, {Shporer}, \&
+  {Wright}}]{beatty17b}
+{Beatty}, T.~G., {Madhusudhan}, N., {Tsiaras}, A., {et~al.} 2017{\natexlab{b}},
+  \aj, 154, 158
+
 \bibitem[{{Bonnefoy} {et~al.}(2014){Bonnefoy}, {Chauvin}, {Lagrange}, {Rojo},
   {Allard}, {Pinte}, {Dumas}, \& {Homeier}}]{bonnefoy14}
 {Bonnefoy}, M., {Chauvin}, G., {Lagrange}, A.-M., {et~al.} 2014, \aap, 562,
@@ -26,10 +42,21 @@
 \bibitem[{{Cowan} \& {Agol}(2008)}]{cowan08}
 {Cowan}, N.~B., \& {Agol}, E. 2008, \apjl, 678, L129
 
-\bibitem[{{Esteves} {et~al.}(2015){Esteves}, {De Mooij}, \&
-  {Jayawardhana}}]{esteves15}
-{Esteves}, L.~J., {De Mooij}, E.~J.~W., \& {Jayawardhana}, R. 2015, \apj, 804,
-  150
+\bibitem[{{Delrez} {et~al.}(2018){Delrez}, {Madhusudhan}, {Lendl}, {Gillon},
+  {Anderson}, {Neveu-VanMalle}, {Bouchy}, {Burdanov}, {Collier-Cameron},
+  {Demory}, {Hellier}, {Jehin}, {Magain}, {Maxted}, {Queloz}, {Smalley}, \&
+  {Triaud}}]{delrez18}
+{Delrez}, L., {Madhusudhan}, N., {Lendl}, M., {et~al.} 2018, \mnras, 474, 2334
+
+\bibitem[{{Demory} {et~al.}(2013){Demory}, {de Wit}, {Lewis}, {Fortney},
+  {Zsom}, {Seager}, {Knutson}, {Heng}, {Madhusudhan}, {Gillon}, {Barclay},
+  {Desert}, {Parmentier}, \& {Cowan}}]{demory13}
+{Demory}, B.-O., {de Wit}, J., {Lewis}, N., {et~al.} 2013, \apjl, 776, L25
+
+\bibitem[{{Evans} {et~al.}(2016){Evans}, {Sing}, {Wakeford}, {Nikolov},
+  {Ballester}, {Drummond}, {Kataria}, {Gibson}, {Amundsen}, \&
+  {Spake}}]{evans16}
+{Evans}, T.~M., {Sing}, D.~K., {Wakeford}, H.~R., {et~al.} 2016, \apjl, 822, L4
 
 \bibitem[{{Foreman-Mackey} {et~al.}(2013){Foreman-Mackey}, {Hogg}, {Lang}, \&
   {Goodman}}]{foremanmackey13}
@@ -54,11 +81,21 @@
   Stellar Quantities, ed. D.~S. {Hayes}, L.~E. {Pasinetti}, \& A.~G.~D.
   {Philip}, 225--249
 
+\bibitem[{{Haynes} {et~al.}(2015){Haynes}, {Mandell}, {Madhusudhan}, {Deming},
+  \& {Knutson}}]{haynes15}
+{Haynes}, K., {Mandell}, A.~M., {Madhusudhan}, N., {Deming}, D., \& {Knutson},
+  H. 2015, \apj, 806, 146
+
 \bibitem[{{Henry}(1999)}]{henry99}
 {Henry}, G.~W. 1999, \pasp, 111, 845
 
 \bibitem[{{Horne}(1986)}]{horne86}
 {Horne}, K. 1986, \pasp, 98, 609
+
+\bibitem[{{Hu} {et~al.}(2015){Hu}, {Demory}, {Seager}, {Lewis}, \&
+  {Showman}}]{hu15}
+{Hu}, R., {Demory}, B.-O., {Seager}, S., {Lewis}, N., \& {Showman}, A.~P. 2015,
+  \apj, 802, 51
 
 \bibitem[{{Husser} {et~al.}(2013){Husser}, {Wende-von Berg}, {Dreizler},
   {Homeier}, {Reiners}, {Barman}, \& {Hauschildt}}]{husser13}
@@ -179,18 +216,27 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Surdej}}]{southworth15}
 {Southworth}, J., {Mancini}, L., {Ciceri}, S., {et~al.} 2015, \mnras, 447, 711
 
+\bibitem[{{Stevenson} {et~al.}(2014{\natexlab{a}}){Stevenson}, {Bean},
+  {Madhusudhan}, \& {Harrington}}]{stevenson14b}
+{Stevenson}, K.~B., {Bean}, J.~L., {Madhusudhan}, N., \& {Harrington}, J.
+  2014{\natexlab{a}}, \apj, 791, 36
+
 \bibitem[{{Stevenson} {et~al.}(2012){Stevenson}, {Harrington}, {Fortney},
   {Loredo}, {Hardy}, {Nymeyer}, {Bowman}, {Cubillos}, {Bowman}, \&
   {Hardin}}]{stevenson12}
 {Stevenson}, K.~B., {Harrington}, J., {Fortney}, J.~J., {et~al.} 2012, \apj,
   754, 136
 
-\bibitem[{{Stevenson} {et~al.}(2014){Stevenson}, {D{\'e}sert}, {Line}, {Bean},
-  {Fortney}, {Showman}, {Kataria}, {Kreidberg}, {McCullough}, {Henry},
-  {Charbonneau}, {Burrows}, {Seager}, {Madhusudhan}, {Williamson}, \&
+\bibitem[{{Stevenson} {et~al.}(2014{\natexlab{b}}){Stevenson}, {D{\'e}sert},
+  {Line}, {Bean}, {Fortney}, {Showman}, {Kataria}, {Kreidberg}, {McCullough},
+  {Henry}, {Charbonneau}, {Burrows}, {Seager}, {Madhusudhan}, {Williamson}, \&
   {Homeier}}]{stevenson14}
-{Stevenson}, K.~B., {D{\'e}sert}, J.-M., {Line}, M.~R., {et~al.} 2014, Science,
-  346, 838
+{Stevenson}, K.~B., {D{\'e}sert}, J.-M., {Line}, M.~R., {et~al.}
+  2014{\natexlab{b}}, Science, 346, 838
+
+\bibitem[{{Stevenson} {et~al.}(2017){Stevenson}, {Line}, {Bean}, {D{\'e}sert},
+  {Fortney}, {Showman}, {Kataria}, {Kreidberg}, \& {Feng}}]{stevenson17}
+{Stevenson}, K.~B., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2017, \aj, 153, 68
 
 \bibitem[{{Wahhaj} {et~al.}(2011){Wahhaj}, {Liu}, {Biller}, {Clarke},
   {Nielsen}, {Close}, {Hayward}, {Mamajek}, {Cushing}, {Dupuy}, {Tecza},
