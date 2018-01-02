@@ -6,6 +6,12 @@
   {Hodapp}, {Kaiser}, {Magnier}, \& {Price}}]{aller13}
 {Aller}, K.~M., {Kraus}, A.~L., {Liu}, M.~C., {et~al.} 2013, \apj, 773, 63
 
+\bibitem[{{Arcangeli} {et~al.}(2018){Arcangeli}, {D\'esert}, {Line}, {Bean},
+  {Parmentier}, {Stevenson}, {Kreidberg}, {Fortney}, {Showman}, \&
+  {Mansfield}}]{arcangeli18}
+{Arcangeli}, J., {D\'esert}, J.~M., {Line}, M., {et~al.} 2018, Submitted to
+  \apjl
+
 \bibitem[{{Armstrong} {et~al.}(2016){Armstrong}, {de Mooij}, {Barstow},
   {Osborn}, {Blake}, \& {Saniee}}]{armstrong16}
 {Armstrong}, D.~J., {de Mooij}, E., {Barstow}, J., {et~al.} 2016, Nature
@@ -31,9 +37,6 @@
   {Beust}, {Desort}, {Teixeira}, {Ducourant}, {Beuzit}, \& {Song}}]{bonnefoy09}
 {Bonnefoy}, M., {Chauvin}, G., {Dumas}, C., {et~al.} 2009, \aap, 506, 799
 
-\bibitem[{{Carter} \& {Winn}(2009)}]{carter09}
-{Carter}, J.~A., \& {Winn}, J.~N. 2009, \apj, 704, 51
-
 \bibitem[{{Cartier} {et~al.}(2017){Cartier}, {Beatty}, {Zhao}, {Line}, {Ngo},
   {Mawet}, {Stassun}, {Wright}, {Kreidberg}, {Fortney}, \&
   {Knutson}}]{cartier17}
@@ -41,6 +44,11 @@
 
 \bibitem[{{Cowan} \& {Agol}(2008)}]{cowan08}
 {Cowan}, N.~B., \& {Agol}, E. 2008, \apjl, 678, L129
+
+\bibitem[{{Crossfield} {et~al.}(2012){Crossfield}, {Barman}, {Hansen},
+  {Tanaka}, \& {Kodama}}]{crossfield12}
+{Crossfield}, I.~J.~M., {Barman}, T., {Hansen}, B.~M.~S., {Tanaka}, I., \&
+  {Kodama}, T. 2012, \apj, 760, 140
 
 \bibitem[{{Delrez} {et~al.}(2018){Delrez}, {Madhusudhan}, {Lendl}, {Gillon},
   {Anderson}, {Neveu-VanMalle}, {Bouchy}, {Burdanov}, {Collier-Cameron},
@@ -161,6 +169,9 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Fortney}, {Kreidberg}, {Madhusudhan}, {Showman}, \& {Diamond-Lowe}}]{line16}
 {Line}, M.~R., {Stevenson}, K.~B., {Bean}, J., {et~al.} 2016, \aj, 152, 203
 
+\bibitem[{{Loeb} \& {Gaudi}(2003)}]{loeb03}
+{Loeb}, A., \& {Gaudi}, B.~S. 2003, \apjl, 588, L117
+
 \bibitem[{{Long} {et~al.}(2015){Long}, {Baggett}, \& {MacKenty}}]{long15}
 {Long}, K.~S., {Baggett}, S.~M., \& {MacKenty}, J.~W. 2015, {Persistence in the
   WFC3 IR Detector: an Improved Model Incorporating the Effects of Exposure
@@ -201,12 +212,14 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 \bibitem[{{Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{pont06}
 {Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, \mnras, 373, 231
 
+\bibitem[{{Sheppard} {et~al.}(2017){Sheppard}, {Mandell}, {Tamburo}, {Gandhi},
+  {Pinhas}, {Madhusudhan}, \& {Deming}}]{sheppard17}
+{Sheppard}, K.~B., {Mandell}, A.~M., {Tamburo}, P., {et~al.} 2017, \apjl, 850,
+  L32
+
 \bibitem[{{Showman} {et~al.}(2009){Showman}, {Fortney}, {Lian}, {Marley},
   {Freedman}, {Knutson}, \& {Charbonneau}}]{showman09}
 {Showman}, A.~P., {Fortney}, J.~J., {Lian}, Y., {et~al.} 2009, \apj, 699, 564
-
-\bibitem[{{Southworth} \& {Evans}(2016)}]{southworth16}
-{Southworth}, J., \& {Evans}, D.~F. 2016, \mnras, 463, 37
 
 \bibitem[{{Southworth} {et~al.}(2015){Southworth}, {Mancini}, {Ciceri},
   {Budaj}, {Dominik}, {Figuera Jaimes}, {Haugb{\o}lle}, {J{\o}rgensen},
@@ -252,6 +265,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Owen}}]{wong04}
 {Wong}, M.~H., {Mahaffy}, P.~R., {Atreya}, S.~K., {Niemann}, H.~B., \& {Owen},
   T.~C. 2004, \icarus, 171, 153
+
+\bibitem[{{Zellem} {et~al.}(2017){Zellem}, {Swain}, {Roudier}, {Shkolnik},
+  {Creech-Eakman}, {Ciardi}, {Line}, {Iyer}, {Bryden}, {Llama}, \&
+  {Fahy}}]{zellem17}
+{Zellem}, R.~T., {Swain}, M.~R., {Roudier}, G., {et~al.} 2017, \apj, 844, 27
 
 \bibitem[{{Zhang} \& {Showman}(2017)}]{zhang17}
 {Zhang}, X., \& {Showman}, A.~P. 2017, \apj, 836, 73

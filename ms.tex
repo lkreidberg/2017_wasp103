@@ -84,7 +84,7 @@ Cambridge, MA 02138}
 \affiliation{University of Amsterdam}
 
 \begin{abstract}
-	We present thermal phase curve measurements for the hot Jupiter WASP-103b observed with \emph{Hubble}/Wide Field Camera 3 and \emph{Spitzer}/IRAC. The dayside planet-to-star flux ranges from FIXME to FIXME at $1.1 - 4.5\,\mu$m.  The phase curves are symmetric and large amplitude, indicative of poor heat redistribution. We fit the phase curves with the SPIDERMAN package to determine the brightness distribution in the photosphere, and find the peak dayside temperature ranges from FIXME to FIXME depending on model.  We also generate phase-resolved spectra, which are consistent with blackbody models for the planet's emission at near-infrared wavelengths, but show strong emission features in the \Spitzer\ bands. We attribute these features to CO emission and a thermal inversion. The retrieved atmospheric composition is more metal-enriched than other hot Jupiters (FIXME). The carbon-to-oxygen ratio is consistent with solar composition. The absence of water features is due to BLAH. We compare the phase curves to general circulation models and find that atmospheric drag is required.  We also compare the spectra to brown dwarfs and young directly imaged companions and find that the water features are significantly diminished in amplitude. power of phase curve observations to elucidate the three-dimensional structure of exoplanet atmospheres.
+	We present thermal phase curve measurements for the hot Jupiter WASP-103b observed with \emph{Hubble}/Wide Field Camera 3 and \emph{Spitzer}/IRAC. The dayside planet-to-star flux ranges from FIXME to FIXME at $1.1 - 4.5\,\mu$m.  The phase curves are symmetric and large amplitude, indicative of poor redistribution. We fit the phase curves with the SPIDERMAN package to determine the brightness distribution in the photosphere, and find the peak dayside temperature ranges from FIXME to FIXME depending on model.  We also generate phase-resolved spectra, which are consistent with blackbody models for the planet's emission at near-infrared wavelengths, but show strong emission features in the \Spitzer\ bands. We attribute these features to CO emission and a thermal inversion. The retrieved atmospheric composition is more metal-enriched than other hot Jupiters (FIXME). The carbon-to-oxygen ratio is consistent with solar composition. The absence of water features is due to BLAH. We compare the phase curves to general circulation models and find that atmospheric drag is required.  We also compare the spectra to brown dwarfs and young directly imaged companions and find that the water features are significantly diminished in amplitude. power of phase curve observations to elucidate the three-dimensional structure of exoplanet atmospheres.
 
 inversion on the dayside but not on the nightside
 \end{abstract}
@@ -97,25 +97,21 @@ Planets are round, rotating, and irradiated on one hemisphere at a time -- all o
 
 Exoplanets are so distant that they are not spatially resolved, so the only way to reveal inhomogeneity in their atmospheres is to measure a phase curve. Phase curve observations consist of continuous monitoring of the planet-to-star flux ratio over a complete orbital revolution of the planet, which exposes different longitudes at each orbital phase.  The first phase curve was observed with \Spitzer\ for the hot Jupiter HD 189733b by \citep{knutson07}, followed by additional \Spitzer\ observations for about a dozen more systems \citep[cataloged in][]{parmentier17}.  The observations revealed large day-night temperature contrasts (in excess of 300 K), and eastward shifted peak brightness due to heat circulation, as predicted by 3D models \citep{showman09}.  These infrared measurements were complemented by optical phase curves from \Kepler\, which show evidence for reflected light from patchy and variable dayside clouds with a range of compositions \citep{demory13, hu15, armstrong16, parmentier16}. A \emph{spectroscopic} phase curve was observed for WASP-43b with \emph{Hubble}/Wide Field Camera 3 (\HST/WFC3) in the near-infrared, which provided the first phase-resolved measurements of an exoplanet's water abundance and thermal structure \citep{stevenson14, stevenson17}.
 
-In this paper we present spectroscopic phase curve observations of the hot Jupiter WASP-103b, measured with \HST/WFC3 and Spitzer/IRAC. This planet is an ideal target for phase curve observations, with an orbital period of just 22 hours and an equilbrium temperature of 2500 K \citep{gillon14}.  Previous observations of WASP-103b's atmosphere revealed a blackbody-like dayside emission spectrum, with possible evidence for a $K_\mathrm{S}$-band emission feature \citep{cartier17, delrez18}. The shape of the optical transmission spectrum is disputed, with some evidence for strong sodium and potassium absorption features that are consistent with expectations for a cloud-free atmosphere \citep{lendl17}, but other observations indicating a large optical scattering slope that is not fit well by theoretical models \citep{southworth16}. 
+In this paper we present spectroscopic phase curve observations of the hot Jupiter WASP-103b, measured with \HST/WFC3 and Spitzer/IRAC. This planet is an ideal target for phase curve observations, with an orbital period of just 22 hours and an equilbrium temperature of 2500 K \citep{gillon14}.  Previous observations of WASP-103b's atmosphere revealed a blackbody-like dayside emission spectrum, with possible evidence for a $K_\mathrm{S}$-band emission feature \citep{cartier17, delrez18}. The optical transmission spectrum shows evidence for strong sodium and potassium absorption features that are consistent with expectations for a cloud-free atmosphere \citep{lendl17}.%, though other observations have shown a large optical scattering slope that is not fit well by theoretical models \citep{southworth16}. 
 
 
-WASP-103b is an archetype of the class of ultra-hot Jupiters (with dayside temperatures $>2000\,\mathrm{K}$). Observations of the near-IR thermal emission spectra of these objects have been puzzling: some show absorption features, some show emission features, and some are consistent with blackbody models \citep{madhusudhan11, crossfield12, stevenson14b, haynes15, evans16, beatty17a, beatty17b, }.  A variety of explanations have been proposed, including low metallicity or carbon-to-oxygen ratios \citep{madhusudhan11, cartier17}, which would TiO/VO heating of the upper atmosphere, . 
+WASP-103b is an archetype of the class of ultra-hot Jupiters (with orbital periods of about one day and dayside temperatures typically $>2000\,\mathrm{K}$). Observations of the thermal emission spectra of these objects have been puzzling. In the near-infrared, where water is the dominant absorber, some spectra show water absorption features, some show emission features, and some are consistent with blackbody models \citep{madhusudhan11, crossfield12, stevenson14b, haynes15, evans16, beatty17a, beatty17b, sheppard17, arcangeli18, mansfield18}.  A variety of explanations were proposed for these results, including low metallicity or high carbon-to-oxygen compositions, dayside clouds, and isothermal or inverted temperature profiles caused by TiO/VO absorption in the upper atmosphere. Recently, \cite{arcangeli18} showed that water dissociation on the hot dayside plays an important role in the atmospheres of these ultra-hot planets and may be responsible for some of the blackbody-like near-IR spectra. In this work, we put these results in context investigate the global thermal structure of WASP-103b over a range of temperatures. FIXME
 
-Our phase-curve observations of provide the first 3D constraints on temperature structure of a planets.
+The structure of the paper is the following: in \S\,\ref{sec:observations} we describe the observations and data reduction. \S\,\ref{sec:fits} details the models fit to the phase curves. \S\,\ref{sec:results} we discuss results, including the phase-resolved spectra, a comparison of thermal phase variation models, and FIXME. In \S\,\ref{sec:gcm} and \ref{sec:comparison}, we compare the observations to GCM predictions and spectra from similar temperature stars and directly imaged companions. \S\,\ref{sec:discussion} concludes.
 
 %	spin-orbit alignment: 2016ApJ...823...29A
 
-%are featureless (consistent with a blackbody model for the planet), others show water absorption features, and water emission \citep{evans16}. Isothermal in the near-IR \citep{crossfield12, stevenson14, }. Some have absortion features in near-IR \citep{kreidberg14b, line16}
+%Fortney 08 
 
-
-Fortney 08 
-
-Phase curve observation to provide context for the global thermal structure of the planet.
-
-
+%Phase curve observation to provide context for the global thermal structure of the planet.
 
 \section{Observations and Data Reduction}
+\label{sec:observations}
 We observed two full-orbit phase curves of WASP-103b with \HST/WFC3 and one each with \Spitzer/IRAC at 3.6 and 4.5 $\mu$m (from HST Program 14050 and Spitzer Program 11099). We also reduced two \HST/WFC3 secondary eclipse observations of WASP-103b from \HST\ Program 13660 (PI: M. Zhao).
 
 \subsection{\HST/WFC3}
@@ -132,8 +128,7 @@ The data were reduced with the POET pipeline \citep{stevenson12}. We performed a
 \subsection{Photometric Monitoring}
 We monitored WASP-103's photometric variability over 158 nights during 2014 - 2016 with the Tennessee State University Celestron 14-inch (C14) automated imaging telescope (AIT), located at Fairborn Observatory in southern Arizona \citep[][]{henry99}.  The observations of WASP-103 were made in the Cousins R passband with an SBIG STL-1001E CCD camera.  Each observation consisted of 4--10 consecutive exposures on WASP-103 along with several dozen comparison stars in the same field. The individual consecutive frames were co-added and reduced to differential magnitudes (i.e., WASP-103 minus the mean brightness of the six best comparison stars). The nightly observations were corrected for bias, flat-fielding, pier-side offset, and differential atmospheric extinction.  
 
-The photometric analyses are summarized for each observing season in Table\,\ref{tab:photometry}.  The standard deviation of WASP-103's brightness in each season is given in column~4.  The mean of the three standard deviations is 0.0058~mag, which is very comparable to the mean standard deviation of the six comparison stars (0.0055~mag).  To maximize the possibility of detection WASP-103's rotation, we normalized the photometry such that each observing season has the same mean, thereby removing long-term variability in WASP-103 and/or the comparison stars. We performed a periodogram analysis of the normalized dataset. Figure\,\ref{fig:photometry} shows the frequency spectrum and the phase curve computed with the best frequency, respectively.  We also performed a least-squares fit to the data to determine the best fit sine curve. The best fit period is 6.814 days, which agrees closely with the estimated stellar rotation period of 6.855 days \citep{gillon14}.  The variability amplitude is 0.005~mag, which has FIXME impact on our analysis here.
-
+The photometric analyses are summarized for each observing season in Table\,\ref{tab:photometry}.  The standard deviation of WASP-103's brightness in each season is given in column~4.  The mean of the three standard deviations is 0.0058~mag, which is very comparable to the mean standard deviation of the six comparison stars (0.0055~mag).  To maximize the possibility of detection WASP-103's rotation, we normalized the photometry such that each observing season has the same mean, thereby removing long-term variability in WASP-103 and/or the comparison stars. We performed a periodogram analysis of the normalized dataset. Figure\,\ref{fig:photometry} shows the frequency spectrum and the phase curve computed with the best frequency, respectively.  We also performed a least-squares fit to the data to determine the best fit sine curve. The best fit period is 6.814 days, which agrees closely with the estimated stellar rotation period of 6.855 days \citep{gillon14}.  The variability amplitude is 0.005~mag. Based on the formalism in \cite{zellem17}, we calculate that this variability will bias the measured eclipse depth by $\lesssim10$\,ppm from epoch to epoch, which is well below the photon-limited precision of our measurements.
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/photometry.eps}
@@ -165,12 +160,12 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 
 
 \section{Light Curve Fits}
+\label{sec:fits}
 We fit a two-component model to the light curves. One component models the astrophysical signal (the planet's thermal phase variation and transit), and the other component models the systematic noise introduced by time-dependent changes in instrument performance. For each light curve, we fit the physical and systematic components simultaneously, such that the total observed flux as a function of time is given by $F(t) = F_\mathrm{physical}(t) \times F_\mathrm{sys}(t)$. For the \HST\ data, where we observed two phase curves and two additional eclipses, we constrain the physical parameters to be the same for all visits, but allow some of the systematics parameters to vary (for more details see \S\,\ref{sec:hst_sys}). We fit the WFC3 band-integrated (``white" light curve"), as well as spectroscopic light curves created from 10 wavelength bins uniformly spaced at $0.05\,\mu$m intervals between $1.15$ and $1.65\,\mu$m.
 
 \subsection{Astrophysical Signal}
 We assume the measured astrophysical signal $F_\mathrm{physical}$ has the following form:
 \begin{equation}
-	%F_\mathrm{physical}(\lambda, t) = F_s(\lambda) (1 + \alpha(\lambda)) \times T(\lambda, t) + F_p(\lambda, t) 
 	F_\mathrm{physical}(\lambda, t) =  T(\lambda, t) + c(\lambda, t) \times F_p/F_s(\lambda, t)
 \end{equation}
 where $T(\lambda, t)$ is the transit model (the fraction of the stellar disk that is visible at time $t$), $F_p/F_s(\lambda, t)$ is the disk-integrated planet-to-star flux, and $c$ is a correction factor for companion star dilution and the planet's tidal distortion. 
@@ -183,14 +178,8 @@ We scaled the planet-to-star flux by a correction factor $c$ to account for dilu
 \begin{equation}
 	c(\lambda, t) = [1 + \alpha(\lambda)]A(t)
 \end{equation}
-where $\alpha(\lambda)$ is the additional fractional flux from the companion star and $A(t)$ is the sky-projected area of the planet. We estimated $\alpha(\lambda)$ based on the best fit spectral energy distribution from \cite{cartier17}. The companion star contribution ranges from $10\%$ at $1.1\,\mu$m to $16\%$ at $4.5\,\mu$m. (FIXME: what is the error?)  We calculated $A(t)$ using the analytic formula from \cite{leconte11b}, equation B.9, which computes the projected area of a triaxial ellipsoid. We estimated the ellipsoid properties using Table B.3 of \cite{leconte11a}, assuming the planet radius is 1.5 $R_\mathrm{Jup}$ and age is 5 Gyr. The predicted ellipsoidal variability is shown in Figure\,\ref{fig:ellipsoidal}. At quadrature, the projected radius is $8\%$ larger than at phase zero (mid-transit). %FIXME: say this doesn't matter.
-%In addition to temperature, the planet's visible surface area $[R(t)]^2$ is also expected to vary with orbital phase due to tidal distortion \citep{gillon14}. In the observed light curve, changes in planet radius are degenerate with changes in temperature. 
+where $\alpha(\lambda)$ is the additional fractional flux from the companion star and $A(t)$ is the sky-projected area of the planet. We estimated $\alpha(\lambda)$ based on the best fit spectral energy distribution from \cite{cartier17}. The companion star contribution ranges from $10\%$ at $1.1\,\mu$m to $16\%$ at $4.5\,\mu$m. The uncertainty on the companion star flux contribution is less than 1\%, which introduces negligible error in the estimated planet-to-star-flux compared to the photon noise.   We calculated $A(t)$ using the analytic formula from \cite{leconte11b}, equation B.9, which computes the projected area of a triaxial ellipsoid. We estimated the ellipsoid properties using Table B.3 of \cite{leconte11a}, assuming the planet radius is 1.5 $R_\mathrm{Jup}$ and age is 5 Gyr. The predicted ellipsoidal variability is shown in Figure\,\ref{fig:ellipsoidal}. At quadrature, the projected radius is $8\%$ larger than at phase zero (mid-transit). We also considered the effects of Doppler beaming and found that it contributes less than 10 ppm variability to the measured flux \citep{loeb03}.
 
-%We explored adding an additional sine term to model the thermal phase variation, but the additional degrees of freedom are not justified according to the Bayesian Information Criterion (BIC). 
-
-
-%Our light curves are not precise enough to detect the ellipsoidal variability, but we include a model prediction $E(t)$ to avoid introducing any bias in the thermal phase variation. We model $E(t)$ using the analytic expression from \cite{leconte11}, which 
-%FIXME doppler beaming?
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/ellipsoidal.pdf}
@@ -219,12 +208,10 @@ where $t_\mathrm{v}$ is time elapsed since the first exposure in a visit and $t_
 Some segments of the data exhibit stronger systematics than others, so we exclude these data in our final analysis. We drop the first orbit from every visit and the first exposure from every orbit \citep[following common practice; see e.g.][]{kreidberg14a}.  We also discard exposures from the last half of orbit 15 from the phase curve observations, which were taken in staring mode to enable a gyro bias update. Since we observed two phase curves, we have complete orbital phase coverage the planet despite discarding some data.
 
 \subsubsection{\Spitzer\ Systematics}
-We fit the \Spitzer\ systematics with the POET pipeline, which uses the BLISS mapping technique \citep{stevenson12}. This approach creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. The sensitivity map is determined by bilinear interpolation over a grid of knots centered on the stellar flux. Each knot's sensitivity is calculated from the residuals to the light curve fit: the higher the flux values for data points near a given knot, the higher the detector sensitivity is at that position.  To avoid overfitting, we chose the grid scale such that bilinear interpolation performed better than nearest neighbor interpolation. For the $3.6\,\mu$m data, the grid scale was 0.008 pixel in both $x$ and $y$. For $4.5\,\mu$m, the scale was 0.022 pixel.  
+We fit the \Spitzer\ systematics with the POET pipeline, which uses the BLISS mapping technique \citep{stevenson12}. This approach creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. The sensitivity map is determined by bilinear interpolation over a grid of knots centered on the stellar flux. Each knot's sensitivity is calculated from the residuals to the light curve fit: the higher the flux values for data points near a given knot, the higher the detector sensitivity is at that position.  To avoid overfitting, we chose the grid scale such that bilinear interpolation performed better than nearest neighbor interpolation. For the $3.6\,\mu$m data, the grid scale was 0.008 pixel in both $x$ and $y$. For $4.5\,\mu$m, the scale was 0.022 pixel.  In addition to the intrapixel sensitivity variation, we fit the data for a linear trend in time. We tested a quadratic trend but did not find significant evidence for the additional model complexity based on the Bayesian information criterion (BIC). 
 
-In addition to the intrapixel sensitivity variation, we fit the data for a linear trend in time. We tested a quadratic trend but did not find significant evidence for the additional model complexity based on the Bayesian information criterion (BIC). 
-
-As discussed in \S \ref{sec:fitquality}, the 3.6 $\mu$m light curve exhibits time correlated noise. To account for this additional source of error, we fit the wavelet model from \cite{carter09} (simultaneously with the other fit parameters). FIXME: describe wavelets.
-
+%As discussed in \S \ref{sec:fitquality}, the 3.6 $\mu$m light curve exhibits time correlated noise. To account for this additional source of error, we fit the wavelet model from \cite{carter09} (simultaneously with the other fit parameters). We fit  
+%We explored adding an additional sine term to model the thermal phase variation, but the additional degrees of freedom are not justified according to the Bayesian Information Criterion (BIC). 
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/phase_curves_spherical.pdf}
@@ -235,11 +222,12 @@ We include the transits in the fit, but they are not displayed in this figure. T
 \end{figure*}
 
 \section{Results}
+\label{sec:results}
 The fitted light curves are shown in Figure\,\ref{fig:phasecurves}. This figure shows results from the spherical harmonics model for the thermal phase variation and has instrument systematics removed.  Broadly speaking, the phase curves show large amplitude phase variation, ranging from 1.5 parts-per-thousand (ppt) in the WFC3 bandpass to 5 ppt in \Spitzer\ Channel 2.  The planet flux changes significantly with orbital phase in all three of the data sets, suggesting a strong gradient from dayside to nightside temperature, and peak brightness occurs near phase 0.5. In this section, we describe the phase curve fits and the phase-resolved spectra. FIXME 
 
 \subsection{Goodness of Fit}
 \label{sec:fitquality}
-We performed several tests of the quality of the light curve fits.  First we predicted the level of scatter in the light curves based on photon noise alone, then compared this value to the root-mean-square (rms) of the fit residuals.  The Spitzer 4.5 $\mu$m light curve rms is within 10\% of the expected photon noise limit (691 versus 640 ppm), whereas the 3.6 $\mu$m light curve has significantly larger rms (797 versus 470 ppm), due to time-correlated red noise (discussed below). The expected photon-limited rms for the WFC3 spectrosopic light curves ranges from 430 - 530 parts per million (ppm), and the measured rms was typically within 5\% of expectations for all spectroscopic channels.  For the WFC3 band- integrated white light curve, the rms was slightly larger than predicted (175 versus 122 ppm). There are a number of possible origins for this discrepancy, including imperfect background subtraction, variation in the position of the spatial scan on the detector, loss of flux outside the extraction window, and imperfect modeling of the astrophysical signal or instrument systematics. However, our analysis of the composition and thermal structure of the planet's atmosphere is based on the wavelength-dependent data (which reach the photon limit), so we do not further explore the small excess noise in the white light curve. 
+We performed several tests of the quality of the light curve fits.  First we predicted the level of scatter in the light curves based on photon noise alone, then compared this value to the root-mean-square (rms) of the fit residuals.  The Spitzer 4.5 $\mu$m light curve rms is within 10\% of the expected photon noise limit (691 versus 640 ppm), whereas the 3.6 $\mu$m light curve has significantly larger rms (797 versus 470 ppm), due to time-correlated red noise (discussed below). The expected photon-limited rms for the WFC3 spectrosopic light curves ranges from 430 - 530 parts per million (ppm), and the measured rms was typically within 5\% of expectations for all spectroscopic channels.  For the WFC3 band- integrated white light curve, the rms was slightly larger than predicted (175 versus 122 ppm). There are a number of possible origins for this discrepancy, including imperfect background subtraction, variation in the position of the spatial scan on the detector, loss of flux outside the extraction window, and imperfect modeling of the astrophysical signal or instrument systematics. However, our analysis of the composition and thermal structure of the planet's atmosphere is based on the wavelength-dependent data (where we reach the photon limit), so we do not further explore the small excess noise in the white light curve. 
 
 %Spitzer expected rms calculated from Figures/systematics.py
 %Ch1: rms obs, exp (ppm) 796.931457529 470.309808368
@@ -247,8 +235,6 @@ We performed several tests of the quality of the light curve fits.  First we pre
 
 In addition to calculated the fit rms compared to the photon noise, we also tested for the presence of red noise based on whether the rms decreases as expected when the light curve in binned in time.  If the noise is white (uncorrelated in time), the residuals are expected to decrease by a factor of $\sqrt{N}$, where $N$ is the number of points in a bin. Figure\,\ref{fig:rms} shows the binned residuals compared to expectations for white noise. The \HST/WFC3 and \Spitzer\ Channel 2 light curves agree well with expectations, whereas \Spitzer\ Channel 1 shows higher noise than expected as bin size increases. This test confirms the presence of time-correlated noise in the Channel 1 light curve that can be seen by eye in the residuals in Figure\,\ref{fig:phasecurves}. Both \Spitzer\ channels use the same detector, but Channel 1 data are more susceptible to time-correlated noise because the the point spread function is narrower at shorter wavelengths, making intrapixel sensitivity variations more pronounced.
 
-The reduced $\chi^2$ values for the fits are near unity. FIXME when you have them all.
-%Third, we calculated several goodness of fit statistics. $\chi^2$, AIC, BIC.
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/rms.pdf}
@@ -457,7 +443,7 @@ The models with added drag more closely reproduce the small hotspot offset that 
 
 We also compared the GCM output to the temperature maps retrieved with \texttt{spiderman}. Figure\,\ref{fig:model_comparison} shows the 0.1 bar temperature map for the $\tau_\mathrm{drag} = 10^3$ GCM compared to the best it models. The GCM has a minimum and maximum temperature of $920$ and $3360$ K, which is most comparable to the fit from the spherical harmonic model.  The GCM nightside temperatures are around $300$ K cooler than the spherical harmonics fit, 
 
-. The polar regions are the most discrepant, with temperatures are about $1000$ K cooler in the GCM than the spherical harmonics model.
+. The polar regions are the most discrepant, with temperatures are about $1000$ K cooler in the GCM than the spherical harmonics model. FIXME
 
 The GCMs also provide insight into what molecules are present in which parts of the atmosphere. As discussed in \S\,\ref{sec:composition}, water dissociation and H- opacity are needed to explain the dayside emission spectrum. Figure\,\ref{fig:gcmcomposition} shows the photospheric abundances of H$_2$O and H- compared to the predicted temperature for the $\tau_\mathrm{drag} = 10^3$ GCM. The water abundance drops by $\sim10$ at the substellar point, and the H- opacity increases by $\sim100$. 
 
@@ -465,7 +451,7 @@ The GCMs also provide insight into what molecules are present in which parts of 
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/gcm_comparison.pdf}
-\caption{GCM predictions (colored lines) compared to the best fit model for the WFC3 white light phase curve (black line). The nominal model is solar composition, cloud-free, with TiO/VO opacity and no drag. The models are multiplied by the predicted ellipsoidal variability of the planet.}
+\caption{GCM predictions (colored lines) compared to the best fit model for the WFC3 white light phase curve (black line). The nominal model is solar composition, cloud-free, with TiO/VO opacity and no drag. The models are corrected for the predicted ellipsoidal variability of the planet.}
 \label{fig:gcmcomparison}
 \end{figure}
 
@@ -477,6 +463,7 @@ The GCMs also provide insight into what molecules are present in which parts of 
 
 
 \section{Comparison with Brown Dwarfs and Directly Imaged Companions}
+\label{sec:comparison}
 WASP-103b is so highly irradiated that its photospheric temperature ($2000 - 3000$ K) is comparable to that of low mass stars. However, the planet's other properties (surface gravity, rotation rate, irradiation) are different. To explore the effects of varying these parameters, we compared the spectra of WASP-103b to brown dwarfs and young directly imaged companions. The object properties are summarized in Table\,\ref{tab:sources}.
 
 We selected spectra from WASP-103b at three orbital phases: dayside ($\phi = 0.5$), quadrature ($\phi = 0.25$), and nightside ($\phi = 0.1$), and compared them to sources with comparable effective temperature. Figure\,\ref{fig:planetstarcomparison} shows the flux-calibrated spectra (assuming a distance of 10 pc).
@@ -518,6 +505,7 @@ The main spectral feature over the wavelength range we consider is water. To qua
 
 
 \section{Discussion and Conclusions}
+\label{sec:discussion}
 One-dimensional retrieval is probably wrong, since we showed the dayside may have a large temperature gradient -> should work on this in the future.
 
 

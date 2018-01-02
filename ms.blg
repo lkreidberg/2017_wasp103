@@ -8,10 +8,6 @@ Repeated entry---line 1719 of file ms.bib.bib
  : @article{evans16
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3381 of file ms.bib.bib
- : @article{carter09
- :                  ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 3423 of file ms.bib.bib
  : @article{stevenson12
  :                     ,
@@ -24,56 +20,55 @@ Repeated entry---line 4125 of file ms.bib.bib
  : @article{cartier17
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4238 of file ms.bib.bib
- : @article{southworth16
- :                      ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "crossfield12"
-Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "arcangeli18"
 Warning--I didn't find a database entry for "mansfield18"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Name 2 in "{Arcangeli}, J. and {D\'esert}, J.~M., and {Line}, M. and {Bean}, J. and {Parmentier}, V. and {Stevenson}, K. and {Kreidberg}, L. and {Fortney}, J. and {Showman}, A., and {Mansfield}, M." has a comma at the end for entry arcangeli18
+while executing---line 1775 of file aasjournal.bst
+Name 9 in "{Arcangeli}, J. and {D\'esert}, J.~M., and {Line}, M. and {Bean}, J. and {Parmentier}, V. and {Stevenson}, K. and {Kreidberg}, L. and {Fortney}, J. and {Showman}, A., and {Mansfield}, M." has a comma at the end for entry arcangeli18
+while executing---line 1775 of file aasjournal.bst
+Name 2 in "{Arcangeli}, J. and {D\'esert}, J.~M., and {Line}, M. and {Bean}, J. and {Parmentier}, V. and {Stevenson}, K. and {Kreidberg}, L. and {Fortney}, J. and {Showman}, A., and {Mansfield}, M." has a comma at the end for entry arcangeli18
+while executing---line 1775 of file aasjournal.bst
 Warning--empty institution in long15
 Warning--empty institution in mccullough12
-You've used 55 entries,
+You've used 58 entries,
             3222 wiz_defined-function locations,
-            1049 strings with 19719 characters,
-and the built_in function-call counts, 27252 in all, are:
-= -- 2087
-> -- 2380
-< -- 15
-+ -- 798
-- -- 874
-* -- 2495
-:= -- 5097
-add.period$ -- 56
-call.type$ -- 55
-change.case$ -- 327
-chr.to.int$ -- 51
-cite$ -- 57
-duplicate$ -- 996
-empty$ -- 1539
-format.name$ -- 936
-if$ -- 5384
+            1066 strings with 20612 characters,
+and the built_in function-call counts, 28957 in all, are:
+= -- 2209
+> -- 2554
+< -- 14
++ -- 857
+- -- 942
+* -- 2663
+:= -- 5424
+add.period$ -- 59
+call.type$ -- 58
+change.case$ -- 348
+chr.to.int$ -- 54
+cite$ -- 60
+duplicate$ -- 1050
+empty$ -- 1622
+format.name$ -- 1001
+if$ -- 5712
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 52
-newline$ -- 171
-num.names$ -- 221
-pop$ -- 457
+missing$ -- 55
+newline$ -- 180
+num.names$ -- 233
+pop$ -- 486
 preamble$ -- 1
-purify$ -- 325
+purify$ -- 346
 quote$ -- 0
-skip$ -- 734
+skip$ -- 773
 stack$ -- 0
-substring$ -- 868
+substring$ -- 915
 swap$ -- 18
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 495
+type$ -- 522
 warning$ -- 2
-while$ -- 199
+while$ -- 208
 width$ -- 0
-write$ -- 556
-(There were 6 error messages)
+write$ -- 585
+(There were 7 error messages)
