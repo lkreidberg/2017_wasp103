@@ -1,3 +1,4 @@
+ \newcommand{\noop}[1]{}
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\href{#1}{#1}}
@@ -6,11 +7,11 @@
   {Hodapp}, {Kaiser}, {Magnier}, \& {Price}}]{aller13}
 {Aller}, K.~M., {Kraus}, A.~L., {Liu}, M.~C., {et~al.} 2013, \apj, 773, 63
 
-\bibitem[{{Arcangeli} {et~al.}(2018){Arcangeli}, {D\'esert}, {Line}, {Bean},
-  {Parmentier}, {Stevenson}, {Kreidberg}, {Fortney}, {Showman}, \&
-  {Mansfield}}]{arcangeli18}
-{Arcangeli}, J., {D\'esert}, J.~M., {Line}, M., {et~al.} 2018, Submitted to
-  \apjl
+\bibitem[{{Arcangeli} {et~al.}(\noop{3000}submitted){Arcangeli}, {D\'esert},
+  {Line}, {Bean}, {Parmentier}, {Stevenson}, {Kreidberg}, {Fortney}, {Showman},
+  \& {Mansfield}}]{arcangeli18}
+{Arcangeli}, J., {D\'esert}, J.~M., {Line}, M., {et~al.} \noop{3000}submitted,
+  Submitted to \apjl
 
 \bibitem[{{Armstrong} {et~al.}(2016){Armstrong}, {de Mooij}, {Barstow},
   {Osborn}, {Blake}, \& {Saniee}}]{armstrong16}
@@ -84,6 +85,12 @@
 {Gillon}, M., {Anderson}, D.~R., {Collier-Cameron}, A., {et~al.} 2014, \aap,
   562, L3
 
+\bibitem[{Gordon \& McBride(1994)}]{gordon94}
+Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
+  chemical equilibrium compositions and applications, Vol.~1 (National
+  Aeronautics and Space Administration, Office of Management, Scientific and
+  Technical Information Program)
+
 \bibitem[{{Hayes}(1985)}]{1985IAUS..111..225H}
 {Hayes}, D.~S. 1985, in IAU Symposium, Vol. 111, Calibration of Fundamental
   Stellar Quantities, ed. D.~S. {Hayes}, L.~E. {Pasinetti}, \& A.~G.~D.
@@ -109,6 +116,12 @@
   {Homeier}, {Reiners}, {Barman}, \& {Hauschildt}}]{husser13}
 {Husser}, T.-O., {Wende-von Berg}, S., {Dreizler}, S., {et~al.} 2013, \aap,
   553, A6
+
+\bibitem[{Jones {et~al.}(2001)Jones, Oliphant, Peterson, \&
+  Others}]{jones_scipy_2001}
+Jones, E., Oliphant, T., Peterson, P., \& Others. 2001, {SciPy}: Open source
+  scientific tools for Python, , .
+\newblock \url{http://www.scipy.org/}
 
 \bibitem[{Kass \& Raftery(1995)}]{kass95}
 Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
@@ -165,6 +178,14 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Juvan}, \& {Fossati}}]{lendl17}
 {Lendl}, M., {Cubillos}, P.~E., {Hagelberg}, J., {et~al.} 2017, \aap, 606, A18
 
+\bibitem[{{Line} {et~al.}(2014){Line}, {Knutson}, {Wolf}, \& {Yung}}]{line14}
+{Line}, M.~R., {Knutson}, H., {Wolf}, A.~S., \& {Yung}, Y.~L. 2014, \apj, 783,
+  70
+
+\bibitem[{{Line} {et~al.}(2013){Line}, {Wolf}, {Zhang}, {Knutson}, {Kammer},
+  {Ellison}, {Deroo}, {Crisp}, \& {Yung}}]{line13a}
+{Line}, M.~R., {Wolf}, A.~S., {Zhang}, X., {et~al.} 2013, \apj, 775, 137
+
 \bibitem[{{Line} {et~al.}(2016){Line}, {Stevenson}, {Bean}, {Desert},
   {Fortney}, {Kreidberg}, {Madhusudhan}, {Showman}, \& {Diamond-Lowe}}]{line16}
 {Line}, M.~R., {Stevenson}, K.~B., {Bean}, J., {et~al.} 2016, \aj, 152, 203
@@ -186,6 +207,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Maxted}, {Pollacco}, \& {West}}]{madhusudhan11}
 {Madhusudhan}, N., {Harrington}, J., {Stevenson}, K.~B., {et~al.} 2011, \nat,
   469, 64
+
+\bibitem[{{Mansfield} {et~al.}(\noop{3001}submitted){Mansfield}, {Bean},
+  {Line}, {Paramentier}, \& {Kreidberg}}]{mansfield18}
+{Mansfield}, M., {Bean}, J.~B., {Line}, M., {Paramentier}, V., \& {Kreidberg},
+  L. \noop{3001}submitted, Submitted to \apj
 
 \bibitem[{{McCullough} \& {MacKenty}(2012)}]{mccullough12}
 {McCullough}, P., \& {MacKenty}, J. 2012, {Considerations for using Spatial
@@ -250,6 +276,16 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 \bibitem[{{Stevenson} {et~al.}(2017){Stevenson}, {Line}, {Bean}, {D{\'e}sert},
   {Fortney}, {Showman}, {Kataria}, {Kreidberg}, \& {Feng}}]{stevenson17}
 {Stevenson}, K.~B., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2017, \aj, 153, 68
+
+\bibitem[{{Tinetti} {et~al.}(2012){Tinetti}, {Tennyson}, {Griffith}, \&
+  {Waldmann}}]{tinetti12}
+{Tinetti}, G., {Tennyson}, J., {Griffith}, C.~A., \& {Waldmann}, I. 2012,
+  Philosophical Transactions of the Royal Society of London Series A, 370, 2749
+
+\bibitem[{Van Der~Walt {et~al.}(2011)Van Der~Walt, Colbert, \&
+  Varoquaux}]{van2011numpy}
+Van Der~Walt, S., Colbert, S.~C., \& Varoquaux, G. 2011, Computing in Science
+  \& Engineering, 13, 22
 
 \bibitem[{{Wahhaj} {et~al.}(2011){Wahhaj}, {Liu}, {Biller}, {Clarke},
   {Nielsen}, {Close}, {Hayward}, {Mamajek}, {Cushing}, {Dupuy}, {Tecza},
