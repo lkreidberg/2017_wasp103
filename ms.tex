@@ -270,7 +270,7 @@ To test that the phase-resolved spectra are robust to different approaches for f
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/hst_model_comparison.pdf}
-\caption{\textbf{Left:} Fits to the broadband WFC3 phase curve compared to a GCM. The colored lines correspond to different temperature maps fit to the data, and the dashed gray line is from the $\tau_\mathrm{drag} = 10^3$ GCM. We also show the planet-to-star flux corresponding to each map (points), which is model-dependent due to slight degeneracies with the instrument systematic model.  \textbf{Right:} Temperature maps from the best fit models and the GCM at 0.1 bar.}
+\caption{\textbf{Left:} Fits to the broadband WFC3 phase curve compared to a GCM. The colored lines correspond to different temperature maps fit to the data, and the dashed gray line is from the $\tau_\mathrm{drag} = 10^3$ GCM. We also show the planet-to-star flux corresponding to each map (points), which is model-dependent due to slight degeneracies with the instrument systematic model.  \textbf{Right:} Temperature maps from the best fit models and the GCM at 0.1 bar. FIXME say here what the temperature difference is at substellar point.}
 \label{fig:model_comparison}
 \end{figure*}
 
@@ -332,9 +332,29 @@ We also compared our dayside spectrum to the $z'$ and $K_\mathrm{S}$-band second
 \subsection{Phase Curve Amplitude and Hotspot Offset}
 The location of peak brightness of the phase curve is a proxy for the efficiency of thermal reradiation to space and relative to heat transport by advection (the radiative-to-advective timescale). The faster the reradiation, the less heat can be redistributed to the nightside. We compared the measured hotspot offset for the different models and found FIXME.
 
+FIXME what is the weighted mean amplitude and offset for the WFC3 data? are they all consistent?
+
+\begin{deluxetable}{LLL}
+	\tablecolumns{3}
+	\tablewidth{0pt}:
+	\tablecaption{Phase Curve Properties \label{table:amps_offsets}}
+	\tablehead{
+	\colhead{Wavelength} & \colhead{Amplitude} & \colhead{Offset}}
+		\startdata
+		1.175 & 0.89 \pm 0.17 & -0.3 \pm 1.3 \\
+		1.225 & 1.11 \pm 0.27 & -1.8 \pm 1.3 \\
+		1.275 & 0.88 \pm 0.17 & 1.1 \pm 1.4 \\
+		1.325 & 0.92 \pm 0.17 & 0.6 \pm 1.4 \\
+		1.375 & 0.82 \pm 0.14 & 1.8 \pm 1.5 \\
+		1.425 & 0.91 \pm 0.16 & 1.6 \pm 1.4 \\
+		1.475 & 0.83 \pm 0.13 & 2.5 \pm 1.4 \\
+		1.525 & 1.04 \pm 0.19 & 0.3 \pm 1.2 \\
+		1.575 & 0.99 \pm 0.19 & -0.3 \pm 1.3 \\
+		1.625 & 0.86 \pm 0.18 & -1.8 \pm 1.2 \\
+		\enddata
+	\end{deluxetable}
+
 %\subsection{Clouds?}
-
-
 \section{Atmospheric Composition and Thermal Structure}
 \label{sec:composition}
 To interpret the phase-resolved spectra, we performed two model fits. First, we modeled the planet flux as a simple blackbody to estimate the dayside brightness temperature and test for significant absorption or emission features. We then performed a more sophisticated grid-based retrieval to evaluate the atmospheric composition and thermal structure. 
