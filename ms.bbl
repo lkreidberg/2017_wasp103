@@ -38,6 +38,13 @@
   {Beust}, {Desort}, {Teixeira}, {Ducourant}, {Beuzit}, \& {Song}}]{bonnefoy09}
 {Bonnefoy}, M., {Chauvin}, G., {Dumas}, C., {et~al.} 2009, \aap, 506, 799
 
+\bibitem[{Braak(2006)}]{braak06}
+Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
+\newblock \url{http://dx.doi.org/10.1007/s11222-006-8769-1}
+
+\bibitem[{{Carter} \& {Winn}(2009)}]{carter09}
+{Carter}, J.~A., \& {Winn}, J.~N. 2009, \apj, 704, 51
+
 \bibitem[{{Cartier} {et~al.}(2017){Cartier}, {Beatty}, {Zhao}, {Line}, {Ngo},
   {Mawet}, {Stassun}, {Wright}, {Kreidberg}, {Fortney}, \&
   {Knutson}}]{cartier17}
@@ -61,6 +68,11 @@
   {Zsom}, {Seager}, {Knutson}, {Heng}, {Madhusudhan}, {Gillon}, {Barclay},
   {Desert}, {Parmentier}, \& {Cowan}}]{demory13}
 {Demory}, B.-O., {de Wit}, J., {Lewis}, N., {et~al.} 2013, \apjl, 776, L25
+
+\bibitem[{{Diamond-Lowe} {et~al.}(2014){Diamond-Lowe}, {Stevenson}, {Bean},
+  {Line}, \& {Fortney}}]{diamond-lowe14}
+{Diamond-Lowe}, H., {Stevenson}, K.~B., {Bean}, J.~L., {Line}, M.~R., \&
+  {Fortney}, J.~J. 2014, \apj, 796, 66
 
 \bibitem[{{Evans} {et~al.}(2016){Evans}, {Sing}, {Wakeford}, {Nikolov},
   {Ballester}, {Drummond}, {Kataria}, {Gibson}, {Amundsen}, \&

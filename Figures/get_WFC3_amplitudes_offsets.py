@@ -23,7 +23,5 @@ ind3 = 1        #fpfs
 
 for f in files:
         d = np.load(f)
-        print f[32+offset:36+offset], np.median(d[:,ind]), np.median(d[:,ind]) - quantile(d[:,ind], 0.16), quantile(d[:,ind], 0.84) - np.median(d[:,ind]), np.median(d[:,ind2]), np.median(d[:,ind2]) - quantile(d[:,ind2], 0.16), quantile(d[:,ind2], 0.84) - np.median(d[:,ind2]), np.median(d[:, ind3]), np.median(d[:,ind3]) - quantile(d[:,ind3], 0.16), quantile(d[:,ind3], 0.84) - np.median(d[:,ind3])
-#       print f[32+offset:36+offset], np.median(d[:,ind2])*np.median(d[:,ind3]) #phase amplitude
-        #print f[32+offset:36+offset], np.median(d[:,ind3]), np.std(d[:,ind3])   #phase amplitude
-        #need to do error propagation to get uncertainties
+        #print f[32+offset:36+offset], np.median(d[:,ind]), np.median(d[:,ind]) - quantile(d[:,ind], 0.16), quantile(d[:,ind], 0.84) - np.median(d[:,ind]), np.median(d[:,ind2]), np.median(d[:,ind2]) - quantile(d[:,ind2], 0.16), quantile(d[:,ind2], 0.84) - np.median(d[:,ind2]), np.median(d[:, ind3]), np.median(d[:,ind3]) - quantile(d[:,ind3], 0.16), quantile(d[:,ind3], 0.84) - np.median(d[:,ind3])
+        print f[32+offset:36+offset], np.median(d[:,ind]), np.median(d[:,ind2]), np.median(d[:,ind3])

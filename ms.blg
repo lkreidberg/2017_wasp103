@@ -8,6 +8,10 @@ Repeated entry---line 1721 of file ms.bib.bib
  : @article{evans16
  :                 ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 3383 of file ms.bib.bib
+ : @article{carter09
+ :                  ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 3425 of file ms.bib.bib
  : @article{stevenson12
  :                     ,
@@ -36,45 +40,45 @@ while executing---line 1775 of file aasjournal.bst
 Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
 while executing---line 1775 of file aasjournal.bst
 Warning--empty institution in mccullough12
-You've used 65 entries,
+You've used 68 entries,
             3222 wiz_defined-function locations,
-            1110 strings with 22203 characters,
-and the built_in function-call counts, 32186 in all, are:
-= -- 2473
-> -- 2810
-< -- 16
-+ -- 943
-- -- 1040
-* -- 2941
-:= -- 6008
-add.period$ -- 67
-call.type$ -- 65
-change.case$ -- 392
-chr.to.int$ -- 61
-cite$ -- 68
-duplicate$ -- 1178
-empty$ -- 1826
-format.name$ -- 1104
-if$ -- 6360
+            1130 strings with 22910 characters,
+and the built_in function-call counts, 33426 in all, are:
+= -- 2582
+> -- 2890
+< -- 18
++ -- 970
+- -- 1069
+* -- 3038
+:= -- 6234
+add.period$ -- 71
+call.type$ -- 68
+change.case$ -- 409
+chr.to.int$ -- 64
+cite$ -- 71
+duplicate$ -- 1230
+empty$ -- 1908
+format.name$ -- 1137
+if$ -- 6613
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 61
-newline$ -- 203
-num.names$ -- 261
-pop$ -- 555
+missing$ -- 64
+newline$ -- 213
+num.names$ -- 273
+pop$ -- 577
 preamble$ -- 2
-purify$ -- 390
+purify$ -- 407
 quote$ -- 0
-skip$ -- 861
+skip$ -- 901
 stack$ -- 0
-substring$ -- 1001
+substring$ -- 1046
 swap$ -- 19
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 582
+type$ -- 609
 warning$ -- 3
-while$ -- 232
+while$ -- 244
 width$ -- 0
-write$ -- 657
-(There were 10 error messages)
+write$ -- 689
+(There were 11 error messages)

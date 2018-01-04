@@ -53,15 +53,17 @@ for i, g in enumerate(gcms):
     plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, label = labels[i], color = colors[i], linestyle = ls[i])
     plt.plot(model[:,0]/360. +1.5, model[:,5]*1e3*area, color = colors[i], linestyle = ls[i])
 
-    print "model quadrature", np.interp(0.25, model[:,0]/360. +0.5, model[:,5]*1e3*area) 
+    #print "model quadrature", np.interp(0.25, model[:,0]/360. +0.5, model[:,5]*1e3*area) 
 
-    x, y = model[:,0]/360. + 0.5, model[:,5]
-    f = interp1d(x, y, kind = 'cubic')
-    xnew = np.linspace(0, 1, 1000)
-    ynew = f(xnew)
-    ind = ynew == np.max(ynew)
-    offset = xnew[ind]
-    #print "hotspot offset", (offset - 0.5)*360.
+    for col in [5,6,7]:
+        x, y = model[:,0]/360. + 0.5, model[:,col]
+        f = interp1d(x, y, kind = 'cubic')
+        xnew = np.linspace(0, 1, 1000)
+        ynew = f(xnew)
+        ind = ynew == np.max(ynew)
+        offset = xnew[ind]
+        print ((offset - 0.5)*360.)[0], (np.max(ynew) - np.min(ynew))/np.max(ynew),
+    print ""
 
 
 
