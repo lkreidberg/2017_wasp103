@@ -234,7 +234,7 @@ In addition to calculated the fit rms compared to the photon noise, we also test
 \begin{deluxetable}{llllll}
 \label{tab:model_comparison}
 	\tablecolumns{6}
-	\tablewidth{0pt}:
+	\tablewidth{0pt}
 	\tablecaption{Model Comparison \label{table:models}}
 	\tablehead{\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
 		\startdata
@@ -335,28 +335,31 @@ The shape of a phase curve can be summarized with two parameters: the amplitude 
 
 Table\,\ref{table:amps_offsets} lists the estimated amplitudes and offsets for the phase curve fits (median and $1\,\sigma$ credible interval). These values are from the sine curve model for the thermal phase variation, which directly fits for the amplitude and hotspot offset. For the WFC3 phase curves, the amplitudes are consistent with unity and the offsets are consistent with zero. We note that some of the spectroscopic channels have amplitudes greater than unity, which is physically impossible (the planet cannot emit negative flux). As a sanity check, we take the weighted average over the WFC3 channels and find an average amplitude of $0.91\pm0.02$, which shows that at higher precision the results are physical and agree well with the large amplitudes observed for other hot planets \citep{komacek16}.  The \Spitzer\ phase curves also have large amplitudes (near 0.85) and hotspot offsets consistent with zero. 
 
-\begin{deluxetable}{LLL}
-	\tablecolumns{3}
+\begin{deluxetable}{llLL}
+	\tablecolumns{4}
 	\tablewidth{0pt}:
 	\tablecaption{Phase Curve Properties \label{table:amps_offsets}}
 	\tablehead{
-	\colhead{Wavelength} & \colhead{Amplitude} & \colhead{Offset (degrees)}}
+		\colhead{Bandpass} & \colhead{Source} & \colhead{Amplitude} & \colhead{Offset)}\\
+	\colhead{\,} & \colhead{\,} & \colhead{\,} & \colhead{(Degrees)}}
 		\startdata
-		1.175 & 1.11 \pm 0.27 & 1.8 \pm 1.3 \\
-		1.225 & 0.88 \pm 0.17 & -1.1 \pm 1.4 \\
-		1.275 & 0.92 \pm 0.17 & -0.6 \pm 1.4 \\
-		1.325 & 0.82 \pm 0.14 & -1.8 \pm 1.5 \\
-		1.375 & 0.91 \pm 0.16 & -1.6 \pm 1.4 \\
-		1.425 & 0.83 \pm 0.13 & -2.5 \pm 1.4 \\
-		1.475 & 1.04 \pm 0.19 & -0.3 \pm 1.2 \\
-		1.525 & 0.99 \pm 0.19 & 0.3 \pm 1.3 \\
-		1.575 & 0.86 \pm 0.18 & 1.8 \pm 1.2 \\
-		1.625 & 0.89 \pm 0.17 & 0.3 \pm 1.3 \\
-		3.6 & 0.86 \pm 0.13 & 2.0 \pm 0.7 \\
-		4.5 & 0.83 \pm 0.05 & 1.0 \pm 0.4 \\
+		WFC3 & data & 0.91 \pm 0.02 & -0.3 \pm 0.1 \\
+		\, & nominal GCM & 0.89 & 15.32 \\
+		\, & [Fe/H] = 0.5 GCM & 0.84 & 19.64 \\
+		\, & $\tau_\mathrm{drag4}$ GCM & 0.97 & 2.34 \\
+		\, & $\tau_\mathrm{drag3}$ GCM & 0.99 & 0.18 \\
+		Spitzer 3.6 $\mu$m & data & 0.86 \pm 0.13 & 2.0 \pm 0.7 \\
+		\, & nominal GCM & 0.78 & 9.19 \\
+		\, & [Fe/H] = 0.5 GCM & 0.72 & 12.79 \\
+		\, & $\tau_\mathrm{drag4}$ GCM & 0.86 & 0.90 \\
+		\, & $\tau_\mathrm{drag3}$ GCM & 0.97 & 0.18 \\
+		Spitzer 4.5 $\mu$m & data & 0.83 \pm 0.05 & 1.0 \pm 0.4 \\
+		\, & nominal GCM & 0.79 & 8.11 \\
+		\, & [Fe/H] = 0.5 GCM & 0.73 & 11.35 \\
+		\, & $\tau_\mathrm{drag4}$ GCM & 0.85 & 0.90 \\
+		\, & $\tau_\mathrm{drag3}$ GCM & 0.93 & 0.18 \\
 		\enddata
-\end{deluxetable}
-
+	\end{deluxetable}
 
 %\subsection{Clouds?}
 \section{Atmospheric Composition and Thermal Structure}
@@ -370,7 +373,7 @@ We also fit blackbody models to the WFC3 data only, and found that they provide 
 
 \begin{deluxetable}{LLL}
 	\tablecolumns{3}
-	\tablewidth{0pt}:
+	\tablewidth{0pt}
 	\tablecaption{Phase-resolved Effective Temperature \label{table:teffs}}
 	\tablehead{
 	\colhead{Orbital Phase} & \colhead{$T_\mathrm{eff}$} & \colhead{$\chi^2_\nu$}}
@@ -447,8 +450,13 @@ To explore the three-dimensional effects of atmospheric dynamics, we ran several
 
 Figure\,\ref{fig:gcmcomparison} shows GCM predictions compared to the best fit model to the WFC3 phase curve. The WFC3 bandpass is near the peak of the planet's thermal emission, so it provides a good test of whether the GCM reproduces the properties of the planet.  Our nominal GCM was a cloud-free, solar composition atmosphere with TiO/VO opacity and no added drag.  We also ran models with enhanced metallicity ([Fe/H] = 0.5), no TiO/VO, and added atmospheric drag.  Lorentz drag can occur in the hottest exoplanet atmospheres, which may be partially ionized and coupled to the background magnetic field. We parameterized the drag (\textbf{Vivien: how did you model drag?}), with timescales were $\tau_\mathrm{drag} = 10^3, 10^4$ and $10^6$ s. 
 
-This model qualitatively reproduces some features of the data, such as the large day-night temperature contrast; however, it predicts a larger offset in peak brightness from the substellar point than we observe. 
-The models with added drag more closely reproduce the small hotspot offset that is observed. The main effect of drag is to slow down advection of heat to the nightside, which shifts the peak brightness closer to the substellar point.  The best fit WFC3 phase curve has a hotspot offset of FIXME. The drag models have offsets of $0.2$ and $2.3$ degrees for $\tau_\mathrm{drag} = 10^3$ and $10^4$ s, compared to $15$ degrees for the nominal GCM.  The drag models also provide a good match to the observed dayside flux, for drag timescales in the range $\tau_\mathrm{drag} = 10^3 - 10^4$ s.  However, the drag models underestimate the flux at longitudes away from the substellar point, predicting 20\% less flux than is observed at quadrature. \textbf{Vivien: are these fast drag timescales even reasonable?}).
+To assess how well the GCM predictions reproduce the data, we calculate the amplitude and hot spot offset for all the models (listed in Table\,\ref{tab:amps_offs}). The models with drag fit better, with phase variation amplitude near unity and a hot spot offset near zero for all three band-passes. The nominal model and metal-enhanced composition ([Fe/H] = 0.5) both have a phase curve offset that is too large (
+
+However, in the WFC3 bandpass the drag models underestimate the flux at longitudes away from the substellar point. For example, the FIXME model predicts 20\% less flux than is observed at quadrature. \textbf{Vivien: are these fast drag timescales even reasonable?}).
+
+FIXME: change taudrag3 label. change text about unphysical phase curve ampltiude
+
+%This model qualitatively reproduces some features of the data, such as the large day-night temperature contrast; however, it predicts a larger offset in peak brightness from the substellar point than we observe.  The models with added drag more closely reproduce the small hotspot offset that is observed. The main effect of drag is to slow down advection of heat to the nightside, which shifts the peak brightness closer to the substellar point.  The best fit WFC3 phase curve has a hotspot offset of FIXME. The drag models have offsets of $0.2$ and $2.3$ degrees for $\tau_\mathrm{drag} = 10^3$ and $10^4$ s, compared to $15$ degrees for the nominal GCM.  The drag models also provide a good match to the observed dayside flux, for drag timescales in the range $\tau_\mathrm{drag} = 10^3 - 10^4$ s.  
 
 We also compared the GCM output to the temperature maps retrieved with \texttt{spiderman}. Figure\,\ref{fig:model_comparison} shows the 0.1 bar temperature map for the $\tau_\mathrm{drag} = 10^3$ GCM compared to the best it models. The GCM has a minimum and maximum temperature of $920$ and $3360$ K, which is most comparable to the fit from the spherical harmonic model.  The GCM nightside temperatures are around $300$ K cooler than the spherical harmonics fit, 
 
@@ -492,7 +500,7 @@ The main spectral feature over the wavelength range we consider is water. To qua
 
 \begin{deluxetable*}{llCCCC}
 	\tablecolumns{6}
-	\tablewidth{0pt}:
+	\tablewidth{0pt}
 	\tablecaption{Source Properties \label{table:sources}}
 	\tablehead{
 	\colhead{\,} & \colhead{Object} & \colhead{$T_\mathrm{eff}$} & \colhead{logg} & \colhead{H$_2$O A$_1$} & \colhead{H$_2$O A$_2$}}
