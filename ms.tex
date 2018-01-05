@@ -440,7 +440,7 @@ The GCMs also provide insight into what molecules are present in which parts of 
 
 \begin{figure*}
 	\includegraphics[width = 1.0\textwidth]{Figures/GCM_abundances.eps}
-\caption{Abundances of key molecular species for different viewing geometries, from the $\tau_\mathrm{drag3}$ GCM.}
+	\caption{Row (1): photospheric temperatures for the $\tau_\mathrm{drag3}$ GCM for different viewing geometries.  The substellar point corresponds to $\alpha = 0$ and the antistellar point is $\alpha = \pm 180$.  Row (2) indicates the ratio of pressures probed in and out of the water band. On the dayside, the opacity out of the water band is filled in by absorption from H- and TiO/VO. Rows (3-4) show the abundances of H$_2$O and H-. The dayside temperatures, water dissociates and the photospheric abundance drops by $\sim10$.  }
 \label{fig:GCMabundance}
 \end{figure*}
 
@@ -486,16 +486,19 @@ For WASP-103b, $A_1$ is consistent with zero at all three orbital phases. The br
 
 \section{Summary}
 \label{sec:summary}
-We observed thermal phase curves of the hot Jupiter WASP-103b measured with \HST/WFC3 time series spectroscopy ($1.15 - 1.65\,\mu$m) and \Spitzer/IRAC broadband photometry ($3.6$ and $4.6\,mu$m bands). 
+We observed thermal phase curves of the hot Jupiter WASP-103b measured with \HST/WFC3 time series spectroscopy ($1.15 - 1.65\,\mu$m) and \Spitzer/IRAC broadband photometry ($3.6$ and $4.6\,\mu$m bands). 
 
 \begin{itemize}
-	\item{We fit the climate using the \texttt{spiderman} package \citep{louden17}}
-	\item{The phase curves have large amplitude ($0.8 -0.9\times$ secondary eclipse depth)}
-	\item{The phase-resolved spectra are consistent with a blackbody model, but there is an emission feature at \Spitzer\ wavelengths. Why is it isothermal? cite Beatty} 
-	\item{We characterized the composition with a 1D grid-based retrieval. The atmospheric metallicity is super-solar () and > 1 at $3\,\sigma$ confidence. larger than  } 
-	\item{We compared the phase curves to 3D GCM predictions}
-	\item{We compared the spectra to brown dwarfs and directly imaged companions of similar temperature}
+	\item{The phase curves have large amplitudes ($0.8 -0.9\times$ the secondary eclipse depth), and small offsets in peak brightness from the substellar point (consistent with zero degrees at all wavelengths). These characteristics indicate inefficient redistribution of heat to the nightside, as seen in other very hot Jupiters \citep{komacek17}.}
+	\item{We fit the phase variation with the \texttt{spiderman} package \citep{louden17} to evaluate different models of the planets climate. A spherical harmonic temperature map generally provides the best fit to the data; however, all the maps produce reasonable fits ($\chi^2_\nu$ near unity), and there are large differences in temperature between them ($> 1000$ K). Breaking the degeneracy between different climate maps will require higher precision phase curves and/or secondary eclipse mapping \citep[e.g.][]{dewit12}.}
+	\item{We calculated phase-resolved spectra in ten orbital phase bins. The \HST/WFC3 spectra are consistent with  blackbody emission from the planet at all orbital phases. The best fit effective temperatures ranges from 1920 K (phase $\phi = 0.1$) to 3010 K on the dayside. We attribute the absence of water features at WFC3 wavelengths to (1) H$_2$O dissociation on the dayside, (2) additional near-IR opacity from H-, TiO/VO and FeH, (3) a small temperature gradient at the pressure levels probed by the data.  The \Spitzer\ data are \emph{not} consistent with a blackbody: there is an infrared emission feature at phases where the substellar point is visible ($\phi = 0.2 - 0.7$), which transitions to an absorption feature on the nightside ($\phi = -0.1 - 0.1$). We attribute these features to CO and changing thermal structure from the dayside to the nightside.}
+	\item{We characterized the composition with a 1D grid-based retrieval that assumes thermochemical and radiative-convective equilibrium. The atmosphere is moderately metal-enriched ($23^{+29}_{-13}\times$ solar; and $>1\times$ solar at $3\,\sigma$ confidence). This value is somewhat higher than what is observed for other gas giants and predicted by models \citep[e.g.][]{wong04, kreidberg14b, mordasini16}, and may be indicative of intrinsic scatter in the relationship between atmospheric metallicity and planet mass. However, the metallicity is strongly sensitive to the $4.5\,\mu$m \Spitzer\ eclipse depth, and additional observations would be useful in confirming the metal enhancement.  In addition to metallicity, we also infer an upper limit on the carbon-to-oxygen ratio of 0.9 ($3\,\sigma$ confidence). This estimate agrees with expectations from planet formation models that pollution from water ice in planetesimals leads to $\mathrm{C/O} < 1$ in gas giant atmospheres \citep{mordasini16, espinoza17}. The best fit temperature pressure profile has a thermal inversion from $\sim10^{-2} - 10^{-3}$ bars due to TiO/VO absorption at high altitudes.} 
+	\item{We ran several 3D GCMs to compare to the data, including a nominal model with a cloud-free, solar composition, a metal-enriched model ([Fe/H] = 0.5), and two models with Lorentz drag. The GCMs with Lorentz drag have slower wind speeds and provide the best match to the data small hotspot offsets that are observed, but they underpredict the palent's nightside flux.}
+	\item{We compared the spectra of WASP-103b at phases 0.5 (dayside0, 0.25 (quadrature), and 0.1 (nightside) to brown dwarfs and directly imaged companions of similar temperature. Both the brown dwarfs and imaged companions show evidence for water features, as defined by FIXME spectral index. Cite Beatty }
 \end{itemize}
+
+Future observations with JWST
+planets are round and complicated
 
 
 %Cite Feng et al. 2016.
