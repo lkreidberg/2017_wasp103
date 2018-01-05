@@ -92,11 +92,9 @@ WASP-103b is an archetype of the class of ultra-hot Jupiters (with orbital perio
 
 The structure of the paper is the following: in \S\,\ref{sec:observations} we describe the observations and data reduction. \S\,\ref{sec:fits} details the models fit to the phase curves. \S\,\ref{sec:results} we discuss results, including the phase-resolved spectra, a comparison of thermal phase variation models, and FIXME. In \S\,\ref{sec:gcm} and \ref{sec:comparison}, we compare the observations to GCM predictions and spectra from similar temperature stars and directly imaged companions. \S\,\ref{sec:discussion} concludes.
 
-%	spin-orbit alignment: 2016ApJ...823...29A
 
 %Fortney 08 
 
-%Phase curve observation to provide context for the global thermal structure of the planet.
 
 \section{Observations and Data Reduction}
 \label{sec:observations}
@@ -125,20 +123,11 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 \end{figure}
 
 \begin{deluxetable}{ccccc}
-\label{tab:photometry}
-	%\tabletypesize{\small}
-	\tablenum{1}
 	\tablewidth{0pt}
-	\tablecaption{Photometric Observations of WASP-103}
+	\tablecaption{Photometric Observations of WASP-103 \label{tab:photometry}}
 	\tablehead{
 		\colhead{Observing} & \colhead{} & \colhead{Date Range} &
-	\colhead{Sigma} & \colhead{Seasonal Mean} }% \\
-
-%		\colhead{Season} & \colhead{$N_{obs}$} & \colhead{(HJD $-$ 2,400,000)} &
-%		\colhead{(mag)} & \colhead{(mag)}}%   \\
-
-	%	\colhead{(1)} & \colhead{(2)} & \colhead{(3)} &
-	%	\colhead{(4)} & \colhead{(5)}  
+	\colhead{Sigma} & \colhead{Seasonal Mean} }
 	\startdata
 	   2014   &  59 & 56722--56972 & 0.0057 & $0.9546\pm0.0007$  \\
 	   2015   &  73 & 57028--57335 & 0.0062 & $0.9549\pm0.0007$  \\
@@ -197,7 +186,6 @@ Some segments of the data exhibit stronger systematics than others, so we exclud
 \subsubsection{\Spitzer\ Systematics}
 We fit the \Spitzer\ systematics with the POET pipeline, which uses the BLISS mapping technique \citep{stevenson12}. This approach creates a map of the intrapixel sensitivity while simultaneously fitting for other systematics and the physical parameters of the system. The sensitivity map is determined by bilinear interpolation over a grid of knots centered on the stellar flux. Each knot's sensitivity is calculated from the residuals to the light curve fit: the higher the flux values for data points near a given knot, the higher the detector sensitivity is at that position.  To avoid overfitting, we chose the grid scale such that bilinear interpolation performed better than nearest neighbor interpolation. For the $3.6\,\mu$m data, the grid scale was 0.008 pixel in both $x$ and $y$. For $4.5\,\mu$m, the scale was 0.022 pixel.  In addition to the intrapixel sensitivity variation, we fit the data for a linear trend in time. We tested a quadratic trend but did not find significant evidence for the additional model complexity based on the Bayesian information criterion (BIC). 
 
-%As discussed in \S \ref{sec:fitquality}, the 3.6 $\mu$m light curve exhibits time correlated noise. To account for this additional source of error, we fit the wavelet model from \cite{carter09} (simultaneously with the other fit parameters). We fit  
 %We explored adding an additional sine term to model the thermal phase variation, but the additional degrees of freedom are not justified according to the Bayesian Information Criterion (BIC). 
 
 \subsection{Best Fits and Uncertainties}
@@ -223,8 +211,7 @@ In addition to calculated the fit rms compared to the photon noise, we also test
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/phase_curves_spherical.pdf}
-\caption{WASP-103b phase curve observations from \HST/WFC3 (top) and \Spitzer/IRAC (middle and bottom). For clarity, the data are phase-folded on the planet's orbital period and binned in 30 uniformly spaced bins between 0 and 1. The left column shows the phase curves with systematic noise removed (black points) compared to the best fit spherical harmonics model (colored lines). The error bars denote $1\,\sigma$ uncertainties (in some cases, the errors are smaller than the data points).  %The shading denotes the  1\,$\sigma$ confidence interval on the best fit. 
-We include the transits in the fit, but they are not displayed in this figure. The right-hand column shows the binned residuals for the best-fit light curve.}
+\caption{WASP-103b phase curve observations from \HST/WFC3 (top) and \Spitzer/IRAC (middle and bottom). For clarity, the data are phase-folded on the planet's orbital period and binned in 30 uniformly spaced bins between 0 and 1. The left column shows the phase curves with systematic noise removed (black points) compared to the best fit spherical harmonics model (colored lines). The error bars denote $1\,\sigma$ uncertainties (in some cases, the errors are smaller than the data points).  We include the transits in the fit, but they are not displayed in this figure. The right-hand column shows the binned residuals for the best-fit light curve.}
 \label{fig:phasecurves}
 \end{figure*}
 
@@ -233,41 +220,19 @@ We include the transits in the fit, but they are not displayed in this figure. T
 The fitted light curves are shown in Figure\,\ref{fig:phasecurves}. This figure shows results from the spherical harmonics model for the thermal phase variation and has instrument systematics removed.  Broadly speaking, the phase curves show large amplitude phase variation, ranging from 1.5 parts-per-thousand (ppt) in the WFC3 bandpass to 5 ppt in \Spitzer\ Channel 2.  The planet flux changes significantly with orbital phase in all three of the data sets, suggesting a strong gradient from dayside to nightside temperature, and peak brightness occurs near phase 0.5. In this section, we quantitatively characterize the phase curve shape, split the data into phase resolved spectra, evaluate different different temperature maps, and compare with previous observations of the dayside thermal emission spectrum.
 
 
-\begin{deluxetable}{llllll}
-\label{tab:model_comparison}
-	\tablecolumns{6}
-	\tablewidth{0pt}
-	\tablecaption{Model Comparison \label{table:models}}
-	\tablehead{\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
-		\startdata
-		WFC3 & Sph. Harmonics & 1214 & 3251 & 0.0 & 0.0 \\
-		\, & Kinematic & 1980 & 3958 & 11.8 & 11.8 \\
-		\, & Two Temp. & 0 & 2887 & 47.7 & 43.2 \\
-		\, & Sinusoid & -- & -- & 17.7 & 13.2 \\
-		Ch 1 & Sph. Harmonics & 1280 & 3444 & 48.0 & 0.0 \\
-		\, & Kinematic & 1955 & 3675 & 82.3 & 34.3 \\
-		\, & Two Temp. & 1429 & 3041 & 58.7 & 17.6 \\
-		\, & Sinusoid & -- & -- & 0.0 & 98.4 \\
-		Ch 2 & Sph. Harmonics & 902 & 3786 & 2.2 & 3.1 \\
-		\, & Kinematic & 1703 & 4276 & 16.55 & 17.41 \\
-		\, & Two Temp. & 1361 & 3311 & 26.1 & 0.0 \\
-		\, & Sinusoid & -- & -- & 0.0 & 49.6 \\
-		\enddata
-		\vspace{-0.8cm}
-		\tablecomments{comments}
-\end{deluxetable}
-
 \subsection{Phase Curve Amplitudes and Hotspot Offsets}
-The shape of a phase curve can be summarized with two parameters: the amplitude of thermal phase variation (minimum to maximum brightness, divided by the secondary eclipse depth) and the location of peak brightness (typically called a ``hotspot offset" and measured in degrees eastward of the substellar point). Larger amplitudes and smaller offsets are both indicative of inefficient heat transport to the nightside.
+The shape of a phase curve can be summarized with two parameters: the amplitude of thermal phase variation (minimum to maximum brightness, divided by the secondary eclipse depth) and the location of peak brightness (typically called a ``hotspot offset" and measured in degrees eastward of the substellar point).  Table\,\ref{table:amps_offsets} lists the estimated amplitudes and hotspot offsets (median and $1\,\sigma$ credible interval) for the band-integrated WFC3 phase curve and both \Spitzer\ channels. The estimates are from the sine curve model for the thermal phase variation, which fits directly for the amplitude and offset. 
 
-Table\,\ref{table:amps_offsets} lists the estimated amplitudes and offsets for the phase curve fits (median and $1\,\sigma$ credible interval). These values are from the sine curve model for the thermal phase variation, which fits directly for the amplitude and hotspot offset. For the WFC3 phase curves, the amplitudes are consistent with unity and the offsets are consistent with zero. We note that some of the spectroscopic channels have amplitudes greater than unity, which is physically impossible (the planet cannot emit negative flux). As a sanity check, we take the weighted average over the WFC3 channels and find an average amplitude of $0.91\pm0.02$, which shows that at higher precision the results are physical and agree well with the large amplitudes observed for other hot planets \citep{komacek16}.  The \Spitzer\ phase curves also have large amplitudes (near 0.85) and hotspot offsets consistent with zero. 
+For all three phase curves, the hotspot offset is consistent with zero degrees, indicative of a fast radiative-to-advective timescale (the incident flux is reradiated to space faster than it is advected around to the nightside). Fast radiative timescales are precicted at high temperatures, and small hotspot offsets are also observed for other very hot Jupiters \citep{komacek17}.  The phase curve amplitudes are large (near 0.8 - 0.9), as expected for an atmosphere with inefficient heat redistribution. In \S\,\ref{sec:gcm} we compare these results to expectations from 3D GCMs.
+
+%For the WFC3 phase curves, the amplitudes are consistent with unity and the offsets are consistent with zero. We note that some of the spectroscopic channels have amplitudes greater than unity, which is physically impossible (the planet cannot emit negative flux). As a sanity check, we take the weighted average over the WFC3 channels and find an average amplitude of $0.91\pm0.02$, which shows that at higher precision the results are physical and agree well with the large amplitudes observed for other hot planets \citep{komacek16}.  The \Spitzer\ phase curves also have large amplitudes (near 0.85) and hotspot offsets consistent with zero. 
 
 \begin{deluxetable}{llLL}
 	\tablecolumns{4}
-	\tablewidth{0pt}:
+	\tablewidth{0pt}
 	\tablecaption{Phase Curve Properties \label{table:amps_offsets}}
 	\tablehead{
-		\colhead{Bandpass} & \colhead{Source} & \colhead{Amplitude} & \colhead{Offset)}\\
+		\colhead{Bandpass} & \colhead{Source} & \colhead{Amplitude} & \colhead{Offset}\\
 	\colhead{\,} & \colhead{\,} & \colhead{\,} & \colhead{(Degrees)}}
 		\startdata
 		WFC3 & data & 0.91 \pm 0.02 & -0.3 \pm 0.1 \\
@@ -295,17 +260,17 @@ For the other orbital phases, we binned the light curve (with systematics remove
 
 To test that the phase-resolved spectra are robust to different approaches for fitting the data, we compared the spectra for all four of the thermal phase variation models (sinusoid, kinematic, spherical harmonics, and two temperature). We found that the choice of model does not significantly change the results.  The emission spectra are insensitive to the models because they are estimated directly from the data (after systematics have been removed). Since systematic noise is not strongly correlated with the astrophysical signal, the systematics-divided data are nearly identical for all the models.  This point is illustrated in Figure\,\ref{fig:model_comparison} for the broadband WFC3 light curve. In most phase bins, the planet-to-star flux agrees to well within one sigma for all the models. 
 
+\begin{figure*}
+\includegraphics[width = 1.0\textwidth]{Figures/hst_model_comparison.pdf}
+\caption{\textbf{Left:} Fits to the broadband WFC3 phase curve compared to a GCM. The colored lines correspond to different temperature maps fit to the data, and the dashed gray line is from the $\tau_\mathrm{drag3}$ GCM. We also show the planet-to-star flux corresponding to each map (points), which is model-dependent due to slight degeneracies with the instrument systematic model.  \textbf{Right:} Temperature maps from the best fit models and the GCM at a representative photospheric pressure of 0.01 bar.}
+\label{fig:model_comparison}
+\end{figure*}
+
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/emission_spectra.pdf}
 \caption{Phase-resolved emission spectra (points) compared to the best fit blackbody (blue line) and the GCM with $\tau_\mathrm{drag3}$ s. Phases $\phi = 0.5$ and $0.0$ are centered on the substellar and anti-stellar points, respectively.}
 \label{fig:spectra}
-\end{figure*}
-
-\begin{figure*}
-\includegraphics[width = 1.0\textwidth]{Figures/hst_model_comparison.pdf}
-\caption{\textbf{Left:} Fits to the broadband WFC3 phase curve compared to a GCM. The colored lines correspond to different temperature maps fit to the data, and the dashed gray line is from the $\tau_\mathrm{drag3}$ GCM. We also show the planet-to-star flux corresponding to each map (points), which is model-dependent due to slight degeneracies with the instrument systematic model.  \textbf{Right:} Temperature maps from the best fit models and the GCM at 0.1 bar. FIXME say here what the temperature difference is at substellar point.}
-\label{fig:model_comparison}
 \end{figure*}
 
 \begin{deluxetable*}{lllllllllll}
@@ -340,23 +305,37 @@ To test that the phase-resolved spectra are robust to different approaches for f
 \end{figure}
 
 
-\subsection{Comparison of Thermal Phase Variation Models}
-We compared four different models for the thermal phase variation: a sinusoid and three temperature maps. The sinusoid has been widely used to model phase variation in previous analyses \citep[e.g.][]{knutson09, stevenson14}. One advantage of the sinusoid model is that it directly fits the phase variation amplitude and offset from the substellar point, and can be inverted to map the climate \citep{cowan08}. Fitting temperature maps directly is a new approach enabled by the \texttt{SPIDERMAN} package.  We consider three parameterizations for the temperature map, which each have different strengths. One is a physically-motivated kinematic model that closely reproduces GCM simulations \citep{zhang17}.  The second parameterization is a spherical harmonic map, which is the most flexible model we consider and makes the fewest assumptions about the true climate. The third model has just two free parameters, a dayside temperature and a nightside temperature. This model is easiest to compare to one-dimensional forward models of the dayside, which assume a uniform temperature/pressure profile.  
-
-All of the models provide reasonable fits to the data, with $\chi^2_\nu$ near unity, but they yield significantly different temperature maps. Table\,\ref{tab:model_comparison} lists the minimum and maximum temperatures for the best fit models to the WFC3 broadband and two Spitzer phase curves. We also list the  information criterion (BIC) and Aikike information criterion (AIC) values for the fits \citep[a $\Delta$BIC value greater than 10 constitutes strong evidence against a given model;][]{kass95}.
-
-%Both of these statistics are an approximation of the Bayesian evidence for a given model, but the BIC penalizes model complexity relatively more than the AIC \citep{kass95}. 
+\subsection{Climate}
+We fit three different models to characterize the planet's climate: a two-temperature map, the physically-motivated kinematic model of \citep{zhang17}, and a spherical harmonic map. We also fit the thermal phase variation with a sinusoid, which can be inverted to map the climate \citep{cowan08}.  All of the models provide reasonable fits to the data, with $\chi^2_\nu$ near unity, but they yield significantly different temperature maps. Table\,\ref{table:model_comparison} lists the minimum and maximum temperatures for the best fit models to the WFC3 broadband and two Spitzer phase curves. We also list the  information criterion (BIC) and Aikike information criterion (AIC) values for the fits \citep[a $\Delta$BIC value greater than 10 constitutes strong evidence against a given model;][]{kass95}.
 
 The best fit model is either a sinusoid or spherical harmonics, depending on which criterion is used for model selection. The BIC generally favors the simpler spherical harmonics model because it penalizes model complexity relatively more than the AIC \citep{kass95}. The sinusoid has eight free parameters (amplitude, phase offset, eclipse duration, ingress/egress duration, and midpoint and depth for each of two eclipses), whereas the spherical harmonics model has four (for degree two).  The kinematic and two temperature models tend to perform significantly worse ($\Delta$BIC and $\Delta$AIC greater than 10).  As illustrated in Figure\,\ref{fig:model_comparison}, the kinematic model overpredicts the nightside flux, whereas the two temperature model overpredicts the flux at quadrature and underpredicts the dayside. 
-%The spherical harmonics model is strongly favored for most of the data sets according to the AIC and BIC. It has slightly more free parameters than the other models (four, versus three for the kinematic model and two for the two-temperature model). 
 
-We compared the planet's minimum and maximum temperature for the three climate maps by computing the temperatures over a $100\times100$ grid in latitude and longitude. The kinematic model has the hottest dayside temperature and the two-temperature model has the smallest. The differences in peak temperature for the models we consider ranges from $630\,\mathrm{K}$ for \Spitzer\ Channel 1 to $1070\,\mathrm{K}$ for the broadband WFC3 light curve. The minimum nightside temperature is also model-dependent: for the WFC3 data, the two-temperature model predicts a nightside temperature of zero Kelvin, whereas the best fit kinematic model has a nightside temperature of $1980\,\mathrm{K}$. %For the WFC3 data, the peak temperature ranges from $2890$ to $3960$ K, and the minimum ranges from $0$ to $1980$ K.  
+We compared the planet's minimum and maximum temperature for the three climate maps by computing the temperatures over a $100\times100$ grid in latitude and longitude. The kinematic model has the hottest dayside temperature and the two-temperature model has the smallest. The differences in peak temperature for the models we consider ranges from $630\,\mathrm{K}$ for \Spitzer\ Channel 1 to $1070\,\mathrm{K}$ for the broadband WFC3 light curve. The minimum nightside temperature is also model-dependent: for the WFC3 data, the two-temperature model predicts a nightside temperature of zero Kelvin, whereas the best fit kinematic model has a nightside temperature of $1980\,\mathrm{K}$.  These differences arise because the kinematic model allows a steep temperature gradient on the dayside, so the substellar point is much hotter than the terminator, whereas the two temperature map imposes a constant dayside temperature.  The spherical harmonics model has an intermediate temperature gradient, and fits the data the best. However, this model may not be physically realistic: on the nightside, it produces higher temperatures at the poles than at the equator, contrary to predictions from GCMs (which we discuss in \S\,\ref{sec:gcm}). 
 
-These differences arise because the kinematic model allows a steep temperature gradient on the dayside, so the substellar point is much hotter than the terminator, whereas the two temperature map imposes a constant dayside temperature.  The spherical harmonics model has an intermediate temperature gradient, and fits the data the best. However, this model may not be physically realistic: on the nightside, it produces higher temperatures at the poles than at the equator, contrary to predictions from GCMs (which we discuss in \S\,\ref{sec:gcm}). 
+\begin{deluxetable}{llllll}
+	\tablecolumns{6}
+	\tablewidth{0pt}
+	\tablecaption{Model Comparison \label{table:model_comparison}}
+	\tablehead{\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
+		\startdata
+		WFC3 & Sph. Harmonics & 1214 & 3251 & 0.0 & 0.0 \\
+		\, & Kinematic & 1980 & 3958 & 11.8 & 11.8 \\
+		\, & Two Temp. & 0 & 2887 & 47.7 & 43.2 \\
+		\, & Sinusoid & -- & -- & 17.7 & 13.2 \\
+		Ch 1 & Sph. Harmonics & 1280 & 3444 & 48.0 & 0.0 \\
+		\, & Kinematic & 1955 & 3675 & 82.3 & 34.3 \\
+		\, & Two Temp. & 1429 & 3041 & 58.7 & 17.6 \\
+		\, & Sinusoid & -- & -- & 0.0 & 98.4 \\
+		Ch 2 & Sph. Harmonics & 902 & 3786 & 2.2 & 3.1 \\
+		\, & Kinematic & 1703 & 4276 & 16.55 & 17.41 \\
+		\, & Two Temp. & 1361 & 3311 & 26.1 & 0.0 \\
+		\, & Sinusoid & -- & -- & 0.0 & 49.6 \\
+		\enddata
+		\vspace{-0.8cm}
+		\tablecomments{comments}
+\end{deluxetable}
 
 %The typical uncertainty is FIXME (run MCMC, say the systematic range is larger than the error bars). 
-
-%The spherical harmonics model fits better according to the BIC and the AIC; however, it yields higher temperatures at the poles than at the equator, which does not agree with predictions from GCM simulations \citep{FIXME}. 
 
 \subsection{Comparison with Previous Observations}
 We compared our results to the dayside emission spectrum reported by \cite{cartier17}, which is based on a Gaussian process analysis of two secondary eclipses from \HST/WFC3. The shape of their spectrum is consistent with what we find, but their eclipse depths are 125 ppm smaller on average. In their analysis, \cite{cartier17} noted that the Gaussian process fit produces smaller eclipse depths than a parametric fit (also by 125 ppm). One explanation for this difference is that the Gaussian process models some of the astrophysical signal. If the planet's thermal phase variation is absorbed into the instrument systematic model, the measured eclipse depths would be lower by about 100 ppm. Since our analysis accounts for the thermal phase variation, it is more likely to provide a robust estimate of the secondary eclipse depths.  Our estimated uncertainties are a factor of four smaller than those reported in \cite{cartier17}, which is consistent with photon-limited expectations (our data set includes two additional eclipses, a factor of five longer out-of-eclipse baseline, and has 60\% larger wavelength bins).
@@ -367,7 +346,7 @@ We also compared our dayside spectrum to the $z'$ and $K_\mathrm{S}$-band second
 %\subsection{Clouds?}
 \section{Atmospheric Composition and Thermal Structure}
 \label{sec:composition}
-To interpret the phase-resolved spectra, we performed two model fits. First, we modeled the planet flux as a simple blackbody to estimate the dayside brightness temperature and test for significant absorption or emission features. We then performed a more sophisticated grid-based retrieval to evaluate the atmospheric composition and thermal structure. 
+We characterized the planet's atmospheric composition by fitting 1D models to the phase-resolved emission spectra.  First, we modeled the planet flux as a simple blackbody to estimate the dayside brightness temperature and test for significant absorption or emission features. We then performed a more sophisticated grid-based retrieval to estimate the atmospheric metallicity, carbon-to-oxygen ratio, and thermal structure.
 
 \subsection{Blackbody Fits}
 A blackbody is the simplest model for the planet's thermal emission and provide a useful first evaluation of the atmospheric properties. The best fit blackbodies are shown in Figures \ref{fig:spectra} and \ref{fig:dayside}. This model performs well for some orbital phases, with $\chi^2_\nu$ ranging from 0.9 to 1.1 for phases $\phi = 0.1, 0.7$ and $0.8$. At other phases the blackbody model is a poorer fit, particularly to the \Spitzer\ data. For phases $0.2 - 0.6$, the \Spitzer\ eclipse depths are significantly larger than predicted for the best fit blackbody, suggesting the presence of an emission feature. On the nightside (phase $0.9$), the \Spitzer\ $4.5\,\mu$m eclipse depth is \emph{smaller} than predicted, suggesting an absorption feature. These differences indicate changes in thermal structure with longitude in the atmosphere.
@@ -399,18 +378,10 @@ We also fit blackbody models to the WFC3 data only, and found that they provide 
 \subsection{Grid-Based Retrieval}
 Since the phase-resolved spectra do not show spectrally resolved molecular features, we opted for a simple grid-based fit to the planet's atmospheric properties, similar to the grid search used in \cite{arcangeli18, mansfield18}. We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities, carbon-to-oxygen ratios (C/O), and stellar irradiation. The stellar spectrum is scaled in intensity over the grid to model the unknown heat redistribution for the planet; i.e., a lower dayside irradiation is equivalent to more efficient heat transport to the nightside. 
 
-At each point in the grid, we compute forward models to determine self-consistent, radiative-convective temperature-pressure (T-P) profiles. (\textbf{Mike: citations?}) We determine the molecular abundances in each atmospheric layer assuming thermochemical equilibrium \citep[calculated with the NASA CEA routine;][]{gordon94}.  We include opacity from the major absorbers expected for a hot Jupiter atmosphere, including H$_2$O, CO, CO$_2$, TiO, VO, FeH, and H$_2$-H$_2$ CIA. Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is an important absorber at temperatures above 2500 K \citep{arcangeli18}.  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite \citep[described in][]{line13a, line14}.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13} and interpolated in the grid to calculate the likelihood at each model step. We fit this model to the dayside and nightside emission spectra (phases $\phi = 0.5$ and $0.1$). 
-
-\begin{figure}
-\includegraphics[width = 0.5\textwidth]{Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf}
-\caption{Posterior distributions for WASP-103b's atmospheric heat redistribution, metallicity, and C/O, from a grid-based fit to the dayside emission spectrum. The histograms on the diagonal show the marginalized distribution of each parameter, with dashed lines indicating the median and surrounding 68\% credible interval. The blue lines correspond to solar metallicity (1) and C/O (0.54). The 2D histograms mark the 1, 2, and 3$\,\sigma$ credible regions in dark, medium, and light blue, respectively.}
-\label{fig:composition}
-\end{figure}
+At each point in the grid, we compute forward models to determine self-consistent, radiative-convective temperature-pressure (T-P) profiles. We determine the molecular abundances in each atmospheric layer assuming thermochemical equilibrium \citep[calculated with the NASA CEA routine;][]{gordon94}.  We include opacity from the major absorbers expected for a hot Jupiter atmosphere, including H$_2$O, CO, CO$_2$, TiO, VO, FeH, and H$_2$-H$_2$ CIA. Notably, in contrast to many previous studies of the hottest planets, we also included opacity from H-, which is an important absorber at temperatures above 2500 K \citep{arcangeli18}.  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite \citep[described in][]{line13a, line14}.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13} and interpolated in the grid to calculate the likelihood at each model step. We fit this model to the dayside and nightside emission spectra (phases $\phi = 0.5$ and $0.1$). 
 
 \subsubsection{Dayside Spectrum}
 The main characteristics of the dayside emission spectrum are: (1) it is blackbody-like at WFC3 wavelengths, and (2) in the \Spitzer\ bands, the planet-to-star flux is significantly higher than predicted for the best fit blackbody, indicating an emission feature.  The best fit spectrum reproduces these data fairly well, with $\chi^2_\nu$ = 1.77. The largest contribution to the $\chi^2$ value is the $4.5\,\mu$m eclipse depth, which is larger than the best fit model prediction by $2.9\,\sigma$. When the $4.5\,\mu$m point is removed, the fit has $\chi^2_\nu = 1.17$.  The best fit model has a moderately enhanced metallicity ($23\times$ solar), carbon-to-oxygen equal to 0.76, poor heat redistribution, and a thermal inversion (temperature increasing with altitude).
-
-Figure\,\ref{fig:opacities} shows the opacity contributions of key absorbers for the best fit model.  In the optical (which we do not observe directly), there is strong absorption by TiO, VO, and FeH.  In the near-infrared, H$_2$O, H-, and hydrides/oxides all contribute to the opacity, leading to nearly constant opacity over the WFC3 wavelength range.  In cooler atmospheres, water is the dominant absorber over this bandpass \citep[e.g.][]{kreidberg14b, line16}, but in WASP-103b, H$_2$O is partially dissociated in the photosphere, leading to a drop in abundance by a factor of $\sim10$ (see Figure\,\ref{fig:summary}). Water also has intrinsically weaker features at high temperature \citep{tinetti12}. Water is also an efficient coolant, so lower water abundance leads to a more isothermal photosphere, which further weakens the contrast in and out of the water band. On top of this, there is significant H- opacity from single H atoms bound with free electrons, which fills in the opacity at wavelengths shorter than $1.5\,\mu$m.  Taken together, all these factors conspire to produce a nearly featureless spectrum from $1.1 - 1.7\,\mu$m. Finally, in the infrared the dominant absorber is CO, which produces the emission feature at \Spitzer\ wavelengths.  
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/xsec_FULL.pdf}
@@ -418,17 +389,9 @@ Figure\,\ref{fig:opacities} shows the opacity contributions of key absorbers for
 \label{fig:opacities}
 \end{figure}
 
+Figure\,\ref{fig:opacities} shows the opacity contributions of key absorbers for the best fit model.  In the optical (which we do not observe directly), there is strong absorption by TiO, VO, and FeH.  In the near-infrared, H$_2$O, H-, and hydrides/oxides all contribute to the opacity, leading to nearly constant opacity over the WFC3 wavelength range.  In cooler atmospheres, water is the dominant absorber over this bandpass \citep[e.g.][]{kreidberg14b, line16}, but in WASP-103b, H$_2$O is partially dissociated in the photosphere, leading to a drop in abundance by a factor of $\sim10$ (see Figure\,\ref{fig:summary}). Water also has intrinsically weaker features at high temperature \citep{tinetti12}. Water is also an efficient coolant, so lower water abundance leads to a more isothermal photosphere, which further weakens the contrast in and out of the water band. On top of this, there is significant H- opacity from single H atoms bound with free electrons, which fills in the opacity at wavelengths shorter than $1.5\,\mu$m.  Taken together, all these factors conspire to produce a nearly featureless spectrum from $1.1 - 1.7\,\mu$m. Finally, in the infrared the dominant absorber is CO, which produces the emission feature at \Spitzer\ wavelengths.  
+
 Figure\,\ref{fig:summary} shows a summary of the temperature-pressure profile and abundances for the best fit model. The T-P profile is inverted, with temperature increasing from 2800 to 3500 K over the pressure range $10^{-2} - 10^{-3}$ bar.  The  thermal inversion is driven by absorption of optical light by oxides and hydrides in the upper atmosphere.  The observations are sensitive to pressures of $\sim0.01 - 0.001$ bar, which spans the tropopause, where temperature begins to increase and the water abundance drops by more than an order of magnitude.
-
-
-In Figure\,\ref{fig:composition}, we show the posterior distributions from the grid retrieval.  We infer a range in metallicity of $23^{+29}_{-13}\times$ solar, somewhat higher than expected based on Jupiter's metal enrichment \citep[$3-5\times$ solar;][]{wong04} and the trend toward decreasing metallicity with increasing planet mass observed for the Solar System and exoplanets \cite[e.g.][]{kreidberg14b}.  However, planet population synthesis models predict some scatter in atmospheric metallicity. Planets near WASP-103b's mass ($1.5\,M_\mathrm{Jup}$) are expected to have metallicities ranging from roughly $1-10\times$ solar \citep{mordasini16}. Our result for WASP-103b lies on the upper end of this range, and may be indicative of intrinsic scatter in the mass-atmospheric metallicity relation. 
-
-The retrieved C/O is consistent with solar, with a $1\sigma$ confidence interval of $0.54 - 0.85$. We infer an upper limit on C/O of 0.9 at $3\,\sigma$ confidence, driven by the fact that the atmospheric chemistry is expected to change dramatically when C/O exceeds unity. For a carbon-rich composition, the equilibrium abundance of methane relative to CO increases by orders of magnitude compared to an oxygen-rich  composition \citep[e.g.][]{madhusudhan11}. Our \Spitzer\ eclipse depths are sensitive to the relative abundance of these species, so we can confidently rule out a carbon-rich composition despite the lack of spectrally resolved features.  
-
-We infer a heat redistribution $f = 0.4^{+0.03}_{-0.02}$. The $f$ parameter is allowed to range from 0 (isotropic heat distribution) to 0.5 (dayside emission only). Our estimate of $f$ is close to the maximum, indicating inefficient transport of heat to the nightside. Poor heat transport is observed in other very hot planets as well, due to damping of heat-propagating waves by fast radiative cooling or frictional drag in a partially ionized atmosphere \citep{komacek16}. The heat redistribution is correlated with atmospheric metallicity because increasing metallicity pushes the photosphere to higher, cooler pressure levels (\textbf{Mike: does this make sense, since the atmosphere has a thermal inversion?}).
-
-We note that an important caveat for our results is that the best fit model is not a perfect fit to the data (with $\chi_\nu = 1.77$), so the uncertainties produced by the MCMC may be underestimated. Furthermore, the inferred C/O and metallicity are highly sensitive to the planet-to-star flux at \Spitzer\ $4.5\,\mu$m, which is the worst fit data point. To fit this data point, the model favors super-solar metallicities and C/O, which drive up the CO abundance (the dominant absorber at $4.5\,\mu$m). Given that the result hinges on a single photometric band and there are no spectrally resolved molecular features to constrain the temperature-pressure profile or which absorbers are present, we caution against over-interpreting these results until wider spectral coverage is available.
-%As a test of our modeling approach, we also performed a retrieval in which the T/P profile was allowed to vary. 
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/atmosphere_summary.pdf}
@@ -436,37 +399,37 @@ We note that an important caveat for our results is that the best fit model is n
 \label{fig:summary}
 \end{figure}
 
+In Figure\,\ref{fig:composition}, we show the posterior distributions from the grid retrieval.  We infer a range in metallicity of $23^{+29}_{-13}\times$ solar, somewhat higher than expected based on Jupiter's metal enrichment \citep[$3-5\times$ solar;][]{wong04} and the trend toward decreasing metallicity with increasing planet mass observed for the Solar System and exoplanets \cite[e.g.][]{kreidberg14b}.  However, planet population synthesis models predict some scatter in atmospheric metallicity. Planets near WASP-103b's mass ($1.5\,M_\mathrm{Jup}$) are expected to have metallicities ranging from roughly $1-10\times$ solar \citep{mordasini16}. Our result for WASP-103b lies on the upper end of this range, and may be indicative of intrinsic scatter in the mass-atmospheric metallicity relation. 
+
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf}
+\caption{Posterior distributions for WASP-103b's atmospheric heat redistribution, metallicity, and C/O, from a grid-based fit to the dayside emission spectrum. The histograms on the diagonal show the marginalized distribution of each parameter, with dashed lines indicating the median and surrounding 68\% credible interval. The blue lines correspond to solar metallicity (1) and C/O (0.54). The 2D histograms mark the 1, 2, and 3$\,\sigma$ credible regions in dark, medium, and light blue, respectively.}
+\label{fig:composition}
+\end{figure}
+
+The retrieved C/O is consistent with solar, with a $1\sigma$ confidence interval of $0.54 - 0.85$. We infer an upper limit on C/O of 0.9 at $3\,\sigma$ confidence, driven by the fact that the atmospheric chemistry is expected to change dramatically when C/O exceeds unity. For a carbon-rich composition, the equilibrium abundance of methane relative to CO increases by orders of magnitude compared to an oxygen-rich  composition \citep[e.g.][]{madhusudhan11}. Our \Spitzer\ eclipse depths are sensitive to the relative abundance of these species, so we can confidently rule out a carbon-rich composition despite the lack of spectrally resolved features.  
+
+We infer a heat redistribution $f = 0.4^{+0.03}_{-0.02}$. The $f$ parameter is allowed to range from 0 (isotropic heat distribution) to 0.5 (dayside emission only). Our estimate of $f$ is close to the maximum, indicating inefficient transport of heat to the nightside. Poor heat transport is observed in other very hot planets as well, due to damping of heat-propagating waves by fast radiative cooling or frictional drag in a partially ionized atmosphere \citep{komacek17}. The heat redistribution is correlated with atmospheric metallicity because increasing metallicity pushes the photosphere to higher pressure levels. 
+
+We note that an important caveat for our results is that the best fit model is not a perfect fit to the data (with $\chi_\nu = 1.77$), so the uncertainties produced by the MCMC may be underestimated. Furthermore, the inferred C/O and metallicity are highly sensitive to the planet-to-star flux at \Spitzer\ $4.5\,\mu$m, which is the worst fit data point. To fit this data point, the model favors super-solar metallicities and C/O, which drive up the CO abundance (the dominant absorber at $4.5\,\mu$m). Given that the result hinges on a single photometric band and there are no spectrally resolved molecular features to constrain the temperature-pressure profile or which absorbers are present, we caution against over-interpreting these results until wider spectral coverage is available.
+
+%As a test of our modeling approach, we also performed a retrieval in which the T/P profile was allowed to vary. 
+
 \subsubsection{Nightside Spectrum}
 We also fit the nightside spectrum (phase $0.1$) with the grid-based retrieval. The best fit spectrum has a non-inverted temperature pressure profile.  At 1\,$\sigma$ confidence, the metallicity is $15 - 240\times$ solar and the C/O is unbounded over the full prior range (\textbf{Mike: what priors did you use?}). The atmospheric composition is consistent with results from the dayside spectrum. 
 
 This agreement is an encouraging sanity check; however, there are several model assumptions that may result in artificially tight constraints on the atmospheric properties.  One challenge in modeling the nightside spectrum is that the shape of the T-P profile is unknown.  Our model assumes a scaled stellar irradiation at the top of the atmosphere, but in reality, the heat source is advection from the dayside. Another caveat is that the model is not self-consistent: the energy leaving the dayside is not constrained to equal the energy entering the nightside.  Further work is needed to develop a fully self-consistent 2-D retrieval method. 
 
-%\subsection{Climate}
-%Heat redistribution, Bond albedo, inversions
-
-%\subsection{Bond Albedo}
-
 \section{Comparison with GCMs}
 \label{sec:gcm}
-To explore the three-dimensional effects of atmospheric dynamics, we ran several GCM models to compare with the measured phase-resolved spectra. (\textbf{Vivien: paragraph describing GCM}).  Our nominal GCM was a cloud-free, solar composition atmosphere with TiO/VO opacity and no added drag.  We also ran models with enhanced metallicity ([Fe/H] = 0.5), no TiO/VO, and added atmospheric drag.  Lorentz drag can occur in the hottest exoplanet atmospheres, which may be partially ionized and coupled to the background magnetic field. We parameterized the drag (\textbf{Vivien: how did you model drag?}), with timescales of $\tau_\mathrm{drag} = 10^3$ and $10^4$ s, which we label $\tau_\mathrm{drag3}$ and $\tau_\mathrm{drag4}$. 
+To explore the three-dimensional effects of atmospheric dynamics, we ran several GCM models to compare with the measured phase-resolved spectra. (\textbf{Vivien: add text describing GCM}).  Our nominal GCM was a cloud-free, solar composition atmosphere with TiO/VO opacity and no added drag.  We also ran models with enhanced metallicity ([Fe/H] = 0.5), no TiO/VO, and added atmospheric drag.  Lorentz drag can occur in the hottest exoplanet atmospheres, which may be partially ionized and coupled to the background magnetic field. We parameterized the drag (\textbf{Vivien: how did you model drag?}), with timescales of $\tau_\mathrm{drag} = 10^3$ and $10^4$ s. We label the drag models $\tau_\mathrm{drag3}$ and $\tau_\mathrm{drag4}$, respectively.
 
-To assess how well the GCM predictions reproduce the data, we calculate the amplitude and hot spot offset for all the models (listed in Table\,\ref{tab:amps_offs}). The models with drag included are generally better fits, with phase variation amplitude near unity and a hot spot offset near zero for all three band-passes. The nominal model and metal-enhanced composition ([Fe/H] = 0.5) both have a phase curve offset that is too large (
+To assess how well the GCM predictions reproduce the data, we calculated the amplitude and hot spot offset for all the models (listed in Table\,\ref{table:amps_offsets}). The observed hotspot offsets ($0.3 - 2.0$ degrees) are best reproduced by the $\tau_\mathrm{drag3}$ and $\tau_\mathrm{drag4}$ models, which have small offsets due to slower wind speeds.  The nominal and metal-enhanced GCMs both have offsets that are too large (10-20 degrees). On the other hand, the drag models do not match the observed phase curve amplitudes (with values near unity, in contrast to the 0.8 - 0.9 that is observed). As shown in Figure\,\ref{fig:gcmcomparison}, the drag models predict the dayside planet-to-star flux fairly accurately, but underestimate the planet-to-star flux away from the substellar point. (\textbf{Vivien and others: how do we heat up the nightside to match the data better?})
 
-Figure\,\ref{fig:gcmcomparison} shows GCM predictions compared to the best fit model to the WFC3 phase curve. The WFC3 bandpass is near the peak of the planet's thermal emission, so it provides a good test of whether the GCM reproduces the properties of the planet.  
+We also compared the GCM output to temperature maps retrieved with \texttt{spiderman}. Figure\,\ref{fig:model_comparison} shows the 0.01 bar temperature map for the $\tau_\mathrm{drag3}$ GCM compared to the best fit models. At this pressure, the GCM has minimum and maximum temperatures of $580$ and $3520$ K. The temperature gradient from the dayside to the terminator is intermediate between the kinematic and spherical harmonics models. The GCM predicts a cooler nightside than all models except the two-temperature model. We note that the GCM does not provide a perfect fit to the data, whereas multiple \texttt{spiderman} maps fit quite well, with large differences in temperature between them (see Table
+\,\ref{table:model_comparison}). Determining which models (if any) accurately describe the climate will require higher precision phase curves and/or eclipse mapping \citep[e.g.][]{dewit12}. 
 
-However, in the WFC3 bandpass the drag models underestimate the flux at longitudes away from the substellar point. For example, the FIXME model predicts 20\% less flux than is observed at quadrature. \textbf{Vivien: are these fast drag timescales even reasonable?}).
-
-FIXME: change taudrag3 label. change text about unphysical phase curve ampltiude
-
-%This model qualitatively reproduces some features of the data, such as the large day-night temperature contrast; however, it predicts a larger offset in peak brightness from the substellar point than we observe.  The models with added drag more closely reproduce the small hotspot offset that is observed. The main effect of drag is to slow down advection of heat to the nightside, which shifts the peak brightness closer to the substellar point.  The best fit WFC3 phase curve has a hotspot offset of FIXME. The drag models have offsets of $0.2$ and $2.3$ degrees for $\tau_\mathrm{drag} = 10^3$ and $10^4$ s, compared to $15$ degrees for the nominal GCM.  The drag models also provide a good match to the observed dayside flux, for drag timescales in the range $\tau_\mathrm{drag} = 10^3 - 10^4$ s.  
-
-We also compared the GCM output to the temperature maps retrieved with \texttt{spiderman}. Figure\,\ref{fig:model_comparison} shows the 0.1 bar temperature map for the $\tau_\mathrm{drag3}$ GCM compared to the best it models. The GCM has a minimum and maximum temperature of $920$ and $3360$ K, which is most comparable to the fit from the spherical harmonic model.  The GCM nightside temperatures are around $300$ K cooler than the spherical harmonics fit, 
-
-. The polar regions are the most discrepant, with temperatures are about $1000$ K cooler in the GCM than the spherical harmonics model. FIXME
-
-The GCMs also provide insight into what molecules are present in which parts of the atmosphere. As discussed in \S\,\ref{sec:composition}, water dissociation and H- opacity are needed to explain the dayside emission spectrum. Figure\,\ref{fig:gcmcomposition} shows the photospheric abundances of H$_2$O and H- compared to the predicted temperature for the $\tau_\mathrm{drag3}$ GCM. The water abundance drops by $\sim10$ at the substellar point, and the H- opacity increases by $\sim100$. 
-
-\textbf{Vivien: did you run a cloudy model?}
+The GCMs also provide insight into what molecules are present in which parts of the atmosphere. As discussed in \S\,\ref{sec:composition}, water dissociation and H- opacity are needed to explain the dayside emission spectrum. Figure\,\ref{fig:gcmcomparison} shows the photospheric abundances of H$_2$O and H- compared to the predicted temperature for the $\tau_\mathrm{drag3}$ GCM. The water abundance drops by $\sim10$ at the substellar point, and the H- opacity increases by $\sim100$.  By contrast, CO remains intact throughout the atmosphere.  Our observations are not precise enough to detect water features on the nightside of the planet (see \S\,\ref{sec:comparison}, but future high precision data may be sensitive to these features, and will help constrain the strength of horizontal transport in the atmosphere \citep{agundez14}.
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/gcm_comparison.pdf}
@@ -474,25 +437,20 @@ The GCMs also provide insight into what molecules are present in which parts of 
 \label{fig:gcmcomparison}
 \end{figure}
 
+
 \begin{figure*}
 	\includegraphics[width = 1.0\textwidth]{Figures/GCM_abundances.eps}
 \caption{Abundances of key molecular species for different viewing geometries, from the $\tau_\mathrm{drag3}$ GCM.}
 \label{fig:GCMabundance}
 \end{figure*}
 
-
 \section{Comparison with Brown Dwarfs and Directly Imaged Companions}
 \label{sec:comparison}
-WASP-103b is so highly irradiated that its photospheric temperature ($2000 - 3000$ K) is comparable to that of low mass stars. However, the planet's other properties (surface gravity, rotation rate, irradiation) are different. To explore the effects of varying these parameters, we compared the spectra of WASP-103b to brown dwarfs and young directly imaged companions. The object properties are summarized in Table\,\ref{tab:sources}.
+WASP-103b is so highly irradiated that its photospheric temperature ($2000 - 3000$ K) is comparable to that of low mass stars. However, the planet's other properties (surface gravity, rotation rate, irradiation) are different. To explore the effects of varying these parameters, we compared the spectra of WASP-103b to brown dwarfs and young directly imaged companions. The object properties are summarized in Table\,\ref{table:sources}.  
 
-We selected spectra from WASP-103b at three orbital phases: dayside ($\phi = 0.5$), quadrature ($\phi = 0.25$), and nightside ($\phi = 0.1$), and compared them to sources with comparable effective temperature. Figure\,\ref{fig:planetstarcomparison} shows the flux-calibrated spectra (assuming a distance of 10 pc).
-
-%TWA 22A - Bonnefoy+2014 (Bonnefoy 09), RXS - Lafren 08,10 (H magfrom Lafren 08), J1610 - Aller+13
-%dist: teixeira08, 
-The directly imaged spectra are taken from \cite{wahhaj11, aller13, bonnefoy14}. They are calibrated in absolute flux using published H-band photometry \citep{wahhaj11, bonnefoy09, aller13} and distances \citep{gaia16}, a flux-calibrated spectrum of Vega \citep{1985A&A...151..399M, 1985IAUS..111..225H}, and the corresponding filter passbands.  The brown dwarf spectra \textbf{Jackie: describe catalog of brown dwarf spectra and flux calibration}.
+We selected spectra from WASP-103b at three orbital phases: dayside ($\phi = 0.5$), quadrature ($\phi = 0.25$), and nightside ($\phi = 0.1$), and compared them to sources with comparable effective temperature. Figure\,\ref{fig:planetstarcomparison} shows the flux-calibrated spectra (assuming a distance of 10 pc).  The directly imaged spectra are taken from \cite{wahhaj11, aller13, bonnefoy14}. They are calibrated in absolute flux using published H-band photometry \citep{wahhaj11, bonnefoy09, aller13} and distances \citep{gaia16}, a flux-calibrated spectrum of Vega \citep{1985A&A...151..399M, 1985IAUS..111..225H}, and the corresponding filter passbands.  The brown dwarf spectra \textbf{Jackie: describe catalog of brown dwarf spectra and flux calibration}.
 
 The main spectral feature over the wavelength range we consider is water. To quantitatively compare the water feature amplitude for different objects, we define an amplitude $A = (R_\mathrm{1.3} - R_\mathrm{1.5})/F_\mathrm{1.3}$, where $F_\mathrm{X}$ is the average flux in a wavelength bin $0.1\,\mu$m wide centered on a wavelength $X$, and $R_\mathrm{X}$ is the bin-averaged residual from the best fit blackbody. These intervals were chosen such that all of the data have complete spectral coverage over the bin. 
-
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/spectra_comparison.pdf}
@@ -547,7 +505,7 @@ confirm prediction that TiO is present in the hottest planets
 what do the hot spot offsets and amplitudes mean?
 
 \acknowledgments
-Some of the data presented in this paper were obtained from the Mikulski Archive for Space Telescopes (MAST). STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS5-26555. Support for MAST for non-HST data is provided by the NASA Office of Space Science via grant NNX13AC07G and by other grants and contracts. This work also made use of the Python packages  SciPy and NumPy \citep{jones_scipy_2001, van2011numpy}. The authors are grateful for helpful conversations with Caroline Morley, Thomas Beatty, Ming Zhao, Kim Star Cartier, Hannah Diamond-Lowe, and Nick Cowan. We also thank the organizers of the 2016 Santa Cruz Kavli Summer Program and the 2017 Ringberg Atmospheres of Disks and Planets meeting for facilitating many discussions and collaborations.
+The data presented in this paper were obtained from the Mikulski Archive for Space Telescopes (MAST) and the NASA/IPAC Infrared Science Archive. STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS5-26555. The Infrared Science Archive is operated by the Jet Propulsion Laboratory, California Institute of Technology, under contract with the National Aeronautics and Space Administration.  This work also made use of the Python packages  SciPy and NumPy \citep{jones_scipy_2001, van2011numpy}. The authors are grateful for helpful conversations with Caroline Morley, Thomas Beatty, Ming Zhao, Kim Star Cartier, Hannah Diamond-Lowe, and Nick Cowan. We also thank the organizers of the 2016 Santa Cruz Kavli Summer Program and the 2017 Ringberg Atmospheres of Disks and Planets meeting for facilitating many discussions and collaborations.
 
 \bibliographystyle{aasjournal}
 \bibliography{ms.bib}

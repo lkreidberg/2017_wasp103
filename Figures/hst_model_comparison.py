@@ -182,7 +182,8 @@ for i, model in enumerate(models):
 #GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-NEW-OPA-nit-1036800.dat", delimiter = ",")
 GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-Drag3-NEW-OPA-nit-1036800.dat", delimiter = ",")
 ax = plt.subplot(gs[1,3])
-Pref = 0.11542					#reference pressure in bars
+#Pref = 0.11542					#reference pressure in bars
+Pref = 0.010131
 ind = GCM[:,3] == Pref
 lat, lon = GCM[ind,1], GCM[ind,2]
 Ts = GCM[ind,4]

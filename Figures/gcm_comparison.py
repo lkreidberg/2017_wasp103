@@ -70,7 +70,8 @@ for i, g in enumerate(gcms):
 
 
 
-f = "./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"
+#f = "./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"
+f = "./WFC3_best_fits//bestfit_sincos.pic"
 p = pickle.load(open(f, 'rb'))
 d, m, par = p[0], p[1], p[2]		#stores data,  model, and best fit parameters into d, m, & par
 dilution = d.dilution + 1.
