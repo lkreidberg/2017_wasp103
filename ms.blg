@@ -44,45 +44,45 @@ while executing---line 1775 of file aasjournal.bst
 Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
 while executing---line 1775 of file aasjournal.bst
 Warning--empty institution in mccullough12
-You've used 70 entries,
+You've used 71 entries,
             3222 wiz_defined-function locations,
-            1146 strings with 23397 characters,
-and the built_in function-call counts, 34443 in all, are:
-= -- 2667
-> -- 2975
+            1153 strings with 23663 characters,
+and the built_in function-call counts, 34990 in all, are:
+= -- 2712
+> -- 3023
 < -- 17
-+ -- 999
-- -- 1105
-* -- 3131
-:= -- 6415
-add.period$ -- 73
-call.type$ -- 70
-change.case$ -- 423
-chr.to.int$ -- 66
-cite$ -- 73
-duplicate$ -- 1266
-empty$ -- 1965
-format.name$ -- 1168
-if$ -- 6817
++ -- 1016
+- -- 1124
+* -- 3180
+:= -- 6517
+add.period$ -- 74
+call.type$ -- 71
+change.case$ -- 432
+chr.to.int$ -- 67
+cite$ -- 74
+duplicate$ -- 1284
+empty$ -- 1993
+format.name$ -- 1187
+if$ -- 6924
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 66
-newline$ -- 219
-num.names$ -- 281
-pop$ -- 594
+missing$ -- 67
+newline$ -- 222
+num.names$ -- 285
+pop$ -- 606
 preamble$ -- 2
-purify$ -- 421
+purify$ -- 430
 quote$ -- 0
-skip$ -- 930
+skip$ -- 943
 stack$ -- 0
-substring$ -- 1083
+substring$ -- 1100
 swap$ -- 19
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 627
+type$ -- 636
 warning$ -- 3
-while$ -- 252
+while$ -- 256
 width$ -- 0
-write$ -- 709
+write$ -- 719
 (There were 12 error messages)

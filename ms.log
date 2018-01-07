@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 15:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  6 JAN 2018 20:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,20 +490,20 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 27.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 83--83
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 79--79
 [][] 
  []
 
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 93.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
  [2]
-Underfull \hbox (badness 6592) in paragraph at lines 109--109
+Underfull \hbox (badness 6592) in paragraph at lines 105--105
 [][]| [] [][][][]$\OT1/cmtt/m/n/8 http : / / irsa . ipac . caltech . edu / data
  / SPITZER / docs / irac /
  []
@@ -516,26 +516,26 @@ Package epstopdf Info: Source file: <Figures/photometry.eps>
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
-(epstopdf)             \includegraphics on input line 120.
+(epstopdf)             \includegraphics on input line 116.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/photometry-eps-converted-to.pdf, id=148, 538.01pt x 696.6025pt>
+<Figures/photometry-eps-converted-to.pdf, id=149, 538.01pt x 696.6025pt>
 File: Figures/photometry-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/photometry-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/photometry-eps-converted-to.pdf used on input 
-line 120.
+line 116.
 (pdftex.def)             Requested size: 256.55872pt x 332.1864pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 120--121
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 116--117
 [][] 
  []
 
 [3]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 142.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 138.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 142.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 138.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -545,10 +545,10 @@ Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 File: Figures/ellipsoidal.pdf Graphic file (type pdf)
 
 <use Figures/ellipsoidal.pdf>
-Package pdftex.def Info: Figures/ellipsoidal.pdf used on input line 161.
+Package pdftex.def Info: Figures/ellipsoidal.pdf used on input line 157.
 (pdftex.def)             Requested size: 256.55872pt x 128.284pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 161--162
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 157--158
 [][] 
  []
 
@@ -556,25 +556,25 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 161--162
 File: Figures/systematics.pdf Graphic file (type pdf)
 
 <use Figures/systematics.pdf>
-Package pdftex.def Info: Figures/systematics.pdf used on input line 167.
+Package pdftex.def Info: Figures/systematics.pdf used on input line 163.
 (pdftex.def)             Requested size: 256.55872pt x 359.1844pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 167--168
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 163--164
 [][] 
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 187--188
+Underfull \hbox (badness 1622) in paragraph at lines 183--184
 []\OT1/cmr/m/n/10 We fit the \OT1/cmr/m/sl/10 Spitzer \OT1/cmr/m/n/10 sys-tem-a
 t-ics with the POET
  []
 
 [5 <./Figures/ellipsoidal.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 188.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 184.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 188.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 184.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -583,10 +583,10 @@ Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 File: Figures/rms.pdf Graphic file (type pdf)
 
 <use Figures/rms.pdf>
-Package pdftex.def Info: Figures/rms.pdf used on input line 206.
+Package pdftex.def Info: Figures/rms.pdf used on input line 202.
 (pdftex.def)             Requested size: 256.55872pt x 307.87236pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 206--207
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 202--203
 [][] 
  []
 
@@ -595,7 +595,7 @@ File: Figures/phase_curves_spherical.pdf Graphic file (type pdf)
 
 <use Figures/phase_curves_spherical.pdf>
 Package pdftex.def Info: Figures/phase_curves_spherical.pdf used on input line 
-213.
+209.
 (pdftex.def)             Requested size: 513.11743pt x 307.88062pt.
  [7 <./Figures/rms.pdf>]
 <Figures/hst_model_comparison.pdf, id=423, 722.7pt x 240.65909pt>
@@ -603,49 +603,48 @@ File: Figures/hst_model_comparison.pdf Graphic file (type pdf)
 
 <use Figures/hst_model_comparison.pdf>
 Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 26
-4.
+0.
 (pdftex.def)             Requested size: 513.11743pt x 170.86914pt.
 
 <Figures/emission_spectra.pdf, id=424, 1011.78pt x 361.35pt>
 File: Figures/emission_spectra.pdf Graphic file (type pdf)
 
 <use Figures/emission_spectra.pdf>
-Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 271.
+Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 267.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
 <Figures/dayside_spectrum.pdf, id=425, 289.08pt x 216.81pt>
 File: Figures/dayside_spectrum.pdf Graphic file (type pdf)
 
 <use Figures/dayside_spectrum.pdf>
-Package pdftex.def Info: Figures/dayside_spectrum.pdf used on input line 302.
+Package pdftex.def Info: Figures/dayside_spectrum.pdf used on input line 298.
 (pdftex.def)             Requested size: 256.55872pt x 192.42766pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 302--303
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 298--299
 [][] 
  []
 
-
-Overfull \hbox (0.90059pt too wide) in paragraph at lines 309--310
+[8 <./Figures/phase_curves_spherical.pdf>]
+Overfull \hbox (0.90059pt too wide) in paragraph at lines 305--306
 \OT1/cmr/m/n/10 planet's cli-mate: a two-temperature map, the physically-
  []
 
-[8 <./Figures/phase_curves_spherical.pdf>] [9 <./Figures/hst_model_comparison.p
-df> <./Figures/emission_spectra.pdf
+[9 <./Figures/hst_model_comparison.pdf> <./Figures/emission_spectra.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/emission_spectra.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 314.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 309.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 314.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 309.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 [10 <./Figures/dayside_spectrum.pdf>] [11]
-Underfull \hbox (badness 1067) in paragraph at lines 381--382
+Underfull \hbox (badness 1067) in paragraph at lines 377--378
 \OT1/cmr/m/n/10 els to de-ter-mine self-consistent, radiative-convective
  []
 
@@ -653,50 +652,50 @@ Underfull \hbox (badness 1067) in paragraph at lines 381--382
 File: Figures/xsec_FULL.pdf Graphic file (type pdf)
 
 <use Figures/xsec_FULL.pdf>
-Package pdftex.def Info: Figures/xsec_FULL.pdf used on input line 387.
+Package pdftex.def Info: Figures/xsec_FULL.pdf used on input line 383.
 (pdftex.def)             Requested size: 256.55872pt x 192.41443pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 387--388
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 383--384
 [][] 
  []
 
 [12 <./Figures/xsec_FULL.pdf>]
-Underfull \hbox (badness 1320) in paragraph at lines 394--395
+Underfull \hbox (badness 1320) in paragraph at lines 390--391
 []\OT1/cmr/m/n/10 Figure[][]10[][] shows a sum-mary of the temperature-
  []
 
-<Figures/atmosphere_summary.pdf, id=784, 308.74174pt x 242.25566pt>
+<Figures/atmosphere_summary.pdf, id=783, 308.74174pt x 242.25566pt>
 File: Figures/atmosphere_summary.pdf Graphic file (type pdf)
 
 <use Figures/atmosphere_summary.pdf>
-Package pdftex.def Info: Figures/atmosphere_summary.pdf used on input line 397.
+Package pdftex.def Info: Figures/atmosphere_summary.pdf used on input line 393.
 
 (pdftex.def)             Requested size: 256.55872pt x 201.3235pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 397--398
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 393--394
 [][] 
  []
 
 
-<Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf, id=792, 549.25201pt x 549.2
+<Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf, id=791, 549.25201pt x 549.2
 5201pt>
 File: Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf Graphic file (type pdf)
 
  <use Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf>
 Package pdftex.def Info: Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf used
- on input line 405.
+ on input line 401.
 (pdftex.def)             Requested size: 256.55872pt x 256.5561pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 405--406
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 401--402
 [][] 
  []
 
 [13 <./Figures/atmosphere_summary.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 418.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 414.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 418.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 414.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -706,10 +705,10 @@ Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 File: Figures/gcm_comparison.pdf Graphic file (type pdf)
 
 <use Figures/gcm_comparison.pdf>
-Package pdftex.def Info: Figures/gcm_comparison.pdf used on input line 435.
+Package pdftex.def Info: Figures/gcm_comparison.pdf used on input line 431.
 (pdftex.def)             Requested size: 256.55872pt x 160.35637pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 435--436
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 431--432
 [][] 
  []
 
@@ -722,7 +721,7 @@ f>
 (epstopdf)                    size: 565793 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/GCM_abundances-eps
 -converted-to.pdf Figures/GCM_abundances.eps>
-(epstopdf)             \includegraphics on input line 442.
+(epstopdf)             \includegraphics on input line 438.
 Package epstopdf Info: Output file is already uptodate.
 
 <Figures/GCM_abundances-eps-converted-to.pdf, id=953, 2041.6275pt x 1011.78pt>
@@ -730,81 +729,84 @@ File: Figures/GCM_abundances-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/GCM_abundances-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/GCM_abundances-eps-converted-to.pdf used on in
-put line 442.
+put line 438.
 (pdftex.def)             Requested size: 513.11743pt x 254.28752pt.
 
 <Figures/spectra_comparison.pdf, id=974, 542.025pt x 252.945pt>
 File: Figures/spectra_comparison.pdf Graphic file (type pdf)
 
 <use Figures/spectra_comparison.pdf>
-Package pdftex.def Info: Figures/spectra_comparison.pdf used on input line 455.
+Package pdftex.def Info: Figures/spectra_comparison.pdf used on input line 451.
 
 (pdftex.def)             Requested size: 513.11743pt x 239.4627pt.
 
-Underfull \hbox (badness 10000) detected at line 481
+Underfull \hbox (badness 10000) detected at line 477
 $\OT1/cmr/m/n/9 1$
  []
 
 
-Underfull \hbox (badness 10000) detected at line 482
+Underfull \hbox (badness 10000) detected at line 478
 $\OT1/cmr/m/n/9 2$
  []
 
 
-Underfull \hbox (badness 10000) detected at line 483
+Underfull \hbox (badness 10000) detected at line 479
 $\OT1/cmr/m/n/9 3$
  []
 
 [15 <./Figures/gcm_comparison.pdf>] [16 <./Figures/GCM_abundances-eps-converted
 -to.pdf> <./Figures/spectra_comparison.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 495.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 486.
 
-[17] (./ms.bbl [18] [19]) [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 525.
+[17]
+Underfull \hbox (badness 3895) in paragraph at lines 488--489
+\OT1/cmr/m/n/10 im-ply-ing a day-side ef-fec-tive tem-per-a-ture of
+ []
+
+[18] (./ms.bbl [19]) [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 523.
  (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 525.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 525.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 523.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 523.
  ) 
 Here is how much of TeX's memory you used:
- 9261 strings out of 492995
- 130343 string characters out of 6132704
- 292208 words of memory out of 5000000
- 12554 multiletter control sequences out of 15000+600000
+ 9266 strings out of 492995
+ 130444 string characters out of 6132704
+ 292031 words of memory out of 5000000
+ 12558 multiletter control sequences out of 15000+600000
  15602 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,13n,37p,1373b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,13n,37p,1966b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-dist/font
-s/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (20 pages, 2522633 bytes).
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam10.pfb>
+Output written on ms.pdf (20 pages, 2509063 bytes).
 PDF statistics:
- 1300 PDF objects out of 1440 (max. 8388607)
+ 1298 PDF objects out of 1440 (max. 8388607)
  761 compressed objects within 8 object streams
- 143 named destinations out of 1000 (max. 500000)
+ 144 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
