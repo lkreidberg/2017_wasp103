@@ -47,7 +47,7 @@ l1, l2, l3, l4 = 1.15, 1.3, 1.35, 1.5
 
 #WASP-103b spectra
 path = "W103_spectra/"
-Ts = [1922, 2408, 2982]
+Ts = [1920, 2410, 3010]
 files = ["phase_0.10_wfc3.txt", "phase_0.25_wfc3.txt", "phase_0.5_wfc3.txt"]
 
 star = np.genfromtxt(path+"wasp103_sed_fluxes.out")
@@ -108,7 +108,7 @@ for i, f in enumerate(files):
 path = "BD_spectra/"
 files = ["For_Laura1320+0409 (L3:) SED.txt", "0428-2253 (L0.5) SED.txt", "For_Laura0003-2822 (M7.5) SED.txt"]
 names = ["1320+0409", "0024-0158", "0003-2822"]
-Ts = [1875, 2429, 2889]
+Ts = [1880, 2430, 2890]
 distance = np.array([30.96, 25.99,38.91])
 radius = np.array([1.01, 1.1,  1.33])
 ylo = [0.05, 0.6, 2.0]
