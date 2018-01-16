@@ -1,15 +1,4 @@
-plot Mike's retrieved spectra correctly
-
-plot phase curves with spherical harmonics (debug??)
-run spherical harmonics mcmc for hst white lc and Spitzer
-
- -  figures from Vivien's data
-T/P profiles (Vivien, Mike, and JFort)
-correctly normalized BD and planet spectra
-composition and albedo from Mike
-detection significance of thermal inversion as a function of phase
-put chi2 values in the table with eclipse depths
-
-MCMC for spherical harmonics?
-
-Are my error bars consistent with Cartier?
+papers to cite:
+bell et al. (wasp12b albedo)
+zhang et al. 2017 (trend in phase offset)
+wakeford et al. 2017 clouds
