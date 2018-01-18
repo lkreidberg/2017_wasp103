@@ -3,6 +3,9 @@
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\href{#1}{#1}}
 
+\bibitem[{hub(2003)}]{hubeny03}
+ 2003, 594, 1011
+
 \bibitem[{{Ag{\'u}ndez} {et~al.}(2014){Ag{\'u}ndez}, {Parmentier}, {Venot},
   {Hersant}, \& {Selsis}}]{agundez14}
 {Ag{\'u}ndez}, M., {Parmentier}, V., {Venot}, O., {Hersant}, F., \& {Selsis},
@@ -22,6 +25,11 @@
   {Osborn}, {Blake}, \& {Saniee}}]{armstrong16}
 {Armstrong}, D.~J., {de Mooij}, E., {Barstow}, J., {et~al.} 2016, Nature
   Astronomy, 1, 0004
+
+\bibitem[{{Bagenal} {et~al.}(2004){Bagenal}, {Dowling}, \&
+  {McKinnon}}]{bagenal04}
+{Bagenal}, F., {Dowling}, T.~E., \& {McKinnon}, W.~B. 2004, {Jupiter : the
+  planet, satellites and magnetosphere}
 
 \bibitem[{{Beatty} {et~al.}(2017{\natexlab{a}}){Beatty}, {Madhusudhan},
   {Pogge}, {Chung}, {Bierlya}, {Gaudi}, \& {Latham}}]{beatty17a}
@@ -98,6 +106,11 @@ Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
   {Goodman}}]{foremanmackey13}
 {Foreman-Mackey}, D., {Hogg}, D.~W., {Lang}, D., \& {Goodman}, J. 2013, \pasp,
   125, 306
+
+\bibitem[{{Fortney} {et~al.}(2008){Fortney}, {Lodders}, {Marley}, \&
+  {Freedman}}]{fortney08}
+{Fortney}, J.~J., {Lodders}, K., {Marley}, M.~S., \& {Freedman}, R.~S. 2008,
+  \apj, 678, 1419
 
 \bibitem[{{Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
   {de Bruijne}, {Brown}, {Vallenari}, {Babusiaux}, {Bailer-Jones}, {Bastian},
@@ -247,6 +260,9 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {McCullough}, P., \& {MacKenty}, J. 2012, {Considerations for using Spatial
   Scans with WFC3}, Tech. rep.
 
+\bibitem[{{Menou} \& {Rauscher}(2009)}]{menou09}
+{Menou}, K., \& {Rauscher}, E. 2009, \apj, 700, 887
+
 \bibitem[{{Mordasini} {et~al.}(2016){Mordasini}, {van Boekel}, {Molli{\`e}re},
   {Henning}, \& {Benneke}}]{mordasini16}
 {Mordasini}, C., {van Boekel}, R., {Molli{\`e}re}, P., {Henning}, T., \&
@@ -267,6 +283,9 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 
 \bibitem[{{Perez-Becker} \& {Showman}(2013)}]{perez13}
 {Perez-Becker}, D., \& {Showman}, A.~P. 2013, \apj, 776, 134
+
+\bibitem[{{Perna} {et~al.}(2010){Perna}, {Menou}, \& {Rauscher}}]{perna10}
+{Perna}, R., {Menou}, K., \& {Rauscher}, E. 2010, \apj, 719, 1421
 
 \bibitem[{{Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{pont06}
 {Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, \mnras, 373, 231
