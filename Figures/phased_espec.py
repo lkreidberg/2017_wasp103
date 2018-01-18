@@ -22,7 +22,7 @@ def blackbody(l,T):
         return 2*h*c**2/(l**5*(np.exp(h*c/(l*k*T))-1))                 #[W/sr/m^3]
 
 def best_fit_bb(w, y, e, rprs):
-	Ts = np.linspace(1900, 3600, 10000)
+	Ts = np.linspace(1000, 3600, 10000)
 	chibest = 10000.
 	Tbest = 0.	
 	Tstar = 6110.
