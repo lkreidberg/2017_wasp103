@@ -1,5 +1,6 @@
 import numpy as np
 
+#made the file teffs.txt based on output from phased_espec.py
 teffs = np.genfromtxt("teffs.txt")
 
 print "\\begin{deluxetable}{LLL}"

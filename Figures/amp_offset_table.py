@@ -19,7 +19,7 @@ amp, amp_err = weighted_mean(amp, amp_err)
 off, off_err = weighted_mean(off, off_err)
 
 gcm_wfc3 = np.genfromtxt("gcm_amp_off_wfc3.txt")
-models = ["nominal GCM", "[Fe/H] = 0.5 GCM", "$\\tau_\mathrm{drag4}$ GCM", "$\\tau_\mathrm{drag3}$ GCM"]
+models = ["nominal GCM", "[M/H] = 0.5 GCM", "$\\tau_\mathrm{drag4}$ GCM", "$\\tau_\mathrm{drag3}$ GCM"]
 
 print "\\begin{deluxetable}{llLL}"
 print "\\tablecolumns{4}"

@@ -30,9 +30,9 @@ def best_fit_bb(w, y, e, rprs):
 
 	w = np.array(w)
 
-	w, y, e = w[0:10], y[0:10], e[0:10]
-#	w, y, e = w[10], y[10], e[10]
-#	w, y, e = w[11], y[11], e[11]
+#	w, y, e = w[0:10], y[0:10], e[0:10]     #WFC3 data only
+#	w, y, e = w[10], y[10], e[10]           #spitzer ch1
+	w, y, e = w[11], y[11], e[11]           #spitzer ch2
 
 	#get stellar spectrum
 	star = np.genfromtxt("wasp103_sed_fluxes.out")
@@ -52,8 +52,8 @@ def best_fit_bb(w, y, e, rprs):
 
         idx = (np.abs(chis-(chibest+1.))).argmin()
         onesigma = Tbest - Ts[idx]
-       # print "T, chi2", Tbest, "+/-", onesigma, chibest/(len(y) - 1)#, resid
-        print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
+        #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
+        print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))) 
 	print>>outfile,  Tbest
 	outfile.close()
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
@@ -102,6 +102,7 @@ for f in files:
 		#calculates uncertainty for phase bin
 		ind2 = (phase >= phasebins[j-1]) & (phase < phasebins[j])
 		sig2 = np.sqrt(np.sum(err[ind2]**2)/sum(ind2)**2)
+	#	print "std, se",  np.sqrt(np.sum(err[ind2]**2)/sum(ind2)**2), np.sqrt(np.sum(err[ind2]**2)/(sum(ind2)-1)**2)            #difference of 1 ppm for std vs ste
 
 		spectra[i, j-1, 0] = np.mean(data_corr[ind2])
 		spectra[i, j-1, 1] = np.sqrt(sig1**2 + sig2**2)		#quadrature add uncertainties from baseline and bin 
