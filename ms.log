@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 JAN 2018 23:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 JAN 2018 09:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,10 +509,10 @@ Underfull \hbox (badness 6592) in paragraph at lines 107--107
 
 [3]
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-07 12:30:01
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-07 13:01:13
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
@@ -612,7 +612,7 @@ File: Figures/emission_spectra.pdf Graphic file (type pdf)
 Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 269.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
-Underfull \hbox (badness 10000) detected at line 295
+Underfull \hbox (badness 10000) detected at line 294
 $\OT1/cmr/m/n/9 1$
  []
 
@@ -727,11 +727,11 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 435--436
  []
 
 Package epstopdf Info: Source file: <Figures/GCM_abundances.eps>
-(epstopdf)                    date: 2017-12-27 13:33:47
+(epstopdf)                    date: 2018-01-02 09:45:30
 (epstopdf)                    size: 1187004 bytes
 (epstopdf)             Output file: <Figures/GCM_abundances-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2017-12-27 19:05:53
+(epstopdf)                    date: 2018-01-02 09:45:30
 (epstopdf)                    size: 565793 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/GCM_abundances-eps
 -converted-to.pdf Figures/GCM_abundances.eps>
@@ -809,7 +809,7 @@ onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (20 pages, 2520205 bytes).
+Output written on ms.pdf (20 pages, 2519989 bytes).
 PDF statistics:
  1338 PDF objects out of 1440 (max. 8388607)
  793 compressed objects within 8 object streams
