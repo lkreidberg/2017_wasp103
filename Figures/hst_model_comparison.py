@@ -255,6 +255,7 @@ for i, model in enumerate(models):
 
 	#plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, linestyle='none', marker = '.', color = colors[i], ecolor = 'k', zorder = 10, alpha = 0.8)
 	plt.plot(bin_average, (bindata-1.)*1e3*dilution,  linestyle = 'none', marker ='.', color = colors[i], zorder = 10, alpha = 0.8)
+        pickle.dump( [bin_average, (bindata-1.), binsigma], open(model+".p", "wb" ) )
 
         plt.plot(phase, (bestfit-1.)*1e3*dilution, color = colors[i], label = labels[i], alpha = 1.0, linestyle = linestyle[i])
 

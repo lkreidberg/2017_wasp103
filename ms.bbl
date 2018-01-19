@@ -51,6 +51,13 @@
   {Beust}, {Desort}, {Teixeira}, {Ducourant}, {Beuzit}, \& {Song}}]{bonnefoy09}
 {Bonnefoy}, M., {Chauvin}, G., {Dumas}, C., {et~al.} 2009, \aap, 506, 799
 
+\bibitem[{{Borucki} {et~al.}(2009){Borucki}, {Koch}, {Jenkins}, {Sasselov},
+  {Gilliland}, {Batalha}, {Latham}, {Caldwell}, {Basri}, {Brown},
+  {Christensen-Dalsgaard}, {Cochran}, {DeVore}, {Dunham}, {Dupree}, {Gautier},
+  {Geary}, {Gould}, {Howell}, {Kjeldsen}, {Lissauer}, {Marcy}, {Meibom},
+  {Morrison}, \& {Tarter}}]{borucki09}
+{Borucki}, W.~J., {Koch}, D., {Jenkins}, J., {et~al.} 2009, Science, 325, 709
+
 \bibitem[{Braak(2006)}]{braak06}
 Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
 \newblock \url{http://dx.doi.org/10.1007/s11222-006-8769-1}
@@ -298,6 +305,9 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 \bibitem[{{Showman} {et~al.}(2009){Showman}, {Fortney}, {Lian}, {Marley},
   {Freedman}, {Knutson}, \& {Charbonneau}}]{showman09}
 {Showman}, A.~P., {Fortney}, J.~J., {Lian}, Y., {et~al.} 2009, \apj, 699, 564
+
+\bibitem[{{Showman} \& {Guillot}(2002)}]{showman02}
+{Showman}, A.~P., \& {Guillot}, T. 2002, \aap, 385, 166
 
 \bibitem[{{Southworth} {et~al.}(2015){Southworth}, {Mancini}, {Ciceri},
   {Budaj}, {Dominik}, {Figuera Jaimes}, {Haugb{\o}lle}, {J{\o}rgensen},

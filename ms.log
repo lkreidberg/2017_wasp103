@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 JAN 2018 15:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 JAN 2018 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -494,138 +494,142 @@ Missing character: There is no â in font cmti8!
 Missing character: There is no € in font cmti8!
 Missing character: There is no ™ in font cmti8!
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
  [2]
-Underfull \hbox (badness 6592) in paragraph at lines 104--104
+Underfull \hbox (badness 6592) in paragraph at lines 107--107
 [][]| [] [][][][]$\OT1/cmtt/m/n/8 http : / / irsa . ipac . caltech . edu / data
  / SPITZER / docs / irac /
  []
 
 [3]
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-09 09:57:43
+(epstopdf)                    date: 2017-10-07 12:30:01
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-09 09:57:43
+(epstopdf)                    date: 2017-10-07 13:01:13
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
-(epstopdf)             \includegraphics on input line 115.
+(epstopdf)             \includegraphics on input line 118.
 Package epstopdf Info: Output file is already uptodate.
- <Figures/photometry-eps-converted-to.pdf, id=177, 538.01pt x 696.6025pt>
+ <Figures/photometry-eps-converted-to.pdf, id=180, 538.01pt x 696.6025pt>
 File: Figures/photometry-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/photometry-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/photometry-eps-converted-to.pdf used on input 
-line 115.
+line 118.
 (pdftex.def)             Requested size: 256.55872pt x 332.1864pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 115--116
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 118--119
 [][] 
  []
 
 [4 <./Figures/photometry-eps-converted-to.pdf>]
-<Figures/ellipsoidal.pdf, id=220, 433.62pt x 216.81pt>
+<Figures/ellipsoidal.pdf, id=223, 433.62pt x 216.81pt>
 File: Figures/ellipsoidal.pdf Graphic file (type pdf)
 
 <use Figures/ellipsoidal.pdf>
-Package pdftex.def Info: Figures/ellipsoidal.pdf used on input line 156.
+Package pdftex.def Info: Figures/ellipsoidal.pdf used on input line 159.
 (pdftex.def)             Requested size: 256.55872pt x 128.284pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 156--157
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 159--160
 [][] 
  []
 
-<Figures/systematics.pdf, id=225, 361.35pt x 505.89pt>
+<Figures/systematics.pdf, id=228, 361.35pt x 505.89pt>
 File: Figures/systematics.pdf Graphic file (type pdf)
 
 <use Figures/systematics.pdf>
-Package pdftex.def Info: Figures/systematics.pdf used on input line 162.
+Package pdftex.def Info: Figures/systematics.pdf used on input line 165.
 (pdftex.def)             Requested size: 256.55872pt x 359.1844pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 162--163
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 165--166
 [][] 
  []
 
 [5 <./Figures/ellipsoidal.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 180.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 183.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 180.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 183.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 182--183
+Underfull \hbox (badness 1622) in paragraph at lines 185--186
 []\OT1/cmr/m/n/10 We fit the \OT1/cmr/m/sl/10 Spitzer \OT1/cmr/m/n/10 sys-tem-a
 t-ics with the POET
  []
 
-[6 <./Figures/systematics.pdf>] <Figures/rms.pdf, id=365, 361.35pt x 433.62pt>
+[6 <./Figures/systematics.pdf>] <Figures/rms.pdf, id=368, 361.35pt x 433.62pt>
 File: Figures/rms.pdf Graphic file (type pdf)
 
 <use Figures/rms.pdf>
-Package pdftex.def Info: Figures/rms.pdf used on input line 201.
+Package pdftex.def Info: Figures/rms.pdf used on input line 204.
 (pdftex.def)             Requested size: 256.55872pt x 307.87236pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 201--202
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 204--205
 [][] 
  []
 
-<Figures/phase_curves_spherical.pdf, id=366, 542.025pt x 325.215pt>
+<Figures/phase_curves_spherical.pdf, id=369, 542.025pt x 325.215pt>
 File: Figures/phase_curves_spherical.pdf Graphic file (type pdf)
 
 <use Figures/phase_curves_spherical.pdf>
 Package pdftex.def Info: Figures/phase_curves_spherical.pdf used on input line 
-208.
+211.
 (pdftex.def)             Requested size: 513.11743pt x 307.88062pt.
  [7 <./Figures/rms.pdf>] [8 <./Figures/phase_curves_spherical.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 257.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 260.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 257.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 260.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<Figures/hst_model_comparison.pdf, id=504, 722.7pt x 240.65909pt>
+<Figures/hst_model_comparison.pdf, id=507, 722.7pt x 240.65909pt>
 File: Figures/hst_model_comparison.pdf Graphic file (type pdf)
 
 <use Figures/hst_model_comparison.pdf>
-Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 25
-9.
+Package pdftex.def Info: Figures/hst_model_comparison.pdf used on input line 26
+2.
 (pdftex.def)             Requested size: 513.11743pt x 170.86914pt.
 
-<Figures/emission_spectra.pdf, id=505, 1011.78pt x 361.35pt>
+<Figures/emission_spectra.pdf, id=508, 1011.78pt x 361.35pt>
 File: Figures/emission_spectra.pdf Graphic file (type pdf)
 
 <use Figures/emission_spectra.pdf>
-Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 266.
+Package pdftex.def Info: Figures/emission_spectra.pdf used on input line 269.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
-<Figures/twopanel_dayside_spectrum.pdf, id=506, 578.16pt x 216.81pt>
+Underfull \hbox (badness 10000) detected at line 295
+$\OT1/cmr/m/n/9 1$
+ []
+
+<Figures/twopanel_dayside_spectrum.pdf, id=509, 578.16pt x 216.81pt>
 File: Figures/twopanel_dayside_spectrum.pdf Graphic file (type pdf)
 
 <use Figures/twopanel_dayside_spectrum.pdf>
 Package pdftex.def Info: Figures/twopanel_dayside_spectrum.pdf used on input li
-ne 297.
+ne 300.
 (pdftex.def)             Requested size: 513.11743pt x 192.42766pt.
 
-Overfull \hbox (0.90059pt too wide) in paragraph at lines 304--305
+Overfull \hbox (0.90059pt too wide) in paragraph at lines 307--308
 \OT1/cmr/m/n/10 planet's cli-mate: a two-temperature map, the physically-
  []
 
 
-Underfull \hbox (badness 1515) in paragraph at lines 304--305
+Underfull \hbox (badness 1515) in paragraph at lines 307--308
 \OT1/cmr/m/n/10 motivated kine-matic model of [][]Zhang & Show-man[][]
  []
 
@@ -635,150 +639,151 @@ pdfTeX warning: pdflatex (file ./Figures/emission_spectra.pdf): PDF inclusion:
 multiple pdfs with page group included in a single page
 >] [11 <./Figures/twopanel_dayside_spectrum.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 350.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 353.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 350.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 353.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 377--378
+Underfull \hbox (badness 1067) in paragraph at lines 380--381
 \OT1/cmr/m/n/10 els to de-ter-mine self-consistent, radiative-convective
  []
 
-<Figures/xsec_FULL.pdf, id=767, 578.16pt x 433.62pt>
+<Figures/xsec_FULL.pdf, id=771, 578.16pt x 433.62pt>
 File: Figures/xsec_FULL.pdf Graphic file (type pdf)
 
 <use Figures/xsec_FULL.pdf>
-Package pdftex.def Info: Figures/xsec_FULL.pdf used on input line 383.
+Package pdftex.def Info: Figures/xsec_FULL.pdf used on input line 386.
 (pdftex.def)             Requested size: 256.55872pt x 192.41443pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 383--384
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 386--387
 [][] 
  []
 
 [12]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 389.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 392.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 389.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 392.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 390--391
+Underfull \hbox (badness 1320) in paragraph at lines 393--394
 []\OT1/cmr/m/n/10 Figure[][]10[][] shows a sum-mary of the temperature-
  []
 
-<Figures/atmosphere_summary.pdf, id=789, 308.74174pt x 242.25566pt>
+<Figures/atmosphere_summary.pdf, id=792, 308.74174pt x 242.25566pt>
 File: Figures/atmosphere_summary.pdf Graphic file (type pdf)
 
 <use Figures/atmosphere_summary.pdf>
-Package pdftex.def Info: Figures/atmosphere_summary.pdf used on input line 393.
+Package pdftex.def Info: Figures/atmosphere_summary.pdf used on input line 396.
 
 (pdftex.def)             Requested size: 256.55872pt x 201.3235pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 393--394
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 396--397
 [][] 
  []
 
 
-<Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf, id=797, 549.25201pt x 549.2
+<Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf, id=800, 549.25201pt x 549.2
 5201pt>
 File: Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf Graphic file (type pdf)
 
  <use Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf>
 Package pdftex.def Info: Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf used
- on input line 401.
+ on input line 404.
 (pdftex.def)             Requested size: 256.55872pt x 256.5561pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 401--402
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 404--405
 [][] 
  []
 
 [13 <./Figures/xsec_FULL.pdf> <./Figures/atmosphere_summary.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 407.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 411.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 407.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 411.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 [14 <./Figures/WASP-103b_grid_DAYSIDE_stair_pairs_02.pdf>]
-<Figures/gcm_comparison.pdf, id=978, 289.08pt x 180.675pt>
+<Figures/gcm_comparison.pdf, id=981, 289.08pt x 180.675pt>
 File: Figures/gcm_comparison.pdf Graphic file (type pdf)
 
 <use Figures/gcm_comparison.pdf>
-Package pdftex.def Info: Figures/gcm_comparison.pdf used on input line 432.
+Package pdftex.def Info: Figures/gcm_comparison.pdf used on input line 435.
 (pdftex.def)             Requested size: 256.55872pt x 160.35637pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 432--433
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 435--436
 [][] 
  []
 
 Package epstopdf Info: Source file: <Figures/GCM_abundances.eps>
-(epstopdf)                    date: 2018-01-02 09:45:30
+(epstopdf)                    date: 2017-12-27 13:33:47
 (epstopdf)                    size: 1187004 bytes
 (epstopdf)             Output file: <Figures/GCM_abundances-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2018-01-02 09:45:30
+(epstopdf)                    date: 2017-12-27 19:05:53
 (epstopdf)                    size: 565793 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/GCM_abundances-eps
 -converted-to.pdf Figures/GCM_abundances.eps>
-(epstopdf)             \includegraphics on input line 439.
+(epstopdf)             \includegraphics on input line 442.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/GCM_abundances-eps-converted-to.pdf, id=979, 2041.6275pt x 1011.78pt>
+<Figures/GCM_abundances-eps-converted-to.pdf, id=982, 2041.6275pt x 1011.78pt>
 File: Figures/GCM_abundances-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/GCM_abundances-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/GCM_abundances-eps-converted-to.pdf used on in
-put line 439.
+put line 442.
 (pdftex.def)             Requested size: 513.11743pt x 254.28752pt.
 
-<Figures/spectra_comparison.pdf, id=1002, 542.025pt x 252.945pt>
+<Figures/spectra_comparison.pdf, id=1005, 542.025pt x 252.945pt>
 File: Figures/spectra_comparison.pdf Graphic file (type pdf)
 
 <use Figures/spectra_comparison.pdf>
-Package pdftex.def Info: Figures/spectra_comparison.pdf used on input line 452.
+Package pdftex.def Info: Figures/spectra_comparison.pdf used on input line 455.
 
 (pdftex.def)             Requested size: 513.11743pt x 239.4627pt.
  [15 <./Figures/gcm_comparison.pdf>]
-Underfull \hbox (badness 10000) detected at line 478
+[16 <./Figures/GCM_abundances-eps-converted-to.pdf> <./Figures/spectra_comparis
+on.pdf>]
+Underfull \hbox (badness 10000) detected at line 481
 $\OT1/cmr/m/n/9 1$
  []
 
 
-Underfull \hbox (badness 10000) detected at line 479
+Underfull \hbox (badness 10000) detected at line 482
 $\OT1/cmr/m/n/9 2$
  []
 
 
-Underfull \hbox (badness 10000) detected at line 480
+Underfull \hbox (badness 10000) detected at line 483
 $\OT1/cmr/m/n/9 3$
  []
 
-[16 <./Figures/GCM_abundances-eps-converted-to.pdf>] [17 <./Figures/spectra_com
-parison.pdf>] [18] (./ms.bbl [19]) [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 512.
+[17] [18] (./ms.bbl [19]) [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
  (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 512.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 512.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 516.
  ) 
 Here is how much of TeX's memory you used:
- 9307 strings out of 492995
- 131122 string characters out of 6132704
- 306364 words of memory out of 5000000
- 12591 multiletter control sequences out of 15000+600000
+ 9317 strings out of 492995
+ 131284 string characters out of 6132704
+ 302746 words of memory out of 5000000
+ 12599 multiletter control sequences out of 15000+600000
  15602 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,13n,37p,2153b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,13n,37p,2197b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
@@ -804,10 +809,10 @@ onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (20 pages, 2519887 bytes).
+Output written on ms.pdf (20 pages, 2520205 bytes).
 PDF statistics:
- 1335 PDF objects out of 1440 (max. 8388607)
- 790 compressed objects within 8 object streams
- 152 named destinations out of 1000 (max. 500000)
+ 1338 PDF objects out of 1440 (max. 8388607)
+ 793 compressed objects within 8 object streams
+ 154 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
