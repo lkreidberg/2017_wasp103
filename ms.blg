@@ -34,12 +34,6 @@ Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, 
 while executing---line 1687 of file aasjournal.bst
 Warning--empty author in hubeny03
 Warning--empty journal in hubeny03
-Name 2 in "{Arcangeli}, J. and {D\'esert}, J.~M., and {Line}, M. and {Bean}, J. and {Parmentier}, V. and {Stevenson}, K. and {Kreidberg}, L. and {Fortney}, J. and {Showman}, A., and {Mansfield}, M." has a comma at the end for entry arcangeli18
-while executing---line 1775 of file aasjournal.bst
-Name 9 in "{Arcangeli}, J. and {D\'esert}, J.~M., and {Line}, M. and {Bean}, J. and {Parmentier}, V. and {Stevenson}, K. and {Kreidberg}, L. and {Fortney}, J. and {Showman}, A., and {Mansfield}, M." has a comma at the end for entry arcangeli18
-while executing---line 1775 of file aasjournal.bst
-Name 2 in "{Arcangeli}, J. and {D\'esert}, J.~M., and {Line}, M. and {Bean}, J. and {Parmentier}, V. and {Stevenson}, K. and {Kreidberg}, L. and {Fortney}, J. and {Showman}, A., and {Mansfield}, M." has a comma at the end for entry arcangeli18
-while executing---line 1775 of file aasjournal.bst
 Warning--empty publisher in bagenal04
 Warning--empty publisher in jones_scipy_2001
 Warning--empty institution in long15
@@ -50,34 +44,34 @@ while executing---line 1775 of file aasjournal.bst
 Warning--empty institution in mccullough12
 You've used 81 entries,
             3222 wiz_defined-function locations,
-            1215 strings with 25665 characters,
-and the built_in function-call counts, 39434 in all, are:
-= -- 3070
+            1214 strings with 25649 characters,
+and the built_in function-call counts, 39446 in all, are:
+= -- 3071
 > -- 3349
 < -- 21
 + -- 1125
 - -- 1240
-* -- 3560
-:= -- 7308
+* -- 3563
+:= -- 7309
 add.period$ -- 84
 call.type$ -- 81
 change.case$ -- 487
 chr.to.int$ -- 77
 cite$ -- 90
-duplicate$ -- 1462
-empty$ -- 2286
+duplicate$ -- 1463
+empty$ -- 2288
 format.name$ -- 1322
-if$ -- 7828
+if$ -- 7831
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 77
 newline$ -- 252
 num.names$ -- 321
-pop$ -- 693
+pop$ -- 692
 preamble$ -- 2
 purify$ -- 485
 quote$ -- 0
-skip$ -- 1083
+skip$ -- 1084
 stack$ -- 0
 substring$ -- 1268
 swap$ -- 19
@@ -88,5 +82,5 @@ type$ -- 723
 warning$ -- 7
 while$ -- 291
 width$ -- 0
-write$ -- 816
-(There were 12 error messages)
+write$ -- 817
+(There were 9 error messages)
