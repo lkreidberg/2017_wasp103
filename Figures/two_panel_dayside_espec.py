@@ -89,20 +89,32 @@ for i in range(len(wl_hi)): y_plus1sig[i] = np.percentile(spec_arr[:,i], 84)
 plt.fill_between(wl_hi, y_minus1sig*1e3, y_plus1sig*1e3, color = 'orange', alpha = 0.5, zorder=-11)
 plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit 1-D model')
 
+#plots gcm
+GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
+plt.plot(GCM[:,0], GCM[:,5]*1e3, color = '#380282', label = "$\\tau_\mathrm{drag3}$ GCM", linestyle = 'dotted')
+
 #get best fit blackbody
 rprs = 0.1127
 wave_bb, bb = best_fit_bb(data_wl, data, data_err, rprs)
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody")
 
-plt.legend(loc = 'lower right', frameon=True, fontsize = 10)
+#plots delrez points
+x = np.array([0.9123, 2.146])
+y = np.array([0.699, 3.567])/1.e3
+e = np.array([0.11, 0.4])/1.e3
+plt.errorbar(x, y*1e3, e*1e3, fmt = 'ok')
 
-plt.gca().text(0.1, 0.8, 'HST/WFC3', transform=ax.transAxes)
+plt.legend(loc = 'lower right', frameon=True, fontsize = 10)
+plt.gca().text(0.07, 0.83, 'HST/WFC3', transform=ax.transAxes)
 
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Wavelength (microns)")
 
+
 plt.xlim(1.1, 1.7)
+#plt.xlim(0.5, 2.2)
 ymin, ymax = 1.2, 2
+#ymin, ymax = 0.5, 4
 plt.ylim(ymin, ymax)
 
 #plots Cartier spectrum
@@ -118,10 +130,16 @@ ax = plt.subplot(gs[0,1])
 plt.errorbar(data_wl, data*1e3, yerr = data_err*1.e3, xerr = 0.5, fmt = 'ow', zorder=1000, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1.0)
 plt.fill_between(wl_hi, y_minus1sig*1e3, y_plus1sig*1e3, color = 'orange', alpha = 0.5, zorder=-11)
 plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit')
+
+#plots gcm
+GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
+plt.plot(GCM[:,0], GCM[:,5]*1e3, color = '#380282', label = "$\\tau_\mathrm{drag3}$ GCM", linestyle = 'dotted')
+
+#plots blackbody
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10)
 plt.plot(data_wl, best_fit_binned*1e3, linestyle = 'none', marker = 's', color = '#5a86ad', alpha = 0.9)
 
-plt.gca().text(0.1, 0.8, 'Spitzer', transform=ax.transAxes)
+plt.gca().text(0.07, 0.83, 'Spitzer', transform=ax.transAxes)
 
 plt.xlim(3, 5)
 plt.ylim(3.5,6)

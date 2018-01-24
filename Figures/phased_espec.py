@@ -9,7 +9,7 @@ from pylab import *
 from matplotlib import rc, ticker
 import seaborn as sns
 
-sns.set_context("notebook", font_scale = 1.3)
+sns.set_context("notebook", font_scale = 1.5)
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
@@ -193,9 +193,9 @@ for j in range(1, len(phasebins)):
 
 
 i += 1
-plt.figure(figsize=(14,5))
+fig = plt.figure(figsize=(14,5))
 ncol = 4
-gs = gridspec.GridSpec(2, ncol)
+gs = gridspec.GridSpec(2, ncol, wspace = 0., hspace = 0.)
 
 k = len(phasebins)
 row = 0
@@ -210,7 +210,7 @@ for i in range(1, k):
 
 	if (phase < 0.4)|(phase > 0.6):
 		plt.errorbar(waves, (spectra[:,i-1,0]-1.)*1.0e3*(1+np.array(dilution)), yerr = 1.0e3*spectra[:,i-1,1], fmt='.k', zorder=100)	
-		plt.gca().text(0.1, 0.8, '$\phi = $' + '{0:0.1f}'.format(phase), transform=ax.transAxes)
+		plt.gca().text(0.1, 0.8, '$\phi = $' + '{0:0.1f}'.format(phase), transform=ax.transAxes, fontsize=18)
 
 		outname = "espec_phase_" + '{0:0.1f}'.format(phase) + ".txt"
 		outfile = open(outname, "w")
@@ -232,13 +232,13 @@ for i in range(1, k):
                     #print counter, phase
                     print phase
                 else: 
-                    plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = 'GCM')
+                    plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = '$\\tau_\mathrm{drag3}$ GCM')
                     #print counter + 1, phase
                     print phase
                 counter += 1
 	
 
-	if col==0: plt.ylabel("Planet-to-star flux (ppt)")
+	if (col==0): plt.ylabel("$F_p$/$F_s$ (ppt)")
 	if row ==1: plt.xlabel("Wavelength (microns)")
 
 	if (col==3)&(row==1): plt.legend(loc=4, frameon=True)		#legend
@@ -254,13 +254,20 @@ for i in range(1, k):
 	ax.set_xticklabels(["1", "2", "4"])
 
 
-	ax.yaxis.set_major_locator(FixedLocator(np.array([1,2,3,4,5])))
-	ax.set_yticklabels(["1", "2", "3", "4", "5"])
+	#ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 1,2,3,4,5])))
+	#ax.set_yticklabels(["0.1", "1", "2", "3", "4", "5"])
+
+	ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 0.2, 0.3, 0.4,  0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5])))
+	ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
 
 
 	plt.xlim(1.0, 5.0)
 	ymin = model_hires.min()*0.9 
-	ymax = model_hires.max()*1.3
+	ymax = model_hires.max()*1.33
+	if (col==3)&(row ==1): 
+		ymin *= 0.5
+		ymax = 2.5
+	if (col==0)&(row ==0): ymin *= 0.7
 
 	plt.ylim(ymin, ymax)
 	if row==0: plt.gca().set_xticklabels([])
@@ -273,4 +280,5 @@ print "ERRORS & WARNINGS"
 print "hard coding rprs for calculating best fit bb"
 print "hard coding dilution in spitzer bandpass"
 print "make sure normalization is right (sine curve vs. physical model)"
+gs.tight_layout(fig, rect = [0., 0., 1., 1.])
 plt.savefig("emission_spectra.pdf")

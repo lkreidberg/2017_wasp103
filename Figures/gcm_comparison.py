@@ -14,12 +14,11 @@ gcm_path = "./Vivien_models2"
 gcms = glob.glob(os.path.join(gcm_path, "PC*PT.dat"))
 
 labels = ["$\\tau_\mathrm{drag} = 10^4$ s", "$\\tau_\mathrm{drag} = 10^3$ s", "[Fe/H] = 0.5", "nominal GCM"]
+colors = ["#be0119", "#f97306", "#6dedfd", "#0165fc"]
+ls = [":", "--", "-.", "-"]
 
 plt.figure(figsize = (4, 6))
 
-#colors = ["#be0119", "#f97306", "#04d9ff", "#0165fc"]
-colors = ["#be0119", "#f97306", "#6dedfd", "#0165fc"]
-ls = [":", "--", "-.", "-"]
 
 
 def proj_area(phi, inc):
@@ -51,15 +50,11 @@ for i, g in enumerate(gcms):
     model = np.genfromtxt(g, delimiter = ',') 
     phi = model[:,0]/360.*2.*np.pi
     area = proj_area(phi, inc)
-    l1, = plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, label = labels[i], color = colors[i], linestyle = ls[i])
+    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, color = colors[i], linestyle = ls[i])
     plt.plot(model[:,0]/360. +1.5, model[:,5]*1e3*area, color = colors[i], linestyle = ls[i])
 
-    #print "model quadrature", np.interp(0.25, model[:,0]/360. +0.5, model[:,5]*1e3*area) 
-
-    #for col in [5,6,7]:
-    #col = 5
-    #col =6
-    col = 7
+    #get amlitude and offset for different gcms
+    col = 7							#5,6,7 = WFC3, Ch1, Ch2
     x, y = model[:,0]/360. + 0.5, model[:,col]
     f = interp1d(x, y, kind = 'cubic')
     xnew = np.linspace(0, 1, 1000)
@@ -69,6 +64,14 @@ for i, g in enumerate(gcms):
     print ((offset - 0.5)*(-360.))[0], (np.max(ynew) - np.min(ynew))/np.max(ynew),
     print ""
 
+labels = ["$\\tau_\mathrm{drag} = 10^4$ s", "$\\tau_\mathrm{drag} = 10^3$ s", "[Fe/H] = 0.5", "nominal GCM"]
+colors = ["#be0119", "#f97306", "#6dedfd", "#0165fc"]
+
+x, y = np.linspace(100, 101, 10), np.linspace(100, 101, 10)
+l1, =	plt.plot(x,y, colors[3], linestyle = ls[3], label = labels[3])
+l2, =	plt.plot(x,y, colors[2], linestyle = ls[2], label = labels[2])
+l3, =	plt.plot(x,y, colors[1], linestyle = ls[1], label = labels[1])
+l4, =	plt.plot(x,y, colors[0], linestyle = ls[0], label = labels[0])
 
 
 #f = "./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"
@@ -87,8 +90,7 @@ bestfit = m.bestfit[ind]
 ind = np.argsort(phase)
 err, phase, data_corr, bestfit = err[ind], phase[ind], data_corr[ind], bestfit[ind] #sorts by phase
 
-#plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2', label = 'best fit')
-plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2')
+l5, = plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2', label = 'best fit sine curve')
 plt.plot(phase + 1., (bestfit-1.)*1e3*dilution, color = '0.2') 
 
 phasebins = np.linspace(0., 1., 30)
@@ -110,18 +112,18 @@ for j in range(1, len(phasebins)):
 plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, fmt = '.k')
 
 plt.xlim(0, 1.1)
-plt.ylim(-0.1, 2.0)
+plt.ylim(-0.1, 2.3)
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Phase")
 
-#ax = plt.gca()
-#handles, labels = ax.get_legend_handles_labels()
-#ax.legend(handles[::-1], labels[::-1], loc='upper right')
-
-first_legend = plt.legend(handles=[l1], loc='upper right')
+first_legend = plt.legend(handles=[l1, l2, l3, l4], loc='upper right', frameon=True)
 ax = plt.gca().add_artist(first_legend)
 
+#second_legend = plt.legend(handles=[l5], loc=(0.26, 0.834), frameon=True)
+second_legend = plt.legend(handles=[l5], loc='upper left', frameon=True)
+ax = plt.gca().add_artist(second_legend)
 
+plt.gca().text(0.05, 1.6, 'HST/WFC3', fontsize=10)
 
 plt.subplot(312)
 
@@ -139,10 +141,11 @@ plt.ylim(-0.6, 5.5)
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Phase")
 
+plt.gca().text(0.05, 4., 'Spitzer\nCh 1', fontsize=10)
 
 plt.subplot(313)
 
-#Spitzer Ch 1
+#Spitzer Ch 2
 for i, g in enumerate(gcms):
     print g,
     model = np.genfromtxt(g, delimiter = ',') 
@@ -156,6 +159,7 @@ plt.ylim(-0.6, 6.3)
 plt.ylabel("Planet-to-star flux (ppt)")
 plt.xlabel("Phase")
 
+plt.gca().text(0.05, 4.5, 'Spitzer\nCh 2', fontsize=10)
 
 
 

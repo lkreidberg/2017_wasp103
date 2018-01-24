@@ -4,33 +4,44 @@ The top-level auxiliary file: ms.aux
 The style file: aasjournal.bst
 Database file #1: msNotes.bib
 Database file #2: ms.bib.bib
-Repeated entry---line 1721 of file ms.bib.bib
+Repeated entry---line 1722 of file ms.bib.bib
  : @article{evans16
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3235 of file ms.bib.bib
+Repeated entry---line 3236 of file ms.bib.bib
  : @article{espinoza17
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3383 of file ms.bib.bib
+Repeated entry---line 3384 of file ms.bib.bib
  : @article{carter09
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3425 of file ms.bib.bib
+Repeated entry---line 3426 of file ms.bib.bib
  : @article{stevenson12
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3649 of file ms.bib.bib
+Repeated entry---line 3650 of file ms.bib.bib
  : @article{zhou17
  :                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4128 of file ms.bib.bib
+Repeated entry---line 4129 of file ms.bib.bib
  : @article{cartier17
  :                   ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "2014AJ...147...94D"
+Warning--I didn't find a database entry for "2007AJ...133..439C"
+Warning--I didn't find a database entry for "2018AJ...155...34C"
+Warning--I didn't find a database entry for "2010AJ...139..176F"
+Warning--I didn't find a database entry for "filippazzo16"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--to sort, need author or key in hubeny03
 Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
+while executing---line 1687 of file aasjournal.bst
+Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1687 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1687 of file aasjournal.bst
+Name 5 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
 while executing---line 1687 of file aasjournal.bst
 Warning--empty author in hubeny03
 Warning--empty journal in hubeny03
@@ -42,45 +53,57 @@ while executing---line 1775 of file aasjournal.bst
 Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
 while executing---line 1775 of file aasjournal.bst
 Warning--empty institution in mccullough12
-You've used 81 entries,
+Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1775 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1775 of file aasjournal.bst
+Name 5 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1775 of file aasjournal.bst
+Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1775 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1775 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1775 of file aasjournal.bst
+You've used 90 entries,
             3222 wiz_defined-function locations,
-            1214 strings with 25649 characters,
-and the built_in function-call counts, 39446 in all, are:
-= -- 3071
-> -- 3349
-< -- 21
-+ -- 1125
-- -- 1240
-* -- 3563
-:= -- 7309
-add.period$ -- 84
-call.type$ -- 81
-change.case$ -- 487
-chr.to.int$ -- 77
-cite$ -- 90
-duplicate$ -- 1463
-empty$ -- 2288
-format.name$ -- 1322
-if$ -- 7831
+            1281 strings with 28320 characters,
+and the built_in function-call counts, 43944 in all, are:
+= -- 3416
+> -- 3754
+< -- 22
++ -- 1261
+- -- 1392
+* -- 3976
+:= -- 8159
+add.period$ -- 93
+call.type$ -- 90
+change.case$ -- 544
+chr.to.int$ -- 86
+cite$ -- 99
+duplicate$ -- 1626
+empty$ -- 2534
+format.name$ -- 1482
+if$ -- 8713
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 77
-newline$ -- 252
-num.names$ -- 321
-pop$ -- 692
+missing$ -- 86
+newline$ -- 279
+num.names$ -- 357
+pop$ -- 774
 preamble$ -- 2
-purify$ -- 485
+purify$ -- 542
 quote$ -- 0
-skip$ -- 1084
+skip$ -- 1198
 stack$ -- 0
-substring$ -- 1268
+substring$ -- 1395
 swap$ -- 19
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 723
+type$ -- 804
 warning$ -- 7
-while$ -- 291
+while$ -- 321
 width$ -- 0
-write$ -- 817
-(There were 9 error messages)
+write$ -- 906
+(There were 18 error messages)

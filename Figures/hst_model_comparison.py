@@ -197,12 +197,12 @@ plt.gca().set_yticklabels([])
 plt.xlabel("Longitude (deg)")
 
 
-
 #formatting
 ax = plt.subplot(gs[0:2, 4])
 plt.gca().set_visible(False)
 cb = fig.colorbar(im, alpha = 0.8, aspect = 30, fraction = 1) 
 cb.set_label("Temperature (Kelvin)")
+
 
 ###############################
 # plot best fits	      #
@@ -288,6 +288,8 @@ plt.ylabel("Planet-to-star flux (ppt)")
 plt.ylim(-0.2, 2)
 plt.xlim(0,1)
 
+#gs.tight_layout(fig, rect = [0., 0., 1., 1.])
 plt.savefig('hst_model_comparison.pdf')
 
-plt.show()
+
+#plt.show()

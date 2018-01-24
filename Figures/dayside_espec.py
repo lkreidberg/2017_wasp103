@@ -92,6 +92,12 @@ rprs = 0.1127
 wave_bb, bb = best_fit_bb(data_wl, data, data_err, rprs)
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody")
 
+
+#plots gcm
+GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
+plt.plot(GCM[:,0], GCM[:,5]*1e3, color = 'r', label = "$\\tau_\mathrm{drag3}$ GCM")
+
+
 plt.legend(loc = 'lower right', frameon=True, fontsize = 10)
 
 plt.ylabel("Planet-to-star flux (ppt)")

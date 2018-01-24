@@ -65,7 +65,7 @@ for ii, f in enumerate(bestfits):
 
 	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, fmt = '.k')
 	#plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'k', label = 'best fit', zorder=20, linewidth = 1.0)
-	plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'b', label = 'best fit', zorder=-1) 
+	plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'b', label = 'best fit', zorder=-1, alpha = 0.8, linewidth = 2.0)
 
 	##### plot mcmc
 	"""mcmc = np.load(mcmcs[ii])
@@ -111,7 +111,7 @@ for ii, f in enumerate(bestfits):
 
 	ax = plt.subplot(gs[ii, 1])
 	resid = data_corr - bestfit 
-	plt.axhline(0, color='0.5', zorder=-10)
+	plt.axhline(0, color='0.5', zorder=-10, linewidth = 2.)
 	plt.errorbar(bin_average, (bindata - binbestfit)*1e3, yerr = binsigma*1e3, fmt = '.k')
 	plt.ylim(-0.2,0.2)
 	plt.xlim(0,1)
@@ -185,7 +185,7 @@ for ii, f in enumerate(bestfits):
 
 	plt.errorbar(bin_average, (bindata-1.)*1e3*(1.+dilution[ii]), yerr = binsigma*1e3, fmt = '.k')
 	#plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution[ii]), color = 'k', label = 'best fit')
-	plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution[ii]), color = colors[ii], label = 'best fit')
+	plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution[ii]), color = colors[ii], label = 'best fit', alpha = 0.8, linewidth = 2.0)
 
 
 	ax.set_xticklabels([])
@@ -214,7 +214,7 @@ for ii, f in enumerate(bestfits):
 
 	ax = plt.subplot(gs[ii+1, 1])
 	binresid = bindata - binbestfit
-	plt.axhline(0, color='0.5', zorder = -10)
+	plt.axhline(0, color='0.5', zorder = -10, linewidth = 2.)
 	plt.errorbar(bin_average, binresid*1e3, yerr = binsigma*1e3, fmt = '.k')
 	plt.ylim(-2,2)
 	plt.xlim(0,1)
