@@ -3,9 +3,6 @@
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\href{#1}{#1}}
 
-\bibitem[{hub(2003)}]{hubeny03}
- 2003, 594, 1011
-
 \bibitem[{{Ag{\'u}ndez} {et~al.}(2014){Ag{\'u}ndez}, {Parmentier}, {Venot},
   {Hersant}, \& {Selsis}}]{agundez14}
 {Ag{\'u}ndez}, M., {Parmentier}, V., {Venot}, O., {Hersant}, F., \& {Selsis},
@@ -150,6 +147,11 @@ Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
 {Fortney}, J.~J., {Lodders}, K., {Marley}, M.~S., \& {Freedman}, R.~S. 2008,
   \apj, 678, 1419
 
+\bibitem[{{Fortney} {et~al.}(2013){Fortney}, {Mordasini}, {Nettelmann},
+  {Kempton}, {Greene}, \& {Zahnle}}]{fortney13}
+{Fortney}, J.~J., {Mordasini}, C., {Nettelmann}, N., {et~al.} 2013, \apj, 775,
+  80
+
 \bibitem[{{Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
   {de Bruijne}, {Brown}, {Vallenari}, {Babusiaux}, {Bailer-Jones}, {Bastian},
   {Biermann}, {Evans}, \& et~al.}]{gaia16}
@@ -189,6 +191,9 @@ Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
   {Showman}}]{hu15}
 {Hu}, R., {Demory}, B.-O., {Seager}, S., {Lewis}, N., \& {Showman}, A.~P. 2015,
   \apj, 802, 51
+
+\bibitem[{{Hubeny} {et~al.}(2003){Hubeny}, {Burrows}, \& {Sudarsky}}]{hubeny03}
+{Hubeny}, I., {Burrows}, A., \& {Sudarsky}, D. 2003, \apj, 594, 1011
 
 \bibitem[{{Husser} {et~al.}(2013){Husser}, {Wende-von Berg}, {Dreizler},
   {Homeier}, {Reiners}, {Barman}, \& {Hauschildt}}]{husser13}

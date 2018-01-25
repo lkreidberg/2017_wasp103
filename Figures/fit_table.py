@@ -1,14 +1,18 @@
 import numpy as np
 from lc_fit import Model, LightCurveData
 import pickle 
-#zhang, hotspot, spherical
+
+#get Spitzer AIC/BIC values from results.txt 
+
+#zhang, hotspot, spherical, sincos
 ch1_chi2 = np.array([0.9, 0.9, 0.9, 0.9])
-ch1_aic = np.array([7131.0, 7107.4, 7096.7, 7048.7])
-ch1_bic = np.array([7075.2, 7058.5, 7040.9, 7139.3])
+ch1_aic = np.array([7131.0, 7107.4, 7096.7, 7047.7])
+ch1_bic = np.array([7075.2, 7058.5, 7040.9, 7117.5])
 
 ch2_chi2 = np.array([1.1, 1.1, 1.1, 1.1])
-ch2_aic = np.array([8345.95, 8355.5, 8331.6, 8329.4])
-ch2_bic = np.array([8401.61, 8384.2, 8387.3, 8433.8])
+ch2_aic = np.array([8666.2, 8657.9, 8653.3, 8645.4])
+ch2_bic = np.array([8722.0, 8706.8, 8709.1, 8729.1])
+
 
 # bset fits for WFC3
 wfc3_chi2 = []

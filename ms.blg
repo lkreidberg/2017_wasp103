@@ -34,7 +34,6 @@ Warning--I didn't find a database entry for "2018AJ...155...34C"
 Warning--I didn't find a database entry for "2010AJ...139..176F"
 Warning--I didn't find a database entry for "filippazzo16"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--to sort, need author or key in hubeny03
 Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
 while executing---line 1687 of file aasjournal.bst
 Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
@@ -43,8 +42,6 @@ Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J
 while executing---line 1687 of file aasjournal.bst
 Name 5 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
 while executing---line 1687 of file aasjournal.bst
-Warning--empty author in hubeny03
-Warning--empty journal in hubeny03
 Warning--empty publisher in bagenal04
 Warning--empty publisher in jones_scipy_2001
 Warning--empty institution in long15
@@ -65,45 +62,45 @@ Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J
 while executing---line 1775 of file aasjournal.bst
 Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
 while executing---line 1775 of file aasjournal.bst
-You've used 90 entries,
+You've used 91 entries,
             3222 wiz_defined-function locations,
-            1281 strings with 28320 characters,
-and the built_in function-call counts, 43944 in all, are:
-= -- 3416
-> -- 3754
+            1289 strings with 28704 characters,
+and the built_in function-call counts, 44645 in all, are:
+= -- 3475
+> -- 3832
 < -- 22
-+ -- 1261
-- -- 1392
-* -- 3976
-:= -- 8159
-add.period$ -- 93
-call.type$ -- 90
-change.case$ -- 544
-chr.to.int$ -- 86
-cite$ -- 99
-duplicate$ -- 1626
-empty$ -- 2534
-format.name$ -- 1482
-if$ -- 8713
++ -- 1287
+- -- 1422
+* -- 4035
+:= -- 8304
+add.period$ -- 94
+call.type$ -- 91
+change.case$ -- 556
+chr.to.int$ -- 87
+cite$ -- 95
+duplicate$ -- 1646
+empty$ -- 2557
+format.name$ -- 1513
+if$ -- 8846
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 86
-newline$ -- 279
-num.names$ -- 357
-pop$ -- 774
+missing$ -- 87
+newline$ -- 282
+num.names$ -- 365
+pop$ -- 786
 preamble$ -- 2
-purify$ -- 542
+purify$ -- 554
 quote$ -- 0
-skip$ -- 1198
+skip$ -- 1211
 stack$ -- 0
-substring$ -- 1395
+substring$ -- 1407
 swap$ -- 19
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 804
-warning$ -- 7
-while$ -- 321
+type$ -- 813
+warning$ -- 4
+while$ -- 328
 width$ -- 0
-write$ -- 906
+write$ -- 918
 (There were 18 error messages)
