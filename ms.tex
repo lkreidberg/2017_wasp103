@@ -126,7 +126,8 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 	\tablecaption{Photometric Observations of WASP-103 \label{tab:photometry}}
 	\tablehead{
 		\colhead{Observing} & \colhead{} & \colhead{Date Range} &
-	\colhead{Sigma} & \colhead{Seasonal Mean} }
+	\colhead{Sigma} & \colhead{Seasonal Mean} \\
+		& \colhead{\,} & \colhead{\,} & \colhead{(mag)} & \colhead{(mag)}}
 	\startdata
 	   2014   &  59 & 56722--56972 & 0.0057 & $0.9546\pm0.0007$  \\
 	   2015   &  73 & 57028--57335 & 0.0062 & $0.9549\pm0.0007$  \\
@@ -378,7 +379,7 @@ We also fit blackbody models to the WFC3 data only, and found that they provide 
 
 \subsection{Grid-Based Retrieval}
 \label{sec:retrieval}
-To infer abundances from the dayside spectrum, we use a self-consistent grid-based method (ScCHIMERA) similar to that employed in \cite{arcangeli18, mansfield18}. We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities (M/H), carbon-to-oxygen ratios (C/O), and stellar irradiation ($f$). The $f$ parameter is a scaling for the flux at the top of the atmosphere. The input stellar sectrum is scaled in intensity over the grid to model the unknown heat redistribution for the planet; i.e., a lower dayside irradiation $f$ is equivalent to more efficient heat transport to the nightside. 
+To infer abundances from the dayside spectrum, we use a self-consistent grid-based method (ScCHIMERA) similar to that employed in \cite{arcangeli18, mansfield18}. We generated a grid from one-dimensional forward models of the atmosphere over a broad range of metallicities (M/H), carbon-to-oxygen ratios (C/O), and stellar irradiation ($f$). The $f$ parameter is a scaling factor for the stellar flux at the top of the atmosphere, where $f=1$ corresponds to full heat redistribution and $f=2$ is equivalent to only allowing the dayside to re-radiate.  %The input stellar sectrum is scaled in intensity over the grid to model the unknown heat redistribution for the planet; i.e., a lower dayside irradiation $f$ is equivalent to more efficient heat transport to the nightside. 
 
 At each point in the grid, we compute forward models to determine self-consistent, radiative-convective temperature-pressure (T-P) profiles. We determine the molecular abundances in each atmospheric layer assuming thermochemical equilibrium \citep[calculated with the NASA CEA routine;][]{gordon94}.  We include opacity from the major absorbers expected for a hot Jupiter atmosphere, including H$_2$O, CO, CO$_2$, TiO, VO, FeH, and H$_2$-H$_2$ CIA. Notably, in contrast to most prior atmospheric retrievals for the hottest planets, we also included opacity from H-, which is an important absorber at temperatures above 2500 K \citep{arcangeli18, parmentier18}.  Using these opacities and T-P profiles, we calculated thermal emission spectra over the full grid using the CHIMERA retrieval suite \citep[described in][]{line13a, line14}.  We then explored the grid with an MCMC chain using the \texttt{emcee} package \citep{foremanmackey13} and interpolated in the grid to calculate the likelihood at each model step. The priors were uniform over the ranges $0.2 \le f \le 2.8$, $-1\le \log{\mathrm{M/H}} \le 2.5$, and $-1 \le \log{\mathrm{C/O}} \le 0.95$.  We fit this model to the dayside and nightside emission spectra (phases $\phi = 0.5$ and $0.1$). 
 
@@ -387,7 +388,7 @@ The main characteristics of the dayside emission spectrum are: (1) it is blackbo
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/xsec_FULL.pdf}
-\caption{Abundance weighted absorption cross-sections illustrating the important opacity sources at the photospheric pressure level (5 mbar). The strong CO feature at 4.5\,$\mu$m contributes to the high planet-to-star flux at that wavelength.  Water, hydrides/oxides, and the H- bound-free opacities all play a role in shaping the \HST/WFC3 spectrum.}
+\caption{Abundance weighted absorption cross-sections illustrating the important opacity sources at the photospheric pressure and temperature (5 mbar, 3036 K). The strong CO feature at 4.5\,$\mu$m contributes to the high planet-to-star flux at that wavelength.  Water, hydrides/oxides, and the H- bound-free opacities all play a role in shaping the \HST/WFC3 spectrum.}
 \label{fig:opacities}
 \end{figure}
 
@@ -411,7 +412,9 @@ In Figure\,\ref{fig:composition}, we show the posterior distributions from the g
 
 The retrieved C/O is consistent with solar, with a $1\sigma$ confidence interval of $0.54 - 0.85$. We infer an upper limit on C/O of 0.9 at $3\,\sigma$ confidence, driven by the fact that the atmospheric chemistry is expected to change dramatically when C/O exceeds unity. For a carbon-rich composition, the equilibrium abundance of methane relative to CO increases by orders of magnitude compared to an oxygen-rich  composition \citep[e.g.][]{madhusudhan11}. Our \Spitzer\ eclipse depths are sensitive to the relative abundance of these species, so we can confidently rule out a carbon-rich composition despite the lack of spectrally resolved features (assuming the atmosphere is in chemical equilibrium).
 
-We infer a heat redistribution $f = 2.49^{+0.14}_{-0.15}$. An $f$ parameter of unity represents isotropic heat distribution, whereas $f = 2$ corresponds to dayside emission only. Our estimate of $f$ is FIXME (ask Mike how $f$ can be above maximum. could it be the inversion?), indicating inefficient transport of heat to the nightside. Poor heat transport is observed in other very hot planets as well, due to damping of heat-propagating waves by fast radiative cooling or frictional drag in a partially ionized atmosphere \citep{komacek17}.  The heat redistribution is strongly correlated with atmospheric metallicity because increasing metallicity  shifts the T-P profile to lower pressures, resulting in hotter temperatures at a given pressure level (equivalent to less efficient heat redistribution). 
+We infer a heat redistribution $f = 2.49^{+0.14}_{-0.15}$. An $f$ parameter of unity represents isotropic heat distribution, whereas $f = 2$ corresponds to dayside emission only. We estimate $f > 2$, indicating a thermal inversion and likely inefficient transport of heat to the nightside. 
+%Poor heat transport is observed in other very hot planets as well, due to damping of heat-propagating waves by fast radiative cooling or frictional drag in a partially ionized atmosphere \citep{komacek17}.  
+The heat redistribution is strongly correlated with atmospheric metallicity because increasing metallicity  shifts the T-P profile to lower pressures, resulting in hotter temperatures at a given pressure level (equivalent to less efficient heat redistribution). 
 
 
 We note that an important caveat for our results is that the best fit model is not a perfect fit to the data (with $\chi_\nu = 1.77$), so the uncertainties produced by the MCMC may be underestimated. Furthermore, the inferred C/O and metallicity are highly sensitive to the planet-to-star flux at \Spitzer\ $4.5\,\mu$m, which is the worst fit data point. To fit this data point, the model favors super-solar metallicities and C/O, which drive up the CO abundance (the dominant absorber at $4.5\,\mu$m). Given that the result hinges on a single photometric band and there are no spectrally resolved molecular features to constrain the temperature-pressure profile or which absorbers are present, we caution against over-interpreting these results until wider spectral coverage is available.
@@ -459,7 +462,7 @@ The directly imaged spectra are for the sources CD-35 2722, USco 1610-1913B, and
 
 \begin{figure*}
 \includegraphics[width = 1.0\textwidth]{Figures/spectra_comparison.pdf}
-\caption{Flux-calibrated spectra for WASP-103b (left column) compared to brown dwarfs (middle) and directly imaged companions (right), assuming a distance of 10 pc. The WASP-103b spectra are from the nightside (phase 0.1, top row), quadrature (phase 0.25, middle) and the dayside (phase 0.5, bottom). Each row shows spectra from objects of comparable temperature. The dotted gray line corresponds to the best fit blackbody. Effective temperatures are listed in the upper right corners. The wavelength bins used to calculate the water feature amplitude $A_1$ are shaded in gray.}
+\caption{Flux-calibrated spectra for WASP-103b (left column) compared to observed spectra for brown dwarfs (middle) and directly imaged companions (right), assuming a distance of 10 pc. The WASP-103b spectra are from the nightside (phase 0.1, top row), quadrature (phase 0.25, middle) and the dayside (phase 0.5, bottom). Each row shows spectra from objects of comparable temperature. The dotted gray line corresponds to the best fit blackbody. Effective temperatures are listed in the upper right corners. The wavelength bins used to calculate the water feature amplitude $A_1$ are shaded in gray.}
 \label{fig:planetstarcomparison}
 \end{figure*}
 

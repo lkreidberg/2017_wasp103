@@ -80,7 +80,7 @@ def initialize_params(spider_params):
     spider_params.T_s = 6110.		# Temperature of the star
     return spider_params
 
-models = ["hotspot_t", "zhang", "spherical"]
+models = ["hotspot_t", "zhang", "spherical"] 
 labels = ["Two temp.", "Kinematic", "Sph. harmonics"] 
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #Spitzer Ch 2
@@ -125,7 +125,7 @@ for i, model in enumerate(models):
   	sph2 = par[d.par_order['sph2']*d.nvisit]
   	sph3 = par[d.par_order['sph3']*d.nvisit]
         spider_params.sph = [sph0, sph1, sph2, sph3]
-	print spider_params.sph
+	#print spider_params.sph
 
     elif model == "hotspot_t":
 	spider_params.la0 = 0.
@@ -133,6 +133,9 @@ for i, model in enumerate(models):
 	spider_params.size = 90.
 	spider_params.spot_T = par[d.par_order['spot_T']*d.nvisit]
 	spider_params.p_T = par[d.par_order['p_T']*d.nvisit]
+
+    elif model == "sincos":
+	print "AHHH"
         
     else:
         print "model not supported"
@@ -208,14 +211,14 @@ cb.set_label("Temperature (Kelvin)")
 # plot best fits	      #
 ###############################
 
-#models = ["hotspot_t", "zhang", "spherical"]
-#labels = ["Two temp.", "Kinematic", "Sph. harmonics"] 
+models = ["hotspot_t", "zhang", "spherical", "sincos"]
+labels = ["Two temp.", "Kinematic", "Sph. harmonics", "Sinusoid"] 
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #WFC3
-colors = ['#82cafc', '#ff7855', 'purple'] 
+colors = ['#82cafc', '#ff7855', 'purple', 'red'] 
 grays = ['0.7', '0.5', '0.6']
 #linestyle = ['-', '-.', ':']
-linestyle = ['-', '-', '-']
+linestyle = ['-', '-', '-', '-']
 
 phasebins = np.linspace(0., 1., 50)
 nbins = len(phasebins) - 1
@@ -257,7 +260,7 @@ for i, model in enumerate(models):
 	plt.plot(bin_average, (bindata-1.)*1e3*dilution,  linestyle = 'none', marker ='.', color = colors[i], zorder = 10, alpha = 0.8)
         pickle.dump( [bin_average, (bindata-1.), binsigma], open(model+".p", "wb" ) )
 
-        plt.plot(phase, (bestfit-1.)*1e3*dilution, color = colors[i], label = labels[i], alpha = 1.0, linestyle = linestyle[i])
+        plt.plot(phase, (bestfit-1.)*1e3*dilution, color = colors[i], label = labels[i], alpha = 0.5, linestyle = linestyle[i])
 
 
 #plot GCM
@@ -277,8 +280,8 @@ plt.legend(loc = 'upper left', frameon=False, fontsize=11)
 ax = plt.gca()
 handles,labels = ax.get_legend_handles_labels()
 
-handles = [handles[2], handles[1], handles[0], handles[3]]
-labels = [labels[2], labels[1], labels[0], labels[3]]
+handles = [handles[2], handles[1], handles[0], handles[3], handles[4]]
+labels = [labels[2], labels[1], labels[0], labels[3], "GCM"]
 
 ax.legend(handles,labels,loc='upper left', frameon = False, fontsize = 11)
 

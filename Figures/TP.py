@@ -20,6 +20,8 @@ plt.subplot(211)
 
 data_wl, data, data_err,  best_fit_binned,  wl_hi,  y_hi_best, spec_arr, Tarr, P, samples = pickle.load(open("Mike_models/WASP-103b_grid_DAYSIDE_output.pic", "rb"))
 
+print Tarr.shape, P.shape
+
 levels = [7, 14, 20, 27]
 for l in levels: print P[l], np.percentile(Tarr[:,l], np.array([16., 50., 84.]))
 
@@ -80,7 +82,11 @@ plt.xlabel('Temperature (K)')
 plt.ylabel('Pressure (bar)')
 
 
+wno,Flux, Fstar, FpFstar, T, P, gasarr = pickle.load(open("Mike_models/WASP-103b_logZ_1.5_CtoO_0.5_f_0.25_simple.pic"))
 
+plt.plot(T, P)
+
+print T.shape, P.shape
 
 
 plt.tight_layout()

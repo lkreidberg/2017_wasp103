@@ -55,7 +55,7 @@ star_wave = star[:,0]	                        #[microns]
 star_flux = star[:,1]	                        #[ergs/s/cm^2]	
 star_flux = star_flux*(470/10.)**2		#convert to absolute flux (10 pc)
 
-labels = ["nightside", "quadrature", "dayside"]
+name = ["nightside", "quadrature", "dayside"]
 ylo = [0., 0.9, 2.8]
 yhi = [1.15, 2.3, 4.3]
 
@@ -84,6 +84,7 @@ for i, f in enumerate(files):
 
     #labels and axes
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False)
+    ax.text(0.03, 0.07, name[i], fontsize=8, transform=ax.transAxes, bbox=dict(facecolor='white', alpha=0.9, pad = 2)) 
 
     if i == 1: plt.ylabel("erg/s/cm$^2$ ($\\times10^{-10}$)")
     plt.xlim(1.0,1.75)
@@ -107,7 +108,7 @@ for i, f in enumerate(files):
 
 path = "BD_spectra/"
 files = ["For_Laura1320+0409 (L3:) SED.txt", "0428-2253 (L0.5) SED.txt", "For_Laura0003-2822 (M7.5) SED.txt"]
-names = ["1320+0409", "0024-0158", "0003-2822"]
+name = ["1320+0409", "0024-0158", "0003-2822"]
 Ts = [1880, 2430, 2890]
 distance = np.array([30.96, 25.99,38.91])
 radius = np.array([1.01, 1.1,  1.33])
@@ -139,6 +140,7 @@ for i, f in enumerate(files):
     plt.legend(loc = 'upper right', handlelength = 0., frameon=False)
     plt.xlim(1.0,1.75)
     plt.ylim(ylo[i], yhi[i])
+    ax.text(0.03, 0.07, name[i], fontsize=8, transform=ax.transAxes, bbox=dict(facecolor='white', alpha=0.9, pad = 2)) 
 
     if i != 2: plt.gca().set_xticklabels([])
     if i == 2: plt.xlabel("Wavelength (microns)")
@@ -159,10 +161,10 @@ for i, f in enumerate(files):
 
 path = "Direct_Image_Spectra/"
 files = ["CD-352722B_Kreidberg.txt", "J1610-1913B_Kreidberg.txt", "TWA22A_Kreidberg.txt"]
-name = [" CD-35 2722,", "J1610", "TWA22A"]
+name = [" CD-35 2722", "USco 1610-1913B", "TWA22A"]
 Ts = [1800, 2400, 3000] 
 ylo = [0., 11., 11.]
-yhi = [1.3, 23., 22.]
+yhi = [1.4, 23., 22.]
 
 print "DI"
 for i, f in enumerate(files):
@@ -189,6 +191,7 @@ for i, f in enumerate(files):
 
     plt.xlim(1.0,1.75)
     plt.ylim(ylo[i], yhi[i])
+    ax.text(0.03, 0.07, name[i], fontsize=8, transform=ax.transAxes, bbox=dict(facecolor='white', alpha=0.9, pad = 2)) 
 
     if i != 2: plt.gca().set_xticklabels([])
     if i == 0: plt.title("Imaged companions")
