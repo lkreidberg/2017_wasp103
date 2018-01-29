@@ -100,7 +100,7 @@ plt.plot(GCM[:,0], GCM[:,5]*1e3, color = 'r', label = "$\\tau_\mathrm{drag3}$ GC
 
 plt.legend(loc = 'lower right', frameon=True, fontsize = 10)
 
-plt.ylabel("Planet-to-star flux (ppt)")
+plt.ylabel("Planet-to-star flux ($\\times10^{-3}$)")
 plt.xlabel("Wavelength (microns)")
 
 plt.xlim(1.1, 1.7)

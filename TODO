@@ -5,4 +5,7 @@ wakeford et al. 2017 clouds
 
 
 Questions:
-Mike - what are priors for retrieval? should we call it retrieval?
+4.1: AS: hotspot consistent with zero from sine curve, but doesn't look like that from spherical harmonics?
+4.3: AS: look at day and nightside average
+AS: flux coming out of GCM doesn't match data
+calculate brightness temperatures for all bands at different phases to quantify strength of Spitzer "feature" - also, call it something other than a feature

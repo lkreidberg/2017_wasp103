@@ -205,7 +205,7 @@ plt.plot(wl_hi, y_hi_best, zorder = -9, label = 'best fit')
 
 plt.legend(loc = 'lower right', frameon=True, fontsize = 11)
 
-plt.ylabel("Planet-to-star flux (ppt)")
+plt.ylabel("Planet-to-star flux ($\\times10^{-3}$)")
 plt.xlabel("Wavelength (microns)")
 
 plt.xlim(1.1, 1.7)

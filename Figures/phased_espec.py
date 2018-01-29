@@ -238,7 +238,7 @@ for i in range(1, k):
                 counter += 1
 	
 
-	if (col==0): plt.ylabel("$F_p$/$F_s$ (ppt)")
+	if (col==0): plt.ylabel("$F_p$/$F_s$ ($\\times10^{-3}$)")
 	if row ==1: plt.xlabel("Wavelength (microns)")
 
 	if (col==3)&(row==1): plt.legend(loc=4, frameon=True)		#legend

@@ -196,7 +196,7 @@ for ii, f in enumerate(bestfits):
         ax.yaxis.set_minor_locator(FixedLocator(np.array([1, 3, 5])))
 	
 	if ii ==0: 
-		plt.ylabel("Planet-to-star flux (ppt)", fontsize = 12, labelpad = 12)
+		plt.ylabel("Planet-to-star flux ($\\times10^{-3}$)", fontsize = 12, labelpad = 12)
                 ax.xaxis.set_major_locator(FixedLocator(np.array([0.1, 0.3, 0.5, 0.7, 0.9])))
                 ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
 		ax.set_xticklabels([])
@@ -229,7 +229,7 @@ for ii, f in enumerate(bestfits):
 	
 	if ii == 0: 
 		ax.set_xticklabels([])
-		plt.ylabel("Residuals (ppt)", fontsize = 12, labelpad = 10)
+		plt.ylabel("Residuals ($\\times10^{-3}$)", fontsize = 12, labelpad = 10)
 		ax.yaxis.set_label_position("right")
 	if ii == 1: plt.xlabel("Orbital phase", fontsize=12)
 

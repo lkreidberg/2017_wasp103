@@ -107,7 +107,7 @@ plt.errorbar(x, y*1e3, e*1e3, fmt = 'ok')
 plt.legend(loc = 'lower right', frameon=True, fontsize = 10)
 plt.gca().text(0.07, 0.83, 'HST/WFC3', transform=ax.transAxes)
 
-plt.ylabel("Planet-to-star flux (ppt)")
+plt.ylabel("Planet-to-star flux ($\\times1-^{-3}$)")
 plt.xlabel("Wavelength (microns)")
 
 

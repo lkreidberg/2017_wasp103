@@ -56,7 +56,7 @@ models = ['zhang', 'hotspot_t', "spherical"]
 labels = ["Kinematic", "Two Temperature", "Spherical harmonics"] 
 
 plt.figure(figsize = (6,6))
-channel = 2
+channel = 1
 
 for i, model in enumerate(models):
     spider_params = sp.ModelParams(brightness_model=model, thermal = True)
@@ -117,13 +117,15 @@ for i, model in enumerate(models):
     #lc = spider_params.lightcurve(t)
 
     #nla, nlo = 100, 100 
-    nla, nlo = 20, 20 
+    nla, nlo = 200, 200
 
     las = np.linspace(-np.pi/2,np.pi/2,nla)
     los = np.linspace(-np.pi,np.pi,nlo)
 
     temp_map = True
-    fluxes = []
+    Ts = []
+    dayside = []
+    nightside = []
     for la in las:
             row = []
             for lo in los:
@@ -132,20 +134,23 @@ for i, model in enumerate(models):
                             row += [flux[0]]
                     else:
                             row += [flux[1]]
-            fluxes += [row]
+                    if np.abs(lo)<np.pi/2.: dayside.append(flux[1])
+                    else: nightside.append(flux[1])
+            Ts += [row]
     
-    fluxes = np.array(fluxes)
-    #if model == "spherical": fluxes = convert_to_T(fluxes*np.pi)
+    Ts, dayside, nightside = np.array(Ts), np.array(dayside), np.array(nightside)
+    if model == "spherical": Ts, dayside, nightside = Ts/np.pi, dayside/np.pi, nightside/np.pi
 
     vmax = 12000. 
     vmin = 0.
 
-    print "model, Tmin, Tmax = ", model, fluxes.min(), fluxes.max()
+    #print "model, Tmin, Tmax = ", model, Ts.min(), Ts.max()
+    print model, "daymu, nightmu, min, max", np.mean(dayside), np.mean(nightside), Ts.min(), Ts.max()
 	
     plt.subplot(311+i)
 
-    #plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.YlOrRd_r, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
-    plt.imshow(fluxes, aspect='auto', interpolation='bilinear', cmap=plt.cm.plasma, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
+    #plt.imshow(Ts, aspect='auto', interpolation='bilinear', cmap=plt.cm.YlOrRd_r, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
+    plt.imshow(Ts, aspect='auto', interpolation='bilinear', cmap=plt.cm.plasma, alpha=0.9, vmax=vmax, vmin=vmin, extent = [-180,180, -90, 90])
 
     plt.gca().text(-170, 50, labels[i], bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=12)
 

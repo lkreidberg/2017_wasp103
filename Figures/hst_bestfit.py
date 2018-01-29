@@ -62,7 +62,7 @@ for i, model in enumerate(models):
 
 plt.legend(loc = 'upper left', frameon=False, fontsize=12)
 plt.xlabel("Orbital phase")
-plt.ylabel("Planet-to-star flux (ppt)")
+plt.ylabel("Planet-to-star flux ($\\times10^{-3}$)")
 plt.ylim(-0.2, 2)
 plt.xlim(0,1)
 plt.tight_layout()

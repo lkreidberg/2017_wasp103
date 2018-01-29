@@ -113,7 +113,7 @@ plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, fmt = 
 
 plt.xlim(0, 1.1)
 plt.ylim(-0.1, 2.3)
-plt.ylabel("Planet-to-star flux (ppt)")
+plt.ylabel("Planet-to-star flux ($\\times10^{-3}$)")
 plt.xlabel("Phase")
 
 first_legend = plt.legend(handles=[l1, l2, l3, l4], loc='upper right', frameon=True)
@@ -138,7 +138,7 @@ for i, g in enumerate(gcms):
 
 plt.xlim(0, 1.1)
 plt.ylim(-0.6, 5.5)
-plt.ylabel("Planet-to-star flux (ppt)")
+plt.ylabel("Planet-to-star flux ($\\times10^{-3}$)")
 plt.xlabel("Phase")
 
 plt.gca().text(0.05, 4., 'Spitzer\nCh 1', fontsize=10)
@@ -156,7 +156,7 @@ for i, g in enumerate(gcms):
 
 plt.xlim(0, 1.1)
 plt.ylim(-0.6, 6.3)
-plt.ylabel("Planet-to-star flux (ppt)")
+plt.ylabel("Planet-to-star flux ($\\times10^{-3}$)")
 plt.xlabel("Phase")
 
 plt.gca().text(0.05, 4.5, 'Spitzer\nCh 2', fontsize=10)
