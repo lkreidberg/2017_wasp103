@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  29 JAN 2018 15:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 JAN 2018 10:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -724,23 +724,11 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 442--443
 [][] 
  []
 
-Package epstopdf Info: Source file: <Figures/GCM_abundances.eps>
-(epstopdf)                    date: 2018-01-02 09:45:30
-(epstopdf)                    size: 1187004 bytes
-(epstopdf)             Output file: <Figures/GCM_abundances-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2018-01-02 09:45:30
-(epstopdf)                    size: 565793 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figures/GCM_abundances-eps
--converted-to.pdf Figures/GCM_abundances.eps>
-(epstopdf)             \includegraphics on input line 449.
-Package epstopdf Info: Output file is already uptodate.
+<Figures/GCM_abundances.pdf, id=1036, 2041.6275pt x 1011.78pt>
+File: Figures/GCM_abundances.pdf Graphic file (type pdf)
 
-<Figures/GCM_abundances-eps-converted-to.pdf, id=1036, 2041.6275pt x 1011.78pt>
-File: Figures/GCM_abundances-eps-converted-to.pdf Graphic file (type pdf)
-<use Figures/GCM_abundances-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/GCM_abundances-eps-converted-to.pdf used on in
-put line 449.
+<use Figures/GCM_abundances.pdf>
+Package pdftex.def Info: Figures/GCM_abundances.pdf used on input line 449.
 (pdftex.def)             Requested size: 513.11743pt x 254.28752pt.
 
 
@@ -786,8 +774,7 @@ Package pdftex.def Info: Figures/spectra_comparison.pdf used on input line 464.
 
 (pdftex.def)             Requested size: 513.11743pt x 239.4627pt.
  [16 <./Figures/gcm_comparison.pdf>]
-[17 <./Figures/GCM_abundances-eps-converted-to.pdf> <./Figures/spectra_comparis
-on.pdf>]
+[17 <./Figures/GCM_abundances.pdf> <./Figures/spectra_comparison.pdf>]
 Underfull \hbox (badness 10000) detected at line 490
 $\OT1/cmr/m/n/9 1$
  []
@@ -814,11 +801,15 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 524.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
  ) 
 Here is how much of TeX's memory you used:
  9375 strings out of 492995
- 132335 string characters out of 6132704
- 298927 words of memory out of 5000000
+ 132267 string characters out of 6132704
+ 298932 words of memory out of 5000000
  12644 multiletter control sequences out of 15000+600000
  15602 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -848,10 +839,10 @@ onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (21 pages, 2541643 bytes).
+Output written on ms.pdf (21 pages, 5522106 bytes).
 PDF statistics:
- 1449 PDF objects out of 1728 (max. 8388607)
- 851 compressed objects within 9 object streams
+ 1554 PDF objects out of 1728 (max. 8388607)
+ 955 compressed objects within 10 object streams
  167 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
