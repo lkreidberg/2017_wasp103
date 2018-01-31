@@ -85,6 +85,17 @@ plt.ylabel('Pressure (bar)')
 wno,Flux, Fstar, FpFstar, T, P, gasarr = pickle.load(open("Mike_models/WASP-103b_logZ_1.5_CtoO_0.5_f_0.25_simple.pic"))
 
 plt.plot(T, P)
+outfile = open("nightside_TP.txt", "w")
+for i in range(len(T)):
+        print>>outfile, T[i], P[i]
+outfile.close()
+
+wno,Flux, Fstar, FpFstar, T, P, gasarr = pickle.load(open("Mike_models/WASP-103b_logZ_1.5_CtoO_0.7_f_2.6_simple.pic"))
+plt.plot(T, P)
+outfile = open("dayside_TP.txt", "w")
+for i in range(len(T)):
+        print>>outfile, T[i], P[i]
+outfile.close()
 
 print T.shape, P.shape
 
