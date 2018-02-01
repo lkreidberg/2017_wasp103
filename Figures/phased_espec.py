@@ -8,6 +8,7 @@ import matplotlib.gridspec as gridspec
 from pylab import *
 from matplotlib import rc, ticker
 import seaborn as sns
+from astropy.convolution import Gaussian1DKernel, convolve
 
 sns.set_context("notebook", font_scale = 1.5)
 sns.set_style("white")
@@ -35,18 +36,20 @@ def best_fit_bb(w, y, e, rprs):
 #	w, y, e = w[11], y[11], e[11]           #spitzer ch2
 
 	#get stellar spectrum
-	star = np.genfromtxt("wasp103_sed_fluxes.out")
-	star_bb = np.interp(w, star[:,0], star[:,1])*1.e24/(w*np.pi*4.)
+        g = Gaussian1DKernel(stddev=150)
+        star = np.genfromtxt("W103-6110K-1.22Ms-1.22Rs.dat")       #W/m2/micron (column 1)
+	star_bb = np.interp(w, star[:,0], convolve(star[:,1]*22423.,g))
+
         chis = []
 
 	for T in Ts:
-		model = blackbody(w*1.0e-6, T)/star_bb*rprs**2
+		model = (np.pi/1.e6)*blackbody(w*1.0e-6, T)/star_bb*rprs**2
 		chi2 = np.sum((y - model)**2/e**2)
                 chis.append(chi2)
 		if chi2 < chibest: 
 			chibest, Tbest, resid = chi2, T, (y - model)/e
 	waves_hires = np.linspace(1.0, 5.0, 100)
-	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
+	star_bb_hires = np.interp(waves_hires, star[:,0], convolve(star[:,1]*22423., g))
 
 	outfile = open("temperatures.txt", "a")
 
@@ -210,6 +213,7 @@ for i in range(1, k):
 
 	if (phase < 0.4)|(phase > 0.6):
 		plt.errorbar(waves, (spectra[:,i-1,0]-1.)*1.0e3*(1+np.array(dilution)), yerr = 1.0e3*spectra[:,i-1,1], fmt='.k', zorder=100)	
+		#print (spectra[:,i-1,0]-1.)*1.0e3*(1+np.array(dilution)) 
 		plt.gca().text(0.1, 0.8, '$\phi = $' + '{0:0.1f}'.format(phase), transform=ax.transAxes, fontsize=18)
 
 		outname = "espec_phase_" + '{0:0.1f}'.format(phase) + ".txt"
@@ -218,22 +222,18 @@ for i in range(1, k):
 			print>>outfile, waves[j], "{0:0.3e}".format((spectra[j, i-1,0]-1)*(1+dilution[j])), "{0:0.3e}".format(spectra[j,i-1,1]), phasebins[i-1], phasebins[i]
 		outfile.close()
 
-		#w, f = rs.spectrum(phase, "all", "TiO-NoClouds.dat")
-		#plt.plot(w, f*1.e3, color='#d3494e', linestyle='dashed', label= 'TiO-NoClouds')
 
 		rprs = 0.1127
 		#print "phase", phase
 		wave_hires, model_hires = best_fit_bb(waves, (spectra[:,i-1,0]-1.)*(1+np.array(dilution)), spectra[:,i-1,1], rprs)
 		model_hires *= 1.e3
-		plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
+		#plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
 
                 if counter < 5: 
-                    plt.plot(GCM[:,0], GCM[:,counter]*1e3, color = 'r')
-                    #print counter, phase
+                    #plt.plot(GCM[:,0], GCM[:,counter]*1e3, color = 'r')
                     print phase
                 else: 
-                    plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = '$\\tau_\mathrm{drag3}$ GCM')
-                    #print counter + 1, phase
+                    #plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = '$\\tau_\mathrm{drag3}$ GCM')
                     print phase
                 counter += 1
 	
@@ -253,13 +253,8 @@ for i in range(1, k):
 	ax.yaxis.set_minor_formatter(ticker.NullFormatter())
 	ax.set_xticklabels(["1", "2", "4"])
 
-
-	#ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 1,2,3,4,5])))
-	#ax.set_yticklabels(["0.1", "1", "2", "3", "4", "5"])
-
-	ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 0.2, 0.3, 0.4,  0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5])))
-	ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
-
+#	ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 0.2, 0.3, 0.4,  0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5])))
+#	ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
 
 	plt.xlim(1.0, 5.0)
 	ymin = model_hires.min()*0.9 

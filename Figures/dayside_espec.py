@@ -11,7 +11,6 @@ import spiderman_lc
 from matplotlib import ticker
 import seaborn as sns
 from astropy.convolution import Gaussian1DKernel, convolve
-g = Gaussian1DKernel(stddev=0.8)
 
 sns.set_context("paper", font_scale=1.2)
 sns.set_style("white")
@@ -27,30 +26,36 @@ def blackbody(l,T):
         return 2*h*c**2/(l**5*(np.exp(h*c/(l*k*T))-1))                 #[W/sr/m^3]
 
 def best_fit_bb(w, y, e, rprs):
-	Ts = np.linspace(2900., 3100, 100)
+	#Ts = np.linspace(2900., 3100, 100)
+	Ts = np.linspace(2800, 4200, 10000)
 	chibest = 10000.
 	Tbest = 0.	
 	Tstar = 6110.
 	w = np.array(w)
 
-	w, y, e, = w[0:10], y[0:10], e[0:10]
-
+	w, y, e, = w[0:10], y[0:10], e[0:10]        #wfc3
+	#w, y, e, = w[10], y[10], e[10]              #spitzer Ch 1
+	#w, y, e, = w[11], y[11], e[11]              #Spitzer Ch 2
 	#get stellar spectrum
-	star = np.genfromtxt("wasp103_sed_fluxes.out")
-	star_bb = np.interp(w, star[:,0], star[:,1])*1.e24/(w*np.pi*4.)
-        #Tstar = 6110.
-        #star_bb = blackbody(w*1.0e-6, Tstar)
+	#star = np.genfromtxt("wasp103_sed_fluxes.out")
+	#star_bb = np.interp(w, star[:,0], star[:,1])*1.e24/(w*np.pi*4.)
+
+        g = Gaussian1DKernel(stddev=150)
+        star = np.genfromtxt("W103-6110K-1.22Ms-1.22Rs.dat")       #W/m2/micron (column 1)
+	star_bb = np.interp(w, star[:,0], convolve(star[:,1]*22423.,g))
+
+
 	outliers = 0.
         chis = []
 
 	for T in Ts:
-		model = blackbody(w*1.0e-6, T)/star_bb*rprs**2
+		model = (np.pi/1.e6)*blackbody(w*1.0e-6, T)/star_bb*rprs**2
 		chi2 = np.sum((y - model)**2/e**2)
                 chis.append(chi2)
 		if chi2 < chibest: 
 			chibest, Tbest, outliers = chi2, T, (y-model)/e
 	waves_hires = np.linspace(1.0, 5.0, 100)
-	star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
+	star_bb_hires = np.interp(waves_hires, star[:,0], convolve(star[:,1]*22423., g))
 	#print "Best fit blackbody temp, chisq, and outliers: ", Tbest, chibest/(len(e)-1), outliers
 
         #find 1-sigma confidence
@@ -61,7 +66,8 @@ def best_fit_bb(w, y, e, rprs):
         plt.axhline(chibest+1)
         plt.show()"""
         onesigma = Tbest - Ts[idx]
-	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.)
+	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.)
+	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest#/(len(y) - 1.)
 	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
