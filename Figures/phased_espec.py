@@ -23,44 +23,47 @@ def blackbody(l,T):
         return 2*h*c**2/(l**5*(np.exp(h*c/(l*k*T))-1))                 #[W/sr/m^3]
 
 def best_fit_bb(w, y, e, rprs):
-	Ts = np.linspace(1000, 3600, 10000)
-	chibest = 10000.
-	Tbest = 0.	
-	Tstar = 6110.
-	resid = 0.
+    Ts = np.linspace(1000, 3600, 10000)
+    chibest = 10000.
+    Tbest = 0.  
+    Tstar = 6110.
+    resid = 0.
 
-	w = np.array(w)
+    w = np.array(w)
 
-	w, y, e = w[0:10], y[0:10], e[0:10]     #WFC3 data only
-#	w, y, e = w[10], y[10], e[10]           #spitzer ch1
-#	w, y, e = w[11], y[11], e[11]           #spitzer ch2
+    w, y, e = w[0:10], y[0:10], e[0:10]     #WFC3 data only
+    #   w, y, e = w[10], y[10], e[10]           #spitzer ch1
+    #   w, y, e = w[11], y[11], e[11]           #spitzer ch2
 
-	#get stellar spectrum
-        g = Gaussian1DKernel(stddev=150)
-        star = np.genfromtxt("W103-6110K-1.22Ms-1.22Rs.dat")       #W/m2/micron (column 1)
-	star_bb = np.interp(w, star[:,0], convolve(star[:,1]*22423.,g))
+    #get stellar spectrum
+    g = Gaussian1DKernel(stddev=150)
+    star = np.genfromtxt("W103-6110K-1.22Ms-1.22Rs.dat")       #W/m2/micron (column 1)
+    star_bb = np.interp(w, star[:,0], convolve(star[:,1]*22423.,g))
+    #star = np.genfromtxt("wasp103_sed_fluxes.out")
+    #star_bb = np.interp(w, star[:,0], star[:,1])*1.e24/(w*np.pi*4.)
+    chis = []
 
-        chis = []
+    for T in Ts:
+        #model = blackbody(w*1.0e-6, T)/star_bb*rprs**2
+        model = (np.pi/1.e6)*blackbody(w*1.0e-6, T)/star_bb*rprs**2
+        chi2 = np.sum((y - model)**2/e**2)
+        chis.append(chi2)
+        if chi2 < chibest: chibest, Tbest, resid = chi2, T, (y - model)/e
 
-	for T in Ts:
-		model = (np.pi/1.e6)*blackbody(w*1.0e-6, T)/star_bb*rprs**2
-		chi2 = np.sum((y - model)**2/e**2)
-                chis.append(chi2)
-		if chi2 < chibest: 
-			chibest, Tbest, resid = chi2, T, (y - model)/e
-	waves_hires = np.linspace(1.0, 5.0, 100)
-	star_bb_hires = np.interp(waves_hires, star[:,0], convolve(star[:,1]*22423., g))
+    waves_hires = np.linspace(1.0, 5.0, 100)
+    #star_bb_hires = np.interp(waves_hires, star[:,0], star[:,1])*1.e24/(waves_hires*np.pi*4.)
+    star_bb_hires = np.interp(waves_hires, star[:,0], convolve(star[:,1]*22423., g))
 
-	outfile = open("temperatures.txt", "a")
+    outfile = open("temperatures.txt", "a")
 
-        idx = (np.abs(chis-(chibest+1.))).argmin()
-        onesigma = Tbest - Ts[idx]
-        #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
-        print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))) 
-	print>>outfile,  Tbest
-	outfile.close()
-	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
-
+    idx = (np.abs(chis-(chibest+1.))).argmin()
+    onesigma = Tbest - Ts[idx]
+    print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
+    #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))) 
+    print>>outfile,  Tbest                                                                                                            
+    outfile.close() 
+    #return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2 
+    return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2 
 
 ##GCM = np.genfromtxt("GCM_From_Vivien/GCMmodels/SpectralPC-Phi-Solar-NoClouds-NEW-OPA-NEW-PT.dat", delimiter = ",")
 #GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-NEW-OPA-NEW-PT.dat", delimiter = ",")
@@ -227,13 +230,13 @@ for i in range(1, k):
 		#print "phase", phase
 		wave_hires, model_hires = best_fit_bb(waves, (spectra[:,i-1,0]-1.)*(1+np.array(dilution)), spectra[:,i-1,1], rprs)
 		model_hires *= 1.e3
-		#plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
+		plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
 
                 if counter < 5: 
-                    #plt.plot(GCM[:,0], GCM[:,counter]*1e3, color = 'r')
+                    plt.plot(GCM[:,0], GCM[:,counter]*1e3, color = 'r')
                     print phase
                 else: 
-                    #plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = '$\\tau_\mathrm{drag3}$ GCM')
+                    plt.plot(GCM[:,0], GCM[:,counter+1]*1e3, color = 'r', label = '$\\tau_\mathrm{drag3}$ GCM')
                     print phase
                 counter += 1
 	
@@ -253,8 +256,8 @@ for i in range(1, k):
 	ax.yaxis.set_minor_formatter(ticker.NullFormatter())
 	ax.set_xticklabels(["1", "2", "4"])
 
-#	ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 0.2, 0.3, 0.4,  0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5])))
-#	ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
+	ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 0.2, 0.3, 0.4,  0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5])))
+	ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
 
 	plt.xlim(1.0, 5.0)
 	ymin = model_hires.min()*0.9 

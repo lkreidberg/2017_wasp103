@@ -66,7 +66,7 @@ def best_fit_bb(w, y, e, rprs):
         plt.show()"""
         onesigma = Tbest - Ts[idx]
 	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.)
-	return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
+	return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
 ######################################################################################
@@ -100,7 +100,7 @@ plt.plot(GCM[:,0], GCM[:,5]*1e3, color = '#380282', label = "$\\tau_\mathrm{drag
 #get best fit blackbody
 rprs = 0.1127
 wave_bb, bb = best_fit_bb(data_wl, data, data_err, rprs)
-plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody")
+plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody planet")
 
 #plots delrez points
 x = np.array([0.9123, 2.146])
