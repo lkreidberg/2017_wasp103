@@ -13,9 +13,9 @@ import matplotlib
 import matplotlib.cm as cm
 from datetime import datetime
 import time as pythontime
-import emcee
+#import emcee
 #import corner
-import batman
+#import batman
 import pickle
 
 #sns.set_context("talk")
