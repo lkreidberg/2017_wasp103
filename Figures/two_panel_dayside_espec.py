@@ -65,7 +65,7 @@ def best_fit_bb(w, y, e, rprs):
         plt.axhline(chibest+1)
         plt.show()"""
         onesigma = Tbest - Ts[idx]
-	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.)
+	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
 	return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
@@ -98,7 +98,7 @@ GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NE
 plt.plot(GCM[:,0], GCM[:,5]*1e3, color = '#380282', label = "$\\tau_\mathrm{drag3}$ GCM", linestyle = 'dotted')
 
 #get best fit blackbody
-rprs = 0.1127
+rprs = 0.1093
 wave_bb, bb = best_fit_bb(data_wl, data, data_err, rprs)
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody planet")
 

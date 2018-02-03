@@ -5,10 +5,10 @@ teffs = np.genfromtxt("teffs.txt")
 
 print "\\begin{deluxetable}{LLL}"
 print "\\tablecolumns{3}"
-print "\\tablewidth{0pt}:"
-print "\\tablecaption{Phase-resolved Effective Temperature \label{table:teffs}}"
+print "\\tablewidth{0pt}"
+print "\\tablecaption{Phase-resolved Brightness Temperature \label{table:teffs}}"
 print "\\tablehead{"
-print "\colhead{Orbital Phase} & \colhead{$T_\mathrm{eff}$} & \colhead{$\chi^2_\\nu$}}"
+print "\colhead{Orbital Phase} & \colhead{$T_\mathrm{b}$} & \colhead{$\chi^2_\\nu$}}"
 print "\startdata"
 
 T = teffs[:,0]

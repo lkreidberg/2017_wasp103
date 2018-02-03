@@ -94,7 +94,7 @@ plt.fill_between(wl_hi, y_minus1sig*1e3, y_plus1sig*1e3, color = 'orange', alpha
 plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit 1-D model')
 
 #get best fit blackbody
-rprs = 0.1127
+rprs = 0.1093
 wave_bb, bb = best_fit_bb(data_wl, data, data_err, rprs)
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody")
 

@@ -226,7 +226,7 @@ for i in range(1, k):
 		outfile.close()
 
 
-		rprs = 0.1127
+		rprs = 0.1093
 		#print "phase", phase
 		wave_hires, model_hires = best_fit_bb(waves, (spectra[:,i-1,0]-1.)*(1+np.array(dilution)), spectra[:,i-1,1], rprs)
 		model_hires *= 1.e3
