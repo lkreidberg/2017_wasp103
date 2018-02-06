@@ -65,8 +65,8 @@ def best_fit_bb(w, y, e, rprs):
         plt.axhline(chibest+1)
         plt.show()"""
         onesigma = Tbest - Ts[idx]
-	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
-	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest, outliers
+	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
+	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest, outliers
 	return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
@@ -95,11 +95,13 @@ plt.fill_between(wl_hi, y_minus1sig*1e3, y_plus1sig*1e3, color = 'orange', alpha
 plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit 1-D model')
 
 #plots gcm
+correction_factor = 1.096
 GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
-plt.plot(GCM[:,0], GCM[:,5]*1e3, color = '#380282', label = "$\\tau_\mathrm{drag3}$ GCM", linestyle = 'dotted')
+#GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag4-NEW-OPA-NEW-PT.dat", delimiter = ",")
+plt.plot(GCM[:,0], GCM[:,5]*1e3*correction_factor, color = '#380282', label = "$\\tau_\mathrm{drag3}$ GCM", linestyle = 'dotted')
 
 #get best fit blackbody
-rprs = 0.1093
+rprs = 0.1146
 wave_bb, bb = best_fit_bb(data_wl, data, data_err, rprs)
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10, label = "blackbody planet")
 

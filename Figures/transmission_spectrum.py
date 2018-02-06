@@ -36,6 +36,7 @@ for i, Tp in enumerate(temps):
 	if Tp == 0: nightside_bin = 0
 
 	if i == 1: mean =  np.mean(d[:,1]*(1. + dilution)-nightside_bin)
+        print "mean WFC3 depth = ", mean
 	plt.errorbar(d[:,0], d[:,1]*(1. + dilution)-nightside_bin, yerr = d[:,2], marker = '.', linestyle = 'none', color = colors[i], label = labels[i], alpha = 0.7)
 
 	# Spitzer Ch 2

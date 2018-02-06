@@ -125,6 +125,7 @@ for i, model in enumerate(models):
   	sph2 = par[d.par_order['sph2']*d.nvisit]
   	sph3 = par[d.par_order['sph3']*d.nvisit]
         spider_params.sph = [sph0, sph1, sph2, sph3]
+        print "sph", spider_params.sph
 	#print spider_params.sph
 
     elif model == "hotspot_t":
