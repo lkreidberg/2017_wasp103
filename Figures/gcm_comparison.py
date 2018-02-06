@@ -162,7 +162,6 @@ plt.xlabel("Phase")
 plt.gca().text(0.05, 4.5, 'Spitzer\nCh 2', fontsize=10)
 
 
-
 #plot spitzer best fits and data
 
 dilution = np.array([0.1712, 0.1587])

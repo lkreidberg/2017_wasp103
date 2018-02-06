@@ -26,7 +26,7 @@ def blackbody(l,T):
         return 2*h*c**2/(l**5*(np.exp(h*c/(l*k*T))-1))                 #[W/sr/m^3]
 
 def best_fit_bb(w, y, e, rprs):
-	Ts = np.linspace(2900., 3100, 100)
+	Ts = np.linspace(2900., 3500, 10000)
 	chibest = 10000.
 	Tbest = 0.	
 	Tstar = 6110.
@@ -65,7 +65,8 @@ def best_fit_bb(w, y, e, rprs):
         plt.axhline(chibest+1)
         plt.show()"""
         onesigma = Tbest - Ts[idx]
-	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
+	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
+	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest, outliers
 	return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
@@ -141,7 +142,7 @@ plt.plot(GCM[:,0], GCM[:,5]*1e3, color = '#380282', label = "$\\tau_\mathrm{drag
 
 #plots blackbody
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10)
-plt.plot(data_wl, best_fit_binned*1e3, linestyle = 'none', marker = 's', color = '#5a86ad', alpha = 0.9)
+#plt.plot(data_wl, best_fit_binned*1e3, linestyle = 'none', marker = 's', color = '#5a86ad', alpha = 0.9)
 
 plt.gca().text(0.07, 0.83, 'Spitzer', transform=ax.transAxes)
 

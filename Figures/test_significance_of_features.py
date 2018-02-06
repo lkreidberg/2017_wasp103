@@ -1,6 +1,6 @@
 import numpy as np
 
-wfc3 = np.genfromtxt("teffs_nodayside.txt")
+wfc3 = np.genfromtxt("teffs.txt")
 spt = np.genfromtxt("teffs_ch2.txt")
 
 

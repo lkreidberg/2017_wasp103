@@ -32,8 +32,8 @@ def best_fit_bb(w, y, e, rprs):
     w = np.array(w)
 
     w, y, e = w[0:10], y[0:10], e[0:10]     #WFC3 data only
-    #   w, y, e = w[10], y[10], e[10]           #spitzer ch1
-    #   w, y, e = w[11], y[11], e[11]           #spitzer ch2
+    #w, y, e = w[10], y[10], e[10]           #spitzer ch1
+    #w, y, e = w[11], y[11], e[11]           #spitzer ch2
 
     #get stellar spectrum
     g = Gaussian1DKernel(stddev=150)
@@ -58,8 +58,8 @@ def best_fit_bb(w, y, e, rprs):
 
     idx = (np.abs(chis-(chibest+1.))).argmin()
     onesigma = Tbest - Ts[idx]
-    print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
-    #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))) 
+    #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
+    print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))) 
     print>>outfile,  Tbest                                                                                                            
     outfile.close() 
     #return waves_hires, blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2 
