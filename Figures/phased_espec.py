@@ -64,7 +64,7 @@ def best_fit_bb(w, y, e, rprs):
     outfile.close() 
     return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2 
 
-GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
+GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag1-NEW-OPA-NEW-PT.dat", delimiter = ",")
 
 path  = "WFC3_best_fits/spec_fits/"		#zhang model
 files = glob.glob(os.path.join(path, "bestfit*.pic"))		
@@ -112,7 +112,8 @@ for f in files:
 	i += 1
 
 #add Spitzer Ch 1
-f= "Ch1_best_fits/2017-10-11_20:25-zhang/bestfit.pic"
+#f= "Ch1_best_fits/2017-10-11_20:25-zhang/bestfit.pic"
+f= "Ch1_best_fits/2018-02-07_14:28-spherical/bestfit.pic"
 waves.append(3.6)
 dilution.append(0.1712)
 
@@ -164,7 +165,8 @@ for j in range(1, len(phasebins)): spectra[i, j-1, 1] = np.sqrt(spectra[i, j-1,1
 i += 1
 
 #add Spitzer Ch 2
-f = "Ch2_best_fits/2017-10-11_20:24-zhang/bestfit.pic"
+#f = "Ch2_best_fits/2017-10-11_20:24-zhang/bestfit.pic"
+f = "Ch2_best_fits/2018-02-07_14:07-spherical/bestfit.pic"
 waves.append(4.5)
 dilution.append(0.1587)
 

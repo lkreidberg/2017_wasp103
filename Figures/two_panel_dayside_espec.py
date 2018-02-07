@@ -96,9 +96,8 @@ plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit 1-D model')
 
 #plots gcm
 correction_factor = 1.096
-GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
-#GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag4-NEW-OPA-NEW-PT.dat", delimiter = ",")
-plt.plot(GCM[:,0], GCM[:,5]*1e3*correction_factor, color = '#380282', label = "$\\tau_\mathrm{drag3}$ GCM", linestyle = 'dotted')
+GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag1-NEW-OPA-NEW-PT.dat", delimiter = ",")
+plt.plot(GCM[:,0], GCM[:,5]*1e3*correction_factor, color = '#380282', label = "$\\tau_\mathrm{drag4}$ GCM", linestyle = 'dotted')
 
 #get best fit blackbody
 rprs = 0.1146
@@ -139,12 +138,12 @@ plt.fill_between(wl_hi, y_minus1sig*1e3, y_plus1sig*1e3, color = 'orange', alpha
 plt.plot(wl_hi, y_hi_best*1e3, zorder = -9, label = 'best fit')
 
 #plots gcm
-GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat", delimiter = ",")
-plt.plot(GCM[:,0], GCM[:,5]*1e3, color = '#380282', label = "$\\tau_\mathrm{drag3}$ GCM", linestyle = 'dotted')
+GCM = np.genfromtxt("Vivien_models2/SpectralPC-Phi-TiO-NoClouds-Drag1-NEW-OPA-NEW-PT.dat", delimiter = ",")
+plt.plot(GCM[:,0], GCM[:,5]*1e3*correction_factor, color = '#380282', label = "$\\tau_\mathrm{drag4}$ GCM", linestyle = 'dotted')
 
 #plots blackbody
 plt.plot(wave_bb, bb*1e3, linestyle = 'dashed', color = '.5', zorder = -10)
-#plt.plot(data_wl, best_fit_binned*1e3, linestyle = 'none', marker = 's', color = '#5a86ad', alpha = 0.9)
+plt.plot(data_wl, best_fit_binned*1e3, linestyle = 'none', marker = 's', color = '#5a86ad', alpha = 0.9)
 
 plt.gca().text(0.07, 0.83, 'Spitzer', transform=ax.transAxes)
 

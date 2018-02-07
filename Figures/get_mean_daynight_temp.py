@@ -46,13 +46,13 @@ def bb(l, T):
 def initialize_params(spider_params):
     spider_params.n_layers= 5
     spider_params.t0= 200               # Central time of PRIMARY transit [days]
-    spider_params.per= 0.81347753       # Period [days]
+    spider_params.per= 0.9255       # Period [days]
     spider_params.a_abs= 0.01526        # The absolute value of the semi-major axis [AU]
-    spider_params.inc= 82.33            # Inclination [deg]
+    spider_params.inc= 87.3            # Inclination [deg]
     spider_params.ecc= 0.0              # Eccentricity
     spider_params.w= 90                 # Argument of periastron
-    spider_params.rp= 0.111            # Planet to star radius ratio
-    spider_params.a= 4.855              # Semi-major axis scaled by stellar radius
+    spider_params.rp= 0.1146            # Planet to star radius ratio
+    spider_params.a= 2.999              # Semi-major axis scaled by stellar radius
     spider_params.p_u1= 0               # Planetary limb darkening parameter
     spider_params.p_u2= 0               # Planetary limb darkening parameter
     spider_params.T_s = 6110.		# Temperature of the star
@@ -80,8 +80,8 @@ for i, model in enumerate(models):
     col += 2
     ax = plt.subplot(gs[row, col])
 
-    if model == "spherical": spider_params = sp.ModelParams(brightness_model=model, thermal=True)
-    else: spider_params = sp.ModelParams(brightness_model=model)
+    if model == "spherical": spider_params = sp.ModelParams(brightness_model=model, thermal=True, stellar_model = "w103_spectrum.txt")
+    else: spider_params = sp.ModelParams(brightness_model=model, stellar_model = "w103_spectrum.txt")
 
     spider_params = initialize_params(spider_params)
     spider_params.l1 = waverange[0]
@@ -140,7 +140,7 @@ for i, model in enumerate(models):
     nightside = np.array(nightside)
     
     Ts = np.array(Ts)
-    if model == "spherical": Ts, dayside, nightside = Ts/np.pi, dayside/np.pi, nightside/np.pi
+    #if model == "spherical": Ts, dayside, nightside = Ts/np.pi, dayside/np.pi, nightside/np.pi
 
     """lats, lons = np.meshgrid(las, los)
     ind = np.abs(lons)<np.pi/2."""

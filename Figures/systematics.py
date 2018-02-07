@@ -16,9 +16,8 @@ rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
 gs = gridspec.GridSpec(3, 1, height_ratios =[1,1, 1],  hspace=0.00)
 
 # plots HST white light phase curve
-bestfits = ["./WFC3_best_fits/old_white_fits/bestfit_zhang_allsys.pic"]
-#bestfits = ["./WFC3_best_fits/bestfit_zhang_allsys.pic"]
-#bestfits = ["./WFC3_best_fits/bestfit_zhang.pic"]
+#bestfits = ["./WFC3_best_fits/old_white_fits/bestfit_zhang_allsys.pic"]
+bestfits = ["./WFC3_best_fits/bestfit_zhang_allsys.pic"]
 
 alpha = 0.7
 ms = 5
@@ -96,7 +95,8 @@ expTime   = testheader['EXPTIME']
 gain      = testheader['GAIN']
 fluxConversion = expTime*gain / fluxConv"""
 
-bestfits = ["Ch1_best_fits/2017-10-11_20:25-zhang/bestfit.pic", "Ch2_best_fits/2017-10-11_20:24-zhang/bestfit.pic"]
+#bestfits = ["Ch1_best_fits/2017-10-11_20:25-zhang/bestfit.pic", "Ch2_best_fits/2017-10-11_20:24-zhang/bestfit.pic"]
+bestfits = ["Ch1_best_fits/2018-02-07_14:24-zhang/bestfit.pic", "Ch2_best_fits/2018-02-07_12:02-zhang/bestfit.pic"]
 
 for ii, f in enumerate(bestfits):
 	ax = plt.subplot(gs[ii+1, 0])

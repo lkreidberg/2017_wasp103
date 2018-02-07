@@ -47,8 +47,16 @@ for i, Tp in enumerate(temps):
 	sp_dilution = 0.16
 	nightside_bin = np.interp(4.5*1e4, bb_planet.wave, nightside) 
 	if Tp == 0: nightside_bin = 0
-	#plt.errorbar(4.5, sp*(1+sp_dilution), sp_err, fmt = '.r')
 	plt.errorbar(4.5, sp*(1+sp_dilution) - nightside_bin, yerr = sp_err, xerr = 0.5, linestyle = 'none', color = colors[i], marker = '.', alpha = 0.7)
+
+	# Spitzer Ch 1
+	sp, sp_err = 0.10944, 0.0015
+	sp_err = sp*sp_err*2.
+	sp = sp**2
+	sp_dilution = 0.17
+	nightside_bin = np.interp(3.6*1e4, bb_planet.wave, nightside) 
+	if Tp == 0: nightside_bin = 0
+	plt.errorbar(3.6, sp*(1+sp_dilution) - nightside_bin, yerr = sp_err, xerr = 0.5, linestyle = 'none', color = colors[i], marker = '.', alpha = 0.7)
 
 plt.gca().set_xscale('log')
 
@@ -63,7 +71,7 @@ plt.legend(loc = 'upper left')
 plt.xlabel("Wavelength (microns)")
 plt.ylabel("Transit Depth")
 plt.axhline(mean, linestyle = 'dotted', zorder = -10)
-ymin, ymax= 0.0128, 0.0147
+ymin, ymax= 0.0126, 0.0147
 plt.ylim(ymin, ymax)
 
 #scale height
@@ -73,7 +81,7 @@ plt.ylim(ymin, ymax)
 
 x2 = plt.gca().twinx()
 scaleheight = 1.2e-4 
-plt.plot(d[:,0], np.linspace(0, ymax - ymin, len(d[:,0]))/scaleheight, linewidth=0.)
+plt.plot(d[:,0], np.linspace(0, ymax - ymin, len(d[:,0]))/scaleheight - (mean-ymin)/scaleheight, linewidth=0.)
 plt.ylabel("scale heights")
 
 plt.tight_layout()

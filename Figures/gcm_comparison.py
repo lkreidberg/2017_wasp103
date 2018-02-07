@@ -43,6 +43,7 @@ def proj_area(phi, inc):
 
 plt.subplot(311)
 inc = 1.523
+correction_factor = 1.099  # = (0.1146/0.1093)**2, ratio of correct transit depth to what Vivien used (which was from the discovery paper and not corrected for stellar contamination)
 
 #plot gcms
 for i, g in enumerate(gcms):
@@ -50,8 +51,8 @@ for i, g in enumerate(gcms):
     model = np.genfromtxt(g, delimiter = ',') 
     phi = model[:,0]/360.*2.*np.pi
     area = proj_area(phi, inc)
-    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, color = colors[i], linestyle = ls[i])
-    plt.plot(model[:,0]/360. +1.5, model[:,5]*1e3*area, color = colors[i], linestyle = ls[i])
+    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area*correction_factor, color = colors[i], linestyle = ls[i])
+    plt.plot(model[:,0]/360. +1.5, model[:,5]*1e3*area*correction_factor, color = colors[i], linestyle = ls[i])
 
     #get amlitude and offset for different gcms
     col = 7							#5,6,7 = WFC3, Ch1, Ch2
@@ -74,8 +75,8 @@ l3, =	plt.plot(x,y, colors[1], linestyle = ls[1], label = labels[1])
 l4, =	plt.plot(x,y, colors[0], linestyle = ls[0], label = labels[0])
 
 
-#f = "./WFC3_best_fits/old_white_fits/bestfit_spherical.pic"
-f = "./WFC3_best_fits//bestfit_sincos.pic"
+f = "./WFC3_best_fits/bestfit_spherical.pic"
+#f = "./WFC3_best_fits//bestfit_sincos.pic"
 p = pickle.load(open(f, 'rb'))
 d, m, par = p[0], p[1], p[2]		#stores data,  model, and best fit parameters into d, m, & par
 dilution = d.dilution + 1.
@@ -90,7 +91,8 @@ bestfit = m.bestfit[ind]
 ind = np.argsort(phase)
 err, phase, data_corr, bestfit = err[ind], phase[ind], data_corr[ind], bestfit[ind] #sorts by phase
 
-l5, = plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2', label = 'best fit sine curve')
+#l5, = plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2', label = 'best fit sine curve')
+l5, = plt.plot(phase, (bestfit-1.)*1e3*dilution, color = '0.2', label = 'best fit model')
 plt.plot(phase + 1., (bestfit-1.)*1e3*dilution, color = '0.2') 
 
 phasebins = np.linspace(0., 1., 30)
@@ -133,8 +135,8 @@ for i, g in enumerate(gcms):
     model = np.genfromtxt(g, delimiter = ',') 
     phi = model[:,0]/360.*2.*np.pi
     area = proj_area(phi, inc)
-    plt.plot(model[:,0]/360. +0.5, model[:,6]*1e3*area, label = labels[i], color = colors[i], linestyle = ls[i])
-    plt.plot(model[:,0]/360. +1.5, model[:,6]*1e3*area, color = colors[i], linestyle = ls[i])
+    plt.plot(model[:,0]/360. +0.5, model[:,6]*1e3*area*correction_factor, label = labels[i], color = colors[i], linestyle = ls[i])
+    plt.plot(model[:,0]/360. +1.5, model[:,6]*1e3*area*correction_factor, color = colors[i], linestyle = ls[i])
 
 plt.xlim(0, 1.1)
 plt.ylim(-0.6, 5.5)
@@ -151,8 +153,8 @@ for i, g in enumerate(gcms):
     model = np.genfromtxt(g, delimiter = ',') 
     phi = model[:,0]/360.*2.*np.pi
     area = proj_area(phi, inc)
-    plt.plot(model[:,0]/360. +0.5, model[:,7]*1e3*area, label = labels[i], color = colors[i], linestyle = ls[i])
-    plt.plot(model[:,0]/360. +1.5, model[:,7]*1e3*area, color = colors[i], linestyle = ls[i])
+    plt.plot(model[:,0]/360. +0.5, model[:,7]*1e3*area*correction_factor, label = labels[i], color = colors[i], linestyle = ls[i])
+    plt.plot(model[:,0]/360. +1.5, model[:,7]*1e3*area*correction_factor, color = colors[i], linestyle = ls[i])
 
 plt.xlim(0, 1.1)
 plt.ylim(-0.6, 6.3)
@@ -167,7 +169,8 @@ plt.gca().text(0.05, 4.5, 'Spitzer\nCh 2', fontsize=10)
 dilution = np.array([0.1712, 0.1587])
 l1 = np.array([3.15e-6, 4.0e-6])
 l2 = np.array([3.95e-6, 5.0e-6])
-bestfits = ["Ch1_best_fits/2017-09-15_11:33-sincos2/bestfit.pic", "Ch2_best_fits/2017-09-15_12:02-sincos2/bestfit.pic"]
+#bestfits = ["Ch1_best_fits/2017-09-15_11:33-sincos2/bestfit.pic", "Ch2_best_fits/2017-09-15_12:02-sincos2/bestfit.pic"]
+bestfits = ["Ch1_best_fits/2018-02-07_14:28-spherical/bestfit.pic", "Ch2_best_fits/2018-02-07_14:07-spherical/bestfit.pic"]
 
 N = 2000
 

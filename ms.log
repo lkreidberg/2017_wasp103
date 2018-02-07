@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 FEB 2018 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 FEB 2018 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -514,10 +514,10 @@ Underfull \hbox (badness 1377) in paragraph at lines 114--115
 
 [3]
 Package epstopdf Info: Source file: <Figures/photometry.eps>
-(epstopdf)                    date: 2017-10-07 12:30:01
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 316640 bytes
 (epstopdf)             Output file: <Figures/photometry-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-07 13:01:13
+(epstopdf)                    date: 2017-10-09 09:57:43
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/photometry-eps-con
 verted-to.pdf Figures/photometry.eps>
@@ -649,7 +649,7 @@ pdfTeX warning: pdflatex (file ./Figures/emission_spectra.pdf): PDF inclusion:
 multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: Reference `tab:FIXME' on page 11 undefined on input line 349.
+LaTeX Warning: Reference `tab:models' on page 11 undefined on input line 349.
 
 [11 <./Figures/twopanel_dayside_spectrum.pdf>]
 
@@ -661,7 +661,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 350.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<Figures/w103b_transmission_spectrum.pdf, id=808, 289.08pt x 216.81pt>
+<Figures/w103b_transmission_spectrum.pdf, id=807, 289.08pt x 216.81pt>
 File: Figures/w103b_transmission_spectrum.pdf Graphic file (type pdf)
 
 <use Figures/w103b_transmission_spectrum.pdf>
@@ -709,7 +709,7 @@ Underfull \hbox (badness 1320) in paragraph at lines 407--408
 []\OT1/cmr/m/n/10 Figure[][]11[][] shows a sum-mary of the temperature-
  []
 
-<Figures/atmosphere_summary.pdf, id=939, 308.74174pt x 242.25566pt>
+<Figures/atmosphere_summary.pdf, id=940, 308.74174pt x 242.25566pt>
 File: Figures/atmosphere_summary.pdf Graphic file (type pdf)
 
 <use Figures/atmosphere_summary.pdf>
@@ -722,7 +722,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 410--411
  []
 
 
-<Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf, id=949, 549.25201pt x 549.2520
+<Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf, id=950, 549.25201pt x 549.2520
 1pt>
 File: Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf Graphic file (type pdf)
  <use Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf>
@@ -734,17 +734,8 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 418--419
 [][] 
  []
 
-[14 <./Figures/atmosphere_summary.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 431.
-
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 431.
-
-
-Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
-
-[15 <./Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf>]
+[14 <./Figures/atmosphere_summary.pdf> <./Figures/WASP-103b_grid_DAYSIDE_stair_
+pairs.pdf>] [15]
 
 LaTeX Warning: Reference `table:model_comparison' on page 16 undefined on input
  line 447.
@@ -772,7 +763,7 @@ Overfull \hbox (2.34523pt too wide) in paragraph at lines 469--470
  []
 
 [16 <./Figures/gcm_comparison.pdf>]
-<Figures/spectra_comparison.pdf, id=1246, 542.025pt x 252.945pt>
+<Figures/spectra_comparison.pdf, id=1250, 542.025pt x 252.945pt>
 File: Figures/spectra_comparison.pdf Graphic file (type pdf)
 
 <use Figures/spectra_comparison.pdf>
@@ -806,13 +797,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9404 strings out of 492995
- 133017 string characters out of 6132704
+ 9405 strings out of 492995
+ 133026 string characters out of 6132704
  298667 words of memory out of 5000000
- 12665 multiletter control sequences out of 15000+600000
+ 12666 multiletter control sequences out of 15000+600000
  15602 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,13n,37p,2230b,719s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,13n,37p,2230b,725s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
@@ -838,10 +829,10 @@ onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (22 pages, 5543073 bytes).
+Output written on ms.pdf (22 pages, 5543880 bytes).
 PDF statistics:
- 1642 PDF objects out of 1728 (max. 8388607)
- 996 compressed objects within 10 object streams
+ 1646 PDF objects out of 1728 (max. 8388607)
+ 1000 compressed objects within 10 object streams
  174 named destinations out of 1000 (max. 500000)
  82 words of extra memory for PDF output out of 10000 (max. 10000000)
 

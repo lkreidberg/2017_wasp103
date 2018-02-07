@@ -104,7 +104,8 @@ for ii, f in enumerate(files):
 	ax.yaxis.set_label_coords(-0.3,0.)
 
 #add Spitzer
-files = ['Ch1_best_fits/2017-10-19_17:04-zhang/bestfit.pic', 'Ch2_best_fits/2017-10-19_16:16-zhang/bestfit.pic']
+#files = ['Ch1_best_fits/2017-10-19_17:04-zhang/bestfit.pic', 'Ch2_best_fits/2017-10-19_16:16-zhang/bestfit.pic']
+files = ["Ch1_best_fits/2018-02-07_14:24-zhang/bestfit.pic", "Ch2_best_fits/2018-02-07_12:02-zhang/bestfit.pic"]
 waves = [3.6, 4.5]
 colors = ['orange', 'red']
 

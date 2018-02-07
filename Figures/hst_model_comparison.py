@@ -164,7 +164,7 @@ for i, model in enumerate(models):
             fluxes += [line]
     
     fluxes = np.array(fluxes)
-    if model == "spherical": fluxes = fluxes/np.pi 
+    #if model == "spherical": fluxes = fluxes/np.pi 
 
     vmax = 3900.
     vmin = 0.
@@ -183,8 +183,7 @@ for i, model in enumerate(models):
     if row == 0: plt.gca().set_xticklabels([])
 
 #plots GCM
-#GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-NEW-OPA-nit-1036800.dat", delimiter = ",")
-GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-Drag3-NEW-OPA-nit-1036800.dat", delimiter = ",")
+"""#GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-Drag3-NEW-OPA-nit-1036800.dat", delimiter = ",")
 ax = plt.subplot(gs[1,3])
 #Pref = 0.11542					#reference pressure in bars
 Pref = 0.010131
@@ -198,7 +197,7 @@ im = plt.imshow(fluxes.T, aspect='auto', interpolation='bilinear', cmap=cmap, al
 plt.gca().text(-160, 60, "GCM", bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=10) 
 plt.xticks([-180, -90,  0, 90, 180])
 plt.gca().set_yticklabels([])
-plt.xlabel("Longitude (deg)")
+plt.xlabel("Longitude (deg)")"""
 
 
 #formatting
@@ -266,13 +265,16 @@ for i, model in enumerate(models):
 
 #plot GCM
 inc = 1.523
-gcms = ["./Vivien_models2/PC-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat"]
+#gcms = ["./Vivien_models2/PC-TiO-NoClouds-Drag3-NEW-OPA-NEW-PT.dat"]
+gcms = ["./Vivien_models2/PC-TiO-NoClouds-Drag1-NEW-OPA-NEW-PT.dat"]
+#gcms = ["./Vivien_models2/PC-TiO-NoClouds-NEW-OPA-NEW-PT.dat"]
+correction_factor = 1.099
 #plot gcms
 for i, g in enumerate(gcms):
     model = np.genfromtxt(g, delimiter = ',') 
     phi = model[:,0]/360.*2.*np.pi
     area = proj_area(phi, inc)
-    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area, label = "GCM", color = '0.7', zorder = -20, linestyle = '--') 
+    plt.plot(model[:,0]/360. +0.5, model[:,5]*1e3*area*correction_factor, label = "GCM", color = '0.7', zorder = -20, linestyle = '--') 
 
 
 plt.title("WFC3 broadband phase curve")

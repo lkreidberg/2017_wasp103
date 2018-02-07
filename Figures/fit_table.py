@@ -36,17 +36,14 @@ wfc3_bic = np.array(wfc3_bic)
 
 #Temperatures:
 #HST:
-#model, Tmin, Tmax =  zhang 1979.6612603 3958.07678595
-#model, Tmin, Tmax =  hotspot_t 0.0 2887.11857794
-#model, Tmin, Tmax =  spherical 1213.50410565 3251.37484203
-wfc3_tmin = np.array([1980, 0, 1214, 0])
-wfc3_tmax = np.array([3958, 2887, 3251, 0])
 #from get_mean_daynight_temp.py 
-#zhang: dayside, nightside average =  2776.64415413 1979.6612603
-#hotspot: dayside, nightside average =  2867.87112076 0.0
-#spherical: dayside, nightside average =  2621.83263714 1820.2805918
-wfc3_daymu = np.array([2777, 2887, 2622, 0])
-wfc3_nightmu = np.array([1980, 0, 1820, 0])
+#zhang daymu, nightmu, min, max 2769.87230395 1976.73242901 1976.73242901 3953.15696275
+#hotspot_t daymu, nightmu, min, max 2850.06092942 0.0 0.0 2878.84942366
+#spherical daymu, nightmu, min, max 2635.76098954 1822.86068583 1227.05643006 3237.85099673
+wfc3_tmin = np.array([1977, 0, 1227, 0])
+wfc3_tmax = np.array([3953, 2879, 3237, 0])
+wfc3_daymu = np.array([2769, 2879, 2636, 0])
+wfc3_nightmu = np.array([1977, 0, 1822, 0])
 
 #Spitzer Ch 2
 #model, Tmin, Tmax =  zhang 1703.0 4276.80767467
