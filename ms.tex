@@ -149,13 +149,13 @@ where $\lambda$ is wavelength, $T(\lambda, t)$ is the transit model (the fractio
 
 We calculated the transit model $T(t)$ with the \texttt{batman} package \citep{kreidberg15a}. Many of the physical parameters are tightly constrained by \cite{southworth15}, so we fixed the orbital period, time of inferior conjunction, orbital inclination, and ratio of semi-major axis to stellar radius to the previously published values ($P = 0.925545613$ day, $t_0 = 2456836.2964455\,\mathrm{BJD_{TDB}}$, $i = 87.3^\circ$, and $a/R_s = 2.999$). As a test, we fit for these parameters with the \Spitzer\ Channel 2 light curve, which has the best phase coverage and least systematic noise of the three data sets. We found that the transit parameters are consistent with the \cite{southworth15} results, so we proceeded with the remainder of the analysis holding those parameters fixed.  The free parameters for the transit model were the transit depth $r_p$ and a linear limb darkening parameter $u$. More complex limb darkening laws with additional free parameters were not merited according to the Bayesian Information Criterion (BIC).
 
-We calculated the planet-to-star flux $F_p/F_s$ in two different ways. First, we fit a sinusoid with a period equal to the planet's orbital period. The free parameters were the sine curve amplitude and phase offset. For the second approach, we used the \texttt{spiderman} package \citep{louden17} to model $F_p/F_s$. This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and generate the corresponding flux ratio for an observation at time $t$. In our fit, we calculated the stellar flux with a PHOENIX model \citep{husser13} interpolated to an effective temperature of $6110\,\mathrm{K}$ \citep{gillon14}, solar metallicity, and log\,$g$ of 4.5 (in cgs units).  For the planet flux, we tested three different maps: a two-temperature map, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$; a spherical harmonic maps of degree two (with four free parameters); and the physically-motivated kinematic model from \cite{zhang17}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$).  In all cases, we assumed that the planet is tidally locked, such that each orbital revolution corresponds to one complete rotation on its spin axis. 
+We calculated the planet-to-star flux $F_p/F_s$ in two different ways. First, we fit a sinusoid with a period equal to the planet's orbital period. The free parameters were the sine curve amplitude and phase offset. For the second approach, we used the \texttt{spiderman} package \citep{louden17} to model $F_p/F_s$. This package allows users to input a climate map (temperature or brightness as a function of latitude and longitude), and generate the corresponding flux ratio for an observation at time $t$.  In our fit, we calculated the stellar flux with a NextGen model \citep{allard12} interpolated to an effective temperature of $6110\,\mathrm{K}$ \citep{gillon14}, solar metallicity, and log\,$g$ of 4.2 (in cgs units).  For the planet flux, we tested three different maps: a two-temperature map, with a uniform dayside temperature $T_d$ and a uniform nightside temperature $T_n$; a spherical harmonic maps of degree two (with four free parameters); and the physically-motivated kinematic model from \cite{zhang17}, which has just three free parameters (the nightside temperature $T_n$, the change in temperature from day-to-night side $\Delta_T$, and the ratio of radiative to advective timescales $\xi$).  In all cases, we assumed that the planet is tidally locked, such that each orbital revolution corresponds to one complete rotation on its spin axis. 
 
 We scaled the planet-to-star flux by a correction factor $c$ to account for dilution from the companion star and ellipsoidal variability due to the planet's tidal distortion. The correction factor took the form: 
 \begin{equation}
 	c(\lambda, t) = [1 + \alpha(\lambda)]A(t)
 \end{equation}
-where $\alpha(\lambda)$ is the additional fractional flux from the companion star and $A(t)$ is the sky-projected area of the planet. We estimated $\alpha(\lambda)$ based on the best fit spectral energy distribution from \cite{cartier17}. The companion star contribution ranges from $10\%$ at $1.1\,\mu$m to $16\%$ at $4.5\,\mu$m. The uncertainty on the companion star flux contribution is less than 1\%, which introduces negligible error in the estimated planet-to-star-flux compared to the photon noise.   We calculated $A(t)$ using the analytic formula from \cite{leconte11b}, equation B.9, which computes the projected area of a triaxial ellipsoid. We estimated the ellipsoid properties using Table B.3 of \cite{leconte11a}, assuming the planet radius is 1.5 $R_\mathrm{Jup}$ and age is 5 Gyr. The predicted ellipsoidal variability is shown in Figure\,\ref{fig:ellipsoidal}. At quadrature, the projected area is $8\%$ larger than at phase zero (mid-transit). Using the analytic expression from \cite{loeb03}, we estimated the effect of Doppler beaming and found that it contributes less than 10 ppm variability to the measured flux. 
+where $\alpha(\lambda)$ is the additional fractional flux from the companion star and $A(t)$ is the sky-projected area of the planet. We estimated $\alpha(\lambda)$ based on the best fit spectral energy distribution from \cite{cartier17}. The companion star contribution ranges from $10\%$ at $1.1\,\mu$m to $16\%$ at $4.5\,\mu$m. The uncertainty on the companion star flux contribution is less than 1\%, which introduces negligible error in the estimated planet-to-star-flux compared to the photon noise.   We calculated $A(t)$ using the analytic formula from \cite{leconte11b}, equation B.9, which computes the projected area of a triaxial ellipsoid. We estimated the ellipsoid properties using Table B.3 of \cite{leconte11a}, assuming the planet radius is 1.5 $R_\mathrm{Jup}$ and age is 5 Gyr. The predicted ellipsoidal variability is shown in Figure\,\ref{fig:ellipsoidal}. At quadrature, the projected area is $8\%$ larger than at phase zero (mid-transit). Using the analytic expression from \cite{loeb03}, we estimated the effect of Doppler beaming and found that it contributes less than 10 ppm to the measured flux. 
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/ellipsoidal.pdf}
@@ -192,7 +192,10 @@ To determine the best fits, we performed a least-squares $\chi^2$ minimization f
 
 \subsection{Goodness of Fit}
 \label{sec:fitquality}
-We performed several tests of the quality of the light curve fits.  First we predicted the level of scatter in the light curves based on photon noise alone, then compared this value to the root-mean-square (rms) of the fit residuals.  The Spitzer 4.5 $\mu$m light curve rms is within 10\% of the expected photon noise limit (691 versus 640 ppm), whereas the 3.6 $\mu$m light curve has significantly larger rms (797 versus 470 ppm), due to time-correlated red noise (discussed below). The expected photon-limited rms for the WFC3 spectrosopic light curves ranges from 430 - 530 ppm, and the measured rms was typically within 5\% of expectations for all spectroscopic channels.  For the WFC3 band-integrated white light curve, the rms was slightly larger than predicted (175 versus 122 ppm). There are a number of possible origins for this discrepancy, including imperfect background subtraction, variation in the position of the spatial scan on the detector, loss of flux outside the extraction window, and imperfect modeling of the astrophysical signal or instrument systematics. However, our analysis of the composition and thermal structure of the planet's atmosphere is based on the wavelength-dependent data (where we reach the photon limit), so we do not further explore the small excess noise in the white light curve. 
+%WFC3 white: obs, exp rms (ppm) 172.140941477 122.002526515
+%Ch1: rms obs, exp (ppm) 766.79959876 470.309808368
+%Ch2: rms obs, exp (ppm) 636.908048707 639.675550854
+We performed several tests of the quality of the light curve fits.  First we predicted the level of scatter in the light curves based on photon noise alone, then compared this value to the root-mean-square (rms) of the fit residuals.  For the spherical harmonics fit to the phase variation, the Spitzer 4.5 $\mu$m light curve rms reaches the expected photon noise limit (637 versus 640 ppm). The 3.6 $\mu$m light curve has significantly larger rms (767 versus 470 ppm), due to time-correlated red noise (discussed below). The expected photon-limited rms for the WFC3 spectrosopic light curves ranges from 430 - 530 ppm, and the measured rms was typically within 5\% of expectations for all spectroscopic channels.  For the WFC3 band-integrated white light curve, the rms was slightly larger than predicted (172 versus 122 ppm). There are a number of possible origins for this discrepancy, including imperfect background subtraction, variation in the position of the spatial scan on the detector, loss of flux outside the extraction window, and imperfect modeling of the astrophysical signal or instrument systematics. However, our analysis of the composition and thermal structure of the planet's atmosphere is based on the wavelength-dependent data (where we reach the photon limit), so we do not further explore the small excess noise in the white light curve. 
 
 %Spitzer expected rms calculated from Figures/systematics.py
 %Ch1: rms obs, exp (ppm) 796.931457529 470.309808368
@@ -318,18 +321,18 @@ We compared the planet's minimum and maximum temperature for the three climate m
 	\tablehead{
 	\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\overline{T}_\mathrm{night}$} & \colhead{$\overline{T}_\mathrm{day}$} & \colhead{$\Delta_\mathrm{BIC}$}}
 		\startdata
-		WFC3 & Sph. Harmonics & 1227 & 3237 & 1822 & 2636 & 0.0 \\
-		\, & Kinematic & 1977 & 3953 & 1977 & 2769 & 14.1 \\
-		\, & Two Temp. & 0 & 2879 & 0 & 2879 & 41.9 \\
-		\, & Sinusoid & -- & -- & -- & -- & 16.5 \\
-		Ch 1 & Sph. Harmonics & 1269 & 3391 & 1912 & 2741 & 0.0 \\
-		\, & Kinematic & 1932 & 3630 & 1975 & 2614 & 34.4 \\
-		\, & Two Temp. & 1418 & 2990 & 1418 & 2990 & 10.7 \\
-		\, & Sinusoid & -- & -- & -- & -- & 24.7 \\
-		Ch 2 & Sph. Harmonics & 888 & 3714 & 1729 & 2864 & 2.3 \\
-		\, & Kinematic & 1614 & 3931 & 1621 & 2544 & 15.2 \\
-		\, & Two Temp. & 1344 & 3241 & 1344 & 3241 & 0.0 \\
-		\, & Sinusoid & -- & -- & -- & -- & 22.3 \\
+		WFC3 & Sph. Harmonics & 1227 & 3237 & 1822 & 2636 & 0 \\
+		\, & Kinematic & 1977 & 3953 & 1977 & 2769 & 14 \\
+		\, & Two Temp. & 0 & 2879 & 0 & 2879 & 42 \\
+		\, & Sinusoid & -- & -- & -- & -- & 17 \\
+		Ch 1 & Sph. Harmonics & 1269 & 3391 & 1912 & 2741 & 0 \\
+		\, & Kinematic & 1932 & 3630 & 1975 & 2614 & 34 \\
+		\, & Two Temp. & 1418 & 2990 & 1418 & 2990 & 11 \\
+		\, & Sinusoid & -- & -- & -- & -- & 25 \\
+		Ch 2 & Sph. Harmonics & 888 & 3714 & 1729 & 2864 & 2 \\
+		\, & Kinematic & 1614 & 3931 & 1621 & 2544 & 15 \\
+		\, & Two Temp. & 1344 & 3241 & 1344 & 3241 & 0 \\
+		\, & Sinusoid & -- & -- & -- & -- & 22 \\
 		\enddata
 		\vspace{-0.8cm}
 		\tablecomments{comments}
