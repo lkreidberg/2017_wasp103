@@ -40,13 +40,13 @@ def convert_to_T(flux):
 def initialize_params(spider_params):
     spider_params.n_layers= 5
     spider_params.t0= 200               # Central time of PRIMARY transit [days]
-    spider_params.per= 0.81347753       # Period [days]
+    spider_params.per= 0.9255       # Period [days]
     spider_params.a_abs= 0.01526        # The absolute value of the semi-major axis [AU]
-    spider_params.inc= 82.33            # Inclination [degrees]
+    spider_params.inc= 87.3            # Inclination [degrees]
     spider_params.ecc= 0.0              # Eccentricity
     spider_params.w= 90                 # Argument of periastron
-    spider_params.rp= 0.111            # Planet to star radius ratio
-    spider_params.a= 4.855              # Semi-major axis scaled by stellar radius
+    spider_params.rp= 0.1146            # Planet to star radius ratio
+    spider_params.a= 2.999              # Semi-major axis scaled by stellar radius
     spider_params.p_u1= 0               # Planetary limb darkening parameter
     spider_params.p_u2= 0               # Planetary limb darkening parameter
     spider_params.T_s = 6110.		# Temperature of the star
@@ -56,7 +56,7 @@ models = ['zhang', 'hotspot_t', "spherical"]
 labels = ["Kinematic", "Two Temperature", "Spherical harmonics"] 
 
 plt.figure(figsize = (6,6))
-channel = 1
+channel = 2
 
 for i, model in enumerate(models):
     spider_params = sp.ModelParams(brightness_model=model, thermal = True)
@@ -72,43 +72,44 @@ for i, model in enumerate(models):
 	spider_params.l1 = 3.0e-6
 	spider_params.l2 = 4.1e-6
 
+    print "taking these parameters by hand from Spitzer best fits :/"
 
     if model == "zhang":
 	if channel == 2:
-		spider_params.xi= 1.2977e-1       	# Ratio of radiative to advective timescale
-		spider_params.T_n= 1703.		# Temperature of nightside
-		spider_params.delta_T= 2606.		# Day-night temperature contrast
+		spider_params.xi= 1.2951e-1       	# Ratio of radiative to advective timescale
+		spider_params.T_n= 1614.		# Temperature of nightside
+		spider_params.delta_T= 2337.		# Day-night temperature contrast
 	elif channel == 1:
-		spider_params.xi= 3.6969e-1       	# Ratio of radiative to advective timescale
-		spider_params.T_n= 1955.		# Temperature of nightside
-		spider_params.delta_T= 1857.		# Day-night temperature contrast
+		spider_params.xi= 3.699e-1       	# Ratio of radiative to advective timescale
+		spider_params.T_n= 1932.		# Temperature of nightside
+		spider_params.delta_T= 1807.		# Day-night temperature contrast
 
     elif model == "spherical":
 	if channel == 2:
 		spider_params.degree=2
 		spider_params.la0 = 0
 		spider_params.lo0 = 0
-		spider_params.sph = [7.354e+3, 1.4627e+2, 0.0, 2.618e+3]
+		#spider_params.sph = [7.354e+3, 1.4627e+2, 0.0, 2.618e+3]
+		spider_params.sph = [2.301e+3, 9.075e+1, 0.0, 8.105e+2]
 	elif channel == 1:
 		spider_params.degree=2
 		spider_params.la0 = 0
 		spider_params.lo0 = 0
-		spider_params.sph = [7.427e+3, 2.6104e+2, 0.0, 1.906e+3]
-		#spider_params.sph = [2.37e3, 1.66e2, 0., 6.066e2]
+		spider_params.sph = [2.330e+3, 1.6195e+2, 0.0, 5.909e+2]
 
     elif model == "hotspot_t":
 	if channel == 2:
 		spider_params.la0 = 0.
 		spider_params.lo0 = 0.
 		spider_params.size = 90.
-		spider_params.spot_T = 3311.
-		spider_params.p_T = 1361.
+		spider_params.spot_T = 3241.
+		spider_params.p_T = 1344.
 	elif channel ==1:
 		spider_params.la0 = 0.
 		spider_params.lo0 = 0.
 		spider_params.size = 90.
-		spider_params.spot_T = 3041.
-		spider_params.p_T = 1429.
+		spider_params.spot_T = 2990.
+		spider_params.p_T = 1418.
         
     else:
         print "model not supported"
@@ -139,7 +140,7 @@ for i, model in enumerate(models):
             Ts += [row]
     
     Ts, dayside, nightside = np.array(Ts), np.array(dayside), np.array(nightside)
-    if model == "spherical": Ts, dayside, nightside = Ts/np.pi, dayside/np.pi, nightside/np.pi
+    #if model == "spherical": Ts, dayside, nightside = Ts/np.pi, dayside/np.pi, nightside/np.pi
 
     vmax = 12000. 
     vmin = 0.

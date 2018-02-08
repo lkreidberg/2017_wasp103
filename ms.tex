@@ -317,24 +317,23 @@ We compared the planet's minimum and maximum temperature for the three climate m
 	\tablecaption{Model Comparison \label{table:models}}
 	\tablehead{
 	\colhead{Data} & \colhead{Model} & \colhead{$T_\mathrm{min}$} & \colhead{$T_\mathrm{max}$} & \colhead{$\overline{T}_\mathrm{night}$} & \colhead{$\overline{T}_\mathrm{day}$} &\colhead{$\Delta_\mathrm{AIC}$} & \colhead{$\Delta_\mathrm{BIC}$}}
-		\startdata
-		WFC3 & Sph. Harmonics & 1214 & 3251 & 1820 & 2622 & 0.0 & 0.0 \\
-		\, & Kinematic & 1980 & 3958 & 1980 & 2777 & 14.0 & 14.0 \\
-		\, & Two Temp. & 0 & 2887 & 0 & 2887 & 49.8 & 45.4 \\
-		\, & Sinusoid & -- & -- & -- & -- & 19.8 & 15.4 \\
-		Ch 1 & Sph. Harmonics & 1280 & 3444 & 1936 & 2786 & 49.0 & 0.0 \\
-		\, & Kinematic & 1955 & 3675 & 1999 & 2656 & 83.3 & 34.3 \\
-		\, & Two Temp. & 1429 & 3041 & 1429 & 3025 & 59.7 & 17.6 \\
-		\, & Sinusoid & -- & -- & -- & -- & 0.0 & 76.6 \\
-		Ch 2 & Sph. Harmonics & 902 & 3786 & 1753 & 2920 & 7.9 & 2.3 \\
-		\, & Kinematic & 1703 & 4276 & 1711 & 2740 & 20.8 & 15.2 \\
-		\, & Two Temp. & 1361 & 3311 & 1361 & 3292 & 12.5 & 0.0 \\
-		\, & Sinusoid & -- & -- & -- & -- & 0.0 & 22.3 \\
-		\enddata
-		\vspace{-0.8cm}
-		\tablecomments{comments}
-	\end{deluxetable}
-
+	\startdata
+	WFC3 & Sph. Harmonics & 1227 & 3237 & 1822 & 2636 & 0.0 & 0.0 \\
+	\, & Kinematic & 1977 & 3953 & 1977 & 2769 & 14.1 & 14.1 \\
+	\, & Two Temp. & 0 & 2879 & 0 & 2879 & 46.3 & 41.9 \\
+	\, & Sinusoid & -- & -- & -- & -- & 21.0 & 16.5 \\
+	Ch 1 & Sph. Harmonics & 1269 & 3391 & 1912 & 2741 & 0.0 & 49.0 \\
+	\, & Kinematic & 1932 & 3630 & 1975 & 2614 & 34.2 & 83.4 \\
+	\, & Two Temp. & 1418 & 2990 & 1418 & 2990 & 17.6 & 59.7 \\
+	\, & Sinusoid & -- & -- & -- & -- & 76.6 & 0.0 \\
+	Ch 2 & Sph. Harmonics & 888 & 3714 & 1729 & 2864 & 7.9 & 2.3 \\
+	\, & Kinematic & 1614 & 3931 & 1621 & 2544 & 20.8 & 15.2 \\
+	\, & Two Temp. & 1344 & 3241 & 1344 & 3241 & 12.5 & 0.0 \\
+	\, & Sinusoid & -- & -- & -- & -- & 0.0 & 22.3 \\
+	\enddata
+	\vspace{-0.8cm}
+	\tablecomments{comments}
+\end{deluxetable}
 
 \subsection{Comparison with Previous Observations}
 We compared our results to the dayside emission spectrum reported by \cite{cartier17}, which is based on a Gaussian process analysis of two secondary eclipses from \HST/WFC3. The shape of their spectrum is consistent with what we find, but their eclipse depths are 125 ppm smaller on average (a difference of about 10\%). A likely explanation for this difference is that the \cite{cartier17} analysis does not include the planet's thermal phase variation, so that the Gaussian process models it as an instrument systematic.  If the phase variation is absorbed into the systematic model, the measured eclipse depths would be biased low by about 100 ppm (see Figure\,\ref{fig:model_comparison}).  Our estimated uncertainties are a factor of four smaller than those reported in \cite{cartier17}, which is consistent with photon-limited expectations (our data set includes two additional eclipses, a factor of five longer out-of-eclipse baseline, and has 60\% larger wavelength bins).
@@ -350,7 +349,7 @@ We show the measured transmission spectrum in Figure,\ref{fig:tspec}.  The spect
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/w103b_transmission_spectrum.pdf}
-\caption{The transmission spectrum of WASP-103b (points) for a range of assumptions about the planet's nightside temperature. The gray points correspond to no correction for the nightside flux. The blue and red points are the corrected for an average nightside photospheric temperature is 1400 and 2000 K, respectively. The atmospheric scale height is $5.5\times10^6$ m, assuming a mean molecular weight of 2.3 amu, surface gravity $g = 15.85 m/s^2$, and a temperature $T = 2410$ K.}
+\caption{The transmission spectrum of WASP-103b (points) for a range of assumptions about the planet's nightside temperature. The gray points are not corrected for planet nightside flux, whereas the blue and red points are corrected for an average nightside photospheric temperature of 1400 and 2000 K, respectively. The dotted line corresponds to the mean transit depth (assuming $T_\mathrm{night} = 2000$ K). Atmospheric scale height $H$ is shown on the right y-axis, where $H = 5.5\times10^6$ m (assuming a mean molecular weight of 2.3 atomic mass units, surface gravity $g = 15.85$ m/s$^2$, and a temperature $T = 2410$ K).}
 \label{fig:tspec}
 \end{figure}
 

@@ -6,8 +6,8 @@ import pickle
 
 #zhang, hotspot, spherical, sincos
 ch1_chi2 = np.array([0.9, 0.9, 0.9, 0.9])
-ch1_aic = np.array([7131.0, 7107.4, 7096.7, 7047.7])
-ch1_bic = np.array([7075.2, 7058.5, 7040.9, 7117.5])
+ch1_aic = np.array([7075.1, 7058.5, 7040.9, 7117.5])
+ch1_bic = np.array([7131.1, 7107.4, 7096.7, 7047.7])
 
 ch2_chi2 = np.array([1.1, 1.1, 1.1, 1.1])
 ch2_aic = np.array([8666.2, 8657.9, 8653.3, 8645.4])
@@ -46,30 +46,25 @@ wfc3_daymu = np.array([2769, 2879, 2636, 0])
 wfc3_nightmu = np.array([1977, 0, 1822, 0])
 
 #Spitzer Ch 2
-#model, Tmin, Tmax =  zhang 1703.0 4276.80767467
-#model, Tmin, Tmax =  hotspot_t 1361.0 3311.0
-#model, Tmin, Tmax =  spherical 902.401726015 3786.1376002
-ch2_tmin = np.array([1703, 1361, 902, 0])
-ch2_tmax = np.array([4276, 3311, 3786, 0])
 #from spitzer_maptemp.py
-#zhang daymu, nightmu, min, max 2740.48761346 1711.12738853 1703.0 4287.03108111
-#hotspot_t daymu, nightmu, min, max 3291.5 1361.0 1361.0 3311.0
-#spherical daymu, nightmu, min, max 2919.98921277 1752.56989088 895.304735881 3786.3843194
-ch2_daymu = np.array([2740, 3292, 2920, 0])
-ch2_nightmu = np.array([1711, 1361, 1753, 0])
+#zhang daymu, nightmu, min, max 2544.42433961 1621.25879891 1614.0 3931.36778946
+#hotspot_t daymu, nightmu, min, max 3222.03 1344.0 1344.0 3241.0
+#spherical daymu, nightmu, min, max 2864.26860292 1728.83922558 888.59900134 3713.55482549
+ch2_daymu = np.array([2544, 3241, 2864, 0])
+ch2_nightmu = np.array([1621, 1344, 1729, 0])
+ch2_tmin = np.array([1614, 1344, 888, 0])
+ch2_tmax = np.array([3931, 3241, 3714, 0])
 
 #Spitzer Ch 1
-#model, Tmin, Tmax =  zhang 1955.0 3675.62794318
-#model, Tmin, Tmax =  hotspot_t 1429.0 3041.0
-#model, Tmin, Tmax =  spherical 1280.4447703 3444.26296074
-ch1_tmin = np.array([1955, 1429, 1280, 0])
-ch1_tmax = np.array([3675, 3041, 3444, 0])
 #from spitzer_maptemp.py
-#zhang daymu, nightmu, min, max 2656.25693185 1998.88866205 1955.0 3699.89072043
-#hotspot_t daymu, nightmu, min, max 3024.88 1429.0 1429.0 3041.0
-#spherical daymu, nightmu, min, max 2785.72145075 1935.79737607 1303.5292162 3424.67800668
-ch1_daymu = np.array([2656, 3025, 2786, 0])
-ch1_nightmu = np.array([1999, 1429, 1936, 0])
+#models = ["zhang", "hotspot_t", "spherical", "sincos"]
+#zhang daymu, nightmu, min, max 2614.33231628 1974.7502736 1932.0 3629.80700341
+#hotspot_t daymu, nightmu, min, max 2974.28 1418.0 1418.0 2990.0
+#spherical daymu, nightmu, min, max 2740.6544324 1912.86267538 1268.93864177 3391.17897337
+ch1_daymu = np.array([2614, 2990, 2741, 0])
+ch1_nightmu = np.array([1975, 1418, 1912, 0])
+ch1_tmin = np.array([1932, 1418, 1269, 0])
+ch1_tmax = np.array([3630, 2990, 3391, 0])
 
 
 print "\\begin{deluxetable}{llllllll}"
