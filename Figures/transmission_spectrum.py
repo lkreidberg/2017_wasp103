@@ -6,8 +6,20 @@ import pickle
 import pysynphot as psyn					#need to source activate astroconda
 from matplotlib import rc, ticker
 from pylab import *
+import scipy.stats as st
 
 rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
+
+def get_significance(chisq, dof):
+        alpha = (1. - st.chi2.cdf(chisq, dof))/2.
+        z = st.norm.ppf(1.-alpha)
+        return z
+
+def weighted_mean(data, err):                #calculates the weighted mean for data points data with variances err
+        weights = 1.0/err
+        mu = np.sum(data*weights)/np.sum(weights)
+        var = 1.0/np.sum(weights)
+        return [mu, var]                #returns weighted mean and variance
 
 path  = "WFC3_best_fits/spec_fits/"		#zhang model
 files = glob.glob(os.path.join(path, "bestfit*.pic"))		
@@ -21,16 +33,19 @@ dilution = np.array(dilution)
 
 d = np.genfromtxt("w103b_transmission_spectrum.txt")
 
-temps = [1400, 2000, 0]
-labels = ["$T_\mathrm{night} = 1400$ K", "$T_\mathrm{night} = 2000$ K", "no correction"]
+temps = [1500, 2000, 0]
+labels = ["$T_\mathrm{night} = 1500$ K", "$T_\mathrm{night} = 2000$ K", "no correction"]
 colors = ['blue', 'red', 'gray']
 
 fig = plt.figure(figsize= (4,3))
+rprs2 = 0.01313
+
+tspec, tspec_err = np.zeros(12), np.zeros(12)
 
 for i, Tp in enumerate(temps):
 	bb_planet, bb_star = psyn.BlackBody(Tp), psyn.BlackBody(6110.)
 
-	nightside = bb_planet.flux/bb_star.flux*0.011 
+	nightside = bb_planet.flux/bb_star.flux*rprs2
 	nightside_bin = np.interp(d[:,0]*1e4, bb_planet.wave, nightside) 
 	
 	if Tp == 0: nightside_bin = 0
@@ -38,6 +53,8 @@ for i, Tp in enumerate(temps):
 	if i == 1: mean =  np.mean(d[:,1]*(1. + dilution)-nightside_bin)
         print "mean WFC3 depth = ", mean
 	plt.errorbar(d[:,0], d[:,1]*(1. + dilution)-nightside_bin, yerr = d[:,2], marker = '.', linestyle = 'none', color = colors[i], label = labels[i], alpha = 0.7)
+        tspec[0:10] =  d[:,1]*(1. + dilution)-nightside_bin 
+        tspec_err[0:10] = d[:,2]
 
 	# Spitzer Ch 2
 	sp, sp_err = 0.11114407162, 0.00118749161363
@@ -48,6 +65,8 @@ for i, Tp in enumerate(temps):
 	nightside_bin = np.interp(4.5*1e4, bb_planet.wave, nightside) 
 	if Tp == 0: nightside_bin = 0
 	plt.errorbar(4.5, sp*(1+sp_dilution) - nightside_bin, yerr = sp_err, xerr = 0.5, linestyle = 'none', color = colors[i], marker = '.', alpha = 0.7)
+	tspec[10] =  sp*(1+sp_dilution) - nightside_bin 
+        tspec_err[10] = sp_err
 
 	# Spitzer Ch 1
 	sp, sp_err = 0.10944, 0.0015
@@ -57,6 +76,15 @@ for i, Tp in enumerate(temps):
 	nightside_bin = np.interp(3.6*1e4, bb_planet.wave, nightside) 
 	if Tp == 0: nightside_bin = 0
 	plt.errorbar(3.6, sp*(1+sp_dilution) - nightside_bin, yerr = sp_err, xerr = 0.5, linestyle = 'none', color = colors[i], marker = '.', alpha = 0.7)
+	tspec[11] =  sp*(1+sp_dilution) - nightside_bin 
+        tspec_err[11] = sp_err
+
+        #gets reduced chi-sq for straight line fit
+        mu, sig = weighted_mean(tspec, tspec_err**2)
+        chi2, dof  = np.sum((tspec-mu)**2/tspec_err**2), (len(tspec) - 1)
+        print "temperature, flat line rejection confidence = ", Tp, get_significance(chi2, dof)
+        print "rprs mean, err", mu, np.sqrt(sig)*1e2
+
 
 plt.gca().set_xscale('log')
 
@@ -82,7 +110,7 @@ plt.ylim(ymin, ymax)
 x2 = plt.gca().twinx()
 scaleheight = 1.2e-4 
 plt.plot(d[:,0], np.linspace(0, ymax - ymin, len(d[:,0]))/scaleheight - (mean-ymin)/scaleheight, linewidth=0.)
-plt.ylabel("scale heights")
+plt.ylabel("Scale Height")
 
 plt.tight_layout()
 plt.savefig("w103b_transmission_spectrum.pdf")

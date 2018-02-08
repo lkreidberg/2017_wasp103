@@ -6,8 +6,9 @@ import pickle
 
 #zhang, hotspot, spherical, sincos
 ch1_chi2 = np.array([0.9, 0.9, 0.9, 0.9])
-ch1_aic = np.array([7075.1, 7058.5, 7040.9, 7117.5])
-ch1_bic = np.array([7131.1, 7107.4, 7096.7, 7047.7])
+ch1_aic = np.array([7075.1, 7058.5, 7040.9, 7044.7])
+ch1_bic = np.array([7131.1, 7107.4, 7096.7, 7121.4])
+
 
 ch2_chi2 = np.array([1.1, 1.1, 1.1, 1.1])
 ch2_aic = np.array([8666.2, 8657.9, 8653.3, 8645.4])

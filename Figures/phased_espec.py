@@ -234,7 +234,7 @@ for i in range(1, k):
                     plt.plot(GCM[:,0], GCM[:,counter]*1e3*correction_factor, color = 'r')
                     print phase
                 else: 
-                    plt.plot(GCM[:,0], GCM[:,counter+1]*1e3*correction_factor, color = 'r', label = '$\\tau_\mathrm{drag3}$ GCM')
+                    plt.plot(GCM[:,0], GCM[:,counter+1]*1e3*correction_factor, color = 'r', label = '$\\tau_\mathrm{drag4}$ GCM')
                     print phase
                 counter += 1
 	
