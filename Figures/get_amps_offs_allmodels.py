@@ -9,18 +9,15 @@ from astropy.convolution import Gaussian1DKernel, convolve
 from scipy.interpolate import interp1d
 
 path  = "WFC3_best_fits/"
-files = glob.glob(os.path.join(path, "bestfit*.pic"))		
-for f in files:
-	p = pickle.load(open(f, 'rb'))
+models = ["hotspot_t", "zhang", "spherical", "sincos"]
+for i, model in enumerate(models):
+	p = pickle.load(open(path+"bestfit_"+model+".pic", "rb")) 
 	d, m = p[0], p[1]			
 
 	x, y = m.phase, m.bestfit_no_eclipse
 	ind = np.argsort(x)
 	x, y = x[ind], y[ind]
 	
-
-        #ind = m.bestfit_no_eclipse == np.max(m.bestfit_no_eclipse)
-
 
 	fnew = interp1d(x, y, kind = 'cubic')
 	xnew = np.linspace(0.4, 0.6, 1000)
@@ -31,5 +28,5 @@ for f in files:
 	offset = xnew[ind]
         print f, (offset - 0.5)*180./np.pi
 
-plt.legend()
-plt.show()
+#plt.legend()
+#plt.show()
