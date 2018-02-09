@@ -352,7 +352,7 @@ We also compared our dayside spectrum to the $z'$ and $K_\mathrm{S}$-band second
 \subsection{Transmission Spectrum}
 Each phase curve observation includes a transit of WASP-103b. To measure the wavelength-dependent transit depths (the transmission spectrum), we select a subset of each phase curve. The subset includes the transit and additional baseline on either side, such that the total light curve has twice the duration of the transit. Over this short duration, there is negligible curvature in the light curve due to the planet's thermal phase variation. We fit the data with a transit model, which has free parameters for the planet-to-star radius and a linear limb darkening parameter. The orbital parameters (inclination, $a/R_s$, period, and time of central transit) were fixed at previously published values listed in \S\,\ref{sec:fits}. We fit for the instrument systematics using the same model as for the phase curve fits, except that we modeled the visit-long systematic as a linear trend in time (which is sufficient for the shorter duration). The advantage of fitting the transits separately from the full phase curves is that the resultant transit depths are not dependent on how the phase variation is modeled. 
 
-We show the measured transmission spectrum in Figure\,\ref{fig:tspec}.  The spectrum is biased by flux contamination from the planet's nightside; to correct for nightside emission, we estimate the planet-to-star flux ratio and subtract it from the transit depth. We calculate planet-to-star flux assuming a NextGen spectrum for the star (interpolated to $T_\mathrm{eff} = 6110$ K), a blackbody for the planet, and a planet-to-star radius ratio of 0.1146. We consider a plausible nightside temperature of 1700 K, which is near the median of the nightside temperatures estimated from the phase variation models (Table\,\ref{table:models}). We also show the uncorrected transit depths. For the uncorrected data, there is an offset between the \HST\ and \Spitzer\ data of more than five atmospheric scale heights.  The uncorrected spectrum is inconsistent with a flat line at $3.2\,\sigma$ confidence, whereas the nightside-corrected spectrum is consistent within $1\,\sigma$.  The corrected spectrum is also consistent with predictions from the $\tau_\mathrm{drag4}$ GCM, which shows water features in the WFC3 bandpass. Future high precision observations could reveal these features. %The mean transit depths are $1.3431 \pm 0.0029$,  $1.3360 \pm 0.0029$, and $1.3078 \pm 0.0029\%$ for assumed nightside temperatures of 0, 1500, and 2000 K.  Of these, only the 2000 K model yields a transit depth consistent with the measurement of \cite{lendl17} at shorter wavelengths where nightside contamination is negligible ($1.3092 \pm 0.0114$\%). FIXME: could we see water at higher precision?
+We show the measured transmission spectrum in Figure\,\ref{fig:tspec}.  The spectrum is biased by flux contamination from the planet's nightside; to correct for nightside emission, we estimate the average nightside planet-to-star flux ratio and subtract it from the transit depth. We calculate planet-to-star flux using a NextGen spectrum for the star (interpolated to $T_\mathrm{eff} = 6110$ K), a blackbody for the planet, and a planet-to-star radius ratio of 0.1146. We assume a nightside temperature of 1700 K, which is near the median of the nightside temperatures estimated from the phase variation models (Table\,\ref{table:models}). We also show the uncorrected transit depths. The corrected and uncorrected transit depths are listed in Table\,\ref{table:tspec}. For the uncorrected data, there is an offset between the \HST\ and \Spitzer\ data of more than five atmospheric scale heights.  The uncorrected spectrum is inconsistent with a flat line at $3.2\,\sigma$ confidence, whereas the nightside-corrected spectrum is consistent within $1\,\sigma$.  The corrected spectrum is also consistent with predictions from the $\tau_\mathrm{drag4}$ GCM, which shows water features in the WFC3 bandpass. Future observations with higher precision could reveal these features. %The mean transit depths are $1.3431 \pm 0.0029$,  $1.3360 \pm 0.0029$, and $1.3078 \pm 0.0029\%$ for assumed nightside temperatures of 0, 1500, and 2000 K.  Of these, only the 2000 K model yields a transit depth consistent with the measurement of \cite{lendl17} at shorter wavelengths where nightside contamination is negligible ($1.3092 \pm 0.0114$\%). FIXME: could we see water at higher precision?
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/w103b_transmission_spectrum.pdf}
@@ -360,7 +360,30 @@ We show the measured transmission spectrum in Figure\,\ref{fig:tspec}.  The spec
 \label{fig:tspec}
 \end{figure}
 
-
+\begin{deluxetable}{LLL}
+\tablecolumns{3}
+\tablewidth{0pt}
+\tablecaption{WASP-103b Transmission Spectrum\label{table:tspec}}
+\tablehead{
+\colhead{Wavelength} & \colhead{Transit Depth (\%)} & \colhead{Transit Depth (\%)} \\
+\colhead{(micron)} & \colhead{($T_\mathrm{night} = 0$ K)} & \colhead{($T_\mathrm{night} = 1700$ K)}}
+\startdata
+1.175 & 1.329049 \pm 0.000092 & 0.013228 \pm 0.000092 \\
+1.225 & 1.329408 \pm 0.000087 & 0.013217 \pm 0.000087 \\
+1.275 & 1.333837 \pm 0.000086 & 0.013246 \pm 0.000086 \\
+1.325 & 1.334184 \pm 0.000087 & 0.013233 \pm 0.000087 \\
+1.375 & 1.359366 \pm 0.000089 & 0.013467 \pm 0.000089 \\
+1.425 & 1.353629 \pm 0.000091 & 0.013390 \pm 0.000091 \\
+1.475 & 1.341570 \pm 0.000092 & 0.013249 \pm 0.000092 \\
+1.525 & 1.350816 \pm 0.000093 & 0.013319 \pm 0.000093 \\
+1.575 & 1.333617 \pm 0.000100 & 0.013125 \pm 0.000100 \\
+1.625 & 1.353438 \pm 0.000104 & 0.013299 \pm 0.000104 \\
+3.6 & 1.401322 \pm 0.000328 & 0.013238 \pm 0.000328 \\
+4.5 & 1.432949 \pm 0.000264 & 0.013554 \pm 0.000264 \\
+\enddata
+\vspace{-0.8cm}
+\tablecomments{comments}
+\end{deluxetable}
 
 \section{Atmospheric Composition and Thermal Structure}
 \label{sec:composition}

@@ -42,7 +42,7 @@ colors = ['blue', 'red', 'gray']
 fig = plt.figure(figsize= (5,3))
 rprs2 = 0.01313
 
-tspec, tspec_err = np.zeros(12), np.zeros(12)
+wave, tspec, tspec_err = np.zeros(12), np.zeros(12), np.zeros(12)
 
 for i, Tp in enumerate(temps):
 	bb_planet, bb_star = psyn.BlackBody(Tp), psyn.BlackBody(6110.)
@@ -57,6 +57,19 @@ for i, Tp in enumerate(temps):
 	plt.errorbar(d[:,0], d[:,1]*(1. + dilution)-nightside_bin, yerr = d[:,2], marker = '.', linestyle = 'none', color = colors[i], label = labels[i], alpha = 0.7)
         tspec[0:10] =  d[:,1]*(1. + dilution)-nightside_bin 
         tspec_err[0:10] = d[:,2]
+	wave[0:10] = d[:,0]
+
+	# Spitzer Ch 1
+	sp, sp_err = 0.10944, 0.0015
+	sp_err = sp*sp_err*2.
+	sp = sp**2
+	sp_dilution = 0.17
+	nightside_bin = np.interp(3.6*1e4, bb_planet.wave, nightside) 
+	if Tp == 0: nightside_bin = 0
+	plt.errorbar(3.6, sp*(1+sp_dilution) - nightside_bin, yerr = sp_err, xerr = 0.5, linestyle = 'none', color = colors[i], marker = '.', alpha = 0.7)
+	tspec[10] =  sp*(1+sp_dilution) - nightside_bin 
+        tspec_err[10] = sp_err
+	wave[10] = 3.6
 
 	# Spitzer Ch 2
 	sp, sp_err = 0.11114407162, 0.00118749161363
@@ -67,19 +80,9 @@ for i, Tp in enumerate(temps):
 	nightside_bin = np.interp(4.5*1e4, bb_planet.wave, nightside) 
 	if Tp == 0: nightside_bin = 0
 	plt.errorbar(4.5, sp*(1+sp_dilution) - nightside_bin, yerr = sp_err, xerr = 0.5, linestyle = 'none', color = colors[i], marker = '.', alpha = 0.7)
-	tspec[10] =  sp*(1+sp_dilution) - nightside_bin 
-        tspec_err[10] = sp_err
-
-	# Spitzer Ch 1
-	sp, sp_err = 0.10944, 0.0015
-	sp_err = sp*sp_err*2.
-	sp = sp**2
-	sp_dilution = 0.17
-	nightside_bin = np.interp(3.6*1e4, bb_planet.wave, nightside) 
-	if Tp == 0: nightside_bin = 0
-	plt.errorbar(3.6, sp*(1+sp_dilution) - nightside_bin, yerr = sp_err, xerr = 0.5, linestyle = 'none', color = colors[i], marker = '.', alpha = 0.7)
 	tspec[11] =  sp*(1+sp_dilution) - nightside_bin 
         tspec_err[11] = sp_err
+	wave[11] = 4.5
 
         #gets reduced chi-sq for straight line fit
         mu, sig = weighted_mean(tspec, tspec_err**2)
@@ -87,6 +90,8 @@ for i, Tp in enumerate(temps):
         print "temperature, flat line rejection confidence = ", Tp, get_significance(chi2, dof)
         print "rprs mean, err", mu, np.sqrt(sig)*1e2
 
+	for i in range(len(tspec)):
+		print wave[i], tspec[i], tspec_err[i]
 
 #plot GCM
 d = np.genfromtxt("W103b-Drag4-transmission-spectrum-CaTiO3-1microns.dat", skip_header = 1, delimiter = ',')
@@ -121,7 +126,6 @@ plt.ylabel("Transit Depth")
 #plt.axhline(mean, linestyle = 'dotted', zorder = -10)
 ymin, ymax= 0.0128, 0.0147
 plt.ylim(ymin, ymax)
-plt.xlim(1,5.2)
 
 #scale height
 #kt/(mu*g) = 5.5e6 m (assuming mu = 2.3 amu, g = 15.85 m/s^2, T = 2410 K (phase 0.25 temperature)
@@ -133,6 +137,7 @@ scaleheight = 1.2e-4
 plt.plot(d[:,0], np.linspace(0, ymax - ymin, len(d[:,0]))/scaleheight - (mean-ymin)/scaleheight, linewidth=0.)
 plt.ylabel("Scale Height")
 
+plt.xlim(1,5.2)
 plt.tight_layout()
 plt.savefig("w103b_transmission_spectrum.pdf")
 plt.show()
