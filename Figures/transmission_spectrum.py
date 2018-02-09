@@ -33,11 +33,13 @@ dilution = np.array(dilution)
 
 d = np.genfromtxt("w103b_transmission_spectrum.txt")
 
-temps = [1500, 2000, 0]
-labels = ["$T_\mathrm{night} = 1500$ K", "$T_\mathrm{night} = 2000$ K", "no correction"]
+#temps = [1400, 1800, 0]
+#labels = ["$T_\mathrm{night} = 1400$ K", "$T_\mathrm{night} = 1800$ K", "no correction"]
+temps = [1700, 0]
+labels = ["$T_\mathrm{night} = 1700$ K", "no correction"]
 colors = ['blue', 'red', 'gray']
 
-fig = plt.figure(figsize= (4,3))
+fig = plt.figure(figsize= (5,3))
 rprs2 = 0.01313
 
 tspec, tspec_err = np.zeros(12), np.zeros(12)
@@ -86,6 +88,22 @@ for i, Tp in enumerate(temps):
         print "rprs mean, err", mu, np.sqrt(sig)*1e2
 
 
+#plot GCM
+d = np.genfromtxt("W103b-Drag4-transmission-spectrum-CaTiO3-1microns.dat", skip_header = 1, delimiter = ',')
+rprs = (d[:,1] + 1.135e8)/9.99e8
+rprs2 = rprs**2
+plt.plot(d[:,0], rprs2, color = 'k', zorder = -10, linewidth = 1.2, label = "$\\tau_\mathrm{drag4}$ GCM",alpha = 0.7) 
+
+ind = (4. < d[:,0])&(d[:,0] < 5.)
+plt.plot(4.5, np.mean(rprs2[ind]), marker = 's', color = 'k', alpha = 0.7)
+ind = (3.1 < d[:,0])&(d[:,0] < 4.1)
+plt.plot(3.6, np.mean(rprs2[ind]), marker = 's', color = 'k', alpha = 0.7)
+
+"""cloudrprs = (d[:,2] + 1.125e8)/9.99e8
+cloudrprs2 = cloudrprs**2
+print np.mean(cloudrprs2)
+plt.plot(d[:,0], cloudrprs2, color = '0.3', linestyle = 'dotted', zorder = -10)"""
+
 plt.gca().set_xscale('log')
 
 ax = plt.gca()
@@ -94,13 +112,16 @@ ax.xaxis.set_minor_locator(FixedLocator(np.array([1.1, 1.2, 1.3,  1.4, 1.5, 1.6,
 ax.xaxis.set_minor_formatter(ticker.NullFormatter())
 ax.yaxis.set_minor_formatter(ticker.NullFormatter())
 ax.set_xticklabels(["1", "2", "4"])
+ax.yaxis.set_major_locator(FixedLocator(np.array([0.0130, 0.0135, 0.0140, 0.0145])))
+
 
 plt.legend(loc = 'upper left')
 plt.xlabel("Wavelength (microns)")
 plt.ylabel("Transit Depth")
-plt.axhline(mean, linestyle = 'dotted', zorder = -10)
-ymin, ymax= 0.0126, 0.0147
+#plt.axhline(mean, linestyle = 'dotted', zorder = -10)
+ymin, ymax= 0.0128, 0.0147
 plt.ylim(ymin, ymax)
+plt.xlim(1,5.2)
 
 #scale height
 #kt/(mu*g) = 5.5e6 m (assuming mu = 2.3 amu, g = 15.85 m/s^2, T = 2410 K (phase 0.25 temperature)
