@@ -83,7 +83,7 @@ for ii, f in enumerate(bestfits):
 
 	ax = plt.subplot(gs[ii, 1])
 	resid = data_corr - bestfit 
-	plt.axhline(0, color='0.5', zorder=-10, linewidth = 2.)
+	plt.axhline(0, color='0.5', zorder=-10, linewidth = 1.)
 	plt.errorbar(bin_average, (bindata - binbestfit)*1e3, yerr = binsigma*1e3, fmt = '.k')
 	plt.ylim(-0.2,0.2)
 	plt.xlim(0,1)
@@ -173,7 +173,7 @@ for ii, f in enumerate(bestfits):
 
 	ax = plt.subplot(gs[ii+1, 1])
 	binresid = bindata - binbestfit
-	plt.axhline(0, color='0.5', zorder = -10, linewidth = 2.)
+	plt.axhline(0, color='0.5', zorder = -10, linewidth = 1.)
 	plt.errorbar(bin_average, binresid*1e3, yerr = binsigma*1e3, fmt = '.k')
 	plt.ylim(-2,2)
 	plt.xlim(0,1)
