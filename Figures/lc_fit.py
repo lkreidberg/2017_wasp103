@@ -544,7 +544,7 @@ def get_spidermanzhang(t, p, data, v_num, stellar_grid):
         web_p.ecc = p.ecc[v_num]
         web_p.w = p.w[v_num] 
         #web_p.rp = p.rp[v_num] 
-        web_p.rp = 0.1127
+        web_p.rp = 0.1146
         web_p.a = p.a[v_num] 
         web_p.p_u1 = p.p_u1[v_num] 
         web_p.p_u2 = p.p_u2[v_num]
@@ -577,7 +577,7 @@ def get_spidermanspherical(t, p, data, v_num, stellar_grid):
         web_p.ecc = p.ecc[v_num]
         web_p.w = p.w[v_num] 
         #web_p.rp = p.rp[v_num] 
-        web_p.rp = 0.1127
+        web_p.rp = 0.1146
         web_p.a = p.a[v_num] 
         web_p.p_u1 = p.p_u1[v_num] 
         web_p.p_u2 = p.p_u2[v_num]
@@ -612,7 +612,7 @@ def get_spidermanhotspot(t, p, data, v_num, stellar_grid):
         web_p.ecc = p.ecc[v_num]
         web_p.w = p.w[v_num] 
         #web_p.rp = p.rp[v_num] 
-        web_p.rp = 0.1127
+        web_p.rp = 0.1146
         web_p.a = p.a[v_num] 
         web_p.p_u1 = p.p_u1[v_num] 
         web_p.p_u2 = p.p_u2[v_num]

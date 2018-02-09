@@ -25,13 +25,13 @@ def lc(t, rp, T_s, l1, l2, sph, dilution, eclipse, stellar_grid):
 
 	web_p.n_layers = 5
 	#web_p.t0 = 0. 
-	web_p.t0 = 2457080.64041702
+	web_p.t0 = 2456836.2964455
 	web_p.per =  0.925545613
 	web_p.a_abs = 1.3260e-02
 	web_p.inc = 87.3
 	web_p.ecc = 0. 
 	web_p.w = 90. 
-	web_p.rp = 0.1127
+	web_p.rp = 0.1146
 	web_p.a = 3.0
 	web_p.p_u1 = 0. 
 	web_p.p_u2 = 0. 
