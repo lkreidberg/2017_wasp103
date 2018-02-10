@@ -9,12 +9,18 @@ from pylab import *
 from matplotlib import rc, ticker
 import seaborn as sns
 from astropy.convolution import Gaussian1DKernel, convolve
+import scipy.stats as st
 
 sns.set_context("notebook", font_scale = 1.5)
 sns.set_style("white")
 sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
 rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
+
+def get_significance(chisq, dof):
+        alpha = (1. - st.chi2.cdf(chisq, dof))/2.
+        z = st.norm.ppf(1.-alpha)
+        return z
 
 def blackbody(l,T): 
 	h = 6.62607e-34   #J/s
@@ -58,8 +64,9 @@ def best_fit_bb(w, y, e, rprs):
 
     idx = (np.abs(chis-(chibest+1.))).argmin()
     onesigma = Tbest - Ts[idx]
-    print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
-    #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))) 
+    #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), '{0:0.1f}'.format(chibest/(len(y) - 1)),
+    #print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))), get_significance(chibest,(len(y) - 1))
+    print '{0:d}'.format(int(Tbest)),  '{0:d}'.format(int(np.abs(onesigma))) 
     print>>outfile,  Tbest                                                                                                            
     outfile.close() 
     return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2 

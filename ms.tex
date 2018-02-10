@@ -223,9 +223,11 @@ The fitted light curves are shown in Figure\,\ref{fig:phasecurves}. This figure 
 
 
 \subsection{Phase Curve Amplitudes and Hotspot Offsets}
-The shape of a phase curve can be summarized with two parameters: the amplitude of thermal phase variation (minimum to maximum brightness, divided by the secondary eclipse depth) and the location of peak brightness (typically called a ``hotspot offset" and measured in degrees eastward of the substellar point).  Table\,\ref{table:amps_offsets} lists the estimated amplitudes and hotspot offsets (median and $1\,\sigma$ credible interval) for the band-integrated WFC3 phase curve and both \Spitzer\ channels. The estimates are from the sine curve model for the thermal phase variation. We note that the sinusoid does not fit the data as well as the spherical harmonics model (see \ref{table:fits}); however, the sine curve fits the amplitude and hotspot offset directly, as free parameters.
+The shape of a phase curve can be summarized with two parameters: the amplitude of thermal phase variation (minimum to maximum brightness, divided by the secondary eclipse depth) and the location of peak brightness (typically called a ``hotspot offset" and measured in degrees eastward of the substellar point).  Table\,\ref{table:amps_offsets} lists the estimated amplitudes and hotspot offsets (median and $1\,\sigma$ credible interval) for the band-integrated WFC3 phase curve and both \Spitzer\ channels. The estimates are from the sine curve model for the thermal phase variation. The advantage of using this model (even though it does not provide strictly the best fit), is that it fits for the amplitude and offset directly as free parameters.
 
-For all three phase curves, the hotspot offset is consistent with zero degrees, which could indicate a small ratio of radiative to advective timescales (the incident flux is reradiated to space faster than it is advected around to the nightside). Fast radiative timescales are predicted at high temperatures, and small hotspot offsets are also observed for other very hot Jupiters \citep{perez13, komacek16, komacek17}.  The measured offsets are inconsistent with the trend reported in \cite{zhang17}, which predicts the hotspot offset increases with planet temperature for irradiation temperatures greater than 3410 K. The \cite{zhang17} model predicts a hotspot offset of $4.5^\circ$ for WASP-103b, which is significantly larger than observed, hinting at diversity in the circulation patterns of the hottest planets.  The phase curve amplitudes are large (near 0.8 - 0.9), as expected for an atmosphere with inefficient heat redistribution. In \S\,\ref{sec:gcm} we compare these results to expectations from 3D GCMs.
+%We note that the sinusoid does not fit the data as well as the spherical harmonics model (see \ref{table:fits}); however, the sine curve fits the amplitude and hotspot offset directly, as free parameters.
+
+For all three phase curves, the hotspot offset is consistent with zero degrees, which could indicate a small ratio of radiative to advective timescales (the incident flux is reradiated to space faster than it is advected around to the nightside). Fast radiative timescales are predicted at high temperatures, and small hotspot offsets are also observed for other very hot Jupiters \citep{perez13, komacek16, komacek17}.  The measured offsets are inconsistent with the trend reported in \cite{zhang17}, which predicts the hotspot offset increases with planet temperature for irradiation temperatures greater than 3410 K. The \cite{zhang17} model predicts an eastward hotspot offset of $4.5^\circ$ for WASP-103b, which is significantly larger than observed, hinting at diversity in the circulation patterns of the hottest planets.  The phase curve amplitudes are large (near 0.8 - 0.9), as expected for an atmosphere with inefficient heat redistribution. In \S\,\ref{sec:gcm} we compare these results to expectations from 3D GCMs.
 
 %For the WFC3 phase curves, the amplitudes are consistent with unity and the offsets are consistent with zero. We note that some of the spectroscopic channels have amplitudes greater than unity, which is physically impossible (the planet cannot emit negative flux). As a sanity check, we take the weighted average over the WFC3 channels and find an average amplitude of $0.91\pm0.02$, which shows that at higher precision the results are physical and agree well with the large amplitudes observed for other hot planets \citep{komacek16}.  The \Spitzer\ phase curves also have large amplitudes (near 0.85) and hotspot offsets consistent with zero. 
 
@@ -312,9 +314,9 @@ We fit three different models to characterize the planet's climate: a two-temper
 
 %As illustrated in Figure\,\ref{fig:model_comparison}, the kinematic model is larger than the observed planet-to-star flux on the nightside, whereas the two temperature model overpredicts the flux at quadrature and underpredicts the dayside. 
 
-The spherical harmonics map generally fits the data the best. It has a lower BIC value than all the other models for the broadband WFC3 and \Spitzer\,$3.6\,\mu$m phase curves. For the $4.5\,\mu$m phase curve, the two temperature map provides the best fit, but it only lowers the BIC value by 2 relative to the spherical harmonics map, which is not a statistically significant improvement \citep{kass95}. The worst fit model is gene FIXME
+The spherical harmonics map generally fits the data the best. It has a lower BIC value than all the other models for the broadband WFC3 and \Spitzer\,$3.6\,\mu$m phase curves. For the $4.5\,\mu$m phase curve, the two temperature map provides the best fit, but it only lowers the BIC value by 2 relative to the spherical harmonics map, which is not a statistically significant improvement \citep{kass95}.  The spherical harmonics model yields a mean dayside temperature near 2700 K, whereas the nightside is closer to 1800 K, in good agreement with the blackbody fits to the phase-resolved spectra (see \S\,\ref{sec:bbfits}).  The other models produce more extreme day-night temperature gradients.  Between the models, there are substantial differences in the minimum and maximum temperatures (sometimes over 1000 K). The day and nightside means are in better agreement (generally matching to within 250 K). This behavior is not surprising: a wide range of temperature gradients can yield similar average temperatures when integrated over the disk of the planet.  
 
-The spherical harmonics model yields a mean dayside temperature near 2700 K, whereas the nightside is closer to 1800 K.  The other models produce more extreme day-night temperature gradients.  These differences arise because the kinematic model allows a steep temperature gradient on the dayside, so the substellar point is much hotter than the terminator, whereas the two temperature map imposes a constant dayside temperature.  The intermediate temperature gradient in the spherical harmonics model fits the data the best. However, this model may not be physically realistic: on the nightside, it produces much higher temperatures at the poles than at the equator, contrary to predictions from GCMs (which we discuss in \S\,\ref{sec:gcm}). 
+%However, this model may not be physically realistic: on the nightside, it produces much higher temperatures at the poles than at the equator, contrary to predictions from GCMs (which we discuss in \S\,\ref{sec:gcm}). 
 
 %The kinematic model has the hottest dayside temperature, and the two-temperature model has the smallest. The differences in peak temperature for the models we consider ranges from $630\,\mathrm{K}$ for \Spitzer\ Channel 1 to $1070\,\mathrm{K}$ for the broadband WFC3 light curve. The minimum nightside temperature is also model-dependent: for the WFC3 data, the two-temperature model predicts a nightside temperature of zero Kelvin, whereas the best fit kinematic model has a nightside temperature of $1980\,\mathrm{K}$.  
 
@@ -390,9 +392,16 @@ We show the measured transmission spectrum in Figure\,\ref{fig:tspec}.  The spec
 We characterized the planet's atmospheric composition by fitting 1D models to the phase-resolved emission spectra.  First, we modeled the planet flux as a simple blackbody to estimate the dayside brightness temperature and test for significant absorption or emission features. We then performed a more sophisticated grid-based retrieval to estimate the atmospheric metallicity, carbon-to-oxygen ratio, and thermal structure.
 
 \subsection{Blackbody Fits}
-A blackbody is the simplest model for the planet's thermal emission and provides a useful first evaluation of the atmospheric properties. To calculate the best fit blackbody model, we assumed a planet-to-star radius ratio of 0.1146 and used a NextGen stellar spectrum interpolated to an effective temperature of 6110 K \citep{allard12}.  The best-fit blackbodies are shown in Figures \ref{fig:spectra} and \ref{fig:dayside}. This model performs well for some orbital phases, with $\chi^2_\nu$ ranging from 0.9 to 1.1 for phases $\phi = 0.1, 0.7$ and $0.8$. At other phases the blackbody model is a poorer fit, particularly to the \Spitzer\ data. For phases $0.2 - 0.6$, the \Spitzer\ eclipse depths are significantly larger than predicted for the best fit blackbody, suggesting the presence of an emission feature (due to CO, as we discuss in \S\,\ref{sec:retrieval}). On the nightside (phase $0.9$), the \Spitzer\ $4.5\,\mu$m eclipse depth is \emph{smaller} than predicted, suggesting an absorption feature. These differences indicate changes in thermal structure with longitude in the atmosphere.
+\label{sec:bbfits}
+A blackbody is the simplest model for the planet's thermal emission and provides a useful first evaluation of the atmospheric properties. To calculate the best fit blackbody model, we assumed a planet-to-star radius ratio of 0.1146 and used a NextGen stellar spectrum interpolated to an effective temperature of 6110 K \citep{allard12}.  The best-fit blackbodies are shown in Figures \ref{fig:spectra} and \ref{fig:dayside}. The model is consistent with the data at the $3\,\sigma$ level for phases 0.1 - 0.7. At later phases, the \Spitzer\ data have significantly lower brightness temperatures.  
 
-We also fit blackbody models to the WFC3 data only, and found that they provide a good fit at all orbital phases. The $\chi^2_\nu$ values range from 0.5 to 2.4, with a median of 0.9. The best fit brightness temperatures range from $1917 \pm 43$ Kelvin on the nightside to $3011 \pm 8$ Kelvin on the dayside. We report the best fit temperatures with uncertainties in Table\,\ref{table:teffs}.  The dayside spectrum is the poorest fit by the blackbody model. This finding is not a surprise because the dayside has higher signal-to-noise than the other orbital phases, thanks to the two secondary eclipse observations from \cite{cartier17}. The more sophisticated grid-based retrieval (described in the next section) provides a better fit to the dayside.
+We also fit indepedent blackbody models to the \HST/WFC3 data and each \Spitzer\ channel. The resulting brightness temperatures are listed in Table\,\ref{table:teffs}. The WFC3 data are fit well by a blackbody model at all orbital phases (consistent at better than $1.5\,\sigma$). The brightness temperatures FIXME talk about significance of features.
+
+%This model performs well for some orbital phases, with $\chi^2_\nu$ ranging from 0.9 to 1.1 for phases $\phi = 0.1, 0.7$ and $0.8$. At other phases the blackbody model is a poorer fit, particularly to the \Spitzer\ data. For phases $0.2 - 0.6$, the \Spitzer\ eclipse depths are significantly larger than predicted for the best fit blackbody, suggesting the presence of an emission feature (due to CO, as we discuss in \S\,\ref{sec:retrieval}). On the nightside (phase $0.9$), the \Spitzer\ $4.5\,\mu$m eclipse depth is \emph{smaller} than predicted, suggesting an absorption feature. These differences indicate changes in thermal structure with longitude in the atmosphere.
+
+%We also fit blackbody models to the WFC3 data only, and found that they provide a good fit at all orbital phases. The $\chi^2_\nu$ values range from 0.5 to 2.4, with a median of 0.9. The best fit brightness temperatures range from $1917 \pm 43$ Kelvin on the nightside to $3011 \pm 8$ Kelvin on the dayside. We report the best fit temperatures with uncertainties in Table\,\ref{table:teffs}.  The dayside spectrum is the poorest fit by the blackbody model. This finding is not a surprise because the dayside has higher signal-to-noise than the other orbital phases, thanks to the two secondary eclipse observations from \cite{cartier17}. The more sophisticated grid-based retrieval (described in the next section) provides a better fit to the dayside.
+
+%WFC3: consistent with a blackbody
 
 \begin{deluxetable}{LLLLL}
 	\tablecolumns{5}
@@ -402,19 +411,18 @@ We also fit blackbody models to the WFC3 data only, and found that they provide 
 		\colhead{Orbital Phase} & \colhead{$T_\mathrm{b}$} & \colhead{$T_\mathrm{b}$} & \colhead{$T_\mathrm{b}$} & \colhead{$\chi^2_\nu$}\tablenotemark{1} \\
 	\colhead{\,} & \colhead{WFC3} & \colhead{Ch. 1} & \colhead{Ch. 2} & \colhead{(9 dof)}}
 		\startdata
-		0.06 - 0.15 & 1917 \pm 43 & 1674 \pm 177 & 1677 \pm 102 & 0.7 \\
-		0.15 - 0.25 & 2254 \pm 25 & 2821 \pm 136 & 2486 \pm 87 & 0.8 \\
-		0.25 - 0.35 & 2650 \pm 17 & 3170 \pm 128 & 2772 \pm 74 & 1.4 \\
-		0.35 - 0.44 & 2905 \pm 11 & 3016 \pm 128 & 3216 \pm 68 & 1.1 \\
-		0.44 - 0.56 & 3011 \pm 8 & 3158 \pm 153 & 3350 \pm 53 & 2.4 \\
-		0.56 - 0.65 & 2884 \pm 11 & 2764 \pm 133 & 3051 \pm 70 & 1.7 \\
-		0.65 - 0.75 & 2634 \pm 16 & 2857 \pm 135 & 2550 \pm 85 & 1.1 \\
-		0.75 - 0.85 & 2312 \pm 23 & 2153 \pm 151 & 2117 \pm 91 & 1.2 \\
-		0.85 - 0.94 & 2025 \pm 34 & 1825 \pm 167 & 1414 \pm 113 & 0.5 \\
+		0.06 - 0.15 & 1883 \pm 41 & 1523 \pm 158 & 1589 \pm 98 & 0.7 \\
+		0.15 - 0.25 & 2208 \pm 24 & 2612 \pm 104 & 2299 \pm 78 & 0.9 \\
+		0.25 - 0.35 & 2587 \pm 16 & 2926 \pm 95 & 2592 \pm 67 & 1.5 \\
+		0.35 - 0.44 & 2831 \pm 11 & 2834 \pm 93 & 2976 \pm 61 & 1.5 \\
+		0.44 - 0.56 & 2933 \pm 8 & 2995 \pm 141 & 3154 \pm 48 & 2.8 \\
+		0.56 - 0.65 & 2811 \pm 11 & 2631 \pm 96 & 2891 \pm 63 & 2.0 \\
+		0.65 - 0.75 & 2572 \pm 15 & 2708 \pm 101 & 2421 \pm 78 & 1.3 \\
+		0.75 - 0.85 & 2263 \pm 22 & 1952 \pm 117 & 1939 \pm 83 & 1.3 \\
+		0.85 - 0.94 & 1987 \pm 34 & 1594 \pm 150 & 1288 \pm 118 & 0.6 \\
 		\enddata
 		\tablenotetext{1}{$\chi^2_\nu$ values are for the fits to the WFC3 data only.}
 	\end{deluxetable}
-
 
 \subsection{Grid-Based Retrieval}
 \label{sec:retrieval}

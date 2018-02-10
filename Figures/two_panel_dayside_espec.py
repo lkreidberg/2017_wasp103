@@ -65,8 +65,8 @@ def best_fit_bb(w, y, e, rprs):
         plt.axhline(chibest+1)
         plt.show()"""
         onesigma = Tbest - Ts[idx]
-	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
-	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest, outliers
+	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
+	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest, outliers
 	return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 
 
