@@ -11,6 +11,7 @@ import spiderman_lc
 from matplotlib import ticker
 import seaborn as sns
 from astropy.convolution import Gaussian1DKernel, convolve
+import scipy.stats as st
 
 sns.set_context("paper", font_scale=1.2)
 sns.set_style("white")
@@ -18,6 +19,11 @@ sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
 
 rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
+
+def get_significance(chisq, dof):
+        alpha = (1. - st.chi2.cdf(chisq, dof))/2.
+        z = st.norm.ppf(1.-alpha)
+        return z
 
 def blackbody(l,T): 
 	h = 6.62607e-34   #J/s
@@ -65,7 +71,8 @@ def best_fit_bb(w, y, e, rprs):
         plt.axhline(chibest+1)
         plt.show()"""
         onesigma = Tbest - Ts[idx]
-	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
+	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest/(len(y) - 1.), outliers
+	print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, get_significance(chibest,(len(y) - 1.)), outliers
 	#print "Best fit blackbody temp, chi2: ", Tbest,  "+/-", onesigma, chibest, outliers
 	return waves_hires, np.pi/1.e6*blackbody(waves_hires*1.0e-6, Tbest)/star_bb_hires*rprs**2
 

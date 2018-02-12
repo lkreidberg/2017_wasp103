@@ -20,7 +20,7 @@ wfc3_chi2 = []
 wfc3_aic = []
 wfc3_bic = []
 
-models = ["zhang", "hotspot_t", "spherical", "sincos"]
+models = ["zhang", "hotspot_t", "spherical", "sincos", "sph4"]
 path = "WFC3_best_fits/"
 for i, model in enumerate(models):
 	p = pickle.load(open(path+"bestfit_"+model+".pic", "rb")) 
@@ -29,6 +29,7 @@ for i, model in enumerate(models):
 	wfc3_chi2.append(m.chi2red)
 	wfc3_bic.append(m.chi2 + d.nfree_param*np.log(d.npoints))
 	wfc3_aic.append(m.chi2 + 2.*d.nfree_param)
+        print model, wfc3_bic[i]
 #	print m.chi2red, bic, aic
 
 wfc3_chi2 = np.array(wfc3_chi2)

@@ -57,45 +57,45 @@ Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J
 while executing---line 1775 of file aasjournal.bst
 Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
 while executing---line 1775 of file aasjournal.bst
-You've used 95 entries,
+You've used 105 entries,
             3222 wiz_defined-function locations,
-            1308 strings with 29732 characters,
-and the built_in function-call counts, 46738 in all, are:
-= -- 3642
-> -- 4015
-< -- 22
-+ -- 1350
-- -- 1492
-* -- 4226
-:= -- 8694
-add.period$ -- 98
-call.type$ -- 95
-change.case$ -- 586
-chr.to.int$ -- 91
-cite$ -- 99
-duplicate$ -- 1718
-empty$ -- 2669
-format.name$ -- 1585
-if$ -- 9258
+            1375 strings with 31612 characters,
+and the built_in function-call counts, 51029 in all, are:
+= -- 4019
+> -- 4299
+< -- 27
++ -- 1445
+- -- 1594
+* -- 4568
+:= -- 9464
+add.period$ -- 109
+call.type$ -- 105
+change.case$ -- 645
+chr.to.int$ -- 101
+cite$ -- 109
+duplicate$ -- 1896
+empty$ -- 2948
+format.name$ -- 1706
+if$ -- 10137
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 91
-newline$ -- 294
-num.names$ -- 381
-pop$ -- 827
+missing$ -- 101
+newline$ -- 325
+num.names$ -- 421
+pop$ -- 906
 preamble$ -- 2
-purify$ -- 584
+purify$ -- 643
 quote$ -- 0
-skip$ -- 1264
+skip$ -- 1405
 stack$ -- 0
-substring$ -- 1475
+substring$ -- 1642
 swap$ -- 19
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 849
+type$ -- 939
 warning$ -- 4
-while$ -- 343
+while$ -- 383
 width$ -- 0
-write$ -- 958
+write$ -- 1060
 (There were 18 error messages)
