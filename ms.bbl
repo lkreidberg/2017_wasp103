@@ -3,6 +3,12 @@
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\href{#1}{#1}}
 
+\bibitem[{Adcroft {et~al.}(2004)Adcroft, Campin, Hill, \&
+  Marshall}]{Adcroft2004}
+Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
+  Review, 132, 2845.
+\newblock \url{https://doi.org/10.1175/MWR2823.1}
+
 \bibitem[{{Ag{\'u}ndez} {et~al.}(2014){Ag{\'u}ndez}, {Parmentier}, {Venot},
   {Hersant}, \& {Selsis}}]{agundez14}
 {Ag{\'u}ndez}, M., {Parmentier}, V., {Venot}, O., {Hersant}, F., \& {Selsis},
@@ -37,6 +43,10 @@
   {Metchev}}]{bardalez14}
 {Bardalez Gagliuffi}, D.~C., {Burgasser}, A.~J., {Gelino}, C.~R., {et~al.}
   2014, \apj, 794, 143
+
+\bibitem[{{Batygin} {et~al.}(2013){Batygin}, {Stanley}, \&
+  {Stevenson}}]{batygin13}
+{Batygin}, K., {Stanley}, S., \& {Stevenson}, D.~J. 2013, \apj, 776, 53
 
 \bibitem[{{Beatty} {et~al.}(2017{\natexlab{a}}){Beatty}, {Madhusudhan},
   {Pogge}, {Chung}, {Bierlya}, {Gaudi}, \& {Latham}}]{beatty17a}
@@ -176,6 +186,11 @@ Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
 {Fortney}, J.~J., {Mordasini}, C., {Nettelmann}, N., {et~al.} 2013, \apj, 775,
   80
 
+\bibitem[{{Freedman} {et~al.}(2014){Freedman}, {Lustig-Yaeger}, {Fortney},
+  {Lupu}, {Marley}, \& {Lodders}}]{freedman14}
+{Freedman}, R.~S., {Lustig-Yaeger}, J., {Fortney}, J.~J., {et~al.} 2014, \apjs,
+  214, 25
+
 \bibitem[{{Gaia Collaboration} {et~al.}(2016){Gaia Collaboration}, {Prusti},
   {de Bruijne}, {Brown}, {Vallenari}, {Babusiaux}, {Bailer-Jones}, {Bastian},
   {Biermann}, {Evans}, \& et~al.}]{gaia16}
@@ -250,6 +265,9 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Knutson}, H.~A., {Charbonneau}, D., {Allen}, L.~E., {et~al.} 2007, \nat, 447,
   183
 
+\bibitem[{{Koll} \& {Komacek}(2018)}]{koll18}
+{Koll}, D.~D.~B., \& {Komacek}, T.~D. 2018, \apj, 853, 133
+
 \bibitem[{{Komacek} \& {Showman}(2016)}]{komacek16}
 {Komacek}, T.~D., \& {Showman}, A.~P. 2016, \apj, 821, 16
 
@@ -300,6 +318,9 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Fortney}, {Kreidberg}, {Madhusudhan}, {Showman}, \& {Diamond-Lowe}}]{line16}
 {Line}, M.~R., {Stevenson}, K.~B., {Bean}, J., {et~al.} 2016, \aj, 152, 203
 
+\bibitem[{{Lodders} \& {Fegley}(2002)}]{Lodders2002a}
+{Lodders}, K., \& {Fegley}, B. 2002, \icarus, 155, 393
+
 \bibitem[{{Loeb} \& {Gaudi}(2003)}]{loeb03}
 {Loeb}, A., \& {Gaudi}, B.~S. 2003, \apjl, 588, L117
 
@@ -323,12 +344,12 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Mansfield}, M., {Bean}, J.~B., {Line}, M., {Paramentier}, V., \& {Kreidberg},
   L. \noop{3001}submitted, Submitted to \apj
 
+\bibitem[{{Marley} \& {McKay}(1999)}]{Marley1999}
+{Marley}, M.~S., \& {McKay}, C.~P. 1999, \icarus, 138, 268
+
 \bibitem[{{McCullough} \& {MacKenty}(2012)}]{mccullough12}
 {McCullough}, P., \& {MacKenty}, J. 2012, {Considerations for using Spatial
   Scans with WFC3}, Tech. rep.
-
-\bibitem[{{Menou} \& {Rauscher}(2009)}]{menou09}
-{Menou}, K., \& {Rauscher}, E. 2009, \apj, 700, 887
 
 \bibitem[{{Mordasini} {et~al.}(2016){Mordasini}, {van Boekel}, {Molli{\`e}re},
   {Henning}, \& {Benneke}}]{mordasini16}
@@ -367,10 +388,24 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Reid}, I.~N., {Cruz}, K.~L., {Kirkpatrick}, J.~D., {et~al.} 2008, \aj, 136,
   1290
 
+\bibitem[{{Rogers}(2017)}]{rogers17}
+{Rogers}, T.~M. 2017, Nature Astronomy, 1, 0131
+
+\bibitem[{{Rogers} \& {Komacek}(2014)}]{rogers14a}
+{Rogers}, T.~M., \& {Komacek}, T.~D. 2014, \apj, 794, 132
+
+\bibitem[{{Rogers} \& {Showman}(2014)}]{rogers14}
+{Rogers}, T.~M., \& {Showman}, A.~P. 2014, \apjl, 782, L4
+
 \bibitem[{{Sheppard} {et~al.}(2017){Sheppard}, {Mandell}, {Tamburo}, {Gandhi},
   {Pinhas}, {Madhusudhan}, \& {Deming}}]{sheppard17}
 {Sheppard}, K.~B., {Mandell}, A.~M., {Tamburo}, P., {et~al.} 2017, \apjl, 850,
   L32
+
+\bibitem[{{Showman} {et~al.}(2013){Showman}, {Fortney}, {Lewis}, \&
+  {Shabram}}]{showman13}
+{Showman}, A.~P., {Fortney}, J.~J., {Lewis}, N.~K., \& {Shabram}, M. 2013,
+  \apj, 762, 24
 
 \bibitem[{{Showman} {et~al.}(2009){Showman}, {Fortney}, {Lian}, {Marley},
   {Freedman}, {Knutson}, \& {Charbonneau}}]{showman09}
@@ -422,6 +457,10 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   Varoquaux}]{van2011numpy}
 Van Der~Walt, S., Colbert, S.~C., \& Varoquaux, G. 2011, Computing in Science
   \& Engineering, 13, 22
+
+\bibitem[{{Visscher} {et~al.}(2006){Visscher}, {Lodders}, \&
+  {Fegley}}]{Visscher2006}
+{Visscher}, C., {Lodders}, K., \& {Fegley}, Jr., B. 2006, \apj, 648, 1181
 
 \bibitem[{{Wahhaj} {et~al.}(2011){Wahhaj}, {Liu}, {Biller}, {Clarke},
   {Nielsen}, {Close}, {Hayward}, {Mamajek}, {Cushing}, {Dupuy}, {Tecza},
