@@ -47,7 +47,7 @@ l1, l2, l3, l4 = 1.15, 1.3, 1.35, 1.5
 
 #WASP-103b spectra
 path = "W103_spectra/"
-Ts = [1920, 2410, 3010]
+Ts = [1880, 2400, 2930]
 files = ["phase_0.10_wfc3.txt", "phase_0.25_wfc3.txt", "phase_0.5_wfc3.txt"]
 
 star = np.genfromtxt(path+"wasp103_sed_fluxes.out")
@@ -56,7 +56,7 @@ star_flux = star[:,1]	                        #[ergs/s/cm^2]
 star_flux = star_flux*(470/10.)**2		#convert to absolute flux (10 pc)
 
 name = ["nightside", "quadrature", "dayside"]
-ylo = [0., 0.9, 2.8]
+ylo = [0., 0.8, 2.8]
 yhi = [1.15, 2.3, 4.3]
 
 plt.figure(figsize = (7.5, 3.5))
