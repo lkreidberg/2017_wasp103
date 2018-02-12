@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  12 FEB 2018 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  12 FEB 2018 18:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -652,7 +652,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 358.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<Figures/w103b_transmission_spectrum.pdf, id=823, 361.35pt x 216.81pt>
+<Figures/w103b_transmission_spectrum.pdf, id=828, 361.35pt x 216.81pt>
 File: Figures/w103b_transmission_spectrum.pdf Graphic file (type pdf)
 
 <use Figures/w103b_transmission_spectrum.pdf>
@@ -674,7 +674,7 @@ Underfull \hbox (badness 1067) in paragraph at lines 431--432
 \OT1/cmr/m/n/10 els to de-ter-mine self-consistent, radiative-convective
  []
 
-<Figures/xsec_FULL.pdf, id=918, 578.16pt x 433.62pt>
+<Figures/xsec_FULL.pdf, id=923, 578.16pt x 433.62pt>
 File: Figures/xsec_FULL.pdf Graphic file (type pdf)
 
 <use Figures/xsec_FULL.pdf>
@@ -700,7 +700,7 @@ Underfull \hbox (badness 1320) in paragraph at lines 444--445
 []\OT1/cmr/m/n/10 Figure[][]11[][] shows a sum-mary of the temperature-
  []
 
-<Figures/atmosphere_summary.pdf, id=945, 308.74174pt x 242.25566pt>
+<Figures/atmosphere_summary.pdf, id=950, 308.74174pt x 242.25566pt>
 File: Figures/atmosphere_summary.pdf Graphic file (type pdf)
 
 <use Figures/atmosphere_summary.pdf>
@@ -713,7 +713,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 447--448
  []
 
 
-<Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf, id=955, 549.25201pt x 549.2520
+<Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf, id=960, 549.25201pt x 549.2520
 1pt>
 File: Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf Graphic file (type pdf)
  <use Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf>
@@ -736,7 +736,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 461.
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 [15 <./Figures/WASP-103b_grid_DAYSIDE_stair_pairs.pdf>]
-<Figures/WASP-103b-NoClouds-Drag3-nit-LR.pdf, id=1160, 361.35pt x 252.945pt>
+<Figures/WASP-103b-NoClouds-Drag3-nit-LR.pdf, id=1165, 361.35pt x 252.945pt>
 File: Figures/WASP-103b-NoClouds-Drag3-nit-LR.pdf Graphic file (type pdf)
 
 <use Figures/WASP-103b-NoClouds-Drag3-nit-LR.pdf>
@@ -749,7 +749,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 491--492
  []
 
 [16 <./Figures/WASP-103b-NoClouds-Drag3-nit-LR.pdf>]
-<Figures/gcm_comparison.pdf, id=1190, 289.08pt x 433.62pt>
+<Figures/gcm_comparison.pdf, id=1195, 289.08pt x 433.62pt>
 File: Figures/gcm_comparison.pdf Graphic file (type pdf)
 
 <use Figures/gcm_comparison.pdf>
@@ -760,7 +760,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 501--502
 [][] 
  []
 
-<Figures/GCM_abundances.pdf, id=1191, 2041.6275pt x 1011.78pt>
+<Figures/GCM_abundances.pdf, id=1196, 2041.6275pt x 1011.78pt>
 File: Figures/GCM_abundances.pdf Graphic file (type pdf)
 
 <use Figures/GCM_abundances.pdf>
@@ -772,7 +772,7 @@ Overfull \hbox (2.34523pt too wide) in paragraph at lines 518--519
  []
 
 [17 <./Figures/gcm_comparison.pdf>]
-<Figures/spectra_comparison.pdf, id=1337, 542.025pt x 252.945pt>
+<Figures/spectra_comparison.pdf, id=1342, 542.025pt x 252.945pt>
 File: Figures/spectra_comparison.pdf Graphic file (type pdf)
 
 <use Figures/spectra_comparison.pdf>
@@ -819,10 +819,10 @@ fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (23 pages, 5891409 bytes).
+Output written on ms.pdf (23 pages, 5900468 bytes).
 PDF statistics:
- 1718 PDF objects out of 1728 (max. 8388607)
- 1062 compressed objects within 11 object streams
+ 1723 PDF objects out of 1728 (max. 8388607)
+ 1064 compressed objects within 11 object streams
  186 named destinations out of 1000 (max. 500000)
  87 words of extra memory for PDF output out of 10000 (max. 10000000)
 

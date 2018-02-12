@@ -81,7 +81,7 @@ def initialize_params(spider_params):
     return spider_params
 
 models = ["hotspot_t", "zhang", "spherical"] 
-labels = ["Two temp.", "Kinematic", "Sph. harmonics"] 
+labels = ["Two Temp.", "Kinematic", "Sph. Harmonics"] 
 path = "WFC3_best_fits/"
 waverange = [1.1e-6, 1.7e-6]                    #Spitzer Ch 2
 
@@ -183,10 +183,10 @@ for i, model in enumerate(models):
     if row == 0: plt.gca().set_xticklabels([])
 
 #plots GCM
-"""#GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-Drag3-NEW-OPA-nit-1036800.dat", delimiter = ",")
+GCM = np.genfromtxt("GCM_From_Vivien/PTprofiles-WASP-103b-TiO-fix-3-Drag3-NEW-OPA-nit-1036800.dat", delimiter = ",")
 ax = plt.subplot(gs[1,3])
-#Pref = 0.11542					#reference pressure in bars
-Pref = 0.010131
+Pref = 0.11542					#reference pressure in bars
+#Pref = 0.010131
 ind = GCM[:,3] == Pref
 lat, lon = GCM[ind,1], GCM[ind,2]
 Ts = GCM[ind,4]
@@ -197,7 +197,7 @@ im = plt.imshow(fluxes.T, aspect='auto', interpolation='bilinear', cmap=cmap, al
 plt.gca().text(-160, 60, "GCM", bbox={'facecolor':'white', 'alpha':0.9, 'pad':5}, fontsize=10) 
 plt.xticks([-180, -90,  0, 90, 180])
 plt.gca().set_yticklabels([])
-plt.xlabel("Longitude (deg)")"""
+plt.xlabel("Longitude (deg)")
 
 
 #formatting
