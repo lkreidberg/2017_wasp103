@@ -29,3 +29,7 @@ print "spherical - sincos", np.median(diff), 1.*sum(diff < 1.)/len(diff)
 
 diff = np.abs((h - sc)/np.sqrt(he**2 + sce**2))
 print "hotspot - sincos", np.median(diff), 1.*sum(diff < 1.)/len(diff)
+
+
+
+print "hostpot  - sincos all", diff, np.mean(diff[24:48]), len(diff)

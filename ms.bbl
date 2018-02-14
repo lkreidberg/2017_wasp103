@@ -197,6 +197,14 @@ Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
 {Gaia Collaboration}, {Prusti}, T., {de Bruijne}, J.~H.~J., {et~al.} 2016,
   \aap, 595, A1
 
+\bibitem[{{Geballe} {et~al.}(2002){Geballe}, {Knapp}, {Leggett}, {Fan},
+  {Golimowski}, {Anderson}, {Brinkmann}, {Csabai}, {Gunn}, {Hawley},
+  {Hennessy}, {Henry}, {Hill}, {Hindsley}, {Ivezi{\'c}}, {Lupton}, {McDaniel},
+  {Munn}, {Narayanan}, {Peng}, {Pier}, {Rockosi}, {Schneider}, {Smith},
+  {Strauss}, {Tsvetanov}, {Uomoto}, {York}, \& {Zheng}}]{geballe02}
+{Geballe}, T.~R., {Knapp}, G.~R., {Leggett}, S.~K., {et~al.} 2002, \apj, 564,
+  466
+
 \bibitem[{{Gillon} {et~al.}(2014){Gillon}, {Anderson}, {Collier-Cameron},
   {Delrez}, {Hellier}, {Jehin}, {Lendl}, {Maxted}, {Pepe}, {Pollacco},
   {Queloz}, {S{\'e}gransan}, {Smith}, {Smalley}, {Southworth}, {Triaud},
@@ -351,6 +359,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {McCullough}, P., \& {MacKenty}, J. 2012, {Considerations for using Spatial
   Scans with WFC3}, Tech. rep.
 
+\bibitem[{{McLean} {et~al.}(2003){McLean}, {McGovern}, {Burgasser},
+  {Kirkpatrick}, {Prato}, \& {Kim}}]{mclean03}
+{McLean}, I.~S., {McGovern}, M.~R., {Burgasser}, A.~J., {et~al.} 2003, \apj,
+  596, 561
+
 \bibitem[{{Mordasini} {et~al.}(2016){Mordasini}, {van Boekel}, {Molli{\`e}re},
   {Henning}, \& {Benneke}}]{mordasini16}
 {Mordasini}, C., {van Boekel}, R., {Molli{\`e}re}, P., {Henning}, T., \&
@@ -382,6 +395,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 
 \bibitem[{{Pont} {et~al.}(2006){Pont}, {Zucker}, \& {Queloz}}]{pont06}
 {Pont}, F., {Zucker}, S., \& {Queloz}, D. 2006, \mnras, 373, 231
+
+\bibitem[{{Reid} {et~al.}(2001){Reid}, {Burgasser}, {Cruz}, {Kirkpatrick}, \&
+  {Gizis}}]{reid01}
+{Reid}, I.~N., {Burgasser}, A.~J., {Cruz}, K.~L., {Kirkpatrick}, J.~D., \&
+  {Gizis}, J.~E. 2001, \aj, 121, 1710
 
 \bibitem[{{Reid} {et~al.}(2008){Reid}, {Cruz}, {Kirkpatrick}, {Allen},
   {Mungall}, {Liebert}, {Lowrance}, \& {Sweet}}]{reid08}
