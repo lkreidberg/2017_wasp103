@@ -74,7 +74,7 @@
 \affiliation{Anton Pannekoek Institute for Astronomy, University of Amsterdam, Science Park 904, 1098 XH Amsterdam, The Netherlands}
 
 \begin{abstract}
-	We present thermal phase curve measurements for the hot Jupiter WASP-103b observed with \emph{Hubble}/WFC3 and \emph{Spitzer}/IRAC. The dayside planet-to-star flux ratio is $0.151\pm0.015\%$, $0.446\pm0.038\%$, and $0.569\pm0.014\%$ in bandpasses centered at $1.4$, $3.6$, and $4.5\mu$m, respectively.  The phase curves have large amplitudes and negligible hotspot offsets, indicative of poor heat redistribution to the nightside.  We fit the phase variation with a range of climate maps and find that a spherical harmonics model generally provides the best fit. The phase-resolved spectra are consistent with blackbodies in the WFC3 bandpass, with brightness temperatures ranging from $1880\pm40$ K on the nightside to $2930 \pm 10$ K on the dayside. The dayside spectrum has a significantly higher brightness temperature in the \Spitzer\ bands, which we attribute to CO emission and a thermal inversion.  The inversion is not present on the nightside. The transmission spectrum is featureless, but consistent with the small features expected from cloud-free models. Using the dayside and nightside emission spectra, we retrieved the atmospheric composition with a 1D self-consistent modeling technique and found the atmosphere is moderately metal-enriched ($\mathrm{[M/H]} =  23^{+29}_{-13}\times$ solar) and the carbon-to-oxygen ratio is below 0.9 at $3\,\sigma$ confidence. In contrast to cooler hot Jupiters, we do not detect significant water absorption, which we attribute to partial H$_2$O dissociation and additional opacity from H- and trace amounts of hydrides/oxides.  We compare the phase curves to 3D general circulation models and find that atmospheric drag with a timescale of $10^4$ s is the best match to the data, suggesting the presence of a magnetic field with strength $\sim1$ Gauss.  We also compare the WASP-103b spectra to brown dwarfs and young directly imaged companions and find these more massive and self-luminous objects have significantly larger water features, indicating that surface gravity and irradiation environment play an important role in shaping the spectra of hot Jupiters. These results highlight the 3D structure of exoplanet atmospheres and illustrate the importance of phase curve observations for understanding their complex chemistry and physics.
+	We present thermal phase curve measurements for the hot Jupiter WASP-103b observed with \emph{Hubble}/WFC3 and \emph{Spitzer}/IRAC. The dayside planet-to-star flux ratio is $0.151\pm0.015\%$, $0.446\pm0.038\%$, and $0.569\pm0.014\%$ in bandpasses centered at $1.4$, $3.6$, and $4.5\mu$m, respectively.  The phase curves have large amplitudes and negligible hotspot offsets, indicative of poor heat redistribution to the nightside.  We fit the phase variation with a range of climate maps and find that a spherical harmonics model generally provides the best fit. The phase-resolved spectra are consistent with blackbodies in the WFC3 bandpass, with brightness temperatures ranging from $1880\pm40$ K on the nightside to $2930 \pm 40$ K on the dayside. The dayside spectrum has a significantly higher brightness temperature in the \Spitzer\ bands, which we attribute to CO emission and a thermal inversion.  The inversion is not present on the nightside. The transmission spectrum is featureless, but consistent with the small features expected from cloud-free models. Using the dayside and nightside emission spectra, we retrieved the atmospheric composition with a 1D self-consistent modeling technique and find the atmosphere is moderately metal-enriched ($\mathrm{[M/H]} =  23^{+29}_{-13}\times$ solar) and the carbon-to-oxygen ratio is below 0.9 at $3\,\sigma$ confidence. In contrast to cooler hot Jupiters, we do not detect significant water absorption, which we attribute to partial H$_2$O dissociation and additional opacity from H- and trace amounts of hydrides/oxides.  We compare the phase curves to 3D general circulation models and find that atmospheric drag with a timescale of $10^4$\,s is the best match to the data, suggesting the presence of a magnetic field with strength $\sim1$ Gauss.  We also compare the WASP-103b spectra to brown dwarfs and young directly imaged companions and find these more massive and self-luminous objects have significantly larger water features, indicating that surface gravity and irradiation environment play an important role in shaping the spectra of hot Jupiters. These results highlight the 3D structure of exoplanet atmospheres and illustrate the importance of phase curve observations for understanding their complex chemistry and physics.
 \end{abstract}
 
 \keywords{planets and satellites: individual (WASP-103b), planets and satellites: atmospheres}
@@ -358,7 +358,7 @@ We show the measured transmission spectrum in Figure\,\ref{fig:tspec}.  The spec
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{Figures/w103b_transmission_spectrum.pdf}
-\caption{The transmission spectrum of WASP-103b, corrected for planet nightside emission at 1700 K (blue points) and uncorrected (red points). The dark gray line is the model transmission spectrum from the $\tau_\mathrm{drag4}$ GCM. Atmospheric scale height $H$ is shown on the right y-axis, where $H = 5.5\times10^6$ m (assuming a mean molecular weight of 2.3 atomic mass units, surface gravity $g = 15.9$ m/s$^2$, and a temperature $T = 2410$ K).}
+\caption{The transmission spectrum of WASP-103b, corrected for planet nightside emission at 1700 K (blue points) and uncorrected (red points). The dark gray line is the model transmission spectrum from the $\tau_\mathrm{drag4}$ GCM, with squares indicating the model binned over the \Spitzer\ bandpasses. Atmospheric scale height $H$ is shown on the right y-axis, where $H = 5.5\times10^6$ m (assuming a mean molecular weight of 2.3 atomic mass units, surface gravity $g = 15.9$ m/s$^2$, and a temperature $T = 2410$ K).}
 \label{fig:tspec}
 \end{figure}
 
@@ -393,9 +393,11 @@ We characterized the planet's atmospheric composition by fitting 1D models to th
 
 \subsection{Blackbody Fits}
 \label{sec:bbfits}
-A blackbody is the simplest model for the planet's thermal emission and provides a useful first evaluation of the atmospheric properties. To calculate the best fit blackbody model, we assumed a planet-to-star radius ratio of 0.1146 and used a NextGen stellar spectrum interpolated to an effective temperature of 6110 K \citep{allard12}.  The best-fit blackbodies are shown in Figures \ref{fig:spectra} and \ref{fig:dayside}. The model fits the data fairly well: it is consistent with the data at the $3\,\sigma$ level for 70\% of the orbital phases. However, the \Spitzer\ data have higher brightness temperatures than the WFC3 data at phase 0.5, and lower brightness temperatures at phases $0.8 - 0.9$. These differences suggest the presence of an emission feature on the dayside at \Spitzer\ wavelengths, which transitions to an absorption feature on the nightside, perhaps indicating changes in thermal structure with longitude in the atmosphere.
+A blackbody is the simplest model for the planet's thermal emission and provides a useful first evaluation of the atmospheric properties. To calculate the best fit blackbody model, we assumed a planet-to-star radius ratio of 0.1146 and used a NextGen stellar spectrum interpolated to an effective temperature of 6110 K \citep{allard12}.  We calculated the best fit with a least-squares fitting routine. To determine uncertainties on the planet brightness temperature, we performed an MCMC analysis with free parameters for the planet temperature and the stellar $T_\mathrm{eff}$. We used a Gaussian prior on $T_\mathrm{eff}$ of $6110 \pm 160$ K \citep{gillon14}.  
 
-We also fit indepedent blackbody models to the \HST/WFC3 data and each \Spitzer\ channel. The resulting brightness temperatures are listed in Table\,\ref{table:teffs}. The WFC3 data agree well by a blackbody model at all orbital phases except phase 0.5 (consistent at better than $1.5\,\sigma$). The dayside has higher signal-to-noise than the other orbital phases, thanks to the two secondary eclipse observations from \cite{cartier17}. The more sophisticated grid-based retrieval (described in the next section) provides a better fit to the dayside.
+The best-fit blackbodies are shown in Figures \ref{fig:spectra} and \ref{fig:dayside}. The model fits the data fairly well: it is consistent with the data at the $3\,\sigma$ level for 70\% of the orbital phases. However, the \Spitzer\ data have higher brightness temperatures than the WFC3 data at phase 0.5, and lower brightness temperatures at phases $0.8 - 0.9$. These differences suggest the presence of an emission feature on the dayside at \Spitzer\ wavelengths, which transitions to an absorption feature on the nightside, perhaps indicating changes in thermal structure with longitude in the atmosphere.
+
+We also fit indepedent blackbody models to the \HST/WFC3 data and each \Spitzer\ channel. The resulting brightness temperatures and $1\,\sigma$ uncertainties are listed in Table\,\ref{table:teffs}. The WFC3 data agree well by a blackbody model at all orbital phases except phase 0.5 (consistent at better than $1.5\,\sigma$). The dayside has higher signal-to-noise than the other orbital phases, thanks to the two secondary eclipse observations from \cite{cartier17}. The more sophisticated grid-based retrieval (described in the next section) provides a better fit to the dayside.
 
 %This model performs well for some orbital phases, with $\chi^2_\nu$ ranging from 0.9 to 1.1 for phases $\phi = 0.1, 0.7$ and $0.8$. At other phases the blackbody model is a poorer fit, particularly to the \Spitzer\ data. For phases $0.2 - 0.6$, the \Spitzer\ eclipse depths are significantly larger than predicted for the best fit blackbody, suggesting the presence of an emission feature (due to CO, as we discuss in \S\,\ref{sec:retrieval}). On the nightside (phase $0.9$), the \Spitzer\ $4.5\,\mu$m eclipse depth is \emph{smaller} than predicted, suggesting an absorption feature. These differences indicate changes in thermal structure with longitude in the atmosphere.
 
@@ -404,25 +406,27 @@ We also fit indepedent blackbody models to the \HST/WFC3 data and each \Spitzer\
 %WFC3: consistent with a blackbody
 
 \begin{deluxetable}{LLLLL}
-	\tablecolumns{5}
-	\tablewidth{0pt}
-	\tablecaption{Phase-resolved Brightness Temperatures \label{table:teffs}}
-	\tablehead{
-		\colhead{Orbital Phase} & \colhead{$T_\mathrm{b}$} & \colhead{$T_\mathrm{b}$} & \colhead{$T_\mathrm{b}$} & \colhead{$\chi^2_\nu$}\tablenotemark{1} \\
-	\colhead{\,} & \colhead{WFC3} & \colhead{Ch. 1} & \colhead{Ch. 2} & \colhead{(9 dof)}}
-		\startdata
-		0.06 - 0.15 & 1883 \pm 41 & 1523 \pm 158 & 1589 \pm 98 & 0.7 \\
-		0.15 - 0.25 & 2208 \pm 24 & 2612 \pm 104 & 2299 \pm 78 & 0.9 \\
-		0.25 - 0.35 & 2587 \pm 16 & 2926 \pm 95 & 2592 \pm 67 & 1.5 \\
-		0.35 - 0.44 & 2831 \pm 11 & 2834 \pm 93 & 2976 \pm 61 & 1.5 \\
-		0.44 - 0.56 & 2933 \pm 8 & 2995 \pm 141 & 3154 \pm 48 & 2.8 \\
-		0.56 - 0.65 & 2811 \pm 11 & 2631 \pm 96 & 2891 \pm 63 & 2.0 \\
-		0.65 - 0.75 & 2572 \pm 15 & 2708 \pm 101 & 2421 \pm 78 & 1.3 \\
-		0.75 - 0.85 & 2263 \pm 22 & 1952 \pm 117 & 1939 \pm 83 & 1.3 \\
-		0.85 - 0.94 & 1987 \pm 34 & 1594 \pm 150 & 1288 \pm 118 & 0.6 \\
-		\enddata
-		\tablenotetext{1}{$\chi^2_\nu$ values are for the fits to the WFC3 data only.}
-	\end{deluxetable}
+\tablecolumns{5}
+\tablewidth{0pt}
+\tablecaption{Phase-resolved Brightness Temperatures \label{table:teffs}}
+\tablehead{
+\colhead{Orbital Phase} & \colhead{$T_\mathrm{b}$} & \colhead{$T_\mathrm{b}$} & \colhead{$T_\mathrm{b}$} & \colhead{$\chi^2_\nu$\tablenotemark{1}} \\
+\colhead{\,} & \colhead{WFC3} & \colhead{Ch. 1} & \colhead{Ch. 2} & \colhead{(9 dof)}}
+\startdata
+0.06 - 0.15 & 1883 \pm 41 & 1523 \pm 153 & 1589 \pm 105 & 0.7 \\
+0.15 - 0.25 & 2208 \pm 33 & 2612 \pm 117 & 2299 \pm 100 & 0.9 \\
+0.25 - 0.35 & 2587 \pm 37 & 2926 \pm 114 & 2592 \pm 96 & 1.5 \\
+0.35 - 0.44 & 2831 \pm 39 & 2834 \pm 111 & 2976 \pm 93 & 1.5 \\
+0.44 - 0.56 & 2933 \pm 41 & 2995 \pm 159 & 3154 \pm 99 & 2.8 \\
+0.56 - 0.65 & 2811 \pm 39 & 2631 \pm 110 & 2891 \pm 97 & 2.0 \\
+0.65 - 0.75 & 2572 \pm 36 & 2708 \pm 117 & 2421 \pm 100 & 1.3 \\
+0.75 - 0.85 & 2263 \pm 33 & 1952 \pm 125 & 1939 \pm 99 & 1.3 \\
+0.85 - 0.94 & 1987 \pm 37 & 1594 \pm 145 & 1288 \pm 118 & 0.6 \\
+\enddata
+\tablenotetext{1}{$\chi^2_\nu$ values are for the fits to the WFC3 data only.}
+\end{deluxetable}
+
+
 
 \subsection{Grid-Based Retrieval}
 \label{sec:retrieval}
@@ -538,8 +542,8 @@ We find that the $A_1$ and $A_2$ values are significantly lower for WASP-103b at
 	\colhead{\,} & \colhead{Object} & \colhead{$T_\mathrm{eff}$ (K)} & \colhead{log\,$g$ (cgs)} & \colhead{H$_2$O A$_1$} & \colhead{H$_2$O A$_2$}}
 		\startdata
 		Hot Jupiter & W103b night & 1880 \pm 40 & 3.2 \pm 0.04 & 0.07 \pm 1.8\mathrm{e}-01 & -0.00 \pm 1.6\mathrm{e}-01 \\
-		\, & W103b quadrature & 2400 \pm 20 & 3.2 \pm 0.04 & -0.14 \pm 7.8\mathrm{e}-02 & -0.01 \pm 6.7\mathrm{e}-02 \\
-		\, & W103b dayside & 2930 \pm 10 & 3.2 \pm 0.04 & 0.04 \pm 1.4\mathrm{e}-02 & 0.15 \pm 1.2\mathrm{e}-02 \\
+		\, & W103b quadrature & 2400 \pm 40 & 3.2 \pm 0.04 & -0.14 \pm 7.8\mathrm{e}-02 & -0.01 \pm 6.7\mathrm{e}-02 \\
+		\, & W103b dayside & 2930 \pm 40 & 3.2 \pm 0.04 & 0.04 \pm 1.4\mathrm{e}-02 & 0.15 \pm 1.2\mathrm{e}-02 \\
 		Brown Dwarf & 2MASS J1320+0409 & 1880 \pm 70 & 5.19 \pm 0.16 & 0.21 \pm 6.3\mathrm{e}-04 & -0.06 \pm 5.0\mathrm{e}-04 \\
 		\, & 2MASS J0428-2253 & 2430 \pm 80 & 5.22 \pm 0.09 & 0.16 \pm 1.2\mathrm{e}-04 & -0.03 \pm 1.0\mathrm{e}-04 \\
 		\, & 2MASS J0003-2822 & 2890 \pm 80 & 5.18 \pm 0.04 & 0.26 \pm 1.3\mathrm{e}-04 & 0.10 \pm 1.1\mathrm{e}-04 \\
@@ -555,10 +559,10 @@ We find that the $A_1$ and $A_2$ values are significantly lower for WASP-103b at
 We observed thermal phase curves of the hot Jupiter WASP-103b measured with \HST/WFC3 time series spectroscopy ($1.15 - 1.65\,\mu$m) and \Spitzer/IRAC broadband photometry ($3.6$ and $4.6\,\mu$m bands). Here we summarize our conclusions about the atmosphere based on these measurements.
 
 \begin{itemize}
-	\item{The dayside planet-to-star flux is $0.151\pm0.015\%$, $0.446\pm0.38\%$, and $0.569\pm0.014\%$ in the WFC3 bandpass, \Spitzer\ $3.6$, and \Spitzer\ $4.5\mu$m, respectively.  The best fit blackbody to the WFC3 dayside spectrum has a brightness temperature of $2930 \pm 10$ K, making WASP-103b among the hottest exoplanets ever observed.}
+	\item{The dayside planet-to-star flux is $0.151\pm0.015\%$, $0.446\pm0.38\%$, and $0.569\pm0.014\%$ in the WFC3 bandpass, \Spitzer\ $3.6$, and \Spitzer\ $4.5\mu$m, respectively.  The best fit blackbody to the WFC3 dayside spectrum has a brightness temperature of $2930 \pm 40$ K, making WASP-103b among the hottest exoplanets ever observed.}
 	\item{The phase curves have large amplitudes ($0.8 -0.9\times$ the secondary eclipse depth), and small offsets in peak brightness from the substellar point (consistent with zero degrees at all wavelengths). These characteristics indicate inefficient redistribution of heat to the nightside, as seen in other very hot Jupiters \citep{komacek17}.} 
 	\item{We fit the phase variation with the \texttt{spiderman} package \citep{louden17} to evaluate different models of the planet's climate, including a two-temperature map, a physically-motivated kinematic map, and spherical harmonics. The spherical harmonic temperature map generally provides the best fit to the data; however, all the maps produce reasonable fits ($\chi^2_\nu$ near unity), and there are large differences in temperature between them (up to 1000 K at a given latitude/longitude). Breaking the degeneracy between different climate maps will require higher precision phase curves and/or secondary eclipse mapping \citep[e.g.][]{dewit12}.}
-\item{We calculated phase-resolved spectra in ten orbital phase bins. The \HST/WFC3 spectra are consistent with  blackbody emission from the planet at all orbital phases. The best fit brightness temperatures ranges from $1880\pm40$ K (phase $\phi = 0.1$) to $2930\pm10$ K on the dayside. We attribute the absence of water features at WFC3 wavelengths to (1) H$_2$O dissociation on the dayside and (2) additional near-IR opacity from H-, TiO/VO and FeH.}
+\item{We calculated phase-resolved spectra in ten orbital phase bins. The \HST/WFC3 spectra are consistent with  blackbody emission from the planet at all orbital phases. The best fit brightness temperatures ranges from $1880\pm40$ K (phase $\phi = 0.1$) to $2930\pm40$ K on the dayside. We attribute the absence of water features at WFC3 wavelengths to (1) H$_2$O dissociation on the dayside and (2) additional near-IR opacity from H-, TiO/VO and FeH.}
 \item{The \Spitzer\ data are \emph{not} consistent with the best fit blackbody to the WFC3 data: they have a higher brightness temperature at phases $\phi = 0.2 - 0.5$, which transitions to a lower brightness temperature on the nightside ($\phi = -0.2 - 0.1$). These characteristics are likely due to CO features in the infrared and a temperature inversion on the dayside but not the nightside.}
 \item{The measured transmission spectrum is featureless (after correcting for nightside emission from the planet). 3D model predict water features in transmission that could be detected with future high precision observations.}
 	\item{We characterized the composition with a 1D grid-based retrieval that assumes thermochemical and radiative-convective equilibrium. The atmosphere is moderately metal-enriched ($23^{+29}_{-13}\times$ solar; and $>1\times$ solar at $3\,\sigma$ confidence). This value is somewhat higher than what is observed for other gas giants \citep[e.g.][]{wong04, kreidberg14b}, but may be indicative of intrinsic scatter in the relationship between atmospheric metallicity and planet mass predicted by theoretical models \citep{fortney13, mordasini16}. However, the metallicity is strongly sensitive to the $4.5\,\mu$m \Spitzer\ eclipse depth, and additional observations would be useful in confirming the metal enhancement.  In addition to metallicity, we also infer an upper limit on the carbon-to-oxygen ratio of 0.9 ($3\,\sigma$ confidence). This estimate agrees with expectations from planet formation models that pollution from water ice in planetesimals leads to $\mathrm{C/O} < 1$ in gas giant atmospheres \citep{mordasini16, espinoza17}. The best fit temperature pressure profile has a thermal inversion from $\sim10^{-2} - 10^{-3}$ bars due to TiO/VO absorption at high altitudes.} 
