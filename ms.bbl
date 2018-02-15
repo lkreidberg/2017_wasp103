@@ -218,6 +218,11 @@ Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
   Aeronautics and Space Administration, Office of Management, Scientific and
   Technical Information Program)
 
+\bibitem[{{Harrington} {et~al.}(2006){Harrington}, {Hansen}, {Luszcz},
+  {Seager}, {Deming}, {Menou}, {Cho}, \& {Richardson}}]{harrington06}
+{Harrington}, J., {Hansen}, B.~M., {Luszcz}, S.~H., {et~al.} 2006, Science,
+  314, 623
+
 \bibitem[{{Hayes}(1985)}]{1985IAUS..111..225H}
 {Hayes}, D.~S. 1985, in IAU Symposium, Vol. 111, Calibration of Fundamental
   Stellar Quantities, ed. D.~S. {Hayes}, L.~E. {Pasinetti}, \& A.~G.~D.
@@ -267,11 +272,6 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   {Liebert}, {Allard}, \& {Wehrse}}]{kirkpatrick93}
 {Kirkpatrick}, J.~D., {Kelly}, D.~M., {Rieke}, G.~H., {et~al.} 1993, \apj, 402,
   643
-
-\bibitem[{{Knutson} {et~al.}(2007){Knutson}, {Charbonneau}, {Allen}, {Fortney},
-  {Agol}, {Cowan}, {Showman}, {Cooper}, \& {Megeath}}]{knutson07}
-{Knutson}, H.~A., {Charbonneau}, D., {Allen}, L.~E., {et~al.} 2007, \nat, 447,
-  183
 
 \bibitem[{{Koll} \& {Komacek}(2018)}]{koll18}
 {Koll}, D.~D.~B., \& {Komacek}, T.~D. 2018, \apj, 853, 133

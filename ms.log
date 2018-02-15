@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 FEB 2018 08:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 FEB 2018 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -536,7 +536,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 122--123
  []
 
 [4 <./Figures/photometry-eps-converted-to.pdf>]
-<Figures/fig2.pdf, id=221, 433.62pt x 216.81pt>
+<Figures/fig2.pdf, id=222, 433.62pt x 216.81pt>
 File: Figures/fig2.pdf Graphic file (type pdf)
  <use Figures/fig2.pdf>
 Package pdftex.def Info: Figures/fig2.pdf used on input line 163.
@@ -546,7 +546,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 163--164
 [][] 
  []
 
-<Figures/fig3.pdf, id=226, 361.35pt x 505.89pt>
+<Figures/fig3.pdf, id=227, 361.35pt x 505.89pt>
 File: Figures/fig3.pdf Graphic file (type pdf)
  <use Figures/fig3.pdf>
 Package pdftex.def Info: Figures/fig3.pdf used on input line 169.
@@ -572,7 +572,7 @@ Underfull \hbox (badness 1622) in paragraph at lines 189--190
 t-ics with the POET
  []
 
-[6 <./Figures/fig3.pdf>] <Figures/fig4.pdf, id=366, 361.35pt x 433.62pt>
+[6 <./Figures/fig3.pdf>] <Figures/fig4.pdf, id=367, 361.35pt x 433.62pt>
 File: Figures/fig4.pdf Graphic file (type pdf)
 
 <use Figures/fig4.pdf>
@@ -583,7 +583,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 210--211
 [][] 
  []
 
-<Figures/fig5.pdf, id=367, 542.025pt x 325.215pt>
+<Figures/fig5.pdf, id=368, 542.025pt x 325.215pt>
 File: Figures/fig5.pdf Graphic file (type pdf)
  <use Figures/fig5.pdf>
 Package pdftex.def Info: Figures/fig5.pdf used on input line 217.
@@ -599,13 +599,13 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 265.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<Figures/fig6.pdf, id=516, 1011.78pt x 361.35pt>
+<Figures/fig6.pdf, id=517, 1011.78pt x 361.35pt>
 File: Figures/fig6.pdf Graphic file (type pdf)
  <use Figures/fig6.pdf>
 Package pdftex.def Info: Figures/fig6.pdf used on input line 270.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
-<Figures/fig7.pdf, id=517, 722.7pt x 240.65909pt>
+<Figures/fig7.pdf, id=518, 722.7pt x 240.65909pt>
 File: Figures/fig7.pdf Graphic file (type pdf)
  <use Figures/fig7.pdf>
 Package pdftex.def Info: Figures/fig7.pdf used on input line 276.
@@ -615,7 +615,7 @@ Underfull \hbox (badness 10000) detected at line 302
 $\OT1/cmr/m/n/9 1$
  []
 
-<Figures/fig8.pdf, id=519, 578.16pt x 216.81pt>
+<Figures/fig8.pdf, id=520, 578.16pt x 216.81pt>
 File: Figures/fig8.pdf Graphic file (type pdf)
  <use Figures/fig8.pdf>
 Package pdftex.def Info: Figures/fig8.pdf used on input line 308.
@@ -644,7 +644,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 358.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<Figures/fig9.pdf, id=816, 361.35pt x 216.81pt>
+<Figures/fig9.pdf, id=817, 361.35pt x 216.81pt>
 File: Figures/fig9.pdf Graphic file (type pdf)
  <use Figures/fig9.pdf>
 Package pdftex.def Info: Figures/fig9.pdf used on input line 362.
@@ -664,7 +664,7 @@ Underfull \hbox (badness 1067) in paragraph at lines 433--434
 \OT1/cmr/m/n/10 els to de-ter-mine self-consistent, radiative-convective
  []
 
-<Figures/fig10.pdf, id=912, 578.16pt x 433.62pt>
+<Figures/fig10.pdf, id=913, 578.16pt x 433.62pt>
 File: Figures/fig10.pdf Graphic file (type pdf)
  <use Figures/fig10.pdf>
 Package pdftex.def Info: Figures/fig10.pdf used on input line 439.
@@ -769,8 +769,8 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 584.
  ) 
 Here is how much of TeX's memory you used:
  9471 strings out of 492995
- 133152 string characters out of 6132704
- 313226 words of memory out of 5000000
+ 133167 string characters out of 6132704
+ 313218 words of memory out of 5000000
  12719 multiletter control sequences out of 15000+600000
  15294 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -799,7 +799,7 @@ fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (23 pages, 5667250 bytes).
+Output written on ms.pdf (23 pages, 5668277 bytes).
 PDF statistics:
  1825 PDF objects out of 2073 (max. 8388607)
  1135 compressed objects within 12 object streams

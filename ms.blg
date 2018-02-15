@@ -59,32 +59,32 @@ Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J
 while executing---line 1775 of file aasjournal.bst
 You've used 108 entries,
             3222 wiz_defined-function locations,
-            1395 strings with 32780 characters,
-and the built_in function-call counts, 52865 in all, are:
-= -- 4144
-> -- 4497
+            1396 strings with 32791 characters,
+and the built_in function-call counts, 52986 in all, are:
+= -- 4158
+> -- 4511
 < -- 27
-+ -- 1512
-- -- 1668
-* -- 4753
-:= -- 9816
++ -- 1519
+- -- 1675
+* -- 4763
+:= -- 9837
 add.period$ -- 112
 call.type$ -- 108
-change.case$ -- 666
+change.case$ -- 673
 chr.to.int$ -- 104
 cite$ -- 112
 duplicate$ -- 1950
 empty$ -- 3033
-format.name$ -- 1780
-if$ -- 10489
+format.name$ -- 1786
+if$ -- 10509
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 104
 newline$ -- 334
 num.names$ -- 433
-pop$ -- 936
+pop$ -- 943
 preamble$ -- 2
-purify$ -- 664
+purify$ -- 671
 quote$ -- 0
 skip$ -- 1445
 stack$ -- 0
@@ -95,7 +95,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 966
 warning$ -- 4
-while$ -- 394
+while$ -- 395
 width$ -- 0
 write$ -- 1090
 (There were 18 error messages)
