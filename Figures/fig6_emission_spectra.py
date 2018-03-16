@@ -235,8 +235,11 @@ for i in range(1, k):
 		wave_hires, model_hires = best_fit_bb(waves, (spectra[:,i-1,0]-1.)*(1+np.array(dilution)), spectra[:,i-1,1], rprs)
 		model_hires *= 1.e3
 		plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
+                bbmin = np.min(model_hires)
+                #plt.plot(np.array([4., 4.]), np.array([bbmin, bbmin+ 0.1]))
+                plt.axhline(1, linestyle = 'dotted', color = '0.7')
 
-                correction_factor = 1.096
+                correction_factor = 1.096           #to account for the fact that Vivien used a different rp/rs
                 if counter < 5: 
                     plt.plot(GCM[:,0], GCM[:,counter]*1e3*correction_factor, color = 'r')
                     print phase
@@ -273,6 +276,7 @@ for i in range(1, k):
 	if (col==0)&(row ==0): ymin *= 0.7
 
 	plt.ylim(ymin, ymax)
+	#plt.ylim(0.02, 5.1)
 	if row==0: plt.gca().set_xticklabels([])
 	
 	

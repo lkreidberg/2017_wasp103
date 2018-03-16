@@ -1,0 +1,149 @@
+Referee Report
+Reviewer's Comments:
+This paper seeks to characterize WASP-103b, a hot Jupiter that belongs to the relatively rarer population that reside even closer to their star and are thus much more highly irradiated. The planet is slightly inflated (1.5 R_J), which makes it more amenable towards follow up observations of its atmosphere.
+
+The authors have presented a very extensive dataset using resources from both the Hubble Space Telescope as well as Spitzer in order to place constraints on its atmosphere throughout its orbital phase (both night side and day side of the planet).
+
+I am impressed with the quality of the data and the analysis and am happy to see such an in-depth study on an individual planet. I have some (mostly minor) comments and concerns for the paper, which I detail below. I have tried to organize these comments into Major and Minor sections and go chronologically with the paper, although this is not strictly the case and I hope that it is organized well enough to not be annoying to follow and address.
+
+After writing this report, I realize that I've been pretty long-winded in my comments. I do not wish to imply that I do not like this paper or the extensive work that has gone into it. I think this is a great paper and deserving of publication after some changes have been made. And I think ultimately this report could have been half as long if I didn't babble as much as I do.
+
+
+===============================================
+Organization
+1. In section 4.3, the authors say that the spherical harmonic map is in good agreement with the blackbody fits to phased resolved spectra, which they reference later in the paper. I think the paper would be better organized, if they wish to cite this agreement, by putting the phased resolved spectral fits first, before Section 4.3 Climate. This isn't necessary however; I understand there are several different, quasi-independent threads of thought in this paper and it's not going to flow perfectly all the way through.
+
+===============================================
+Major Comments
+
+General Comments:
+1. No table listing the major parameters of the system is available. It would be nice to have a table like this (with the citation to the discovery paper listed) for easy reference. It was annoying to have to go somewhere else (or wait until a plane landed) and dig around to find information such as the stellar mass/radius, etc. since it was not easily accessible in this paper. 
+
+
+
+
+Specific Comments:
+
+1. In section 2.2 (Spitzer data reduction), the authors say they used the POET pipeline and reference Stevenson et al. 2012. However, I would like more detail to be given than just the reference and few details presented here. I had to go look at the referenced paper to determine that the technique is BLISS Mapping (though this is also mentioned later in 3.2.2 along with a few other details). 
+
+Particularly, when selecting aperture sizes, how are the pixels partially within the aperture weighted? Are they weighted by the portion of the pixel within the aperture, or is this multiplied by a sensitivity map / or the portion of an estimated PSF that falls in the pixel? This is not stated later in 3.2.2.
+
+Some of the information of the reduction is found within Cubillos et al. 2013, which the authors have cited. However, this is mixed in with analysis specific to the object in that system. This paper also notes that the POET pipeline has several 'options' to choose from along the way in the reduction. 
+
+Therefore, I think section 2.2 should be significantly expanded (or this info should be in 3.2.2) to explain what the authors have done to reduce the Spitzer data so that it is more easily reproduced. Especially since many people (and this referee in particular) are much more familiar with PLD methods rather than BLISS mapping type methods.
+
+
+
+2. Similarly, in section 2.3 the authors state at the end of paragraph 1 "The nightly observations were corrected for bias, flat-fielding, pier-side offset, and differential atmospheric extinction". I would insist that more details are provided about this reduction. Bias and flat-fielding are straightforward and likely don't need additional explanation but the pier-side offset and the differential atmospheric extinction portion could use some more explanation:
+
+a) Is the "pier-side offset" a singular term (constant) or is it a more general correction that's a function of the tilt of the telescope to account for flexure? Was it measured or is it calculated? etc.
+
+b) I have similar questions for the differential atmospheric extinction. Is this a linear term with airmass? Quadratic? Is it measured from the data as a correction or is it calculated? What form does it take? Is it something like (X-1) * (color) where X is the airmass and color is some determination of color from catalogs?
+
+More detail on these corrections is warranted.
+
+
+
+3. Figure 1 and associated discussion: Please include separate panels for the reference star time series. Since only 6 reference stars were used, these can all be accommodated with one extra panel with different reference stars offset from each other.
+
+
+4. Section 3.1, paragraph 2: The authors state that they fixed the orbital period, inferior conjunction time, inclination and a/R* to the values in Southworth et al. (2015). Southworth et al. (2015) collected several ground based transits with GROND (which has an observing cadence of approximately 1 minute). However, Spitzer's observing cadence is 12 seconds for this object (and does not observe through an atmosphere), so I would think that the Spitzer values fit for these parameters would be better. The authors state that the 4.5 micron data are consistent with the Southworth et al. parameters, which justified holding the parameters fixed. My question for the authors is: Were the Spitzer parameters better? This is not mentioned, but it would not surprise me if the transit parameters were better (or at least less systematically correlated), and therefore those should be the ones used rather than the Southworth et al. parameters.
+
+Additionally, the authors have collected transit data but all of the plots shown use y-scales that don't show the transit. I think a transit plot would be nice, just to see what the data even look like.
+
+5. Section 3.1, final paragraph: The authors state the uncertainty on the companion star flux contribution is less than 1%. 1% of what? Is the error less than 1% of the total flux in the system (since WASP-103 is bright?) Or are the authors stating that they have less than 1% photometry on the magnitude of the contaminating star. If the latter, I find that difficult to believe - getting 1% absolute photometry is hard and I would be interested in the details. If it's the former (or something else), please include a couple words to clarify.
+
+
+6. Figure 3: This figure doesn't seem to be very useful. The large amplitude of the systematics of Hubble observations and Spitzer observations are well known, and visualizing them here doesn't add much to the discussion. I also do not like that the panels are stacked but the x-axis is in units of "time since the first exposure", since these observations were not taken at the same time, but the visual presentation implies as such. Finally (and this is a general complaint), the unbinned Spitzer data is never shown. One of the strengths of Spitzer is it's rapid cadence, and yet Figure 3 has already binned the data to 15 minute segments. It would be useful (as has been done in other papers) to show the unbinned time series with some suitable alpha to make all the data visible and then overplot a binned version on top of that. 
+
+If the authors opt to keep Figure 3 (I think Figure 5 on its own is sufficient with some changes), I would like to see the unbinned data in a plot, and the x-axis changed to something more suitable (Time or Phase).
+
+7. In section 3.3, the authors state that for a subset of cases an MCMC was used to determine parameter uncertainties. Which subset? How were they chosen?
+
+8. Section 3.4: The authors mention that the RMS of the white light curve was larger than predicted based on the photon noise and the spectral curves. The suggested option "imperfect modeling of the astrophysical signal or instrumental systematics" is too generic a statement and should be deleted. Also, the loss of flux outside of the extraction window option is only relevant for the most blue and most red spectral bins. The authors state that they do not further explore this as the wavelength dependent data do reach the photon limit.
+
+I disagree with this approach. The fact that if you divide up the data into enough bins that systematic effects are no longer significant does not make them unimportant - especially when conclusions are being drawn from the total spectrum which is obtained by using all of the data. If the white light curve does not follow the photon noise limit, then this implies that excess noise in each wavelength bin (while not significant on its own), is adding constructively with that from other bins. This might imply a color dependent systematic, which would affect the results presented here.
+
+More discussion here is warranted to show conclusively that the larger than predicted noise is not biasing the data or results. (This may be as simple as showing that other works show similar effects or that there are other works with elevated red noise in all channels but have shown that this does not affect the end results).
+
+9. Figure 5: There are several things with the figure that I would like clarified or changed. 
+
+First, for visual comparison purposes, I would like the y-axes for each panel to be on the same scale. The data are presented in order to facilitate quick by-eye comparison in the different wavelengths, but the changing y-scale between the Spitzer and Hubble data obscure this fact. 
+
+Second, the bin size changed between this figure and figure 3, although this is never stated directly. In Figure 3, the bin sizes were 15 minutes. In Figure 5, they are now 44 minutes (the authors state 30 uniformly spaced bins, which this translates to). Why the change in bin size? and what motivated the bin size choice here? The authors should pick one bin size throughout unless there is good reason to change it figure to figure
+
+Finally, I would like to see the unbinned but systematic corrected data here or as a separate figure. As stated previously, one of the strengths of spitzer is its high cadence. It is possible to make a plot with all the unbinned data shown with some choice of transparency alpha and then the current binned plots superimposed on top of that (as has been done in other works). This will allow the readers to see the actual underlying data and what is actually being binned together and whether there might be systematics being averaged out.
+
+
+10. Figure 6: Here again, I would like to see a different version or this version changed where the y-scaled on all of the plots are the same. It's hard to interpret the figure and the plots when having to mentally account for the changing y-scales for each of the different phases shown.
+
+
+11. Section 4.3: It is not clear why the bias would be 100 ppm if the phase variation was absorbed into the systematics model, as the phase variation is at the 0.0015 level as shown in Figure 7, which is significantly bigger. A little more explanation is needed as to how this number was obtained
+
+
+12. Section 5.1: The authors state that the Spitzer data have higher brightness temperatures than the WFC data at phase 0.5 and lower brightness temperatures at 0.8-0.9, which they interpret as an emission feature on the day side and absorption feature on the night side of the planet.
+
+However, in Table 6, in the 0.44-0.56 bin, the brightness temperature is 2933 +/- 41 at WFC3 and 2995 +/- 159 and 3154 +/- 99 at Ch1 and Ch2 wavelengths. Therefore, the differences at these wavelengths don't seem to be formally significantly different from each other. 
+
+Similarly, the differences at phase 0.06-0.15 only seem to be marginally significantly different from each other as stated in the text. 
+
+To contradict this, at phase 0.15-0.25 (when there is still substantially more night side than day side present, the Ch. 1 brightness temperature is brighter than the WFC3 data (the Ch. 2 brightness temperature is about the same as the WFC3 data).
+
+To me, this indicates that the nice clean story presented by the authors of a sharp contrast between day side behavior and night side behavior (and interpretation of an emission feature) is incorrect.
+
+This has significant consequences for the rest of the paper, which relies on this interpretation to estimate [M/H], etc. Therefore I request the authors to more robustly argue that the brightness temperature are indeed significantly different between the nightside and dayside of the planet, put a confidence value on this difference, and explain why many of the intermediate phases show different behavior than what is suggested in the text for the nightside-dayside dichotomy.
+
+13. Section 5.2.1: Dayside spectrum - Which spectrum in specific are the authors trying to fit. Are you all only trying to fit the single binned spectrum overlapping with phase 0.5? Or are you all also fitting other phases that are dominated by day side emission? Please be clear
+
+I also realize that the content of this section may change depending on the previous comments regarding the interpretation of the 4.5 micron "emission feature". I think regardless of the outcome, it should be made clear how critically the metallicity figure that is obtained depends on accurately determining the strength of the emission at 4.5 microns and that if it is due to systematics that this analysis no longer applies. 
+
+14. The authors close section 5.2.1 with a list of caveats about the error bars on this section and how the inferred [M/H] and [C/O] may be heavily skewed by the one 4.5 micron data point (from phase 0.5? or other bin? see previous comment). These caveats need to be more prominent considering how serious they may be to the interpretation. I think they need to be present in the abstract, and also they need to be bulleted here in the relevant section so that they are easy to catch for those that skim the paper instead of read it in depth.
+
+15. Section 5.2.2: Nightside spectrum. The authors fit a nightside spectrum at phase 0.1. One easy thing to do for comparison and to estimate or show error bars is to also fit a nightside spectrum at phase 0.9, which should be symmetric and obtain the same or similar results. I would ask that the authors please do this and report the results. I realize it might not be interesting because the fit already presented is not able to say much about the metallicity or the C/O ratio. This may also be a useful exercise for the dayside spectrum (fit at phase 0.4 and phase 0.6, or something similar).
+
+16. Section 6: The GCM used assumes a solar composition, but the authors argued earlier in the paper that WASP-103b's atmosphere is enhanced in metallicity. So why make this choice? Does the GCM not allow you to dial up the metallicity? This isn't explained. Later the authors also run an enhanced metallicity ([M/H] = 0.5) simulation with different drag coefficients. However, the reasons behind these different model choices for comparisons is never explained. There should be more text towards this end, particularly on the choice on whether or not to include TiO/VO opacity, which is turned on or off in the different simulations without explanation.
+
+17. The discussion of the magnetic field strength needed to produce a drag that sort of makes the GCM model work the best is very wishy washy. I understand that the authors are using order-of-magnitude expressions (as they state) but I think the magnetic field discussion is oversimplified and the conclusions are overstated. It also neglects to mention previous work attempting to directly measure/detect the effects of magnetic fields from planets. If the authors wish to discuss the magnetic fields, some mention of these previous works should be done. Significant mention about the shape of the magnetic field should also be prevalent. Furthermore, the planet is very close in to its star, and so there would likely be a complicated magnetic field structure due to the presence of the stellar magnetic field in the vicinity. This is not addressed or touched on when the authors assume the magnetic field is perpendicular to the flow of material.
+
+If the authors want to keep a discussion of the magnetic field in the paper, this section should be significantly expanded and the caveats and assumptions more prominently listed. Otherwise, casual readers might over interpret this section to imply that a magnetic field is detected or that a magnetic field with a strength nice and similar to Jupiter's is the only possible explanation for the observable properties of the system with regards to its phase curve. It is the referee's preference however, that the magnetic field discussion is mostly scaled down or eliminated.
+
+18. Section 6: At the end of this section, the authors note that the GCM does not provide a good fit to the data, while the spiderman maps do much better. In that case, I wonder why such a large portion of the paper is devoted to something that doesn't work all that well (and a B-field inference drawn from it too). I think it's good to test the models and see what they can do when confronted with data, but at the same time I think the authors have over interpreted what has come out of the GCMs, as stated before.
+
+19. I quite enjoyed the comparison to brown dwarfs section! I thank the authors for including it in their paper!
+
+20. Figure 16: I think the y scales on each vertical section of plots need to be adjusted to be the same. This will facilitate easier comparison than as currently shown (this is similar to my previous comments on other plots).
+
+21. I like the format of section 8 (the summary/conclusion section). The bullet points are helpful to readers that would skim through a paper and I wish more papers had done this. I would encourage the authors (if they feel like it) to bold a statement in each of the bullet points as well.
+
+22. Several of these bullet points will likely need tweaking depending on the responses / extra work/interpretation from the previous comments. Similarly, the abstract will likely also need to be tweaked
+
+23. The last paragraph states that the authors have detected coruscation patterns influenced by the magnetic field. I think this is too strong a statement, and has not been exhaustively researched and concluded to be the only explanation here (see previous comments).
+
+
+
+===============================================
+Minor and obnoxiously picky comments
+1. Introduction, paragraph 2: Don't short change the small (but useful) handful of directly imaged planets when you say exoplanets are not resolved from their host stars.
+
+2. Introduction paragraph 2: "The observations revealed large day-night..." should say "These observations revealed large day-night..."
+
+3. Introduction paragraph 2: The authors list a bunch of references for Kepler that show evidence for reflected light and variable clouds. However, those references really only cover 2 Kepler planets (and one paper is more theoretical in nature). This is fine, but I would ask the authors to specifically name the planets in this case, since it's not widely observed.
+
+4.Section 2.3 Photometric Monitoring - The filter (Cousins R) should be in italics, as photometric passbands typically are.
+
+5. Section 3.2.2 - Please put in parentheses next to the pixel sizes what this is in terms of arcseconds
+
+6. Please clarify at the end of 3.3 that a \gamma = 1.1 for the power spectral density of red noise implies an equal amount of uncorrelated white noise and correlated noise.
+
+7. Section 4.2: The authors state that they bin the light curve in intervals of 0.1 in orbital phase. Please also state the physical duration of these bins (i.e. a couple hours or so). This is made more difficult for the reader as there is no table with the system parameters present in the paper with which to easily look it up.
+
+8. Section 4.5, Is the linear limb darkening parameter picked per bin? And is it initialized near some value (presumably from Claret)?
+
+9. Table 5: I believe the third column needs to be multiplied by 100 like the second column was in order to get it as a % which is what it is labelled as. Is this true or am I misreading it (and by extension figure 9)?
+
+10. I do not like that the authors cite Mansfield et al. (submitted) and Paramentier et al. (in prep) in section 5.2 while these papers are not accessible (and could change significantly with no version control on arXiv available!). The citations to these papers should be removed unless a publicly available version becomes available.
+
+11. 5.2.1 - Dayside spectrum: The authors infer a range of 23 +29 -13 times solar for the metallicity. In the summary section the authors state that they have > 1x solar at 3 sigma confidence. I would like this statement presented here as well, as I consider that a much more useful result than a number with a huge error bar.
+
+12. Section 5.2.1: You infer from your fits a heat redistribution of 2.49 +0.14, -0.15, this is pretty close to the upper limits. I suppose since the prior was uniform and the upper bound on the prior is 3 sigma away this is fine and you can measure the peak and shape of the distribution regardless, but can the authors confirm that you're not significantly running into the walls of your prior?
+
