@@ -1,7 +1,7 @@
-1
-2
-3
-4
+1       x
+2       x
+3       x
+4       x
 5	x
 6
 7
@@ -53,6 +53,15 @@ Some of the information of the reduction is found within Cubillos et al. 2013, w
 
 Therefore, I think section 2.2 should be significantly expanded (or this info should be in 3.2.2) to explain what the authors have done to reduce the Spitzer data so that it is more easily reproduced. Especially since many people (and this referee in particular) are much more familiar with PLD methods rather than BLISS mapping type methods.
 
+#
+
+We have added the following additional description to Sections 2.2 and 3.2.2 to clarify these points:
+
+Section 2.2:
+We used the POET pipeline (Stevenson et al. 2012; Cubillos et al. 2013) to reduce the Spitzer data.  The pipeline starts by identifying and flagging bad pixels using a double-iteration 4-sigma outlier rejection routine along the time axis.  This is followed by performing 2D Gaussian centroiding on each frame, which is shown to provide the most precise centers for Spitzer data \citep{Lust2014}.  The target remains centered near the sweet spot for the entire AOR in each observation, with a maximum drift of 0.1 pixels.  Next, POET uses sub-pixel (5\times-interpolated) aperture photometry \citep{Harrington2007} to subtract the background and sum the flux within a specified radius.  Chosen from a grid of apertures between 2 and 4 pixels, we find that an aperture size of 2.75 pixels minimizes the residual noise in the light curve fits.  For the background, we use an annulus with inner and outer radii of 7 and 15 pixels, respectively.  The contaminating flux from the nearby star is within the same pixel as the target, so we included it in the photometry and corrected it in the light curve fits.  A similarly strategy has been applied to successfully analyze dozens of Spitzer data sets \citep[e.g. ][]{Stevenson2010, Stevenson2012a, Stevenson2012b, Stevenson2014a, Stevenson2014b, Stevenson2016a, Stevenson2017a, Campo2011, Nymeyer2011, Cubillos2013, Blecic2013, Blecic2014, HDL2014}.
+
+Section 3.2.2:
+Warm Spitzer's primary systematic is intrapixel sensitivity variations, where the photometry depends on the precise location of the stellar center within its pixel.  We fit this systematic using the Bilinearly-Interpolated Subpixel Sensitivity (BLISS) mapping technique \citep{Stevenson2012a}.  BLISS provides a flexible, non-analytic means to effectively weight the target flux by the spatial sensitivity variations within a pixel, while simultaneously fitting for other systematics and the physical parameters of the system.  As has been demonstrated by \citet{Ingalls2016}, the POET pipeline with BLISS mapping can accurately model simulated {\em Spitzer} light curves with known physical parameters and produce reliable results.
 
 ****
 
@@ -60,14 +69,28 @@ Therefore, I think section 2.2 should be significantly expanded (or this info sh
 
 a) Is the "pier-side offset" a singular term (constant) or is it a more general correction that's a function of the tilt of the telescope to account for flexure? Was it measured or is it calculated? etc.
 
+#
+
+Thank you for raising this point -- it was an oversight to leave the pier-side correction in the manuscript.  
+
+The C14 telescope was originally operated on a German equatorial mount, so the telescope had to flip over the RA axis in order follow a star from the east into the west.  This rotated the field on the CCD, which meant we were using a different part of the chip to make our measurements.  In case this caused a slight shift in the data not corrected by flat-fielding, we determined and applied a pier-side offset correction.  In the case of 55 Cnc, the correction was only 0.00007 mag (70 micro-mags), i.e., completely insignificant and smaller than its uncertainty.  Furthermore, last year we remounted the C14 on a horse-shoe type mount that does not require any flipping to track a star past the meridian so there is no longer any pier-side correction. We removed the mention of pier-side offset from section 2.3.
+
 b) I have similar questions for the differential atmospheric extinction. Is this a linear term with airmass? Quadratic? Is it measured from the data as a correction or is it calculated? What form does it take? Is it something like (X-1) * (color) where X is the airmass and color is some determination of color from catalogs?
 
 More detail on these corrections is warranted.
 
+#
+
+We have added the following description of our correction for extinction:
+    We determined seasonal-mean extinction coefficients from a linear, least-squares fits to seasonal plots of differential magnitudes versus mean air mass and computed the slope in magnitudes per air mass.
 
 ****
 
 3. Figure 1 and associated discussion: Please include separate panels for the reference star time series. Since only 6 reference stars were used, these can all be accommodated with one extra panel with different reference stars offset from each other.
+
+#
+
+We thank the referee for this attention to detail, but we feel it would not be informative to show the reference star time series for several reasons. First, independent comparison star magnitudes are not computed in our reductions; rather, the software measures the total ADU counts in each exposure for WASP-103 and the 6 comparison stars and directly computes the [program - (comp1+comp2+comp3+comp4+comp5+comp6)/6] differential magnitudes.  Second, because the brightness variation in WASP-103 is so slight, the scatter in the program star is not significantly different than the comparison stars and so not discernible by eye from a plot.  
 
 ****
 
@@ -75,19 +98,30 @@ More detail on these corrections is warranted.
 
 Additionally, the authors have collected transit data but all of the plots shown use y-scales that don't show the transit. I think a transit plot would be nice, just to see what the data even look like.
 
+
+#
+
+Southworth et al. observed a total of 18 transits of WASP-103b, so with the combined data set are able to measure a very precise transit ephemeris (their reported 1 sigma uncertainty is less than 5 seconds). We fit the Spitzer 4.5 micron transit alone and obtained a precision on the ephemeris of 30 seconds (at 1 sigma). Our precision is lower due to photon noise limitations: the star is much fainter at Spitzer observations than in the optical, and the ground-based telescopes are larger than Spitzer, and we have just one transit compared to 18 in the Southworth et al. study. For this reason, we elected to use the Southworth et al. transit parameters.
+
+FIXME -- transit plot??
+
 ****
 
 5. Section 3.1, final paragraph: The authors state the uncertainty on the companion star flux contribution is less than 1%. 1% of what? Is the error less than 1% of the total flux in the system (since WASP-103 is bright?) Or are the authors stating that they have less than 1% photometry on the magnitude of the contaminating star. If the latter, I find that difficult to believe - getting 1% absolute photometry is hard and I would be interested in the details. If it's the former (or something else), please include a couple words to clarify.
 
 #
 
-We were referring to the former, and added some text to clarify this point.
+We were referring to the former, and added some text to clarify this point. The sentence now reads: The uncertainty on the companion star flux contribution to the total system flux is less than 1%, which introduces negligible error in the estimated planet-to-star-flux compared to the photon noise.
 
 ****
 
 6. Figure 3: This figure doesn't seem to be very useful. The large amplitude of the systematics of Hubble observations and Spitzer observations are well known, and visualizing them here doesn't add much to the discussion. I also do not like that the panels are stacked but the x-axis is in units of "time since the first exposure", since these observations were not taken at the same time, but the visual presentation implies as such. Finally (and this is a general complaint), the unbinned Spitzer data is never shown. One of the strengths of Spitzer is it's rapid cadence, and yet Figure 3 has already binned the data to 15 minute segments. It would be useful (as has been done in other papers) to show the unbinned time series with some suitable alpha to make all the data visible and then overplot a binned version on top of that. 
 
 If the authors opt to keep Figure 3 (I think Figure 5 on its own is sufficient with some changes), I would like to see the unbinned data in a plot, and the x-axis changed to something more suitable (Time or Phase).
+
+#
+
+Several of the theorists on this paper have spoken up to say that they like the reminder of what the raw data look like, since they don't work with the data directly. We therefore decided to keep the figure, but made the suggested changes. 
 
 ****
 

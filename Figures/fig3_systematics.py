@@ -13,7 +13,7 @@ sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
 rc('font',**{'family':'sans-serif','sans-serif':['Arial']})
 
-gs = gridspec.GridSpec(3, 1, height_ratios =[1,1, 1],  hspace=0.00)
+gs = gridspec.GridSpec(3, 1, height_ratios =[1,1, 1],  hspace=0.0)
 
 # plots HST white light phase curve
 #bestfits = ["./WFC3_best_fits/old_white_fits/bestfit_zhang_allsys.pic"]
@@ -87,6 +87,9 @@ plt.legend([(p1, p2), p0], ["Best fit", "systematics only"], frameon=True)
 #plot Spitzer phase curves
 colors = ['orange', 'red']
 observation = ['Spitzer Ch. 1', 'Spitzer Ch. 2']
+depth = [4.5e-3, 5.7e-3]
+ylo = [4.45e6, 2.39e6]
+yhi = [4.56e6, 2.49e6]
 
 fluxconv = [306.126, 266.648]
 #calculated from Jonathan Fraine's code https://github.com/exowanderer/ExoplanetTSO/blob/master/ExoplanetTSO_Auxiliary.py
@@ -107,6 +110,8 @@ for ii, f in enumerate(bestfits):
 	bestfit = p[3]
 	phase = p[0] 
 
+        bjdtdb = p[8]
+
 	abscissauc = p[10]
 	binfluxuc = p[11]
 	binstduc = p[12]
@@ -114,6 +119,7 @@ for ii, f in enumerate(bestfits):
 	abscissa = p[15]
 	sys = p[16]
 
+        plt.plot(bjdtdb - bjdtdb[0], data_corr*fluxconv[ii]*np.mean(binfluxuc), marker = '.', color = colors[ii], alpha = 0.2, markersize = 3, markeredgewidth = 0., linewidth = 0., zorder =-100000)
 	plt.plot(abscissa - abscissa[0], sys*fluxconv[ii], color= '0.7', zorder=-10)
 	plt.plot(abscissa - abscissa[0], bestfit*fluxconv[ii], color = colors[ii], alpha = alpha)
 	plt.errorbar(abscissauc - abscissa[0], binfluxuc*fluxconv[ii], binstduc*fluxconv[ii], fmt = '.k', markersize = ms)
@@ -123,6 +129,7 @@ for ii, f in enumerate(bestfits):
 	plt.text(0.8, 0.986*np.median(binfluxuc)*fluxconv[ii], observation[ii])
 
 	plt.xlim(-0.1, 1.3)
+        plt.ylim(ylo[ii], yhi[ii])
 	
 	plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0))
 	plt.ticklabel_format(useOffset = False)
@@ -139,7 +146,7 @@ for ii, f in enumerate(bestfits):
 		plt.gca().set_xticks([])
 		plt.gca().set_xlabel([])
 
-plt.tight_layout()
+#plt.tight_layout()
 plt.savefig("fig3.pdf")
 #plt.show()
 
