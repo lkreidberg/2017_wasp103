@@ -270,7 +270,19 @@ For all three phase curves, the hotspot offset is consistent with zero degrees, 
 \subsection{Phase-Resolved Spectra}
 We used the best-fit phase curves (with systematics removed) to generate phase-resolved emission spectra.  Since the \texttt{spiderman} thermal phase variation models fit the temperature of the planet rather than the eclipse depth directly, we estimated the dayside emission spectrum as follows. We used \texttt{spiderman}'s eclipse\_depth method to calculate the average planet-to-star flux for the best-fit model during secondary eclipse.  To estimate uncertainties, we took the standard deviation of the residuals of the in-eclipse data points, then added this value in quadrature to the standard deviation of the residuals of the out-of-eclipse data.  This quadrature sum accounts for the uncertainty in the baseline flux. To account for red noise in the \Spitzer\ $3.6\,\mu$m light curve, we use the approach of \cite{pont06} to determine the red noise contribution on the timescale of the eclipse. We add the estimated red noise in quadrature, which increases the uncertainty on planet-to-star flux by a factor of $2.5$.
 
-For the other orbital phases, we binned the light curve (with systematics removed) in eight intervals of about 0.1 in orbital phase, with endpoints at phases $0.06, 0.15, 0.25, 0.35, 0.44$ and $0.56, 0.65, 0.75, 0.85, 0.94$. These endpoints were chosen to ensure that there is no contribution from in-transit or in-eclipse data.  In each phase bin, we estimated the planet-to-star flux from the mean value of the data points in the bin. To estimate the uncertainty, we took the standard deviation of the points in the bin and added it in quadrature to the standard deviation of the data points during secondary eclipse (phase $0.46-0.54$), to account for the uncertainty in baseline stellar flux.  For the $3.6\mu$m data, we also add red noise on the timescale of a phase bin, following \cite{pont06}.  The phase-resolved emission spectra are shown in Figure\,\ref{fig:spectra} and listed in Table\,\ref{table:spectra}. 
+For the other orbital phases, we binned the light curve (with systematics
+removed) in eight intervals of about 0.1 in orbital phase, with endpoints at
+phases $0.06, 0.15, 0.25, 0.35, 0.44$ and $0.56, 0.65, 0.75, 0.85, 0.94$. These
+endpoints were chosen to ensure that there is no contribution from in-transit or
+in-eclipse data.  In each phase bin, we estimated the planet-to-star flux from
+the mean value of the data points in the bin. To estimate the uncertainty, we
+took the standard deviation of the points in the bin and added it in quadrature
+to the standard deviation of the data points during secondary eclipse (phase
+$0.46-0.54$), to account for the uncertainty in baseline stellar flux.  For the
+$3.6\mu$m data, we also add red noise on the timescale of a phase bin, following
+\cite{pont06}.  The phase-resolved emission spectra are shown in
+Figure\,\ref{fig:spectra} and listed in Table\,\ref{table:spectra}. We show the
+dayside spectrum in Figure\,\ref{fig:dayside}.
 
 To test that the phase-resolved planet-to-star flux values are robust to different approaches for fitting the phase curves, we compared the estimated planet-to-star flux for all four of the thermal phase variation models (sinusoid, kinematic, spherical harmonics, and two temperature).  Since the systematic noise is not strongly correlated with the astrophysical signal, the systematics-divided data are nearly identical for all the models.  This point is illustrated in Figure\,\ref{fig:model_comparison} for the broadband WFC3 light curve.  We found that the choice of model generally does not significantly change the estimated planet-to-star flux ratios.  The estimates agree to better than one sigma for 90\% of phase bins for the spherical harmonics, two temperature, and physical models. For the WFC3 data, the sinusoid is higher than the other models by an average of $1.5\,\sigma$ for phases $0.5 - 1$. This discrepancy may be due to the added flexibility in hotspot offset for the sinusoid model; other models do not allow for westward hotspot offsets.
 
@@ -280,12 +292,12 @@ To test that the phase-resolved planet-to-star flux values are robust to differe
 \label{fig:spectra}
 \end{figure*}
 
-\begin{figure*}
-\includegraphics[width = 1.0\textwidth, trim={1.5cm 0 0.5cm 0},clip]{fig7.pdf}
-\caption{\textbf{Left:} Fits to the broadband WFC3 phase curve compared to a GCM. The colored lines correspond to different temperature maps fit to the data, and the dashed gray line is from the $\tau_\mathrm{drag4}$ GCM. We also show the measured planet-to-star flux for each map (points), which is model-dependent due to slight degeneracies with the instrument systematic model.  \textbf{Right:} Temperature maps from the best fit models and the GCM at a pressure of 0.1 bar.}
-\label{fig:model_comparison}
-\end{figure*}
 
+\begin{figure*}
+\includegraphics[width = 1.0\textwidth]{fig7.pdf}
+\caption{Dayside planet-to-star flux (points) compared to a blackbody model for the planet (dashed gray line) and the best fit 1D model (blue line, with $1\,\sigma$ uncertainty shaded in orange) for the \HST/WFC3 data (left) and Spitzer (right). The 1D model was fit to all the data simultaneously, but the blackbody was fit to the WFC3 data only. The best fit 1D model binned at the resolution of the \Spitzer\ data is indicated by blue squares (right).} 
+\label{fig:dayside}
+\end{figure*}
 
 \begin{deluxetable*}{lllllllllll}
 	\tablecolumns{11}
@@ -310,12 +322,10 @@ To test that the phase-resolved planet-to-star flux values are robust to differe
 		\tablenotetext{1}{The planet-to-star flux in each phase bin $\phi$ is in units of ppm.}
 	\end{deluxetable*}
 
-
-
 \begin{figure*}
-\includegraphics[width = 1.0\textwidth]{fig8.pdf}
-\caption{Dayside planet-to-star flux (points) compared to a blackbody model for the planet (dashed gray line) and the best fit 1D model (blue line, with $1\,\sigma$ uncertainty shaded in orange) for the \HST/WFC3 data (left) and Spitzer (right). The 1D model was fit to all the data simultaneously, but the blackbody was fit to the WFC3 data only. The best fit 1D model binned at the resolution of the \Spitzer\ data is indicated by blue squares (right).} 
-\label{fig:dayside}
+\includegraphics[width = 1.0\textwidth, trim={1.5cm 0 0.5cm 0},clip]{fig8.pdf}
+\caption{\textbf{Left:} Fits to the broadband WFC3 phase curve compared to a GCM. The colored lines correspond to different temperature maps fit to the data, and the dashed gray line is from the $\tau_\mathrm{drag4}$ GCM. We also show the measured planet-to-star flux for each map (points), which is model-dependent due to slight degeneracies with the instrument systematic model.  \textbf{Right:} Temperature maps from the best fit models and the GCM at a pressure of 0.1 bar.}
+\label{fig:model_comparison}
 \end{figure*}
 
 
@@ -362,39 +372,59 @@ We compared our results to the dayside emission spectrum reported by \cite{carti
 We also compared our dayside spectrum to the $z'$ and $K_\mathrm{S}$-band secondary eclipse depths reported in \cite{delrez18}. The $z'$ (0.9 $\mu$m) eclipse is $1.0\,\sigma$ lower than our best fit blackbody spectrum (described in \S\,\ref{sec:composition}), and the $K_\mathrm{S}$ (2.1 $\mu$m) measurement is higher than the model by $2.5\,\sigma$. Since these results are consistent with (but less precise than) the WFC3 data, we do not include them in our analysis of the atmospheric composition, but we encourage additional measurements in the $K_\mathrm{S}$ band to confidently determine whether an emission feature is present at those wavelengths.
 
 \subsection{Transmission Spectrum}
-Each phase curve observation includes a transit of WASP-103b. To measure the wavelength-dependent transit depths (the transmission spectrum), we select a subset of each phase curve. The subset includes the transit and additional baseline on either side, such that the total light curve has twice the duration of the transit. Over this short duration, there is negligible curvature in the light curve due to the planet's thermal phase variation. We fit the data with a transit model, which has free parameters for the planet-to-star radius and a linear limb darkening parameter. The orbital parameters (inclination, $a/R_s$, period, and time of central transit) were fixed at previously published values listed in \S\,\ref{sec:fits}. We fit for the instrument systematics using the same model as for the phase curve fits, except that we modeled the visit-long systematic as a linear trend in time (which is sufficient for the shorter duration). The advantage of fitting the transits separately from the full phase curves is that the resultant transit depths are not dependent on how the phase variation is modeled. 
-
-We show the measured transmission spectrum in Figure\,\ref{fig:tspec}.  The spectrum is biased by flux contamination from the planet's nightside; to correct for nightside emission, we estimate the average nightside planet-to-star flux ratio and subtract it from the transit depth. We calculate planet-to-star flux using a NextGen spectrum for the star (interpolated to $T_\mathrm{eff} = 6110$ K), a blackbody for the planet, and a planet-to-star radius ratio of 0.1146. We assume a nightside temperature of 1700 K, which is near the median of the nightside temperatures estimated from the phase variation models (Table\,\ref{table:models}). We also show the uncorrected transit depths. The corrected and uncorrected transit depths are listed in Table\,\ref{table:tspec}. For the uncorrected data, there is an offset between the \HST\ and \Spitzer\ data of more than five atmospheric scale heights.  The uncorrected spectrum is inconsistent with a flat line at $3.2\,\sigma$ confidence, whereas the nightside-corrected spectrum is consistent within $1\,\sigma$.  The corrected spectrum is also consistent with predictions from the $\tau_\mathrm{drag4}$ GCM, which shows water features in the WFC3 bandpass. Future observations with higher precision could reveal these features. %The mean transit depths are $1.3431 \pm 0.0029$,  $1.3360 \pm 0.0029$, and $1.3078 \pm 0.0029\%$ for assumed nightside temperatures of 0, 1500, and 2000 K.  Of these, only the 2000 K model yields a transit depth consistent with the measurement of \cite{lendl17} at shorter wavelengths where nightside contamination is negligible ($1.3092 \pm 0.0114$\%). FIXME: could we see water at higher precision?
+Each phase curve observation includes a transit of WASP-103b. To measure the
+wavelength-dependent transit depths (the transmission spectrum), we select a
+subset of each phase curve. The subset includes the transit and additional
+baseline on either side, such that the total light curve has twice the duration
+of the transit. Over this short duration, there is negligible curvature in the
+light curve due to the planet's thermal phase variation. We fit the data with a
+transit model, which has free parameters for the planet-to-star radius and a
+linear limb darkening parameter. The orbital parameters (inclination, $a/R_s$,
+period, and time of central transit) were fixed at previously published values
+listed in \S\,\ref{sec:fits}. We fit for the instrument systematics using the
+same model as for the phase curve fits, except that we modeled the visit-long
+systematic as a linear trend in time (which is sufficient for the shorter
+duration). The advantage of fitting the transits separately from the full phase
+curves is that the resultant transit depths are not dependent on how the phase
+variation is modeled. The transit light curve fits are shown in
+Figure\,\ref{fig:transitlc}.
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{fig9.pdf}
-\caption{The transmission spectrum of WASP-103b, corrected for planet nightside emission at 1700 K (blue points) and uncorrected (red points). The dark gray line is the model transmission spectrum from the $\tau_\mathrm{drag4}$ GCM, with squares indicating the model binned over the \Spitzer\ bandpasses. Atmospheric scale height $H$ is shown on the right y-axis, where $H = 5.5\times10^6$ m (assuming a mean molecular weight of 2.3 atomic mass units, surface gravity $g = 15.9$ m/s$^2$, and a temperature $T = 2410$ K).}
-\label{fig:tspec}
+\caption{Best fit transit light curves for WASP-103b (lines), compared to binned data (black points). From top-to-bottom, we show the band-integrated WFC3 light curve, \Spitzer\ 3.6, and $4.5\,\mu$m.}
+\label{fig:transitlc}
 \end{figure}
 
-\begin{deluxetable}{LLL}
-\tablecolumns{3}
+We show the measured transmission spectrum in Figure\,\ref{fig:tspec}.  The spectrum is biased by flux contamination from the planet's nightside; to correct for nightside emission, we estimate the average nightside planet-to-star flux ratio and subtract it from the transit depth. We calculate planet-to-star flux using a NextGen spectrum for the star (interpolated to $T_\mathrm{eff} = 6110$ K), a blackbody for the planet, and a planet-to-star radius ratio of 0.1146. We assume a nightside temperature of 1700 K, which is near the median of the nightside temperatures estimated from the phase variation models (Table\,\ref{table:models}). We also show the uncorrected transit depths. The corrected and uncorrected transit depths are listed in Table\,\ref{table:tspec}. For the uncorrected data, there is an offset between the \HST\ and \Spitzer\ data of more than five atmospheric scale heights.  The uncorrected spectrum is inconsistent with a flat line at $5.3\,\sigma$ confidence, whereas the nightside-corrected spectrum is consistent within $1\,\sigma$.  The corrected spectrum is also consistent with predictions from the $\tau_\mathrm{drag4}$ GCM, which shows water features in the WFC3 bandpass. Future observations with higher precision could reveal these features. %The mean transit depths are $1.3431 \pm 0.0029$,  $1.3360 \pm 0.0029$, and $1.3078 \pm 0.0029\%$ for assumed nightside temperatures of 0, 1500, and 2000 K.  Of these, only the 2000 K model yields a transit depth consistent with the measurement of \cite{lendl17} at shorter wavelengths where nightside contamination is negligible ($1.3092 \pm 0.0114$\%). FIXME: could we see water at higher precision?
+
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{fig10.pdf}
+\label{fig:tspec}
+\caption{The transmission spectrum of WASP-103b, corrected for planet nightside emission at 1700 K (blue points) and uncorrected (red points). The dark gray line is the model transmission spectrum from the $\tau_\mathrm{drag4}$ GCM, with squares indicating the model binned over the \Spitzer\ bandpasses. Atmospheric scale height $H$ is shown on the right y-axis, where $H = 5.5\times10^6$ m (assuming a mean molecular weight of 2.3 atomic mass units, surface gravity $g = 15.9$ m/s$^2$, and a temperature $T = 2410$ K).}
+\end{figure}
+
+\begin{deluxetable}{LLLL}
+\tablecolumns{4}
 \tablewidth{0pt}
 \tablecaption{WASP-103b Transmission Spectrum\label{table:tspec}}
 \tablehead{
-\colhead{Wavelength} & \colhead{Transit Depth (\%)} & \colhead{Transit Depth (\%)} \\
-\colhead{(micron)} & \colhead{($T_\mathrm{night} = 0$ K)} & \colhead{($T_\mathrm{night} = 1700$ K)}}
+\colhead{Wavelength} & \colhead{$(R_p/R_s)^2$ (\%)} & \colhead{$(R_p/R_s)^2$ (\%)} & \colhead{Error}\\
+\colhead{(micron)} & \colhead{($T_\mathrm{n} = 0$ K)} & \colhead{($T_\mathrm{n} = 1700$ K)} & \colhead{(\%)}}
 \startdata
-1.175 & 1.329049 \pm 0.000092 & 0.013228 \pm 0.000092 \\
-1.225 & 1.329408 \pm 0.000087 & 0.013217 \pm 0.000087 \\
-1.275 & 1.333837 \pm 0.000086 & 0.013246 \pm 0.000086 \\
-1.325 & 1.334184 \pm 0.000087 & 0.013233 \pm 0.000087 \\
-1.375 & 1.359366 \pm 0.000089 & 0.013467 \pm 0.000089 \\
-1.425 & 1.353629 \pm 0.000091 & 0.013390 \pm 0.000091 \\
-1.475 & 1.341570 \pm 0.000092 & 0.013249 \pm 0.000092 \\
-1.525 & 1.350816 \pm 0.000093 & 0.013319 \pm 0.000093 \\
-1.575 & 1.333617 \pm 0.000100 & 0.013125 \pm 0.000100 \\
-1.625 & 1.353438 \pm 0.000104 & 0.013299 \pm 0.000104 \\
-3.6 & 1.401322 \pm 0.000328 & 0.013238 \pm 0.000328 \\
-4.5 & 1.432949 \pm 0.000264 & 0.013554 \pm 0.000264 \\
+1.175 & 1.3178 & 1.3115 & 0.0092 \\
+1.225 & 1.3144 & 1.3067 & 0.0087 \\
+1.275 & 1.3195 & 1.3103 & 0.0086 \\
+1.325 & 1.3454 & 1.3345 & 0.0087 \\
+1.375 & 1.3512 & 1.3385 & 0.0089 \\
+1.425 & 1.3588 & 1.3441 & 0.0091 \\
+1.475 & 1.3364 & 1.3197 & 0.0092 \\
+1.525 & 1.3522 & 1.3333 & 0.0093 \\
+1.575 & 1.3688 & 1.3476 & 0.0100 \\
+1.625 & 1.3549 & 1.3314 & 0.0104 \\
+3.6 & 1.4013 & 1.3238 & 0.0328 \\
+4.5 & 1.4329 & 1.3554 & 0.0264 \\
 \enddata
-\vspace{-0.8cm}
-\tablecomments{comments}
+\tablecomments{Wavelength dependent transit depths, corrected for companion dilution and nightside flux (assuming nightside temperatures of 0 and 1700 K for the second and third columns, respectively). The error corresponds to the 68\% credible interval from an MCMC fit to the transit light curves.}
 \end{deluxetable}
 
 \section{Atmospheric Composition and Thermal Structure}
@@ -448,7 +478,7 @@ At each point in the grid, we compute forward models to determine self-consisten
 The main characteristics of the dayside emission spectrum are: (1) it is blackbody-like at WFC3 wavelengths, and (2) in the \Spitzer\ bands, the planet-to-star flux is significantly higher than predicted for the best fit blackbody, indicating an emission feature.  The best-fit spectrum reproduces these data fairly well, with $\chi^2_\nu$ = 1.77 (for 9 degrees of freedom). The largest contribution to the $\chi^2$ value is the $4.5\,\mu$m eclipse depth, which is larger than the best fit model prediction by $2.9\,\sigma$. When the $4.5\,\mu$m point is removed, the fit has $\chi^2_\nu = 1.17$ (8 degrees of freedom).  The best fit model has a moderately enhanced metallicity ($23\times$ solar), carbon-to-oxygen equal to 0.76, poor heat redistribution, and a thermal inversion (temperature increasing with altitude).
 
 \begin{figure}
-\includegraphics[width = 0.5\textwidth]{fig10.pdf}
+\includegraphics[width = 0.5\textwidth]{fig11.pdf}
 \caption{Abundance weighted absorption cross-sections illustrating the important opacity sources at the photospheric pressure and temperature (5 mbar, 3036 K). The strong CO feature at 4.5\,$\mu$m contributes to the high planet-to-star flux at that wavelength.  Water, hydrides/oxides, and the H- bound-free opacities all play a role in shaping the \HST/WFC3 spectrum.}
 \label{fig:opacities}
 \end{figure}
@@ -458,7 +488,7 @@ Figure\,\ref{fig:opacities} shows the opacity contributions of key absorbers for
 Figure\,\ref{fig:summary} shows a summary of the temperature-pressure profile and abundances for the best fit model. The T-P profile is inverted, with temperature increasing from 2800 to 3500 K over the pressure range $10^{-2} - 10^{-3}$ bar.  The thermal inversion is probably driven by absorption of optical light by oxides and hydrides in the upper atmosphere and the absence of cooling by water molecules (which have dissociated).  The observations are sensitive to pressures of $\sim0.01 - 0.001$ bar, which spans the tropopause, where temperature begins to increase and the water abundance drops by more than an order of magnitude.
 
 \begin{figure}
-\includegraphics[width = 0.5\textwidth]{fig11.pdf}
+\includegraphics[width = 0.5\textwidth]{fig12.pdf}
 \caption{Summary of the 1D self-consistent model atmosphere fits to the dayside emission spectrum.  The temperature-pressure profile (top axis) is indicated by the 1-sigma spread of 500 randomly drawn T-P profiles from the posterior (light red) and a representative fit, with $f$=0.4, [M/H]=1.5, and C/O=0.7 (dark red).  The normalized thermal emission contribution functions for the \Spitzer\ points are shown in solid red, the WFC3 in-water band ($1.33-1.48\,\mu$m) in dark blue, and WFC3 out-of-water-band in light blue.  The observations probe between $\sim0.01$ and 0.001 bar, just above the tropopause region of the atmosphere where the temperature is increasing.  The dashed curves are thermochemical equilibrium mixing ratios for important absorbers computed along the representative fit's self-consistent T-P profile.  Note the rapid dissociation of water above the $\sim10$ mbar level where the inversion begins.}
 \label{fig:summary}
 \end{figure}
@@ -466,7 +496,7 @@ Figure\,\ref{fig:summary} shows a summary of the temperature-pressure profile an
 In Figure\,\ref{fig:composition}, we show the posterior distributions from the grid retrieval.  We infer a range in metallicity of $23^{+29}_{-13}\times$ solar, somewhat higher than expected based on Jupiter's metal enrichment \citep[$3-5\times$ solar;][]{wong04} and the trend toward decreasing metallicity with increasing planet mass observed for the Solar System and exoplanets \cite[e.g.][]{kreidberg14b}.  However, planet population synthesis models predict some scatter in atmospheric metallicity. Planets near WASP-103b's mass ($1.5\,M_\mathrm{Jup}$) are expected to have metallicities ranging from roughly $1-10\times$ solar \citep{fortney13, mordasini16}. Our result for WASP-103b lies on the upper end of this range, and may be indicative of intrinsic scatter in the mass-atmospheric metallicity relation. 
 
 \begin{figure}
-\includegraphics[width = 0.5\textwidth]{fig12.pdf}
+\includegraphics[width = 0.5\textwidth]{fig13.pdf}
 \caption{Posterior distributions for WASP-103b's atmospheric heat redistribution, metallicity, and C/O, from a grid-based fit to the dayside emission spectrum. The histograms on the diagonal show the marginalized distribution of each parameter, with dashed lines indicating the median and surrounding 68\% credible interval. The blue lines correspond to solar metallicity (1) and C/O (0.54). The 2D histograms mark the 1, 2, and 3$\,\sigma$ credible regions in dark, medium, and light blue, respectively.}
 \label{fig:composition}
 \end{figure}
@@ -503,7 +533,7 @@ We also compared the TP profiles from the $\tau_\mathrm{drag4}$ GCM to cloud con
 
 
 \begin{figure}
-\includegraphics[width = 0.5\textwidth]{fig13.pdf}
+\includegraphics[width = 0.5\textwidth]{fig14.pdf}
 \caption{TP profiles from the GCM and 1D retrieval, compared to condensation curves of potential cloud species. The thin blue/cyan lines correspond to a sample of randomly drawn nightside TP profiles from the GCM, and the thin red/orange lines correspond to dayside TP profiles. The darker colors (blue/red) indicate the extent of the contribution function (encompassing 80\% of the emitted flux). The thick red and blue lines are the best fit 1D TP profiles for the phase 0.5 (dayside average) and 0.1 (nightside average). The dashed lines are condensation curves for a range of possible cloud species.  The dotted lines correspond to regions of constant H$_2$O abundance, with numbers indicating the log10(H$_2$O volume mixing ratio).}
 \label{fig:TP}
 \end{figure}
@@ -513,14 +543,14 @@ We also compared the GCM output to temperature maps retrieved with \texttt{spide
 The GCMs also provide insight into what molecules are present in which parts of the atmosphere. As discussed in \S\,\ref{sec:composition}, water dissociation and H- opacity are needed to explain the dayside emission spectrum. Figure\,\ref{fig:gcmcomparison} shows the photospheric abundances of H$_2$O and H- compared to the predicted temperature for the $\tau_\mathrm{drag4}$ GCM. The water abundance drops by $\sim10$ at the substellar point, and the H- opacity increases by $\sim100$.  By contrast, CO remains intact throughout the atmosphere.  Our observations are not precise enough to detect water features on the nightside of the planet (see \S\,\ref{sec:comparison}), but future high precision data may be sensitive to these features, and will help constrain the strength of horizontal transport in the atmosphere \citep{agundez14}.
 
 \begin{figure}
-\includegraphics[width = 0.5\textwidth]{fig14.pdf}
+\includegraphics[width = 0.5\textwidth]{fig15.pdf}
 \caption{GCM predictions (colored lines) compared to the best fit spherical harmonics model for the WFC3 white light, \Spitzer\ 3.6, and \Spitzer\ 4.5 micron phase curves (black lines, top to bottom). The nominal model is solar composition, cloud-free, with TiO/VO opacity and no drag. The models are corrected for the predicted ellipsoidal variability of the planet.}
 \label{fig:gcmcomparison}
 \end{figure}
 
 
 \begin{figure*}
-	\includegraphics[width = 1.0\textwidth]{fig15.pdf}
+	\includegraphics[width = 1.0\textwidth]{fig16.pdf}
 	\caption{Row (1): photospheric temperatures for the $\tau_\mathrm{drag4}$ GCM for different viewing geometries.  The orbital phase $\alpha=0$ corresponds to secondary eclipse (when the substellar point faces Earth) and $\alpha=180$ corresponds to transit (when the antistellar point faces Earth). Rows (2-4) show the abundances of CO, H$_2$O, and H-. At dayside temperatures, water dissociates, so the photospheric water abundance drops by $\sim10$ and the H- abundance increases by $\sim100$. By contrast, the CO abundance is uniform throughout the photosphere.}
 \label{fig:GCMabundance}
 \end{figure*}
@@ -535,7 +565,7 @@ We also used three brown dwarfs/low mass stars for comparison. We chose the fiel
 The directly imaged spectra are for the sources CD-35 2722, USco 1610-1913B, and TWA 22A and are taken from \cite{wahhaj11, aller13, bonnefoy14}. They are young objects (aged 10 - 100 Myr), with lower surface gravities than brown dwarfs of comparable temperature. They also have gravitationally bound companions over a wide range of separations ($67\pm4$, $840\pm90$, and $1.8\pm0.1$ AU, respectively). The sources are calibrated in absolute flux using published H-band photometry \citep{wahhaj11, aller13, bonnefoy09} and distances \citep{gaia16, teixeira09}, a flux-calibrated spectrum of Vega \citep{1985A&A...151..399M, 1985IAUS..111..225H}, and the corresponding filter passbands.  
 
 \begin{figure*}
-\includegraphics[width = 1.0\textwidth]{fig16.pdf}
+\includegraphics[width = 1.0\textwidth]{fig17.pdf}
 \caption{Flux-calibrated spectra for WASP-103b (left column) compared to observed spectra for brown dwarfs (middle) and directly imaged companions (right), assuming a distance of 10 pc. The WASP-103b spectra are from the nightside (phase 0.1, top row), quadrature (phase 0.25, middle) and the dayside (phase 0.5, bottom). Each row shows spectra from objects of comparable temperature. The dotted gray line corresponds to the best fit blackbody. Effective temperatures are listed in the upper right corners. The wavelength bins used to calculate the water feature amplitude $A_1$ are shaded in gray.}
 \label{fig:planetstarcomparison}
 \end{figure*}

@@ -90,7 +90,15 @@ We have added the following description of our correction for extinction:
 
 #
 
-We thank the referee for this attention to detail, but we feel it would not be informative to show the reference star time series for several reasons. First, independent comparison star magnitudes are not computed in our reductions; rather, the software measures the total ADU counts in each exposure for WASP-103 and the 6 comparison stars and directly computes the [program - (comp1+comp2+comp3+comp4+comp5+comp6)/6] differential magnitudes.  Second, because the brightness variation in WASP-103 is so slight, the scatter in the program star is not significantly different than the comparison stars and so not discernible by eye from a plot.  
+We thank the referee for this attention to detail, but we feel it would not be
+informative to show the reference star time series for several reasons. First,
+independent comparison star magnitudes are not computed in our reductions;
+rather, the software measures the total ADU counts in each exposure for WASP-103
+and the 6 comparison stars and directly computes the [program -
+(comp1+comp2+comp3+comp4+comp5+comp6)/6] differential magnitudes.  Second,
+because the brightness variation in WASP-103 is so slight, the scatter in the
+program star is not significantly different than the comparison stars and so not
+discernible by eye from a plot.  FIXME
 
 ****
 
