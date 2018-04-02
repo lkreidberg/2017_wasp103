@@ -220,7 +220,6 @@ for i in range(1, k):
 
 	if (phase < 0.4)|(phase > 0.6):
 		plt.errorbar(waves, (spectra[:,i-1,0]-1.)*1.0e3*(1+np.array(dilution)), yerr = 1.0e3*spectra[:,i-1,1], fmt='.k', zorder=100)	
-		#print (spectra[:,i-1,0]-1.)*1.0e3*(1+np.array(dilution)) 
 		plt.gca().text(0.1, 0.8, '$\phi = $' + '{0:0.1f}'.format(phase), transform=ax.transAxes, fontsize=18)
 
 		outname = "espec_phase_" + '{0:0.1f}'.format(phase) + ".txt"
@@ -231,13 +230,12 @@ for i in range(1, k):
 
 
 		rprs = 0.1146
-		#print "phase", phase
 		wave_hires, model_hires = best_fit_bb(waves, (spectra[:,i-1,0]-1.)*(1+np.array(dilution)), spectra[:,i-1,1], rprs)
 		model_hires *= 1.e3
 		plt.plot(wave_hires, model_hires, color='#6488ea', label='blackbody') 
                 bbmin = np.min(model_hires)
-                #plt.plot(np.array([4., 4.]), np.array([bbmin, bbmin+ 0.1]))
-                plt.axhline(1, linestyle = 'dotted', color = '0.7')
+
+                #plt.axhline(1, linestyle = 'dotted', color = '0.7')
 
                 correction_factor = 1.096           #to account for the fact that Vivien used a different rp/rs
                 if counter < 5: 
@@ -248,39 +246,50 @@ for i in range(1, k):
                     print phase
                 counter += 1
 	
+                #LK
+                if (col==0): plt.ylabel("$F_p$/$F_s$ ($\\times10^{-3}$)")
+                if row ==1: plt.xlabel("Wavelength (microns)")
 
-	if (col==0): plt.ylabel("$F_p$/$F_s$ ($\\times10^{-3}$)")
-	if row ==1: plt.xlabel("Wavelength (microns)")
+                if (col==3)&(row==1): plt.legend(loc=4, frameon=True) #legend
 
-	if (col==3)&(row==1): plt.legend(loc=4, frameon=True)		#legend
+                plt.gca().set_yscale('log')
+                plt.gca().set_xscale('log', basex=2)
+                
+                ax = plt.gca()
+                ax.xaxis.set_major_locator(FixedLocator(np.array([1,2,4])))
+                ax.xaxis.set_minor_locator(FixedLocator(np.array([1.1, 1.2, 1.3,  1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.2, 2.4, 2.6,  2.8, 3.0, 3.2,3.4, 3.6, 3.8, 4.4, 4.8])))
+                ax.xaxis.set_minor_formatter(ticker.NullFormatter())
+                ax.yaxis.set_minor_formatter(ticker.NullFormatter())
+                ax.set_xticklabels(["1", "2", "4"])
 
-	plt.gca().set_yscale('log')
-	plt.gca().set_xscale('log', basex=2)
-	
-	ax = plt.gca()
-	ax.xaxis.set_major_locator(FixedLocator(np.array([1,2,4])))
-	ax.xaxis.set_minor_locator(FixedLocator(np.array([1.1, 1.2, 1.3,  1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.2, 2.4, 2.6,  2.8, 3.0, 3.2,3.4, 3.6, 3.8, 4.4, 4.8])))
-	ax.xaxis.set_minor_formatter(ticker.NullFormatter())
-	ax.yaxis.set_minor_formatter(ticker.NullFormatter())
-	ax.set_xticklabels(["1", "2", "4"])
+                ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 0.2, 0.3, 0.4,  0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5])))
+                ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
 
-	ax.yaxis.set_major_locator(FixedLocator(np.array([0.1, 0.2, 0.3, 0.4,  0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5])))
-	ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
+                plt.xlim(1.0, 5.0)
+                ymin = model_hires.min()*0.9 
+                ymax = model_hires.max()*1.33
+                if (col==3)&(row ==1): 
+                        ymin *= 0.5
+                        ymax = 2.5
+                if (col==0)&(row ==0): ymin *= 0.7
 
-	plt.xlim(1.0, 5.0)
-	ymin = model_hires.min()*0.9 
-	ymax = model_hires.max()*1.33
-	if (col==3)&(row ==1): 
-		ymin *= 0.5
-		ymax = 2.5
-	if (col==0)&(row ==0): ymin *= 0.7
+                plt.ylim(ymin, ymax)
+                #ymin, ymax = plt.gca().get_ylim()
+                yrange = np.log10(ymax) - np.log10(ymin)
+                ystart = np.log10(ymin) + 0.1*yrange
+                ystart = 10.**ystart
+                print "row, col, yrange", row, col, np.log10(ymax)- np.log10(ymin)
+                if (col==0)&(row==0): plt.gca().text(0.71, 0.13, '100\n ppm', transform=ax.transAxes, fontsize=14)
+                plt.plot(np.array([4.5, 4.5]), np.array([ystart, ystart+ 0.1]), color = '0.5') 
+                plt.plot(np.array([4.4, 4.6]), np.array([ystart, ystart]), color = '0.5') 
+                plt.plot(np.array([4.4, 4.6]), np.array([ystart +0.1, ystart +0.1]), color = '0.5') 
+                #plt.errorbar(4.2, ystart - 0.05, yerr = 0.05, color = '0.5', capsize = 10) 
+                #plt.ylim(0.02, 5.1)
 
-	plt.ylim(ymin, ymax)
-	#plt.ylim(0.02, 5.1)
-	if row==0: plt.gca().set_xticklabels([])
-	
-	
-	#plt.savefig("spectrum"+ "{0:0.2f}".format(phase)+ ".png")
+                if row==0: plt.gca().set_xticklabels([])
+                
+                
+                #plt.savefig("spectrum"+ "{0:0.2f}".format(phase)+ ".png")
 	#plt.show()
 
 print "ERRORS & WARNINGS"

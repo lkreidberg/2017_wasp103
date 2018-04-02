@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 MAR 2018 16:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 APR 2018 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -563,8 +563,8 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 183.
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Underfull \hbox (badness 2042) in paragraph at lines 195--196
-\OT1/cmr/m/n/10 Bilinearly-Interpolated Sub-pixel Sen-si-tiv-ity (BLISS)
+Underfull \hbox (badness 2065) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 Interpolated Sub-pixel Sen-si-tiv-ity (BLISS) map-ping
  []
 
 [6 <./fig3.pdf>] <fig4.pdf, id=406, 361.35pt x 433.62pt>
@@ -637,7 +637,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 359.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<fig9.pdf, id=860, 361.35pt x 216.81pt>
+<fig9.pdf, id=862, 361.35pt x 216.81pt>
 File: fig9.pdf Graphic file (type pdf)
  <use fig9.pdf>
 Package pdftex.def Info: fig9.pdf used on input line 370.
@@ -647,12 +647,12 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 370--371
 [][] 
  []
 
-[12 <./fig9.pdf>]
+[12]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 400.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 407.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 400.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 407.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -667,7 +667,7 @@ Underfull \hbox (badness 1067) in paragraph at lines 445--446
 \OT1/cmr/m/n/10 els to de-ter-mine self-consistent, radiative-convective
  []
 
-[13] <fig10.pdf, id=969, 578.16pt x 433.62pt>
+[13 <./fig9.pdf>] <fig10.pdf, id=971, 578.16pt x 433.62pt>
 File: fig10.pdf Graphic file (type pdf)
  <use fig10.pdf>
 Package pdftex.def Info: fig10.pdf used on input line 451.
@@ -682,7 +682,7 @@ Underfull \hbox (badness 1320) in paragraph at lines 458--459
 []\OT1/cmr/m/n/10 Figure[][]11[][] shows a sum-mary of the temperature-
  []
 
-<fig11.pdf, id=979, 308.74174pt x 242.25566pt>
+<fig11.pdf, id=981, 308.74174pt x 242.25566pt>
 File: fig11.pdf Graphic file (type pdf)
  <use fig11.pdf>
 Package pdftex.def Info: fig11.pdf used on input line 461.
@@ -702,7 +702,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 467.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<fig12.pdf, id=1018, 549.25201pt x 549.25201pt>
+<fig12.pdf, id=1020, 549.25201pt x 549.25201pt>
 File: fig12.pdf Graphic file (type pdf)
  <use fig12.pdf>
 Package pdftex.def Info: fig12.pdf used on input line 469.
@@ -713,7 +713,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 469--470
  []
 
 [15 <./fig11.pdf> <./fig12.pdf>] [16]
-<fig13.pdf, id=1216, 289.08pt x 216.81pt>
+<fig13.pdf, id=1217, 289.08pt x 216.81pt>
 File: fig13.pdf Graphic file (type pdf)
  <use fig13.pdf>
 Package pdftex.def Info: fig13.pdf used on input line 506.
@@ -723,7 +723,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 506--507
 [][] 
  []
 
-<fig14.pdf, id=1226, 289.08pt x 433.62pt>
+<fig14.pdf, id=1227, 289.08pt x 433.62pt>
 File: fig14.pdf Graphic file (type pdf)
  <use fig14.pdf>
 Package pdftex.def Info: fig14.pdf used on input line 516.
@@ -733,7 +733,7 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 516--517
 [][] 
  []
 
-<fig15.pdf, id=1227, 2041.6275pt x 1011.78pt>
+<fig15.pdf, id=1228, 2041.6275pt x 1011.78pt>
 File: fig15.pdf Graphic file (type pdf)
  <use fig15.pdf>
 Package pdftex.def Info: fig15.pdf used on input line 523.
@@ -753,7 +753,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 534.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<fig16.pdf, id=1393, 542.025pt x 252.945pt>
+<fig16.pdf, id=1395, 542.025pt x 252.945pt>
 File: fig16.pdf Graphic file (type pdf)
  <use fig16.pdf>
 Package pdftex.def Info: fig16.pdf used on input line 538.
@@ -766,10 +766,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 596.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 596.
  ) 
 Here is how much of TeX's memory you used:
- 9568 strings out of 492995
- 134215 string characters out of 6132704
- 298653 words of memory out of 5000000
- 12794 multiletter control sequences out of 15000+600000
+ 9572 strings out of 492995
+ 134246 string characters out of 6132704
+ 299132 words of memory out of 5000000
+ 12797 multiletter control sequences out of 15000+600000
  15294 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,13n,37p,2456b,773s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -797,10 +797,10 @@ fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (24 pages, 5673381 bytes).
+Output written on ms.pdf (24 pages, 5675002 bytes).
 PDF statistics:
- 1880 PDF objects out of 2073 (max. 8388607)
- 1189 compressed objects within 12 object streams
- 210 named destinations out of 1000 (max. 500000)
+ 1883 PDF objects out of 2073 (max. 8388607)
+ 1191 compressed objects within 12 object streams
+ 211 named destinations out of 1000 (max. 500000)
  87 words of extra memory for PDF output out of 10000 (max. 10000000)
 

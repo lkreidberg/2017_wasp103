@@ -1,0 +1,59 @@
+
+Current event & model:
+WA103bo11
+['trquad', 'linramp', 'bilinint', 'rednoise']
+Positions are with respect to (y,x): 231, 23
+Number of frames per pixel quadrant:
+[   0.  523. 7439.    0.]
+Step size in y = 0.008102564102564104
+Step size in x = 0.008
+Ignoring bins with < 4 points.
+MARK: Wed Feb  7 10:33:19 2018 : Start burn-in of mcmc model
+Number of iterations: 20000
+MARK: Wed Feb  7 10:37:23 2018 : End burn-in of mcmc model
+Reduced Chi^2: 0.8555953181577121
+Acceptance rate = 4.85075%
+Best Parameters:
+[ 6.43875711e-01  1.10209334e-01  4.71060000e-02  2.99850000e+00
+  1.47568104e+04  9.25550000e-01  3.77095009e-02  0.00000000e+00
+ -1.70778703e-03  1.00000000e+00  0.00000000e+00  1.00000000e+00
+  4.40010589e+01  1.89218008e+02  1.01516344e+00]
+MARK: Wed Feb  7 10:37:24 2018 : Start full mcmc model
+Max number of iterations: 60000
+MARK: Wed Feb  7 10:43:11 2018 : End full mcmc model
+Completed 600000 iterations.
+Acceptance rate = 5.61533333333%
+WA103bo11 effective sample size: 405.0
+WA103bo11 new stepsize: 1483.0
+Median Parameters With Standard Deviations:
+[[ 6.43908832e-01  3.80452041e-04]
+ [ 1.10000942e-01  1.46690083e-03]
+ [ 4.71060000e-02  6.93889390e-18]
+ [ 2.99850000e+00  0.00000000e+00]
+ [ 1.47520670e+04  2.09219568e+01]
+ [ 9.25550000e-01  2.22044605e-16]
+ [ 5.77224982e-02  5.91264660e-02]
+ [ 0.00000000e+00  0.00000000e+00]
+ [-1.02866548e-03  2.14100297e-03]
+ [ 1.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00]
+ [ 1.00000000e+00  0.00000000e+00]
+ [ 4.42623220e+01  8.84068436e-01]
+ [ 3.25235437e+02  3.51601350e+02]
+ [ 1.28208110e+00  3.73192555e-01]]
+Best Parameters:
+[ 6.43862040e-01  1.09442565e-01  4.71060000e-02  2.99850000e+00
+  1.47486164e+04  9.25550000e-01  2.85356004e-02  0.00000000e+00
+ -1.03958458e-03  1.00000000e+00  0.00000000e+00  1.00000000e+00
+  4.40229781e+01  1.34751373e+02  8.92379100e-01]
+Reduced Chi^2: 0.8550107851363808
+AIC = 1463.5332592358927
+BIC = 1507.0450319750596
+
+Best-fit eclipse depths or transit radius ratios with errors:
+WA103bo11
+0.109442565252 0.00146690083282 trq1lnbliRN
+
+     S/N      SDNR     ΔBIC       MODEL   NUMIT  BIN_SZ(y,x)   MinNumPts     Wavelet
+WA103bo11
+ 74.6080 0.0033467      0.0 trq1lnbliRN 6.0e+04  0.008,0.008    4         haar

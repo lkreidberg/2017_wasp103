@@ -62,7 +62,7 @@ for ii, f in enumerate(bestfits):
 			binbestfit[j-1]=  np.mean(bestfit[ind])
 			bin_average[j-1] = (phasebins[j-1]+phasebins[j])/2.
 
-	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, fmt = '.k')
+	plt.errorbar(bin_average, (bindata-1.)*1e3*dilution, yerr = binsigma*1e3, fmt = '.k', linewidth = 1.)
 	plt.plot(phase, (bestfit-1.)*1e3*dilution, color = 'b', label = 'best fit', zorder=-1, alpha = 0.8, linewidth = 2.0)
 
 	#formatting
@@ -76,6 +76,16 @@ for ii, f in enumerate(bestfits):
 	plt.ylim(-0.2, 1.7)
 	plt.xlim(0,1)
 
+
+        ylo, yhi = plt.gca().get_ylim()
+        yrange = yhi - ylo
+        toperr = yhi - 0.1*yrange
+        bottomerr = toperr - 0.5 
+        plt.plot([0.95, 0.95], [bottomerr, toperr], color = '0.5', linewidth =2.)
+        plt.plot([0.94, 0.96], [bottomerr, bottomerr], color = '0.5', linewidth = 2.)
+        plt.plot([0.94, 0.96], [toperr, toperr], color = '0.5', linewidth = 2.)
+	ax.text(0.82, 1.1, '500\nppm', fontsize=10)
+
 	ax.text(0.03, 1.0, 'HST/WFC3\n1.1 - 1.7 $\mu$m', fontsize=10)
 
 	#Plot RESIDUALS 	#
@@ -84,7 +94,7 @@ for ii, f in enumerate(bestfits):
 	ax = plt.subplot(gs[ii, 1])
 	resid = data_corr - bestfit 
 	plt.axhline(0, color='0.5', zorder=-10, linewidth = 1.)
-	plt.errorbar(bin_average, (bindata - binbestfit)*1e3, yerr = binsigma*1e3, fmt = '.k')
+	plt.errorbar(bin_average, (bindata - binbestfit)*1e3, yerr = binsigma*1e3, fmt = '.k', linewidth = 1.)
 	plt.ylim(-0.2,0.2)
 	plt.xlim(0,1)
 	
@@ -143,7 +153,7 @@ for ii, f in enumerate(bestfits):
 
 	#print "phase, err", bin_average[0:5], binsigma[0:5]
 
-	plt.errorbar(bin_average, (bindata-1.)*1e3*(1.+dilution[ii]), yerr = binsigma*1e3, fmt = '.k')
+	plt.errorbar(bin_average, (bindata-1.)*1e3*(1.+dilution[ii]), yerr = binsigma*1e3, fmt = '.k', linewidth = 1.)
 	plt.plot(phase, (bestfit-1.)*1e3*(1.+dilution[ii]), color = colors[ii], label = 'best fit', alpha = 0.8, linewidth = 2.0)
 
 
@@ -167,6 +177,13 @@ for ii, f in enumerate(bestfits):
 		ax.xaxis.set_minor_locator(FixedLocator(np.array([0., 0.2, 0.4, 0.6, 0.8, 1.])))
 		ax.text(0.03, 3.8, 'Spitzer Ch 2\n4.5 $\mu$m', fontsize=10)
 
+        ylo, yhi = plt.gca().get_ylim()
+        yrange = yhi - ylo
+        toperr = yhi - 0.1*yrange
+        bottomerr = toperr - 0.5 
+        plt.plot([0.95, 0.95], [bottomerr, toperr], color = '0.5', linewidth =2.)
+        plt.plot([0.94, 0.96], [bottomerr, bottomerr], color = '0.5', linewidth = 2.)
+        plt.plot([0.94, 0.96], [toperr, toperr], color = '0.5', linewidth = 2.)
 
 	#Plot RESIDUALS 	#
 	#########################
@@ -174,7 +191,7 @@ for ii, f in enumerate(bestfits):
 	ax = plt.subplot(gs[ii+1, 1])
 	binresid = bindata - binbestfit
 	plt.axhline(0, color='0.5', zorder = -10, linewidth = 1.)
-	plt.errorbar(bin_average, binresid*1e3, yerr = binsigma*1e3, fmt = '.k')
+	plt.errorbar(bin_average, binresid*1e3, yerr = binsigma*1e3, fmt = '.k', linewidth = 1.)
 	plt.ylim(-2,2)
 	plt.xlim(0,1)
 	
@@ -194,4 +211,4 @@ for ii, f in enumerate(bestfits):
 
 #plt.tight_layout()
 plt.savefig("fig5.pdf")
-plt.show()
+#plt.show()

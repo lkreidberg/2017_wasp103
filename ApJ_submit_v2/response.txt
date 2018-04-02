@@ -154,7 +154,7 @@ Finally, I would like to see the unbinned but systematic corrected data here or 
 
 We explored using the same y-axis for all the panels in this figure, but found that the range has to be so large (0.1e-3 - 5e-3), that for some panels the shape of the spectra is hard to make out (particularly for phases near the dayside, when the planet-to-star flux is close to the top of this range).
 
-To make it easier for readers to interpret the figure with a different y-axis on each panel, we added a dotted horizontal line at 1e-3 in all the panels.  
+To make it easier for readers to interpret the figure with a different y-axis on each panel, we added a 100 ppm error bar to the bottom right of each panel to illustrate the scale.
 
 ****
 
