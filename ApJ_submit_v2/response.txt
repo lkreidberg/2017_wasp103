@@ -3,12 +3,12 @@
 3       x
 4       x
 5	x
-6
-7
+6       x
+7       x
 8
-9
+9       x
 10	x
-11
+11      x
 12
 13
 14
@@ -111,7 +111,7 @@ Additionally, the authors have collected transit data but all of the plots shown
 
 Southworth et al. observed a total of 18 transits of WASP-103b, so with the combined data set are able to measure a very precise transit ephemeris (their reported 1 sigma uncertainty is less than 5 seconds). We fit the Spitzer 4.5 micron transit alone and obtained a precision on the ephemeris of 30 seconds (at 1 sigma). Our precision is lower due to photon noise limitations: the star is much fainter at Spitzer observations than in the optical, and the ground-based telescopes are larger than Spitzer, and we have just one transit compared to 18 in the Southworth et al. study. For this reason, we elected to use the Southworth et al. transit parameters.
 
-FIXME -- transit plot??
+We added a figure showing the transit light curves (Figure 9).
 
 ****
 
@@ -129,11 +129,14 @@ If the authors opt to keep Figure 3 (I think Figure 5 on its own is sufficient w
 
 #
 
-Several of the theorists on this paper have spoken up to say that they like the reminder of what the raw data look like, since they don't work with the data directly. We therefore decided to keep the figure, but made the suggested changes. 
+Several of the theorists on this paper have spoken up to say that they like the reminder of what the raw data look like, since they don't work with the data directly. We therefore decided to keep the figure, but made the suggested changes. The figure now shows the raw data plotted as a function of time (BJD_TDB).
 
 ****
 
 7. In section 3.3, the authors state that for a subset of cases an MCMC was used to determine parameter uncertainties. Which subset? How were they chosen?
+
+#
+Since we considered so many different cases (four different phase variation models for broadband and spectroscopic light curves), we elected to run an MCMC only for cases where we ereport 68% confidence intervals on the model parameters. These include the transit models (for the transit depth) and the sine curve models (for the phase amplitude and offset reported in Table 2). We added this clarification to the text in Section 3.3.
 
 ****
 
@@ -153,21 +156,27 @@ Second, the bin size changed between this figure and figure 3, although this is 
 
 Finally, I would like to see the unbinned but systematic corrected data here or as a separate figure. As stated previously, one of the strengths of spitzer is its high cadence. It is possible to make a plot with all the unbinned data shown with some choice of transparency alpha and then the current binned plots superimposed on top of that (as has been done in other works). This will allow the readers to see the actual underlying data and what is actually being binned together and whether there might be systematics being averaged out.
 
+#
+
+Regarding the first point: we explored using the same y-axis for all the panels in this figure, but found that the range has to be so large (0.1e-3 - 5e-3) that the HST light curve is squished in the bottom quarter of the plot, which makes it hard to see the phase variation.  To make it easier for readers to interpret the figure with a different y-axis on each panel, we added a 500 ppm error bar to the top right of each panel to illustrate the scale.
+
+We kept the phase bins the same, but removed the binning from Figure 3 and added the raw data instead.
 
 ****
 
 10. Figure 6: Here again, I would like to see a different version or this version changed where the y-scaled on all of the plots are the same. It's hard to interpret the figure and the plots when having to mentally account for the changing y-scales for each of the different phases shown.
 
-##
+#
 
-We explored using the same y-axis for all the panels in this figure, but found that the range has to be so large (0.1e-3 - 5e-3), that for some panels the shape of the spectra is hard to make out (particularly for phases near the dayside, when the planet-to-star flux is close to the top of this range).
-
-To make it easier for readers to interpret the figure with a different y-axis on each panel, we added a 100 ppm error bar to the bottom right of each panel to illustrate the scale.
+As with Figure 5, we tested using the same y-axis for all the panels in this figure, but again found that for some panels the shape of the spectra is hard to make out (particularly for phases near the dayside, when the planet-to-star flux is close to the upper limit of the y-range). Instead, we added a 100 ppm error bar to the bottom right of each panel to illustrate the scale.
 
 ****
 
 11. Section 4.3: It is not clear why the bias would be 100 ppm if the phase variation was absorbed into the systematics model, as the phase variation is at the 0.0015 level as shown in Figure 7, which is significantly bigger. A little more explanation is needed as to how this number was obtained
 
+#
+
+The 100 ppm was estimated by eye. The exact amplitude of the phase variation depends on which model is used for the thermal phase variation.  Rather than making a quantitative comparison, we wanted to suggest that the amplitude of this effect has the right order of magnitude. We added text to section 4.4 clarifying that this estimate was just an approximation from looking at the figure (now Figure 8). 
 
 ****
 
