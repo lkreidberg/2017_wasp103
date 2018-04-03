@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 APR 2018 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 APR 2018 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,31 +403,31 @@ Package: ulem 2012/05/18
 \c@affilcount=\count144
 )
 Class revtex4-1 Info: Unrecognized array package. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 25.
+lass! (Proceeding with fingers crossed.) on input line 32.
 Class revtex4-1 Info: Patching unrecognized longtable package. (Proceeding with
- fingers crossed) on input line 25.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 25.
+ fingers crossed) on input line 32.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 32.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 25.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 25.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 25.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 32.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 32.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 32.
  (./ms.aux)
 \openout1 = `ms.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -460,7 +460,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 32.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -470,47 +470,48 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count151
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
 \openout3 = `msNotes.bib'.
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 80.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 87.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 96.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 103.
+
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
  [2]
-Underfull \hbox (badness 6592) in paragraph at lines 111--111
+Underfull \hbox (badness 6592) in paragraph at lines 118--118
 [][]| [] [][][][]$\OT1/cmtt/m/n/8 http : / / irsa . ipac . caltech . edu / data
  / SPITZER / docs / irac /
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 118--119
+Underfull \hbox (badness 1377) in paragraph at lines 125--126
 \OT1/cmr/m/n/10 (C14) au-to-mated imag-ing tele-scope (AIT), lo-cated
  []
 
 [3]
 
-LaTeX Warning: File `fig1.eps' not found on input line 127.
+LaTeX Warning: File `fig1.eps' not found on input line 134.
 
 Package epstopdf Info: Source file: <fig1.eps>
 (epstopdf)             Output file: <fig1-eps-converted-to.pdf>
@@ -518,16 +519,16 @@ Package epstopdf Info: Source file: <fig1.eps>
 (epstopdf)                    size: 255523 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig1-eps-converted-to.pdf 
 fig1.eps>
-(epstopdf)             \includegraphics on input line 127.
+(epstopdf)             \includegraphics on input line 134.
 Package epstopdf Info: Output file is already uptodate.
 <fig1-eps-converted-to.pdf, id=215, 538.01pt x 696.6025pt>
 File: fig1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig1-eps-converted-to.pdf>
-Package pdftex.def Info: fig1-eps-converted-to.pdf used on input line 127.
+Package pdftex.def Info: fig1-eps-converted-to.pdf used on input line 134.
 (pdftex.def)             Requested size: 256.55872pt x 332.1864pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 127--129
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 134--136
 [][] 
  []
 
@@ -535,59 +536,59 @@ Overfull \hbox (14.29219pt too wide) in paragraph at lines 127--129
 File: fig2.pdf Graphic file (type pdf)
 
 <use fig2.pdf>
-Package pdftex.def Info: fig2.pdf used on input line 169.
+Package pdftex.def Info: fig2.pdf used on input line 176.
 (pdftex.def)             Requested size: 256.55872pt x 128.284pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 169--170
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 176--177
 [][] 
  []
 
 <fig3.pdf, id=261, 469.755pt x 722.7pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
-Package pdftex.def Info: fig3.pdf used on input line 175.
+Package pdftex.def Info: fig3.pdf used on input line 182.
 (pdftex.def)             Requested size: 256.55872pt x 332.54868pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 175--176
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 182--183
 [][] 
  []
 
 [5 <./fig2.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 183.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 190.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 183.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 190.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 195--196
+Underfull \hbox (badness 2065) in paragraph at lines 202--203
 \OT1/cmr/m/n/10 Interpolated Sub-pixel Sen-si-tiv-ity (BLISS) map-ping
  []
 
 [6 <./fig3.pdf>] <fig4.pdf, id=419, 361.35pt x 433.62pt>
 File: fig4.pdf Graphic file (type pdf)
  <use fig4.pdf>
-Package pdftex.def Info: fig4.pdf used on input line 218.
+Package pdftex.def Info: fig4.pdf used on input line 225.
 (pdftex.def)             Requested size: 256.55872pt x 307.87236pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 218--219
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 225--226
 [][] 
  []
 
 <fig5.pdf, id=420, 542.025pt x 325.215pt>
 File: fig5.pdf Graphic file (type pdf)
  <use fig5.pdf>
-Package pdftex.def Info: fig5.pdf used on input line 225.
+Package pdftex.def Info: fig5.pdf used on input line 232.
 (pdftex.def)             Requested size: 513.11743pt x 307.88062pt.
  [7]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 240.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 247.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 240.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 247.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -595,31 +596,31 @@ Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 [8 <./fig4.pdf>] <fig6.pdf, id=509, 1011.78pt x 361.35pt>
 File: fig6.pdf Graphic file (type pdf)
  <use fig6.pdf>
-Package pdftex.def Info: fig6.pdf used on input line 290.
+Package pdftex.def Info: fig6.pdf used on input line 297.
 (pdftex.def)             Requested size: 513.11743pt x 183.2605pt.
 
 <fig7.pdf, id=510, 578.16pt x 216.81pt>
 File: fig7.pdf Graphic file (type pdf)
  <use fig7.pdf>
-Package pdftex.def Info: fig7.pdf used on input line 297.
+Package pdftex.def Info: fig7.pdf used on input line 304.
 (pdftex.def)             Requested size: 513.11743pt x 192.42766pt.
 
-Underfull \hbox (badness 10000) detected at line 322
+Underfull \hbox (badness 10000) detected at line 329
 $\OT1/cmr/m/n/9 1$
  []
 
 <fig8.pdf, id=511, 722.7pt x 240.65909pt>
 File: fig8.pdf Graphic file (type pdf)
  <use fig8.pdf>
-Package pdftex.def Info: fig8.pdf used on input line 326.
+Package pdftex.def Info: fig8.pdf used on input line 333.
 (pdftex.def)             Requested size: 513.11743pt x 185.48065pt.
 
-Overfull \hbox (0.90059pt too wide) in paragraph at lines 333--334
+Overfull \hbox (0.90059pt too wide) in paragraph at lines 340--341
 \OT1/cmr/m/n/10 planet's cli-mate: a two-temperature map, the physically-
  []
 
 
-Underfull \hbox (badness 1515) in paragraph at lines 333--334
+Underfull \hbox (badness 1515) in paragraph at lines 340--341
 \OT1/cmr/m/n/10 motivated kine-matic model of [][]Zhang & Show-man[][]
  []
 
@@ -629,10 +630,10 @@ pdfTeX warning: pdflatex (file ./fig7.pdf): PDF inclusion: multiple pdfs with p
 age group included in a single page
 >] [11 <./fig8.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 369.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 376.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 369.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 376.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -640,156 +641,170 @@ Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 <fig9.pdf, id=875, 325.215pt x 325.215pt>
 File: fig9.pdf Graphic file (type pdf)
  <use fig9.pdf>
-Package pdftex.def Info: fig9.pdf used on input line 393.
+Package pdftex.def Info: fig9.pdf used on input line 400.
 (pdftex.def)             Requested size: 256.55872pt x 256.57959pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 393--394
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 400--401
 [][] 
  []
 
 [12 <./fig9.pdf>] <fig10.pdf, id=941, 361.35pt x 216.81pt>
 File: fig10.pdf Graphic file (type pdf)
  <use fig10.pdf>
-Package pdftex.def Info: fig10.pdf used on input line 401.
+Package pdftex.def Info: fig10.pdf used on input line 408.
 (pdftex.def)             Requested size: 256.55872pt x 153.93617pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 401--403
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 408--410
 [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 466
+Underfull \hbox (badness 10000) detected at line 473
 $\OT1/cmr/m/n/9 1$
  []
 
 [13 <./fig10.pdf>]
-Underfull \hbox (badness 1067) in paragraph at lines 475--476
+Underfull \hbox (badness 1067) in paragraph at lines 482--483
 \OT1/cmr/m/n/10 els to de-ter-mine self-consistent, radiative-convective
  []
 
 <fig11.pdf, id=1040, 578.16pt x 433.62pt>
 File: fig11.pdf Graphic file (type pdf)
  <use fig11.pdf>
-Package pdftex.def Info: fig11.pdf used on input line 481.
+Package pdftex.def Info: fig11.pdf used on input line 488.
 (pdftex.def)             Requested size: 256.55872pt x 192.41443pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 481--482
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 488--489
 [][] 
  []
 
 [14 <./fig11.pdf>]
-Underfull \hbox (badness 1320) in paragraph at lines 488--489
+Underfull \hbox (badness 1320) in paragraph at lines 495--496
 []\OT1/cmr/m/n/10 Figure[][]12[][] shows a sum-mary of the temperature-
  []
 
 <fig12.pdf, id=1075, 308.74174pt x 242.25566pt>
 File: fig12.pdf Graphic file (type pdf)
  <use fig12.pdf>
-Package pdftex.def Info: fig12.pdf used on input line 491.
+Package pdftex.def Info: fig12.pdf used on input line 498.
 (pdftex.def)             Requested size: 256.55872pt x 201.3235pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 491--492
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 498--499
 [][] 
  []
 
 <fig13.pdf, id=1085, 549.25201pt x 549.25201pt>
 File: fig13.pdf Graphic file (type pdf)
  <use fig13.pdf>
-Package pdftex.def Info: fig13.pdf used on input line 499.
+Package pdftex.def Info: fig13.pdf used on input line 506.
 (pdftex.def)             Requested size: 256.55872pt x 256.5561pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 499--500
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 506--507
 [][] 
  []
 
 [15 <./fig12.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 510.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 518.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 510.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 518.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-[16 <./fig13.pdf>] <fig14.pdf, id=1279, 289.08pt x 216.81pt>
+[16 <./fig13.pdf>] <fig14.pdf, id=1277, 289.08pt x 216.81pt>
 File: fig14.pdf Graphic file (type pdf)
  <use fig14.pdf>
-Package pdftex.def Info: fig14.pdf used on input line 536.
+Package pdftex.def Info: fig14.pdf used on input line 546.
 (pdftex.def)             Requested size: 256.55872pt x 192.42766pt.
-
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 536--537
-[][] 
- []
-
-[17 <./fig14.pdf>] <fig15.pdf, id=1411, 289.08pt x 433.62pt>
-File: fig15.pdf Graphic file (type pdf)
- <use fig15.pdf>
-Package pdftex.def Info: fig15.pdf used on input line 546.
-(pdftex.def)             Requested size: 256.55872pt x 384.85533pt.
 
 Overfull \hbox (14.29219pt too wide) in paragraph at lines 546--547
 [][] 
  []
 
-<fig16.pdf, id=1412, 2041.6275pt x 1011.78pt>
+[17 <./fig14.pdf>]
+
+Package natbib Warning: Citation `wright17' on page 18 undefined on input line 
+556.
+
+<fig15.pdf, id=1415, 289.08pt x 433.62pt>
+File: fig15.pdf Graphic file (type pdf)
+ <use fig15.pdf>
+Package pdftex.def Info: fig15.pdf used on input line 562.
+(pdftex.def)             Requested size: 256.55872pt x 384.85533pt.
+
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 562--563
+[][] 
+ []
+
+<fig16.pdf, id=1416, 2041.6275pt x 1011.78pt>
 File: fig16.pdf Graphic file (type pdf)
  <use fig16.pdf>
-Package pdftex.def Info: fig16.pdf used on input line 553.
+Package pdftex.def Info: fig16.pdf used on input line 569.
 (pdftex.def)             Requested size: 513.11743pt x 254.28752pt.
 
-Overfull \hbox (2.34523pt too wide) in paragraph at lines 563--564
+Overfull \hbox (2.34523pt too wide) in paragraph at lines 579--580
 \OT1/cmr/m/n/10 J13204427+0409045, (1320+0409) an op-ti-cal L3, 2MASS
  []
 
-[18 <./fig15.pdf>] <fig17.pdf, id=1558, 542.025pt x 252.945pt>
+[18 <./fig15.pdf>] <fig17.pdf, id=1552, 542.025pt x 252.945pt>
 File: fig17.pdf Graphic file (type pdf)
  <use fig17.pdf>
-Package pdftex.def Info: fig17.pdf used on input line 568.
+Package pdftex.def Info: fig17.pdf used on input line 584.
 (pdftex.def)             Requested size: 513.11743pt x 239.4627pt.
 
-[19 <./fig16.pdf>] [20 <./fig17.pdf>] [21] (./ms.bbl [22] [23]) [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
- (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 626.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 626.
+[19 <./fig16.pdf>] [20 <./fig17.pdf>] [21] (./ms.bbl [22] [23] [24]) [25]
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 642.
+(./ms.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 642.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 642.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
  ) 
 Here is how much of TeX's memory you used:
- 9592 strings out of 492995
- 134424 string characters out of 6132704
- 317730 words of memory out of 5000000
- 12811 multiletter control sequences out of 15000+600000
- 15294 words of font info for 61 fonts, out of 8000000 for 9000
+ 9618 strings out of 492995
+ 134678 string characters out of 6132704
+ 305190 words of memory out of 5000000
+ 12829 multiletter control sequences out of 15000+600000
+ 15602 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,13n,37p,2456b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (24 pages, 5955374 bytes).
+ 35i,13n,37p,2456b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam10.pfb>
+Output written on ms.pdf (25 pages, 5966218 bytes).
 PDF statistics:
- 1954 PDF objects out of 2073 (max. 8388607)
- 1212 compressed objects within 13 object streams
- 216 named destinations out of 1000 (max. 500000)
+ 1976 PDF objects out of 2073 (max. 8388607)
+ 1232 compressed objects within 13 object streams
+ 223 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

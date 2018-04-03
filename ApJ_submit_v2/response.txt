@@ -11,15 +11,15 @@
 11      x
 12
 13
-14
+14      x-abstract
 15
-16
-17
+16      x
+17      x
 18
 19	x
 20
 21
-22
+22      x
 23
 
 
@@ -202,6 +202,10 @@ I also realize that the content of this section may change depending on the prev
 
 14. The authors close section 5.2.1 with a list of caveats about the error bars on this section and how the inferred [M/H] and [C/O] may be heavily skewed by the one 4.5 micron data point (from phase 0.5? or other bin? see previous comment). These caveats need to be more prominent considering how serious they may be to the interpretation. I think they need to be present in the abstract, and also they need to be bulleted here in the relevant section so that they are easy to catch for those that skim the paper instead of read it in depth.
 
+#
+
+We have reformatted section 5.2.1 to include the caveats as a bulleted list. FIXME abstract
+
 ****
 
 15. Section 5.2.2: Nightside spectrum. The authors fit a nightside spectrum at phase 0.1. One easy thing to do for comparison and to estimate or show error bars is to also fit a nightside spectrum at phase 0.9, which should be symmetric and obtain the same or similar results. I would ask that the authors please do this and report the results. I realize it might not be interesting because the fit already presented is not able to say much about the metallicity or the C/O ratio. This may also be a useful exercise for the dayside spectrum (fit at phase 0.4 and phase 0.6, or something similar).
@@ -210,11 +214,21 @@ I also realize that the content of this section may change depending on the prev
 
 16. Section 6: The GCM used assumes a solar composition, but the authors argued earlier in the paper that WASP-103b's atmosphere is enhanced in metallicity. So why make this choice? Does the GCM not allow you to dial up the metallicity? This isn't explained. Later the authors also run an enhanced metallicity ([M/H] = 0.5) simulation with different drag coefficients. However, the reasons behind these different model choices for comparisons is never explained. There should be more text towards this end, particularly on the choice on whether or not to include TiO/VO opacity, which is turned on or off in the different simulations without explanation.
 
+#
+
+Each GCM run is very computationally intensive, so we ran a few representative cases to see which factors (TiO/VO, metallicity, drag) had the largest effect on the phase curve shape. Our nominal GCM was a cloud-free, solar composition model with TiO/VO and no added drag. We changed the parameters one at a time to isolate what their effects were (removing TiO/VO, increasing metallicity, including drag). We found that including drag, rather than changing metallicity, is what makes the biggest difference in the phase curve shape and provides the best match to the data (see Figure 15). We clarified these points in the text in section 6.
+
 ****
 
 17. The discussion of the magnetic field strength needed to produce a drag that sort of makes the GCM model work the best is very wishy washy. I understand that the authors are using order-of-magnitude expressions (as they state) but I think the magnetic field discussion is oversimplified and the conclusions are overstated. It also neglects to mention previous work attempting to directly measure/detect the effects of magnetic fields from planets. If the authors wish to discuss the magnetic fields, some mention of these previous works should be done. Significant mention about the shape of the magnetic field should also be prevalent. Furthermore, the planet is very close in to its star, and so there would likely be a complicated magnetic field structure due to the presence of the stellar magnetic field in the vicinity. This is not addressed or touched on when the authors assume the magnetic field is perpendicular to the flow of material.
 
 If the authors want to keep a discussion of the magnetic field in the paper, this section should be significantly expanded and the caveats and assumptions more prominently listed. Otherwise, casual readers might over interpret this section to imply that a magnetic field is detected or that a magnetic field with a strength nice and similar to Jupiter's is the only possible explanation for the observable properties of the system with regards to its phase curve. It is the referee's preference however, that the magnetic field discussion is mostly scaled down or eliminated.
+
+# 
+
+We expanded the discussion of magnetic fields according to the referee's suggestions. We think it is important to keep this section of the paper because even though this is just an order-of-magnitude result, 
+
+we want to make the point that the planet's magnetic field may make an observable difference to the atmospheric dyanamics, providing a novel way to study.
 
 ****
 
