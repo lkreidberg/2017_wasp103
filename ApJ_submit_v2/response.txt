@@ -146,6 +146,25 @@ I disagree with this approach. The fact that if you divide up the data into enou
 
 More discussion here is warranted to show conclusively that the larger than predicted noise is not biasing the data or results. (This may be as simple as showing that other works show similar effects or that there are other works with elevated red noise in all channels but have shown that this does not affect the end results).
 
+#
+
+This is a good point, and something that concerned us as well. However, there
+are several reasons we believe our inferences about the spectroscopic light
+curves are not affected by the additional noise in the white light curve: 
+
+One is that the astrophysical signal is wavelength dependent -- the
+eclipse depths increase by 50% from the bluest channel to the reddest channel.
+But for the white light curve, we sum up the whole signal and fit it with a
+single phase curve model. We expect systematic scatter in the phase curve due to
+the wavelength dependence of the astrophysical signal. 
+
+An additional consideration is that the white light curve is more strong affected by loss of light off the
+detector edge than the spectroscopic light curves. The spectrum moves slightly
+on the detector over the course of a visit. Our white light curve 
+
+
+
+
 ****
 
 9. Figure 5: There are several things with the figure that I would like clarified or changed. 

@@ -114,7 +114,8 @@ fluxConversion = expTime*gain / fluxConv"""
 toffsets = [2457170.7, 2457162.]
 
 #bestfits = ["Ch1_best_fits/2017-10-11_20:25-zhang/bestfit.pic", "Ch2_best_fits/2017-10-11_20:24-zhang/bestfit.pic"]
-bestfits = ["Ch1_best_fits/2018-02-07_14:24-zhang/bestfit.pic", "Ch2_best_fits/2018-02-07_12:02-zhang/bestfit.pic"]
+#bestfits = ["Ch1_best_fits/2018-02-07_14:24-zhang/bestfit.pic", "Ch2_best_fits/2018-02-07_12:02-zhang/bestfit.pic"]
+bestfits = ["Ch1_best_fits/2018-04-04_08:40-sincos2/bestfit.pic", "Ch2_best_fits/2018-04-04_08:42-sincos2/bestfit.pic"]
 
 for ii, f in enumerate(bestfits):
 	ax = plt.subplot(gs[ii+4, 0])
@@ -133,8 +134,9 @@ for ii, f in enumerate(bestfits):
 	bestfit = p[13]
 	abscissa = p[15]
 	sys = p[16]
+        flux = p[20]
 
-        plt.plot(bjdtdb - offset, data_corr*fluxconv[ii]*np.mean(binfluxuc)/1e6, marker = '.', color = colors[ii], alpha = 0.2, markersize = 3, markeredgewidth = 0., linewidth = 0., zorder =-100000)
+        plt.plot(bjdtdb - offset, flux*fluxconv[ii]/1e6, marker = '.', color = colors[ii], alpha = 0.2, markersize = 3, markeredgewidth = 0., linewidth = 0., zorder =-100000)
 	plt.plot(abscissa - offset + toffsets[ii], sys*fluxconv[ii]/1e6, color= '0.7', zorder=-10)
 	plt.plot(abscissa - offset + toffsets[ii], bestfit*fluxconv[ii]/1e6, color = 'k') 
 	#plt.errorbar(abscissauc - abscissa[0], binfluxuc*fluxconv[ii]/1e6, binstduc*fluxconv[ii]/1e6, fmt = '.k', markersize = ms)
