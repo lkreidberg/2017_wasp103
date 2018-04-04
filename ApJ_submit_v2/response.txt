@@ -17,8 +17,8 @@
 17      x
 18
 19	x
-20
-21
+20      x
+21      x
 22      x
 23
 
@@ -226,13 +226,16 @@ If the authors want to keep a discussion of the magnetic field in the paper, thi
 
 # 
 
-We expanded the discussion of magnetic fields according to the referee's suggestions. We think it is important to keep this section of the paper because even though this is just an order-of-magnitude result, 
+We expanded the discussion of magnetic fields according to the referee's suggestions. We think it is important to keep this section of the paper because it opens up discussion about a new way of measuring planet magnetic fields (studying their effects on the atmospheric dynamics, in contrast to previous work, which focused on star-planet interactions).  We put this discussion in a new subsection (6.1), added references to previous work, and mentioned the suggested caveats. We also clarified in the abstract that our estimate of the magnetic field is based on a back of the envelope calculation.
 
-we want to make the point that the planet's magnetic field may make an observable difference to the atmospheric dyanamics, providing a novel way to study.
 
 ****
 
 18. Section 6: At the end of this section, the authors note that the GCM does not provide a good fit to the data, while the spiderman maps do much better. In that case, I wonder why such a large portion of the paper is devoted to something that doesn't work all that well (and a B-field inference drawn from it too). I think it's good to test the models and see what they can do when confronted with data, but at the same time I think the authors have over interpreted what has come out of the GCMs, as stated before.
+
+#
+
+
 
 ****
 
@@ -246,9 +249,18 @@ Thank you! We are glad liked it.
 
 20. Figure 16: I think the y scales on each vertical section of plots need to be adjusted to be the same. This will facilitate easier comparison than as currently shown (this is similar to my previous comments on other plots).
 
+#
+
+Our goal for this plot was to show differences in the relative flux in and out of the water feature (the amplitudes A1 and A2), rather than comparing the absolute flux. The absolute flux levels are dependent on the radius of the object -- for example, the directly imaged companions have inflated radii, so their absolute fluxes are higher.  Therefore, to make an apples-to-apples comparison between objects, we normalize the spectra by their absolute flux to calculate the indices A1 and A2.  This is why we chose not to plot all the spectra on the same absolute scale, and instead use a different y-axis for each to better illustrate the relative water feature amplitude. 
+
+
 ****
 
 21. I like the format of section 8 (the summary/conclusion section). The bullet points are helpful to readers that would skim through a paper and I wish more papers had done this. I would encourage the authors (if they feel like it) to bold a statement in each of the bullet points as well.
+
+#
+
+Thanks! We had trouble indentifying a single sentence in each bullet to bold, so this time we decided to leave it as is. 
 
 ****
 
