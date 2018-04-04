@@ -5,7 +5,7 @@
 5	x
 6       x
 7       x
-8
+8       x
 9       x
 10	x
 11      x
@@ -148,22 +148,13 @@ More discussion here is warranted to show conclusively that the larger than pred
 
 #
 
-This is a good point, and something that concerned us as well. However, there
-are several reasons we believe our inferences about the spectroscopic light
-curves are not affected by the additional noise in the white light curve: 
+This is a good point, and something that concerned us as well. We endeavor to explain more clearly here why our inferences about the spectroscopic light curves are not affected by the additional noise in the white light curve.
 
-One is that the astrophysical signal is wavelength dependent -- the
-eclipse depths increase by 50% from the bluest channel to the reddest channel.
-But for the white light curve, we sum up the whole signal and fit it with a
-single phase curve model. We expect systematic scatter in the phase curve due to
-the wavelength dependence of the astrophysical signal. 
+One point (that we mentioned but not in great detail) is that the white light curve is more strong affected by loss of light off the detector edge than the spectroscopic light curves. The spectrum moves slightly on the detector over the course of a visit. We correct for this shift by interpolating the spectrum onto a common wavelength scale. However, we cannot correct for any flux lost off the edge of the detector. Flux loss at the edge is relevant for the white light curve, since it encapsulates all the flux, but does not affect the spectroscopic light curves, which are limited in wavelength range and do not extend all the way to the edge. In general we find that our rms is very sensitive to the size of our extraction window, so we think this effect is a plausible explanation for additional noise in the white light curve.
 
-An additional consideration is that the white light curve is more strong affected by loss of light off the
-detector edge than the spectroscopic light curves. The spectrum moves slightly
-on the detector over the course of a visit. Our white light curve 
+Another important consideration that we neglected to mention is that the astrophysical signal is wavelength dependent -- the eclipse depths increase by 50% from the bluest channel to the reddest channel.  But for the white light curve, we sum up the whole signal and fit it with a single phase curve model. Therefore, we expect a systematic scatter in the phase curve due to the wavelength dependence of the astrophysical signal. 
 
-
-
+A final point is that there are multiple cases of exoplanet transmission spectra measured with WFC3 that are consistent with a flat line at higher precision than what we measure here (e.g. Kreidberg et al. 2014). If wavelength-dependent systematic noise were present in data from this detector, it would be very challenging to measure a flat spectrum (you would have to conspire to have the planet signal cancel out the instrumental effects). There is nothing unusual about our data set (the fluence level and scan rate are very comparable to what has been observed before), so it is reasonable to expect that our data does not suffer from a systematic bias.
 
 ****
 
