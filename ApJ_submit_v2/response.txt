@@ -9,7 +9,7 @@
 9       x
 10	x
 11      x
-12
+12      x
 13
 14      x-abstract
 15
@@ -148,13 +148,11 @@ More discussion here is warranted to show conclusively that the larger than pred
 
 #
 
-This is a good point, and something that concerned us as well. We endeavor to explain more clearly here why our inferences about the spectroscopic light curves are not affected by the additional noise in the white light curve.
+This is a good point, and something that concerned us as well. We endeavor to explain more clearly here why our inferences about the spectroscopic light curves are not affected by the additional noise in the white light curve, and have also added this discussion to section 3.4.
 
-One point (that we mentioned but not in great detail) is that the white light curve is more strong affected by loss of light off the detector edge than the spectroscopic light curves. The spectrum moves slightly on the detector over the course of a visit. We correct for this shift by interpolating the spectrum onto a common wavelength scale. However, we cannot correct for any flux lost off the edge of the detector. Flux loss at the edge is relevant for the white light curve, since it encapsulates all the flux, but does not affect the spectroscopic light curves, which are limited in wavelength range and do not extend all the way to the edge. In general we find that our rms is very sensitive to the size of our extraction window, so we think this effect is a plausible explanation for additional noise in the white light curve.
+An important consideration that we neglected to mention is that the astrophysical signal is wavelength dependent -- the eclipse depths increase by 50% from the bluest channel to the reddest channel.  But for the white light curve, we sum up the whole signal and fit it with a single phase curve model. Therefore, we expect a systematic scatter in the phase curve due to the wavelength dependence of the astrophysical signal.  To make an order of magnitude estimate for the amplitude of this effect, we calculated the standard deviation of the secondary eclipse depths in all wavelength channels. It is $\sim100$ ppm, which is comparable to the additional scatter we observed in the white light curve.
 
-Another important consideration that we neglected to mention is that the astrophysical signal is wavelength dependent -- the eclipse depths increase by 50% from the bluest channel to the reddest channel.  But for the white light curve, we sum up the whole signal and fit it with a single phase curve model. Therefore, we expect a systematic scatter in the phase curve due to the wavelength dependence of the astrophysical signal. 
-
-A final point is that there are multiple cases of exoplanet transmission spectra measured with WFC3 that are consistent with a flat line at higher precision than what we measure here (e.g. Kreidberg et al. 2014). If wavelength-dependent systematic noise were present in data from this detector, it would be very challenging to measure a flat spectrum (you would have to conspire to have the planet signal cancel out the instrumental effects). There is nothing unusual about our data set (the fluence level and scan rate are very comparable to what has been observed before), so it is reasonable to expect that our data does not suffer from a systematic bias.
+In addition, there are multiple cases of exoplanet transmission spectra measured with WFC3 that are consistent with a flat line at higher precision than what we measure here (e.g. Kreidberg et al. 2014). If wavelength-dependent systematic noise were present in data from this detector, it would be very challenging to measure a flat spectrum (you would have to conspire to have the planet signal cancel out the instrumental effects). There is nothing unusual about our data set (the fluence level and scan rate are very comparable to what has been observed before), so it is reasonable to expect that our data does not suffer from a systematic bias.
 
 ****
 
@@ -201,6 +199,15 @@ To contradict this, at phase 0.15-0.25 (when there is still substantially more n
 To me, this indicates that the nice clean story presented by the authors of a sharp contrast between day side behavior and night side behavior (and interpretation of an emission feature) is incorrect.
 
 This has significant consequences for the rest of the paper, which relies on this interpretation to estimate [M/H], etc. Therefore I request the authors to more robustly argue that the brightness temperature are indeed significantly different between the nightside and dayside of the planet, put a confidence value on this difference, and explain why many of the intermediate phases show different behavior than what is suggested in the text for the nightside-dayside dichotomy.
+
+#
+
+This is a really subtle point and we are glad the referee raised it. Here is our clarification:
+
+It is somewhat misleading to evaluate the presence or absence of a thermal inversion based on the brightness temperatures reported in Table 6. The reason is that these temperatures account for uncertainty in the *stellar* effective temperature (+/- 160 K), as described in section 5.1. Therefore, the uncertainties in the table are correlated with each other. If the stellar temperature is higher, all the brightness temperatures would be higher, and vice versa if the stellar temperature is lower. When we hold the stellar temperature fixed, the error bars on brightness temperature shrink substantially (for example, the error on the dayside WFC3 brightness temperature is +/-8 Kelvin), and the temperatures at different wavelengths are discrepant at more than 3 sigma confidence. This can also be seen by eye in Figure 7, where the Spitzer 4.5 micron point is significantly higher than the blackbody (dashed line).
+
+Our statements about the inversion on the dayside and the lack of inversion on the nightside are motivated by the retrieval results presented in section 5.2.
+
 
 ****
 
@@ -285,10 +292,16 @@ Thanks! We had trouble indentifying a single sentence in each bullet to bold, so
 ===============================================
 Minor and obnoxiously picky comments
 1. Introduction, paragraph 2: Don't short change the small (but useful) handful of directly imaged planets when you say exoplanets are not resolved from their host stars.
+#
+Done.
 
 2. Introduction paragraph 2: "The observations revealed large day-night..." should say "These observations revealed large day-night..."
+#
+Done.
 
 3. Introduction paragraph 2: The authors list a bunch of references for Kepler that show evidence for reflected light and variable clouds. However, those references really only cover 2 Kepler planets (and one paper is more theoretical in nature). This is fine, but I would ask the authors to specifically name the planets in this case, since it's not widely observed.
+#
+There are actually 6 planets 
 
 4.Section 2.3 Photometric Monitoring - The filter (Cousins R) should be in italics, as photometric passbands typically are.
 
@@ -301,6 +314,8 @@ Minor and obnoxiously picky comments
 8. Section 4.5, Is the linear limb darkening parameter picked per bin? And is it initialized near some value (presumably from Claret)?
 
 9. Table 5: I believe the third column needs to be multiplied by 100 like the second column was in order to get it as a % which is what it is labelled as. Is this true or am I misreading it (and by extension figure 9)?
+#
+Good catch - we corrected this (and changed the table format so that uncertainty is in a separate column rather than being listed twice).
 
 10. I do not like that the authors cite Mansfield et al. (submitted) and Paramentier et al. (in prep) in section 5.2 while these papers are not accessible (and could change significantly with no version control on arXiv available!). The citations to these papers should be removed unless a publicly available version becomes available.
 
