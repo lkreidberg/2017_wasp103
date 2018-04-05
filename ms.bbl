@@ -237,6 +237,11 @@ Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
   Aeronautics and Space Administration, Office of Management, Scientific and
   Technical Information Program)
 
+\bibitem[{{Grie{\ss}meier}(2015)}]{griessmeier15}
+{Grie{\ss}meier}, J.-M. 2015, in Astrophysics and Space Science Library, Vol.
+  411, Characterizing Stellar and Exoplanetary Environments, ed. H.~{Lammer} \&
+  M.~{Khodachenko}, 213
+
 \bibitem[{{Harrington} {et~al.}(2006){Harrington}, {Hansen}, {Luszcz},
   {Seager}, {Deming}, {Menou}, {Cho}, \& {Richardson}}]{harrington06}
 {Harrington}, J., {Hansen}, B.~M., {Luszcz}, S.~H., {et~al.} 2006, Science,
@@ -570,6 +575,9 @@ Van Der~Walt, S., Colbert, S.~C., \& Varoquaux, G. 2011, Computing in Science
   {Owen}}]{wong04}
 {Wong}, M.~H., {Mahaffy}, P.~R., {Atreya}, S.~K., {Niemann}, H.~B., \& {Owen},
   T.~C. 2004, \icarus, 171, 153
+
+\bibitem[{{Wright} \& {Miller}(2015)}]{wright15}
+{Wright}, J.~T., \& {Miller}, B. 2015, IAU General Assembly, 22, 2258453
 
 \bibitem[{{Zellem} {et~al.}(2017){Zellem}, {Swain}, {Roudier}, {Shkolnik},
   {Creech-Eakman}, {Ciardi}, {Line}, {Iyer}, {Bryden}, {Llama}, \&

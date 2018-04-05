@@ -28,7 +28,6 @@ Repeated entry---line 4129 of file ms.bib.bib
  : @article{cartier17
  :                   ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "wright17"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
 while executing---line 1687 of file aasjournal.bst
@@ -58,45 +57,45 @@ Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J
 while executing---line 1775 of file aasjournal.bst
 Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
 while executing---line 1775 of file aasjournal.bst
-You've used 123 entries,
+You've used 125 entries,
             3222 wiz_defined-function locations,
-            1488 strings with 36259 characters,
-and the built_in function-call counts, 61104 in all, are:
-= -- 4776
-> -- 5283
-< -- 27
-+ -- 1788
-- -- 1974
-* -- 5544
-:= -- 11363
-add.period$ -- 127
-call.type$ -- 123
-change.case$ -- 776
-chr.to.int$ -- 113
-cite$ -- 127
-duplicate$ -- 2220
-empty$ -- 3446
-format.name$ -- 2084
-if$ -- 12092
+            1502 strings with 36635 characters,
+and the built_in function-call counts, 61963 in all, are:
+= -- 4850
+> -- 5324
+< -- 30
++ -- 1801
+- -- 1986
+* -- 5605
+:= -- 11504
+add.period$ -- 129
+call.type$ -- 125
+change.case$ -- 785
+chr.to.int$ -- 115
+cite$ -- 129
+duplicate$ -- 2264
+empty$ -- 3514
+format.name$ -- 2102
+if$ -- 12278
 int.to.chr$ -- 11
 int.to.str$ -- 0
-missing$ -- 119
-newline$ -- 379
-num.names$ -- 493
-pop$ -- 1072
+missing$ -- 120
+newline$ -- 385
+num.names$ -- 502
+pop$ -- 1088
 preamble$ -- 2
-purify$ -- 774
+purify$ -- 783
 quote$ -- 0
-skip$ -- 1636
+skip$ -- 1678
 stack$ -- 0
-substring$ -- 1930
-swap$ -- 28
-text.length$ -- 2
+substring$ -- 1972
+swap$ -- 36
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1101
+type$ -- 1119
 warning$ -- 4
-while$ -- 450
+while$ -- 459
 width$ -- 0
-write$ -- 1240
+write$ -- 1260
 (There were 18 error messages)
