@@ -59,6 +59,9 @@ Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
 {Beatty}, T.~G., {Madhusudhan}, N., {Tsiaras}, A., {et~al.} 2017{\natexlab{b}},
   \aj, 154, 158
 
+\bibitem[{{Bell} \& {Cowan}(2018)}]{bell18}
+{Bell}, T.~J., \& {Cowan}, N.~B. 2018, ArXiv e-prints, arXiv:1802.07725
+
 \bibitem[{{Blecic} {et~al.}(2013){Blecic}, {Harrington}, {Madhusudhan},
   {Stevenson}, {Hardy}, {Blecic}, {Anderson}, {Hardin}, \&
   {Campo}}]{Blecic2013}
@@ -427,10 +430,10 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Parmentier}, V., {Fortney}, J.~J., {Showman}, A.~P., {Morley}, C., \&
   {Marley}, M.~S. 2016, \apj, 828, 22
 
-\bibitem[{{Parmentier} {et~al.}(\noop{3001}in prep){Parmentier}, {Line},
+\bibitem[{{Parmentier} {et~al.}(\noop{3001}submitted){Parmentier}, {Line},
   {Bean}, {Fortney}, {D\'{e}sert}, \& {Kreidberg}}]{parmentier18}
-{Parmentier}, V., {Line}, M.~R., {Bean}, J., {et~al.} \noop{3001}in prep, In
-  preparation
+{Parmentier}, V., {Line}, M.~R., {Bean}, J., {et~al.} \noop{3001}submitted,
+  Submitted to A\&A
 
 \bibitem[{{Perez-Becker} \& {Showman}(2013)}]{perez13}
 {Perez-Becker}, D., \& {Showman}, A.~P. 2013, \apj, 776, 134

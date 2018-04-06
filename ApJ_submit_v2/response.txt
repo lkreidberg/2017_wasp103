@@ -303,7 +303,7 @@ There are actually 6 planets where dayside reflected light may be playing a role
 
 4.Section 2.3 Photometric Monitoring - The filter (Cousins R) should be in italics, as photometric passbands typically are.
 #
-FIXME - Greg, can you fix this?
+Done.
 
 5. Section 3.2.2 - Please put in parentheses next to the pixel sizes what this is in terms of arcseconds
 #
@@ -337,4 +337,4 @@ Done.
 
 12. Section 5.2.1: You infer from your fits a heat redistribution of 2.49 +0.14, -0.15, this is pretty close to the upper limits. I suppose since the prior was uniform and the upper bound on the prior is 3 sigma away this is fine and you can measure the peak and shape of the distribution regardless, but can the authors confirm that you're not significantly running into the walls of your prior?
 #
-FIXME -- Mike, what motivated the upper bound?
+This is a physically motivated prior. The theoretical upper bound on f is 2.6666 (Cowan et al. 2011) based on zero heat redistribution. We allowed a slightly higher bound to account for the fact that the stellar temperature is not perfectly known (i.e., if we underestimate Teff, we will overestimate f). 
