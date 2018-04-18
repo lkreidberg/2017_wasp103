@@ -207,7 +207,7 @@ We fit the dayside spectrum only (phase 0.46 -0.54) and now state this explicitl
 
 #
 
-We have reformatted section 5.2.1 to include the caveats as a bulleted list.  Since the caveats are now stated very prominently in 5.2.1 and in the summary bullet point in Section 8, we are confident that readers will not miss them. We did not add these points to the abstract because it is over the length limit, and we feel the impact of the paper will be greater if we focus scientific results in the abstract and leave the caveats in the main text.
+We have reformatted section 5.2.1 to include the caveats as a bulleted list.  Since the caveats are now stated very prominently in 5.2.1 and in the summary bullet point in Section 8, we are confident that readers will not miss them. We did not add these points to the abstract because we had to cut it substantially to satisfy the length limit, and we feel the impact of the paper will be greater if we focus scientific results in the abstract and leave the caveats in the main text.
 
 ****
 
@@ -233,7 +233,7 @@ If the authors want to keep a discussion of the magnetic field in the paper, thi
 
 # 
 
-We expanded the discussion of magnetic fields according to the referee's suggestions. We think it is important to keep this section of the paper because it opens up discussion about a new way of measuring planet magnetic fields (studying their effects on the atmospheric dynamics, in contrast to previous work, which focused on star-planet interactions or planetary radio emission).  We put this discussion in a new subsection (6.1), added references to previous work, and mentioned the suggested caveats. We also clarified in the abstract that our estimate of the magnetic field is based on a back of the envelope calculation.  
+We expanded the discussion of magnetic fields according to the referee's suggestions. We think it is important to keep this section of the paper because it opens up discussion about a new way of measuring planet magnetic fields (studying their effects on the atmospheric dynamics, in contrast to previous work, which focused on star-planet interactions or planetary radio emission).  We put this discussion in a new subsection (6.1), added references to previous work, and mentioned the suggested caveats. We removed the specific mention of the magnetic field estimate from the abstract.  
 
 ****
 
