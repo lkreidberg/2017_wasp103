@@ -1,0 +1,119 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: ms.aux
+The style file: aasjournal.bst
+Database file #1: msNotes.bib
+Database file #2: ms.bib.bib
+Repeated entry---line 1722 of file ms.bib.bib
+ : @article{evans16
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3236 of file ms.bib.bib
+ : @article{espinoza17
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3384 of file ms.bib.bib
+ : @article{carter09
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3426 of file ms.bib.bib
+ : @article{stevenson12
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3650 of file ms.bib.bib
+ : @article{zhou17
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4129 of file ms.bib.bib
+ : @article{cartier17
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Lust2014"
+Warning--I didn't find a database entry for "Harrington2007"
+Warning--I didn't find a database entry for "Stevenson2010"
+Warning--I didn't find a database entry for "Stevenson2012a"
+Warning--I didn't find a database entry for "Stevenson2012b"
+Warning--I didn't find a database entry for "Stevenson2014a"
+Warning--I didn't find a database entry for "Stevenson2014b"
+Warning--I didn't find a database entry for "Stevenson2016a"
+Warning--I didn't find a database entry for "Stevenson2017a"
+Warning--I didn't find a database entry for "Campo2011"
+Warning--I didn't find a database entry for "Nymeyer2011"
+Warning--I didn't find a database entry for "Blecic2013"
+Warning--I didn't find a database entry for "Blecic2014"
+Warning--I didn't find a database entry for "HDL2014"
+Warning--I didn't find a database entry for "Ingalls2016"
+Warning--I didn't find a database entry for "bell18"
+Warning--I didn't find a database entry for "wright15"
+Warning--I didn't find a database entry for "griessmeier15"
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
+while executing---line 1650 of file aasjournal.bst
+Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1650 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1650 of file aasjournal.bst
+Name 5 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1650 of file aasjournal.bst
+Warning--empty publisher in bagenal04
+Warning--empty publisher in jones_scipy_2001
+Warning--empty institution in long15
+Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
+while executing---line 1734 of file aasjournal.bst
+Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
+while executing---line 1734 of file aasjournal.bst
+Warning--empty institution in mccullough12
+Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1734 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1734 of file aasjournal.bst
+Name 5 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1734 of file aasjournal.bst
+Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1734 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1734 of file aasjournal.bst
+Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
+while executing---line 1734 of file aasjournal.bst
+You've used 108 entries,
+            3183 wiz_defined-function locations,
+            1420 strings with 32976 characters,
+and the built_in function-call counts, 55420 in all, are:
+= -- 4470
+> -- 4511
+< -- 27
++ -- 1523
+- -- 1675
+* -- 4971
+:= -- 10581
+add.period$ -- 108
+call.type$ -- 108
+change.case$ -- 781
+chr.to.int$ -- 104
+cite$ -- 112
+duplicate$ -- 2058
+empty$ -- 3033
+format.name$ -- 1786
+if$ -- 10821
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 104
+newline$ -- 329
+num.names$ -- 433
+pop$ -- 839
+preamble$ -- 2
+purify$ -- 779
+quote$ -- 0
+skip$ -- 1661
+stack$ -- 0
+substring$ -- 2132
+swap$ -- 19
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 966
+warning$ -- 4
+while$ -- 395
+width$ -- 0
+write$ -- 1081
+(There were 18 error messages)

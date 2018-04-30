@@ -83,6 +83,9 @@ phasebins2 = np.array([0.56, 0.65, 0.75, 0.85, 0.94])
 phasebins = np.append(phasebins, 0.5)
 phasebins = np.append(phasebins, phasebins2)
 
+ymins = [0.04, 0.2, 0.5, 0.6,  0.6, 0.5, 0.2, 0.04]
+ymaxs = [3, 4, 5, 6, 6, 5, 4, 3]
+
 nspitz_chan = 2
 spectra = np.zeros((len(files) + nspitz_chan, len(phasebins)-1, 2))
 phases = np.zeros(len(phasebins) -1 )
@@ -266,13 +269,16 @@ for i in range(1, k):
                 ax.set_yticklabels(["0.1", "", "", "", "0.5", "", "", "", "", "1", "", "", "", "5"])
 
                 plt.xlim(1.0, 5.0)
-                ymin = model_hires.min()*0.9 
+                
+                """ymin = model_hires.min()*0.9 
                 ymax = model_hires.max()*1.33
                 if (col==3)&(row ==1): 
                         ymin *= 0.5
                         ymax = 2.5
-                if (col==0)&(row ==0): ymin *= 0.7
+                if (col==0)&(row ==0): ymin *= 0.7"""
 
+                idx = row*4 + col
+                ymin, ymax = ymins[idx], ymaxs[idx]
                 plt.ylim(ymin, ymax)
                 #ymin, ymax = plt.gca().get_ylim()
                 yrange = np.log10(ymax) - np.log10(ymin)
