@@ -57,6 +57,19 @@ Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
 {Beatty}, T.~G., {Madhusudhan}, N., {Tsiaras}, A., {et~al.} 2017{\natexlab{b}},
   \aj, 154, 158
 
+\bibitem[{{Bell} \& {Cowan}(2018)}]{bell18}
+{Bell}, T.~J., \& {Cowan}, N.~B. 2018, ArXiv e-prints, arXiv:1802.07725
+
+\bibitem[{{Blecic} {et~al.}(2013){Blecic}, {Harrington}, {Madhusudhan},
+  {Stevenson}, {Hardy}, {Blecic}, {Anderson}, {Hardin}, \&
+  {Campo}}]{Blecic2013}
+{Blecic}, J., {Harrington}, J., {Madhusudhan}, N., {et~al.} 2013, \apj, 779, 5
+
+\bibitem[{{Blecic} {et~al.}(2014){Blecic}, {Harrington}, {Madhusudhan},
+  {Stevenson}, {Hardy}, {Cubillos}, {Hardin}, {Bowman}, {Nymeyer}, {Anderson},
+  {Hellier}, {Smith}, \& {Collier Cameron}}]{Blecic2014}
+---. 2014, \apj, 781, 116
+
 \bibitem[{{Bonnefoy} {et~al.}(2014){Bonnefoy}, {Chauvin}, {Lagrange}, {Rojo},
   {Allard}, {Pinte}, {Dumas}, \& {Homeier}}]{bonnefoy14}
 {Bonnefoy}, M., {Chauvin}, G., {Lagrange}, A.-M., {et~al.} 2014, \aap, 562,
@@ -75,6 +88,11 @@ Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
 
 \bibitem[{Braak(2006)}]{braak06}
 Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239
+
+\bibitem[{{Campo} {et~al.}(2011){Campo}, {Harrington}, {Hardy}, {Stevenson},
+  {et~al.}}]{Campo2011}
+{Campo}, C.~J., {Harrington}, J., {Hardy}, R.~A., {Stevenson}, K.~B., {et~al.}
+  2011, \apj, 727, 125
 
 \bibitem[{{Carter} \& {Winn}(2009)}]{carter09}
 {Carter}, J.~A., \& {Winn}, J.~N. 2009, \apj, 704, 51
@@ -128,10 +146,14 @@ Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239
   {Desert}, {Parmentier}, \& {Cowan}}]{demory13}
 {Demory}, B.-O., {de Wit}, J., {Lewis}, N., {et~al.} 2013, \apjl, 776, L25
 
-\bibitem[{{Diamond-Lowe} {et~al.}(2014){Diamond-Lowe}, {Stevenson}, {Bean},
-  {Line}, \& {Fortney}}]{diamond-lowe14}
+\bibitem[{{Diamond-Lowe} {et~al.}(2014{\natexlab{a}}){Diamond-Lowe},
+  {Stevenson}, {Bean}, {Line}, \& {Fortney}}]{HDL2014}
 {Diamond-Lowe}, H., {Stevenson}, K.~B., {Bean}, J.~L., {Line}, M.~R., \&
-  {Fortney}, J.~J. 2014, \apj, 796, 66
+  {Fortney}, J.~J. 2014{\natexlab{a}}, \apj, 796, 66
+
+\bibitem[{{Diamond-Lowe} {et~al.}(2014{\natexlab{b}}){Diamond-Lowe},
+  {Stevenson}, {Bean}, {Line}, \& {Fortney}}]{diamond-lowe14}
+---. 2014{\natexlab{b}}, \apj, 796, 66
 
 \bibitem[{{Dieterich} {et~al.}(2014){Dieterich}, {Henry}, {Jao}, {Winters},
   {Hosey}, {Riedel}, \& {Subasavage}}]{2014AJ....147...94D}
@@ -215,10 +237,20 @@ Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
   Aeronautics and Space Administration, Office of Management, Scientific and
   Technical Information Program)
 
+\bibitem[{{Grie{\ss}meier}(2015)}]{griessmeier15}
+{Grie{\ss}meier}, J.-M. 2015, in Astrophysics and Space Science Library, Vol.
+  411, Characterizing Stellar and Exoplanetary Environments, ed. H.~{Lammer} \&
+  M.~{Khodachenko}, 213
+
 \bibitem[{{Harrington} {et~al.}(2006){Harrington}, {Hansen}, {Luszcz},
   {Seager}, {Deming}, {Menou}, {Cho}, \& {Richardson}}]{harrington06}
 {Harrington}, J., {Hansen}, B.~M., {Luszcz}, S.~H., {et~al.} 2006, Science,
   314, 623
+
+\bibitem[{{Harrington} {et~al.}(2007){Harrington}, {Luszcz}, {Seager},
+  {Deming}, \& {Richardson}}]{Harrington2007}
+{Harrington}, J., {Luszcz}, S., {Seager}, S., {Deming}, D., \& {Richardson},
+  L.~J. 2007, Nature, 447, 691
 
 \bibitem[{{Hayes}(1985)}]{1985IAUS..111..225H}
 {Hayes}, D.~S. 1985, in IAU Symposium, Vol. 111, Calibration of Fundamental
@@ -243,6 +275,12 @@ Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
 
 \bibitem[{{Hubeny} {et~al.}(2003){Hubeny}, {Burrows}, \& {Sudarsky}}]{hubeny03}
 {Hubeny}, I., {Burrows}, A., \& {Sudarsky}, D. 2003, \apj, 594, 1011
+
+\bibitem[{{Ingalls} {et~al.}(2016){Ingalls}, {Krick}, {Carey}, {Stauffer},
+  {Lowrance}, {Grillmair}, {Buzasi}, {Deming}, {Diamond-Lowe}, {Evans},
+  {Morello}, {Stevenson}, {Wong}, {Capak}, {Glaccum}, {Laine}, {Surace}, \&
+  {Storrie-Lombardi}}]{Ingalls2016}
+{Ingalls}, J.~G., {Krick}, J.~E., {Carey}, S.~J., {et~al.} 2016, \aj, 152, 44
 
 \bibitem[{Jones {et~al.}(2001)Jones, Oliphant, Peterson, \&
   Others}]{jones_scipy_2001}
@@ -331,8 +369,17 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   WFC3 IR Detector: an Improved Model Incorporating the Effects of Exposure
   Time}, Tech. rep.
 
+\bibitem[{{Lothringer} {et~al.}(2018){Lothringer}, {Barman}, \&
+  {Koskinen}}]{lothringer18}
+{Lothringer}, J.~D., {Barman}, T., \& {Koskinen}, T. 2018, ArXiv e-prints,
+  arXiv:1805.00038
+
 \bibitem[{{Louden} \& {Kreidberg}(2017)}]{louden17}
 {Louden}, T., \& {Kreidberg}, L. 2017, ArXiv e-prints, arXiv:1711.00494
+
+\bibitem[{{Lust} {et~al.}(2014){Lust}, {Britt}, {Harrington}, {Nymeyer},
+  {Stevenson}, {Ross}, {Bowman}, \& {Fraine}}]{Lust2014}
+{Lust}, N.~B., {Britt}, D., {Harrington}, J., {et~al.} 2014, \pasp, 126, 1092
 
 \bibitem[{{Madhusudhan} {et~al.}(2011){Madhusudhan}, {Harrington}, {Stevenson},
   {Nymeyer}, {Campo}, {Wheatley}, {Deming}, {Blecic}, {Hardy}, {Lust},
@@ -341,10 +388,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Madhusudhan}, N., {Harrington}, J., {Stevenson}, K.~B., {et~al.} 2011, \nat,
   469, 64
 
-\bibitem[{{Mansfield} {et~al.}(\noop{3001}submitted){Mansfield}, {Bean},
-  {Line}, {Paramentier}, \& {Kreidberg}}]{mansfield18}
-{Mansfield}, M., {Bean}, J.~B., {Line}, M., {Paramentier}, V., \& {Kreidberg},
-  L. \noop{3001}submitted, Submitted to \apj
+\bibitem[{{Mansfield} {et~al.}(2018){Mansfield}, {Bean}, {Line}, {Parmentier},
+  {Kreidberg}, {Desert}, {Fortney}, {Stevenson}, {Arcangeli}, \&
+  {Dragomir}}]{mansfield18}
+{Mansfield}, M., {Bean}, J.~L., {Line}, M.~R., {et~al.} 2018, ArXiv e-prints,
+  arXiv:1805.00424
 
 \bibitem[{{Marley} \& {McKay}(1999)}]{Marley1999}
 {Marley}, M.~S., \& {McKay}, C.~P. 1999, \icarus, 138, 268
@@ -368,6 +416,12 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Mountain}, C.~M., {Selby}, M.~J., {Leggett}, S.~K., {Blackwell}, D.~E., \&
   {Petford}, A.~D. 1985, \aap, 151, 399
 
+\bibitem[{{Nymeyer} {et~al.}(2011){Nymeyer}, {Harrington}, {Hardy}, {\bfseries
+  {Stevenson}, K.~B.}, {Campo}, {Madhusudhan}, {Collier-Cameron}, {Loredo},
+  {Blecic}, {Bowman}, {Britt}, {Cubillos}, {Hellier}, {Gillon}, {Maxted},
+  {Hebb}, {Wheatley}, {Pollacco}, \& {Anderson}}]{Nymeyer2011}
+{Nymeyer}, S., {Harrington}, J., {Hardy}, R.~A., {et~al.} 2011, ApJ, 742, 35
+
 \bibitem[{{Parmentier} \& {Crossfield}(2017)}]{parmentier17}
 {Parmentier}, V., \& {Crossfield}, I. 2017, ArXiv e-prints, arXiv:1711.07696
 
@@ -376,10 +430,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Parmentier}, V., {Fortney}, J.~J., {Showman}, A.~P., {Morley}, C., \&
   {Marley}, M.~S. 2016, \apj, 828, 22
 
-\bibitem[{{Parmentier} {et~al.}(\noop{3001}in prep){Parmentier}, {Line},
-  {Bean}, {Fortney}, {D\'{e}sert}, \& {Kreidberg}}]{parmentier18}
-{Parmentier}, V., {Line}, M.~R., {Bean}, J., {et~al.} \noop{3001}in prep, In
-  preparation
+\bibitem[{{Parmentier} {et~al.}(2018){Parmentier}, {Line}, {Bean}, {Mansfield},
+  {Kreidberg}, {Lupu}, {Visscher}, {Desert}, {Fortney}, {Deleuil}, {Arcangeli},
+  {Showman}, \& {Marley}}]{parmentier18}
+{Parmentier}, V., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2018, ArXiv e-prints,
+  arXiv:1805.00096
 
 \bibitem[{{Perez-Becker} \& {Showman}(2013)}]{perez13}
 {Perez-Becker}, D., \& {Showman}, A.~P. 2013, \apj, 776, 134
@@ -439,22 +494,58 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Stevenson}, K.~B., {Bean}, J.~L., {Madhusudhan}, N., \& {Harrington}, J.
   2014{\natexlab{a}}, \apj, 791, 36
 
-\bibitem[{{Stevenson} {et~al.}(2012){Stevenson}, {Harrington}, {Fortney},
-  {Loredo}, {Hardy}, {Nymeyer}, {Bowman}, {Cubillos}, {Bowman}, \&
-  {Hardin}}]{stevenson12}
-{Stevenson}, K.~B., {Harrington}, J., {Fortney}, J.~J., {et~al.} 2012, \apj,
-  754, 136
+\bibitem[{{Stevenson} {et~al.}(2014{\natexlab{b}}){Stevenson}, {Bean},
+  {Madhusudhan}, \& {Harrington}}]{Stevenson2014b}
+---. 2014{\natexlab{b}}, \apj, 791, 36
 
-\bibitem[{{Stevenson} {et~al.}(2014{\natexlab{b}}){Stevenson}, {D{\'e}sert},
+\bibitem[{{Stevenson} {et~al.}(2014{\natexlab{c}}){Stevenson}, {Bean},
+  {Seifahrt}, {D{\'e}sert}, {Madhusudhan}, {Bergmann}, {Kreidberg}, \&
+  {Homeier}}]{Stevenson2014a}
+{Stevenson}, K.~B., {Bean}, J.~L., {Seifahrt}, A., {et~al.} 2014{\natexlab{c}},
+  \aj, 147, 161
+
+\bibitem[{{Stevenson} {et~al.}(2016){Stevenson}, {Bean}, {Seifahrt}, {Gilbert},
+  {Line}, {Desert}, \& {Fortney}}]{Stevenson2016a}
+---. 2016, \apj, 817, 141
+
+\bibitem[{{Stevenson} {et~al.}(2012{\natexlab{a}}){Stevenson}, {Harrington},
+  {Fortney}, {Loredo}, {et~al.}}]{Stevenson2012a}
+{Stevenson}, K.~B., {Harrington}, J., {Fortney}, J.~J., {Loredo}, T.~J.,
+  {et~al.} 2012{\natexlab{a}}, \apj, 754, 136
+
+\bibitem[{{Stevenson} {et~al.}(2012{\natexlab{b}}){Stevenson}, {Harrington},
+  {Lust}, {Lewis}, {et~al.}}]{Stevenson2012b}
+{Stevenson}, K.~B., {Harrington}, J., {Lust}, N.~B., {Lewis}, N.~K., {et~al.}
+  2012{\natexlab{b}}, \apj, 755, 9
+
+\bibitem[{{Stevenson} {et~al.}(2010){Stevenson}, {Harrington}, {Nymeyer},
+  {Madhusudhan}, {et~al.}}]{Stevenson2010}
+{Stevenson}, K.~B., {Harrington}, J., {Nymeyer}, S., {Madhusudhan}, N.,
+  {et~al.} 2010, \nat, 464, 1161
+
+\bibitem[{{Stevenson} {et~al.}(2012{\natexlab{c}}){Stevenson}, {Harrington},
+  {Fortney}, {Loredo}, {Hardy}, {Nymeyer}, {Bowman}, {Cubillos}, {Bowman}, \&
+  {Hardin}}]{stevenson12}
+{Stevenson}, K.~B., {Harrington}, J., {Fortney}, J.~J., {et~al.}
+  2012{\natexlab{c}}, \apj, 754, 136
+
+\bibitem[{{Stevenson} {et~al.}(2014{\natexlab{d}}){Stevenson}, {D{\'e}sert},
   {Line}, {Bean}, {Fortney}, {Showman}, {Kataria}, {Kreidberg}, {McCullough},
   {Henry}, {Charbonneau}, {Burrows}, {Seager}, {Madhusudhan}, {Williamson}, \&
   {Homeier}}]{stevenson14}
 {Stevenson}, K.~B., {D{\'e}sert}, J.-M., {Line}, M.~R., {et~al.}
-  2014{\natexlab{b}}, Science, 346, 838
+  2014{\natexlab{d}}, Science, 346, 838
 
-\bibitem[{{Stevenson} {et~al.}(2017){Stevenson}, {Line}, {Bean}, {D{\'e}sert},
-  {Fortney}, {Showman}, {Kataria}, {Kreidberg}, \& {Feng}}]{stevenson17}
-{Stevenson}, K.~B., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2017, \aj, 153, 68
+\bibitem[{{Stevenson} {et~al.}(2017{\natexlab{a}}){Stevenson}, {Line}, {Bean},
+  {D{\'e}sert}, {Fortney}, {Showman}, {Kataria}, {Kreidberg}, \&
+  {Feng}}]{stevenson17}
+{Stevenson}, K.~B., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2017{\natexlab{a}},
+  \aj, 153, 68
+
+\bibitem[{{Stevenson} {et~al.}(2017{\natexlab{b}}){Stevenson}, {Line}, {Bean},
+  {D{\'e}sert}, {Fortney}, {Showman}, {Kataria}, {Kreidberg}, \&
+  {Feng}}]{Stevenson2017a}
+---. 2017{\natexlab{b}}, \aj, 153, 68
 
 \bibitem[{{Teixeira} {et~al.}(2009){Teixeira}, {Ducourant}, {Chauvin},
   {Krone-Martins}, {Bonnefoy}, \& {Song}}]{teixeira09}
@@ -488,6 +579,9 @@ Van Der~Walt, S., Colbert, S.~C., \& Varoquaux, G. 2011, Computing in Science
   {Owen}}]{wong04}
 {Wong}, M.~H., {Mahaffy}, P.~R., {Atreya}, S.~K., {Niemann}, H.~B., \& {Owen},
   T.~C. 2004, \icarus, 171, 153
+
+\bibitem[{{Wright} \& {Miller}(2015)}]{wright15}
+{Wright}, J.~T., \& {Miller}, B. 2015, IAU General Assembly, 22, 2258453
 
 \bibitem[{{Zellem} {et~al.}(2017){Zellem}, {Swain}, {Roudier}, {Shkolnik},
   {Creech-Eakman}, {Ciardi}, {Line}, {Iyer}, {Bryden}, {Llama}, \&

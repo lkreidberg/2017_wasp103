@@ -21,10 +21,17 @@ magnitudes versus air mass and computing the slope in magnitudes per airmass."
 Likewise, I would like some clarification in Figure 1. Currently panel 3 (the phase plot) is in black and white, but it would be useful for the points to be colored by observing season or a gradient from min(time) to max(time), to be sure that the proposed period phases up between observing seasons and cycles. I would also like the y-axis of panel 2 to be changed so that the actual data can be seen better and that it's not scrunched up in the bottom of the plot. I'm particularly interested in what appears to be an equally high peak in the frequency spectrum next to the proposed rotation period, and how the authors decide which peak is the "true" rotation period (unless it's just the peak the matches the measured v sin(i)
 
 #
-None of the reference stars had significant variability.
-Since the stellar rotation period is so short compared to the observing season
-(6.8 days compared to several months), each season has good phase coverage
+None of the reference stars had significant variability. We added this statemetn
+to the text. 
 
+Regarding the color-coding for panel 3: this is unecessary because the stellar
+rotation period is very short compared to the observing season, so each season
+has comparably good phase coverage of the rotation period.
+
+We modified the y-axis scale in panel 2. It's true that both peaks in the
+periodogram have very comparable strength (the periods are 1-year aliases of
+each other), but as the referee correctly surmised the peak we chose is a better
+match to the v sin(i). We added this clarification to the text.
 
 3. (optional) In the caption of Figure 5, please state the bin size in minutes or hours. I understand that it's stated in the text but there is probably a sizeable portion of researchers who would read the figure and figure caption alone and this would be of benefit. I would also like a horizontal error bar on the data points to illustrate the span of each binned data point, but this part can be optional.
 
@@ -49,7 +56,19 @@ We reworded this sentence to state "By visual inspection of Figure 8, we estimat
 6. Nightside Spectrum: The authors have declined to fit a nightside spectrum at phase 0.9 to compare with their analysis with the spectrum at phase 0.1. This is fine, since the authors note that they are unable to constrain the C/O abundance or the metallicity significantly. However, the authors state the best fit spectrum has a non-inverted TP profile, which the authors imply is a robust statement. 
 
 If the authors do not wish to run a retrieval on phase 0.9, then at least some confidence interval should be assigned to the claim of a non-inverted temperature pressure profile on the night side of the planet. Is the spectrum also consistent with an inverted profile or can that be ruled out at some confidence? How "best" is the "best fit". This statement should be quantified. 
+#
+We calculated the drop in brightness temperature between the WFC3 blackbody fit
+and a fit to the Spitzer 4.5 micron point at phase 0.9 (reported in Table 6).
+The Spitzer temperature is cooler than the WFC3 temperature by 5.6 sigma.  This
+value is a lower limit to the significance, because the brightenss temperatures
+noted in the table also include the uncertainty in the stellar Teff (which
+increases the error bar on absolute planet temperature but not the relative temperatures we
+care about here). We note that the drop in brightness temperature is actually
+stronger at phase 0.9 than it is at 0.1 (5.6 versus 2.7 sigma). Combined with
+the retrieval we did for phase 0.1, this is conclusive evidence that the
+nightside temperature profile is not inverted.
 
+We added this quantification to the text.
 
 
 7. For Figure 17, instead of adjusting the plots to be on similar y-axis scale through some normalization (which the authors don't wish to do), please add a statement to the caption noting the changing y-axis to give the reader extra chances to notice it if skimming.

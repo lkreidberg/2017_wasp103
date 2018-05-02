@@ -104,7 +104,20 @@ larger than Jupiter, with a mass and radius of $1.49\pm0.09\,M_\mathrm{Jup}$ and
 $1.53^{+0.05}_{-0.07}\,R_\mathrm{Jup}$, respectively. The host star is a main-sequence F8 dwarf with an effective temperature of $6110 \pm 160\,$ K \citep{gillon14}. Previous observations of WASP-103b's atmosphere revealed a blackbody-like dayside emission spectrum, with possible evidence for a $K_\mathrm{S}$-band emission feature \citep{cartier17, delrez18}. The optical transmission spectrum shows evidence for sodium and potassium absorption features that are consistent with expectations for a cloud-free atmosphere \citep{lendl17}.%, though other observations have shown a large optical scattering slope that is not fit well by theoretical models \citep{southworth16}. 
 
 
-WASP-103b is an archetype of the class of ultra-hot Jupiters, with orbital periods of about one day and dayside temperatures typically $>2000\,\mathrm{K}$. These very hot planets were initially predicted to have inverted temperature pressure profiles due to strong optical absorption by TiO/VO in the upper atmospheres \citep{hubeny03, fortney08}; however, observations of their emission spectra have been inconclusive on their thermal structure and composition. In the near-infrared, where water is the dominant absorber, some spectra show water absorption features, some show emission features, and some are consistent with blackbody models \citep{madhusudhan11, crossfield12, stevenson14b, haynes15, evans16, beatty17a, beatty17b, sheppard17, arcangeli18, mansfield18}.  A variety of explanations have been proposed for these results, including low metallicity or high carbon-to-oxygen compositions, dayside clouds, and finely tuned isothermal temperature pressure profiles. Recently, \cite{arcangeli18} showed that water dissociation and H- opacity on the hot dayside play an important role in the atmospheres of these ultra-hot planets and may be responsible for some of the blackbody-like near-IR spectra. In this work, we put these results in context by investigating the global thermal structure and composition of the ultra-hot Jupiter WASP-103b.
+WASP-103b is an archetype of the class of ultra-hot Jupiters, with orbital
+periods of about one day and dayside temperatures typically $>2000\,\mathrm{K}$.
+These very hot planets were initially predicted to have inverted temperature
+pressure profiles due to strong optical absorption by TiO/VO in the upper
+atmospheres \citep{hubeny03, fortney08}; however, observations of their emission
+spectra have been inconclusive on their thermal structure and composition. In
+the near-infrared, where water is the dominant absorber, some spectra show water
+absorption features, some show emission features, and some are consistent with
+blackbody models \citep{madhusudhan11, crossfield12, stevenson14b, haynes15,
+evans16, beatty17a, beatty17b, sheppard17, arcangeli18, mansfield18}.  A variety
+of explanations have been proposed for these results, including low metallicity
+or high carbon-to-oxygen compositions, dayside clouds, and finely tuned
+isothermal temperature pressure profiles. Recently, \cite{arcangeli18,
+lothringer18} showed that water dissociation and H- opacity on the hot dayside play an important role in the atmospheres of these ultra-hot planets and may be responsible for some of the blackbody-like near-IR spectra. In this work, we put these results in context by investigating the global thermal structure and composition of the ultra-hot Jupiter WASP-103b.
 
 The structure of the paper is the following: in \S\,\ref{sec:observations} we describe the observations and data reduction. \S\,\ref{sec:fits} details the models fit to the phase curves. In \S\,\ref{sec:results} we discuss results, including the phase curve amplitudes and hotspot offsets, the phase-resolved spectra, estimates of the planet's climate, and the transmission spectrum. In \S\,\ref{sec:gcm} and \ref{sec:comparison}, we compare the observations to general circulation model (GCM) predictions and spectra from similar temperature stars and directly imaged companions. \S\,\ref{sec:summary} concludes.
 
@@ -134,7 +147,19 @@ The photometric analyses are summarized for each observing season in Table\,\ref
 
 %The standard deviation of WASP-103's brightness in each season is given in column~4.  The mean of the three standard deviations is 0.0058~mag, which is comparable to the mean standard deviation of the six comparison stars (0.0055~mag).  
 
-To maximize the possibility of detecting WASP-103's rotation, we normalized the photometry such that each observing season has the same mean, thereby removing any long-term variability in WASP-103 and/or the comparison stars (Figure\,\ref{fig:photometry}, top panel).  To estimate the stellar rotation period, we performed a periodogram analysis of the normalized data set based on least-squares fitting of sine curves.  The resulting frequency spectrum and the phase curve computed with the best period are shown in the middle and lower panels of Figure\,\ref{fig:photometry} respectively. The best-fit period is 6.814 days, which agrees closely with the estimated stellar rotation period of 6.855 days \citep[based on the projected stellar rotation velocity and stellar radius reported in][]{gillon14}. The peak-to-peak variability amplitude is 0.005 mag.  Based on the formalism in \cite{zellem17}, we calculate that this variability will bias the measured eclipse depth by $\lesssim10$\,parts per million (ppm) from epoch to epoch, which is well below the photon-limited precision of our measurements.
+To maximize the possibility of detecting WASP-103's rotation, we normalized the
+photometry such that each observing season has the same mean, thereby removing
+any long-term variability in WASP-103 and/or the comparison stars
+(Figure\,\ref{fig:photometry}, top panel).  To estimate the stellar rotation
+period, we performed a periodogram analysis of the normalized data set based on
+least-squares fitting of sine curves.  The resulting frequency spectrum and the
+phase curve computed with the best period are shown in the middle and lower
+panels of Figure\,\ref{fig:photometry} respectively. The best-fit period is
+6.814 days, which agrees closely with the estimated stellar rotation period of
+6.855 days \citep[based on the projected stellar rotation velocity and stellar
+radius reported in][]{gillon14}. \added{There are two nearby peaks in the
+periodogram (panel b of Figure\,\ref{fig:photometry}) that are one-year aliases
+of each other, and we chose the peak that better matches the stellar rotation velocity.} The peak-to-peak variability amplitude is 0.005 mag.  Based on the formalism in \cite{zellem17}, we calculate that this variability will bias the measured eclipse depth by $\lesssim10$\,parts per million (ppm) from epoch to epoch, which is well below the photon-limited precision of our measurements.
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{fig1.pdf}
@@ -549,9 +574,24 @@ We therefore caution against over-interpreting these results until wider spectra
 %As a test of our modeling approach, we also performed a retrieval in which the T/P profile was allowed to vary. 
 
 \subsubsection{Nightside Spectrum}
-We also fit the nightside spectrum (phase $0.1$) with the grid-based retrieval. The best fit spectrum has a non-inverted temperature pressure profile.  At 1\,$\sigma$ confidence, the metallicity is $15 - 240\times$ solar and the C/O is unbounded over the full prior range. The atmospheric composition is consistent with results from the dayside spectrum. 
+We also fit the nightside spectrum (phase $0.1$) with the grid-based retrieval.
+The best fit spectrum has a non-inverted temperature pressure profile.  At
+1\,$\sigma$ confidence, the metallicity is $15 - 240\times$ solar and the C/O is
+unbounded over the full prior range. The atmospheric composition is consistent
+with results from the dayside spectrum. 
 
 This agreement is an encouraging sanity check; however, there are several model assumptions that may result in artificially tight constraints on the atmospheric properties on the nightside.  One challenge in modeling the nightside spectrum is that the physical processes shaping the T-P profile are unknown.  Our model assumes a scaled stellar irradiation at the top of the atmosphere, but in reality, the heat source is advection from the dayside. Another caveat is that the model is not self-consistent: the energy leaving the dayside is not constrained to equal the energy entering the nightside.  Further work is needed to develop a fully self-consistent 2-D retrieval method for phase curve observations. 
+
+\added{As a test, we also calculated the difference in brightness temperature
+between the \HST\ and \Spitzer\ 4.5 $\mu$m data (reported in
+Table\,\ref{table:teffs}) for both nightside phases ($\phi = 0.1$ and 0.9). At
+phase 0.1 and 0.9, the \Spitzer\ temperature is lower by 2.7 and 5.6\,$\sigma$,
+respectively.  These values are a lower limit to the significance, because the
+brightness temperatures noted in the table also include the uncertainty in the
+stellar $T_\mathrm{eff}$ (which increases the uncertainty on the absolute planet
+temperature but not the relative temperatures that are relevant for this
+calculation). The drop in brightness temperature is more significant at phase 0.9 than it is at 0.1, providing further evidence in addition to the phase 0.1 retrieval that the nightside temperature pressure profile is not inverted.}
+
 
 \subsection{Climate}
 We fit three different models to characterize the planet's climate: a two-temperature map, the physically-motivated kinematic model of \cite{zhang17}, and a spherical harmonic map. We also fit the thermal phase variation with a sinusoid, which can be inverted to map the climate \citep{cowan08, cowan17}.  All of the models provide reasonable fits to the data, with $\chi^2_\nu$ near unity, but they yield significantly different temperature maps. Table\,\ref{table:models} lists the best fit minimum and maximum temperatures, as well as the mean day- and nightside temperatures. We also list the  information criterion (BIC) values for the fits \citep[a $\Delta$BIC value greater than 10 constitutes strong evidence against a given model;][]{kass95}.
@@ -702,13 +742,11 @@ paper.
  \newcommand{\noop}[1]{}
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-\providecommand{\url}[1]{\href{#1}{#1}}
 
 \bibitem[{Adcroft {et~al.}(2004)Adcroft, Campin, Hill, \&
   Marshall}]{Adcroft2004}
 Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
-  Review, 132, 2845.
-\newblock \url{https://doi.org/10.1175/MWR2823.1}
+  Review, 132, 2845
 
 \bibitem[{{Ag{\'u}ndez} {et~al.}(2014){Ag{\'u}ndez}, {Parmentier}, {Venot},
   {Hersant}, \& {Selsis}}]{agundez14}
@@ -790,8 +828,7 @@ Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
 {Borucki}, W.~J., {Koch}, D., {Jenkins}, J., {et~al.} 2009, Science, 325, 709
 
 \bibitem[{Braak(2006)}]{braak06}
-Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
-\newblock \url{http://dx.doi.org/10.1007/s11222-006-8769-1}
+Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239
 
 \bibitem[{{Campo} {et~al.}(2011){Campo}, {Harrington}, {Hardy}, {Stevenson},
   {et~al.}}]{Campo2011}
@@ -989,14 +1026,11 @@ Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
 \bibitem[{Jones {et~al.}(2001)Jones, Oliphant, Peterson, \&
   Others}]{jones_scipy_2001}
 Jones, E., Oliphant, T., Peterson, P., \& Others. 2001, {SciPy}: Open source
-  scientific tools for Python, , .
-\newblock \url{http://www.scipy.org/}
+  scientific tools for Python, ,
 
 \bibitem[{Kass \& Raftery(1995)}]{kass95}
 Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
-  Association, 90, 773.
-\newblock
-  \url{http://amstat.tandfonline.com/doi/abs/10.1080/01621459.1995.10476572}
+  Association, 90, 773
 
 \bibitem[{{Kataria} {et~al.}(2016){Kataria}, {Sing}, {Lewis}, {Visscher},
   {Showman}, {Fortney}, \& {Marley}}]{kataria16}
@@ -1025,16 +1059,16 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Kreidberg}, L. 2015, \pasp, 127, 1161
 
 \bibitem[{{Kreidberg} {et~al.}(2014{\natexlab{a}}){Kreidberg}, {Bean},
-  {D{\'e}sert}, {Benneke}, {Deming}, {Stevenson}, {Seager}, {Berta-Thompson},
-  {Seifahrt}, \& {Homeier}}]{kreidberg14a}
-{Kreidberg}, L., {Bean}, J.~L., {D{\'e}sert}, J.-M., {et~al.}
-  2014{\natexlab{a}}, \nat, 505, 69
-
-\bibitem[{{Kreidberg} {et~al.}(2014{\natexlab{b}}){Kreidberg}, {Bean},
   {D{\'e}sert}, {Line}, {Fortney}, {Madhusudhan}, {Stevenson}, {Showman},
   {Charbonneau}, {McCullough}, {Seager}, {Burrows}, {Henry}, {Williamson},
   {Kataria}, \& {Homeier}}]{kreidberg14b}
----. 2014{\natexlab{b}}, \apjl, 793, L27
+{Kreidberg}, L., {Bean}, J.~L., {D{\'e}sert}, J.-M., {et~al.}
+  2014{\natexlab{a}}, \apjl, 793, L27
+
+\bibitem[{{Kreidberg} {et~al.}(2014{\natexlab{b}}){Kreidberg}, {Bean},
+  {D{\'e}sert}, {Benneke}, {Deming}, {Stevenson}, {Seager}, {Berta-Thompson},
+  {Seifahrt}, \& {Homeier}}]{kreidberg14a}
+---. 2014{\natexlab{b}}, \nat, 505, 69
 
 \bibitem[{{Kreidberg} {et~al.}(2015){Kreidberg}, {Line}, {Bean}, {Stevenson},
   {D{\'e}sert}, {Madhusudhan}, {Fortney}, {Barstow}, {Henry}, {Williamson}, \&
@@ -1076,6 +1110,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
   WFC3 IR Detector: an Improved Model Incorporating the Effects of Exposure
   Time}, Tech. rep.
 
+\bibitem[{{Lothringer} {et~al.}(2018){Lothringer}, {Barman}, \&
+  {Koskinen}}]{lothringer18}
+{Lothringer}, J.~D., {Barman}, T., \& {Koskinen}, T. 2018, ArXiv e-prints,
+  arXiv:1805.00038
+
 \bibitem[{{Louden} \& {Kreidberg}(2017)}]{louden17}
 {Louden}, T., \& {Kreidberg}, L. 2017, ArXiv e-prints, arXiv:1711.00494
 
@@ -1090,10 +1129,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Madhusudhan}, N., {Harrington}, J., {Stevenson}, K.~B., {et~al.} 2011, \nat,
   469, 64
 
-\bibitem[{{Mansfield} {et~al.}(\noop{3001}submitted){Mansfield}, {Bean},
-  {Line}, {Paramentier}, \& {Kreidberg}}]{mansfield18}
-{Mansfield}, M., {Bean}, J.~B., {Line}, M., {Paramentier}, V., \& {Kreidberg},
-  L. \noop{3001}submitted, Submitted to \apj
+\bibitem[{{Mansfield} {et~al.}(2018){Mansfield}, {Bean}, {Line}, {Parmentier},
+  {Kreidberg}, {Desert}, {Fortney}, {Stevenson}, {Arcangeli}, \&
+  {Dragomir}}]{mansfield18}
+{Mansfield}, M., {Bean}, J.~L., {Line}, M.~R., {et~al.} 2018, ArXiv e-prints,
+  arXiv:1805.00424
 
 \bibitem[{{Marley} \& {McKay}(1999)}]{Marley1999}
 {Marley}, M.~S., \& {McKay}, C.~P. 1999, \icarus, 138, 268
@@ -1131,10 +1171,11 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Parmentier}, V., {Fortney}, J.~J., {Showman}, A.~P., {Morley}, C., \&
   {Marley}, M.~S. 2016, \apj, 828, 22
 
-\bibitem[{{Parmentier} {et~al.}(\noop{3001}submitted){Parmentier}, {Line},
-  {Bean}, {Fortney}, {D\'{e}sert}, \& {Kreidberg}}]{parmentier18}
-{Parmentier}, V., {Line}, M.~R., {Bean}, J., {et~al.} \noop{3001}submitted,
-  Submitted to A\&A
+\bibitem[{{Parmentier} {et~al.}(2018){Parmentier}, {Line}, {Bean}, {Mansfield},
+  {Kreidberg}, {Lupu}, {Visscher}, {Desert}, {Fortney}, {Deleuil}, {Arcangeli},
+  {Showman}, \& {Marley}}]{parmentier18}
+{Parmentier}, V., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2018, ArXiv e-prints,
+  arXiv:1805.00096
 
 \bibitem[{{Perez-Becker} \& {Showman}(2013)}]{perez13}
 {Perez-Becker}, D., \& {Showman}, A.~P. 2013, \apj, 776, 134
