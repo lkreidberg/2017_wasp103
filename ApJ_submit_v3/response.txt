@@ -10,7 +10,10 @@ manuscript and respond to the comments below.
 I would have thought the correction would be as a differential magnitude vs airmass for all data points in the season. However, I can't tell if the authors are implying that they are first averaging all frames taken in an observing night, and then using only the summed nightly data to inform the atmospheric extinction correction. Either option is fine, but a quick clarification in the text would be helpful.
 
 #
-We
+We have clarified the description as follows: "...were corrected for bias,
+flat-fielding, and atmospheric extinction.  We determined extinction corrections
+from linear, least-squares fits to seasonal plots of nightly differential
+magnitudes versus air mass and computing the slope in magnitudes per airmass."
 
 
 2. I understand the authors argument for not showing reference star time series. The only concern I had was if one of the reference stars was variable at the several percent level, and this variation was being diluted and influencing the photometry of the target star. In lieu of plots of the reference stars, a statement to this effect is just as good.
@@ -18,6 +21,7 @@ We
 Likewise, I would like some clarification in Figure 1. Currently panel 3 (the phase plot) is in black and white, but it would be useful for the points to be colored by observing season or a gradient from min(time) to max(time), to be sure that the proposed period phases up between observing seasons and cycles. I would also like the y-axis of panel 2 to be changed so that the actual data can be seen better and that it's not scrunched up in the bottom of the plot. I'm particularly interested in what appears to be an equally high peak in the frequency spectrum next to the proposed rotation period, and how the authors decide which peak is the "true" rotation period (unless it's just the peak the matches the measured v sin(i)
 
 #
+None of the reference stars had significant variability.
 Since the stellar rotation period is so short compared to the observing season
 (6.8 days compared to several months), each season has good phase coverage
 
