@@ -269,7 +269,15 @@ The shape of a phase curve can be summarized with two parameters: the amplitude 
 
 %We note that the sinusoid does not fit the data as well as the spherical harmonics model (see \ref{table:fits}); however, the sine curve fits the amplitude and hotspot offset directly, as free parameters.
 
-For all three phase curves, the hotspot offset is consistent with zero degrees, which could indicate a small ratio of radiative to advective timescales (the incident flux is reradiated to space faster than it is advected around to the nightside). Fast radiative timescales are predicted at high temperatures, and small hotspot offsets are also observed for other very hot Jupiters \citep{perez13, komacek16, komacek17}.  The measured offsets are inconsistent with the trend reported in \cite{zhang17}, which predicts the hotspot offset increases with planet temperature for irradiation temperatures greater than 3410 K. The \cite{zhang17} model predicts an eastward hotspot offset of $4.5^\circ$ for WASP-103b, which is significantly larger than observed, hinting at diversity in the circulation patterns of the hottest planets.  The phase curve amplitudes are large (near 0.8 - 0.9), as expected for an atmosphere with inefficient heat redistribution. In \S\,\ref{sec:gcm} we compare these results to expectations from 3D GCMs.
+For all three phase curves, the hotspot offset is consistent with zero degrees,
+which could indicate a small ratio of radiative to advective timescales (the
+incident flux is reradiated to space faster than it is advected around to the
+nightside). Fast radiative timescales are predicted at high temperatures, and
+small hotspot offsets are also observed for other very hot Jupiters
+\citep{perez13, komacek16, komacek17}.  The measured offsets are inconsistent
+with the trend reported in \cite{zhang18}, which predicts the hotspot offset
+increases with planet temperature for irradiation temperatures greater than 3410
+K. The \cite{zhang18} model predicts an eastward hotspot offset of $4.5^\circ$ for WASP-103b, which is significantly larger than observed, hinting at diversity in the circulation patterns of the hottest planets.  The phase curve amplitudes are large (near 0.8 - 0.9), as expected for an atmosphere with inefficient heat redistribution. In \S\,\ref{sec:gcm} we compare these results to expectations from 3D GCMs.
 
 %For the WFC3 phase curves, the amplitudes are consistent with unity and the offsets are consistent with zero. We note that some of the spectroscopic channels have amplitudes greater than unity, which is physically impossible (the planet cannot emit negative flux). As a sanity check, we take the weighted average over the WFC3 channels and find an average amplitude of $0.91\pm0.02$, which shows that at higher precision the results are physical and agree well with the large amplitudes observed for other hot planets \citep{komacek16}.  The \Spitzer\ phase curves also have large amplitudes (near 0.85) and hotspot offsets consistent with zero. 
 
@@ -684,16 +692,14 @@ acknowledges NASA XRP grant NNX17AB56G for partial support of the theoretical
 interpretation of the data, as well as the ASU Research Computing staff for support with the Saguaro and Agave compute clusters.
 
 
- \newcommand{\noop}[1]{}
+\newcommand{\noop}[1]{}
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-\providecommand{\url}[1]{\href{#1}{#1}}
 
 \bibitem[{Adcroft {et~al.}(2004)Adcroft, Campin, Hill, \&
   Marshall}]{Adcroft2004}
 Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
-  Review, 132, 2845.
-\newblock \url{https://doi.org/10.1175/MWR2823.1}
+  Review, 132, 2845
 
 \bibitem[{{Ag{\'u}ndez} {et~al.}(2014){Ag{\'u}ndez}, {Parmentier}, {Venot},
   {Hersant}, \& {Selsis}}]{agundez14}
@@ -775,8 +781,7 @@ Adcroft, A., Campin, J.-M., Hill, C., \& Marshall, J. 2004, Monthly Weather
 {Borucki}, W.~J., {Koch}, D., {Jenkins}, J., {et~al.} 2009, Science, 325, 709
 
 \bibitem[{Braak(2006)}]{braak06}
-Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239.
-\newblock \url{http://dx.doi.org/10.1007/s11222-006-8769-1}
+Braak, C. J. F.~T. 2006, Statistics and Computing, 16, 239
 
 \bibitem[{{Campo} {et~al.}(2011){Campo}, {Harrington}, {Hardy}, {Stevenson},
   {et~al.}}]{Campo2011}
@@ -974,14 +979,11 @@ Gordon, S., \& McBride, B.~J. 1994, Computer program for calculation of complex
 \bibitem[{Jones {et~al.}(2001)Jones, Oliphant, Peterson, \&
   Others}]{jones_scipy_2001}
 Jones, E., Oliphant, T., Peterson, P., \& Others. 2001, {SciPy}: Open source
-  scientific tools for Python, , .
-\newblock \url{http://www.scipy.org/}
+  scientific tools for Python, ,
 
 \bibitem[{Kass \& Raftery(1995)}]{kass95}
 Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
-  Association, 90, 773.
-\newblock
-  \url{http://amstat.tandfonline.com/doi/abs/10.1080/01621459.1995.10476572}
+  Association, 90, 773
 
 \bibitem[{{Kataria} {et~al.}(2016){Kataria}, {Sing}, {Lewis}, {Visscher},
   {Showman}, {Fortney}, \& {Marley}}]{kataria16}
@@ -1010,16 +1012,16 @@ Kass, R.~E., \& Raftery, A.~E. 1995, Journal of the American Statistical
 {Kreidberg}, L. 2015, \pasp, 127, 1161
 
 \bibitem[{{Kreidberg} {et~al.}(2014{\natexlab{a}}){Kreidberg}, {Bean},
-  {D{\'e}sert}, {Benneke}, {Deming}, {Stevenson}, {Seager}, {Berta-Thompson},
-  {Seifahrt}, \& {Homeier}}]{kreidberg14a}
-{Kreidberg}, L., {Bean}, J.~L., {D{\'e}sert}, J.-M., {et~al.}
-  2014{\natexlab{a}}, \nat, 505, 69
-
-\bibitem[{{Kreidberg} {et~al.}(2014{\natexlab{b}}){Kreidberg}, {Bean},
   {D{\'e}sert}, {Line}, {Fortney}, {Madhusudhan}, {Stevenson}, {Showman},
   {Charbonneau}, {McCullough}, {Seager}, {Burrows}, {Henry}, {Williamson},
   {Kataria}, \& {Homeier}}]{kreidberg14b}
----. 2014{\natexlab{b}}, \apjl, 793, L27
+{Kreidberg}, L., {Bean}, J.~L., {D{\'e}sert}, J.-M., {et~al.}
+  2014{\natexlab{a}}, \apjl, 793, L27
+
+\bibitem[{{Kreidberg} {et~al.}(2014{\natexlab{b}}){Kreidberg}, {Bean},
+  {D{\'e}sert}, {Benneke}, {Deming}, {Stevenson}, {Seager}, {Berta-Thompson},
+  {Seifahrt}, \& {Homeier}}]{kreidberg14a}
+---. 2014{\natexlab{b}}, \nat, 505, 69
 
 \bibitem[{{Kreidberg} {et~al.}(2015){Kreidberg}, {Line}, {Bean}, {Stevenson},
   {D{\'e}sert}, {Madhusudhan}, {Fortney}, {Barstow}, {Henry}, {Williamson}, \&
@@ -1272,6 +1274,11 @@ Van Der~Walt, S., Colbert, S.~C., \& Varoquaux, G. 2011, Computing in Science
   {Creech-Eakman}, {Ciardi}, {Line}, {Iyer}, {Bryden}, {Llama}, \&
   {Fahy}}]{zellem17}
 {Zellem}, R.~T., {Swain}, M.~R., {Roudier}, G., {et~al.} 2017, \apj, 844, 27
+
+\bibitem[{{Zhang} {et~al.}(2018){Zhang}, {Knutson}, {Kataria}, {Schwartz},
+  {Cowan}, {Showman}, {Burrows}, {Fortney}, {Todorov}, {Desert}, {Agol}, \&
+  {Deming}}]{zhang18}
+{Zhang}, M., {Knutson}, H.~A., {Kataria}, T., {et~al.} 2018, \aj, 155, 83
 
 \bibitem[{{Zhang} \& {Showman}(2017)}]{zhang17}
 {Zhang}, X., \& {Showman}, A.~P. 2017, \apj, 836, 73

@@ -1,0 +1,78 @@
+To the editor:
+
+We thank the referee for his or her additional comments. We have edited the
+manuscript and respond to the comments below.
+
+**************
+
+1. In section 2.3, I have one additional question regarding the authors' differential atmospheric extinction. When the authors state that they determined their extinction coefficient on a seasonal basis and plots of "differential magnitudes versus mean air mass", do the authors mean that this is the mean air mass of the observation in a given night? 
+
+I would have thought the correction would be as a differential magnitude vs airmass for all data points in the season. However, I can't tell if the authors are implying that they are first averaging all frames taken in an observing night, and then using only the summed nightly data to inform the atmospheric extinction correction. Either option is fine, but a quick clarification in the text would be helpful.
+
+#
+We have clarified the description as follows: "...were corrected for bias,
+flat-fielding, and atmospheric extinction.  We determined extinction corrections
+from linear, least-squares fits to seasonal plots of nightly differential
+magnitudes versus air mass and computing the slope in magnitudes per airmass."
+
+
+2. I understand the authors argument for not showing reference star time series. The only concern I had was if one of the reference stars was variable at the several percent level, and this variation was being diluted and influencing the photometry of the target star. In lieu of plots of the reference stars, a statement to this effect is just as good.
+
+Likewise, I would like some clarification in Figure 1. Currently panel 3 (the phase plot) is in black and white, but it would be useful for the points to be colored by observing season or a gradient from min(time) to max(time), to be sure that the proposed period phases up between observing seasons and cycles. I would also like the y-axis of panel 2 to be changed so that the actual data can be seen better and that it's not scrunched up in the bottom of the plot. I'm particularly interested in what appears to be an equally high peak in the frequency spectrum next to the proposed rotation period, and how the authors decide which peak is the "true" rotation period (unless it's just the peak the matches the measured v sin(i)
+
+#
+None of the reference stars had significant variability. We added this statemetn
+to the text. 
+
+Regarding the color-coding for panel 3: this is unecessary because the stellar
+rotation period is very short compared to the observing season, so each season
+has comparably good phase coverage of the rotation period.
+
+We modified the y-axis scale in panel 2. It's true that both peaks in the
+periodogram have very comparable strength (the periods are 1-year aliases of
+each other), but as the referee correctly surmised the peak we chose is a better
+match to the v sin(i). We added this clarification to the text.
+
+3. (optional) In the caption of Figure 5, please state the bin size in minutes or hours. I understand that it's stated in the text but there is probably a sizeable portion of researchers who would read the figure and figure caption alone and this would be of benefit. I would also like a horizontal error bar on the data points to illustrate the span of each binned data point, but this part can be optional.
+
+#
+We stated the bin size in hours in the caption. We decided to leave off the
+horizontal error bar, since this is a nonstandard way of displaying binned data
+and may be confusing to some readers.
+
+******
+
+4. (optional) I thank the authors for adding a 100ppm scale bar on Figure 6. I still believe at least some of the sub-plots can have the same scale. For example, the 3rd and 4th panel on the top row and the 1st and 2nd panels on the bottom row are all almost identical to each other in scale. However, they are all slightly different, which doesn't seem necessary. While I believe enforcing the same scale for sub-plots that are already very close to each other will make the manuscript and presentation clearer, this is also optional.
+#
+We modified the axes so that spectra with symmetric phases (0.1 and 0.9, 0.2 and
+0.8, etc. ) have the same y-limits.
+
+
+5. (optional) I would prefer different wording in section 4.3 than the (added) "From a glance at Figure 8, the amplitude of the effect is ~100 ppm". The authors should be less colloquial and state "We estimated the amplitude of this effect by eye to be ~100 ppm" or something similar, such as "visual inspection". 
+#
+We reworded this sentence to state "By visual inspection of Figure 8, we estimated the amplitude of this effect to be about 100 ppm". 
+
+
+6. Nightside Spectrum: The authors have declined to fit a nightside spectrum at phase 0.9 to compare with their analysis with the spectrum at phase 0.1. This is fine, since the authors note that they are unable to constrain the C/O abundance or the metallicity significantly. However, the authors state the best fit spectrum has a non-inverted TP profile, which the authors imply is a robust statement. 
+
+If the authors do not wish to run a retrieval on phase 0.9, then at least some confidence interval should be assigned to the claim of a non-inverted temperature pressure profile on the night side of the planet. Is the spectrum also consistent with an inverted profile or can that be ruled out at some confidence? How "best" is the "best fit". This statement should be quantified. 
+#
+We calculated the drop in brightness temperature between the WFC3 blackbody fit
+and a fit to the Spitzer 4.5 micron point at phase 0.9 (reported in Table 6).
+The Spitzer temperature is cooler than the WFC3 temperature by 5.6 sigma.  This
+value is a lower limit to the significance, because the brightenss temperatures
+noted in the table also include the uncertainty in the stellar Teff (which
+increases the error bar on absolute planet temperature but not the relative temperatures we
+care about here). We note that the drop in brightness temperature is actually
+stronger at phase 0.9 than it is at 0.1 (5.6 versus 2.7 sigma). Combined with
+the retrieval we did for phase 0.1, this is conclusive evidence that the
+nightside temperature profile is not inverted.
+
+We added this quantification to the text.
+
+
+7. For Figure 17, instead of adjusting the plots to be on similar y-axis scale through some normalization (which the authors don't wish to do), please add a statement to the caption noting the changing y-axis to give the reader extra chances to notice it if skimming.
+#
+We added the sentence "Note that the panels do not have the same y-scale, since
+the objects have different radii which leads to large variation in absolute
+flux."
