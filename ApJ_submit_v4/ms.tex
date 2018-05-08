@@ -145,7 +145,7 @@ The data were reduced with the POET pipeline \citep{stevenson12, cubillos13}.  T
 %We performed aperture photometry with an aperture size of 2.75 pixels (chosen from a grid of apertures between 2 and 4 pixels to minimize the residual noise in the light curve fits). We masked pixels that were flagged in the bad pixel mask provided in the ancillary data for the observations. The target centroid was determined with a two-dimensional Gaussian fit.  The target remains centered near the sweet spot for the entire AOR in each observation, with a maximum drift of 0.1 pixels. We estimated and subtracted the background from an annulus with a radius of 7 to 15 pixels from the centroid. The contaminating flux from the nearby star is within the same pixel as the target, so we included it in the photometry and corrected it in the light curve fits.
 
 \subsection{Photometric Monitoring}
-To assess how stellar activity might impact the phase curve observations, we monitored WASP-103's photometric variability over 158 nights during 2014 - 2016 with the Tennessee State University Celestron 14-inch (C14) automated imaging telescope (AIT), located at Fairborn Observatory in southern Arizona \citep[][]{henry99}.  The observations of WASP-103 were made in the Cousins R passband with an SBIG STL-1001E CCD camera.  Each observation consisted of 4--10 consecutive exposures on WASP-103 along with several dozen comparison stars in the same field. The individual consecutive frames were co-added and reduced to differential magnitudes (i.e., WASP-103 minus the mean brightness of the six best comparison stars). The nightly observations were corrected for bias, flat-fielding, and differential atmospheric extinction.  We determined extinction corrections from linear, least-squares fits to seasonal plots of nightly differential magnitudes versus air mass and computing the slope in magnitudes per airmass.
+To assess how stellar activity might impact the phase curve observations, we monitored WASP-103's photometric variability over 158 nights during 2014 - 2016 with the Tennessee State University Celestron 14-inch (C14) automated imaging telescope (AIT), located at Fairborn Observatory in southern Arizona \citep[][]{henry99}.  The observations of WASP-103 were made in the Cousins R passband with an SBIG STL-1001E CCD camera.  Each observation consisted of 4--10 consecutive exposures on WASP-103 along with several dozen comparison stars in the same field. The individual consecutive frames were co-added and reduced to differential magnitudes (i.e., WASP-103 minus the mean brightness of the six best comparison stars). The nightly observations were corrected for bias, flat-fielding, and differential atmospheric extinction.  \added{We determined extinction corrections from linear, least-squares fits to seasonal plots of nightly differential magnitudes versus air mass and computing the slope in magnitudes per airmass.}
 
 The photometric analyses are summarized for each observing season in Table\,\ref{tab:photometry}.  The standard deviations of a single observation with respect to the corresponding seasonal means are given in column~4; the mean of the three standard deviations is 0.0058~mag, suggesting there is little night-to-night variation in WASP-103.  The three seasonal mean brightness values given in column 5 scatter about their grand mean with a standard deviation of 0.0036 mag, but we note that the most discrepant mean is from the third season, for which we have only partial coverage. Therefore, our results do not completely rule out low-level, year-to-year variability of $<0.001$~mag.
 
@@ -161,9 +161,9 @@ phase curve computed with the best period are shown in the middle and lower
 panels of Figure\,\ref{fig:photometry} respectively. The best-fit period is
 6.814 days, which agrees closely with the estimated stellar rotation period of
 6.855 days \citep[based on the projected stellar rotation velocity and stellar
-radius reported in][]{gillon14}. There are two nearby peaks in the
+radius reported in][]{gillon14}. \added{There are two nearby peaks in the
 periodogram (panel b of Figure\,\ref{fig:photometry}) that are one-year aliases
-of each other, and we chose the peak that better matches the stellar rotation velocity. The peak-to-peak variability amplitude is 0.005 mag.  Based on the formalism in \cite{zellem17}, we calculate that this variability will bias the measured eclipse depth by $\lesssim10$\,parts per million (ppm) from epoch to epoch, which is well below the photon-limited precision of our measurements.
+of each other, and we chose the peak that better matches the stellar rotation velocity.} The peak-to-peak variability amplitude is 0.005 mag.  Based on the formalism in \cite{zellem17}, we calculate that this variability will bias the measured eclipse depth by $\lesssim10$\,parts per million (ppm) from epoch to epoch, which is well below the photon-limited precision of our measurements.
 
 \begin{figure}
 \includegraphics[width = 0.5\textwidth]{fig1.pdf}
@@ -287,7 +287,7 @@ In addition to calculating the fit rms compared to the photon noise, we also tes
 \caption{WASP-103b phase curve observations from \HST/WFC3 (top) and
 \Spitzer/IRAC (middle and bottom). For clarity, the data are phase-folded on the
 planet's orbital period and binned in 30 uniformly spaced bins between 0 and 1
-(corresponding to 0.8 hours). The left column shows the phase curves with systematic noise removed (black points) compared to the best fit spherical harmonics model (colored lines). The error bars denote $1\,\sigma$ uncertainties (in some cases, the errors are smaller than the data points).  We include the transits in the fit, but they are not displayed in this figure. The right-hand column shows the binned residuals for the best-fit light curve. The gray error bars in the upper right of the left panels correspond to 500 ppm, to illustrate the changing y-axis scale.}
+\added{(corresponding to 0.8 hours)}. The left column shows the phase curves with systematic noise removed (black points) compared to the best fit spherical harmonics model (colored lines). The error bars denote $1\,\sigma$ uncertainties (in some cases, the errors are smaller than the data points).  We include the transits in the fit, but they are not displayed in this figure. The right-hand column shows the binned residuals for the best-fit light curve. The gray error bars in the upper right of the left panels correspond to 500 ppm, to illustrate the changing y-axis scale.}
 \label{fig:phasecurves}
 \end{figure*}
 
@@ -301,7 +301,7 @@ The shape of a phase curve can be summarized with two parameters: the amplitude 
 
 %We note that the sinusoid does not fit the data as well as the spherical harmonics model (see \ref{table:fits}); however, the sine curve fits the amplitude and hotspot offset directly, as free parameters.
 
-For all three phase curves, the hotspot offset is consistent with zero degrees, which could indicate a small ratio of radiative to advective timescales (the incident flux is reradiated to space faster than it is advected around to the nightside). Fast radiative timescales are predicted at high temperatures, and small hotspot offsets are also observed for other very hot Jupiters \citep{perez13, komacek16, komacek17}.  The measured offsets are inconsistent with the trend reported in \cite{zhang17}, which predicts the hotspot offset increases with planet temperature for irradiation temperatures greater than 3410 K. The \cite{zhang17} model predicts an eastward hotspot offset of $4.5^\circ$ for WASP-103b, which is significantly larger than observed, hinting at diversity in the circulation patterns of the hottest planets.  The phase curve amplitudes are large (near 0.8 - 0.9), as expected for an atmosphere with inefficient heat redistribution. In \S\,\ref{sec:gcm} we compare these results to expectations from 3D GCMs.
+For all three phase curves, the hotspot offset is consistent with zero degrees, which could indicate a small ratio of radiative to advective timescales (the incident flux is reradiated to space faster than it is advected around to the nightside). Fast radiative timescales are predicted at high temperatures, and small hotspot offsets are also observed for other very hot Jupiters \citep{perez13, komacek16, komacek17}.  The measured offsets are inconsistent with the trend reported in \cite{zhang18}, which predicts the hotspot offset increases with planet temperature for irradiation temperatures greater than 3410 K. The \cite{zhang18} model predicts an eastward hotspot offset of $4.5^\circ$ for WASP-103b, which is significantly larger than observed, hinting at diversity in the circulation patterns of the hottest planets.  The phase curve amplitudes are large (near 0.8 - 0.9), as expected for an atmosphere with inefficient heat redistribution. In \S\,\ref{sec:gcm} we compare these results to expectations from 3D GCMs.
 
 %For the WFC3 phase curves, the amplitudes are consistent with unity and the offsets are consistent with zero. We note that some of the spectroscopic channels have amplitudes greater than unity, which is physically impossible (the planet cannot emit negative flux). As a sanity check, we take the weighted average over the WFC3 channels and find an average amplitude of $0.91\pm0.02$, which shows that at higher precision the results are physical and agree well with the large amplitudes observed for other hot planets \citep{komacek16}.  The \Spitzer\ phase curves also have large amplitudes (near 0.85) and hotspot offsets consistent with zero. 
 
@@ -420,7 +420,7 @@ To test that the phase-resolved planet-to-star flux values are robust to differe
 	\end{deluxetable}
 
 \subsection{Comparison with Previous Eclipse Observations}
-We compared our results to the dayside emission spectrum reported by \cite{cartier17}, which is based on a Gaussian process analysis of two secondary eclipses from \HST/WFC3. The shape of their spectrum is consistent with what we find, but their eclipse depths are 125 ppm smaller on average (a difference of about 10\%). A likely explanation for this difference is that the \cite{cartier17} analysis does not include the planet's thermal phase variation, so that the Gaussian process models it as an instrument systematic.  If the phase variation is absorbed into the systematic model, the measured eclipse depths would be biased low.  By visual inspection of Figure\,\ref{fig:model_comparison}, we estimate the amplitude of this effect is $\sim100$ ppm, which is comparable to the offset between the two analyses. Our estimated uncertainties are a factor of four smaller than those reported in \cite{cartier17}, which is consistent with photon-limited expectations (our data set includes two additional eclipses, a factor of five longer out-of-eclipse baseline, and has 60\% larger wavelength bins).
+We compared our results to the dayside emission spectrum reported by \cite{cartier17}, which is based on a Gaussian process analysis of two secondary eclipses from \HST/WFC3. The shape of their spectrum is consistent with what we find, but their eclipse depths are 125 ppm smaller on average (a difference of about 10\%). A likely explanation for this difference is that the \cite{cartier17} analysis does not include the planet's thermal phase variation, so that the Gaussian process models it as an instrument systematic.  If the phase variation is absorbed into the systematic model, the measured eclipse depths would be biased low.  \added{By visual inspection} of Figure\,\ref{fig:model_comparison}, we estimate the amplitude of this effect is $\sim100$ ppm, which is comparable to the offset between the two analyses. Our estimated uncertainties are a factor of four smaller than those reported in \cite{cartier17}, which is consistent with photon-limited expectations (our data set includes two additional eclipses, a factor of five longer out-of-eclipse baseline, and has 60\% larger wavelength bins).
 
 %In their analysis, \cite{cartier17} noted that the Gaussian process fit produces smaller eclipse depths than a parametric fit (also by 125 ppm). 
 
@@ -586,7 +586,7 @@ with results from the dayside spectrum.
 
 This agreement is an encouraging sanity check; however, there are several model assumptions that may result in artificially tight constraints on the atmospheric properties on the nightside.  One challenge in modeling the nightside spectrum is that the physical processes shaping the T-P profile are unknown.  Our model assumes a scaled stellar irradiation at the top of the atmosphere, but in reality, the heat source is advection from the dayside. Another caveat is that the model is not self-consistent: the energy leaving the dayside is not constrained to equal the energy entering the nightside.  Further work is needed to develop a fully self-consistent 2-D retrieval method for phase curve observations. 
 
-As a test, we also calculated the difference in brightness temperature
+\added{As a test, we also calculated the difference in brightness temperature
 between the \HST\ and \Spitzer\ 4.5 $\mu$m data (reported in
 Table\,\ref{table:teffs}) for both nightside phases ($\phi = 0.1$ and 0.9). At
 phase 0.1 and 0.9, the \Spitzer\ temperature is lower by 2.7 and 5.6\,$\sigma$,
@@ -594,7 +594,7 @@ respectively.  These values are a lower limit to the significance, because the
 brightness temperatures noted in the table also include the uncertainty in the
 stellar $T_\mathrm{eff}$ (which increases the uncertainty on the absolute planet
 temperature but not the relative temperatures that are relevant for this
-calculation). The drop in brightness temperature is more significant at phase 0.9 than it is at 0.1, providing further evidence in addition to the phase 0.1 retrieval that the nightside temperature pressure profile is not inverted.
+calculation). The drop in brightness temperature is more significant at phase 0.9 than it is at 0.1, providing further evidence in addition to the phase 0.1 retrieval that the nightside temperature pressure profile is not inverted.}
 
 
 \subsection{Climate}
@@ -665,8 +665,8 @@ nightside (phase 0.1, top row), quadrature (phase 0.25, middle) and the dayside
 temperature. The dotted gray line corresponds to the best fit blackbody.
 Effective temperatures are listed in the upper right corners. The wavelength
 bins used to calculate the water feature amplitude $A_1$ are shaded in gray.
-Note that the panels do not have the same y-scale, since the objects have
-different radii which leads to large variation in absolute flux.}
+\added{Note that the panels do not have the same y-scale, since the objects have
+different radii which leads to large variation in absolute flux.}}
 \label{fig:planetstarcomparison}
 \end{figure*}
 
@@ -727,7 +727,7 @@ Science Archive. The Infrared Science Archive is operated by the Jet Propulsion
 Laboratory, California Institute of Technology, under contract with the National
 Aeronautics and Space Administration.  This work also made use of the Python
 packages  SciPy and NumPy \citep{jones_scipy_2001, van2011numpy}. The authors
-are grateful for helpful conversations with Caroline Morley, Ming
+are grateful for helpful conversations with Caroline Morley, Thomas Beatty, Ming
 Zhao, Kimberly Cartier, Hannah Diamond-Lowe, and Nick Cowan. We also thank the
 organizers of the 2016 Santa Cruz Kavli Summer Program and the 2017 Ringberg
 Atmospheres of Disks and Planets meeting for facilitating productive discussion
@@ -1332,6 +1332,11 @@ Van Der~Walt, S., Colbert, S.~C., \& Varoquaux, G. 2011, Computing in Science
   {Creech-Eakman}, {Ciardi}, {Line}, {Iyer}, {Bryden}, {Llama}, \&
   {Fahy}}]{zellem17}
 {Zellem}, R.~T., {Swain}, M.~R., {Roudier}, G., {et~al.} 2017, \apj, 844, 27
+
+\bibitem[{{Zhang} {et~al.}(2018){Zhang}, {Knutson}, {Kataria}, {Schwartz},
+  {Cowan}, {Showman}, {Burrows}, {Fortney}, {Todorov}, {Desert}, {Agol}, \&
+  {Deming}}]{zhang18}
+{Zhang}, M., {Knutson}, H.~A., {Kataria}, T., {et~al.} 2018, \aj, 155, 83
 
 \bibitem[{{Zhang} \& {Showman}(2017)}]{zhang17}
 {Zhang}, X., \& {Showman}, A.~P. 2017, \apj, 836, 73
